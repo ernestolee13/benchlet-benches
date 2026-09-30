@@ -1,0 +1,146 @@
+name: derivation-check
+version: 1
+task_signature:
+  goal: derive
+  answer: binary
+  prob_use: accuracy_only
+  label: constructed
+  unit: record
+  language: ko
+generator:
+  script: src/build_derivation_check.py
+  seed: 20260929
+source: 뉴스 승인 요약의 수치로 만든 주장(평균·배수·단위 변환). 참·거짓 절반
+domain:
+- derivation-check
+- ko-news-summary
+visibility: sample
+items_sha256: a65702de8e02e2903c428940ae3ad63868fb7278b6cf058adbc1c4f318544c7c
+license: CC-BY-4.0
+review:
+  checks_run: 7
+  human_reviewed_fraction: 1.0
+  flagged: 18
+  decided: 0
+note: 씨앗 5과제. 구식 스키마(state·options·label)이고 로더가 확장 형식으로 바꾼다
+owner: ernestolee13
+n: 48
+choices:
+- 맞다
+- 틀리다
+question: 요약의 수치로 볼 때 이 주장이 맞는가
+published_at: '2026-09-30'
+type: binary
+classes:
+- D1
+- D2
+- D3
+label_source_mix:
+  machine: 0
+  constructed: 48
+  judged: 0
+  outcome: 0
+experiment:
+  date: '2026-09-30'
+  template: legacy-seed
+  runner: src/run.py (구식 러너, 팔 메타는 프리셋에서 채움)
+  arms:
+    glm:
+      model: z-ai/glm-4.7-flash
+      provider: cloudflare
+      family: GLM
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke: null
+    qwen:
+      model: qwen/qwen3.8-27b
+      provider: parasail
+      family: Qwen
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke: null
+    deepseek:
+      model: deepseek/deepseek-v4-flash
+      provider: digitalocean
+      family: DeepSeek
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.14
+      smoke: null
+    jev:
+      model: typesafe/jev-1.13
+      provider: openrouter
+      family: Jev
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.042
+      smoke: null
+  protocol:
+    decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
+    logprob_call:
+      max_tokens: 1
+      temperature: 0
+      logprobs: true
+      top_logprobs: 8
+      reasoning:
+        enabled: false
+    provider_pin: provider.only=[pin], allow_fallbacks=false, require_parameters=true
+    binary: '극성 반전 2회 호출 평균: p = ½[P(A|choices[0]=A) + P(B|choices[0]=B)]'
+    multiclass: 항목별 결정론적 셔플 뒤 원 인덱스로 복원(generic) 또는 파일에 든 셔플 그대로(legacy-seed)
+    typed: Jev noul(이진)/choice(다지), 질문을 instructions 로 그대로 전달
+    label_mass: 상위 8토큰 중 라벨 토큰 질량 < 0.5 이면 오류로 두고 세지 않음
+    renormalize: 라벨 토큰 확률을 라벨 집합 안에서 재정규화
+  items_sha256: null
+results:
+- results/deriv-run.json
+result_summary:
+  glm:
+    acc: 0.5106382978723404
+    ci95:
+    - 0.37242217589372884
+    - 0.6472467566339649
+    auroc: 0.8143115942028986
+    brier: 0.2763612885272143
+    n: 47
+    prob_source: logprob
+    model: z-ai/glm-4.7-flash
+    source_badge: author-run
+  qwen:
+    acc: 0.7916666666666666
+    ci95:
+    - 0.6574082647864652
+    - 0.8826985220411018
+    auroc: 0.9236111111111112
+    brier: 0.15010092458830437
+    n: 48
+    prob_source: logprob
+    model: qwen/qwen3.8-27b
+    source_badge: author-run
+  deepseek:
+    acc: 0.6808510638297872
+    ci95:
+    - 0.5383238911447854
+    - 0.7960479618260101
+    auroc: 0.7934782608695652
+    brier: 0.19006007635723565
+    n: 47
+    prob_source: logprob
+    model: deepseek/deepseek-v4-flash
+    source_badge: author-run
+  jev:
+    acc: 0.8333333333333334
+    ci95:
+    - 0.7042189996260375
+    - 0.9130458996054678
+    auroc: 0.9253472222222222
+    brier: 0.1344
+    n: 48
+    prob_source: typed
+    model: typesafe/jev-1.13
+    source_badge: author-run
