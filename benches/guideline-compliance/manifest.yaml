@@ -1,0 +1,159 @@
+name: guideline-compliance
+version: 1
+task_signature:
+  goal: compliance
+  answer: binary
+  prob_use: accuracy_only
+  label: constructed
+  unit: post
+  language: ko
+generator:
+  script: src/build_guideline_compliance.py
+  seed: 20260929
+source: 장면 지침 3규칙. 준수본 20 은 작성자 문장(작성자 편향 주의), 위반 20 심기
+domain:
+- guideline-compliance
+- scene-guideline
+visibility: sample
+items_sha256: b68b689ffe0d991ef8114bbc9756864916dd368a7badf0ea949fb00ad8ffca78
+license: CC-BY-4.0
+review:
+  checks_run: 3
+  human_reviewed_fraction: 1.0
+  flagged: 4
+  decided: 0
+note: 씨앗 5과제. 구식 스키마(state·options·label)이고 로더가 확장 형식으로 바꾼다
+owner: ernestolee13
+n: 40
+choices:
+- 위반
+- 준수
+question: '이 장면이 가이드라인을 위반하는가
+
+
+  banban 블록1 장면은 다음 세 규칙을 지켜야 한다.
+
+  (1) 인물을 이름으로 부르지 않는다. 관계로만 부른다 (딸, 남편, 옆 자리 승객). 실제 기업·인물·사건 이름도 쓰지 않는다.
+
+  (2) 실화라고 주장하지 않는다. 「제 친구가」「실제로 있었던 일인데」 같은 어조를 쓰지 않는다. 장면을 현재형으로 묘사하는 것은 규칙대로 쓴
+  것이다.
+
+  (3) 서술은 정중한 존댓말로 끝난다. 대화 안의 말투는 자유다. 다만 형평성·재량·여건 같은 제도 용어를 사람 대화에 넣지 않는다.'
+published_at: '2026-09-30'
+type: binary
+classes:
+- OK
+- P1-brand
+- P1-name
+- P2-claim
+- P3-jargon
+- P4-register
+label_source_mix:
+  machine: 0
+  constructed: 40
+  judged: 0
+  outcome: 0
+experiment:
+  date: '2026-09-30'
+  template: legacy-seed
+  runner: src/run.py (구식 러너, 팔 메타는 프리셋에서 채움)
+  arms:
+    glm:
+      model: z-ai/glm-4.7-flash
+      provider: cloudflare
+      family: GLM
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke: null
+    qwen:
+      model: qwen/qwen3.8-27b
+      provider: parasail
+      family: Qwen
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke: null
+    deepseek:
+      model: deepseek/deepseek-v4-flash
+      provider: digitalocean
+      family: DeepSeek
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.14
+      smoke: null
+    jev:
+      model: typesafe/jev-1.13
+      provider: openrouter
+      family: Jev
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.042
+      smoke: null
+  protocol:
+    decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
+    logprob_call:
+      max_tokens: 1
+      temperature: 0
+      logprobs: true
+      top_logprobs: 8
+      reasoning:
+        enabled: false
+    provider_pin: provider.only=[pin], allow_fallbacks=false, require_parameters=true
+    binary: '극성 반전 2회 호출 평균: p = ½[P(A|choices[0]=A) + P(B|choices[0]=B)]'
+    multiclass: 항목별 결정론적 셔플 뒤 원 인덱스로 복원(generic) 또는 파일에 든 셔플 그대로(legacy-seed)
+    typed: Jev noul(이진)/choice(다지), 질문을 instructions 로 그대로 전달
+    label_mass: 상위 8토큰 중 라벨 토큰 질량 < 0.5 이면 오류로 두고 세지 않음
+    renormalize: 라벨 토큰 확률을 라벨 집합 안에서 재정규화
+  items_sha256: null
+results:
+- results/guide-run.json
+result_summary:
+  glm:
+    acc: 0.5
+    ci95:
+    - 0.35199278797099753
+    - 0.6480072120290025
+    auroc: 0.7175
+    brier: 0.3354465167611837
+    n: 40
+    prob_source: logprob
+    model: z-ai/glm-4.7-flash
+    source_badge: author-run
+  qwen:
+    acc: 0.7
+    ci95:
+    - 0.545696893456796
+    - 0.819253290843047
+    auroc: 0.78
+    brier: 0.2033450316271906
+    n: 40
+    prob_source: logprob
+    model: qwen/qwen3.8-27b
+    source_badge: author-run
+  deepseek:
+    acc: 0.525
+    ci95:
+    - 0.37497106853929735
+    - 0.6706477044981831
+    auroc: 0.7
+    brier: 0.25528640661796687
+    n: 40
+    prob_source: logprob
+    model: deepseek/deepseek-v4-flash
+    source_badge: author-run
+  jev:
+    acc: 0.85
+    ci95:
+    - 0.7092737396097997
+    - 0.9293890829149257
+    auroc: 0.885
+    brier: 0.13497749999999997
+    n: 40
+    prob_source: typed
+    model: typesafe/jev-1.13
+    source_badge: author-run
