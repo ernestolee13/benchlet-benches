@@ -1,0 +1,151 @@
+name: sns-numbers-sourced-v2
+version: 2
+task_signature:
+  goal: derive
+  answer: binary
+  prob_use: accuracy_only
+  label: constructed
+  unit: record
+  language: ko
+  n: 60
+question: 이 칼럼 본문에 주어진 리서치에 없는 수치, 기관명, 인용문이 있는가. 수치·기관명·직접 인용만 본다. 설명이나 기전 같은 일반
+  서술이 리서치에 없는 것은 세지 않는다. 리서치의 수치를 그대로 쓴 것, 리서치에 있는 기관을 다시 언급한 것, 리서치의 인용을 옮긴 것은 「없다」다.
+choices:
+- 있다
+- 없다
+generator:
+  script: src/build_sns_numbers.py
+  seed: 20260930
+source: 발행 큐 두 테이블의 칼럼 30편(리서치 요약과 본문). 음성은 원본, 양성은 수치·기관명·인용문 변조 (원자료 비공개)
+visibility: sample
+items_sha256: e7ab692af1008c5f654e769282486fbedbdfa3965cfba2efe2db39dc7573670f
+review:
+  checks_run: 7
+  human_reviewed_fraction: 1.0
+  flagged: 20
+  decided: 0
+license: CC-BY-4.0
+note: sns-numbers-sourced v1 의 질문에 정의·범위를 넣은 판. 항목은 같다
+domain:
+- numbers-sourced
+- sns-column
+owner: ernestolee13
+n: 60
+published_at: '2026-09-30'
+type: binary
+classes:
+- N-original
+- N-sourced-institution
+- N-sourced-quote
+- P-institution
+- P-number
+- P-quote
+label_source_mix:
+  machine: 0
+  constructed: 60
+  judged: 0
+  outcome: 0
+experiment:
+  date: '2026-09-30'
+  template: legacy-seed
+  runner: src/run.py (구식 러너, 팔 메타는 프리셋에서 채움)
+  arms:
+    glm:
+      model: z-ai/glm-4.7-flash
+      provider: cloudflare
+      family: GLM
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke: null
+    qwen:
+      model: qwen/qwen3.8-27b
+      provider: parasail
+      family: Qwen
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke: null
+    deepseek:
+      model: deepseek/deepseek-v4-flash
+      provider: digitalocean
+      family: DeepSeek
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.14
+      smoke: null
+    jev:
+      model: typesafe/jev-1.13
+      provider: openrouter
+      family: Jev
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.042
+      smoke: null
+  protocol:
+    decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
+    logprob_call:
+      max_tokens: 1
+      temperature: 0
+      logprobs: true
+      top_logprobs: 8
+      reasoning:
+        enabled: false
+    provider_pin: provider.only=[pin], allow_fallbacks=false, require_parameters=true
+    binary: '극성 반전 2회 호출 평균: p = ½[P(A|choices[0]=A) + P(B|choices[0]=B)]'
+    multiclass: 항목별 결정론적 셔플 뒤 원 인덱스로 복원(generic) 또는 파일에 든 셔플 그대로(legacy-seed)
+    typed: Jev noul(이진)/choice(다지), 질문을 instructions 로 그대로 전달
+    label_mass: 상위 8토큰 중 라벨 토큰 질량 < 0.5 이면 오류로 두고 세지 않음
+    renormalize: 라벨 토큰 확률을 라벨 집합 안에서 재정규화
+  items_sha256: null
+results:
+- results/sns-numbers-sourced-v2-run.json
+result_summary:
+  glm:
+    acc: 0.6166666666666667
+    ci95:
+    - 0.4901736454040314
+    - 0.7291191041511176
+    auroc: 0.675
+    brier: 0.23426939906325397
+    n: 60
+    prob_source: logprob
+    model: z-ai/glm-4.7-flash
+    source_badge: author-run
+  qwen:
+    acc: 0.9166666666666666
+    ci95:
+    - 0.8193083153188752
+    - 0.963880075949514
+    auroc: 0.9966666666666667
+    brier: 0.07482169950373632
+    n: 60
+    prob_source: logprob
+    model: qwen/qwen3.8-27b
+    source_badge: author-run
+  deepseek:
+    acc: 0.6333333333333333
+    ci95:
+    - 0.5068276736679672
+    - 0.7437926115379172
+    auroc: 0.8544444444444445
+    brier: 0.23877989545943737
+    n: 60
+    prob_source: logprob
+    model: deepseek/deepseek-v4-flash
+    source_badge: author-run
+  jev:
+    acc: 0.9
+    ci95:
+    - 0.7985030550748896
+    - 0.9533578005427641
+    auroc: 0.9777777777777777
+    brier: 0.09251166666666663
+    n: 60
+    prob_source: typed
+    model: typesafe/jev-1.13
+    source_badge: author-run
