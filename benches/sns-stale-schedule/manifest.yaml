@@ -1,0 +1,150 @@
+name: sns-stale-schedule
+version: 1
+task_signature:
+  goal: derive
+  answer: binary
+  prob_use: accuracy_only
+  label: constructed
+  unit: sentence
+  language: ko
+  n: 48
+question: 이 문장은 기준일에서 이미 지난 날짜의 일정을 앞으로 있을 것처럼 쓴 문장인가
+choices:
+- 그렇다
+- 아니다
+generator:
+  script: src/build_sns_stale.py
+  seed: 20260930
+source: 시니어 칼럼 본문(발행 큐 두 테이블)에서 뽑은 날짜 표현 문장. 기준일과 시제를 바꿔 지난 일정을 앞으로 올 것처럼 심음 (원자료
+  비공개)
+visibility: sample
+items_sha256: 77e6a2835a1c47e4ca1dafa951adfc3fe56d66c268b1798c46f15f14fd69a9a6
+review:
+  checks_run: 7
+  human_reviewed_fraction: 0.0
+  flagged: 28
+  decided: 0
+license: CC-BY-4.0
+domain:
+- stale-schedule
+- sns-column
+owner: ernestolee13
+n: 48
+published_at: '2026-09-30'
+type: binary
+classes:
+- N-i-future-ok
+- N-ii-past-tense-ok
+- N-iii-date-not-schedule
+- P-a-past-date-as-plan
+- P-b-relative-passed
+- P-c-deadline-passed
+label_source_mix:
+  machine: 0
+  constructed: 48
+  judged: 0
+  outcome: 0
+experiment:
+  date: '2026-09-30'
+  template: legacy-seed
+  runner: src/run.py (구식 러너, 팔 메타는 프리셋에서 채움)
+  arms:
+    glm:
+      model: z-ai/glm-4.7-flash
+      provider: cloudflare
+      family: GLM
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke: null
+    qwen:
+      model: qwen/qwen3.8-27b
+      provider: parasail
+      family: Qwen
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke: null
+    deepseek:
+      model: deepseek/deepseek-v4-flash
+      provider: digitalocean
+      family: DeepSeek
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.14
+      smoke: null
+    jev:
+      model: typesafe/jev-1.13
+      provider: openrouter
+      family: Jev
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.042
+      smoke: null
+  protocol:
+    decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
+    logprob_call:
+      max_tokens: 1
+      temperature: 0
+      logprobs: true
+      top_logprobs: 8
+      reasoning:
+        enabled: false
+    provider_pin: provider.only=[pin], allow_fallbacks=false, require_parameters=true
+    binary: '극성 반전 2회 호출 평균: p = ½[P(A|choices[0]=A) + P(B|choices[0]=B)]'
+    multiclass: 항목별 결정론적 셔플 뒤 원 인덱스로 복원(generic) 또는 파일에 든 셔플 그대로(legacy-seed)
+    typed: Jev noul(이진)/choice(다지), 질문을 instructions 로 그대로 전달
+    label_mass: 상위 8토큰 중 라벨 토큰 질량 < 0.5 이면 오류로 두고 세지 않음
+    renormalize: 라벨 토큰 확률을 라벨 집합 안에서 재정규화
+  items_sha256: null
+results:
+- results/sns-stale-schedule-run.json
+result_summary:
+  glm:
+    acc: 0.5
+    ci95:
+    - 0.36389098932037767
+    - 0.6361090106796222
+    auroc: 0.3567708333333333
+    brier: 0.27297008047340904
+    n: 48
+    prob_source: logprob
+    model: z-ai/glm-4.7-flash
+    source_badge: author-run
+  qwen:
+    acc: 0.5625
+    ci95:
+    - 0.4227477150100165
+    - 0.6929894535958907
+    auroc: 0.7265625
+    brier: 0.21361263858725932
+    n: 48
+    prob_source: logprob
+    model: qwen/qwen3.8-27b
+    source_badge: author-run
+  deepseek:
+    acc: 0.5
+    ci95:
+    - 0.36389098932037767
+    - 0.6361090106796222
+    auroc: 0.4739583333333333
+    brier: 0.3397915638954856
+    n: 48
+    prob_source: logprob
+    model: deepseek/deepseek-v4-flash
+    source_badge: author-run
+  jev:
+    acc: 0.6875
+    ci95:
+    - 0.5466666274950367
+    - 0.8005448783226851
+    auroc: 0.9852430555555556
+    brier: 0.15041666666666667
+    n: 48
+    prob_source: typed
+    model: typesafe/jev-1.13
+    source_badge: author-run
