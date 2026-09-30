@@ -1,0 +1,32 @@
+name: example-summary-norm
+version: 1
+guide: '이 요약 문장이 편집 규범을 위반하는가. 위반은 다음 셋이다. (1) 판단이나 비난이 담긴 어휘를 쓴다 (2) 강조 부사를 쓴다 (예:
+  무려, 심지어, 결국) (3) 두 문장 이상이다. 사실만 담은 한 문장은 통과다. 입력은 요약 문장 하나다.
+
+  '
+choices:
+- 위반
+- 통과
+license: CC-BY-4.0
+visibility: full
+owner: ernestolee13
+items_sha256: d777a2e3a4c154e67d11317d9ec0f470198768933db70b5c0ec1b6c42ca85626
+n: 6
+question: '이 요약 문장이 편집 규범을 위반하는가. 위반은 다음 셋이다. (1) 판단이나 비난이 담긴 어휘를 쓴다 (2) 강조 부사를 쓴다
+  (예: 무려, 심지어, 결국) (3) 두 문장 이상이다. 사실만 담은 한 문장은 통과다. 입력은 요약 문장 하나다.'
+published_at: '2026-09-30'
+type: binary
+task_signature:
+  answer: binary
+  language: ko
+classes:
+- CLEAN
+- W1-forbidden
+- W2-intensifier
+- W3-two-sentences
+label_source_mix:
+  machine: 0
+  constructed: 6
+  judged: 0
+  outcome: 0
+results: pending
