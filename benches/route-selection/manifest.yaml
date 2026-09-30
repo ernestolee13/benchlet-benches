@@ -1,0 +1,162 @@
+name: route-selection
+version: 1
+task_signature:
+  goal: route
+  answer: choice(5)
+  prob_use: accuracy_only
+  label: constructed
+  unit: query
+  language: ko
+generator:
+  script: src/build_route_selection.py
+  seed: 20260929
+source: vault 질의 라우트 표 5종. 질의는 라우트 정의 조건만 만족하도록 작성
+domain:
+- route-selection
+- kb-query
+visibility: sample
+items_sha256: 7f6051983b173c8cca50ac8fe5268e4ccef31ddfe7b6ee64165915484403e7a0
+license: CC-BY-4.0
+review:
+  checks_run: 8
+  human_reviewed_fraction: 1.0
+  flagged: 21
+  decided: 0
+note: 씨앗 5과제. 구식 스키마(state·options·label)이고 로더가 확장 형식으로 바꾼다
+owner: ernestolee13
+n: 40
+choices: null
+question: '이 질의는 어느 라우트로 보내야 하는가
+
+
+  vault 질의를 다음 라우트 중 하나로 보낸다.
+
+  A. 직접 폴더 — 대상 프로젝트나 카테고리가 분명하다
+
+  B. 태그 횡단 — 토픽이 여러 폴더를 가로지른다
+
+  C. 백링크 참조 — 무엇이 이것을 인용하거나 의존하는지 묻는다
+
+  D. 인덱스·로그 — 개요, 최근 활동, 추세, 변경 이력을 묻는다
+
+  E. 전문 검색 — 특정 용어, 구절, 에러 메시지, 개념을 준다
+
+  여러 조건이 겹쳐 보이면 **질의가 요구하는 산출물**로 정한다 — 목록·개요·이력·추세를 원하면 D, 특정 문서의 내용을 원하면 A, 무엇이
+  그것을 가리키는지 원하면 C.'
+published_at: '2026-09-30'
+type: multiclass
+classes:
+- A
+- B
+- C
+- D
+- E
+label_source_mix:
+  machine: 0
+  constructed: 40
+  judged: 0
+  outcome: 0
+experiment:
+  date: '2026-09-30'
+  template: legacy-seed
+  runner: src/run.py (구식 러너, 팔 메타는 프리셋에서 채움)
+  arms:
+    glm:
+      model: z-ai/glm-4.7-flash
+      provider: cloudflare
+      family: GLM
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke: null
+    qwen:
+      model: qwen/qwen3.8-27b
+      provider: parasail
+      family: Qwen
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke: null
+    deepseek:
+      model: deepseek/deepseek-v4-flash
+      provider: digitalocean
+      family: DeepSeek
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.14
+      smoke: null
+    jev:
+      model: typesafe/jev-1.13
+      provider: openrouter
+      family: Jev
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.042
+      smoke: null
+  protocol:
+    decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
+    logprob_call:
+      max_tokens: 1
+      temperature: 0
+      logprobs: true
+      top_logprobs: 8
+      reasoning:
+        enabled: false
+    provider_pin: provider.only=[pin], allow_fallbacks=false, require_parameters=true
+    binary: '극성 반전 2회 호출 평균: p = ½[P(A|choices[0]=A) + P(B|choices[0]=B)]'
+    multiclass: 항목별 결정론적 셔플 뒤 원 인덱스로 복원(generic) 또는 파일에 든 셔플 그대로(legacy-seed)
+    typed: Jev noul(이진)/choice(다지), 질문을 instructions 로 그대로 전달
+    label_mass: 상위 8토큰 중 라벨 토큰 질량 < 0.5 이면 오류로 두고 세지 않음
+    renormalize: 라벨 토큰 확률을 라벨 집합 안에서 재정규화
+  items_sha256: null
+results:
+- results/route-run.json
+result_summary:
+  glm:
+    acc: 0.8205128205128205
+    ci95:
+    - 0.6733164837555724
+    - 0.9102284818853
+    auroc: null
+    brier: null
+    n: 39
+    prob_source: logprob
+    model: z-ai/glm-4.7-flash
+    source_badge: author-run
+  qwen:
+    acc: 0.975
+    ci95:
+    - 0.8711834051199223
+    - 0.9955732825922052
+    auroc: null
+    brier: null
+    n: 40
+    prob_source: logprob
+    model: qwen/qwen3.8-27b
+    source_badge: author-run
+  deepseek:
+    acc: 0.875
+    ci95:
+    - 0.7388757932976185
+    - 0.9454058022645871
+    auroc: null
+    brier: null
+    n: 40
+    prob_source: logprob
+    model: deepseek/deepseek-v4-flash
+    source_badge: author-run
+  jev:
+    acc: 0.975
+    ci95:
+    - 0.8711834051199223
+    - 0.9955732825922052
+    auroc: null
+    brier: null
+    n: 40
+    prob_source: typed
+    model: typesafe/jev-1.13
+    source_badge: author-run
