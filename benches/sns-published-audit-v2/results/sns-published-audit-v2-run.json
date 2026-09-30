@@ -1,0 +1,4963 @@
+{
+ "task": "sns-published-audit-v2",
+ "items": [
+  {
+   "id": "audit-000",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN",
+   "label_source": "machine",
+   "cluster": "post-26893",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.37083111491475074,
+     "ms": 3432,
+     "cost": 5.1424999999999996e-05,
+     "in_tok": 850,
+     "err": null,
+     "mass": [
+      "0.9925",
+      "0.8498"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.17715081300041952,
+     "ms": 1178,
+     "cost": 3.7873e-05,
+     "in_tok": 626,
+     "err": null,
+     "mass": [
+      "0.9994",
+      "0.9990"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.022009868734181776,
+     "ms": 2899,
+     "cost": 0.00010528000000000001,
+     "in_tok": 752,
+     "err": null,
+     "mass": [
+      "0.9998",
+      "0.9972"
+     ]
+    },
+    "jev": {
+     "ms": 262,
+     "in_tok": 629,
+     "cost": 2.6418e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.09
+     },
+     "err": null,
+     "p_violation": 0.09
+    }
+   }
+  },
+  {
+   "id": "audit-001",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN",
+   "label_source": "machine",
+   "cluster": "post-21235",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.2266994244096945,
+     "ms": 18456,
+     "cost": 5.0699e-05,
+     "in_tok": 838,
+     "err": null,
+     "mass": [
+      "0.9961",
+      "0.9877"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.03127963421387632,
+     "ms": 2114,
+     "cost": 3.7146999999999995e-05,
+     "in_tok": 614,
+     "err": null,
+     "mass": [
+      "0.9999",
+      "0.9996"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.016242458109027816,
+     "ms": 2450,
+     "cost": 0.00010444000000000001,
+     "in_tok": 746,
+     "err": null,
+     "mass": [
+      "0.9998",
+      "0.9996"
+     ]
+    },
+    "jev": {
+     "ms": 260,
+     "in_tok": 621,
+     "cost": 2.6082000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.07
+     },
+     "err": null,
+     "p_violation": 0.07
+    }
+   }
+  },
+  {
+   "id": "audit-002",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN",
+   "label_source": "machine",
+   "cluster": "post-30248",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4325001744158584,
+     "ms": 920,
+     "cost": 5.0457e-05,
+     "in_tok": 834,
+     "err": null,
+     "mass": [
+      "0.9909",
+      "0.9599"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.058838764594253704,
+     "ms": 1314,
+     "cost": 3.7146999999999995e-05,
+     "in_tok": 614,
+     "err": null,
+     "mass": [
+      "0.9994",
+      "0.9993"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.010229417420203777,
+     "ms": 2070,
+     "cost": 0.00010416,
+     "in_tok": 744,
+     "err": null,
+     "mass": [
+      "0.9999",
+      "0.9999"
+     ]
+    },
+    "jev": {
+     "ms": 393,
+     "in_tok": 625,
+     "cost": 2.625e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.04
+     },
+     "err": null,
+     "p_violation": 0.04
+    }
+   }
+  },
+  {
+   "id": "audit-003",
+   "target": 0,
+   "label": 1,
+   "class": "R4-code-fence",
+   "label_source": "constructed",
+   "cluster": "post-34350",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": null,
+     "ms": 785,
+     "cost": 5.0578e-05,
+     "in_tok": 836,
+     "err": "라벨 토큰이 상위에 없음",
+     "mass": [
+      "0.8340",
+      "라벨 토큰이 상위에 없음"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.3301066424966051,
+     "ms": 6482,
+     "cost": 3.7631e-05,
+     "in_tok": 622,
+     "err": null,
+     "mass": [
+      "0.9996",
+      "0.9993"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.0172661801799749,
+     "ms": 2598,
+     "cost": 0.00010388000000000002,
+     "in_tok": 742,
+     "err": null,
+     "mass": [
+      "0.9998",
+      "0.9998"
+     ]
+    },
+    "jev": {
+     "ms": 225,
+     "in_tok": 618,
+     "cost": 2.5956e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.58
+     },
+     "err": null,
+     "p_violation": 0.58
+    }
+   }
+  },
+  {
+   "id": "audit-004",
+   "target": 0,
+   "label": 1,
+   "class": "R6-placeholder",
+   "label_source": "constructed",
+   "cluster": "post-35767",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": null,
+     "ms": 1005,
+     "cost": 5.1062e-05,
+     "in_tok": 844,
+     "err": "라벨 토큰이 상위에 없음",
+     "mass": [
+      "0.9727",
+      "라벨 토큰이 상위에 없음"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9918892833481727,
+     "ms": 969,
+     "cost": 3.8357e-05,
+     "in_tok": 634,
+     "err": null,
+     "mass": [
+      "0.9997",
+      "0.9993"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9922175938767501,
+     "ms": 2765,
+     "cost": 0.00010416,
+     "in_tok": 744,
+     "err": null,
+     "mass": [
+      "0.9994",
+      "1.0000"
+     ]
+    },
+    "jev": {
+     "ms": 290,
+     "in_tok": 618,
+     "cost": 2.5956e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.97
+     },
+     "err": null,
+     "p_violation": 0.97
+    }
+   }
+  },
+  {
+   "id": "audit-005",
+   "target": 0,
+   "label": 1,
+   "class": "R5-model-artifact",
+   "label_source": "constructed",
+   "cluster": "post-35056",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": null,
+     "ms": 1437,
+     "cost": 4.8642e-05,
+     "in_tok": 804,
+     "err": "라벨 토큰이 상위에 없음",
+     "mass": [
+      "라벨 토큰이 상위에 없음",
+      "라벨 토큰이 상위에 없음"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9644298517608496,
+     "ms": 1187,
+     "cost": 3.6299999999999995e-05,
+     "in_tok": 600,
+     "err": null,
+     "mass": [
+      "0.9995",
+      "0.9997"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.01328184624834397,
+     "ms": 3396,
+     "cost": 9.996000000000001e-05,
+     "in_tok": 714,
+     "err": null,
+     "mass": [
+      "0.9999",
+      "0.9947"
+     ]
+    },
+    "jev": {
+     "ms": 311,
+     "in_tok": 611,
+     "cost": 2.5662000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.96
+     },
+     "err": null,
+     "p_violation": 0.96
+    }
+   }
+  },
+  {
+   "id": "audit-006",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN",
+   "label_source": "machine",
+   "cluster": "post-33656",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": null,
+     "ms": 37237,
+     "cost": 5.2029999999999995e-05,
+     "in_tok": 860,
+     "err": "라벨 토큰이 상위에 없음",
+     "mass": [
+      "0.3011",
+      "라벨 토큰이 상위에 없음"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.12461954310867343,
+     "ms": 1720,
+     "cost": 3.8115000000000004e-05,
+     "in_tok": 630,
+     "err": null,
+     "mass": [
+      "0.9994",
+      "0.9995"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.024375447898923278,
+     "ms": 3205,
+     "cost": 0.00010668,
+     "in_tok": 762,
+     "err": null,
+     "mass": [
+      "0.9994",
+      "0.9982"
+     ]
+    },
+    "jev": {
+     "ms": 260,
+     "in_tok": 628,
+     "cost": 2.6376e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.09
+     },
+     "err": null,
+     "p_violation": 0.09
+    }
+   }
+  },
+  {
+   "id": "audit-007",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN",
+   "label_source": "machine",
+   "cluster": "post-20631",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.15818365222308123,
+     "ms": 838,
+     "cost": 5.1062e-05,
+     "in_tok": 844,
+     "err": null,
+     "mass": [
+      "0.9926",
+      "0.9643"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.020968228170444067,
+     "ms": 1379,
+     "cost": 3.7146999999999995e-05,
+     "in_tok": 614,
+     "err": null,
+     "mass": [
+      "0.9992",
+      "0.9997"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.002044530883533856,
+     "ms": 3509,
+     "cost": 0.00010276,
+     "in_tok": 734,
+     "err": null,
+     "mass": [
+      "0.9996",
+      "1.0000"
+     ]
+    },
+    "jev": {
+     "ms": 267,
+     "in_tok": 626,
+     "cost": 2.6292000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.08
+     },
+     "err": null,
+     "p_violation": 0.08
+    }
+   }
+  },
+  {
+   "id": "audit-008",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN",
+   "label_source": "machine",
+   "cluster": "post-31584",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": null,
+     "ms": 902,
+     "cost": 5.1182999999999994e-05,
+     "in_tok": 846,
+     "err": "라벨 토큰이 상위에 없음",
+     "mass": [
+      "0.9762",
+      "라벨 토큰이 상위에 없음"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0644556991341879,
+     "ms": 857,
+     "cost": 3.7267999999999996e-05,
+     "in_tok": 616,
+     "err": null,
+     "mass": [
+      "0.9994",
+      "0.9990"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.0011054265619639832,
+     "ms": 3263,
+     "cost": 0.00010416,
+     "in_tok": 744,
+     "err": null,
+     "mass": [
+      "0.9999",
+      "1.0000"
+     ]
+    },
+    "jev": {
+     "ms": 235,
+     "in_tok": 621,
+     "cost": 2.6082000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.04
+     },
+     "err": null,
+     "p_violation": 0.04
+    }
+   }
+  },
+  {
+   "id": "audit-009",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN",
+   "label_source": "machine",
+   "cluster": "post-29564",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": null,
+     "ms": 1044,
+     "cost": 5.1182999999999994e-05,
+     "in_tok": 846,
+     "err": "라벨 토큰이 상위에 없음",
+     "mass": [
+      "0.9356",
+      "라벨 토큰이 상위에 없음"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.1387594505848657,
+     "ms": 1185,
+     "cost": 3.8236e-05,
+     "in_tok": 632,
+     "err": null,
+     "mass": [
+      "0.9995",
+      "0.9992"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.12914185016120708,
+     "ms": 2032,
+     "cost": 0.00010640000000000001,
+     "in_tok": 760,
+     "err": null,
+     "mass": [
+      "0.9997",
+      "0.9998"
+     ]
+    },
+    "jev": {
+     "ms": 238,
+     "in_tok": 630,
+     "cost": 2.6460000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "err": null,
+     "p_violation": 0.06
+    }
+   }
+  },
+  {
+   "id": "audit-010",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN",
+   "label_source": "machine",
+   "cluster": "post-24353",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.309601465704638,
+     "ms": 3046,
+     "cost": 5.1182999999999994e-05,
+     "in_tok": 846,
+     "err": null,
+     "mass": [
+      "0.9936",
+      "0.9865"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.07547523178697058,
+     "ms": 1040,
+     "cost": 3.7146999999999995e-05,
+     "in_tok": 614,
+     "err": null,
+     "mass": [
+      "0.9989",
+      "0.9993"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.010579447140479991,
+     "ms": 2032,
+     "cost": 0.00010500000000000002,
+     "in_tok": 750,
+     "err": null,
+     "mass": [
+      "0.9999",
+      "0.9981"
+     ]
+    },
+    "jev": {
+     "ms": 257,
+     "in_tok": 630,
+     "cost": 2.6460000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.08
+     },
+     "err": null,
+     "p_violation": 0.08
+    }
+   }
+  },
+  {
+   "id": "audit-011",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN-trap",
+   "label_source": "machine",
+   "cluster": "fixture-clock-time",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.38018540719644356,
+     "ms": 885,
+     "cost": 4.0897999999999994e-05,
+     "in_tok": 676,
+     "err": null,
+     "mass": [
+      "0.9970",
+      "0.9767"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.005525054355748991,
+     "ms": 1019,
+     "cost": 3.2306999999999994e-05,
+     "in_tok": 534,
+     "err": null,
+     "mass": [
+      "0.9997",
+      "0.9997"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.07560994276801729,
+     "ms": 3597,
+     "cost": 8.512000000000001e-05,
+     "in_tok": 608,
+     "err": null,
+     "mass": [
+      "1.0000",
+      "0.9983"
+     ]
+    },
+    "jev": {
+     "ms": 235,
+     "in_tok": 559,
+     "cost": 2.3478000000000005e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.04
+     },
+     "err": null,
+     "p_violation": 0.04
+    }
+   }
+  },
+  {
+   "id": "audit-012",
+   "target": 0,
+   "label": 1,
+   "class": "R1-header-only",
+   "label_source": "machine",
+   "cluster": "post-39392",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.38924222346349147,
+     "ms": 17989,
+     "cost": 5.2029999999999995e-05,
+     "in_tok": 860,
+     "err": null,
+     "mass": [
+      "0.9925",
+      "0.9702"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5774215504199339,
+     "ms": 940,
+     "cost": 3.8236e-05,
+     "in_tok": 632,
+     "err": null,
+     "mass": [
+      "0.9991",
+      "0.9975"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.5797240748905639,
+     "ms": 3464,
+     "cost": 0.00010724000000000001,
+     "in_tok": 766,
+     "err": null,
+     "mass": [
+      "0.9999",
+      "0.9996"
+     ]
+    },
+    "jev": {
+     "ms": 218,
+     "in_tok": 625,
+     "cost": 2.625e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.88
+     },
+     "err": null,
+     "p_violation": 0.88
+    }
+   }
+  },
+  {
+   "id": "audit-013",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN-trap",
+   "label_source": "machine",
+   "cluster": "fixture-plain-colon",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.2737129359155987,
+     "ms": 4665,
+     "cost": 4.0897999999999994e-05,
+     "in_tok": 676,
+     "err": null,
+     "mass": [
+      "0.9883",
+      "0.9886"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.08711247166890257,
+     "ms": 825,
+     "cost": 3.1218e-05,
+     "in_tok": 516,
+     "err": null,
+     "mass": [
+      "0.9998",
+      "0.9996"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.23443425005879442,
+     "ms": 2742,
+     "cost": 8.484000000000001e-05,
+     "in_tok": 606,
+     "err": null,
+     "mass": [
+      "0.9994",
+      "0.9984"
+     ]
+    },
+    "jev": {
+     "ms": 411,
+     "in_tok": 554,
+     "cost": 2.3268e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "err": null,
+     "p_violation": 0.05
+    }
+   }
+  },
+  {
+   "id": "audit-014",
+   "target": 0,
+   "label": 1,
+   "class": "R1-header-only",
+   "label_source": "machine",
+   "cluster": "post-40111",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4857838512267074,
+     "ms": 17996,
+     "cost": 5.3119e-05,
+     "in_tok": 878,
+     "err": null,
+     "mass": [
+      "0.9965",
+      "0.9729"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7431591599099638,
+     "ms": 1152,
+     "cost": 3.7631e-05,
+     "in_tok": 622,
+     "err": null,
+     "mass": [
+      "0.9985",
+      "0.9981"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.009269492750015488,
+     "ms": 2861,
+     "cost": 0.00010724000000000001,
+     "in_tok": 766,
+     "err": null,
+     "mass": [
+      "0.9997",
+      "0.9995"
+     ]
+    },
+    "jev": {
+     "ms": 233,
+     "in_tok": 629,
+     "cost": 2.6418e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.81
+     },
+     "err": null,
+     "p_violation": 0.81
+    }
+   }
+  },
+  {
+   "id": "audit-015",
+   "target": 0,
+   "label": 1,
+   "class": "R6-placeholder",
+   "label_source": "constructed",
+   "cluster": "post-29565",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.47832762639161674,
+     "ms": 869,
+     "cost": 5.0578e-05,
+     "in_tok": 836,
+     "err": null,
+     "mass": [
+      "0.9908",
+      "0.9844"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9049986182892906,
+     "ms": 795,
+     "cost": 3.751e-05,
+     "in_tok": 620,
+     "err": null,
+     "mass": [
+      "0.9993",
+      "0.9990"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.030744749900854292,
+     "ms": 2902,
+     "cost": 0.00010388000000000002,
+     "in_tok": 742,
+     "err": null,
+     "mass": [
+      "0.9997",
+      "0.9997"
+     ]
+    },
+    "jev": {
+     "ms": 363,
+     "in_tok": 620,
+     "cost": 2.604e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.75
+     },
+     "err": null,
+     "p_violation": 0.75
+    }
+   }
+  },
+  {
+   "id": "audit-016",
+   "target": 0,
+   "label": 1,
+   "class": "R5-model-artifact",
+   "label_source": "constructed",
+   "cluster": "post-36490",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": null,
+     "ms": 2860,
+     "cost": 5.0335999999999994e-05,
+     "in_tok": 832,
+     "err": "logprobs 없음",
+     "mass": [
+      "0.9812",
+      "logprobs 없음"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9887424655562894,
+     "ms": 1179,
+     "cost": 3.751e-05,
+     "in_tok": 620,
+     "err": null,
+     "mass": [
+      "0.9998",
+      "0.9996"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.021687927658752788,
+     "ms": 2518,
+     "cost": 0.00010444000000000001,
+     "in_tok": 746,
+     "err": null,
+     "mass": [
+      "0.9999",
+      "0.9983"
+     ]
+    },
+    "jev": {
+     "ms": 219,
+     "in_tok": 630,
+     "cost": 2.6460000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.91
+     },
+     "err": null,
+     "p_violation": 0.91
+    }
+   }
+  },
+  {
+   "id": "audit-017",
+   "target": 0,
+   "label": 1,
+   "class": "R3-instruction-echo",
+   "label_source": "constructed",
+   "cluster": "post-36487",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": null,
+     "ms": 996,
+     "cost": 5.0941e-05,
+     "in_tok": 842,
+     "err": "라벨 토큰이 상위에 없음",
+     "mass": [
+      "0.8326",
+      "라벨 토큰이 상위에 없음"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.998211417902493,
+     "ms": 1668,
+     "cost": 3.7267999999999996e-05,
+     "in_tok": 616,
+     "err": null,
+     "mass": [
+      "0.9998",
+      "0.9996"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.7023252649627069,
+     "ms": 2843,
+     "cost": 0.00010304000000000002,
+     "in_tok": 736,
+     "err": null,
+     "mass": [
+      "0.9998",
+      "0.9989"
+     ]
+    },
+    "jev": {
+     "ms": 258,
+     "in_tok": 619,
+     "cost": 2.5998e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.92
+     },
+     "err": null,
+     "p_violation": 0.92
+    }
+   }
+  },
+  {
+   "id": "audit-018",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN",
+   "label_source": "machine",
+   "cluster": "post-15459",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": null,
+     "ms": 820,
+     "cost": 4.9609999999999994e-05,
+     "in_tok": 820,
+     "err": "라벨 토큰이 상위에 없음",
+     "mass": [
+      "0.9035",
+      "라벨 토큰이 상위에 없음"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0810554130217264,
+     "ms": 1604,
+     "cost": 3.6905e-05,
+     "in_tok": 610,
+     "err": null,
+     "mass": [
+      "0.9996",
+      "0.9996"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.003460423604470536,
+     "ms": 2739,
+     "cost": 0.00010192000000000001,
+     "in_tok": 728,
+     "err": null,
+     "mass": [
+      "0.9999",
+      "0.9997"
+     ]
+    },
+    "jev": {
+     "ms": 303,
+     "in_tok": 621,
+     "cost": 2.6082000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.07
+     },
+     "err": null,
+     "p_violation": 0.07
+    }
+   }
+  },
+  {
+   "id": "audit-019",
+   "target": 0,
+   "label": 1,
+   "class": "R4-code-fence",
+   "label_source": "constructed",
+   "cluster": "post-1888",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": null,
+     "ms": 1065,
+     "cost": 4.9609999999999994e-05,
+     "in_tok": 820,
+     "err": "logprobs 없음",
+     "mass": [
+      "0.9885",
+      "logprobs 없음"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.09753055023458988,
+     "ms": 884,
+     "cost": 3.872e-05,
+     "in_tok": 640,
+     "err": null,
+     "mass": [
+      "0.9982",
+      "0.9992"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.04947153859695468,
+     "ms": 3261,
+     "cost": 0.00010164000000000001,
+     "in_tok": 726,
+     "err": null,
+     "mass": [
+      "0.9988",
+      "0.9998"
+     ]
+    },
+    "jev": {
+     "ms": 251,
+     "in_tok": 631,
+     "cost": 2.6502000000000005e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.32
+     },
+     "err": null,
+     "p_violation": 0.32
+    }
+   }
+  },
+  {
+   "id": "audit-020",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN",
+   "label_source": "machine",
+   "cluster": "post-34453",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.44671632869635786,
+     "ms": 893,
+     "cost": 5.0578e-05,
+     "in_tok": 836,
+     "err": null,
+     "mass": [
+      "0.9906",
+      "0.9646"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.14068653849250726,
+     "ms": 1782,
+     "cost": 3.872e-05,
+     "in_tok": 640,
+     "err": null,
+     "mass": [
+      "0.9997",
+      "0.9996"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.0713876696750343,
+     "ms": 2615,
+     "cost": 0.00010500000000000002,
+     "in_tok": 750,
+     "err": null,
+     "mass": [
+      "0.9999",
+      "0.9997"
+     ]
+    },
+    "jev": {
+     "ms": 248,
+     "in_tok": 624,
+     "cost": 2.6208e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.07
+     },
+     "err": null,
+     "p_violation": 0.07
+    }
+   }
+  },
+  {
+   "id": "audit-021",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN-trap",
+   "label_source": "constructed",
+   "cluster": "post-30251",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3892422336145359,
+     "ms": 906,
+     "cost": 5.2272e-05,
+     "in_tok": 864,
+     "err": null,
+     "mass": [
+      "0.9854",
+      "0.7000"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.2570119991260841,
+     "ms": 946,
+     "cost": 3.9688e-05,
+     "in_tok": 656,
+     "err": null,
+     "mass": [
+      "0.9990",
+      "0.9984"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.03903642794896914,
+     "ms": 5608,
+     "cost": 0.00010864,
+     "in_tok": 776,
+     "err": null,
+     "mass": [
+      "0.9999",
+      "0.9996"
+     ]
+    },
+    "jev": {
+     "ms": 257,
+     "in_tok": 634,
+     "cost": 2.6628000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "err": null,
+     "p_violation": 0.06
+    }
+   }
+  },
+  {
+   "id": "audit-022",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN",
+   "label_source": "machine",
+   "cluster": "post-31586",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 3526,
+     "cost": 5.1062e-05,
+     "in_tok": 844,
+     "err": null,
+     "mass": [
+      "0.8808",
+      "0.7365"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.19833974445328384,
+     "ms": 1938,
+     "cost": 3.7873e-05,
+     "in_tok": 626,
+     "err": null,
+     "mass": [
+      "0.9994",
+      "0.9994"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.16199699687136218,
+     "ms": 2514,
+     "cost": 0.00010416,
+     "in_tok": 744,
+     "err": null,
+     "mass": [
+      "0.9996",
+      "0.9992"
+     ]
+    },
+    "jev": {
+     "ms": 292,
+     "in_tok": 618,
+     "cost": 2.5956e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.11
+     },
+     "err": null,
+     "p_violation": 0.11
+    }
+   }
+  },
+  {
+   "id": "audit-023",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN-trap",
+   "label_source": "constructed",
+   "cluster": "post-21853",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3892422243204091,
+     "ms": 920,
+     "cost": 5.0457e-05,
+     "in_tok": 834,
+     "err": null,
+     "mass": [
+      "0.9820",
+      "0.8964"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.14512340864885984,
+     "ms": 961,
+     "cost": 3.7631e-05,
+     "in_tok": 622,
+     "err": null,
+     "mass": [
+      "0.9995",
+      "0.9990"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.03889245843367651,
+     "ms": 3017,
+     "cost": 0.00010332000000000002,
+     "in_tok": 738,
+     "err": null,
+     "mass": [
+      "0.9951",
+      "0.9995"
+     ]
+    },
+    "jev": {
+     "ms": 246,
+     "in_tok": 623,
+     "cost": 2.6166e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.17
+     },
+     "err": null,
+     "p_violation": 0.17
+    }
+   }
+  },
+  {
+   "id": "audit-024",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN",
+   "label_source": "machine",
+   "cluster": "post-15984",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.40345837964380343,
+     "ms": 2896,
+     "cost": 5.1424999999999996e-05,
+     "in_tok": 850,
+     "err": null,
+     "mass": [
+      "0.9930",
+      "0.9686"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.12957432170200517,
+     "ms": 1015,
+     "cost": 3.7752e-05,
+     "in_tok": 624,
+     "err": null,
+     "mass": [
+      "0.9995",
+      "0.9994"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.015777426079680537,
+     "ms": 5572,
+     "cost": 0.00010640000000000001,
+     "in_tok": 760,
+     "err": null,
+     "mass": [
+      "1.0000",
+      "0.9994"
+     ]
+    },
+    "jev": {
+     "ms": 251,
+     "in_tok": 626,
+     "cost": 2.6292000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.04
+     },
+     "err": null,
+     "p_violation": 0.04
+    }
+   }
+  },
+  {
+   "id": "audit-025",
+   "target": 0,
+   "label": 1,
+   "class": "R6-placeholder",
+   "label_source": "constructed",
+   "cluster": "post-31684",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.42344334860187827,
+     "ms": 6138,
+     "cost": 5.2029999999999995e-05,
+     "in_tok": 860,
+     "err": null,
+     "mass": [
+      "0.9916",
+      "0.9865"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9959910636688478,
+     "ms": 805,
+     "cost": 3.8599e-05,
+     "in_tok": 638,
+     "err": null,
+     "mass": [
+      "0.9997",
+      "0.9995"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.950582222010828,
+     "ms": 3647,
+     "cost": 0.00010696000000000002,
+     "in_tok": 764,
+     "err": null,
+     "mass": [
+      "0.9996",
+      "0.9994"
+     ]
+    },
+    "jev": {
+     "ms": 291,
+     "in_tok": 630,
+     "cost": 2.6460000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.97
+     },
+     "err": null,
+     "p_violation": 0.97
+    }
+   }
+  },
+  {
+   "id": "audit-026",
+   "target": 0,
+   "label": 1,
+   "class": "R4-code-fence",
+   "label_source": "constructed",
+   "cluster": "post-28210",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.32588578028763293,
+     "ms": 816,
+     "cost": 4.5858999999999996e-05,
+     "in_tok": 758,
+     "err": null,
+     "mass": [
+      "0.9934",
+      "0.8634"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.3551118485190078,
+     "ms": 1065,
+     "cost": 3.4606e-05,
+     "in_tok": 572,
+     "err": null,
+     "mass": [
+      "0.9994",
+      "0.9986"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.002038549802212467,
+     "ms": 3226,
+     "cost": 9.352e-05,
+     "in_tok": 668,
+     "err": null,
+     "mass": [
+      "0.9999",
+      "0.9999"
+     ]
+    },
+    "jev": {
+     "ms": 236,
+     "in_tok": 582,
+     "cost": 2.4444000000000005e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.32
+     },
+     "err": null,
+     "p_violation": 0.32
+    }
+   }
+  },
+  {
+   "id": "audit-027",
+   "target": 0,
+   "label": 1,
+   "class": "R3-instruction-echo",
+   "label_source": "constructed",
+   "cluster": "post-28839",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5975575737752674,
+     "ms": 985,
+     "cost": 5.0699e-05,
+     "in_tok": 838,
+     "err": null,
+     "mass": [
+      "0.9778",
+      "0.9412"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9974488152438424,
+     "ms": 969,
+     "cost": 3.7267999999999996e-05,
+     "in_tok": 616,
+     "err": null,
+     "mass": [
+      "0.9996",
+      "0.9995"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.13362505477037834,
+     "ms": 2470,
+     "cost": 0.00010388000000000002,
+     "in_tok": 742,
+     "err": null,
+     "mass": [
+      "0.9999",
+      "0.9997"
+     ]
+    },
+    "jev": {
+     "ms": 248,
+     "in_tok": 619,
+     "cost": 2.5998e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.89
+     },
+     "err": null,
+     "p_violation": 0.89
+    }
+   }
+  },
+  {
+   "id": "audit-028",
+   "target": 0,
+   "label": 1,
+   "class": "R3-instruction-echo",
+   "label_source": "constructed",
+   "cluster": "post-17503",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": null,
+     "ms": 1052,
+     "cost": 4.9851999999999996e-05,
+     "in_tok": 824,
+     "err": "logprobs 없음",
+     "mass": [
+      "0.4783",
+      "logprobs 없음"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.95166275352399,
+     "ms": 1094,
+     "cost": 3.751e-05,
+     "in_tok": 620,
+     "err": null,
+     "mass": [
+      "0.9994",
+      "0.9994"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.10727619180965789,
+     "ms": 2577,
+     "cost": 0.00010248000000000001,
+     "in_tok": 732,
+     "err": null,
+     "mass": [
+      "0.9992",
+      "0.9939"
+     ]
+    },
+    "jev": {
+     "ms": 233,
+     "in_tok": 620,
+     "cost": 2.604e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.6
+     },
+     "err": null,
+     "p_violation": 0.6
+    }
+   }
+  },
+  {
+   "id": "audit-029",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN",
+   "label_source": "machine",
+   "cluster": "post-22468",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4034583806314077,
+     "ms": 825,
+     "cost": 4.9126e-05,
+     "in_tok": 812,
+     "err": null,
+     "mass": [
+      "0.9918",
+      "0.7508"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.05028479435046222,
+     "ms": 1267,
+     "cost": 3.6299999999999995e-05,
+     "in_tok": 600,
+     "err": null,
+     "mass": [
+      "0.9996",
+      "0.9996"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.01474587981126686,
+     "ms": 2405,
+     "cost": 0.00010164000000000001,
+     "in_tok": 726,
+     "err": null,
+     "mass": [
+      "0.9997",
+      "0.9999"
+     ]
+    },
+    "jev": {
+     "ms": 233,
+     "in_tok": 620,
+     "cost": 2.604e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.07
+     },
+     "err": null,
+     "p_violation": 0.07
+    }
+   }
+  },
+  {
+   "id": "audit-030",
+   "target": 0,
+   "label": 1,
+   "class": "R5-model-artifact",
+   "label_source": "constructed",
+   "cluster": "post-27541",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": null,
+     "ms": 863,
+     "cost": 5.082e-05,
+     "in_tok": 840,
+     "err": "logprobs 없음",
+     "mass": [
+      "0.9133",
+      "logprobs 없음"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.988156479699207,
+     "ms": 970,
+     "cost": 3.8357e-05,
+     "in_tok": 634,
+     "err": null,
+     "mass": [
+      "0.9990",
+      "0.9990"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.22001210879852273,
+     "ms": 2885,
+     "cost": 0.00010500000000000002,
+     "in_tok": 750,
+     "err": null,
+     "mass": [
+      "0.9999",
+      "0.9930"
+     ]
+    },
+    "jev": {
+     "ms": 241,
+     "in_tok": 626,
+     "cost": 2.6292000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.95
+     },
+     "err": null,
+     "p_violation": 0.95
+    }
+   }
+  },
+  {
+   "id": "audit-031",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN-trap",
+   "label_source": "constructed",
+   "cluster": "post-1886",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4325001784573311,
+     "ms": 867,
+     "cost": 5.1304e-05,
+     "in_tok": 848,
+     "err": null,
+     "mass": [
+      "0.9873",
+      "0.9350"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.17715081032693658,
+     "ms": 1288,
+     "cost": 3.7146999999999995e-05,
+     "in_tok": 614,
+     "err": null,
+     "mass": [
+      "0.9991",
+      "0.9994"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.03916540176184148,
+     "ms": 3988,
+     "cost": 0.00010528000000000001,
+     "in_tok": 752,
+     "err": null,
+     "mass": [
+      "1.0000",
+      "0.9991"
+     ]
+    },
+    "jev": {
+     "ms": 237,
+     "in_tok": 622,
+     "cost": 2.6124000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.24
+     },
+     "err": null,
+     "p_violation": 0.24
+    }
+   }
+  },
+  {
+   "id": "audit-032",
+   "target": 0,
+   "label": 1,
+   "class": "R3-instruction-echo",
+   "label_source": "constructed",
+   "cluster": "post-20630",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.38924222630908945,
+     "ms": 919,
+     "cost": 5.0094e-05,
+     "in_tok": 828,
+     "err": null,
+     "mass": [
+      "0.9815",
+      "0.9311"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.3509066135305377,
+     "ms": 1097,
+     "cost": 3.7752e-05,
+     "in_tok": 624,
+     "err": null,
+     "mass": [
+      "0.9692",
+      "0.9887"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.05375625913473593,
+     "ms": 2553,
+     "cost": 0.00010388000000000002,
+     "in_tok": 742,
+     "err": null,
+     "mass": [
+      "0.9999",
+      "0.9998"
+     ]
+    },
+    "jev": {
+     "ms": 350,
+     "in_tok": 626,
+     "cost": 2.6292000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.91
+     },
+     "err": null,
+     "p_violation": 0.91
+    }
+   }
+  },
+  {
+   "id": "audit-033",
+   "target": 0,
+   "label": 1,
+   "class": "R3-instruction-echo",
+   "label_source": "constructed",
+   "cluster": "post-28828",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4857838469844535,
+     "ms": 843,
+     "cost": 4.9609999999999994e-05,
+     "in_tok": 820,
+     "err": null,
+     "mass": [
+      "0.9687",
+      "0.8634"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4855522366518302,
+     "ms": 1114,
+     "cost": 3.7389e-05,
+     "in_tok": 618,
+     "err": null,
+     "mass": [
+      "0.9984",
+      "0.9982"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.3533824582759792,
+     "ms": 3440,
+     "cost": 0.00010276,
+     "in_tok": 734,
+     "err": null,
+     "mass": [
+      "0.9999",
+      "0.9988"
+     ]
+    },
+    "jev": {
+     "ms": 264,
+     "in_tok": 616,
+     "cost": 2.5872000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.92
+     },
+     "err": null,
+     "p_violation": 0.92
+    }
+   }
+  },
+  {
+   "id": "audit-034",
+   "target": 0,
+   "label": 1,
+   "class": "R5-model-artifact",
+   "label_source": "constructed",
+   "cluster": "post-17969",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4783276237848773,
+     "ms": 3149,
+     "cost": 5.0094e-05,
+     "in_tok": 828,
+     "err": null,
+     "mass": [
+      "0.9938",
+      "0.9835"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9929338142420866,
+     "ms": 950,
+     "cost": 3.6905e-05,
+     "in_tok": 610,
+     "err": null,
+     "mass": [
+      "0.9995",
+      "0.9996"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.5542996335446716,
+     "ms": 3151,
+     "cost": 0.00010416,
+     "in_tok": 744,
+     "err": null,
+     "mass": [
+      "0.9999",
+      "0.9992"
+     ]
+    },
+    "jev": {
+     "ms": 242,
+     "in_tok": 620,
+     "cost": 2.604e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.95
+     },
+     "err": null,
+     "p_violation": 0.95
+    }
+   }
+  },
+  {
+   "id": "audit-035",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN",
+   "label_source": "machine",
+   "cluster": "post-2583",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4034583801661168,
+     "ms": 943,
+     "cost": 5.0457e-05,
+     "in_tok": 834,
+     "err": null,
+     "mass": [
+      "0.9228",
+      "0.9562"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.03234811040557209,
+     "ms": 844,
+     "cost": 3.7752e-05,
+     "in_tok": 624,
+     "err": null,
+     "mass": [
+      "0.9995",
+      "0.9993"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.009843465431702544,
+     "ms": 3242,
+     "cost": 0.00010388000000000002,
+     "in_tok": 742,
+     "err": null,
+     "mass": [
+      "0.9998",
+      "0.9989"
+     ]
+    },
+    "jev": {
+     "ms": 213,
+     "in_tok": 627,
+     "cost": 2.6334e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.07
+     },
+     "err": null,
+     "p_violation": 0.07
+    }
+   }
+  },
+  {
+   "id": "audit-036",
+   "target": 0,
+   "label": 1,
+   "class": "R1-header-only",
+   "label_source": "machine",
+   "cluster": "post-40112",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.46838869857428583,
+     "ms": 875,
+     "cost": 5.2514e-05,
+     "in_tok": 868,
+     "err": null,
+     "mass": [
+      "0.9912",
+      "0.9150"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.8955887912717153,
+     "ms": 1081,
+     "cost": 3.8599e-05,
+     "in_tok": 638,
+     "err": null,
+     "mass": [
+      "0.9994",
+      "0.9991"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.7479649316264537,
+     "ms": 4119,
+     "cost": 0.00010808000000000001,
+     "in_tok": 772,
+     "err": null,
+     "mass": [
+      "0.9998",
+      "0.9994"
+     ]
+    },
+    "jev": {
+     "ms": 226,
+     "in_tok": 628,
+     "cost": 2.6376e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.84
+     },
+     "err": null,
+     "p_violation": 0.84
+    }
+   }
+  },
+  {
+   "id": "audit-037",
+   "target": 0,
+   "label": 1,
+   "class": "R4-code-fence",
+   "label_source": "constructed",
+   "cluster": "post-32947",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": null,
+     "ms": 1036,
+     "cost": 4.9973e-05,
+     "in_tok": 826,
+     "err": "라벨 토큰이 상위에 없음",
+     "mass": [
+      "0.3943",
+      "라벨 토큰이 상위에 없음"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7178523259064227,
+     "ms": 1159,
+     "cost": 3.8236e-05,
+     "in_tok": 632,
+     "err": null,
+     "mass": [
+      "0.9992",
+      "0.9993"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.09773653560462812,
+     "ms": 2180,
+     "cost": 0.00010444000000000001,
+     "in_tok": 746,
+     "err": null,
+     "mass": [
+      "0.9991",
+      "0.9773"
+     ]
+    },
+    "jev": {
+     "ms": 255,
+     "in_tok": 623,
+     "cost": 2.6166e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "err": null,
+     "p_violation": 0.06
+    }
+   }
+  },
+  {
+   "id": "audit-038",
+   "target": 0,
+   "label": 1,
+   "class": "R4-code-fence",
+   "label_source": "constructed",
+   "cluster": "post-28835",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.02371293566315446,
+     "ms": 1008,
+     "cost": 4.5254e-05,
+     "in_tok": 748,
+     "err": null,
+     "mass": [
+      "0.9870",
+      "0.0775"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.030152129622768663,
+     "ms": 1664,
+     "cost": 3.4122e-05,
+     "in_tok": 564,
+     "err": null,
+     "mass": [
+      "0.9996",
+      "0.9994"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.01602491816493784,
+     "ms": 2710,
+     "cost": 9.296e-05,
+     "in_tok": 664,
+     "err": null,
+     "mass": [
+      "1.0000",
+      "0.9998"
+     ]
+    },
+    "jev": {
+     "ms": 221,
+     "in_tok": 587,
+     "cost": 2.4653999999999998e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.71
+     },
+     "err": null,
+     "p_violation": 0.71
+    }
+   }
+  },
+  {
+   "id": "audit-039",
+   "target": 0,
+   "label": 1,
+   "class": "R6-placeholder",
+   "label_source": "constructed",
+   "cluster": "post-24359",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.19407217169605637,
+     "ms": 863,
+     "cost": 5.1182999999999994e-05,
+     "in_tok": 846,
+     "err": null,
+     "mass": [
+      "0.9471",
+      "0.9717"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.169403753265039,
+     "ms": 848,
+     "cost": 3.8115000000000004e-05,
+     "in_tok": 630,
+     "err": null,
+     "mass": [
+      "0.9993",
+      "0.9994"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.10586887357269452,
+     "ms": 2694,
+     "cost": 0.00010584000000000002,
+     "in_tok": 756,
+     "err": null,
+     "mass": [
+      "0.9997",
+      "0.9992"
+     ]
+    },
+    "jev": {
+     "ms": 258,
+     "in_tok": 625,
+     "cost": 2.625e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.25
+     },
+     "err": null,
+     "p_violation": 0.25
+    }
+   }
+  },
+  {
+   "id": "audit-040",
+   "target": 0,
+   "label": 1,
+   "class": "R3-instruction-echo",
+   "label_source": "constructed",
+   "cluster": "post-35867",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4034583846628029,
+     "ms": 884,
+     "cost": 4.9973e-05,
+     "in_tok": 826,
+     "err": null,
+     "mass": [
+      "0.9776",
+      "0.8732"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4752693479905471,
+     "ms": 836,
+     "cost": 3.6905e-05,
+     "in_tok": 610,
+     "err": null,
+     "mass": [
+      "0.9994",
+      "0.9995"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.016982158465030622,
+     "ms": 2807,
+     "cost": 0.00010304000000000002,
+     "in_tok": 736,
+     "err": null,
+     "mass": [
+      "0.9999",
+      "0.9997"
+     ]
+    },
+    "jev": {
+     "ms": 286,
+     "in_tok": 615,
+     "cost": 2.5830000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.29
+     },
+     "err": null,
+     "p_violation": 0.29
+    }
+   }
+  },
+  {
+   "id": "audit-041",
+   "target": 0,
+   "label": 1,
+   "class": "R1-header-only",
+   "label_source": "machine",
+   "cluster": "post-43820",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": null,
+     "ms": 970,
+     "cost": 4.9731e-05,
+     "in_tok": 822,
+     "err": "라벨 토큰이 상위에 없음",
+     "mass": [
+      "0.9797",
+      "라벨 토큰이 상위에 없음"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4414988976083142,
+     "ms": 884,
+     "cost": 3.6299999999999995e-05,
+     "in_tok": 600,
+     "err": null,
+     "mass": [
+      "0.9996",
+      "0.9984"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.05252897385631503,
+     "ms": 3250,
+     "cost": 0.00010332000000000002,
+     "in_tok": 738,
+     "err": null,
+     "mass": [
+      "0.9999",
+      "0.9978"
+     ]
+    },
+    "jev": {
+     "ms": 233,
+     "in_tok": 623,
+     "cost": 2.6166e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.83
+     },
+     "err": null,
+     "p_violation": 0.83
+    }
+   }
+  },
+  {
+   "id": "audit-042",
+   "target": 0,
+   "label": 1,
+   "class": "R5-model-artifact",
+   "label_source": "constructed",
+   "cluster": "post-320",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.44671631974518267,
+     "ms": 759,
+     "cost": 4.7431999999999996e-05,
+     "in_tok": 784,
+     "err": null,
+     "mass": [
+      "0.9658",
+      "0.7441"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9987606633837848,
+     "ms": 868,
+     "cost": 3.7993999999999996e-05,
+     "in_tok": 628,
+     "err": null,
+     "mass": [
+      "0.9996",
+      "0.9994"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.3491587479001409,
+     "ms": 2670,
+     "cost": 9.884000000000001e-05,
+     "in_tok": 706,
+     "err": null,
+     "mass": [
+      "0.9999",
+      "0.9988"
+     ]
+    },
+    "jev": {
+     "ms": 295,
+     "in_tok": 618,
+     "cost": 2.5956e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.94
+     },
+     "err": null,
+     "p_violation": 0.94
+    }
+   }
+  },
+  {
+   "id": "audit-043",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN",
+   "label_source": "machine",
+   "cluster": "post-35768",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": null,
+     "ms": 1202,
+     "cost": 5.1546e-05,
+     "in_tok": 852,
+     "err": "logprobs 없음",
+     "mass": [
+      "0.8213",
+      "logprobs 없음"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.23545473863227617,
+     "ms": 1055,
+     "cost": 3.7873e-05,
+     "in_tok": 626,
+     "err": null,
+     "mass": [
+      "0.9985",
+      "0.9989"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.0008000335473395909,
+     "ms": 2395,
+     "cost": 0.00010668,
+     "in_tok": 762,
+     "err": null,
+     "mass": [
+      "0.9999",
+      "0.9995"
+     ]
+    },
+    "jev": {
+     "ms": 299,
+     "in_tok": 628,
+     "cost": 2.6376e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "err": null,
+     "p_violation": 0.05
+    }
+   }
+  },
+  {
+   "id": "audit-044",
+   "target": 0,
+   "label": 1,
+   "class": "R1R2-header",
+   "label_source": "machine",
+   "cluster": "post-38665",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.42344335712589826,
+     "ms": 892,
+     "cost": 5.0699e-05,
+     "in_tok": 838,
+     "err": null,
+     "mass": [
+      "0.9940",
+      "0.8740"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.980805495251001,
+     "ms": 782,
+     "cost": 3.7873e-05,
+     "in_tok": 626,
+     "err": null,
+     "mass": [
+      "0.9996",
+      "0.9991"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9751777068133454,
+     "ms": 2373,
+     "cost": 0.00010528000000000001,
+     "in_tok": 752,
+     "err": null,
+     "mass": [
+      "0.9995",
+      "0.9995"
+     ]
+    },
+    "jev": {
+     "ms": 230,
+     "in_tok": 625,
+     "cost": 2.625e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.95
+     },
+     "err": null,
+     "p_violation": 0.95
+    }
+   }
+  },
+  {
+   "id": "audit-045",
+   "target": 0,
+   "label": 1,
+   "class": "R1R2-header",
+   "label_source": "machine",
+   "cluster": "post-44571",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.19407217482510908,
+     "ms": 886,
+     "cost": 5.1062e-05,
+     "in_tok": 844,
+     "err": null,
+     "mass": [
+      "0.9617",
+      "0.2803"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9714328263590507,
+     "ms": 775,
+     "cost": 3.6905e-05,
+     "in_tok": 610,
+     "err": null,
+     "mass": [
+      "0.9997",
+      "0.9987"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9847226952136414,
+     "ms": 2265,
+     "cost": 0.00010388000000000002,
+     "in_tok": 742,
+     "err": null,
+     "mass": [
+      "0.9999",
+      "0.9998"
+     ]
+    },
+    "jev": {
+     "ms": 321,
+     "in_tok": 625,
+     "cost": 2.625e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.95
+     },
+     "err": null,
+     "p_violation": 0.95
+    }
+   }
+  },
+  {
+   "id": "audit-046",
+   "target": 0,
+   "label": 1,
+   "class": "R6-placeholder",
+   "label_source": "constructed",
+   "cluster": "post-24358",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4467163237957347,
+     "ms": 903,
+     "cost": 4.7553e-05,
+     "in_tok": 786,
+     "err": null,
+     "mass": [
+      "0.9822",
+      "0.9120"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9274071486389572,
+     "ms": 843,
+     "cost": 3.6179e-05,
+     "in_tok": 598,
+     "err": null,
+     "mass": [
+      "0.9995",
+      "0.9991"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4132040128471711,
+     "ms": 7225,
+     "cost": 9.856e-05,
+     "in_tok": 704,
+     "err": null,
+     "mass": [
+      "0.9999",
+      "0.9990"
+     ]
+    },
+    "jev": {
+     "ms": 251,
+     "in_tok": 603,
+     "cost": 2.5326e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.96
+     },
+     "err": null,
+     "p_violation": 0.96
+    }
+   }
+  },
+  {
+   "id": "audit-047",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN-trap",
+   "label_source": "constructed",
+   "cluster": "post-28211",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": null,
+     "ms": 881,
+     "cost": 5.0457e-05,
+     "in_tok": 834,
+     "err": "라벨 토큰이 상위에 없음",
+     "mass": [
+      "0.9547",
+      "라벨 토큰이 상위에 없음"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.3559347648994096,
+     "ms": 812,
+     "cost": 3.7752e-05,
+     "in_tok": 624,
+     "err": null,
+     "mass": [
+      "0.9991",
+      "0.9995"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.0007579604787038519,
+     "ms": 2664,
+     "cost": 0.00010472,
+     "in_tok": 748,
+     "err": null,
+     "mass": [
+      "0.9999",
+      "0.9997"
+     ]
+    },
+    "jev": {
+     "ms": 244,
+     "in_tok": 626,
+     "cost": 2.6292000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.08
+     },
+     "err": null,
+     "p_violation": 0.08
+    }
+   }
+  },
+  {
+   "id": "audit-048",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN",
+   "label_source": "machine",
+   "cluster": "post-11317",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4034583732619979,
+     "ms": 1276,
+     "cost": 5.0215e-05,
+     "in_tok": 830,
+     "err": null,
+     "mass": [
+      "0.9934",
+      "0.8971"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.03265338513100737,
+     "ms": 1472,
+     "cost": 3.7267999999999996e-05,
+     "in_tok": 616,
+     "err": null,
+     "mass": [
+      "0.9997",
+      "0.9997"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.0017169360818661676,
+     "ms": 2574,
+     "cost": 0.00010248000000000001,
+     "in_tok": 732,
+     "err": null,
+     "mass": [
+      "0.9990",
+      "0.9999"
+     ]
+    },
+    "jev": {
+     "ms": 286,
+     "in_tok": 622,
+     "cost": 2.6124000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.1
+     },
+     "err": null,
+     "p_violation": 0.1
+    }
+   }
+  },
+  {
+   "id": "audit-049",
+   "target": 0,
+   "label": 1,
+   "class": "R4-code-fence",
+   "label_source": "constructed",
+   "cluster": "post-35058",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": null,
+     "ms": 1040,
+     "cost": 5.0457e-05,
+     "in_tok": 834,
+     "err": "라벨 토큰이 상위에 없음",
+     "mass": [
+      "라벨 토큰이 상위에 없음",
+      "라벨 토큰이 상위에 없음"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.6391542898902851,
+     "ms": 946,
+     "cost": 3.751e-05,
+     "in_tok": 620,
+     "err": null,
+     "mass": [
+      "0.9989",
+      "0.9988"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.003918901709461799,
+     "ms": 2099,
+     "cost": 0.00010500000000000002,
+     "in_tok": 750,
+     "err": null,
+     "mass": [
+      "0.9996",
+      "0.9997"
+     ]
+    },
+    "jev": {
+     "ms": 224,
+     "in_tok": 622,
+     "cost": 2.6124000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.72
+     },
+     "err": null,
+     "p_violation": 0.72
+    }
+   }
+  },
+  {
+   "id": "audit-050",
+   "target": 0,
+   "label": 1,
+   "class": "R6-placeholder",
+   "label_source": "constructed",
+   "cluster": "post-27540",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": null,
+     "ms": 6432,
+     "cost": 5.0094e-05,
+     "in_tok": 828,
+     "err": "logprobs 없음",
+     "mass": [
+      "0.9781",
+      "logprobs 없음"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.27709337164189096,
+     "ms": 1032,
+     "cost": 3.6784e-05,
+     "in_tok": 608,
+     "err": null,
+     "mass": [
+      "0.9995",
+      "0.9994"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.1531341512282154,
+     "ms": 2521,
+     "cost": 0.00010248000000000001,
+     "in_tok": 732,
+     "err": null,
+     "mass": [
+      "0.9998",
+      "0.9943"
+     ]
+    },
+    "jev": {
+     "ms": 232,
+     "in_tok": 616,
+     "cost": 2.5872000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.35
+     },
+     "err": null,
+     "p_violation": 0.35
+    }
+   }
+  },
+  {
+   "id": "audit-051",
+   "target": 0,
+   "label": 1,
+   "class": "R6-placeholder",
+   "label_source": "constructed",
+   "cluster": "post-17968",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.22669942608342586,
+     "ms": 991,
+     "cost": 5.1062e-05,
+     "in_tok": 844,
+     "err": null,
+     "mass": [
+      "0.9953",
+      "0.9914"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.18145451489577832,
+     "ms": 764,
+     "cost": 3.7752e-05,
+     "in_tok": 624,
+     "err": null,
+     "mass": [
+      "0.9992",
+      "0.9989"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.00573739867818388,
+     "ms": 3094,
+     "cost": 0.00010668,
+     "in_tok": 762,
+     "err": null,
+     "mass": [
+      "0.9998",
+      "0.9999"
+     ]
+    },
+    "jev": {
+     "ms": 241,
+     "in_tok": 630,
+     "cost": 2.6460000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.16
+     },
+     "err": null,
+     "p_violation": 0.16
+    }
+   }
+  },
+  {
+   "id": "audit-052",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN-trap",
+   "label_source": "constructed",
+   "cluster": "post-33653",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": null,
+     "ms": 3721,
+     "cost": 5.082e-05,
+     "in_tok": 840,
+     "err": "라벨 토큰이 상위에 없음",
+     "mass": [
+      "0.9749",
+      "라벨 토큰이 상위에 없음"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.17907409930644613,
+     "ms": 838,
+     "cost": 3.7146999999999995e-05,
+     "in_tok": 614,
+     "err": null,
+     "mass": [
+      "0.9994",
+      "0.9995"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.17506676725331247,
+     "ms": 2222,
+     "cost": 0.00010472,
+     "in_tok": 748,
+     "err": null,
+     "mass": [
+      "0.9996",
+      "0.9989"
+     ]
+    },
+    "jev": {
+     "ms": 223,
+     "in_tok": 616,
+     "cost": 2.5872000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.13
+     },
+     "err": null,
+     "p_violation": 0.13
+    }
+   }
+  },
+  {
+   "id": "audit-053",
+   "target": 0,
+   "label": 1,
+   "class": "R3-instruction-echo",
+   "label_source": "constructed",
+   "cluster": "post-11212",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": null,
+     "ms": 1388,
+     "cost": 5.1667e-05,
+     "in_tok": 854,
+     "err": "라벨 토큰이 상위에 없음",
+     "mass": [
+      "0.9572",
+      "라벨 토큰이 상위에 없음"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9756245540565243,
+     "ms": 1300,
+     "cost": 3.8236e-05,
+     "in_tok": 632,
+     "err": null,
+     "mass": [
+      "0.9994",
+      "0.9996"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.28004332584943314,
+     "ms": 1965,
+     "cost": 0.00010612000000000001,
+     "in_tok": 758,
+     "err": null,
+     "mass": [
+      "0.9995",
+      "0.9991"
+     ]
+    },
+    "jev": {
+     "ms": 224,
+     "in_tok": 631,
+     "cost": 2.6502000000000005e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.93
+     },
+     "err": null,
+     "p_violation": 0.93
+    }
+   }
+  },
+  {
+   "id": "audit-054",
+   "target": 0,
+   "label": 1,
+   "class": "R1R2-header",
+   "label_source": "machine",
+   "cluster": "post-41617",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": null,
+     "ms": 926,
+     "cost": 5.0335999999999994e-05,
+     "in_tok": 832,
+     "err": "라벨 토큰이 상위에 없음",
+     "mass": [
+      "0.6213",
+      "라벨 토큰이 상위에 없음"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9690095940559778,
+     "ms": 712,
+     "cost": 3.7631e-05,
+     "in_tok": 622,
+     "err": null,
+     "mass": [
+      "0.9995",
+      "0.9991"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9965283503638046,
+     "ms": 2136,
+     "cost": 0.00010332000000000002,
+     "in_tok": 738,
+     "err": null,
+     "mass": [
+      "0.9999",
+      "0.9996"
+     ]
+    },
+    "jev": {
+     "ms": 234,
+     "in_tok": 619,
+     "cost": 2.5998e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.95
+     },
+     "err": null,
+     "p_violation": 0.95
+    }
+   }
+  },
+  {
+   "id": "audit-055",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN",
+   "label_source": "machine",
+   "cluster": "post-30253",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": null,
+     "ms": 995,
+     "cost": 5.082e-05,
+     "in_tok": 840,
+     "err": "라벨 토큰이 상위에 없음",
+     "mass": [
+      "라벨 토큰이 상위에 없음",
+      "라벨 토큰이 상위에 없음"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.3077899180734323,
+     "ms": 1471,
+     "cost": 3.7267999999999996e-05,
+     "in_tok": 616,
+     "err": null,
+     "mass": [
+      "0.9986",
+      "0.9986"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.0033571473452829403,
+     "ms": 3645,
+     "cost": 0.00010444000000000001,
+     "in_tok": 746,
+     "err": null,
+     "mass": [
+      "0.9986",
+      "0.9993"
+     ]
+    },
+    "jev": {
+     "ms": 289,
+     "in_tok": 627,
+     "cost": 2.6334e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.1
+     },
+     "err": null,
+     "p_violation": 0.1
+    }
+   }
+  },
+  {
+   "id": "audit-056",
+   "target": 0,
+   "label": 1,
+   "class": "R5-model-artifact",
+   "label_source": "constructed",
+   "cluster": "post-34351",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5000000023467894,
+     "ms": 861,
+     "cost": 4.9609999999999994e-05,
+     "in_tok": 820,
+     "err": null,
+     "mass": [
+      "0.9809",
+      "0.6230"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9977476729499817,
+     "ms": 793,
+     "cost": 3.6420999999999996e-05,
+     "in_tok": 602,
+     "err": null,
+     "mass": [
+      "0.9998",
+      "0.9996"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.1192029330464445,
+     "ms": 2210,
+     "cost": 0.00010136000000000002,
+     "in_tok": 724,
+     "err": null,
+     "mass": [
+      "0.9997",
+      "0.9995"
+     ]
+    },
+    "jev": {
+     "ms": 263,
+     "in_tok": 614,
+     "cost": 2.5788e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.94
+     },
+     "err": null,
+     "p_violation": 0.94
+    }
+   }
+  },
+  {
+   "id": "audit-057",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN",
+   "label_source": "machine",
+   "cluster": "post-32261",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3708311242651966,
+     "ms": 2216,
+     "cost": 5.0578e-05,
+     "in_tok": 836,
+     "err": null,
+     "mass": [
+      "0.9896",
+      "0.9005"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.07951706768539384,
+     "ms": 2849,
+     "cost": 3.8357e-05,
+     "in_tok": 634,
+     "err": null,
+     "mass": [
+      "0.9990",
+      "0.9994"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.0033838494501314863,
+     "ms": 2711,
+     "cost": 0.00010472,
+     "in_tok": 748,
+     "err": null,
+     "mass": [
+      "0.9997",
+      "0.9999"
+     ]
+    },
+    "jev": {
+     "ms": 239,
+     "in_tok": 628,
+     "cost": 2.6376e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.08
+     },
+     "err": null,
+     "p_violation": 0.08
+    }
+   }
+  },
+  {
+   "id": "audit-058",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN",
+   "label_source": "machine",
+   "cluster": "post-9668",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": null,
+     "ms": 1048,
+     "cost": 5.0699e-05,
+     "in_tok": 838,
+     "err": "logprobs 없음",
+     "mass": [
+      "0.9892",
+      "logprobs 없음"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.04515958944847354,
+     "ms": 844,
+     "cost": 3.7993999999999996e-05,
+     "in_tok": 628,
+     "err": null,
+     "mass": [
+      "0.9991",
+      "0.9994"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.0037012606075667166,
+     "ms": 4738,
+     "cost": 0.00010612000000000001,
+     "in_tok": 758,
+     "err": null,
+     "mass": [
+      "0.9998",
+      "0.9998"
+     ]
+    },
+    "jev": {
+     "ms": 219,
+     "in_tok": 635,
+     "cost": 2.6670000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "err": null,
+     "p_violation": 0.06
+    }
+   }
+  },
+  {
+   "id": "audit-059",
+   "target": 0,
+   "label": 1,
+   "class": "R1-header-only",
+   "label_source": "machine",
+   "cluster": "post-44573",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": null,
+     "ms": 842,
+     "cost": 5.1546e-05,
+     "in_tok": 852,
+     "err": "logprobs 없음",
+     "mass": [
+      "0.9931",
+      "logprobs 없음"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9908570192310513,
+     "ms": 1041,
+     "cost": 3.7026e-05,
+     "in_tok": 612,
+     "err": null,
+     "mass": [
+      "0.9997",
+      "0.9991"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9894205532160419,
+     "ms": 9780,
+     "cost": 0.00010584000000000002,
+     "in_tok": 756,
+     "err": null,
+     "mass": [
+      "1.0000",
+      "0.9998"
+     ]
+    },
+    "jev": {
+     "ms": 440,
+     "in_tok": 628,
+     "cost": 2.6376e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.9
+     },
+     "err": null,
+     "p_violation": 0.9
+    }
+   }
+  },
+  {
+   "id": "audit-060",
+   "target": 0,
+   "label": 1,
+   "class": "R1R2-header",
+   "label_source": "machine",
+   "cluster": "post-43092",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": null,
+     "ms": 830,
+     "cost": 5.1667e-05,
+     "in_tok": 854,
+     "err": "라벨 토큰이 상위에 없음",
+     "mass": [
+      "0.9765",
+      "라벨 토큰이 상위에 없음"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9886794431543909,
+     "ms": 915,
+     "cost": 3.7267999999999996e-05,
+     "in_tok": 616,
+     "err": null,
+     "mass": [
+      "0.9995",
+      "0.9984"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9894367414514178,
+     "ms": 5758,
+     "cost": 0.00010556000000000001,
+     "in_tok": 754,
+     "err": null,
+     "mass": [
+      "0.9997",
+      "0.9998"
+     ]
+    },
+    "jev": {
+     "ms": 217,
+     "in_tok": 627,
+     "cost": 2.6334e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.95
+     },
+     "err": null,
+     "p_violation": 0.95
+    }
+   }
+  },
+  {
+   "id": "audit-061",
+   "target": 0,
+   "label": 1,
+   "class": "R1-header-only",
+   "label_source": "machine",
+   "cluster": "post-38664",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.22669942101465762,
+     "ms": 7859,
+     "cost": 5.1182999999999994e-05,
+     "in_tok": 846,
+     "err": null,
+     "mass": [
+      "0.9831",
+      "0.9024"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7247708130182109,
+     "ms": 706,
+     "cost": 3.7267999999999996e-05,
+     "in_tok": 616,
+     "err": null,
+     "mass": [
+      "0.9996",
+      "0.9987"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.006593528228591859,
+     "ms": 2463,
+     "cost": 0.00010416,
+     "in_tok": 744,
+     "err": null,
+     "mass": [
+      "0.9998",
+      "0.9986"
+     ]
+    },
+    "jev": {
+     "ms": 288,
+     "in_tok": 617,
+     "cost": 2.5914000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.88
+     },
+     "err": null,
+     "p_violation": 0.88
+    }
+   }
+  },
+  {
+   "id": "audit-062",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN-trap",
+   "label_source": "constructed",
+   "cluster": "post-28209",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.2879290887048383,
+     "ms": 897,
+     "cost": 5.0215e-05,
+     "in_tok": 830,
+     "err": null,
+     "mass": [
+      "0.9945",
+      "0.8181"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.3412729906879311,
+     "ms": 795,
+     "cost": 3.7267999999999996e-05,
+     "in_tok": 616,
+     "err": null,
+     "mass": [
+      "0.9994",
+      "0.9993"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.011320554100072388,
+     "ms": 2361,
+     "cost": 0.00010388000000000002,
+     "in_tok": 742,
+     "err": null,
+     "mass": [
+      "0.9999",
+      "0.9989"
+     ]
+    },
+    "jev": {
+     "ms": 226,
+     "in_tok": 619,
+     "cost": 2.5998e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.22
+     },
+     "err": null,
+     "p_violation": 0.22
+    }
+   }
+  },
+  {
+   "id": "audit-063",
+   "target": 0,
+   "label": 1,
+   "class": "R4-code-fence",
+   "label_source": "constructed",
+   "cluster": "post-20032",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": null,
+     "ms": 5762,
+     "cost": 5.1909e-05,
+     "in_tok": 858,
+     "err": "라벨 토큰이 상위에 없음",
+     "mass": [
+      "0.8733",
+      "라벨 토큰이 상위에 없음"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5878637256692315,
+     "ms": 1211,
+     "cost": 3.8236e-05,
+     "in_tok": 632,
+     "err": null,
+     "mass": [
+      "0.9991",
+      "0.9992"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.0008000334997869143,
+     "ms": 2387,
+     "cost": 0.00010696000000000002,
+     "in_tok": 764,
+     "err": null,
+     "mass": [
+      "0.9999",
+      "0.9998"
+     ]
+    },
+    "jev": {
+     "ms": 235,
+     "in_tok": 626,
+     "cost": 2.6292000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "err": null,
+     "p_violation": 0.06
+    }
+   }
+  },
+  {
+   "id": "audit-064",
+   "target": 0,
+   "label": 1,
+   "class": "R1-header-only",
+   "label_source": "machine",
+   "cluster": "post-41616",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": null,
+     "ms": 777,
+     "cost": 5.1546e-05,
+     "in_tok": 852,
+     "err": "라벨 토큰이 상위에 없음",
+     "mass": [
+      "0.9131",
+      "라벨 토큰이 상위에 없음"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9871925669968838,
+     "ms": 1732,
+     "cost": 3.8357e-05,
+     "in_tok": 634,
+     "err": null,
+     "mass": [
+      "0.9996",
+      "0.9989"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.6791787024438178,
+     "ms": 3638,
+     "cost": 0.00010640000000000001,
+     "in_tok": 760,
+     "err": null,
+     "mass": [
+      "0.9999",
+      "0.9988"
+     ]
+    },
+    "jev": {
+     "ms": 239,
+     "in_tok": 623,
+     "cost": 2.6166e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.88
+     },
+     "err": null,
+     "p_violation": 0.88
+    }
+   }
+  },
+  {
+   "id": "audit-065",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN",
+   "label_source": "machine",
+   "cluster": "post-302",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4458920153489897,
+     "ms": 787,
+     "cost": 4.9368e-05,
+     "in_tok": 816,
+     "err": null,
+     "mass": [
+      "0.9975",
+      "0.9795"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.013729270357147787,
+     "ms": 785,
+     "cost": 3.7631e-05,
+     "in_tok": 622,
+     "err": null,
+     "mass": [
+      "0.9996",
+      "0.9994"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.010504567687614572,
+     "ms": 3271,
+     "cost": 0.0001022,
+     "in_tok": 730,
+     "err": null,
+     "mass": [
+      "0.9999",
+      "0.9995"
+     ]
+    },
+    "jev": {
+     "ms": 274,
+     "in_tok": 623,
+     "cost": 2.6166e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.04
+     },
+     "err": null,
+     "p_violation": 0.04
+    }
+   }
+  },
+  {
+   "id": "audit-066",
+   "target": 0,
+   "label": 1,
+   "class": "R5-model-artifact",
+   "label_source": "constructed",
+   "cluster": "post-3918",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.44671633059105564,
+     "ms": 980,
+     "cost": 4.9126e-05,
+     "in_tok": 812,
+     "err": null,
+     "mass": [
+      "0.9838",
+      "0.9596"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.3148615946049085,
+     "ms": 1115,
+     "cost": 3.7026e-05,
+     "in_tok": 612,
+     "err": null,
+     "mass": [
+      "0.9987",
+      "0.9989"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.6697381844923402,
+     "ms": 3265,
+     "cost": 0.00010164000000000001,
+     "in_tok": 726,
+     "err": null,
+     "mass": [
+      "1.0000",
+      "0.9993"
+     ]
+    },
+    "jev": {
+     "ms": 346,
+     "in_tok": 620,
+     "cost": 2.604e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.49
+     },
+     "err": null,
+     "p_violation": 0.49
+    }
+   }
+  },
+  {
+   "id": "audit-067",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN",
+   "label_source": "machine",
+   "cluster": "post-21851",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.46411147248295914,
+     "ms": 999,
+     "cost": 5.0215e-05,
+     "in_tok": 830,
+     "err": null,
+     "mass": [
+      "0.9926",
+      "0.8485"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.05763404093094558,
+     "ms": 907,
+     "cost": 3.7752e-05,
+     "in_tok": 624,
+     "err": null,
+     "mass": [
+      "0.9996",
+      "0.9992"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.004746887516048568,
+     "ms": 4481,
+     "cost": 0.00010416,
+     "in_tok": 744,
+     "err": null,
+     "mass": [
+      "0.9999",
+      "0.9992"
+     ]
+    },
+    "jev": {
+     "ms": 276,
+     "in_tok": 625,
+     "cost": 2.625e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.09
+     },
+     "err": null,
+     "p_violation": 0.09
+    }
+   }
+  },
+  {
+   "id": "audit-068",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN",
+   "label_source": "machine",
+   "cluster": "post-5551",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": null,
+     "ms": 9067,
+     "cost": 4.9489e-05,
+     "in_tok": 818,
+     "err": "라벨 토큰이 상위에 없음",
+     "mass": [
+      "라벨 토큰이 상위에 없음",
+      "라벨 토큰이 상위에 없음"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.41213628153181336,
+     "ms": 722,
+     "cost": 3.6905e-05,
+     "in_tok": 610,
+     "err": null,
+     "mass": [
+      "0.9991",
+      "0.9993"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.15313415543507003,
+     "ms": 2417,
+     "cost": 0.00010080000000000001,
+     "in_tok": 720,
+     "err": null,
+     "mass": [
+      "0.9995",
+      "0.9956"
+     ]
+    },
+    "jev": {
+     "ms": 265,
+     "in_tok": 622,
+     "cost": 2.6124000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.08
+     },
+     "err": null,
+     "p_violation": 0.08
+    }
+   }
+  },
+  {
+   "id": "audit-069",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN",
+   "label_source": "machine",
+   "cluster": "post-22465",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.19407217207970667,
+     "ms": 1037,
+     "cost": 5.0699e-05,
+     "in_tok": 838,
+     "err": null,
+     "mass": [
+      "0.9966",
+      "0.9873"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.2757708631355959,
+     "ms": 958,
+     "cost": 3.6905e-05,
+     "in_tok": 610,
+     "err": null,
+     "mass": [
+      "0.9996",
+      "0.9995"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.00218304675181846,
+     "ms": 3088,
+     "cost": 0.00010332000000000002,
+     "in_tok": 738,
+     "err": null,
+     "mass": [
+      "0.9999",
+      "0.9996"
+     ]
+    },
+    "jev": {
+     "ms": 295,
+     "in_tok": 622,
+     "cost": 2.6124000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.13
+     },
+     "err": null,
+     "p_violation": 0.13
+    }
+   }
+  },
+  {
+   "id": "audit-070",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN-trap",
+   "label_source": "constructed",
+   "cluster": "post-309",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": null,
+     "ms": 10885,
+     "cost": 5.0335999999999994e-05,
+     "in_tok": 832,
+     "err": "라벨 토큰이 상위에 없음",
+     "mass": [
+      "0.7439",
+      "라벨 토큰이 상위에 없음"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.2570119952205463,
+     "ms": 3841,
+     "cost": 3.6784e-05,
+     "in_tok": 608,
+     "err": null,
+     "mass": [
+      "0.9988",
+      "0.9995"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.032706040842923056,
+     "ms": 2514,
+     "cost": 0.00010360000000000001,
+     "in_tok": 740,
+     "err": null,
+     "mass": [
+      "0.9995",
+      "0.9968"
+     ]
+    },
+    "jev": {
+     "ms": 306,
+     "in_tok": 625,
+     "cost": 2.625e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "err": null,
+     "p_violation": 0.06
+    }
+   }
+  },
+  {
+   "id": "audit-071",
+   "target": 0,
+   "label": 1,
+   "class": "R6-placeholder",
+   "label_source": "constructed",
+   "cluster": "post-304",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.47832763030896736,
+     "ms": 13754,
+     "cost": 4.9368e-05,
+     "in_tok": 816,
+     "err": null,
+     "mass": [
+      "0.9914",
+      "0.9951"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.998094926513103,
+     "ms": 766,
+     "cost": 3.7146999999999995e-05,
+     "in_tok": 614,
+     "err": null,
+     "mass": [
+      "0.9997",
+      "0.9996"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.12125608769220866,
+     "ms": 3853,
+     "cost": 0.00010248000000000001,
+     "in_tok": 732,
+     "err": null,
+     "mass": [
+      "0.9998",
+      "0.9983"
+     ]
+    },
+    "jev": {
+     "ms": 275,
+     "in_tok": 624,
+     "cost": 2.6208e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.97
+     },
+     "err": null,
+     "p_violation": 0.97
+    }
+   }
+  },
+  {
+   "id": "audit-072",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN",
+   "label_source": "machine",
+   "cluster": "post-26895",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3096014610110588,
+     "ms": 3421,
+     "cost": 5.082e-05,
+     "in_tok": 840,
+     "err": null,
+     "mass": [
+      "0.9923",
+      "0.9680"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.044854305936901324,
+     "ms": 877,
+     "cost": 3.8115000000000004e-05,
+     "in_tok": 630,
+     "err": null,
+     "mass": [
+      "0.9996",
+      "0.9995"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.004582738257296209,
+     "ms": 3373,
+     "cost": 0.00010556000000000001,
+     "in_tok": 754,
+     "err": null,
+     "mass": [
+      "0.9999",
+      "0.9999"
+     ]
+    },
+    "jev": {
+     "ms": 229,
+     "in_tok": 628,
+     "cost": 2.6376e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "err": null,
+     "p_violation": 0.06
+    }
+   }
+  },
+  {
+   "id": "audit-073",
+   "target": 0,
+   "label": 1,
+   "class": "R1R2-header",
+   "label_source": "machine",
+   "cluster": "post-39390",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.37083113287009173,
+     "ms": 3105,
+     "cost": 5.1424999999999996e-05,
+     "in_tok": 850,
+     "err": null,
+     "mass": [
+      "0.9818",
+      "0.5770"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9815278507009735,
+     "ms": 779,
+     "cost": 3.8357e-05,
+     "in_tok": 634,
+     "err": null,
+     "mass": [
+      "0.9995",
+      "0.9986"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.6593102890710101,
+     "ms": 3959,
+     "cost": 0.00010612000000000001,
+     "in_tok": 758,
+     "err": null,
+     "mass": [
+      "0.9998",
+      "0.9993"
+     ]
+    },
+    "jev": {
+     "ms": 218,
+     "in_tok": 626,
+     "cost": 2.6292000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.96
+     },
+     "err": null,
+     "p_violation": 0.96
+    }
+   }
+  },
+  {
+   "id": "audit-074",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN",
+   "label_source": "machine",
+   "cluster": "post-26896",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": null,
+     "ms": 986,
+     "cost": 5.1062e-05,
+     "in_tok": 844,
+     "err": "logprobs 없음",
+     "mass": [
+      "0.9746",
+      "logprobs 없음"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.09416829857838196,
+     "ms": 977,
+     "cost": 3.7146999999999995e-05,
+     "in_tok": 614,
+     "err": null,
+     "mass": [
+      "0.9995",
+      "0.9994"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.004436720946239182,
+     "ms": 2407,
+     "cost": 0.00010500000000000002,
+     "in_tok": 750,
+     "err": null,
+     "mass": [
+      "0.9999",
+      "0.9999"
+     ]
+    },
+    "jev": {
+     "ms": 278,
+     "in_tok": 624,
+     "cost": 2.6208e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.08
+     },
+     "err": null,
+     "p_violation": 0.08
+    }
+   }
+  },
+  {
+   "id": "audit-075",
+   "target": 0,
+   "label": 1,
+   "class": "R1R2-header",
+   "label_source": "machine",
+   "cluster": "post-40115",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": null,
+     "ms": 12757,
+     "cost": 5.1062e-05,
+     "in_tok": 844,
+     "err": "라벨 토큰이 상위에 없음",
+     "mass": [
+      "0.9319",
+      "라벨 토큰이 상위에 없음"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9843403506607526,
+     "ms": 801,
+     "cost": 3.7993999999999996e-05,
+     "in_tok": 628,
+     "err": null,
+     "mass": [
+      "0.9997",
+      "0.9991"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9890912697643357,
+     "ms": 3093,
+     "cost": 0.00010472,
+     "in_tok": 748,
+     "err": null,
+     "mass": [
+      "0.9996",
+      "0.9997"
+     ]
+    },
+    "jev": {
+     "ms": 230,
+     "in_tok": 620,
+     "cost": 2.604e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.94
+     },
+     "err": null,
+     "p_violation": 0.94
+    }
+   }
+  },
+  {
+   "id": "audit-076",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN-trap",
+   "label_source": "constructed",
+   "cluster": "post-18072",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": null,
+     "ms": 2514,
+     "cost": 5.0215e-05,
+     "in_tok": 830,
+     "err": "라벨 토큰이 상위에 없음",
+     "mass": [
+      "0.8724",
+      "라벨 토큰이 상위에 없음"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4265790221970123,
+     "ms": 959,
+     "cost": 3.8840999999999996e-05,
+     "in_tok": 642,
+     "err": null,
+     "mass": [
+      "0.9990",
+      "0.9987"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.030287255033165088,
+     "ms": 4963,
+     "cost": 0.00010388000000000002,
+     "in_tok": 742,
+     "err": null,
+     "mass": [
+      "0.9982",
+      "0.9995"
+     ]
+    },
+    "jev": {
+     "ms": 349,
+     "in_tok": 627,
+     "cost": 2.6334e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.09
+     },
+     "err": null,
+     "p_violation": 0.09
+    }
+   }
+  },
+  {
+   "id": "audit-077",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN",
+   "label_source": "machine",
+   "cluster": "post-29567",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": null,
+     "ms": 793,
+     "cost": 5.0457e-05,
+     "in_tok": 834,
+     "err": "라벨 토큰이 상위에 없음",
+     "mass": [
+      "라벨 토큰이 상위에 없음",
+      "라벨 토큰이 상위에 없음"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.12875833202136364,
+     "ms": 2032,
+     "cost": 3.751e-05,
+     "in_tok": 620,
+     "err": null,
+     "mass": [
+      "0.9995",
+      "0.9995"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.0008811864889567007,
+     "ms": 4123,
+     "cost": 0.00010332000000000002,
+     "in_tok": 738,
+     "err": null,
+     "mass": [
+      "0.9999",
+      "0.9985"
+     ]
+    },
+    "jev": {
+     "ms": 229,
+     "in_tok": 622,
+     "cost": 2.6124000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.09
+     },
+     "err": null,
+     "p_violation": 0.09
+    }
+   }
+  },
+  {
+   "id": "audit-078",
+   "target": 0,
+   "label": 1,
+   "class": "R1R2-header",
+   "label_source": "machine",
+   "cluster": "post-42351",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": null,
+     "ms": 857,
+     "cost": 5.2029999999999995e-05,
+     "in_tok": 860,
+     "err": "logprobs 없음",
+     "mass": [
+      "0.9860",
+      "logprobs 없음"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9939144567262727,
+     "ms": 842,
+     "cost": 3.7631e-05,
+     "in_tok": 622,
+     "err": null,
+     "mass": [
+      "0.9995",
+      "0.9986"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9887003814075103,
+     "ms": 2944,
+     "cost": 0.00010528000000000001,
+     "in_tok": 752,
+     "err": null,
+     "mass": [
+      "0.9996",
+      "0.9999"
+     ]
+    },
+    "jev": {
+     "ms": 240,
+     "in_tok": 625,
+     "cost": 2.625e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.96
+     },
+     "err": null,
+     "p_violation": 0.96
+    }
+   }
+  },
+  {
+   "id": "audit-079",
+   "target": 0,
+   "label": 1,
+   "class": "R4-code-fence",
+   "label_source": "constructed",
+   "cluster": "post-18657",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3892422282599324,
+     "ms": 3954,
+     "cost": 4.9247000000000005e-05,
+     "in_tok": 814,
+     "err": null,
+     "mass": [
+      "0.9912",
+      "0.6705"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.710682375293821,
+     "ms": 1036,
+     "cost": 3.7631e-05,
+     "in_tok": 622,
+     "err": null,
+     "mass": [
+      "0.9989",
+      "0.9987"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.0029984359183281937,
+     "ms": 2089,
+     "cost": 0.0001022,
+     "in_tok": 730,
+     "err": null,
+     "mass": [
+      "0.9998",
+      "0.9999"
+     ]
+    },
+    "jev": {
+     "ms": 368,
+     "in_tok": 625,
+     "cost": 2.625e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.17
+     },
+     "err": null,
+     "p_violation": 0.17
+    }
+   }
+  },
+  {
+   "id": "audit-080",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN",
+   "label_source": "machine",
+   "cluster": "post-6555",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": null,
+     "ms": 1270,
+     "cost": 4.9126e-05,
+     "in_tok": 812,
+     "err": "라벨 토큰이 상위에 없음",
+     "mass": [
+      "라벨 토큰이 상위에 없음",
+      "라벨 토큰이 상위에 없음"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.6220107390779221,
+     "ms": 854,
+     "cost": 3.8236e-05,
+     "in_tok": 632,
+     "err": null,
+     "mass": [
+      "0.8465",
+      "0.9346"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.23443424180182357,
+     "ms": 2684,
+     "cost": 0.00010136000000000002,
+     "in_tok": 724,
+     "err": null,
+     "mass": [
+      "0.9954",
+      "0.9926"
+     ]
+    },
+    "jev": {
+     "ms": 323,
+     "in_tok": 623,
+     "cost": 2.6166e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.1
+     },
+     "err": null,
+     "p_violation": 0.1
+    }
+   }
+  },
+  {
+   "id": "audit-081",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN",
+   "label_source": "machine",
+   "cluster": "post-29568",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": null,
+     "ms": 932,
+     "cost": 4.9851999999999996e-05,
+     "in_tok": 824,
+     "err": "라벨 토큰이 상위에 없음",
+     "mass": [
+      "0.7185",
+      "라벨 토큰이 상위에 없음"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.09742858451061569,
+     "ms": 1030,
+     "cost": 3.7026e-05,
+     "in_tok": 612,
+     "err": null,
+     "mass": [
+      "0.9993",
+      "0.9991"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.0009182661018505751,
+     "ms": 2749,
+     "cost": 0.00010276,
+     "in_tok": 734,
+     "err": null,
+     "mass": [
+      "0.9999",
+      "0.9998"
+     ]
+    },
+    "jev": {
+     "ms": 291,
+     "in_tok": 618,
+     "cost": 2.5956e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.07
+     },
+     "err": null,
+     "p_violation": 0.07
+    }
+   }
+  },
+  {
+   "id": "audit-082",
+   "target": 0,
+   "label": 1,
+   "class": "R1-header-only",
+   "label_source": "machine",
+   "cluster": "post-42349",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": null,
+     "ms": 818,
+     "cost": 5.2151e-05,
+     "in_tok": 862,
+     "err": "라벨 토큰이 상위에 없음",
+     "mass": [
+      "0.7364",
+      "라벨 토큰이 상위에 없음"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.8409752032791648,
+     "ms": 892,
+     "cost": 3.751e-05,
+     "in_tok": 620,
+     "err": null,
+     "mass": [
+      "0.9995",
+      "0.9989"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.17189933592855158,
+     "ms": 1943,
+     "cost": 0.00010528000000000001,
+     "in_tok": 752,
+     "err": null,
+     "mass": [
+      "0.9998",
+      "0.9989"
+     ]
+    },
+    "jev": {
+     "ms": 409,
+     "in_tok": 629,
+     "cost": 2.6418e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.85
+     },
+     "err": null,
+     "p_violation": 0.85
+    }
+   }
+  },
+  {
+   "id": "audit-083",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN-trap",
+   "label_source": "machine",
+   "cluster": "fixture-json-intro",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.43250017663831375,
+     "ms": 5490,
+     "cost": 4.5375e-05,
+     "in_tok": 750,
+     "err": null,
+     "mass": [
+      "0.9937",
+      "0.9701"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.018847774425580933,
+     "ms": 1172,
+     "cost": 3.4485e-05,
+     "in_tok": 570,
+     "err": null,
+     "mass": [
+      "0.9996",
+      "0.9997"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.014486573598445312,
+     "ms": 1982,
+     "cost": 9.380000000000002e-05,
+     "in_tok": 670,
+     "err": null,
+     "mass": [
+      "0.9999",
+      "0.9998"
+     ]
+    },
+    "jev": {
+     "ms": 299,
+     "in_tok": 591,
+     "cost": 2.4822000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.11
+     },
+     "err": null,
+     "p_violation": 0.11
+    }
+   }
+  },
+  {
+   "id": "audit-084",
+   "target": 0,
+   "label": 1,
+   "class": "R1R2-header",
+   "label_source": "machine",
+   "cluster": "post-40865",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.46838869532089894,
+     "ms": 1029,
+     "cost": 5.1424999999999996e-05,
+     "in_tok": 850,
+     "err": null,
+     "mass": [
+      "0.9524",
+      "0.8737"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9923648312678672,
+     "ms": 1619,
+     "cost": 3.7267999999999996e-05,
+     "in_tok": 616,
+     "err": null,
+     "mass": [
+      "0.9997",
+      "0.9985"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9046505342383104,
+     "ms": 2370,
+     "cost": 0.00010556000000000001,
+     "in_tok": 754,
+     "err": null,
+     "mass": [
+      "0.9992",
+      "0.9984"
+     ]
+    },
+    "jev": {
+     "ms": 236,
+     "in_tok": 620,
+     "cost": 2.604e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.94
+     },
+     "err": null,
+     "p_violation": 0.94
+    }
+   }
+  },
+  {
+   "id": "audit-085",
+   "target": 0,
+   "label": 1,
+   "class": "R5-model-artifact",
+   "label_source": "constructed",
+   "cluster": "post-23088",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.21248327309155834,
+     "ms": 3108,
+     "cost": 4.7795e-05,
+     "in_tok": 790,
+     "err": null,
+     "mass": [
+      "0.9902",
+      "0.9875"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9962987397109346,
+     "ms": 1045,
+     "cost": 3.6058e-05,
+     "in_tok": 596,
+     "err": null,
+     "mass": [
+      "0.9998",
+      "0.9994"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.2627939327842713,
+     "ms": 3110,
+     "cost": 9.800000000000001e-05,
+     "in_tok": 700,
+     "err": null,
+     "mass": [
+      "0.9994",
+      "0.9983"
+     ]
+    },
+    "jev": {
+     "ms": 225,
+     "in_tok": 613,
+     "cost": 2.5746000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.93
+     },
+     "err": null,
+     "p_violation": 0.93
+    }
+   }
+  },
+  {
+   "id": "audit-086",
+   "target": 0,
+   "label": 1,
+   "class": "R3-instruction-echo",
+   "label_source": "constructed",
+   "cluster": "post-28205",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.500000003911316,
+     "ms": 8642,
+     "cost": 5.2514e-05,
+     "in_tok": 868,
+     "err": null,
+     "mass": [
+      "0.9762",
+      "0.9165"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.600809197341712,
+     "ms": 1351,
+     "cost": 3.872e-05,
+     "in_tok": 640,
+     "err": null,
+     "mass": [
+      "0.9988",
+      "0.9992"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.19211676042197878,
+     "ms": 3020,
+     "cost": 0.00010864,
+     "in_tok": 776,
+     "err": null,
+     "mass": [
+      "0.9999",
+      "0.9951"
+     ]
+    },
+    "jev": {
+     "ms": 244,
+     "in_tok": 632,
+     "cost": 2.6544e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.15
+     },
+     "err": null,
+     "p_violation": 0.15
+    }
+   }
+  },
+  {
+   "id": "audit-087",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN-trap",
+   "label_source": "machine",
+   "cluster": "fixture-quoted-title",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": null,
+     "ms": 816,
+     "cost": 4.1986999999999996e-05,
+     "in_tok": 694,
+     "err": "logprobs 없음",
+     "mass": [
+      "0.9784",
+      "logprobs 없음"
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.08700227923734684,
+     "ms": 712,
+     "cost": 3.2065e-05,
+     "in_tok": 530,
+     "err": null,
+     "mass": [
+      "0.9993",
+      "0.9993"
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.0977365369941421,
+     "ms": 4660,
+     "cost": 8.652e-05,
+     "in_tok": 618,
+     "err": null,
+     "mass": [
+      "0.9997",
+      "0.9979"
+     ]
+    },
+    "jev": {
+     "ms": 226,
+     "in_tok": 558,
+     "cost": 2.3436e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "raw": {
+      "type": "noul",
+      "noul": 0.1
+     },
+     "err": null,
+     "p_violation": 0.1
+    }
+   }
+  }
+ ],
+ "agg": {
+  "glm": {
+   "n": 88,
+   "ok": 50,
+   "hit": 25,
+   "ms": 280809,
+   "cost": 0.004410208000000001
+  },
+  "qwen": {
+   "n": 88,
+   "ok": 88,
+   "hit": 75,
+   "ms": 104696,
+   "cost": 0.0032803100000000007
+  },
+  "deepseek": {
+   "n": 88,
+   "ok": 88,
+   "hit": 57,
+   "ms": 276068,
+   "cost": 0.009079280000000002
+  },
+  "jev": {
+   "n": 88,
+   "ok": 88,
+   "hit": 77,
+   "ms": 23440,
+   "cost": 0.002290932
+  }
+ }
+}
