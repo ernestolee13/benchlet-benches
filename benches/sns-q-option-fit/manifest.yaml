@@ -1,0 +1,148 @@
+name: sns-q-option-fit
+version: 1
+task_signature:
+  goal: fit
+  answer: binary
+  prob_use: accuracy_only
+  label: constructed
+  unit: pair
+  language: ko
+  n: 53
+question: 이 문항은 질문과 선택지가 서로 어긋나는가
+choices:
+- 어긋난다
+- 맞는다
+generator:
+  script: src/build_sns_fit.py
+  seed: 20260930
+source: 반반 원고 블록2 (질문과 선택지) 와 banban q_option_fit 규칙 (원자료 비공개)
+visibility: sample
+items_sha256: a14f7f3e4bda65cc182a25c79865ba3bd6d9571e58fc0cc6586b9087d78e253a
+review:
+  checks_run: 7
+  human_reviewed_fraction: 1.0
+  flagged: 35
+  decided: 0
+license: CC-BY-4.0
+domain:
+- q-option-fit
+- sns-column
+owner: ernestolee13
+n: 53
+published_at: '2026-09-30'
+type: binary
+classes:
+- F-prop-role
+- F-real
+- F-same-side
+- F-who-prop
+- OK
+label_source_mix:
+  machine: 0
+  constructed: 24
+  judged: 29
+  outcome: 0
+experiment:
+  date: '2026-09-30'
+  template: legacy-seed
+  runner: src/run.py (구식 러너, 팔 메타는 프리셋에서 채움)
+  arms:
+    glm:
+      model: z-ai/glm-4.7-flash
+      provider: cloudflare
+      family: GLM
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke: null
+    qwen:
+      model: qwen/qwen3.8-27b
+      provider: parasail
+      family: Qwen
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke: null
+    deepseek:
+      model: deepseek/deepseek-v4-flash
+      provider: digitalocean
+      family: DeepSeek
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.14
+      smoke: null
+    jev:
+      model: typesafe/jev-1.13
+      provider: openrouter
+      family: Jev
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.042
+      smoke: null
+  protocol:
+    decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
+    logprob_call:
+      max_tokens: 1
+      temperature: 0
+      logprobs: true
+      top_logprobs: 8
+      reasoning:
+        enabled: false
+    provider_pin: provider.only=[pin], allow_fallbacks=false, require_parameters=true
+    binary: '극성 반전 2회 호출 평균: p = ½[P(A|choices[0]=A) + P(B|choices[0]=B)]'
+    multiclass: 항목별 결정론적 셔플 뒤 원 인덱스로 복원(generic) 또는 파일에 든 셔플 그대로(legacy-seed)
+    typed: Jev noul(이진)/choice(다지), 질문을 instructions 로 그대로 전달
+    label_mass: 상위 8토큰 중 라벨 토큰 질량 < 0.5 이면 오류로 두고 세지 않음
+    renormalize: 라벨 토큰 확률을 라벨 집합 안에서 재정규화
+  items_sha256: null
+results:
+- results/sns-q-option-fit-run.json
+result_summary:
+  glm:
+    acc: 0.49056603773584906
+    ci95:
+    - 0.36124029356039444
+    - 0.6211669574670219
+    auroc: 0.6353276353276354
+    brier: 0.2674814535810008
+    n: 53
+    prob_source: logprob
+    model: z-ai/glm-4.7-flash
+    source_badge: author-run
+  qwen:
+    acc: 0.8301886792452831
+    ci95:
+    - 0.7077446317626587
+    - 0.9080015822777624
+    auroc: 0.9066951566951567
+    brier: 0.14815267541885885
+    n: 53
+    prob_source: logprob
+    model: qwen/qwen3.8-27b
+    source_badge: author-run
+  deepseek:
+    acc: 0.5094339622641509
+    ci95:
+    - 0.3788330425329779
+    - 0.6387597064396053
+    auroc: 0.5712250712250713
+    brier: 0.3206598003622822
+    n: 53
+    prob_source: logprob
+    model: deepseek/deepseek-v4-flash
+    source_badge: author-run
+  jev:
+    acc: 0.7169811320754716
+    ci95:
+    - 0.5842945799989226
+    - 0.8203386463704966
+    auroc: 0.8418803418803419
+    brier: 0.1774396226415094
+    n: 53
+    prob_source: typed
+    model: typesafe/jev-1.13
+    source_badge: author-run
