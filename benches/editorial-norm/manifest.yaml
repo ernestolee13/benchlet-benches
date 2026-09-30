@@ -1,0 +1,155 @@
+name: editorial-norm
+version: 1
+task_signature:
+  goal: compliance
+  answer: binary
+  prob_use: accuracy_only
+  label: machine
+  unit: sentence
+  language: ko
+generator:
+  script: src/build_editorial_norm.py
+  seed: 20260929
+source: 뉴스 승인 요약 원자료(비공개)에서 추출. 음성 30 원본, 양성 30 심기·기계 판정
+domain:
+- editorial-norm
+- ko-news-summary
+visibility: sample
+items_sha256: 76d35d43a42e3ae2679621f90f12d615cd8d2fd5874bece852ae3ef379aada6d
+license: CC-BY-4.0
+review:
+  checks_run: 7
+  human_reviewed_fraction: 1.0
+  flagged: 15
+  decided: 0
+note: 씨앗 5과제. 구식 스키마(state·options·label)이고 로더가 확장 형식으로 바꾼다
+owner: ernestolee13
+n: 60
+choices:
+- 위반
+- 통과
+question: '이 요약 문장이 편집 규범을 위반하는가
+
+
+  요약은 사실만 담은 한 문장이어야 한다. 다음은 규범 위반이다. (1) 판단·비난이 담긴 어휘를 쓴다 (2) 강조나 논평을 시사하는 부사를 쓴다
+  (예: 매우, 무려, 심지어, 결국) (3) 두 문장 이상이다 (4) 추정·의혹 표현으로 끝난다 (5) 느낌표나 물음표로 끝난다 (6) 사실 서술에
+  기자나 편집자의 평가를 덧붙인다.'
+published_at: '2026-09-30'
+type: binary
+classes:
+- CLEAN
+- W1
+- W2
+- W3
+- W4
+- W5
+- W6
+label_source_mix:
+  machine: 50
+  constructed: 10
+  judged: 0
+  outcome: 0
+experiment:
+  date: '2026-09-30'
+  template: legacy-seed
+  runner: src/run.py (구식 러너, 팔 메타는 프리셋에서 채움)
+  arms:
+    glm:
+      model: z-ai/glm-4.7-flash
+      provider: cloudflare
+      family: GLM
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke: null
+    qwen:
+      model: qwen/qwen3.8-27b
+      provider: parasail
+      family: Qwen
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke: null
+    deepseek:
+      model: deepseek/deepseek-v4-flash
+      provider: digitalocean
+      family: DeepSeek
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.14
+      smoke: null
+    jev:
+      model: typesafe/jev-1.13
+      provider: openrouter
+      family: Jev
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.042
+      smoke: null
+  protocol:
+    decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
+    logprob_call:
+      max_tokens: 1
+      temperature: 0
+      logprobs: true
+      top_logprobs: 8
+      reasoning:
+        enabled: false
+    provider_pin: provider.only=[pin], allow_fallbacks=false, require_parameters=true
+    binary: '극성 반전 2회 호출 평균: p = ½[P(A|choices[0]=A) + P(B|choices[0]=B)]'
+    multiclass: 항목별 결정론적 셔플 뒤 원 인덱스로 복원(generic) 또는 파일에 든 셔플 그대로(legacy-seed)
+    typed: Jev noul(이진)/choice(다지), 질문을 instructions 로 그대로 전달
+    label_mass: 상위 8토큰 중 라벨 토큰 질량 < 0.5 이면 오류로 두고 세지 않음
+    renormalize: 라벨 토큰 확률을 라벨 집합 안에서 재정규화
+  items_sha256: null
+results:
+- results/norm-run.json
+result_summary:
+  glm:
+    acc: 0.6
+    ci95:
+    - 0.47365824394206846
+    - 0.7143069699623449
+    auroc: 0.6844444444444444
+    brier: 0.23601274948740766
+    n: 60
+    prob_source: logprob
+    model: z-ai/glm-4.7-flash
+    source_badge: author-run
+  qwen:
+    acc: 0.6333333333333333
+    ci95:
+    - 0.5068276736679672
+    - 0.7437926115379172
+    auroc: 0.9944444444444445
+    brier: 0.22860297482010428
+    n: 60
+    prob_source: logprob
+    model: qwen/qwen3.8-27b
+    source_badge: author-run
+  deepseek:
+    acc: 0.9
+    ci95:
+    - 0.7985030550748896
+    - 0.9533578005427641
+    auroc: 0.9688888888888889
+    brier: 0.07296061272264688
+    n: 60
+    prob_source: logprob
+    model: deepseek/deepseek-v4-flash
+    source_badge: author-run
+  jev:
+    acc: 0.9666666666666667
+    ci95:
+    - 0.8863601247107462
+    - 0.9908108735098499
+    auroc: 0.9988888888888889
+    brier: 0.03948166666666666
+    n: 60
+    prob_source: typed
+    model: typesafe/jev-1.13
+    source_badge: author-run
