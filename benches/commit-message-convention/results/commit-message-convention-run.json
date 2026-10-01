@@ -1,0 +1,2551 @@
+{
+ "task": "commit-message-convention",
+ "bench": "commit-message-convention@1",
+ "items_sha256": "88a1b29f6f0d77592ac2f74dafb122e250ca29ca3b7596f9aba44f38da09f247",
+ "template": "generic",
+ "date": "2026-10-01",
+ "arms": {
+  "glm": {
+   "model": "z-ai/glm-4.7-flash",
+   "provider": "cloudflare",
+   "family": "GLM",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.0605,
+   "smoke": {
+    "arm": "glm",
+    "mode": "logprob",
+    "usable": false,
+    "reasons": [
+     "3회 재현 편차 0.12 > 0.05",
+     "뻔한 5건 중 1건 틀림 (commit-message-convention-007). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점"
+    ],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.6117,
+    "spread": 0.1224593312018546,
+    "distinct_p": 5,
+    "n_calls": 13,
+    "smoke_acc": 0.8,
+    "cost": 0.000165407,
+    "per_item": [
+     {
+      "id": "commit-message-convention-000",
+      "target": 0,
+      "hit": 1,
+      "p": 0.5612
+     },
+     {
+      "id": "commit-message-convention-004",
+      "target": 0,
+      "hit": 1,
+      "p": 0.5976
+     },
+     {
+      "id": "commit-message-convention-007",
+      "target": 0,
+      "hit": 0,
+      "p": 0.3412
+     },
+     {
+      "id": "commit-message-convention-001",
+      "target": 1,
+      "hit": 1,
+      "p": 0.3845
+     },
+     {
+      "id": "commit-message-convention-003",
+      "target": 1,
+      "hit": 1,
+      "p": 0.3775
+     }
+    ]
+   }
+  },
+  "qwen": {
+   "model": "qwen/qwen3.8-27b",
+   "provider": "parasail",
+   "family": "Qwen",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.0605,
+   "smoke": {
+    "arm": "qwen",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [
+     "뻔한 5건 중 1건 틀림 (commit-message-convention-007). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점"
+    ],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9919,
+    "spread": 0.0,
+    "distinct_p": 9,
+    "n_calls": 13,
+    "smoke_acc": 0.8,
+    "cost": 0.00013267649999999998,
+    "per_item": [
+     {
+      "id": "commit-message-convention-000",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9847
+     },
+     {
+      "id": "commit-message-convention-004",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9956
+     },
+     {
+      "id": "commit-message-convention-007",
+      "target": 0,
+      "hit": 0,
+      "p": 0.1327
+     },
+     {
+      "id": "commit-message-convention-001",
+      "target": 1,
+      "hit": 1,
+      "p": 0.2462
+     },
+     {
+      "id": "commit-message-convention-003",
+      "target": 1,
+      "hit": 1,
+      "p": 0.1435
+     }
+    ]
+   }
+  },
+  "deepseek": {
+   "model": "deepseek/deepseek-v4-flash",
+   "provider": "digitalocean",
+   "family": "DeepSeek",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.14,
+   "smoke": {
+    "arm": "deepseek",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [
+     "뻔한 5건 중 1건 틀림 (commit-message-convention-007). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점"
+    ],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9985,
+    "spread": 0.00036697736570390216,
+    "distinct_p": 10,
+    "n_calls": 13,
+    "smoke_acc": 0.8,
+    "cost": 0.00033697999999999996,
+    "per_item": [
+     {
+      "id": "commit-message-convention-000",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9998
+     },
+     {
+      "id": "commit-message-convention-004",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9997
+     },
+     {
+      "id": "commit-message-convention-007",
+      "target": 0,
+      "hit": 0,
+      "p": 0.0253
+     },
+     {
+      "id": "commit-message-convention-001",
+      "target": 1,
+      "hit": 1,
+      "p": 0.2344
+     },
+     {
+      "id": "commit-message-convention-003",
+      "target": 1,
+      "hit": 1,
+      "p": 0.0967
+     }
+    ]
+   }
+  },
+  "jev": {
+   "model": "typesafe/jev-1.13",
+   "provider": "openrouter",
+   "family": "Jev",
+   "mode": "typed",
+   "prob_source": "typed",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.042,
+   "smoke": {
+    "arm": "jev",
+    "mode": "typed",
+    "usable": true,
+    "reasons": [
+     "뻔한 5건 중 1건 틀림 (commit-message-convention-007). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점"
+    ],
+    "has_logprobs": null,
+    "reasoning_tokens_zero": null,
+    "provider_match": null,
+    "mass_min": null,
+    "spread": null,
+    "distinct_p": null,
+    "n_calls": 5,
+    "smoke_acc": 0.8,
+    "cost": 8.979600000000002e-05,
+    "per_item": [
+     {
+      "id": "commit-message-convention-000",
+      "target": 0,
+      "hit": 1,
+      "p": 0.73,
+      "pred": null
+     },
+     {
+      "id": "commit-message-convention-004",
+      "target": 0,
+      "hit": 1,
+      "p": 0.95,
+      "pred": null
+     },
+     {
+      "id": "commit-message-convention-007",
+      "target": 0,
+      "hit": 0,
+      "p": 0.12,
+      "pred": null
+     },
+     {
+      "id": "commit-message-convention-001",
+      "target": 1,
+      "hit": 1,
+      "p": 0.11,
+      "pred": null
+     },
+     {
+      "id": "commit-message-convention-003",
+      "target": 1,
+      "hit": 1,
+      "p": 0.1,
+      "pred": null
+     }
+    ]
+   }
+  }
+ },
+ "items": [
+  {
+   "id": "commit-message-convention-000",
+   "target": 0,
+   "label": 1,
+   "class": "R3-period",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6767589549159296,
+     "ms": 774,
+     "cost": 2.541e-05,
+     "in_tok": 420,
+     "err": null,
+     "mass": [
+      0.9971,
+      0.7804
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9887021101474371,
+     "ms": 762,
+     "cost": 2.0448999999999997e-05,
+     "in_tok": 338,
+     "err": null,
+     "mass": [
+      0.9987,
+      0.9981
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9997472983192628,
+     "ms": 3093,
+     "cost": 5.1800000000000005e-05,
+     "in_tok": 370,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 234,
+     "in_tok": 427,
+     "cost": 1.7934e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.58
+     },
+     "p_violation": 0.58
+    }
+   }
+  },
+  {
+   "id": "commit-message-convention-001",
+   "target": 1,
+   "label": 0,
+   "class": "OK",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.34121276301440584,
+     "ms": 790,
+     "cost": 2.5531e-05,
+     "in_tok": 422,
+     "err": null,
+     "mass": [
+      0.9961,
+      0.7493
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.246216226297004,
+     "ms": 1077,
+     "cost": 2.0448999999999997e-05,
+     "in_tok": 338,
+     "err": null,
+     "mass": [
+      0.9972,
+      0.9956
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.08301670080674335,
+     "ms": 2235,
+     "cost": 5.1800000000000005e-05,
+     "in_tok": 370,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9985
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 225,
+     "in_tok": 429,
+     "cost": 1.8018000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1
+     },
+     "p_violation": 0.1
+    }
+   }
+  },
+  {
+   "id": "commit-message-convention-002",
+   "target": 0,
+   "label": 1,
+   "class": "R3-period",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5542996295735674,
+     "ms": 9575,
+     "cost": 2.5167999999999997e-05,
+     "in_tok": 416,
+     "err": null,
+     "mass": [
+      0.9969,
+      0.6876
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9897420188760322,
+     "ms": 863,
+     "cost": 2.0206999999999998e-05,
+     "in_tok": 334,
+     "err": null,
+     "mass": [
+      0.9984,
+      0.9973
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9995930154966306,
+     "ms": 2852,
+     "cost": 5.1240000000000004e-05,
+     "in_tok": 366,
+     "err": null,
+     "mass": [
+      0.9999,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 298,
+     "in_tok": 425,
+     "cost": 1.785e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.67
+     },
+     "p_violation": 0.67
+    }
+   }
+  },
+  {
+   "id": "commit-message-convention-003",
+   "target": 1,
+   "label": 0,
+   "class": "OK",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3232410520877267,
+     "ms": 911,
+     "cost": 2.5531e-05,
+     "in_tok": 422,
+     "err": null,
+     "mass": [
+      0.9958,
+      0.9463
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.1434561369041698,
+     "ms": 1335,
+     "cost": 2.0448999999999997e-05,
+     "in_tok": 338,
+     "err": null,
+     "mass": [
+      0.9944,
+      0.9919
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.09670623109676897,
+     "ms": 2683,
+     "cost": 5.208e-05,
+     "in_tok": 372,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 220,
+     "in_tok": 429,
+     "cost": 1.8018000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.09
+     },
+     "p_violation": 0.09
+    }
+   }
+  },
+  {
+   "id": "commit-message-convention-004",
+   "target": 0,
+   "label": 1,
+   "class": "R1-prefix",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6587872380968218,
+     "ms": 811,
+     "cost": 2.5167999999999997e-05,
+     "in_tok": 416,
+     "err": null,
+     "mass": [
+      0.9874,
+      0.7623
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9961941048813103,
+     "ms": 1168,
+     "cost": 2.0086e-05,
+     "in_tok": 332,
+     "err": null,
+     "mass": [
+      0.9986,
+      0.9972
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999007500837037,
+     "ms": 3123,
+     "cost": 5.1240000000000004e-05,
+     "in_tok": 366,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 296,
+     "in_tok": 424,
+     "cost": 1.7808000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.96
+     },
+     "p_violation": 0.96
+    }
+   }
+  },
+  {
+   "id": "commit-message-convention-005",
+   "target": 0,
+   "label": 1,
+   "class": "R1-prefix",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4387703343990727,
+     "ms": 754,
+     "cost": 2.5652e-05,
+     "in_tok": 424,
+     "err": null,
+     "mass": [
+      0.997,
+      0.9811
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9763507789672236,
+     "ms": 823,
+     "cost": 2.057e-05,
+     "in_tok": 340,
+     "err": null,
+     "mass": [
+      0.9964,
+      0.9958
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9996218971400792,
+     "ms": 2385,
+     "cost": 5.208e-05,
+     "in_tok": 372,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 252,
+     "in_tok": 428,
+     "cost": 1.7976000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.92
+     },
+     "p_violation": 0.92
+    }
+   }
+  },
+  {
+   "id": "commit-message-convention-006",
+   "target": 1,
+   "label": 0,
+   "class": "OK",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.26894143015923355,
+     "ms": 901,
+     "cost": 2.5167999999999997e-05,
+     "in_tok": 416,
+     "err": null,
+     "mass": [
+      0.9966,
+      0.8422
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.06037711293481612,
+     "ms": 984,
+     "cost": 2.0086e-05,
+     "in_tok": 332,
+     "err": null,
+     "mass": [
+      0.9969,
+      0.9952
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.0005701137438210541,
+     "ms": 2163,
+     "cost": 5.096000000000001e-05,
+     "in_tok": 364,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 276,
+     "in_tok": 424,
+     "cost": 1.7808000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "p_violation": 0.06
+    }
+   }
+  },
+  {
+   "id": "commit-message-convention-007",
+   "target": 0,
+   "label": 1,
+   "class": "R2-length",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3412127607919505,
+     "ms": 930,
+     "cost": 2.5652e-05,
+     "in_tok": 424,
+     "err": null,
+     "mass": [
+      0.9944,
+      0.8205
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.1327086813338715,
+     "ms": 866,
+     "cost": 2.057e-05,
+     "in_tok": 340,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9982
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.01406362647474638,
+     "ms": 3195,
+     "cost": 5.236e-05,
+     "in_tok": 374,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 240,
+     "in_tok": 429,
+     "cost": 1.8018000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.13
+     },
+     "p_violation": 0.13
+    }
+   }
+  },
+  {
+   "id": "commit-message-convention-008",
+   "target": 0,
+   "label": 1,
+   "class": "R4-case",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.27998310330590737,
+     "ms": 936,
+     "cost": 2.5167999999999997e-05,
+     "in_tok": 416,
+     "err": null,
+     "mass": [
+      0.9973,
+      0.8451
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5398518443546229,
+     "ms": 1069,
+     "cost": 2.0086e-05,
+     "in_tok": 332,
+     "err": null,
+     "mass": [
+      0.9953,
+      0.9947
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.003846375249660533,
+     "ms": 3798,
+     "cost": 5.152000000000001e-05,
+     "in_tok": 368,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 274,
+     "in_tok": 424,
+     "cost": 1.7808000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1
+     },
+     "p_violation": 0.1
+    }
+   }
+  },
+  {
+   "id": "commit-message-convention-009",
+   "target": 1,
+   "label": 0,
+   "class": "OK",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3775406687981454,
+     "ms": 803,
+     "cost": 2.541e-05,
+     "in_tok": 420,
+     "err": null,
+     "mass": [
+      0.9946,
+      0.8974
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.12914184877991974,
+     "ms": 790,
+     "cost": 2.0328e-05,
+     "in_tok": 336,
+     "err": null,
+     "mass": [
+      0.995,
+      0.9952
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.0010786206039952982,
+     "ms": 2431,
+     "cost": 5.1800000000000005e-05,
+     "in_tok": 370,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 229,
+     "in_tok": 426,
+     "cost": 1.7892e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1
+     },
+     "p_violation": 0.1
+    }
+   }
+  },
+  {
+   "id": "commit-message-convention-010",
+   "target": 0,
+   "label": 1,
+   "class": "R2-length",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5000000087892382,
+     "ms": 1037,
+     "cost": 2.5894e-05,
+     "in_tok": 428,
+     "err": null,
+     "mass": [
+      0.9962,
+      0.8528
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.34121275968072284,
+     "ms": 789,
+     "cost": 2.0812e-05,
+     "in_tok": 344,
+     "err": null,
+     "mass": [
+      0.9927,
+      0.9944
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.6767589584409854,
+     "ms": 3213,
+     "cost": 5.292000000000001e-05,
+     "in_tok": 378,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 253,
+     "in_tok": 431,
+     "cost": 1.8102e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.31
+     },
+     "p_violation": 0.31
+    }
+   }
+  },
+  {
+   "id": "commit-message-convention-011",
+   "target": 1,
+   "label": 0,
+   "class": "OK",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.2689414242997413,
+     "ms": 796,
+     "cost": 2.5531e-05,
+     "in_tok": 422,
+     "err": null,
+     "mass": [
+      0.9957,
+      0.8979
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.15551457306581087,
+     "ms": 982,
+     "cost": 2.0448999999999997e-05,
+     "in_tok": 338,
+     "err": null,
+     "mass": [
+      0.9955,
+      0.9972
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.0020457912959127274,
+     "ms": 2922,
+     "cost": 5.1800000000000005e-05,
+     "in_tok": 370,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 238,
+     "in_tok": 427,
+     "cost": 1.7934e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.08
+     },
+     "p_violation": 0.08
+    }
+   }
+  },
+  {
+   "id": "commit-message-convention-012",
+   "target": 1,
+   "label": 0,
+   "class": "OK",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.32324104508407026,
+     "ms": 1024,
+     "cost": 2.5167999999999997e-05,
+     "in_tok": 416,
+     "err": null,
+     "mass": [
+      0.9965,
+      0.6513
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.11791442591755047,
+     "ms": 1139,
+     "cost": 2.0086e-05,
+     "in_tok": 332,
+     "err": null,
+     "mass": [
+      0.9955,
+      0.9968
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.0035617043469760375,
+     "ms": 1934,
+     "cost": 5.1240000000000004e-05,
+     "in_tok": 366,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 286,
+     "in_tok": 424,
+     "cost": 1.7808000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.07
+     },
+     "p_violation": 0.07
+    }
+   }
+  },
+  {
+   "id": "commit-message-convention-013",
+   "target": 1,
+   "label": 0,
+   "class": "OK",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.2799831007471616,
+     "ms": 8672,
+     "cost": 2.5531e-05,
+     "in_tok": 422,
+     "err": null,
+     "mass": [
+      0.9961,
+      0.8959
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.251341432151184,
+     "ms": 789,
+     "cost": 2.0448999999999997e-05,
+     "in_tok": 338,
+     "err": null,
+     "mass": [
+      0.9935,
+      0.9971
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.07425757213291373,
+     "ms": 2803,
+     "cost": 5.1800000000000005e-05,
+     "in_tok": 370,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 270,
+     "in_tok": 428,
+     "cost": 1.7976000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.35
+     },
+     "p_violation": 0.35
+    }
+   }
+  },
+  {
+   "id": "commit-message-convention-014",
+   "target": 0,
+   "label": 1,
+   "class": "R2-length",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.38447070482550544,
+     "ms": 1321,
+     "cost": 2.6014999999999997e-05,
+     "in_tok": 430,
+     "err": null,
+     "mass": [
+      0.9972,
+      0.9707
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.29487945859246034,
+     "ms": 1001,
+     "cost": 2.0933e-05,
+     "in_tok": 346,
+     "err": null,
+     "mass": [
+      0.9963,
+      0.9957
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.19580214698475124,
+     "ms": 2857,
+     "cost": 5.348000000000001e-05,
+     "in_tok": 382,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 347,
+     "in_tok": 432,
+     "cost": 1.8144e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.23
+     },
+     "p_violation": 0.23
+    }
+   }
+  },
+  {
+   "id": "commit-message-convention-015",
+   "target": 1,
+   "label": 0,
+   "class": "OK",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3775406758018019,
+     "ms": 827,
+     "cost": 2.541e-05,
+     "in_tok": 420,
+     "err": null,
+     "mass": [
+      0.9946,
+      0.7122
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.10270144467442843,
+     "ms": 936,
+     "cost": 2.0328e-05,
+     "in_tok": 336,
+     "err": null,
+     "mass": [
+      0.9939,
+      0.9965
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.0043144639326613875,
+     "ms": 2826,
+     "cost": 5.1800000000000005e-05,
+     "in_tok": 370,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 221,
+     "in_tok": 426,
+     "cost": 1.7892e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "p_violation": 0.05
+    }
+   }
+  },
+  {
+   "id": "commit-message-convention-016",
+   "target": 0,
+   "label": 1,
+   "class": "R1-prefix",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3232410450840703,
+     "ms": 24253,
+     "cost": 2.5167999999999997e-05,
+     "in_tok": 416,
+     "err": null,
+     "mass": [
+      0.9949,
+      0.8446
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.994043511219834,
+     "ms": 1186,
+     "cost": 2.0086e-05,
+     "in_tok": 332,
+     "err": null,
+     "mass": [
+      0.9971,
+      0.9966
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9998502352920002,
+     "ms": 1721,
+     "cost": 5.096000000000001e-05,
+     "in_tok": 364,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 259,
+     "in_tok": 424,
+     "cost": 1.7808000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.83
+     },
+     "p_violation": 0.83
+    }
+   }
+  },
+  {
+   "id": "commit-message-convention-017",
+   "target": 0,
+   "label": 1,
+   "class": "R1-prefix",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.49999999649817173,
+     "ms": 871,
+     "cost": 2.5289e-05,
+     "in_tok": 418,
+     "err": null,
+     "mass": [
+      0.9966,
+      0.6087
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9847910697056672,
+     "ms": 981,
+     "cost": 2.0206999999999998e-05,
+     "in_tok": 334,
+     "err": null,
+     "mass": [
+      0.9984,
+      0.9969
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9848883601783178,
+     "ms": 2814,
+     "cost": 5.152000000000001e-05,
+     "in_tok": 368,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 230,
+     "in_tok": 425,
+     "cost": 1.785e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.8
+     },
+     "p_violation": 0.8
+    }
+   }
+  },
+  {
+   "id": "commit-message-convention-018",
+   "target": 1,
+   "label": 0,
+   "class": "OK",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.18242552491758404,
+     "ms": 830,
+     "cost": 2.5773e-05,
+     "in_tok": 426,
+     "err": null,
+     "mass": [
+      0.997,
+      0.9413
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0761444566866431,
+     "ms": 958,
+     "cost": 2.0691e-05,
+     "in_tok": 342,
+     "err": null,
+     "mass": [
+      0.9978,
+      0.9978
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.0011113458399265464,
+     "ms": 2436,
+     "cost": 5.236e-05,
+     "in_tok": 374,
+     "err": null,
+     "mass": [
+      0.9999,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 266,
+     "in_tok": 429,
+     "cost": 1.8018000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1
+     },
+     "p_violation": 0.1
+    }
+   }
+  },
+  {
+   "id": "commit-message-convention-019",
+   "target": 0,
+   "label": 1,
+   "class": "R4-case",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.27998309296856794,
+     "ms": 806,
+     "cost": 2.5047e-05,
+     "in_tok": 414,
+     "err": null,
+     "mass": [
+      0.9963,
+      0.7966
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5542996237140752,
+     "ms": 2567,
+     "cost": 1.9965e-05,
+     "in_tok": 330,
+     "err": null,
+     "mass": [
+      0.9959,
+      0.9949
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.14912683681599592,
+     "ms": 3408,
+     "cost": 5.068000000000001e-05,
+     "in_tok": 362,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9992
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 251,
+     "in_tok": 423,
+     "cost": 1.7766e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.19
+     },
+     "p_violation": 0.19
+    }
+   }
+  },
+  {
+   "id": "commit-message-convention-020",
+   "target": 1,
+   "label": 0,
+   "class": "OK",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.43877033439907276,
+     "ms": 831,
+     "cost": 2.541e-05,
+     "in_tok": 420,
+     "err": null,
+     "mass": [
+      0.9965,
+      0.9543
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.20045278224304602,
+     "ms": 1001,
+     "cost": 2.0328e-05,
+     "in_tok": 336,
+     "err": null,
+     "mass": [
+      0.9963,
+      0.9981
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.0038019499977521272,
+     "ms": 1630,
+     "cost": 5.1800000000000005e-05,
+     "in_tok": 370,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 239,
+     "in_tok": 426,
+     "cost": 1.7892e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.51
+     },
+     "p_violation": 0.51
+    }
+   }
+  },
+  {
+   "id": "commit-message-convention-021",
+   "target": 1,
+   "label": 0,
+   "class": "OK",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.27998309519102327,
+     "ms": 1471,
+     "cost": 2.5289e-05,
+     "in_tok": 418,
+     "err": null,
+     "mass": [
+      0.997,
+      0.9454
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.08064532206510075,
+     "ms": 1120,
+     "cost": 2.0206999999999998e-05,
+     "in_tok": 334,
+     "err": null,
+     "mass": [
+      0.9958,
+      0.9974
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.0029648981708565833,
+     "ms": 2842,
+     "cost": 5.1800000000000005e-05,
+     "in_tok": 370,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 440,
+     "in_tok": 426,
+     "cost": 1.7892e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.14
+     },
+     "p_violation": 0.14
+    }
+   }
+  },
+  {
+   "id": "commit-message-convention-022",
+   "target": 0,
+   "label": 1,
+   "class": "R4-case",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3232410351506678,
+     "ms": 794,
+     "cost": 2.541e-05,
+     "in_tok": 420,
+     "err": null,
+     "mass": [
+      0.9966,
+      0.7066
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7726203615369935,
+     "ms": 1162,
+     "cost": 2.0328e-05,
+     "in_tok": 336,
+     "err": null,
+     "mass": [
+      0.9973,
+      0.9978
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.08867971134255749,
+     "ms": 2208,
+     "cost": 5.1800000000000005e-05,
+     "in_tok": 370,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9996
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 302,
+     "in_tok": 426,
+     "cost": 1.7892e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.08
+     },
+     "p_violation": 0.08
+    }
+   }
+  },
+  {
+   "id": "commit-message-convention-023",
+   "target": 1,
+   "label": 0,
+   "class": "OK",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3844707106849976,
+     "ms": 764,
+     "cost": 2.541e-05,
+     "in_tok": 420,
+     "err": null,
+     "mass": [
+      0.9972,
+      0.9322
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.1771508061807209,
+     "ms": 806,
+     "cost": 2.0328e-05,
+     "in_tok": 336,
+     "err": null,
+     "mass": [
+      0.9959,
+      0.9946
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.0018627305757855264,
+     "ms": 1755,
+     "cost": 5.1800000000000005e-05,
+     "in_tok": 370,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 256,
+     "in_tok": 426,
+     "cost": 1.7892e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.08
+     },
+     "p_violation": 0.08
+    }
+   }
+  },
+  {
+   "id": "commit-message-convention-024",
+   "target": 0,
+   "label": 1,
+   "class": "R3-period",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8491857805437801,
+     "ms": 818,
+     "cost": 2.5894e-05,
+     "in_tok": 428,
+     "err": null,
+     "mass": [
+      0.9979,
+      0.9823
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.980805496189491,
+     "ms": 1155,
+     "cost": 2.0933e-05,
+     "in_tok": 346,
+     "err": null,
+     "mass": [
+      0.9987,
+      0.9964
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9855134216895391,
+     "ms": 2178,
+     "cost": 5.292000000000001e-05,
+     "in_tok": 378,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9995
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 451,
+     "in_tok": 432,
+     "cost": 1.8144e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.87
+     },
+     "p_violation": 0.87
+    }
+   }
+  },
+  {
+   "id": "commit-message-convention-025",
+   "target": 0,
+   "label": 1,
+   "class": "R3-period",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3844707136147437,
+     "ms": 1058,
+     "cost": 2.541e-05,
+     "in_tok": 420,
+     "err": null,
+     "mass": [
+      0.9972,
+      0.9548
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9880513615600206,
+     "ms": 950,
+     "cost": 2.0448999999999997e-05,
+     "in_tok": 338,
+     "err": null,
+     "mass": [
+      0.9976,
+      0.9982
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.998760243660519,
+     "ms": 2325,
+     "cost": 5.1800000000000005e-05,
+     "in_tok": 370,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 226,
+     "in_tok": 427,
+     "cost": 1.7934e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.41
+     },
+     "p_violation": 0.41
+    }
+   }
+  },
+  {
+   "id": "commit-message-convention-026",
+   "target": 1,
+   "label": 0,
+   "class": "OK",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.2799830904098222,
+     "ms": 817,
+     "cost": 2.541e-05,
+     "in_tok": 420,
+     "err": null,
+     "mass": [
+      0.9984,
+      0.8887
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.09773653571699031,
+     "ms": 898,
+     "cost": 2.0328e-05,
+     "in_tok": 336,
+     "err": null,
+     "mass": [
+      0.9974,
+      0.9971
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.0006864686994928907,
+     "ms": 3788,
+     "cost": 5.1800000000000005e-05,
+     "in_tok": 370,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 268,
+     "in_tok": 426,
+     "cost": 1.7892e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1
+     },
+     "p_violation": 0.1
+    }
+   }
+  },
+  {
+   "id": "commit-message-convention-027",
+   "target": 1,
+   "label": 0,
+   "class": "OK",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3844707077552515,
+     "ms": 1057,
+     "cost": 2.5289e-05,
+     "in_tok": 418,
+     "err": null,
+     "mass": [
+      0.9945,
+      0.9271
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.10025546597880075,
+     "ms": 824,
+     "cost": 2.0206999999999998e-05,
+     "in_tok": 334,
+     "err": null,
+     "mass": [
+      0.9962,
+      0.9961
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.0002919903223004691,
+     "ms": 2435,
+     "cost": 5.1240000000000004e-05,
+     "in_tok": 366,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 243,
+     "in_tok": 425,
+     "cost": 1.785e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "p_violation": 0.05
+    }
+   }
+  },
+  {
+   "id": "commit-message-convention-028",
+   "target": 1,
+   "label": 0,
+   "class": "OK",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.268941415510503,
+     "ms": 1229,
+     "cost": 2.5894e-05,
+     "in_tok": 428,
+     "err": null,
+     "mass": [
+      0.9975,
+      0.9611
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.09242440402325809,
+     "ms": 995,
+     "cost": 2.0812e-05,
+     "in_tok": 344,
+     "err": null,
+     "mass": [
+      0.9969,
+      0.9973
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.0010057729237123486,
+     "ms": 3453,
+     "cost": 5.292000000000001e-05,
+     "in_tok": 378,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 253,
+     "in_tok": 431,
+     "cost": 1.8102e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "p_violation": 0.06
+    }
+   }
+  },
+  {
+   "id": "commit-message-convention-029",
+   "target": 0,
+   "label": 1,
+   "class": "R4-case",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.32324104801381637,
+     "ms": 902,
+     "cost": 2.5167999999999997e-05,
+     "in_tok": 416,
+     "err": null,
+     "mass": [
+      0.9971,
+      0.8657
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.47164031601323075,
+     "ms": 1064,
+     "cost": 2.0086e-05,
+     "in_tok": 332,
+     "err": null,
+     "mass": [
+      0.9944,
+      0.9962
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.07425758276172391,
+     "ms": 1387,
+     "cost": 5.096000000000001e-05,
+     "in_tok": 364,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 266,
+     "in_tok": 424,
+     "cost": 1.7808000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "p_violation": 0.06
+    }
+   }
+  },
+  {
+   "id": "commit-message-convention-030",
+   "target": 1,
+   "label": 0,
+   "class": "OK",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.32324104915798063,
+     "ms": 706,
+     "cost": 2.5531e-05,
+     "in_tok": 422,
+     "err": null,
+     "mass": [
+      0.9972,
+      0.8723
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.1555145735153423,
+     "ms": 1014,
+     "cost": 2.0448999999999997e-05,
+     "in_tok": 338,
+     "err": null,
+     "mass": [
+      0.9967,
+      0.9975
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 6.812662237919444e-05,
+     "ms": 1465,
+     "cost": 5.236e-05,
+     "in_tok": 374,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 235,
+     "in_tok": 427,
+     "cost": 1.7934e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1
+     },
+     "p_violation": 0.1
+    }
+   }
+  },
+  {
+   "id": "commit-message-convention-031",
+   "target": 0,
+   "label": 1,
+   "class": "R2-length",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.37754066529631736,
+     "ms": 811,
+     "cost": 2.6014999999999997e-05,
+     "in_tok": 430,
+     "err": null,
+     "mass": [
+      0.9917,
+      0.7697
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5148963656238924,
+     "ms": 936,
+     "cost": 2.0933e-05,
+     "in_tok": 346,
+     "err": null,
+     "mass": [
+      0.9931,
+      0.9968
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.5612296632508902,
+     "ms": 5439,
+     "cost": 5.3200000000000006e-05,
+     "in_tok": 380,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9991
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 235,
+     "in_tok": 431,
+     "cost": 1.8102e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.25
+     },
+     "p_violation": 0.25
+    }
+   }
+  }
+ ],
+ "agg": {
+  "glm": {
+   "n": 32,
+   "ok": 32,
+   "hit": 21,
+   "ms": 68880,
+   "cost": 0.0008148140000000001
+  },
+  "qwen": {
+   "n": 32,
+   "ok": 32,
+   "hit": 28,
+   "ms": 32990,
+   "cost": 0.0006526739999999999
+  },
+  "deepseek": {
+   "n": 32,
+   "ok": 32,
+   "hit": 26,
+   "ms": 85797,
+   "cost": 0.00165984
+  },
+  "jev": {
+   "n": 32,
+   "ok": 32,
+   "hit": 22,
+   "ms": 8579,
+   "cost": 0.000573762
+  }
+ }
+}
