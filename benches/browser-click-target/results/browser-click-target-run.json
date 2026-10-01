@@ -1,0 +1,2744 @@
+{
+ "task": "browser-click-target",
+ "bench": "browser-click-target@1",
+ "items_sha256": "a9b9140538c80336311482929dc48d0ec26088b16ae49d8d3e6f604ef3205d5d",
+ "template": "generic",
+ "date": "2026-10-01",
+ "arms": {
+  "glm": {
+   "model": "z-ai/glm-4.7-flash",
+   "provider": "cloudflare",
+   "family": "GLM",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.0605,
+   "smoke": {
+    "arm": "glm",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9551,
+    "spread": 1.8501453721256507e-07,
+    "distinct_p": 5,
+    "n_calls": 8,
+    "smoke_acc": 1.0,
+    "cost": 0.00013170850000000003,
+    "per_item": [
+     {
+      "id": "browser-click-target-000",
+      "target": 1,
+      "hit": 1,
+      "pred": 1
+     },
+     {
+      "id": "browser-click-target-001",
+      "target": 1,
+      "hit": 1,
+      "pred": 1
+     },
+     {
+      "id": "browser-click-target-002",
+      "target": 1,
+      "hit": 1,
+      "pred": 1
+     },
+     {
+      "id": "browser-click-target-003",
+      "target": 1,
+      "hit": 1,
+      "pred": 1
+     },
+     {
+      "id": "browser-click-target-004",
+      "target": 1,
+      "hit": 1,
+      "pred": 1
+     }
+    ]
+   }
+  },
+  "qwen": {
+   "model": "qwen/qwen3.8-27b",
+   "provider": "parasail",
+   "family": "Qwen",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.0605,
+   "smoke": {
+    "arm": "qwen",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9983,
+    "spread": 0.0,
+    "distinct_p": 3,
+    "n_calls": 8,
+    "smoke_acc": 1.0,
+    "cost": 9.7768e-05,
+    "per_item": [
+     {
+      "id": "browser-click-target-000",
+      "target": 1,
+      "hit": 1,
+      "pred": 1
+     },
+     {
+      "id": "browser-click-target-001",
+      "target": 1,
+      "hit": 1,
+      "pred": 1
+     },
+     {
+      "id": "browser-click-target-002",
+      "target": 1,
+      "hit": 1,
+      "pred": 1
+     },
+     {
+      "id": "browser-click-target-003",
+      "target": 1,
+      "hit": 1,
+      "pred": 1
+     },
+     {
+      "id": "browser-click-target-004",
+      "target": 1,
+      "hit": 1,
+      "pred": 1
+     }
+    ]
+   }
+  },
+  "deepseek": {
+   "model": "deepseek/deepseek-v4-flash",
+   "provider": "digitalocean",
+   "family": "DeepSeek",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.14,
+   "smoke": {
+    "arm": "deepseek",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [
+     "확률값 종류 1/5: 반올림된 로그확률 의심 (AUROC 를 믿지 마라)"
+    ],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9991,
+    "spread": 0.0,
+    "distinct_p": 1,
+    "n_calls": 8,
+    "smoke_acc": 1.0,
+    "cost": 0.00026726000000000007,
+    "per_item": [
+     {
+      "id": "browser-click-target-000",
+      "target": 1,
+      "hit": 1,
+      "pred": 1
+     },
+     {
+      "id": "browser-click-target-001",
+      "target": 1,
+      "hit": 1,
+      "pred": 1
+     },
+     {
+      "id": "browser-click-target-002",
+      "target": 1,
+      "hit": 1,
+      "pred": 1
+     },
+     {
+      "id": "browser-click-target-003",
+      "target": 1,
+      "hit": 1,
+      "pred": 1
+     },
+     {
+      "id": "browser-click-target-004",
+      "target": 1,
+      "hit": 1,
+      "pred": 1
+     }
+    ]
+   }
+  },
+  "jev": {
+   "model": "typesafe/jev-1.13",
+   "provider": "openrouter",
+   "family": "Jev",
+   "mode": "typed",
+   "prob_source": "typed",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.042,
+   "smoke": {
+    "arm": "jev",
+    "mode": "typed",
+    "usable": true,
+    "reasons": [],
+    "has_logprobs": null,
+    "reasoning_tokens_zero": null,
+    "provider_match": null,
+    "mass_min": null,
+    "spread": null,
+    "distinct_p": null,
+    "n_calls": 5,
+    "smoke_acc": 1.0,
+    "cost": 0.000114198,
+    "per_item": [
+     {
+      "id": "browser-click-target-000",
+      "target": 1,
+      "hit": 1,
+      "p": null,
+      "pred": 1
+     },
+     {
+      "id": "browser-click-target-001",
+      "target": 1,
+      "hit": 1,
+      "p": null,
+      "pred": 1
+     },
+     {
+      "id": "browser-click-target-002",
+      "target": 1,
+      "hit": 1,
+      "p": null,
+      "pred": 1
+     },
+     {
+      "id": "browser-click-target-003",
+      "target": 1,
+      "hit": 1,
+      "p": null,
+      "pred": 1
+     },
+     {
+      "id": "browser-click-target-004",
+      "target": 1,
+      "hit": 1,
+      "p": null,
+      "pred": 1
+     }
+    ]
+   }
+  }
+ },
+ "items": [
+  {
+   "id": "browser-click-target-000",
+   "target": 1,
+   "label": 1,
+   "class": "K-button",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 1,
+     "probs": [
+      0.004043006310565035,
+      0.9892912031876315,
+      0.006665790501803421,
+      0.0
+     ],
+     "ms": 468,
+     "cost": 1.6577e-05,
+     "in_tok": 274,
+     "err": null,
+     "mass": 0.9767,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      2,
+      1,
+      0
+     ]
+    },
+    "qwen": {
+     "pred_index": 1,
+     "probs": [
+      4.005792873394964e-05,
+      0.9998157023334712,
+      0.00010888873976320275,
+      3.535099803166502e-05
+     ],
+     "ms": 896,
+     "cost": 1.21605e-05,
+     "in_tok": 201,
+     "err": null,
+     "mass": 0.9987,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      2,
+      1,
+      0
+     ]
+    },
+    "deepseek": {
+     "pred_index": 1,
+     "probs": [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+     ],
+     "ms": 1932,
+     "cost": 3.3320000000000006e-05,
+     "in_tok": 238,
+     "err": null,
+     "mass": 0.9993,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      2,
+      1,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 293,
+     "in_tok": 544,
+     "cost": 2.2848000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "2번 요소",
+      "probabilities": {
+       "1번 요소": 0,
+       "3번 요소": 0,
+       "4번 요소": 0,
+       "2번 요소": 1
+      },
+      "confidence": 1
+     },
+     "choice": "2번 요소",
+     "probabilities": {
+      "1번 요소": 0,
+      "3번 요소": 0,
+      "4번 요소": 0,
+      "2번 요소": 1
+     },
+     "pred_index": 1
+    }
+   }
+  },
+  {
+   "id": "browser-click-target-001",
+   "target": 1,
+   "label": 1,
+   "class": "K-button",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 1,
+     "probs": [
+      0.028498260037448323,
+      0.9437327541450841,
+      0.010483921477372976,
+      0.01728506434009474
+     ],
+     "ms": 824,
+     "cost": 1.6153499999999997e-05,
+     "in_tok": 267,
+     "err": null,
+     "mass": 0.9558,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      3,
+      1,
+      0
+     ]
+    },
+    "qwen": {
+     "pred_index": 1,
+     "probs": [
+      9.609881204816558e-05,
+      0.9998662683524367,
+      0.0,
+      3.76328355150178e-05
+     ],
+     "ms": 520,
+     "cost": 1.21605e-05,
+     "in_tok": 201,
+     "err": null,
+     "mass": 0.9985,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      3,
+      1,
+      0
+     ]
+    },
+    "deepseek": {
+     "pred_index": 1,
+     "probs": [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+     ],
+     "ms": 990,
+     "cost": 3.3180000000000004e-05,
+     "in_tok": 237,
+     "err": null,
+     "mass": 0.9996,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      3,
+      1,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 289,
+     "in_tok": 544,
+     "cost": 2.2848000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "2번 요소",
+      "probabilities": {
+       "1번 요소": 0,
+       "2번 요소": 1,
+       "4번 요소": 0,
+       "3번 요소": 0
+      },
+      "confidence": 1
+     },
+     "choice": "2번 요소",
+     "probabilities": {
+      "1번 요소": 0,
+      "2번 요소": 1,
+      "4번 요소": 0,
+      "3번 요소": 0
+     },
+     "pred_index": 1
+    }
+   }
+  },
+  {
+   "id": "browser-click-target-002",
+   "target": 1,
+   "label": 1,
+   "class": "K-button",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 1,
+     "probs": [
+      0.0014974757668378884,
+      0.9960336040840184,
+      0.0,
+      0.002468920149143612
+     ],
+     "ms": 398,
+     "cost": 1.57905e-05,
+     "in_tok": 261,
+     "err": null,
+     "mass": 0.9892,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      3,
+      1,
+      2
+     ]
+    },
+    "qwen": {
+     "pred_index": 1,
+     "probs": [
+      4.005083304399587e-05,
+      0.9996393073929952,
+      4.263388985037791e-05,
+      0.00027800788411039214
+     ],
+     "ms": 405,
+     "cost": 1.19185e-05,
+     "in_tok": 197,
+     "err": null,
+     "mass": 0.9979,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      3,
+      1,
+      2
+     ]
+    },
+    "deepseek": {
+     "pred_index": 1,
+     "probs": [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+     ],
+     "ms": 1660,
+     "cost": 3.1920000000000006e-05,
+     "in_tok": 228,
+     "err": null,
+     "mass": 0.9997,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      3,
+      1,
+      2
+     ]
+    },
+    "jev": {
+     "ms": 249,
+     "in_tok": 533,
+     "cost": 2.2386000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "2번 요소",
+      "probabilities": {
+       "1번 요소": 0,
+       "3번 요소": 0,
+       "4번 요소": 0,
+       "2번 요소": 1
+      },
+      "confidence": 1
+     },
+     "choice": "2번 요소",
+     "probabilities": {
+      "1번 요소": 0,
+      "3번 요소": 0,
+      "4번 요소": 0,
+      "2번 요소": 1
+     },
+     "pred_index": 1
+    }
+   }
+  },
+  {
+   "id": "browser-click-target-003",
+   "target": 1,
+   "label": 1,
+   "class": "K-button",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 1,
+     "probs": [
+      0.004067896952850356,
+      0.9953815730608584,
+      0.0005505299862913567,
+      0.0
+     ],
+     "ms": 467,
+     "cost": 1.63955e-05,
+     "in_tok": 271,
+     "err": null,
+     "mass": 0.9732,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      0,
+      1,
+      3
+     ]
+    },
+    "qwen": {
+     "pred_index": 1,
+     "probs": [
+      0.0,
+      0.9996132422161457,
+      5.1424954870781214e-05,
+      0.0003353328289835033
+     ],
+     "ms": 365,
+     "cost": 1.21605e-05,
+     "in_tok": 201,
+     "err": null,
+     "mass": 0.9981,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      0,
+      1,
+      3
+     ]
+    },
+    "deepseek": {
+     "pred_index": 1,
+     "probs": [
+      8.315270423394131e-07,
+      0.9999977975166358,
+      0.0,
+      1.3709563218673566e-06
+     ],
+     "ms": 1074,
+     "cost": 3.388e-05,
+     "in_tok": 242,
+     "err": null,
+     "mass": 0.9948,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      0,
+      1,
+      3
+     ]
+    },
+    "jev": {
+     "ms": 268,
+     "in_tok": 544,
+     "cost": 2.2848000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "2번 요소",
+      "probabilities": {
+       "2번 요소": 1,
+       "4번 요소": 0,
+       "3번 요소": 0,
+       "1번 요소": 0
+      },
+      "confidence": 1
+     },
+     "choice": "2번 요소",
+     "probabilities": {
+      "2번 요소": 1,
+      "4번 요소": 0,
+      "3번 요소": 0,
+      "1번 요소": 0
+     },
+     "pred_index": 1
+    }
+   }
+  },
+  {
+   "id": "browser-click-target-004",
+   "target": 1,
+   "label": 1,
+   "class": "K-button",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 2,
+     "probs": [
+      0.11355248060975741,
+      0.3086676078219033,
+      0.5089068505920971,
+      0.06887306097624218
+     ],
+     "ms": 381,
+     "cost": 1.7061e-05,
+     "in_tok": 282,
+     "err": null,
+     "mass": 0.8177,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      0,
+      3,
+      1
+     ]
+    },
+    "qwen": {
+     "pred_index": 1,
+     "probs": [
+      0.0,
+      0.9995670057423677,
+      0.00021649712881620468,
+      0.00021649712881620468
+     ],
+     "ms": 396,
+     "cost": 1.28865e-05,
+     "in_tok": 213,
+     "err": null,
+     "mass": 0.9963,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      0,
+      3,
+      1
+     ]
+    },
+    "deepseek": {
+     "pred_index": 1,
+     "probs": [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+     ],
+     "ms": 904,
+     "cost": 3.5000000000000004e-05,
+     "in_tok": 250,
+     "err": null,
+     "mass": 0.9995,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      0,
+      3,
+      1
+     ]
+    },
+    "jev": {
+     "ms": 234,
+     "in_tok": 554,
+     "cost": 2.3268e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "2번 요소",
+      "probabilities": {
+       "3번 요소": 0.02,
+       "1번 요소": 0,
+       "2번 요소": 0.98,
+       "4번 요소": 0
+      },
+      "confidence": 0.97
+     },
+     "choice": "2번 요소",
+     "probabilities": {
+      "3번 요소": 0.02,
+      "1번 요소": 0,
+      "2번 요소": 0.98,
+      "4번 요소": 0
+     },
+     "pred_index": 1
+    }
+   }
+  },
+  {
+   "id": "browser-click-target-005",
+   "target": 1,
+   "label": 1,
+   "class": "K-button",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 1,
+     "probs": [
+      0.0024538972677112946,
+      0.989972980025026,
+      0.0009027383555377601,
+      0.006670384351724913
+     ],
+     "ms": 1173,
+     "cost": 1.7545e-05,
+     "in_tok": 290,
+     "err": null,
+     "mass": 0.9837,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      3,
+      2,
+      1
+     ]
+    },
+    "qwen": {
+     "pred_index": 1,
+     "probs": [
+      0.0,
+      0.9996646497927287,
+      0.0,
+      0.0003353502072712319
+     ],
+     "ms": 419,
+     "cost": 1.2947e-05,
+     "in_tok": 214,
+     "err": null,
+     "mass": 0.9964,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      3,
+      2,
+      1
+     ]
+    },
+    "deepseek": {
+     "pred_index": 1,
+     "probs": [
+      0.0,
+      0.9999986290423855,
+      0.0,
+      1.370957614593728e-06
+     ],
+     "ms": 869,
+     "cost": 3.5560000000000005e-05,
+     "in_tok": 254,
+     "err": null,
+     "mass": 0.9998,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      3,
+      2,
+      1
+     ]
+    },
+    "jev": {
+     "ms": 238,
+     "in_tok": 559,
+     "cost": 2.3478000000000005e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "2번 요소",
+      "probabilities": {
+       "4번 요소": 0,
+       "2번 요소": 1,
+       "3번 요소": 0,
+       "1번 요소": 0
+      },
+      "confidence": 1
+     },
+     "choice": "2번 요소",
+     "probabilities": {
+      "4번 요소": 0,
+      "2번 요소": 1,
+      "3번 요소": 0,
+      "1번 요소": 0
+     },
+     "pred_index": 1
+    }
+   }
+  },
+  {
+   "id": "browser-click-target-006",
+   "target": 1,
+   "label": 1,
+   "class": "K-button",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 1,
+     "probs": [
+      0.04717466245462661,
+      0.947528452809866,
+      0.003872333025906944,
+      0.001424551709600367
+     ],
+     "ms": 451,
+     "cost": 1.67585e-05,
+     "in_tok": 277,
+     "err": null,
+     "mass": 0.7328,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      0,
+      2,
+      3
+     ]
+    },
+    "qwen": {
+     "pred_index": 1,
+     "probs": [
+      0.00031503112295318747,
+      0.9996606762853123,
+      0.0,
+      2.4292591734470546e-05
+     ],
+     "ms": 399,
+     "cost": 1.2402499999999999e-05,
+     "in_tok": 205,
+     "err": null,
+     "mass": 0.9977,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      0,
+      2,
+      3
+     ]
+    },
+    "deepseek": {
+     "pred_index": 1,
+     "probs": [
+      5.043464125029411e-07,
+      0.9999977353116385,
+      0.0,
+      1.760341949000785e-06
+     ],
+     "ms": 1439,
+     "cost": 3.3600000000000004e-05,
+     "in_tok": 240,
+     "err": null,
+     "mass": 0.9998,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      0,
+      2,
+      3
+     ]
+    },
+    "jev": {
+     "ms": 232,
+     "in_tok": 544,
+     "cost": 2.2848000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "2번 요소",
+      "probabilities": {
+       "4번 요소": 0,
+       "3번 요소": 0,
+       "1번 요소": 0,
+       "2번 요소": 1
+      },
+      "confidence": 1
+     },
+     "choice": "2번 요소",
+     "probabilities": {
+      "4번 요소": 0,
+      "3번 요소": 0,
+      "1번 요소": 0,
+      "2번 요소": 1
+     },
+     "pred_index": 1
+    }
+   }
+  },
+  {
+   "id": "browser-click-target-007",
+   "target": 0,
+   "label": 0,
+   "class": "K-button",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 0,
+     "probs": [
+      0.9953815729238542,
+      0.0005505300026226542,
+      0.004067897073523229,
+      0.0
+     ],
+     "ms": 428,
+     "cost": 1.6456e-05,
+     "in_tok": 272,
+     "err": null,
+     "mass": 0.9629,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      0,
+      1,
+      3
+     ]
+    },
+    "qwen": {
+     "pred_index": 0,
+     "probs": [
+      0.9997040428567965,
+      0.0,
+      0.0002959571432035873,
+      0.0
+     ],
+     "ms": 403,
+     "cost": 1.2402499999999999e-05,
+     "in_tok": 205,
+     "err": null,
+     "mass": 0.9978,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      0,
+      1,
+      3
+     ]
+    },
+    "deepseek": {
+     "pred_index": 0,
+     "probs": [
+      0.9999995549148183,
+      0.0,
+      0.0,
+      4.450851817474967e-07
+     ],
+     "ms": 708,
+     "cost": 3.346e-05,
+     "in_tok": 239,
+     "err": null,
+     "mass": 0.9999,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      0,
+      1,
+      3
+     ]
+    },
+    "jev": {
+     "ms": 236,
+     "in_tok": 545,
+     "cost": 2.2890000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "1번 요소",
+      "probabilities": {
+       "4번 요소": 0,
+       "1번 요소": 1,
+       "2번 요소": 0,
+       "3번 요소": 0
+      },
+      "confidence": 1
+     },
+     "choice": "1번 요소",
+     "probabilities": {
+      "4번 요소": 0,
+      "1번 요소": 1,
+      "2번 요소": 0,
+      "3번 요소": 0
+     },
+     "pred_index": 0
+    }
+   }
+  },
+  {
+   "id": "browser-click-target-008",
+   "target": 1,
+   "label": 1,
+   "class": "K-link",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 1,
+     "probs": [
+      0.04643495200548809,
+      0.9326709708284389,
+      0.0038116129714712964,
+      0.017082464194601705
+     ],
+     "ms": 357,
+     "cost": 1.6214e-05,
+     "in_tok": 268,
+     "err": null,
+     "mass": 0.8744,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      0,
+      2,
+      3
+     ]
+    },
+    "qwen": {
+     "pred_index": 1,
+     "probs": [
+      0.000910955925316182,
+      0.9989844468202713,
+      4.260595527528561e-05,
+      6.199129913714763e-05
+     ],
+     "ms": 484,
+     "cost": 1.22815e-05,
+     "in_tok": 203,
+     "err": null,
+     "mass": 0.9986,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      0,
+      2,
+      3
+     ]
+    },
+    "deepseek": {
+     "pred_index": 1,
+     "probs": [
+      1.3006914941223474e-05,
+      0.9999702918756815,
+      0.0,
+      1.6701209377226482e-05
+     ],
+     "ms": 1762,
+     "cost": 3.262e-05,
+     "in_tok": 233,
+     "err": null,
+     "mass": 0.9993,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      0,
+      2,
+      3
+     ]
+    },
+    "jev": {
+     "ms": 233,
+     "in_tok": 541,
+     "cost": 2.2722000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "2번 요소",
+      "probabilities": {
+       "2번 요소": 0.99,
+       "4번 요소": 0,
+       "1번 요소": 0.01,
+       "3번 요소": 0
+      },
+      "confidence": 0.99
+     },
+     "choice": "2번 요소",
+     "probabilities": {
+      "2번 요소": 0.99,
+      "4번 요소": 0,
+      "1번 요소": 0.01,
+      "3번 요소": 0
+     },
+     "pred_index": 1
+    }
+   }
+  },
+  {
+   "id": "browser-click-target-009",
+   "target": 0,
+   "label": 0,
+   "class": "K-link",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 0,
+     "probs": [
+      0.5512254303198423,
+      0.1229950332073032,
+      0.1229950332073032,
+      0.2027845032655514
+     ],
+     "ms": 413,
+     "cost": 1.7182e-05,
+     "in_tok": 284,
+     "err": null,
+     "mass": 0.9575,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      0,
+      1,
+      3
+     ]
+    },
+    "qwen": {
+     "pred_index": 0,
+     "probs": [
+      0.9816741360076608,
+      0.0001461325923996209,
+      0.0001997395717338874,
+      0.017979991828205505
+     ],
+     "ms": 412,
+     "cost": 1.2705e-05,
+     "in_tok": 210,
+     "err": null,
+     "mass": 0.9964,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      0,
+      1,
+      3
+     ]
+    },
+    "deepseek": {
+     "pred_index": 0,
+     "probs": [
+      0.9984970625433577,
+      1.7577007832796618e-06,
+      0.0,
+      0.001501179755859075
+     ],
+     "ms": 669,
+     "cost": 3.444e-05,
+     "in_tok": 246,
+     "err": null,
+     "mass": 1.0,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      0,
+      1,
+      3
+     ]
+    },
+    "jev": {
+     "ms": 296,
+     "in_tok": 554,
+     "cost": 2.3268e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "1번 요소",
+      "probabilities": {
+       "4번 요소": 0.1,
+       "2번 요소": 0,
+       "3번 요소": 0,
+       "1번 요소": 0.9
+      },
+      "confidence": 0.87
+     },
+     "choice": "1번 요소",
+     "probabilities": {
+      "4번 요소": 0.1,
+      "2번 요소": 0,
+      "3번 요소": 0,
+      "1번 요소": 0.9
+     },
+     "pred_index": 0
+    }
+   }
+  },
+  {
+   "id": "browser-click-target-010",
+   "target": 1,
+   "label": 1,
+   "class": "K-button",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 1,
+     "probs": [
+      0.0005512283212124332,
+      0.996644001018456,
+      0.0024704339424385623,
+      0.00033433671789305606
+     ],
+     "ms": 368,
+     "cost": 1.6456e-05,
+     "in_tok": 272,
+     "err": null,
+     "mass": 0.9758,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      1,
+      2,
+      3
+     ]
+    },
+    "qwen": {
+     "pred_index": 1,
+     "probs": [
+      3.535566795114079e-05,
+      0.999947943497059,
+      1.670083498993635e-05,
+      0.0
+     ],
+     "ms": 400,
+     "cost": 1.2221e-05,
+     "in_tok": 202,
+     "err": null,
+     "mass": 0.9987,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      1,
+      2,
+      3
+     ]
+    },
+    "deepseek": {
+     "pred_index": 1,
+     "probs": [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+     ],
+     "ms": 863,
+     "cost": 3.2760000000000005e-05,
+     "in_tok": 234,
+     "err": null,
+     "mass": 0.9999,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      1,
+      2,
+      3
+     ]
+    },
+    "jev": {
+     "ms": 271,
+     "in_tok": 541,
+     "cost": 2.2722000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "2번 요소",
+      "probabilities": {
+       "4번 요소": 0,
+       "3번 요소": 0,
+       "1번 요소": 0,
+       "2번 요소": 1
+      },
+      "confidence": 1
+     },
+     "choice": "2번 요소",
+     "probabilities": {
+      "4번 요소": 0,
+      "3번 요소": 0,
+      "1번 요소": 0,
+      "2번 요소": 1
+     },
+     "pred_index": 1
+    }
+   }
+  },
+  {
+   "id": "browser-click-target-011",
+   "target": 1,
+   "label": 1,
+   "class": "K-menuitem",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 1,
+     "probs": [
+      0.010943839853054534,
+      0.9851331717416854,
+      0.0024419007390508274,
+      0.0014810876662092653
+     ],
+     "ms": 566,
+     "cost": 1.7061e-05,
+     "in_tok": 282,
+     "err": null,
+     "mass": 0.9778,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      0,
+      2,
+      1
+     ]
+    },
+    "qwen": {
+     "pred_index": 1,
+     "probs": [
+      0.0,
+      0.9996640029436452,
+      0.0002959452254464462,
+      4.005183090831801e-05
+     ],
+     "ms": 405,
+     "cost": 1.2705e-05,
+     "in_tok": 210,
+     "err": null,
+     "mass": 0.9973,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      0,
+      2,
+      1
+     ]
+    },
+    "deepseek": {
+     "pred_index": 1,
+     "probs": [
+      0.00020342668086272732,
+      0.9997957419607881,
+      8.313583491713388e-07,
+      0.0
+     ],
+     "ms": 813,
+     "cost": 3.444e-05,
+     "in_tok": 246,
+     "err": null,
+     "mass": 0.9988,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      0,
+      2,
+      1
+     ]
+    },
+    "jev": {
+     "ms": 244,
+     "in_tok": 549,
+     "cost": 2.3058000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "1번 요소",
+      "probabilities": {
+       "2번 요소": 0.23,
+       "1번 요소": 0.77,
+       "4번 요소": 0,
+       "3번 요소": 0
+      },
+      "confidence": 0.69
+     },
+     "choice": "1번 요소",
+     "probabilities": {
+      "2번 요소": 0.23,
+      "1번 요소": 0.77,
+      "4번 요소": 0,
+      "3번 요소": 0
+     },
+     "pred_index": 0
+    }
+   }
+  },
+  {
+   "id": "browser-click-target-012",
+   "target": 1,
+   "label": 1,
+   "class": "K-button",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 1,
+     "probs": [
+      0.004067420372180661,
+      0.9952648315549198,
+      0.0003338740364496828,
+      0.0003338740364496828
+     ],
+     "ms": 708,
+     "cost": 1.6819e-05,
+     "in_tok": 278,
+     "err": null,
+     "mass": 0.8759,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      0,
+      3,
+      2
+     ]
+    },
+    "qwen": {
+     "pred_index": 1,
+     "probs": [
+      0.0008040439722372955,
+      0.9991438597563929,
+      2.9287299547867247e-05,
+      2.2808971821925812e-05
+     ],
+     "ms": 395,
+     "cost": 1.22815e-05,
+     "in_tok": 203,
+     "err": null,
+     "mass": 0.9986,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      0,
+      3,
+      2
+     ]
+    },
+    "deepseek": {
+     "pred_index": 1,
+     "probs": [
+      2.3823635859556315e-07,
+      0.9999975014400043,
+      2.2603236369706853e-06,
+      0.0
+     ],
+     "ms": 549,
+     "cost": 3.4160000000000005e-05,
+     "in_tok": 244,
+     "err": null,
+     "mass": 0.9998,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      0,
+      3,
+      2
+     ]
+    },
+    "jev": {
+     "ms": 268,
+     "in_tok": 552,
+     "cost": 2.3184e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "2번 요소",
+      "probabilities": {
+       "4번 요소": 0,
+       "3번 요소": 0,
+       "2번 요소": 1,
+       "1번 요소": 0
+      },
+      "confidence": 1
+     },
+     "choice": "2번 요소",
+     "probabilities": {
+      "4번 요소": 0,
+      "3번 요소": 0,
+      "2번 요소": 1,
+      "1번 요소": 0
+     },
+     "pred_index": 1
+    }
+   }
+  },
+  {
+   "id": "browser-click-target-013",
+   "target": 1,
+   "label": 1,
+   "class": "K-button",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 1,
+     "probs": [
+      0.0009065237845146056,
+      0.9941241946939101,
+      0.004062757737060607,
+      0.0009065237845146056
+     ],
+     "ms": 458,
+     "cost": 1.6819e-05,
+     "in_tok": 278,
+     "err": null,
+     "mass": 0.9882,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      2,
+      3,
+      1
+     ]
+    },
+    "qwen": {
+     "pred_index": 1,
+     "probs": [
+      4.2643082015568576e-05,
+      0.9998542811744107,
+      4.832094241994334e-05,
+      5.475480115388998e-05
+     ],
+     "ms": 401,
+     "cost": 1.2402499999999999e-05,
+     "in_tok": 205,
+     "err": null,
+     "mass": 0.9949,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      2,
+      3,
+      1
+     ]
+    },
+    "deepseek": {
+     "pred_index": 1,
+     "probs": [
+      0.0,
+      0.9999977396769842,
+      2.2603230157378783e-06,
+      0.0
+     ],
+     "ms": 1437,
+     "cost": 3.3740000000000006e-05,
+     "in_tok": 241,
+     "err": null,
+     "mass": 0.9999,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      2,
+      3,
+      1
+     ]
+    },
+    "jev": {
+     "ms": 239,
+     "in_tok": 548,
+     "cost": 2.3016e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "2번 요소",
+      "probabilities": {
+       "4번 요소": 0,
+       "3번 요소": 0,
+       "1번 요소": 0,
+       "2번 요소": 1
+      },
+      "confidence": 1
+     },
+     "choice": "2번 요소",
+     "probabilities": {
+      "4번 요소": 0,
+      "3번 요소": 0,
+      "1번 요소": 0,
+      "2번 요소": 1
+     },
+     "pred_index": 1
+    }
+   }
+  },
+  {
+   "id": "browser-click-target-014",
+   "target": 1,
+   "label": 1,
+   "class": "K-button",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 1,
+     "probs": [
+      0.0014720515888334749,
+      0.9791226372315252,
+      0.0014720515888334749,
+      0.01793325959080776
+     ],
+     "ms": 597,
+     "cost": 1.6214e-05,
+     "in_tok": 268,
+     "err": null,
+     "mass": 0.8714,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      3,
+      2,
+      0
+     ]
+    },
+    "qwen": {
+     "pred_index": 1,
+     "probs": [
+      0.0,
+      0.9924227586410952,
+      0.0,
+      0.007577241358904807
+     ],
+     "ms": 584,
+     "cost": 1.21605e-05,
+     "in_tok": 201,
+     "err": null,
+     "mass": 0.9975,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      3,
+      2,
+      0
+     ]
+    },
+    "deepseek": {
+     "pred_index": 1,
+     "probs": [
+      6.962258627036511e-06,
+      0.9999930377413729,
+      0.0,
+      0.0
+     ],
+     "ms": 1162,
+     "cost": 3.304e-05,
+     "in_tok": 236,
+     "err": null,
+     "mass": 0.9997,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      3,
+      2,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 218,
+     "in_tok": 542,
+     "cost": 2.2763999999999998e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "2번 요소",
+      "probabilities": {
+       "1번 요소": 0,
+       "2번 요소": 1,
+       "3번 요소": 0,
+       "4번 요소": 0
+      },
+      "confidence": 1
+     },
+     "choice": "2번 요소",
+     "probabilities": {
+      "1번 요소": 0,
+      "2번 요소": 1,
+      "3번 요소": 0,
+      "4번 요소": 0
+     },
+     "pred_index": 1
+    }
+   }
+  },
+  {
+   "id": "browser-click-target-015",
+   "target": 0,
+   "label": 0,
+   "class": "K-link",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 0,
+     "probs": [
+      0.9620804761275583,
+      0.006482448029770377,
+      0.02905231648405642,
+      0.0023847593586148437
+     ],
+     "ms": 364,
+     "cost": 1.63955e-05,
+     "in_tok": 271,
+     "err": null,
+     "mass": 0.9727,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      3,
+      1,
+      0
+     ]
+    },
+    "qwen": {
+     "pred_index": 0,
+     "probs": [
+      0.9998977001380817,
+      0.0,
+      0.00010229986191827863,
+      0.0
+     ],
+     "ms": 1340,
+     "cost": 1.21605e-05,
+     "in_tok": 201,
+     "err": null,
+     "mass": 0.9968,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      3,
+      1,
+      0
+     ]
+    },
+    "deepseek": {
+     "pred_index": 0,
+     "probs": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "ms": 1734,
+     "cost": 3.3320000000000006e-05,
+     "in_tok": 238,
+     "err": null,
+     "mass": 0.9997,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      3,
+      1,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 264,
+     "in_tok": 541,
+     "cost": 2.2722000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "1번 요소",
+      "probabilities": {
+       "3번 요소": 0,
+       "2번 요소": 0,
+       "4번 요소": 0,
+       "1번 요소": 1
+      },
+      "confidence": 1
+     },
+     "choice": "1번 요소",
+     "probabilities": {
+      "3번 요소": 0,
+      "2번 요소": 0,
+      "4번 요소": 0,
+      "1번 요소": 1
+     },
+     "pred_index": 0
+    }
+   }
+  },
+  {
+   "id": "browser-click-target-016",
+   "target": 0,
+   "label": 0,
+   "class": "K-combobox",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 0,
+     "probs": [
+      0.5089068765556346,
+      0.3086676051715612,
+      0.11355246609824135,
+      0.06887305217456277
+     ],
+     "ms": 597,
+     "cost": 1.6939999999999997e-05,
+     "in_tok": 280,
+     "err": null,
+     "mass": 0.9204,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      2,
+      1,
+      3
+     ]
+    },
+    "qwen": {
+     "pred_index": 0,
+     "probs": [
+      0.9987866250195282,
+      0.0003350554628412684,
+      0.0007550595011989619,
+      0.0001232600164314848
+     ],
+     "ms": 705,
+     "cost": 1.2462999999999999e-05,
+     "in_tok": 206,
+     "err": null,
+     "mass": 0.9984,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      2,
+      1,
+      3
+     ]
+    },
+    "deepseek": {
+     "pred_index": 0,
+     "probs": [
+      0.997094187662831,
+      0.0019248443629888714,
+      0.00042949083097450924,
+      0.0005514771432056086
+     ],
+     "ms": 640,
+     "cost": 3.402e-05,
+     "in_tok": 243,
+     "err": null,
+     "mass": 0.9997,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      2,
+      1,
+      3
+     ]
+    },
+    "jev": {
+     "ms": 255,
+     "in_tok": 546,
+     "cost": 2.2932000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "1번 요소",
+      "probabilities": {
+       "3번 요소": 0,
+       "1번 요소": 0.96,
+       "2번 요소": 0.04,
+       "4번 요소": 0
+      },
+      "confidence": 0.94
+     },
+     "choice": "1번 요소",
+     "probabilities": {
+      "3번 요소": 0,
+      "1번 요소": 0.96,
+      "2번 요소": 0.04,
+      "4번 요소": 0
+     },
+     "pred_index": 0
+    }
+   }
+  },
+  {
+   "id": "browser-click-target-017",
+   "target": 1,
+   "label": 1,
+   "class": "K-switch",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 1,
+     "probs": [
+      0.02352691840406203,
+      0.7791044432692975,
+      0.1738417199225783,
+      0.02352691840406203
+     ],
+     "ms": 704,
+     "cost": 1.7303e-05,
+     "in_tok": 286,
+     "err": null,
+     "mass": 0.7629,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      2,
+      0,
+      3
+     ]
+    },
+    "qwen": {
+     "pred_index": 1,
+     "probs": [
+      6.521421539023499e-05,
+      0.9872492229559849,
+      0.012427635603331471,
+      0.0002579272252934473
+     ],
+     "ms": 373,
+     "cost": 1.26445e-05,
+     "in_tok": 209,
+     "err": null,
+     "mass": 0.9977,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      2,
+      0,
+      3
+     ]
+    },
+    "deepseek": {
+     "pred_index": 1,
+     "probs": [
+      0.0,
+      0.9999573200231577,
+      1.1478413636012008e-05,
+      3.120156320630796e-05
+     ],
+     "ms": 1086,
+     "cost": 3.4580000000000004e-05,
+     "in_tok": 247,
+     "err": null,
+     "mass": 0.9993,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      2,
+      0,
+      3
+     ]
+    },
+    "jev": {
+     "ms": 229,
+     "in_tok": 549,
+     "cost": 2.3058000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "2번 요소",
+      "probabilities": {
+       "2번 요소": 0.99,
+       "3번 요소": 0,
+       "4번 요소": 0.01,
+       "1번 요소": 0
+      },
+      "confidence": 0.99
+     },
+     "choice": "2번 요소",
+     "probabilities": {
+      "2번 요소": 0.99,
+      "3번 요소": 0,
+      "4번 요소": 0.01,
+      "1번 요소": 0
+     },
+     "pred_index": 1
+    }
+   }
+  },
+  {
+   "id": "browser-click-target-018",
+   "target": 0,
+   "label": 0,
+   "class": "K-button",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 0,
+     "probs": [
+      0.9924082450221557,
+      0.0009049593766350005,
+      0.0,
+      0.00668679560120933
+     ],
+     "ms": 1100,
+     "cost": 1.6335e-05,
+     "in_tok": 270,
+     "err": null,
+     "mass": 0.9576,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      1,
+      0,
+      2
+     ]
+    },
+    "qwen": {
+     "pred_index": 0,
+     "probs": [
+      0.9998911030524782,
+      0.0,
+      0.0,
+      0.0001088969475218385
+     ],
+     "ms": 403,
+     "cost": 1.22815e-05,
+     "in_tok": 203,
+     "err": null,
+     "mass": 0.9983,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      1,
+      0,
+      2
+     ]
+    },
+    "deepseek": {
+     "pred_index": 0,
+     "probs": [
+      0.9999986290426969,
+      0.0,
+      0.0,
+      1.3709573031537501e-06
+     ],
+     "ms": 862,
+     "cost": 3.2760000000000005e-05,
+     "in_tok": 234,
+     "err": null,
+     "mass": 0.9994,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      1,
+      0,
+      2
+     ]
+    },
+    "jev": {
+     "ms": 237,
+     "in_tok": 540,
+     "cost": 2.2680000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "1번 요소",
+      "probabilities": {
+       "4번 요소": 0,
+       "3번 요소": 0,
+       "1번 요소": 1,
+       "2번 요소": 0
+      },
+      "confidence": 1
+     },
+     "choice": "1번 요소",
+     "probabilities": {
+      "4번 요소": 0,
+      "3번 요소": 0,
+      "1번 요소": 1,
+      "2번 요소": 0
+     },
+     "pred_index": 0
+    }
+   }
+  },
+  {
+   "id": "browser-click-target-019",
+   "target": 1,
+   "label": 1,
+   "class": "K-button",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 1,
+     "probs": [
+      0.04161992920839828,
+      0.8359587120530246,
+      0.1131346972689409,
+      0.00928666146963622
+     ],
+     "ms": 406,
+     "cost": 1.6698e-05,
+     "in_tok": 276,
+     "err": null,
+     "mass": 0.9566,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      2,
+      1,
+      0
+     ]
+    },
+    "qwen": {
+     "pred_index": 1,
+     "probs": [
+      7.484026239807446e-05,
+      0.9998454926929752,
+      7.96670446267089e-05,
+      0.0
+     ],
+     "ms": 429,
+     "cost": 1.25235e-05,
+     "in_tok": 207,
+     "err": null,
+     "mass": 0.9983,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      2,
+      1,
+      0
+     ]
+    },
+    "deepseek": {
+     "pred_index": 1,
+     "probs": [
+      0.0,
+      0.9999995549150664,
+      4.450849336554151e-07,
+      0.0
+     ],
+     "ms": 961,
+     "cost": 3.3740000000000006e-05,
+     "in_tok": 241,
+     "err": null,
+     "mass": 0.9997,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      2,
+      1,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 253,
+     "in_tok": 547,
+     "cost": 2.2974e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "2번 요소",
+      "probabilities": {
+       "2번 요소": 0.99,
+       "3번 요소": 0,
+       "1번 요소": 0.01,
+       "4번 요소": 0
+      },
+      "confidence": 0.99
+     },
+     "choice": "2번 요소",
+     "probabilities": {
+      "2번 요소": 0.99,
+      "3번 요소": 0,
+      "1번 요소": 0.01,
+      "4번 요소": 0
+     },
+     "pred_index": 1
+    }
+   }
+  },
+  {
+   "id": "browser-click-target-020",
+   "target": 1,
+   "label": 1,
+   "class": "K-link",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 1,
+     "probs": [
+      0.00020248756212104516,
+      0.9951800205700168,
+      0.004067073344799742,
+      0.0005504185230625508
+     ],
+     "ms": 1069,
+     "cost": 1.7061e-05,
+     "in_tok": 282,
+     "err": null,
+     "mass": 0.8143,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      2,
+      3,
+      0
+     ]
+    },
+    "qwen": {
+     "pred_index": 1,
+     "probs": [
+      6.977578395512997e-05,
+      0.9923059202977246,
+      0.007576347770088747,
+      4.795614823159596e-05
+     ],
+     "ms": 420,
+     "cost": 1.26445e-05,
+     "in_tok": 209,
+     "err": null,
+     "mass": 0.9985,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      2,
+      3,
+      0
+     ]
+    },
+    "deepseek": {
+     "pred_index": 1,
+     "probs": [
+      1.4738938854590168e-05,
+      0.9999823587920047,
+      2.902269140589535e-06,
+      0.0
+     ],
+     "ms": 1583,
+     "cost": 3.444e-05,
+     "in_tok": 246,
+     "err": null,
+     "mass": 0.9998,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      2,
+      3,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 251,
+     "in_tok": 557,
+     "cost": 2.3394e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "2번 요소",
+      "probabilities": {
+       "2번 요소": 0.99,
+       "1번 요소": 0.01,
+       "3번 요소": 0,
+       "4번 요소": 0
+      },
+      "confidence": 0.99
+     },
+     "choice": "2번 요소",
+     "probabilities": {
+      "2번 요소": 0.99,
+      "1번 요소": 0.01,
+      "3번 요소": 0,
+      "4번 요소": 0
+     },
+     "pred_index": 1
+    }
+   }
+  },
+  {
+   "id": "browser-click-target-021",
+   "target": 0,
+   "label": 0,
+   "class": "K-button",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 0,
+     "probs": [
+      0.9883995491932207,
+      0.004039363137720415,
+      0.0009013037438172202,
+      0.006659783925241659
+     ],
+     "ms": 488,
+     "cost": 1.65165e-05,
+     "in_tok": 273,
+     "err": null,
+     "mass": 0.9637,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      2,
+      1,
+      0
+     ]
+    },
+    "qwen": {
+     "pred_index": 0,
+     "probs": [
+      0.9999025974558019,
+      5.475742147467222e-05,
+      0.0,
+      4.2645122723445686e-05
+     ],
+     "ms": 362,
+     "cost": 1.22815e-05,
+     "in_tok": 203,
+     "err": null,
+     "mass": 0.9972,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      2,
+      1,
+      0
+     ]
+    },
+    "deepseek": {
+     "pred_index": 0,
+     "probs": [
+      0.9999992661789049,
+      0.0,
+      7.338210950747879e-07,
+      0.0
+     ],
+     "ms": 732,
+     "cost": 3.3180000000000004e-05,
+     "in_tok": 237,
+     "err": null,
+     "mass": 0.9994,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      2,
+      1,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 218,
+     "in_tok": 541,
+     "cost": 2.2722000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "1번 요소",
+      "probabilities": {
+       "1번 요소": 1,
+       "2번 요소": 0,
+       "4번 요소": 0,
+       "3번 요소": 0
+      },
+      "confidence": 1
+     },
+     "choice": "1번 요소",
+     "probabilities": {
+      "1번 요소": 1,
+      "2번 요소": 0,
+      "4번 요소": 0,
+      "3번 요소": 0
+     },
+     "pred_index": 0
+    }
+   }
+  },
+  {
+   "id": "browser-click-target-022",
+   "target": 1,
+   "label": 1,
+   "class": "K-switch",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 1,
+     "probs": [
+      0.0024689202980092747,
+      0.9960336038448613,
+      0.0014974758571294768,
+      0.0
+     ],
+     "ms": 397,
+     "cost": 1.70005e-05,
+     "in_tok": 281,
+     "err": null,
+     "mass": 0.9302,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      1,
+      0,
+      3
+     ]
+    },
+    "qwen": {
+     "pred_index": 1,
+     "probs": [
+      0.0,
+      0.9998849764115783,
+      7.967016639173789e-05,
+      3.5353422030045735e-05
+     ],
+     "ms": 438,
+     "cost": 1.28865e-05,
+     "in_tok": 213,
+     "err": null,
+     "mass": 0.9982,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      1,
+      0,
+      3
+     ]
+    },
+    "deepseek": {
+     "pred_index": 1,
+     "probs": [
+      0.0,
+      0.9999999226558739,
+      0.0,
+      7.734412604732622e-08
+     ],
+     "ms": 843,
+     "cost": 3.4720000000000006e-05,
+     "in_tok": 248,
+     "err": null,
+     "mass": 1.0,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      1,
+      0,
+      3
+     ]
+    },
+    "jev": {
+     "ms": 255,
+     "in_tok": 554,
+     "cost": 2.3268e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "2번 요소",
+      "probabilities": {
+       "4번 요소": 0,
+       "2번 요소": 1,
+       "1번 요소": 0,
+       "3번 요소": 0
+      },
+      "confidence": 1
+     },
+     "choice": "2번 요소",
+     "probabilities": {
+      "4번 요소": 0,
+      "2번 요소": 1,
+      "1번 요소": 0,
+      "3번 요소": 0
+     },
+     "pred_index": 1
+    }
+   }
+  },
+  {
+   "id": "browser-click-target-023",
+   "target": 0,
+   "label": 0,
+   "class": "K-button",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 0,
+     "probs": [
+      0.9960717727249054,
+      0.0005509118111318413,
+      0.002469015442669721,
+      0.0009083000212929984
+     ],
+     "ms": 575,
+     "cost": 1.6577e-05,
+     "in_tok": 274,
+     "err": null,
+     "mass": 0.8708,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      3,
+      2,
+      1
+     ]
+    },
+    "qwen": {
+     "pred_index": 0,
+     "probs": [
+      0.9999379494936154,
+      0.0,
+      0.0,
+      6.205050638466035e-05
+     ],
+     "ms": 475,
+     "cost": 1.2402499999999999e-05,
+     "in_tok": 205,
+     "err": null,
+     "mass": 0.9991,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      3,
+      2,
+      1
+     ]
+    },
+    "deepseek": {
+     "pred_index": 0,
+     "probs": [
+      0.9999972580884184,
+      1.3709557907513693e-06,
+      0.0,
+      1.3709557907513693e-06
+     ],
+     "ms": 1039,
+     "cost": 3.3320000000000006e-05,
+     "in_tok": 238,
+     "err": null,
+     "mass": 0.9999,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      3,
+      2,
+      1
+     ]
+    },
+    "jev": {
+     "ms": 252,
+     "in_tok": 540,
+     "cost": 2.2680000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "1번 요소",
+      "probabilities": {
+       "2번 요소": 0,
+       "1번 요소": 1,
+       "3번 요소": 0,
+       "4번 요소": 0
+      },
+      "confidence": 1
+     },
+     "choice": "1번 요소",
+     "probabilities": {
+      "2번 요소": 0,
+      "1번 요소": 1,
+      "3번 요소": 0,
+      "4번 요소": 0
+     },
+     "pred_index": 0
+    }
+   }
+  }
+ ],
+ "agg": {
+  "glm": {
+   "n": 24,
+   "ok": 24,
+   "hit": 23,
+   "ms": 13757,
+   "cost": 0.00040032850000000004
+  },
+  "qwen": {
+   "n": 24,
+   "ok": 24,
+   "hit": 24,
+   "ms": 11829,
+   "cost": 0.0002980835
+  },
+  "deepseek": {
+   "n": 24,
+   "ok": 24,
+   "hit": 24,
+   "ms": 26311,
+   "cost": 0.0008092
+  },
+  "jev": {
+   "n": 24,
+   "ok": 24,
+   "hit": 23,
+   "ms": 6022,
+   "cost": 0.000550578
+  }
+ }
+}
