@@ -1,0 +1,297 @@
+name: support-ticket-triage
+version: 1
+task_signature:
+  goal: classify
+  answer: choice(5)
+  prob_use: accuracy_only
+  label: constructed
+  unit: record
+  language: ko
+  n: 30
+question: '이 고객 문의는 어느 분류로 보내야 하는가. 결제: 청구, 환불, 영수증, 구독 요금. 버그: 기능이 설명과 다르게 동작하거나
+  오류가 난다. 기능 요청: 지금 없는 기능을 원한다. 계정: 로그인, 비밀번호, 이메일 변경, 탈퇴, 권한. 기타: 위 넷에 들지 않는 일반 질문,
+  칭찬, 제휴. 여러 분류가 겹치면 고객이 해결을 바라는 것을 따른다(요금 때문에 로그인이 막혔으면 결제). 입력은 문의 본문이다.'
+choices:
+- 결제
+- 버그
+- 기능 요청
+- 계정
+- 기타
+generator:
+  script: src/build_samples.py
+  seed: 20261001
+source: 고객 문의 1차 분류 샘플. 문의 30건을 작성자가 분류 정의에 맞춰 썼다(분류마다 6건, 겹치는 문의 포함)
+domain:
+- support-ticket-triage
+- sample
+visibility: sample
+items_sha256: 052c470fb7980737040c1d96ea840ecdf3d46683019debcc3296c3d17955ae12
+license: CC-BY-4.0
+review:
+  checks_run: 5
+  human_reviewed_fraction: 0.0
+  flagged: 4
+  decided: 0
+note: benchlet 샘플. 작성자가 규칙을 먼저 적고 그 규칙대로 항목을 썼다(constructed). 기계 검증기가 있는 둘은 machine
+owner: ernestolee13
+n: 30
+choices_note: null
+published_at: '2026-10-01'
+type: multiclass
+classes:
+- C0-결제
+- C1-버그
+- C2-기능 요청
+- C3-계정
+- C4-기타
+label_source_mix:
+  machine: 0
+  constructed: 30
+  judged: 0
+  outcome: 0
+experiment:
+  date: '2026-10-01'
+  template: generic
+  runner: benchlet
+  arms:
+    glm:
+      model: z-ai/glm-4.7-flash
+      provider: cloudflare
+      family: GLM
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke:
+        arm: glm
+        mode: logprob
+        usable: false
+        reasons:
+        - 3회 재현 편차 0.11 > 0.05
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.995
+        spread: 0.10678156302837921
+        distinct_p: 5
+        n_calls: 8
+        smoke_acc: 1.0
+        cost: 0.00012172600000000002
+        per_item:
+        - id: support-ticket-triage-000
+          target: 0
+          hit: 1
+          pred: 0
+        - id: support-ticket-triage-001
+          target: 4
+          hit: 1
+          pred: 4
+        - id: support-ticket-triage-002
+          target: 4
+          hit: 1
+          pred: 4
+        - id: support-ticket-triage-003
+          target: 0
+          hit: 1
+          pred: 0
+        - id: support-ticket-triage-004
+          target: 1
+          hit: 1
+          pred: 1
+    qwen:
+      model: qwen/qwen3.8-27b
+      provider: parasail
+      family: Qwen
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke:
+        arm: qwen
+        mode: logprob
+        usable: true
+        reasons: []
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9978
+        spread: 0.0
+        distinct_p: 4
+        n_calls: 8
+        smoke_acc: 1.0
+        cost: 8.258250000000001e-05
+        per_item:
+        - id: support-ticket-triage-000
+          target: 0
+          hit: 1
+          pred: 0
+        - id: support-ticket-triage-001
+          target: 4
+          hit: 1
+          pred: 4
+        - id: support-ticket-triage-002
+          target: 4
+          hit: 1
+          pred: 4
+        - id: support-ticket-triage-003
+          target: 0
+          hit: 1
+          pred: 0
+        - id: support-ticket-triage-004
+          target: 1
+          hit: 1
+          pred: 1
+    deepseek:
+      model: deepseek/deepseek-v4-flash
+      provider: digitalocean
+      family: DeepSeek
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.14
+      smoke:
+        arm: deepseek
+        mode: logprob
+        usable: true
+        reasons: []
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9995
+        spread: 9.232334228836958e-05
+        distinct_p: 3
+        n_calls: 8
+        smoke_acc: 1.0
+        cost: 0.00024920000000000004
+        per_item:
+        - id: support-ticket-triage-000
+          target: 0
+          hit: 1
+          pred: 0
+        - id: support-ticket-triage-001
+          target: 4
+          hit: 1
+          pred: 4
+        - id: support-ticket-triage-002
+          target: 4
+          hit: 1
+          pred: 4
+        - id: support-ticket-triage-003
+          target: 0
+          hit: 1
+          pred: 0
+        - id: support-ticket-triage-004
+          target: 1
+          hit: 1
+          pred: 1
+    jev:
+      model: typesafe/jev-1.13
+      provider: openrouter
+      family: Jev
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.042
+      smoke:
+        arm: jev
+        mode: typed
+        usable: true
+        reasons: []
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 1.0
+        cost: 0.000109956
+        per_item:
+        - id: support-ticket-triage-000
+          target: 0
+          hit: 1
+          p: null
+          pred: 0
+        - id: support-ticket-triage-001
+          target: 4
+          hit: 1
+          p: null
+          pred: 4
+        - id: support-ticket-triage-002
+          target: 4
+          hit: 1
+          p: null
+          pred: 4
+        - id: support-ticket-triage-003
+          target: 0
+          hit: 1
+          p: null
+          pred: 0
+        - id: support-ticket-triage-004
+          target: 1
+          hit: 1
+          p: null
+          pred: 1
+  protocol:
+    decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
+    logprob_call:
+      max_tokens: 1
+      temperature: 0
+      logprobs: true
+      top_logprobs: 8
+      reasoning:
+        enabled: false
+    provider_pin: provider.only=[pin], allow_fallbacks=false, require_parameters=true
+    binary: '극성 반전 2회 호출 평균: p = ½[P(A|choices[0]=A) + P(B|choices[0]=B)]'
+    multiclass: 항목별 결정론적 셔플 뒤 원 인덱스로 복원(generic) 또는 파일에 든 셔플 그대로(legacy-seed)
+    typed: Jev noul(이진)/choice(다지), 질문을 instructions 로 그대로 전달
+    label_mass: 상위 8토큰 중 라벨 토큰 질량 < 0.5 이면 오류로 두고 세지 않음
+    renormalize: 라벨 토큰 확률을 라벨 집합 안에서 재정규화
+  items_sha256: 052c470fb7980737040c1d96ea840ecdf3d46683019debcc3296c3d17955ae12
+results:
+- results/support-ticket-triage-run.json
+result_summary:
+  glm:
+    acc: 0.9
+    ci95:
+    - 0.7437855868473338
+    - 0.9654007400402839
+    auroc: null
+    brier: null
+    n: 30
+    prob_source: logprob
+    model: z-ai/glm-4.7-flash
+    source_badge: author-run
+  qwen:
+    acc: 1.0
+    ci95:
+    - 0.886482908609522
+    - 1.0
+    auroc: null
+    brier: null
+    n: 30
+    prob_source: logprob
+    model: qwen/qwen3.8-27b
+    source_badge: author-run
+  deepseek:
+    acc: 1.0
+    ci95:
+    - 0.886482908609522
+    - 1.0
+    auroc: null
+    brier: null
+    n: 30
+    prob_source: logprob
+    model: deepseek/deepseek-v4-flash
+    source_badge: author-run
+  jev:
+    acc: 0.9655172413793104
+    ci95:
+    - 0.8282410893529976
+    - 0.9938869433859677
+    auroc: null
+    brier: null
+    n: 29
+    prob_source: typed
+    model: typesafe/jev-1.13
+    source_badge: author-run

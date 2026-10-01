@@ -1,0 +1,3585 @@
+{
+ "task": "support-ticket-triage",
+ "bench": "support-ticket-triage@1",
+ "items_sha256": "052c470fb7980737040c1d96ea840ecdf3d46683019debcc3296c3d17955ae12",
+ "template": "generic",
+ "date": "2026-10-01",
+ "arms": {
+  "glm": {
+   "model": "z-ai/glm-4.7-flash",
+   "provider": "cloudflare",
+   "family": "GLM",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.0605,
+   "smoke": {
+    "arm": "glm",
+    "mode": "logprob",
+    "usable": false,
+    "reasons": [
+     "3회 재현 편차 0.11 > 0.05"
+    ],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.995,
+    "spread": 0.10678156302837921,
+    "distinct_p": 5,
+    "n_calls": 8,
+    "smoke_acc": 1.0,
+    "cost": 0.00012172600000000002,
+    "per_item": [
+     {
+      "id": "support-ticket-triage-000",
+      "target": 0,
+      "hit": 1,
+      "pred": 0
+     },
+     {
+      "id": "support-ticket-triage-001",
+      "target": 4,
+      "hit": 1,
+      "pred": 4
+     },
+     {
+      "id": "support-ticket-triage-002",
+      "target": 4,
+      "hit": 1,
+      "pred": 4
+     },
+     {
+      "id": "support-ticket-triage-003",
+      "target": 0,
+      "hit": 1,
+      "pred": 0
+     },
+     {
+      "id": "support-ticket-triage-004",
+      "target": 1,
+      "hit": 1,
+      "pred": 1
+     }
+    ]
+   }
+  },
+  "qwen": {
+   "model": "qwen/qwen3.8-27b",
+   "provider": "parasail",
+   "family": "Qwen",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.0605,
+   "smoke": {
+    "arm": "qwen",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9978,
+    "spread": 0.0,
+    "distinct_p": 4,
+    "n_calls": 8,
+    "smoke_acc": 1.0,
+    "cost": 8.258250000000001e-05,
+    "per_item": [
+     {
+      "id": "support-ticket-triage-000",
+      "target": 0,
+      "hit": 1,
+      "pred": 0
+     },
+     {
+      "id": "support-ticket-triage-001",
+      "target": 4,
+      "hit": 1,
+      "pred": 4
+     },
+     {
+      "id": "support-ticket-triage-002",
+      "target": 4,
+      "hit": 1,
+      "pred": 4
+     },
+     {
+      "id": "support-ticket-triage-003",
+      "target": 0,
+      "hit": 1,
+      "pred": 0
+     },
+     {
+      "id": "support-ticket-triage-004",
+      "target": 1,
+      "hit": 1,
+      "pred": 1
+     }
+    ]
+   }
+  },
+  "deepseek": {
+   "model": "deepseek/deepseek-v4-flash",
+   "provider": "digitalocean",
+   "family": "DeepSeek",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.14,
+   "smoke": {
+    "arm": "deepseek",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9995,
+    "spread": 9.232334228836958e-05,
+    "distinct_p": 3,
+    "n_calls": 8,
+    "smoke_acc": 1.0,
+    "cost": 0.00024920000000000004,
+    "per_item": [
+     {
+      "id": "support-ticket-triage-000",
+      "target": 0,
+      "hit": 1,
+      "pred": 0
+     },
+     {
+      "id": "support-ticket-triage-001",
+      "target": 4,
+      "hit": 1,
+      "pred": 4
+     },
+     {
+      "id": "support-ticket-triage-002",
+      "target": 4,
+      "hit": 1,
+      "pred": 4
+     },
+     {
+      "id": "support-ticket-triage-003",
+      "target": 0,
+      "hit": 1,
+      "pred": 0
+     },
+     {
+      "id": "support-ticket-triage-004",
+      "target": 1,
+      "hit": 1,
+      "pred": 1
+     }
+    ]
+   }
+  },
+  "jev": {
+   "model": "typesafe/jev-1.13",
+   "provider": "openrouter",
+   "family": "Jev",
+   "mode": "typed",
+   "prob_source": "typed",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.042,
+   "smoke": {
+    "arm": "jev",
+    "mode": "typed",
+    "usable": true,
+    "reasons": [],
+    "has_logprobs": null,
+    "reasoning_tokens_zero": null,
+    "provider_match": null,
+    "mass_min": null,
+    "spread": null,
+    "distinct_p": null,
+    "n_calls": 5,
+    "smoke_acc": 1.0,
+    "cost": 0.000109956,
+    "per_item": [
+     {
+      "id": "support-ticket-triage-000",
+      "target": 0,
+      "hit": 1,
+      "p": null,
+      "pred": 0
+     },
+     {
+      "id": "support-ticket-triage-001",
+      "target": 4,
+      "hit": 1,
+      "p": null,
+      "pred": 4
+     },
+     {
+      "id": "support-ticket-triage-002",
+      "target": 4,
+      "hit": 1,
+      "p": null,
+      "pred": 4
+     },
+     {
+      "id": "support-ticket-triage-003",
+      "target": 0,
+      "hit": 1,
+      "p": null,
+      "pred": 0
+     },
+     {
+      "id": "support-ticket-triage-004",
+      "target": 1,
+      "hit": 1,
+      "p": null,
+      "pred": 1
+     }
+    ]
+   }
+  }
+ },
+ "items": [
+  {
+   "id": "support-ticket-triage-000",
+   "target": 0,
+   "label": 0,
+   "class": "C0-결제",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 0,
+     "probs": [
+      0.9748555105264838,
+      0.0008889530862151555,
+      0.003984011330533754,
+      0.01785510003615614,
+      0.0024164250206112447
+     ],
+     "ms": 574,
+     "cost": 1.5367e-05,
+     "in_tok": 254,
+     "err": null,
+     "mass": 0.9987,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      0,
+      2,
+      1,
+      4
+     ]
+    },
+    "qwen": {
+     "pred_index": 0,
+     "probs": [
+      0.9998289968901654,
+      1.892226487727034e-05,
+      1.5687108565179393e-05,
+      0.00012338866661165535,
+      1.3005069780590875e-05
+     ],
+     "ms": 478,
+     "cost": 1.03455e-05,
+     "in_tok": 171,
+     "err": null,
+     "mass": 0.9993,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      0,
+      2,
+      1,
+      4
+     ]
+    },
+    "deepseek": {
+     "pred_index": 0,
+     "probs": [
+      0.9999981425408321,
+      0.0,
+      0.0,
+      6.475941029812742e-07,
+      1.209865064951712e-06
+     ],
+     "ms": 1327,
+     "cost": 3.1360000000000005e-05,
+     "in_tok": 224,
+     "err": null,
+     "mass": 1.0,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      0,
+      2,
+      1,
+      4
+     ]
+    },
+    "jev": {
+     "ms": 260,
+     "in_tok": 525,
+     "cost": 2.205e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "결제",
+      "probabilities": {
+       "기능 요청": 0,
+       "버그": 0,
+       "계정": 0,
+       "기타": 0,
+       "결제": 1
+      },
+      "confidence": 1
+     },
+     "choice": "결제",
+     "probabilities": {
+      "기능 요청": 0,
+      "버그": 0,
+      "계정": 0,
+      "기타": 0,
+      "결제": 1
+     },
+     "pred_index": 0
+    }
+   }
+  },
+  {
+   "id": "support-ticket-triage-001",
+   "target": 4,
+   "label": 4,
+   "class": "C4-기타",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 4,
+     "probs": [
+      0.0001227808565694618,
+      0.0,
+      0.0009072350696698005,
+      0.004065945495966538,
+      0.9949040385777942
+     ],
+     "ms": 6691,
+     "cost": 1.4883000000000001e-05,
+     "in_tok": 246,
+     "err": null,
+     "mass": 0.9978,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      0,
+      1,
+      3,
+      4
+     ]
+    },
+    "qwen": {
+     "pred_index": 4,
+     "probs": [
+      0.0,
+      1.8901583761767825e-05,
+      0.0,
+      0.0012448199653663926,
+      0.9987362784508719
+     ],
+     "ms": 473,
+     "cost": 1.0224499999999998e-05,
+     "in_tok": 169,
+     "err": null,
+     "mass": 0.9983,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      0,
+      1,
+      3,
+      4
+     ]
+    },
+    "deepseek": {
+     "pred_index": 4,
+     "probs": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ],
+     "ms": 1662,
+     "cost": 3.038e-05,
+     "in_tok": 217,
+     "err": null,
+     "mass": 1.0,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      0,
+      1,
+      3,
+      4
+     ]
+    },
+    "jev": {
+     "ms": 304,
+     "in_tok": 519,
+     "cost": 2.1798000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "기타",
+      "probabilities": {
+       "결제": 0,
+       "버그": 0,
+       "기타": 1,
+       "계정": 0,
+       "기능 요청": 0
+      },
+      "confidence": 1
+     },
+     "choice": "기타",
+     "probabilities": {
+      "결제": 0,
+      "버그": 0,
+      "기타": 1,
+      "계정": 0,
+      "기능 요청": 0
+     },
+     "pred_index": 4
+    }
+   }
+  },
+  {
+   "id": "support-ticket-triage-002",
+   "target": 4,
+   "label": 4,
+   "class": "C4-기타",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 4,
+     "probs": [
+      0.005029768382051468,
+      0.16656309293090618,
+      0.2746161142287872,
+      0.10102562263915921,
+      0.4527654018190958
+     ],
+     "ms": 580,
+     "cost": 1.4883000000000001e-05,
+     "in_tok": 246,
+     "err": null,
+     "mass": 0.9948,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      2,
+      0,
+      4,
+      1
+     ]
+    },
+    "qwen": {
+     "pred_index": 4,
+     "probs": [
+      6.59667953692228e-05,
+      0.00048743258407577873,
+      0.0005879559274656397,
+      0.00021629679489112302,
+      0.9986423478981983
+     ],
+     "ms": 521,
+     "cost": 1.0164e-05,
+     "in_tok": 168,
+     "err": null,
+     "mass": 0.9949,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      2,
+      0,
+      4,
+      1
+     ]
+    },
+    "deepseek": {
+     "pred_index": 4,
+     "probs": [
+      0.0,
+      1.1478725287211113e-05,
+      0.0,
+      3.7265964866217694e-06,
+      0.9999847946782262
+     ],
+     "ms": 8335,
+     "cost": 3.066e-05,
+     "in_tok": 219,
+     "err": null,
+     "mass": 0.9991,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      2,
+      0,
+      4,
+      1
+     ]
+    },
+    "jev": {
+     "ms": 293,
+     "in_tok": 521,
+     "cost": 2.1882e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "기타",
+      "probabilities": {
+       "결제": 0,
+       "버그": 0,
+       "계정": 0,
+       "기능 요청": 0,
+       "기타": 1
+      },
+      "confidence": 1
+     },
+     "choice": "기타",
+     "probabilities": {
+      "결제": 0,
+      "버그": 0,
+      "계정": 0,
+      "기능 요청": 0,
+      "기타": 1
+     },
+     "pred_index": 4
+    }
+   }
+  },
+  {
+   "id": "support-ticket-triage-003",
+   "target": 0,
+   "label": 0,
+   "class": "C0-결제",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 0,
+     "probs": [
+      0.9964817503365677,
+      0.00020275251384626144,
+      0.0014981496990092392,
+      0.0009086737252883571,
+      0.0009086737252883571
+     ],
+     "ms": 444,
+     "cost": 1.53065e-05,
+     "in_tok": 253,
+     "err": null,
+     "mass": 0.9975,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      1,
+      2,
+      3,
+      0
+     ]
+    },
+    "qwen": {
+     "pred_index": 0,
+     "probs": [
+      0.9955200765920574,
+      0.00035549825362980796,
+      4.811147978644706e-05,
+      0.0035904051734440257,
+      0.0004859085010822468
+     ],
+     "ms": 377,
+     "cost": 1.0285e-05,
+     "in_tok": 170,
+     "err": null,
+     "mass": 0.9986,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      1,
+      2,
+      3,
+      0
+     ]
+    },
+    "deepseek": {
+     "pred_index": 0,
+     "probs": [
+      0.9999997792744444,
+      0.0,
+      9.931181992538389e-08,
+      6.8255949091936e-08,
+      5.31577866020817e-08
+     ],
+     "ms": 1046,
+     "cost": 3.15e-05,
+     "in_tok": 225,
+     "err": null,
+     "mass": 1.0,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      1,
+      2,
+      3,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 261,
+     "in_tok": 525,
+     "cost": 2.205e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "결제",
+      "probabilities": {
+       "결제": 0.97,
+       "기능 요청": 0,
+       "버그": 0,
+       "계정": 0.01,
+       "기타": 0.02
+      },
+      "confidence": 0.97
+     },
+     "choice": "결제",
+     "probabilities": {
+      "결제": 0.97,
+      "기능 요청": 0,
+      "버그": 0,
+      "계정": 0.01,
+      "기타": 0.02
+     },
+     "pred_index": 0
+    }
+   }
+  },
+  {
+   "id": "support-ticket-triage-004",
+   "target": 1,
+   "label": 1,
+   "class": "C1-버그",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 1,
+     "probs": [
+      0.00020313239831332727,
+      0.9983484506822545,
+      0.00033490870586751355,
+      0.00020313239831332727,
+      0.0009103758152512771
+     ],
+     "ms": 445,
+     "cost": 1.5185499999999999e-05,
+     "in_tok": 251,
+     "err": null,
+     "mass": 0.9944,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      4,
+      0,
+      3,
+      2
+     ]
+    },
+    "qwen": {
+     "pred_index": 1,
+     "probs": [
+      2.281685640612924e-05,
+      0.9994893372428313,
+      0.0,
+      0.0,
+      0.0004878459007625861
+     ],
+     "ms": 398,
+     "cost": 1.0527e-05,
+     "in_tok": 174,
+     "err": null,
+     "mass": 0.9987,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      4,
+      0,
+      3,
+      2
+     ]
+    },
+    "deepseek": {
+     "pred_index": 1,
+     "probs": [
+      0.0,
+      0.9999967954083592,
+      1.2098636712558534e-06,
+      0.0,
+      1.994727969446873e-06
+     ],
+     "ms": 1193,
+     "cost": 3.122e-05,
+     "in_tok": 223,
+     "err": null,
+     "mass": 1.0,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      4,
+      0,
+      3,
+      2
+     ]
+    },
+    "jev": {
+     "ms": 224,
+     "in_tok": 528,
+     "cost": 2.2176000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "버그",
+      "probabilities": {
+       "결제": 0,
+       "버그": 1,
+       "계정": 0,
+       "기능 요청": 0,
+       "기타": 0
+      },
+      "confidence": 1
+     },
+     "choice": "버그",
+     "probabilities": {
+      "결제": 0,
+      "버그": 1,
+      "계정": 0,
+      "기능 요청": 0,
+      "기타": 0
+     },
+     "pred_index": 1
+    }
+   }
+  },
+  {
+   "id": "support-ticket-triage-005",
+   "target": 1,
+   "label": 1,
+   "class": "C1-버그",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 1,
+     "probs": [
+      7.472796767023648e-05,
+      0.998345083985579,
+      0.00033490751595627506,
+      0.00033490751595627506,
+      0.0009103730148383001
+     ],
+     "ms": 450,
+     "cost": 1.5246e-05,
+     "in_tok": 252,
+     "err": null,
+     "mass": 0.9805,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      3,
+      0,
+      1,
+      2
+     ]
+    },
+    "qwen": {
+     "pred_index": 1,
+     "probs": [
+      0.0,
+      0.9998780351652803,
+      0.0,
+      9.609989804712954e-05,
+      2.5864936672631745e-05
+     ],
+     "ms": 441,
+     "cost": 1.0406e-05,
+     "in_tok": 172,
+     "err": null,
+     "mass": 0.9969,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      3,
+      0,
+      1,
+      2
+     ]
+    },
+    "deepseek": {
+     "pred_index": 1,
+     "probs": [
+      1.067697035513747e-06,
+      0.9999928250006187,
+      9.422393267396365e-07,
+      9.422393267396365e-07,
+      4.222823692291726e-06
+     ],
+     "ms": 1671,
+     "cost": 3.122e-05,
+     "in_tok": 223,
+     "err": null,
+     "mass": 1.0,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      3,
+      0,
+      1,
+      2
+     ]
+    },
+    "jev": {
+     "ms": 245,
+     "in_tok": 524,
+     "cost": 2.2008000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "버그",
+      "probabilities": {
+       "결제": 0,
+       "기능 요청": 0,
+       "버그": 1,
+       "계정": 0,
+       "기타": 0
+      },
+      "confidence": 1
+     },
+     "choice": "버그",
+     "probabilities": {
+      "결제": 0,
+      "기능 요청": 0,
+      "버그": 1,
+      "계정": 0,
+      "기타": 0
+     },
+     "pred_index": 1
+    }
+   }
+  },
+  {
+   "id": "support-ticket-triage-006",
+   "target": 2,
+   "label": 2,
+   "class": "C2-기능 요청",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 2,
+     "probs": [
+      0.00033085607108635206,
+      0.0,
+      0.9862679815316829,
+      0.0024447140699288424,
+      0.010956448327301778
+     ],
+     "ms": 425,
+     "cost": 1.5125e-05,
+     "in_tok": 250,
+     "err": null,
+     "mass": 0.9962,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      1,
+      4,
+      3,
+      2
+     ]
+    },
+    "qwen": {
+     "pred_index": 2,
+     "probs": [
+      0.00011537553785685444,
+      4.24442883916342e-05,
+      0.9951936455644244,
+      3.987271895692354e-05,
+      0.004608661890370355
+     ],
+     "ms": 595,
+     "cost": 1.03455e-05,
+     "in_tok": 171,
+     "err": null,
+     "mass": 0.9987,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      1,
+      4,
+      3,
+      2
+     ]
+    },
+    "deepseek": {
+     "pred_index": 2,
+     "probs": [
+      0.0,
+      0.0,
+      0.9996646497669038,
+      0.0,
+      0.00033535023309615435
+     ],
+     "ms": 1242,
+     "cost": 3.0940000000000005e-05,
+     "in_tok": 221,
+     "err": null,
+     "mass": 0.9998,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      1,
+      4,
+      3,
+      2
+     ]
+    },
+    "jev": {
+     "ms": 278,
+     "in_tok": 522,
+     "cost": 2.1924000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "기능 요청",
+      "probabilities": {
+       "결제": 0,
+       "버그": 0,
+       "기능 요청": 0.74,
+       "기타": 0.26,
+       "계정": 0
+      },
+      "confidence": 0.68
+     },
+     "choice": "기능 요청",
+     "probabilities": {
+      "결제": 0,
+      "버그": 0,
+      "기능 요청": 0.74,
+      "기타": 0.26,
+      "계정": 0
+     },
+     "pred_index": 2
+    }
+   }
+  },
+  {
+   "id": "support-ticket-triage-007",
+   "target": 4,
+   "label": 4,
+   "class": "C4-기타",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 4,
+     "probs": [
+      0.0005379750953020003,
+      0.01781528842344631,
+      0.0065538783495254944,
+      0.002411037104729054,
+      0.9726818210269972
+     ],
+     "ms": 473,
+     "cost": 1.4761999999999999e-05,
+     "in_tok": 244,
+     "err": null,
+     "mass": 0.9969,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      4,
+      3,
+      0,
+      1
+     ]
+    },
+    "qwen": {
+     "pred_index": 4,
+     "probs": [
+      0.0,
+      0.0,
+      3.5356238608179966e-05,
+      0.0,
+      0.9999646437613918
+     ],
+     "ms": 767,
+     "cost": 1.0043e-05,
+     "in_tok": 166,
+     "err": null,
+     "mass": 0.9967,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      4,
+      3,
+      0,
+      1
+     ]
+    },
+    "deepseek": {
+     "pred_index": 4,
+     "probs": [
+      0.0,
+      1.760343249031623e-06,
+      0.0,
+      0.0,
+      0.999998239656751
+     ],
+     "ms": 1184,
+     "cost": 3.038e-05,
+     "in_tok": 217,
+     "err": null,
+     "mass": 1.0,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      4,
+      3,
+      0,
+      1
+     ]
+    },
+    "jev": {
+     "ms": 234,
+     "in_tok": 517,
+     "cost": 2.1714000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "기타",
+      "probabilities": {
+       "결제": 0,
+       "기능 요청": 0,
+       "기타": 1,
+       "버그": 0,
+       "계정": 0
+      },
+      "confidence": 1
+     },
+     "choice": "기타",
+     "probabilities": {
+      "결제": 0,
+      "기능 요청": 0,
+      "기타": 1,
+      "버그": 0,
+      "계정": 0
+     },
+     "pred_index": 4
+    }
+   }
+  },
+  {
+   "id": "support-ticket-triage-008",
+   "target": 3,
+   "label": 3,
+   "class": "C3-계정",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 1,
+     "probs": [
+      0.002343184597326309,
+      0.945308223068798,
+      0.0038632582867888007,
+      0.047064120747442206,
+      0.0014212132996448076
+     ],
+     "ms": 878,
+     "cost": 1.5185499999999999e-05,
+     "in_tok": 251,
+     "err": null,
+     "mass": 0.9967,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      3,
+      2,
+      0,
+      1
+     ]
+    },
+    "qwen": {
+     "pred_index": 3,
+     "probs": [
+      0.00026050642423118775,
+      0.002471614958221723,
+      5.129675639681763e-05,
+      0.9971207469033826,
+      9.583495776774003e-05
+     ],
+     "ms": 457,
+     "cost": 1.03455e-05,
+     "in_tok": 171,
+     "err": null,
+     "mass": 0.9989,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      3,
+      2,
+      0,
+      1
+     ]
+    },
+    "deepseek": {
+     "pred_index": 3,
+     "probs": [
+      0.0,
+      0.00026118957257589186,
+      0.0,
+      0.9997355225359323,
+      3.2878914918258652e-06
+     ],
+     "ms": 4310,
+     "cost": 3.1360000000000005e-05,
+     "in_tok": 224,
+     "err": null,
+     "mass": 0.9994,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      3,
+      2,
+      0,
+      1
+     ]
+    },
+    "jev": {
+     "ms": 243,
+     "in_tok": 525,
+     "cost": 2.205e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "계정",
+      "probabilities": {
+       "결제": 0,
+       "버그": 0.01,
+       "계정": 0.99,
+       "기타": 0,
+       "기능 요청": 0
+      },
+      "confidence": 0.99
+     },
+     "choice": "계정",
+     "probabilities": {
+      "결제": 0,
+      "버그": 0.01,
+      "계정": 0.99,
+      "기타": 0,
+      "기능 요청": 0
+     },
+     "pred_index": 3
+    }
+   }
+  },
+  {
+   "id": "support-ticket-triage-009",
+   "target": 1,
+   "label": 1,
+   "class": "C1-버그",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 1,
+     "probs": [
+      2.750854387771385e-05,
+      0.9989867576179362,
+      0.0009109578632360125,
+      0.0,
+      7.477597495015788e-05
+     ],
+     "ms": 476,
+     "cost": 1.4943499999999998e-05,
+     "in_tok": 247,
+     "err": null,
+     "mass": 0.9992,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      1,
+      4,
+      0,
+      3
+     ]
+    },
+    "qwen": {
+     "pred_index": 1,
+     "probs": [
+      4.539581476249698e-05,
+      0.9999092083704749,
+      4.539581476249698e-05,
+      0.0,
+      0.0
+     ],
+     "ms": 507,
+     "cost": 1.0285e-05,
+     "in_tok": 170,
+     "err": null,
+     "mass": 0.9987,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      1,
+      4,
+      0,
+      3
+     ]
+    },
+    "deepseek": {
+     "pred_index": 1,
+     "probs": [
+      0.0,
+      0.9999977911787626,
+      2.1024286869653932e-07,
+      1.7603419872059241e-06,
+      2.3823638143181538e-07
+     ],
+     "ms": 1048,
+     "cost": 3.0520000000000006e-05,
+     "in_tok": 218,
+     "err": null,
+     "mass": 1.0,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      1,
+      4,
+      0,
+      3
+     ]
+    },
+    "jev": {
+     "ms": 333,
+     "in_tok": 520,
+     "cost": 2.184e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "버그",
+      "probabilities": {
+       "버그": 1,
+       "기능 요청": 0,
+       "기타": 0,
+       "계정": 0,
+       "결제": 0
+      },
+      "confidence": 1
+     },
+     "choice": "버그",
+     "probabilities": {
+      "버그": 1,
+      "기능 요청": 0,
+      "기타": 0,
+      "계정": 0,
+      "결제": 0
+     },
+     "pred_index": 1
+    }
+   }
+  },
+  {
+   "id": "support-ticket-triage-010",
+   "target": 4,
+   "label": 4,
+   "class": "C4-기타",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 4,
+     "probs": [
+      0.002457562587598395,
+      0.0005483563337456194,
+      0.0040518357122503205,
+      0.0014905870575411407,
+      0.9914516583088645
+     ],
+     "ms": 1814,
+     "cost": 1.4761999999999999e-05,
+     "in_tok": 244,
+     "err": null,
+     "mass": 0.997,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      3,
+      1,
+      2,
+      0
+     ]
+    },
+    "qwen": {
+     "pred_index": 4,
+     "probs": [
+      0.0015009292320241538,
+      0.0,
+      0.0001683996730234,
+      0.0,
+      0.9983306710949524
+     ],
+     "ms": 696,
+     "cost": 1.0043e-05,
+     "in_tok": 166,
+     "err": null,
+     "mass": 0.9976,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      3,
+      1,
+      2,
+      0
+     ]
+    },
+    "deepseek": {
+     "pred_index": 4,
+     "probs": [
+      2.1023751288970314e-07,
+      0.0,
+      2.753568022387743e-05,
+      0.0,
+      0.9999722540822632
+     ],
+     "ms": 1821,
+     "cost": 3.0240000000000002e-05,
+     "in_tok": 216,
+     "err": null,
+     "mass": 0.9998,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      3,
+      1,
+      2,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 335,
+     "in_tok": 517,
+     "cost": 2.1714000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "기타",
+      "probabilities": {
+       "기능 요청": 0,
+       "버그": 0,
+       "결제": 0,
+       "계정": 0,
+       "기타": 1
+      },
+      "confidence": 1
+     },
+     "choice": "기타",
+     "probabilities": {
+      "기능 요청": 0,
+      "버그": 0,
+      "결제": 0,
+      "계정": 0,
+      "기타": 1
+     },
+     "pred_index": 4
+    }
+   }
+  },
+  {
+   "id": "support-ticket-triage-011",
+   "target": 2,
+   "label": 2,
+   "class": "C2-기능 요청",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 2,
+     "probs": [
+      0.0024165224800669245,
+      0.0024165224800669245,
+      0.9748946123902579,
+      0.0024165224800669245,
+      0.017855820169541528
+     ],
+     "ms": 385,
+     "cost": 1.53065e-05,
+     "in_tok": 253,
+     "err": null,
+     "mass": 0.9947,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      4,
+      1,
+      0,
+      2
+     ]
+    },
+    "qwen": {
+     "pred_index": 2,
+     "probs": [
+      0.0001584064612509242,
+      0.00010887106250897778,
+      0.9996541344671616,
+      4.538421100203761e-05,
+      3.320379807650285e-05
+     ],
+     "ms": 482,
+     "cost": 1.0527e-05,
+     "in_tok": 174,
+     "err": null,
+     "mass": 0.9987,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      4,
+      1,
+      0,
+      2
+     ]
+    },
+    "deepseek": {
+     "pred_index": 2,
+     "probs": [
+      0.0,
+      8.764237015870082e-08,
+      0.9999994672725038,
+      0.0,
+      4.4508512616243305e-07
+     ],
+     "ms": 1511,
+     "cost": 3.15e-05,
+     "in_tok": 225,
+     "err": null,
+     "mass": 0.9981,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      4,
+      1,
+      0,
+      2
+     ]
+    },
+    "jev": {
+     "ms": 241,
+     "in_tok": 528,
+     "cost": 2.2176000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "기능 요청",
+      "probabilities": {
+       "기능 요청": 0.97,
+       "기타": 0.02,
+       "계정": 0,
+       "버그": 0.01,
+       "결제": 0
+      },
+      "confidence": 0.96
+     },
+     "choice": "기능 요청",
+     "probabilities": {
+      "기능 요청": 0.97,
+      "기타": 0.02,
+      "계정": 0,
+      "버그": 0.01,
+      "결제": 0
+     },
+     "pred_index": 2
+    }
+   }
+  },
+  {
+   "id": "support-ticket-triage-012",
+   "target": 1,
+   "label": 1,
+   "class": "C1-버그",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 1,
+     "probs": [
+      0.0009101360912355566,
+      0.9980854033178276,
+      0.0003348201969789481,
+      0.0003348201969789481,
+      0.0003348201969789481
+     ],
+     "ms": 7761,
+     "cost": 1.5064499999999998e-05,
+     "in_tok": 249,
+     "err": null,
+     "mass": 0.9948,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      0,
+      1,
+      4,
+      2
+     ]
+    },
+    "qwen": {
+     "pred_index": 1,
+     "probs": [
+      0.00037996109239819365,
+      0.9995585553651045,
+      0.0,
+      4.0047604502448496e-05,
+      2.1435937994744126e-05
+     ],
+     "ms": 412,
+     "cost": 1.03455e-05,
+     "in_tok": 171,
+     "err": null,
+     "mass": 0.9988,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      0,
+      1,
+      4,
+      2
+     ]
+    },
+    "deepseek": {
+     "pred_index": 1,
+     "probs": [
+      1.0676221777847301e-06,
+      0.9999233114312845,
+      4.784750645428346e-06,
+      4.784750645428346e-06,
+      6.605144524664803e-05
+     ],
+     "ms": 1155,
+     "cost": 3.108e-05,
+     "in_tok": 222,
+     "err": null,
+     "mass": 1.0,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      0,
+      1,
+      4,
+      2
+     ]
+    },
+    "jev": {
+     "ms": 238,
+     "in_tok": 522,
+     "cost": 2.1924000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "버그",
+      "probabilities": {
+       "결제": 0,
+       "계정": 0,
+       "기능 요청": 0,
+       "기타": 0,
+       "버그": 1
+      },
+      "confidence": 1
+     },
+     "choice": "버그",
+     "probabilities": {
+      "결제": 0,
+      "계정": 0,
+      "기능 요청": 0,
+      "기타": 0,
+      "버그": 1
+     },
+     "pred_index": 1
+    }
+   }
+  },
+  {
+   "id": "support-ticket-triage-013",
+   "target": 4,
+   "label": 4,
+   "class": "C4-기타",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 4,
+     "probs": [
+      0.00012320852143152218,
+      4.532588201178805e-05,
+      0.0009103946767238168,
+      0.0005521822838721661,
+      0.9983688886359607
+     ],
+     "ms": 405,
+     "cost": 1.5729999999999997e-05,
+     "in_tok": 260,
+     "err": null,
+     "mass": 0.999,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      4,
+      0,
+      1,
+      3
+     ]
+    },
+    "qwen": {
+     "pred_index": 4,
+     "probs": [
+      0.0,
+      0.0,
+      0.0,
+      7.967304749663714e-05,
+      0.9999203269525033
+     ],
+     "ms": 599,
+     "cost": 1.04665e-05,
+     "in_tok": 173,
+     "err": null,
+     "mass": 0.9985,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      4,
+      0,
+      1,
+      3
+     ]
+    },
+    "deepseek": {
+     "pred_index": 4,
+     "probs": [
+      0.0,
+      0.0,
+      5.04344004045181e-07,
+      6.962254219139823e-06,
+      0.9999925334017767
+     ],
+     "ms": 924,
+     "cost": 3.2200000000000003e-05,
+     "in_tok": 230,
+     "err": null,
+     "mass": 0.9999,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      4,
+      0,
+      1,
+      3
+     ]
+    },
+    "jev": {
+     "ms": 265,
+     "in_tok": 533,
+     "cost": 2.2386000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "기타",
+      "probabilities": {
+       "계정": 0,
+       "결제": 0,
+       "기타": 1,
+       "기능 요청": 0,
+       "버그": 0
+      },
+      "confidence": 1
+     },
+     "choice": "기타",
+     "probabilities": {
+      "계정": 0,
+      "결제": 0,
+      "기타": 1,
+      "기능 요청": 0,
+      "버그": 0
+     },
+     "pred_index": 4
+    }
+   }
+  },
+  {
+   "id": "support-ticket-triage-014",
+   "target": 1,
+   "label": 1,
+   "class": "C1-버그",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 1,
+     "probs": [
+      0.00012334757557078087,
+      0.9994959819139999,
+      4.5377037170831106e-05,
+      0.0003352934732585324,
+      0.0
+     ],
+     "ms": 434,
+     "cost": 1.5185499999999999e-05,
+     "in_tok": 251,
+     "err": null,
+     "mass": 0.9977,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      1,
+      0,
+      2,
+      4
+     ]
+    },
+    "qwen": {
+     "pred_index": 1,
+     "probs": [
+      0.0,
+      0.9999463896603289,
+      2.4299521632068075e-05,
+      2.931081803905999e-05,
+      0.0
+     ],
+     "ms": 459,
+     "cost": 1.04665e-05,
+     "in_tok": 173,
+     "err": null,
+     "mass": 0.9978,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      1,
+      0,
+      2,
+      4
+     ]
+    },
+    "deepseek": {
+     "pred_index": 1,
+     "probs": [
+      0.0,
+      0.9999939756584005,
+      1.0676977703269898e-06,
+      7.338172305347659e-07,
+      4.2228265985344775e-06
+     ],
+     "ms": 1100,
+     "cost": 3.122e-05,
+     "in_tok": 223,
+     "err": null,
+     "mass": 0.9999,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      1,
+      0,
+      2,
+      4
+     ]
+    },
+    "jev": {
+     "ms": 325,
+     "in_tok": 526,
+     "cost": 2.2092e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "버그",
+      "probabilities": {
+       "결제": 0,
+       "버그": 1,
+       "기타": 0,
+       "계정": 0,
+       "기능 요청": 0
+      },
+      "confidence": 1
+     },
+     "choice": "버그",
+     "probabilities": {
+      "결제": 0,
+      "버그": 1,
+      "기타": 0,
+      "계정": 0,
+      "기능 요청": 0
+     },
+     "pred_index": 1
+    }
+   }
+  },
+  {
+   "id": "support-ticket-triage-015",
+   "target": 0,
+   "label": 0,
+   "class": "C0-결제",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 0,
+     "probs": [
+      0.9673216465929765,
+      0.029210581893151295,
+      0.0005350104696847563,
+      0.0023977505745026067,
+      0.0005350104696847563
+     ],
+     "ms": 613,
+     "cost": 1.5367e-05,
+     "in_tok": 254,
+     "err": null,
+     "mass": 0.998,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      0,
+      3,
+      2,
+      4
+     ]
+    },
+    "qwen": {
+     "pred_index": 0,
+     "probs": [
+      0.9998025355664423,
+      0.00012338538990808135,
+      2.144116576849805e-05,
+      2.144116576849805e-05,
+      3.119671211257033e-05
+     ],
+     "ms": 466,
+     "cost": 1.0406e-05,
+     "in_tok": 172,
+     "err": null,
+     "mass": 0.9982,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      0,
+      3,
+      2,
+      4
+     ]
+    },
+    "deepseek": {
+     "pred_index": 0,
+     "probs": [
+      0.9999996072135893,
+      0.0,
+      0.0,
+      0.0,
+      3.927864107336477e-07
+     ],
+     "ms": 2233,
+     "cost": 3.15e-05,
+     "in_tok": 225,
+     "err": null,
+     "mass": 0.9999,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      0,
+      3,
+      2,
+      4
+     ]
+    },
+    "jev": {
+     "ms": 321,
+     "in_tok": 526,
+     "cost": 2.2092e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "결제",
+      "probabilities": {
+       "결제": 0.98,
+       "기타": 0,
+       "버그": 0.02,
+       "계정": 0,
+       "기능 요청": 0
+      },
+      "confidence": 0.97
+     },
+     "choice": "결제",
+     "probabilities": {
+      "결제": 0.98,
+      "기타": 0,
+      "버그": 0.02,
+      "계정": 0,
+      "기능 요청": 0
+     },
+     "pred_index": 0
+    }
+   }
+  },
+  {
+   "id": "support-ticket-triage-016",
+   "target": 2,
+   "label": 2,
+   "class": "C2-기능 요청",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 2,
+     "probs": [
+      0.00012194782958290919,
+      0.010977388552950385,
+      0.9881530736425314,
+      0.00020105798054905673,
+      0.0005465319943863478
+     ],
+     "ms": 402,
+     "cost": 1.5125e-05,
+     "in_tok": 250,
+     "err": null,
+     "mass": 0.9974,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      0,
+      3,
+      4,
+      1
+     ]
+    },
+    "qwen": {
+     "pred_index": 2,
+     "probs": [
+      5.4748681052053015e-05,
+      7.483257449116898e-05,
+      0.9997429840127576,
+      4.263831567546548e-05,
+      8.479641602367618e-05
+     ],
+     "ms": 620,
+     "cost": 1.03455e-05,
+     "in_tok": 171,
+     "err": null,
+     "mass": 0.9993,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      0,
+      3,
+      4,
+      1
+     ]
+    },
+    "deepseek": {
+     "pred_index": 2,
+     "probs": [
+      0.0,
+      1.2751860124721403e-07,
+      0.9999965368218551,
+      4.6911471765789084e-08,
+      3.2887480719306486e-06
+     ],
+     "ms": 1007,
+     "cost": 3.08e-05,
+     "in_tok": 220,
+     "err": null,
+     "mass": 0.9999,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      0,
+      3,
+      4,
+      1
+     ]
+    },
+    "jev": {
+     "ms": 262,
+     "in_tok": 525,
+     "cost": 2.205e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "기능 요청",
+      "probabilities": {
+       "결제": 0,
+       "버그": 0,
+       "계정": 0,
+       "기능 요청": 1,
+       "기타": 0
+      },
+      "confidence": 1
+     },
+     "choice": "기능 요청",
+     "probabilities": {
+      "결제": 0,
+      "버그": 0,
+      "계정": 0,
+      "기능 요청": 1,
+      "기타": 0
+     },
+     "pred_index": 2
+    }
+   }
+  },
+  {
+   "id": "support-ticket-triage-017",
+   "target": 3,
+   "label": 3,
+   "class": "C3-계정",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 4,
+     "probs": [
+      0.0013086364308433798,
+      0.009669588000606114,
+      0.0007937281177234211,
+      0.11779966933424163,
+      0.8704283781165855
+     ],
+     "ms": 597,
+     "cost": 1.4883000000000001e-05,
+     "in_tok": 246,
+     "err": null,
+     "mass": 0.9937,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      2,
+      0,
+      3,
+      4
+     ]
+    },
+    "qwen": {
+     "pred_index": 3,
+     "probs": [
+      0.0,
+      0.0,
+      1.6700253137285187e-05,
+      0.9999129890549374,
+      7.031069192538217e-05
+     ],
+     "ms": 413,
+     "cost": 1.0224499999999998e-05,
+     "in_tok": 169,
+     "err": null,
+     "mass": 0.9988,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      2,
+      0,
+      3,
+      4
+     ]
+    },
+    "deepseek": {
+     "pred_index": 3,
+     "probs": [
+      0.0,
+      0.0,
+      0.0,
+      0.9999910603103266,
+      8.93968967335844e-06
+     ],
+     "ms": 1003,
+     "cost": 3.0520000000000006e-05,
+     "in_tok": 218,
+     "err": null,
+     "mass": 0.9999,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      2,
+      0,
+      3,
+      4
+     ]
+    },
+    "jev": {
+     "ms": 268,
+     "in_tok": 521,
+     "cost": 2.1882e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "계정",
+      "probabilities": {
+       "기능 요청": 0,
+       "계정": 1,
+       "기타": 0,
+       "결제": 0,
+       "버그": 0
+      },
+      "confidence": 1
+     },
+     "choice": "계정",
+     "probabilities": {
+      "기능 요청": 0,
+      "계정": 1,
+      "기타": 0,
+      "결제": 0,
+      "버그": 0
+     },
+     "pred_index": 3
+    }
+   }
+  },
+  {
+   "id": "support-ticket-triage-018",
+   "target": 3,
+   "label": 3,
+   "class": "C3-계정",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 3,
+     "probs": [
+      0.0009069417635299608,
+      0.001495294176818132,
+      0.002465323315274093,
+      0.994582352758223,
+      0.0005500879861547662
+     ],
+     "ms": 371,
+     "cost": 1.5125e-05,
+     "in_tok": 250,
+     "err": null,
+     "mass": 0.9977,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      4,
+      0,
+      1,
+      3
+     ]
+    },
+    "qwen": {
+     "pred_index": 3,
+     "probs": [
+      4.264292905816724e-05,
+      9.609732406124485e-05,
+      0.0,
+      0.9998504779259335,
+      1.0781820946997484e-05
+     ],
+     "ms": 498,
+     "cost": 1.0224499999999998e-05,
+     "in_tok": 169,
+     "err": null,
+     "mass": 0.9988,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      4,
+      0,
+      1,
+      3
+     ]
+    },
+    "deepseek": {
+     "pred_index": 3,
+     "probs": [
+      0.0,
+      0.0,
+      3.466324445173249e-07,
+      0.9999996533675555,
+      0.0
+     ],
+     "ms": 1780,
+     "cost": 3.108e-05,
+     "in_tok": 222,
+     "err": null,
+     "mass": 1.0,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      4,
+      0,
+      1,
+      3
+     ]
+    },
+    "jev": {
+     "ms": 243,
+     "in_tok": 521,
+     "cost": 2.1882e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "계정",
+      "probabilities": {
+       "결제": 0,
+       "버그": 0,
+       "계정": 1,
+       "기타": 0,
+       "기능 요청": 0
+      },
+      "confidence": 1
+     },
+     "choice": "계정",
+     "probabilities": {
+      "결제": 0,
+      "버그": 0,
+      "계정": 1,
+      "기타": 0,
+      "기능 요청": 0
+     },
+     "pred_index": 3
+    }
+   }
+  },
+  {
+   "id": "support-ticket-triage-019",
+   "target": 2,
+   "label": 2,
+   "class": "C2-기능 요청",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 2,
+     "probs": [
+      0.00012337993765121894,
+      4.538894251489782e-05,
+      0.9997583123920719,
+      4.538894251489782e-05,
+      2.752978524721977e-05
+     ],
+     "ms": 424,
+     "cost": 1.5125e-05,
+     "in_tok": 250,
+     "err": null,
+     "mass": 0.999,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      2,
+      1,
+      4,
+      3
+     ]
+    },
+    "qwen": {
+     "pred_index": 2,
+     "probs": [
+      3.321247963340208e-05,
+      3.1200237216044435e-05,
+      0.9999154428959678,
+      0.0,
+      2.0144387182739766e-05
+     ],
+     "ms": 536,
+     "cost": 1.03455e-05,
+     "in_tok": 171,
+     "err": null,
+     "mass": 0.9986,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      2,
+      1,
+      4,
+      3
+     ]
+    },
+    "deepseek": {
+     "pred_index": 2,
+     "probs": [
+      0.0,
+      1.8553891968961084e-07,
+      0.9999990574220541,
+      1.8553891968961084e-07,
+      5.715001065579888e-07
+     ],
+     "ms": 1022,
+     "cost": 3.0940000000000005e-05,
+     "in_tok": 221,
+     "err": null,
+     "mass": 1.0,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      2,
+      1,
+      4,
+      3
+     ]
+    },
+    "jev": {
+     "ms": 247,
+     "in_tok": 525,
+     "cost": 2.205e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "기능 요청",
+      "probabilities": {
+       "계정": 0,
+       "버그": 0,
+       "기능 요청": 1,
+       "결제": 0,
+       "기타": 0
+      },
+      "confidence": 1
+     },
+     "choice": "기능 요청",
+     "probabilities": {
+      "계정": 0,
+      "버그": 0,
+      "기능 요청": 1,
+      "결제": 0,
+      "기타": 0
+     },
+     "pred_index": 2
+    }
+   }
+  },
+  {
+   "id": "support-ticket-triage-020",
+   "target": 2,
+   "label": 2,
+   "class": "C2-기능 요청",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 2,
+     "probs": [
+      0.0,
+      0.0014998515601361436,
+      0.9976137216076895,
+      0.00033466227839142173,
+      0.0005517645537830004
+     ],
+     "ms": 454,
+     "cost": 1.53065e-05,
+     "in_tok": 253,
+     "err": null,
+     "mass": 0.9854,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      4,
+      0,
+      1,
+      2
+     ]
+    },
+    "qwen": {
+     "pred_index": 2,
+     "probs": [
+      7.030014079721362e-05,
+      6.203965650480196e-05,
+      0.9997635206336818,
+      2.9305458676409975e-05,
+      7.483411033977925e-05
+     ],
+     "ms": 372,
+     "cost": 1.0406e-05,
+     "in_tok": 172,
+     "err": null,
+     "mass": 0.9994,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      4,
+      0,
+      1,
+      2
+     ]
+    },
+    "deepseek": {
+     "pred_index": 2,
+     "probs": [
+      0.0,
+      4.69116192926868e-08,
+      0.9999998999305518,
+      0.0,
+      5.315782883236793e-08
+     ],
+     "ms": 1434,
+     "cost": 3.1360000000000005e-05,
+     "in_tok": 224,
+     "err": null,
+     "mass": 0.9999,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      4,
+      0,
+      1,
+      2
+     ]
+    },
+    "jev": {
+     "ms": 223,
+     "in_tok": 524,
+     "cost": 2.2008000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "기능 요청",
+      "probabilities": {
+       "기능 요청": 0.99,
+       "버그": 0,
+       "계정": 0,
+       "결제": 0,
+       "기타": 0.01
+      },
+      "confidence": 0.99
+     },
+     "choice": "기능 요청",
+     "probabilities": {
+      "기능 요청": 0.99,
+      "버그": 0,
+      "계정": 0,
+      "결제": 0,
+      "기타": 0.01
+     },
+     "pred_index": 2
+    }
+   }
+  },
+  {
+   "id": "support-ticket-triage-021",
+   "target": 3,
+   "label": 3,
+   "class": "C3-계정",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 3,
+     "probs": [
+      0.0014693361379496015,
+      0.017900178626814384,
+      0.0024225257444458856,
+      0.9773167620737,
+      0.0008911974170901847
+     ],
+     "ms": 696,
+     "cost": 1.4761999999999999e-05,
+     "in_tok": 244,
+     "err": null,
+     "mass": 0.9981,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      2,
+      4,
+      0,
+      1
+     ]
+    },
+    "qwen": {
+     "pred_index": 3,
+     "probs": [
+      0.00012325487402705396,
+      0.0006259398986842237,
+      0.0001021818795260849,
+      0.9987444861745447,
+      0.00040413717321789304
+     ],
+     "ms": 400,
+     "cost": 1.0103499999999999e-05,
+     "in_tok": 167,
+     "err": null,
+     "mass": 0.9984,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      2,
+      4,
+      0,
+      1
+     ]
+    },
+    "deepseek": {
+     "pred_index": 3,
+     "probs": [
+      1.6373517679697969e-07,
+      1.4738970908247875e-05,
+      0.0,
+      0.9999849335587382,
+      1.6373517679697969e-07
+     ],
+     "ms": 1090,
+     "cost": 3.038e-05,
+     "in_tok": 217,
+     "err": null,
+     "mass": 1.0,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      2,
+      4,
+      0,
+      1
+     ]
+    },
+    "jev": {
+     "ms": 38161,
+     "in_tok": 0,
+     "cost": 0.0,
+     "model": null,
+     "err": "HTTP 520 {\"error\":{\"message\":\"HTTP 520: error code: 520\\n\",\"code\":520}}",
+     "raw": null,
+     "choice": null,
+     "probabilities": null,
+     "pred_index": null
+    }
+   }
+  },
+  {
+   "id": "support-ticket-triage-022",
+   "target": 3,
+   "label": 3,
+   "class": "C3-계정",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 3,
+     "probs": [
+      0.0014684869990537397,
+      0.01788983399734375,
+      0.0024211257510864995,
+      0.9767520662534623,
+      0.0014684869990537397
+     ],
+     "ms": 611,
+     "cost": 1.5548500000000002e-05,
+     "in_tok": 257,
+     "err": null,
+     "mass": 0.9958,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      2,
+      0,
+      4,
+      1
+     ]
+    },
+    "qwen": {
+     "pred_index": 3,
+     "probs": [
+      0.00017912636780450166,
+      0.0011680512011049613,
+      0.0003143765659996739,
+      0.9975842953283051,
+      0.0007541505367857476
+     ],
+     "ms": 362,
+     "cost": 1.05875e-05,
+     "in_tok": 175,
+     "err": null,
+     "mass": 0.999,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      2,
+      0,
+      4,
+      1
+     ]
+    },
+    "deepseek": {
+     "pred_index": 3,
+     "probs": [
+      0.0,
+      1.0122725560605589e-05,
+      7.883586593416558e-06,
+      0.999272335980279,
+      0.0007096577075670564
+     ],
+     "ms": 1282,
+     "cost": 3.1780000000000004e-05,
+     "in_tok": 227,
+     "err": null,
+     "mass": 0.9996,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      2,
+      0,
+      4,
+      1
+     ]
+    },
+    "jev": {
+     "ms": 253,
+     "in_tok": 531,
+     "cost": 2.2302e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "계정",
+      "probabilities": {
+       "버그": 0,
+       "기능 요청": 0,
+       "기타": 0.02,
+       "계정": 0.98,
+       "결제": 0
+      },
+      "confidence": 0.97
+     },
+     "choice": "계정",
+     "probabilities": {
+      "버그": 0,
+      "기능 요청": 0,
+      "기타": 0.02,
+      "계정": 0.98,
+      "결제": 0
+     },
+     "pred_index": 3
+    }
+   }
+  },
+  {
+   "id": "support-ticket-triage-023",
+   "target": 1,
+   "label": 1,
+   "class": "C1-버그",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 1,
+     "probs": [
+      0.0002033495925220496,
+      0.9994160101817531,
+      0.0,
+      0.00033526679857930693,
+      4.537342714556287e-05
+     ],
+     "ms": 632,
+     "cost": 1.57905e-05,
+     "in_tok": 261,
+     "err": null,
+     "mass": 0.9963,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      1,
+      0,
+      4,
+      2
+     ]
+    },
+    "qwen": {
+     "pred_index": 1,
+     "probs": [
+      0.0,
+      0.99996269325547,
+      0.0,
+      2.4299929534448232e-05,
+      1.3006814995519562e-05
+     ],
+     "ms": 412,
+     "cost": 1.05875e-05,
+     "in_tok": 175,
+     "err": null,
+     "mass": 0.9983,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      1,
+      0,
+      4,
+      2
+     ]
+    },
+    "deepseek": {
+     "pred_index": 1,
+     "probs": [
+      0.0,
+      0.9999990824474636,
+      2.6995769394491625e-07,
+      6.475948424207908e-07,
+      0.0
+     ],
+     "ms": 1607,
+     "cost": 3.2200000000000003e-05,
+     "in_tok": 230,
+     "err": null,
+     "mass": 1.0,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      1,
+      0,
+      4,
+      2
+     ]
+    },
+    "jev": {
+     "ms": 258,
+     "in_tok": 528,
+     "cost": 2.2176000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "버그",
+      "probabilities": {
+       "결제": 0,
+       "기능 요청": 0,
+       "기타": 0,
+       "버그": 1,
+       "계정": 0
+      },
+      "confidence": 1
+     },
+     "choice": "버그",
+     "probabilities": {
+      "결제": 0,
+      "기능 요청": 0,
+      "기타": 0,
+      "버그": 1,
+      "계정": 0
+     },
+     "pred_index": 1
+    }
+   }
+  },
+  {
+   "id": "support-ticket-triage-024",
+   "target": 0,
+   "label": 0,
+   "class": "C0-결제",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 0,
+     "probs": [
+      0.9991260087565222,
+      0.00012330193994585767,
+      0.0005526009566068307,
+      0.00012330193994585767,
+      7.478640697920855e-05
+     ],
+     "ms": 621,
+     "cost": 1.53065e-05,
+     "in_tok": 253,
+     "err": null,
+     "mass": 0.9922,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      3,
+      1,
+      0,
+      4
+     ]
+    },
+    "qwen": {
+     "pred_index": 0,
+     "probs": [
+      0.9995172821103465,
+      0.0002959019308601499,
+      5.826654490182773e-05,
+      5.826654490182773e-05,
+      7.028286898983043e-05
+     ],
+     "ms": 506,
+     "cost": 1.0285e-05,
+     "in_tok": 170,
+     "err": null,
+     "mass": 0.9985,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      3,
+      1,
+      0,
+      4
+     ]
+    },
+    "deepseek": {
+     "pred_index": 0,
+     "probs": [
+      0.9999997897565949,
+      2.1024340516286138e-07,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "ms": 1097,
+     "cost": 3.164e-05,
+     "in_tok": 226,
+     "err": null,
+     "mass": 1.0,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      3,
+      1,
+      0,
+      4
+     ]
+    },
+    "jev": {
+     "ms": 225,
+     "in_tok": 527,
+     "cost": 2.2134000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "결제",
+      "probabilities": {
+       "기능 요청": 0,
+       "계정": 0,
+       "기타": 0,
+       "결제": 1,
+       "버그": 0
+      },
+      "confidence": 1
+     },
+     "choice": "결제",
+     "probabilities": {
+      "기능 요청": 0,
+      "계정": 0,
+      "기타": 0,
+      "결제": 1,
+      "버그": 0
+     },
+     "pred_index": 0
+    }
+   }
+  },
+  {
+   "id": "support-ticket-triage-025",
+   "target": 2,
+   "label": 2,
+   "class": "C2-기능 요청",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 2,
+     "probs": [
+      0.0005514686357607664,
+      0.0009092180699027568,
+      0.9970786265886729,
+      0.0005514686357607664,
+      0.0009092180699027568
+     ],
+     "ms": 436,
+     "cost": 1.5246e-05,
+     "in_tok": 252,
+     "err": null,
+     "mass": 0.9978,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      2,
+      1,
+      3,
+      4
+     ]
+    },
+    "qwen": {
+     "pred_index": 2,
+     "probs": [
+      0.0003470343772909076,
+      0.0001744997603353603,
+      0.9718180068310098,
+      0.02589807304317392,
+      0.0017623859881900799
+     ],
+     "ms": 461,
+     "cost": 1.0406e-05,
+     "in_tok": 172,
+     "err": null,
+     "mass": 0.9971,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      2,
+      1,
+      3,
+      4
+     ]
+    },
+    "deepseek": {
+     "pred_index": 2,
+     "probs": [
+      0.0,
+      0.0,
+      0.9999990559359313,
+      2.1024319916561452e-07,
+      7.338208695619499e-07
+     ],
+     "ms": 1016,
+     "cost": 3.122e-05,
+     "in_tok": 223,
+     "err": null,
+     "mass": 0.9998,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      2,
+      1,
+      3,
+      4
+     ]
+    },
+    "jev": {
+     "ms": 237,
+     "in_tok": 523,
+     "cost": 2.1966000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "계정",
+      "probabilities": {
+       "기타": 0,
+       "결제": 0,
+       "계정": 0.86,
+       "기능 요청": 0.14,
+       "버그": 0
+      },
+      "confidence": 0.82
+     },
+     "choice": "계정",
+     "probabilities": {
+      "기타": 0,
+      "결제": 0,
+      "계정": 0.86,
+      "기능 요청": 0.14,
+      "버그": 0
+     },
+     "pred_index": 3
+    }
+   }
+  },
+  {
+   "id": "support-ticket-triage-026",
+   "target": 4,
+   "label": 4,
+   "class": "C4-기타",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 4,
+     "probs": [
+      2.7504031553525526e-05,
+      0.0005524329778842216,
+      0.0005524329778842216,
+      4.534648185230503e-05,
+      0.9988222835308257
+     ],
+     "ms": 626,
+     "cost": 1.5004e-05,
+     "in_tok": 248,
+     "err": null,
+     "mass": 0.9969,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      0,
+      3,
+      4,
+      1
+     ]
+    },
+    "qwen": {
+     "pred_index": 4,
+     "probs": [
+      0.0,
+      0.0,
+      6.202023764096479e-05,
+      0.0004878269563610387,
+      0.9994501528059979
+     ],
+     "ms": 603,
+     "cost": 1.0103499999999999e-05,
+     "in_tok": 167,
+     "err": null,
+     "mass": 0.9951,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      0,
+      3,
+      4,
+      1
+     ]
+    },
+    "deepseek": {
+     "pred_index": 4,
+     "probs": [
+      0.0,
+      0.0,
+      0.0,
+      1.994730628568952e-06,
+      0.9999980052693714
+     ],
+     "ms": 1438,
+     "cost": 3.066e-05,
+     "in_tok": 219,
+     "err": null,
+     "mass": 0.9996,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      0,
+      3,
+      4,
+      1
+     ]
+    },
+    "jev": {
+     "ms": 288,
+     "in_tok": 520,
+     "cost": 2.184e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "기타",
+      "probabilities": {
+       "버그": 0,
+       "기능 요청": 0,
+       "기타": 1,
+       "계정": 0,
+       "결제": 0
+      },
+      "confidence": 1
+     },
+     "choice": "기타",
+     "probabilities": {
+      "버그": 0,
+      "기능 요청": 0,
+      "기타": 1,
+      "계정": 0,
+      "결제": 0
+     },
+     "pred_index": 4
+    }
+   }
+  },
+  {
+   "id": "support-ticket-triage-027",
+   "target": 0,
+   "label": 0,
+   "class": "C0-결제",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 0,
+     "probs": [
+      0.7230904173769787,
+      0.021835436630296686,
+      0.09785963769206009,
+      0.09785963769206009,
+      0.05935487060860449
+     ],
+     "ms": 553,
+     "cost": 1.4883000000000001e-05,
+     "in_tok": 246,
+     "err": null,
+     "mass": 0.9937,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      0,
+      2,
+      4,
+      1
+     ]
+    },
+    "qwen": {
+     "pred_index": 0,
+     "probs": [
+      0.9997956773593696,
+      0.0,
+      2.429587103014944e-05,
+      0.00014883025367696905,
+      3.119651592327926e-05
+     ],
+     "ms": 360,
+     "cost": 1.0224499999999998e-05,
+     "in_tok": 169,
+     "err": null,
+     "mass": 0.9989,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      0,
+      2,
+      4,
+      1
+     ]
+    },
+    "deepseek": {
+     "pred_index": 0,
+     "probs": [
+      0.9999980926272773,
+      5.714994454486758e-07,
+      0.0,
+      5.043464904372703e-07,
+      8.315267865868864e-07
+     ],
+     "ms": 1080,
+     "cost": 3.066e-05,
+     "in_tok": 219,
+     "err": null,
+     "mass": 1.0,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      0,
+      2,
+      4,
+      1
+     ]
+    },
+    "jev": {
+     "ms": 302,
+     "in_tok": 521,
+     "cost": 2.1882e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "결제",
+      "probabilities": {
+       "기타": 0,
+       "결제": 1,
+       "계정": 0,
+       "기능 요청": 0,
+       "버그": 0
+      },
+      "confidence": 1
+     },
+     "choice": "결제",
+     "probabilities": {
+      "기타": 0,
+      "결제": 1,
+      "계정": 0,
+      "기능 요청": 0,
+      "버그": 0
+     },
+     "pred_index": 0
+    }
+   }
+  },
+  {
+   "id": "support-ticket-triage-028",
+   "target": 3,
+   "label": 3,
+   "class": "C3-계정",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 2,
+     "probs": [
+      0.002789299643981204,
+      0.0075821025363613905,
+      0.6825192212529446,
+      0.2510847822203915,
+      0.056024594346321274
+     ],
+     "ms": 4013,
+     "cost": 1.54275e-05,
+     "in_tok": 255,
+     "err": null,
+     "mass": 0.9978,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      1,
+      0,
+      3,
+      4
+     ]
+    },
+    "qwen": {
+     "pred_index": 3,
+     "probs": [
+      0.0001582891108900736,
+      0.00014869885847126595,
+      0.0005190100134477982,
+      0.9989130273931461,
+      0.00026097462404467566
+     ],
+     "ms": 2799,
+     "cost": 1.0285e-05,
+     "in_tok": 170,
+     "err": null,
+     "mass": 0.9966,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      1,
+      0,
+      3,
+      4
+     ]
+    },
+    "deepseek": {
+     "pred_index": 3,
+     "probs": [
+      0.0,
+      0.0,
+      3.466268388837489e-07,
+      0.9999829519567636,
+      1.6701416397532992e-05
+     ],
+     "ms": 1190,
+     "cost": 3.1920000000000006e-05,
+     "in_tok": 228,
+     "err": null,
+     "mass": 1.0,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      1,
+      0,
+      3,
+      4
+     ]
+    },
+    "jev": {
+     "ms": 508,
+     "in_tok": 532,
+     "cost": 2.2344e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "계정",
+      "probabilities": {
+       "버그": 0,
+       "계정": 1,
+       "기타": 0,
+       "결제": 0,
+       "기능 요청": 0
+      },
+      "confidence": 1
+     },
+     "choice": "계정",
+     "probabilities": {
+      "버그": 0,
+      "계정": 1,
+      "기타": 0,
+      "결제": 0,
+      "기능 요청": 0
+     },
+     "pred_index": 3
+    }
+   }
+  },
+  {
+   "id": "support-ticket-triage-029",
+   "target": 0,
+   "label": 0,
+   "class": "C0-결제",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 0,
+     "probs": [
+      0.6167349224326286,
+      0.37406863937088203,
+      0.004155527962902376,
+      0.002520455116793474,
+      0.002520455116793474
+     ],
+     "ms": 454,
+     "cost": 1.5487999999999998e-05,
+     "in_tok": 256,
+     "err": null,
+     "mass": 0.9982,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      1,
+      0,
+      4,
+      3
+     ]
+    },
+    "qwen": {
+     "pred_index": 0,
+     "probs": [
+      0.9143371214572565,
+      0.08504659651681588,
+      0.00032650796423181567,
+      0.00014488703084791763,
+      0.00014488703084791763
+     ],
+     "ms": 407,
+     "cost": 1.0527e-05,
+     "in_tok": 174,
+     "err": null,
+     "mass": 0.9971,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      1,
+      0,
+      4,
+      3
+     ]
+    },
+    "deepseek": {
+     "pred_index": 0,
+     "probs": [
+      0.9999993067344743,
+      3.4663276277379995e-07,
+      0.0,
+      3.4663276277379995e-07,
+      0.0
+     ],
+     "ms": 1163,
+     "cost": 3.15e-05,
+     "in_tok": 225,
+     "err": null,
+     "mass": 1.0,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      1,
+      0,
+      4,
+      3
+     ]
+    },
+    "jev": {
+     "ms": 248,
+     "in_tok": 532,
+     "cost": 2.2344e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "결제",
+      "probabilities": {
+       "기타": 0,
+       "계정": 0,
+       "버그": 0.03,
+       "기능 요청": 0,
+       "결제": 0.97
+      },
+      "confidence": 0.96
+     },
+     "choice": "결제",
+     "probabilities": {
+      "기타": 0,
+      "계정": 0,
+      "버그": 0.03,
+      "기능 요청": 0,
+      "결제": 0.97
+     },
+     "pred_index": 0
+    }
+   }
+  }
+ ],
+ "agg": {
+  "glm": {
+   "n": 30,
+   "ok": 30,
+   "hit": 27,
+   "ms": 33738,
+   "cost": 0.0004553229999999999
+  },
+  "qwen": {
+   "n": 30,
+   "ok": 30,
+   "hit": 30,
+   "ms": 16877,
+   "cost": 0.00030988099999999997
+  },
+  "deepseek": {
+   "n": 30,
+   "ok": 30,
+   "hit": 30,
+   "ms": 48971,
+   "cost": 0.00093394
+  },
+  "jev": {
+   "n": 30,
+   "ok": 29,
+   "hit": 28,
+   "ms": 46123,
+   "cost": 0.0006387359999999999
+  }
+ }
+}
