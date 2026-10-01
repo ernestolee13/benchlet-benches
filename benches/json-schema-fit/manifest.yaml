@@ -1,0 +1,294 @@
+name: json-schema-fit
+version: 1
+task_signature:
+  goal: derive
+  answer: binary
+  prob_use: accuracy_only
+  label: machine
+  unit: record
+  language: ko
+  n: 24
+question: 이 JSON 이 주어진 스키마를 위반하는가. 스키마는 필수 키 목록, 키별 타입, 허용 값(enum)으로만 적는다. 위반은 셋이다.
+  (1) 필수 키가 없다. (2) 값의 타입이 다르다(정수 자리에 문자열 등). (3) 허용 값 밖의 값이다. 스키마에 없는 추가 키는 위반이 아니다.
+  입력은 [스키마] 다음에 [JSON] 이다.
+choices:
+- 위반
+- 통과
+generator:
+  script: src/build_samples.py
+  seed: 20261001
+source: 스키마 3개 × JSON 8건. 통과 9, 위반 15. 라벨은 schema_check 가 확인
+domain:
+- json-schema-fit
+- sample
+visibility: sample
+items_sha256: 8aedbb69099fe343b567a36cbbea6a019db69e6dfc48d9ebd47d8a34683a1590
+license: CC-BY-4.0
+review:
+  checks_run: 5
+  human_reviewed_fraction: 0.0
+  flagged: 5
+  decided: 0
+note: benchlet 샘플. 작성자가 규칙을 먼저 적고 그 규칙대로 항목을 썼다(constructed). 기계 검증기가 있는 둘은 machine
+  verifier schema_check 는 생성기 안에 있어 같은 코드 경로다(순환)
+owner: ernestolee13
+n: 24
+choices_note: null
+published_at: '2026-10-01'
+type: binary
+classes:
+- OK
+- V1-missing
+- V2-type
+- V3-enum
+label_source_mix:
+  machine: 24
+  constructed: 0
+  judged: 0
+  outcome: 0
+experiment:
+  date: '2026-10-01'
+  template: generic
+  runner: benchlet
+  arms:
+    glm:
+      model: z-ai/glm-4.7-flash
+      provider: cloudflare
+      family: GLM
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke:
+        arm: glm
+        mode: logprob
+        usable: true
+        reasons:
+        - 뻔한 5건 중 1건 틀림 (json-schema-fit-006). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9668
+        spread: 1.0968580821391072e-08
+        distinct_p: 7
+        n_calls: 13
+        smoke_acc: 0.8
+        cost: 0.0001780515
+        per_item:
+        - id: json-schema-fit-005
+          target: 0
+          hit: 1
+          p: 0.8709
+        - id: json-schema-fit-006
+          target: 0
+          hit: 0
+          p: 0.2257
+        - id: json-schema-fit-007
+          target: 0
+          hit: 1
+          p: 0.9025
+        - id: json-schema-fit-000
+          target: 1
+          hit: 1
+          p: 0.1724
+        - id: json-schema-fit-001
+          target: 1
+          hit: 1
+          p: 0.0257
+    qwen:
+      model: qwen/qwen3.8-27b
+      provider: parasail
+      family: Qwen
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke:
+        arm: qwen
+        mode: logprob
+        usable: true
+        reasons: []
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9953
+        spread: 0.0
+        distinct_p: 9
+        n_calls: 13
+        smoke_acc: 1.0
+        cost: 0.00015978049999999997
+        per_item:
+        - id: json-schema-fit-005
+          target: 0
+          hit: 1
+          p: 0.9989
+        - id: json-schema-fit-006
+          target: 0
+          hit: 1
+          p: 0.9989
+        - id: json-schema-fit-007
+          target: 0
+          hit: 1
+          p: 0.9989
+        - id: json-schema-fit-000
+          target: 1
+          hit: 1
+          p: 0.0488
+        - id: json-schema-fit-001
+          target: 1
+          hit: 1
+          p: 0.0125
+    deepseek:
+      model: deepseek/deepseek-v4-flash
+      provider: digitalocean
+      family: DeepSeek
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.14
+      smoke:
+        arm: deepseek
+        mode: logprob
+        usable: true
+        reasons: []
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9991
+        spread: 0.001435129905859811
+        distinct_p: 8
+        n_calls: 13
+        smoke_acc: 1.0
+        cost: 0.0003738000000000001
+        per_item:
+        - id: json-schema-fit-005
+          target: 0
+          hit: 1
+          p: 0.9999
+        - id: json-schema-fit-006
+          target: 0
+          hit: 1
+          p: 0.9993
+        - id: json-schema-fit-007
+          target: 0
+          hit: 1
+          p: 0.9999
+        - id: json-schema-fit-000
+          target: 1
+          hit: 1
+          p: 0.0118
+        - id: json-schema-fit-001
+          target: 1
+          hit: 1
+          p: 0.0
+    jev:
+      model: typesafe/jev-1.13
+      provider: openrouter
+      family: Jev
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.042
+      smoke:
+        arm: jev
+        mode: typed
+        usable: true
+        reasons: []
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 1.0
+        cost: 9.500400000000001e-05
+        per_item:
+        - id: json-schema-fit-005
+          target: 0
+          hit: 1
+          p: 0.85
+          pred: null
+        - id: json-schema-fit-006
+          target: 0
+          hit: 1
+          p: 0.96
+          pred: null
+        - id: json-schema-fit-007
+          target: 0
+          hit: 1
+          p: 0.95
+          pred: null
+        - id: json-schema-fit-000
+          target: 1
+          hit: 1
+          p: 0.11
+          pred: null
+        - id: json-schema-fit-001
+          target: 1
+          hit: 1
+          p: 0.02
+          pred: null
+  protocol:
+    decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
+    logprob_call:
+      max_tokens: 1
+      temperature: 0
+      logprobs: true
+      top_logprobs: 8
+      reasoning:
+        enabled: false
+    provider_pin: provider.only=[pin], allow_fallbacks=false, require_parameters=true
+    binary: '극성 반전 2회 호출 평균: p = ½[P(A|choices[0]=A) + P(B|choices[0]=B)]'
+    multiclass: 항목별 결정론적 셔플 뒤 원 인덱스로 복원(generic) 또는 파일에 든 셔플 그대로(legacy-seed)
+    typed: Jev noul(이진)/choice(다지), 질문을 instructions 로 그대로 전달
+    label_mass: 상위 8토큰 중 라벨 토큰 질량 < 0.5 이면 오류로 두고 세지 않음
+    renormalize: 라벨 토큰 확률을 라벨 집합 안에서 재정규화
+  items_sha256: 8aedbb69099fe343b567a36cbbea6a019db69e6dfc48d9ebd47d8a34683a1590
+results:
+- results/json-schema-fit-run.json
+result_summary:
+  glm:
+    acc: 0.875
+    ci95:
+    - 0.6899571185214244
+    - 0.9565574496068442
+    auroc: 1.0
+    brier: 0.08682583611240541
+    n: 24
+    prob_source: logprob
+    model: z-ai/glm-4.7-flash
+    source_badge: author-run
+  qwen:
+    acc: 1.0
+    ci95:
+    - 0.8620194241710247
+    - 1.0000000000000002
+    auroc: 1.0
+    brier: 0.0004643300210383325
+    n: 24
+    prob_source: logprob
+    model: qwen/qwen3.8-27b
+    source_badge: author-run
+  deepseek:
+    acc: 0.9583333333333334
+    ci95:
+    - 0.7975777375115778
+    - 0.9926067346451949
+    auroc: 1.0
+    brier: 0.015791919682674897
+    n: 24
+    prob_source: logprob
+    model: deepseek/deepseek-v4-flash
+    source_badge: author-run
+  jev:
+    acc: 0.9583333333333334
+    ci95:
+    - 0.7975777375115778
+    - 0.9926067346451949
+    auroc: 1.0
+    brier: 0.022062500000000002
+    n: 24
+    prob_source: typed
+    model: typesafe/jev-1.13
+    source_badge: author-run
