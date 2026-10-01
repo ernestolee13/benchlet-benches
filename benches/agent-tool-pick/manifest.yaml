@@ -1,0 +1,299 @@
+name: agent-tool-pick
+version: 1
+task_signature:
+  goal: route
+  answer: choice(5)
+  prob_use: accuracy_only
+  label: constructed
+  unit: query
+  language: ko
+  n: 30
+question: '이 사용자 요청을 처리하려면 에이전트가 어느 도구를 먼저 써야 하는가. 도구는 다섯이다. 웹 검색: 최신 사실, 외부 정보, 특정
+  사이트 내용이 필요할 때. 계산기: 숫자 계산이나 단위 변환이 필요할 때. 캘린더: 일정 조회·등록·변경일 때. 파일 읽기: 사용자가 가진 파일이나
+  문서 내용을 봐야 할 때. 도구 없음: 일반 지식, 글쓰기, 요약, 번역처럼 외부 정보 없이 답할 수 있을 때. 여러 도구가 필요해 보이면 요청이
+  가장 먼저 요구하는 것을 고른다. 입력은 사용자 요청 한 문장이다.'
+choices:
+- 웹 검색
+- 계산기
+- 캘린더
+- 파일 읽기
+- 도구 없음
+generator:
+  script: src/build_samples.py
+  seed: 20261001
+source: 에이전트 라우팅 샘플. 사용자 요청 30건을 작성자가 규칙표에 맞춰 썼다(도구마다 6건)
+domain:
+- agent-tool-pick
+- sample
+visibility: sample
+items_sha256: 7a69a4b2bc719ab52e8432bcd0f00e65104117b7f480d6831fd3d9ca5c41b636
+license: CC-BY-4.0
+review:
+  checks_run: 5
+  human_reviewed_fraction: 0.0
+  flagged: 5
+  decided: 0
+note: benchlet 샘플. 작성자가 규칙을 먼저 적고 그 규칙대로 항목을 썼다(constructed). 기계 검증기가 있는 둘은 machine
+owner: ernestolee13
+n: 30
+choices_note: null
+published_at: '2026-10-01'
+type: multiclass
+classes:
+- T0-웹 검색
+- T1-계산기
+- T2-캘린더
+- T3-파일 읽기
+- T4-도구 없음
+label_source_mix:
+  machine: 0
+  constructed: 30
+  judged: 0
+  outcome: 0
+experiment:
+  date: '2026-10-01'
+  template: generic
+  runner: benchlet
+  arms:
+    glm:
+      model: z-ai/glm-4.7-flash
+      provider: cloudflare
+      family: GLM
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke:
+        arm: glm
+        mode: logprob
+        usable: true
+        reasons: []
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9973
+        spread: 1.8876906466506593e-08
+        distinct_p: 3
+        n_calls: 8
+        smoke_acc: 1.0
+        cost: 0.0001357015
+        per_item:
+        - id: agent-tool-pick-000
+          target: 4
+          hit: 1
+          pred: 4
+        - id: agent-tool-pick-001
+          target: 1
+          hit: 1
+          pred: 1
+        - id: agent-tool-pick-002
+          target: 3
+          hit: 1
+          pred: 3
+        - id: agent-tool-pick-003
+          target: 3
+          hit: 1
+          pred: 3
+        - id: agent-tool-pick-004
+          target: 2
+          hit: 1
+          pred: 2
+    qwen:
+      model: qwen/qwen3.8-27b
+      provider: parasail
+      family: Qwen
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke:
+        arm: qwen
+        mode: logprob
+        usable: true
+        reasons:
+        - '확률값 종류 2/5: 반올림된 로그확률 의심 (AUROC 를 믿지 마라)'
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9983
+        spread: 0.0
+        distinct_p: 2
+        n_calls: 8
+        smoke_acc: 1.0
+        cost: 9.83125e-05
+        per_item:
+        - id: agent-tool-pick-000
+          target: 4
+          hit: 1
+          pred: 4
+        - id: agent-tool-pick-001
+          target: 1
+          hit: 1
+          pred: 1
+        - id: agent-tool-pick-002
+          target: 3
+          hit: 1
+          pred: 3
+        - id: agent-tool-pick-003
+          target: 3
+          hit: 1
+          pred: 3
+        - id: agent-tool-pick-004
+          target: 2
+          hit: 1
+          pred: 2
+    deepseek:
+      model: deepseek/deepseek-v4-flash
+      provider: digitalocean
+      family: DeepSeek
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.14
+      smoke:
+        arm: deepseek
+        mode: logprob
+        usable: true
+        reasons:
+        - '확률값 종류 1/5: 반올림된 로그확률 의심 (AUROC 를 믿지 마라)'
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9993
+        spread: 0.0
+        distinct_p: 1
+        n_calls: 8
+        smoke_acc: 1.0
+        cost: 0.00028182000000000006
+        per_item:
+        - id: agent-tool-pick-000
+          target: 4
+          hit: 1
+          pred: 4
+        - id: agent-tool-pick-001
+          target: 1
+          hit: 1
+          pred: 1
+        - id: agent-tool-pick-002
+          target: 3
+          hit: 1
+          pred: 3
+        - id: agent-tool-pick-003
+          target: 3
+          hit: 1
+          pred: 3
+        - id: agent-tool-pick-004
+          target: 2
+          hit: 1
+          pred: 2
+    jev:
+      model: typesafe/jev-1.13
+      provider: openrouter
+      family: Jev
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.042
+      smoke:
+        arm: jev
+        mode: typed
+        usable: true
+        reasons: []
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 1.0
+        cost: 0.00011726400000000001
+        per_item:
+        - id: agent-tool-pick-000
+          target: 4
+          hit: 1
+          p: null
+          pred: 4
+        - id: agent-tool-pick-001
+          target: 1
+          hit: 1
+          p: null
+          pred: 1
+        - id: agent-tool-pick-002
+          target: 3
+          hit: 1
+          p: null
+          pred: 3
+        - id: agent-tool-pick-003
+          target: 3
+          hit: 1
+          p: null
+          pred: 3
+        - id: agent-tool-pick-004
+          target: 2
+          hit: 1
+          p: null
+          pred: 2
+  protocol:
+    decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
+    logprob_call:
+      max_tokens: 1
+      temperature: 0
+      logprobs: true
+      top_logprobs: 8
+      reasoning:
+        enabled: false
+    provider_pin: provider.only=[pin], allow_fallbacks=false, require_parameters=true
+    binary: '극성 반전 2회 호출 평균: p = ½[P(A|choices[0]=A) + P(B|choices[0]=B)]'
+    multiclass: 항목별 결정론적 셔플 뒤 원 인덱스로 복원(generic) 또는 파일에 든 셔플 그대로(legacy-seed)
+    typed: Jev noul(이진)/choice(다지), 질문을 instructions 로 그대로 전달
+    label_mass: 상위 8토큰 중 라벨 토큰 질량 < 0.5 이면 오류로 두고 세지 않음
+    renormalize: 라벨 토큰 확률을 라벨 집합 안에서 재정규화
+  items_sha256: 7a69a4b2bc719ab52e8432bcd0f00e65104117b7f480d6831fd3d9ca5c41b636
+results:
+- results/agent-tool-pick-run.json
+result_summary:
+  glm:
+    acc: 1.0
+    ci95:
+    - 0.886482908609522
+    - 1.0
+    auroc: null
+    brier: null
+    n: 30
+    prob_source: logprob
+    model: z-ai/glm-4.7-flash
+    source_badge: author-run
+  qwen:
+    acc: 0.9666666666666667
+    ci95:
+    - 0.8332924860304112
+    - 0.9940915620051425
+    auroc: null
+    brier: null
+    n: 30
+    prob_source: logprob
+    model: qwen/qwen3.8-27b
+    source_badge: author-run
+  deepseek:
+    acc: 0.9666666666666667
+    ci95:
+    - 0.8332924860304112
+    - 0.9940915620051425
+    auroc: null
+    brier: null
+    n: 30
+    prob_source: logprob
+    model: deepseek/deepseek-v4-flash
+    source_badge: author-run
+  jev:
+    acc: 0.9333333333333333
+    ci95:
+    - 0.7867618227892791
+    - 0.9815233646723066
+    auroc: null
+    brier: null
+    n: 30
+    prob_source: typed
+    model: typesafe/jev-1.13
+    source_badge: author-run

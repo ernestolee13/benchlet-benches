@@ -1,0 +1,3604 @@
+{
+ "task": "agent-tool-pick",
+ "bench": "agent-tool-pick@1",
+ "items_sha256": "7a69a4b2bc719ab52e8432bcd0f00e65104117b7f480d6831fd3d9ca5c41b636",
+ "template": "generic",
+ "date": "2026-10-01",
+ "arms": {
+  "glm": {
+   "model": "z-ai/glm-4.7-flash",
+   "provider": "cloudflare",
+   "family": "GLM",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.0605,
+   "smoke": {
+    "arm": "glm",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9973,
+    "spread": 1.8876906466506593e-08,
+    "distinct_p": 3,
+    "n_calls": 8,
+    "smoke_acc": 1.0,
+    "cost": 0.0001357015,
+    "per_item": [
+     {
+      "id": "agent-tool-pick-000",
+      "target": 4,
+      "hit": 1,
+      "pred": 4
+     },
+     {
+      "id": "agent-tool-pick-001",
+      "target": 1,
+      "hit": 1,
+      "pred": 1
+     },
+     {
+      "id": "agent-tool-pick-002",
+      "target": 3,
+      "hit": 1,
+      "pred": 3
+     },
+     {
+      "id": "agent-tool-pick-003",
+      "target": 3,
+      "hit": 1,
+      "pred": 3
+     },
+     {
+      "id": "agent-tool-pick-004",
+      "target": 2,
+      "hit": 1,
+      "pred": 2
+     }
+    ]
+   }
+  },
+  "qwen": {
+   "model": "qwen/qwen3.8-27b",
+   "provider": "parasail",
+   "family": "Qwen",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.0605,
+   "smoke": {
+    "arm": "qwen",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [
+     "확률값 종류 2/5: 반올림된 로그확률 의심 (AUROC 를 믿지 마라)"
+    ],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9983,
+    "spread": 0.0,
+    "distinct_p": 2,
+    "n_calls": 8,
+    "smoke_acc": 1.0,
+    "cost": 9.83125e-05,
+    "per_item": [
+     {
+      "id": "agent-tool-pick-000",
+      "target": 4,
+      "hit": 1,
+      "pred": 4
+     },
+     {
+      "id": "agent-tool-pick-001",
+      "target": 1,
+      "hit": 1,
+      "pred": 1
+     },
+     {
+      "id": "agent-tool-pick-002",
+      "target": 3,
+      "hit": 1,
+      "pred": 3
+     },
+     {
+      "id": "agent-tool-pick-003",
+      "target": 3,
+      "hit": 1,
+      "pred": 3
+     },
+     {
+      "id": "agent-tool-pick-004",
+      "target": 2,
+      "hit": 1,
+      "pred": 2
+     }
+    ]
+   }
+  },
+  "deepseek": {
+   "model": "deepseek/deepseek-v4-flash",
+   "provider": "digitalocean",
+   "family": "DeepSeek",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.14,
+   "smoke": {
+    "arm": "deepseek",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [
+     "확률값 종류 1/5: 반올림된 로그확률 의심 (AUROC 를 믿지 마라)"
+    ],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9993,
+    "spread": 0.0,
+    "distinct_p": 1,
+    "n_calls": 8,
+    "smoke_acc": 1.0,
+    "cost": 0.00028182000000000006,
+    "per_item": [
+     {
+      "id": "agent-tool-pick-000",
+      "target": 4,
+      "hit": 1,
+      "pred": 4
+     },
+     {
+      "id": "agent-tool-pick-001",
+      "target": 1,
+      "hit": 1,
+      "pred": 1
+     },
+     {
+      "id": "agent-tool-pick-002",
+      "target": 3,
+      "hit": 1,
+      "pred": 3
+     },
+     {
+      "id": "agent-tool-pick-003",
+      "target": 3,
+      "hit": 1,
+      "pred": 3
+     },
+     {
+      "id": "agent-tool-pick-004",
+      "target": 2,
+      "hit": 1,
+      "pred": 2
+     }
+    ]
+   }
+  },
+  "jev": {
+   "model": "typesafe/jev-1.13",
+   "provider": "openrouter",
+   "family": "Jev",
+   "mode": "typed",
+   "prob_source": "typed",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.042,
+   "smoke": {
+    "arm": "jev",
+    "mode": "typed",
+    "usable": true,
+    "reasons": [],
+    "has_logprobs": null,
+    "reasoning_tokens_zero": null,
+    "provider_match": null,
+    "mass_min": null,
+    "spread": null,
+    "distinct_p": null,
+    "n_calls": 5,
+    "smoke_acc": 1.0,
+    "cost": 0.00011726400000000001,
+    "per_item": [
+     {
+      "id": "agent-tool-pick-000",
+      "target": 4,
+      "hit": 1,
+      "p": null,
+      "pred": 4
+     },
+     {
+      "id": "agent-tool-pick-001",
+      "target": 1,
+      "hit": 1,
+      "p": null,
+      "pred": 1
+     },
+     {
+      "id": "agent-tool-pick-002",
+      "target": 3,
+      "hit": 1,
+      "p": null,
+      "pred": 3
+     },
+     {
+      "id": "agent-tool-pick-003",
+      "target": 3,
+      "hit": 1,
+      "p": null,
+      "pred": 3
+     },
+     {
+      "id": "agent-tool-pick-004",
+      "target": 2,
+      "hit": 1,
+      "p": null,
+      "pred": 2
+     }
+    ]
+   }
+  }
+ },
+ "items": [
+  {
+   "id": "agent-tool-pick-000",
+   "target": 4,
+   "label": 4,
+   "class": "T4-도구 없음",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 4,
+     "probs": [
+      0.000858636722405896,
+      0.046879976593884334,
+      0.00019158774937975045,
+      0.010460336685148052,
+      0.9416094622491821
+     ],
+     "ms": 1292,
+     "cost": 1.6939999999999997e-05,
+     "in_tok": 280,
+     "err": null,
+     "mass": 0.998,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      0,
+      2,
+      3,
+      1
+     ]
+    },
+    "qwen": {
+     "pred_index": 4,
+     "probs": [
+      6.987088356797916e-05,
+      0.00021521747281487942,
+      0.00014791666167415416,
+      0.005908510323873448,
+      0.9936584846580696
+     ],
+     "ms": 604,
+     "cost": 1.2342e-05,
+     "in_tok": 204,
+     "err": null,
+     "mass": 0.9984,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      0,
+      2,
+      3,
+      1
+     ]
+    },
+    "deepseek": {
+     "pred_index": 4,
+     "probs": [
+      5.714961990577241e-07,
+      1.5534877329320247e-06,
+      0.0,
+      6.144163171862109e-06,
+      0.999991730852896
+     ],
+     "ms": 1252,
+     "cost": 3.514e-05,
+     "in_tok": 251,
+     "err": null,
+     "mass": 0.9999,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      0,
+      2,
+      3,
+      1
+     ]
+    },
+    "jev": {
+     "ms": 329,
+     "in_tok": 558,
+     "cost": 2.3436e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "도구 없음",
+      "probabilities": {
+       "파일 읽기": 0.19,
+       "계산기": 0,
+       "캘린더": 0,
+       "도구 없음": 0.81,
+       "웹 검색": 0
+      },
+      "confidence": 0.76
+     },
+     "choice": "도구 없음",
+     "probabilities": {
+      "파일 읽기": 0.19,
+      "계산기": 0,
+      "캘린더": 0,
+      "도구 없음": 0.81,
+      "웹 검색": 0
+     },
+     "pred_index": 4
+    }
+   }
+  },
+  {
+   "id": "agent-tool-pick-001",
+   "target": 1,
+   "label": 1,
+   "class": "T1-계산기",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 1,
+     "probs": [
+      0.0005513007740795284,
+      0.9967751283515736,
+      0.0,
+      0.00020281222068576046,
+      0.0024707586536611365
+     ],
+     "ms": 400,
+     "cost": 1.7182e-05,
+     "in_tok": 284,
+     "err": null,
+     "mass": 0.9964,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      3,
+      1,
+      2,
+      0
+     ]
+    },
+    "qwen": {
+     "pred_index": 1,
+     "probs": [
+      0.0,
+      0.9996694191500947,
+      5.420453470225365e-06,
+      0.0003150336561519618,
+      1.0126740283197999e-05
+     ],
+     "ms": 467,
+     "cost": 1.26445e-05,
+     "in_tok": 209,
+     "err": null,
+     "mass": 0.9995,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      3,
+      1,
+      2,
+      0
+     ]
+    },
+    "deepseek": {
+     "pred_index": 1,
+     "probs": [
+      3.0590222390025263e-07,
+      0.9999996940977761,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "ms": 1748,
+     "cost": 3.5560000000000005e-05,
+     "in_tok": 254,
+     "err": null,
+     "mass": 0.9999,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      3,
+      1,
+      2,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 278,
+     "in_tok": 562,
+     "cost": 2.3604000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "계산기",
+      "probabilities": {
+       "캘린더": 0,
+       "도구 없음": 0,
+       "계산기": 1,
+       "웹 검색": 0,
+       "파일 읽기": 0
+      },
+      "confidence": 1
+     },
+     "choice": "계산기",
+     "probabilities": {
+      "캘린더": 0,
+      "도구 없음": 0,
+      "계산기": 1,
+      "웹 검색": 0,
+      "파일 읽기": 0
+     },
+     "pred_index": 1
+    }
+   }
+  },
+  {
+   "id": "agent-tool-pick-002",
+   "target": 3,
+   "label": 3,
+   "class": "T3-파일 읽기",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 3,
+     "probs": [
+      0.0,
+      0.00012335314974815253,
+      0.0,
+      0.9995413382248082,
+      0.0003353086254435905
+     ],
+     "ms": 517,
+     "cost": 1.67585e-05,
+     "in_tok": 277,
+     "err": null,
+     "mass": 0.9976,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      3,
+      2,
+      0,
+      4
+     ]
+    },
+    "qwen": {
+     "pred_index": 3,
+     "probs": [
+      0.0,
+      0.0,
+      0.0,
+      0.9999573525166376,
+      4.264748336238542e-05
+     ],
+     "ms": 446,
+     "cost": 1.20395e-05,
+     "in_tok": 199,
+     "err": null,
+     "mass": 0.9988,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      3,
+      2,
+      0,
+      4
+     ]
+    },
+    "deepseek": {
+     "pred_index": 3,
+     "probs": [
+      1.4449790340807707e-07,
+      0.0,
+      0.0,
+      0.9999997110041932,
+      1.4449790340807707e-07
+     ],
+     "ms": 2517,
+     "cost": 3.5000000000000004e-05,
+     "in_tok": 250,
+     "err": null,
+     "mass": 0.9999,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      3,
+      2,
+      0,
+      4
+     ]
+    },
+    "jev": {
+     "ms": 255,
+     "in_tok": 558,
+     "cost": 2.3436e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "파일 읽기",
+      "probabilities": {
+       "캘린더": 0,
+       "계산기": 0,
+       "파일 읽기": 1,
+       "웹 검색": 0,
+       "도구 없음": 0
+      },
+      "confidence": 1
+     },
+     "choice": "파일 읽기",
+     "probabilities": {
+      "캘린더": 0,
+      "계산기": 0,
+      "파일 읽기": 1,
+      "웹 검색": 0,
+      "도구 없음": 0
+     },
+     "pred_index": 3
+    }
+   }
+  },
+  {
+   "id": "agent-tool-pick-003",
+   "target": 3,
+   "label": 3,
+   "class": "T3-파일 읽기",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 3,
+     "probs": [
+      0.00012326988087734949,
+      0.00012326988087734949,
+      0.0003350822771852102,
+      0.9988659209466625,
+      0.0005524570143977969
+     ],
+     "ms": 520,
+     "cost": 1.70005e-05,
+     "in_tok": 281,
+     "err": null,
+     "mass": 0.9986,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      0,
+      4,
+      1,
+      2
+     ]
+    },
+    "qwen": {
+     "pred_index": 3,
+     "probs": [
+      2.7531669389902667e-05,
+      3.535136326047891e-05,
+      4.005834259241512e-05,
+      0.9998267540440403,
+      7.030458071692921e-05
+     ],
+     "ms": 418,
+     "cost": 1.21605e-05,
+     "in_tok": 201,
+     "err": null,
+     "mass": 0.9985,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      0,
+      4,
+      1,
+      2
+     ]
+    },
+    "deepseek": {
+     "pred_index": 3,
+     "probs": [
+      1.2751881805000374e-07,
+      0.0,
+      9.422437002408079e-07,
+      0.9999989302374818,
+      0.0
+     ],
+     "ms": 1369,
+     "cost": 3.528e-05,
+     "in_tok": 252,
+     "err": null,
+     "mass": 1.0,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      0,
+      4,
+      1,
+      2
+     ]
+    },
+    "jev": {
+     "ms": 391,
+     "in_tok": 556,
+     "cost": 2.3352e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "파일 읽기",
+      "probabilities": {
+       "캘린더": 0,
+       "웹 검색": 0,
+       "파일 읽기": 0.99,
+       "도구 없음": 0.01,
+       "계산기": 0
+      },
+      "confidence": 0.99
+     },
+     "choice": "파일 읽기",
+     "probabilities": {
+      "캘린더": 0,
+      "웹 검색": 0,
+      "파일 읽기": 0.99,
+      "도구 없음": 0.01,
+      "계산기": 0
+     },
+     "pred_index": 3
+    }
+   }
+  },
+  {
+   "id": "agent-tool-pick-004",
+   "target": 2,
+   "label": 2,
+   "class": "T2-캘린더",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 2,
+     "probs": [
+      0.00012319886526588274,
+      0.00012319886526588274,
+      0.9982911392373972,
+      0.0005521392712206167,
+      0.000910323760850298
+     ],
+     "ms": 359,
+     "cost": 1.70005e-05,
+     "in_tok": 281,
+     "err": null,
+     "mass": 0.9975,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      1,
+      2,
+      0,
+      4
+     ]
+    },
+    "qwen": {
+     "pred_index": 2,
+     "probs": [
+      0.0,
+      0.00020338322613594283,
+      0.9995820131554803,
+      7.482050757453574e-05,
+      0.00013978311080915334
+     ],
+     "ms": 416,
+     "cost": 1.2100000000000001e-05,
+     "in_tok": 200,
+     "err": null,
+     "mass": 0.9991,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      1,
+      2,
+      0,
+      4
+     ]
+    },
+    "deepseek": {
+     "pred_index": 2,
+     "probs": [
+      0.0,
+      0.0,
+      0.9999977353126669,
+      1.9947299855730648e-06,
+      2.699573475780951e-07
+     ],
+     "ms": 1849,
+     "cost": 3.542000000000001e-05,
+     "in_tok": 253,
+     "err": null,
+     "mass": 0.9998,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      1,
+      2,
+      0,
+      4
+     ]
+    },
+    "jev": {
+     "ms": 346,
+     "in_tok": 558,
+     "cost": 2.3436e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "캘린더",
+      "probabilities": {
+       "도구 없음": 0,
+       "캘린더": 1,
+       "웹 검색": 0,
+       "계산기": 0,
+       "파일 읽기": 0
+      },
+      "confidence": 1
+     },
+     "choice": "캘린더",
+     "probabilities": {
+      "도구 없음": 0,
+      "캘린더": 1,
+      "웹 검색": 0,
+      "계산기": 0,
+      "파일 읽기": 0
+     },
+     "pred_index": 2
+    }
+   }
+  },
+  {
+   "id": "agent-tool-pick-005",
+   "target": 4,
+   "label": 4,
+   "class": "T4-도구 없음",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 4,
+     "probs": [
+      0.0005483563261506541,
+      0.004051835656130696,
+      0.002457562553560122,
+      0.0014905870368958848,
+      0.9914516584272627
+     ],
+     "ms": 488,
+     "cost": 1.7303e-05,
+     "in_tok": 286,
+     "err": null,
+     "mass": 0.9978,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      2,
+      0,
+      3,
+      1
+     ]
+    },
+    "qwen": {
+     "pred_index": 4,
+     "probs": [
+      7.95359850837533e-05,
+      7.95359850837533e-05,
+      0.00023014500385405421,
+      0.001409809740777284,
+      0.9982009732852011
+     ],
+     "ms": 598,
+     "cost": 1.2342e-05,
+     "in_tok": 204,
+     "err": null,
+     "mass": 0.9986,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      2,
+      0,
+      3,
+      1
+     ]
+    },
+    "deepseek": {
+     "pred_index": 4,
+     "probs": [
+      3.927855753447626e-07,
+      6.475939328950978e-07,
+      0.0,
+      3.927855753447626e-07,
+      0.9999985668349165
+     ],
+     "ms": 2624,
+     "cost": 3.570000000000001e-05,
+     "in_tok": 255,
+     "err": null,
+     "mass": 0.9999,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      2,
+      0,
+      3,
+      1
+     ]
+    },
+    "jev": {
+     "ms": 289,
+     "in_tok": 563,
+     "cost": 2.3646000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "도구 없음",
+      "probabilities": {
+       "웹 검색": 0,
+       "도구 없음": 1,
+       "파일 읽기": 0,
+       "캘린더": 0,
+       "계산기": 0
+      },
+      "confidence": 1
+     },
+     "choice": "도구 없음",
+     "probabilities": {
+      "웹 검색": 0,
+      "도구 없음": 1,
+      "파일 읽기": 0,
+      "캘린더": 0,
+      "계산기": 0
+     },
+     "pred_index": 4
+    }
+   }
+  },
+  {
+   "id": "agent-tool-pick-006",
+   "target": 3,
+   "label": 3,
+   "class": "T3-파일 읽기",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 3,
+     "probs": [
+      0.0,
+      0.0,
+      4.539786771418287e-05,
+      0.9999546021322858,
+      0.0
+     ],
+     "ms": 410,
+     "cost": 1.67585e-05,
+     "in_tok": 277,
+     "err": null,
+     "mass": 0.999,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      0,
+      1,
+      4,
+      2
+     ]
+    },
+    "qwen": {
+     "pred_index": 3,
+     "probs": [
+      1.670029782645475e-05,
+      0.0,
+      3.763470210873692e-05,
+      0.9999163550645919,
+      2.930993547294336e-05
+     ],
+     "ms": 409,
+     "cost": 1.21605e-05,
+     "in_tok": 201,
+     "err": null,
+     "mass": 0.9981,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      0,
+      1,
+      4,
+      2
+     ]
+    },
+    "deepseek": {
+     "pred_index": 3,
+     "probs": [
+      0.0,
+      0.0,
+      4.13993872809636e-08,
+      0.9999999586006127,
+      0.0
+     ],
+     "ms": 1683,
+     "cost": 3.5000000000000004e-05,
+     "in_tok": 250,
+     "err": null,
+     "mass": 1.0,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      0,
+      1,
+      4,
+      2
+     ]
+    },
+    "jev": {
+     "ms": 235,
+     "in_tok": 555,
+     "cost": 2.3310000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "파일 읽기",
+      "probabilities": {
+       "웹 검색": 0,
+       "계산기": 0,
+       "캘린더": 0,
+       "도구 없음": 0,
+       "파일 읽기": 1
+      },
+      "confidence": 1
+     },
+     "choice": "파일 읽기",
+     "probabilities": {
+      "웹 검색": 0,
+      "계산기": 0,
+      "캘린더": 0,
+      "도구 없음": 0,
+      "파일 읽기": 1
+     },
+     "pred_index": 3
+    }
+   }
+  },
+  {
+   "id": "agent-tool-pick-007",
+   "target": 4,
+   "label": 4,
+   "class": "T4-도구 없음",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 4,
+     "probs": [
+      0.0001233602476654544,
+      0.00020338666428487053,
+      0.0,
+      7.482177239884192e-05,
+      0.9995984313156508
+     ],
+     "ms": 421,
+     "cost": 1.68795e-05,
+     "in_tok": 279,
+     "err": null,
+     "mass": 0.9983,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      4,
+      3,
+      2,
+      1
+     ]
+    },
+    "qwen": {
+     "pred_index": 4,
+     "probs": [
+      0.00012337555448042238,
+      0.0,
+      5.8278485362428376e-05,
+      9.608497844122174e-05,
+      0.999722260981716
+     ],
+     "ms": 598,
+     "cost": 1.2100000000000001e-05,
+     "in_tok": 200,
+     "err": null,
+     "mass": 0.9983,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      4,
+      3,
+      2,
+      1
+     ]
+    },
+    "deepseek": {
+     "pred_index": 4,
+     "probs": [
+      2.382337948995704e-07,
+      1.3007124476892058e-05,
+      0.0,
+      0.0,
+      0.9999867546417281
+     ],
+     "ms": 1833,
+     "cost": 3.5000000000000004e-05,
+     "in_tok": 250,
+     "err": null,
+     "mass": 0.9998,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      4,
+      3,
+      2,
+      1
+     ]
+    },
+    "jev": {
+     "ms": 259,
+     "in_tok": 556,
+     "cost": 2.3352e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "도구 없음",
+      "probabilities": {
+       "계산기": 0,
+       "도구 없음": 1,
+       "웹 검색": 0,
+       "캘린더": 0,
+       "파일 읽기": 0
+      },
+      "confidence": 1
+     },
+     "choice": "도구 없음",
+     "probabilities": {
+      "계산기": 0,
+      "도구 없음": 1,
+      "웹 검색": 0,
+      "캘린더": 0,
+      "파일 읽기": 0
+     },
+     "pred_index": 4
+    }
+   }
+  },
+  {
+   "id": "agent-tool-pick-008",
+   "target": 4,
+   "label": 4,
+   "class": "T4-도구 없음",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 4,
+     "probs": [
+      0.0003351964447708467,
+      0.0001233118807849533,
+      0.0003351964447708467,
+      0.0,
+      0.9992062952296733
+     ],
+     "ms": 570,
+     "cost": 1.6939999999999997e-05,
+     "in_tok": 280,
+     "err": null,
+     "mass": 0.9975,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      3,
+      1,
+      4,
+      0
+     ]
+    },
+    "qwen": {
+     "pred_index": 4,
+     "probs": [
+      3.32141895657398e-05,
+      0.0,
+      0.0,
+      0.0,
+      0.9999667858104342
+     ],
+     "ms": 506,
+     "cost": 1.21605e-05,
+     "in_tok": 201,
+     "err": null,
+     "mass": 0.9961,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      3,
+      1,
+      4,
+      0
+     ]
+    },
+    "deepseek": {
+     "pred_index": 4,
+     "probs": [
+      1.4738982253057584e-05,
+      0.0,
+      0.0,
+      0.0,
+      0.999985261017747
+     ],
+     "ms": 2370,
+     "cost": 3.542000000000001e-05,
+     "in_tok": 253,
+     "err": null,
+     "mass": 0.9993,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      3,
+      1,
+      4,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 302,
+     "in_tok": 559,
+     "cost": 2.3478000000000005e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "도구 없음",
+      "probabilities": {
+       "파일 읽기": 0,
+       "캘린더": 0,
+       "웹 검색": 0,
+       "계산기": 0,
+       "도구 없음": 1
+      },
+      "confidence": 1
+     },
+     "choice": "도구 없음",
+     "probabilities": {
+      "파일 읽기": 0,
+      "캘린더": 0,
+      "웹 검색": 0,
+      "계산기": 0,
+      "도구 없음": 1
+     },
+     "pred_index": 4
+    }
+   }
+  },
+  {
+   "id": "agent-tool-pick-009",
+   "target": 1,
+   "label": 1,
+   "class": "T1-계산기",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 1,
+     "probs": [
+      0.0005501596564493423,
+      0.994711762909978,
+      0.0005501596564493423,
+      0.0001227572122507469,
+      0.004065160564872604
+     ],
+     "ms": 445,
+     "cost": 1.71215e-05,
+     "in_tok": 283,
+     "err": null,
+     "mass": 0.9965,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      1,
+      0,
+      2,
+      3
+     ]
+    },
+    "qwen": {
+     "pred_index": 1,
+     "probs": [
+      0.00048116442962762494,
+      0.9858005042271742,
+      0.012409394196158767,
+      0.000352027416808767,
+      0.0009569097302306495
+     ],
+     "ms": 417,
+     "cost": 1.26445e-05,
+     "in_tok": 209,
+     "err": null,
+     "mass": 0.9985,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      1,
+      0,
+      2,
+      3
+     ]
+    },
+    "deepseek": {
+     "pred_index": 1,
+     "probs": [
+      0.0007086058387408966,
+      0.9977912755888728,
+      0.0015001185723863162,
+      0.0,
+      0.0
+     ],
+     "ms": 1259,
+     "cost": 3.5560000000000005e-05,
+     "in_tok": 254,
+     "err": null,
+     "mass": 0.9995,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      1,
+      0,
+      2,
+      3
+     ]
+    },
+    "jev": {
+     "ms": 295,
+     "in_tok": 564,
+     "cost": 2.3688000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "캘린더",
+      "probabilities": {
+       "계산기": 0.21,
+       "도구 없음": 0.07,
+       "캘린더": 0.72,
+       "웹 검색": 0,
+       "파일 읽기": 0
+      },
+      "confidence": 0.64
+     },
+     "choice": "캘린더",
+     "probabilities": {
+      "계산기": 0.21,
+      "도구 없음": 0.07,
+      "캘린더": 0.72,
+      "웹 검색": 0,
+      "파일 읽기": 0
+     },
+     "pred_index": 2
+    }
+   }
+  },
+  {
+   "id": "agent-tool-pick-010",
+   "target": 0,
+   "label": 0,
+   "class": "T0-웹 검색",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 0,
+     "probs": [
+      0.9983757931240617,
+      0.0,
+      0.0,
+      0.00012320937758667473,
+      0.001500997498351699
+     ],
+     "ms": 1086,
+     "cost": 1.7061e-05,
+     "in_tok": 282,
+     "err": null,
+     "mass": 0.9978,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      3,
+      2,
+      1,
+      4
+     ]
+    },
+    "qwen": {
+     "pred_index": 0,
+     "probs": [
+      0.9988004820454119,
+      2.583705926551063e-05,
+      1.7757533828672405e-05,
+      0.00024513519309950427,
+      0.0009107881683944267
+     ],
+     "ms": 464,
+     "cost": 1.20395e-05,
+     "in_tok": 199,
+     "err": null,
+     "mass": 0.9987,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      3,
+      2,
+      1,
+      4
+     ]
+    },
+    "deepseek": {
+     "pred_index": 0,
+     "probs": [
+      0.9999998359462412,
+      0.0,
+      0.0,
+      3.6534794861609474e-08,
+      1.275189639475317e-07
+     ],
+     "ms": 1430,
+     "cost": 3.542000000000001e-05,
+     "in_tok": 253,
+     "err": null,
+     "mass": 1.0,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      3,
+      2,
+      1,
+      4
+     ]
+    },
+    "jev": {
+     "ms": 276,
+     "in_tok": 555,
+     "cost": 2.3310000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "웹 검색",
+      "probabilities": {
+       "파일 읽기": 0,
+       "계산기": 0,
+       "캘린더": 0,
+       "도구 없음": 0,
+       "웹 검색": 1
+      },
+      "confidence": 1
+     },
+     "choice": "웹 검색",
+     "probabilities": {
+      "파일 읽기": 0,
+      "계산기": 0,
+      "캘린더": 0,
+      "도구 없음": 0,
+      "웹 검색": 1
+     },
+     "pred_index": 0
+    }
+   }
+  },
+  {
+   "id": "agent-tool-pick-011",
+   "target": 1,
+   "label": 1,
+   "class": "T1-계산기",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 1,
+     "probs": [
+      0.00020324169987500385,
+      0.9988858921951582,
+      0.0,
+      0.0,
+      0.000910866104966734
+     ],
+     "ms": 415,
+     "cost": 1.7182e-05,
+     "in_tok": 284,
+     "err": null,
+     "mass": 0.9958,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      1,
+      0,
+      2,
+      3
+     ]
+    },
+    "qwen": {
+     "pred_index": 1,
+     "probs": [
+      0.0,
+      0.999959936297529,
+      0.0,
+      0.0,
+      4.0063702471002875e-05
+     ],
+     "ms": 412,
+     "cost": 1.26445e-05,
+     "in_tok": 209,
+     "err": null,
+     "mass": 0.9988,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      1,
+      0,
+      2,
+      3
+     ]
+    },
+    "deepseek": {
+     "pred_index": 1,
+     "probs": [
+      0.0,
+      0.9999991028674257,
+      0.0,
+      3.927857228762827e-07,
+      5.043468514852147e-07
+     ],
+     "ms": 1519,
+     "cost": 3.5560000000000005e-05,
+     "in_tok": 254,
+     "err": null,
+     "mass": 0.9997,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      1,
+      0,
+      2,
+      3
+     ]
+    },
+    "jev": {
+     "ms": 216,
+     "in_tok": 564,
+     "cost": 2.3688000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "계산기",
+      "probabilities": {
+       "계산기": 1,
+       "캘린더": 0,
+       "파일 읽기": 0,
+       "도구 없음": 0,
+       "웹 검색": 0
+      },
+      "confidence": 1
+     },
+     "choice": "계산기",
+     "probabilities": {
+      "계산기": 1,
+      "캘린더": 0,
+      "파일 읽기": 0,
+      "도구 없음": 0,
+      "웹 검색": 0
+     },
+     "pred_index": 1
+    }
+   }
+  },
+  {
+   "id": "agent-tool-pick-012",
+   "target": 1,
+   "label": 1,
+   "class": "T1-계산기",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 1,
+     "probs": [
+      0.0,
+      0.9974045922483056,
+      0.0,
+      0.00012308953478598242,
+      0.002472318216908369
+     ],
+     "ms": 417,
+     "cost": 1.6456e-05,
+     "in_tok": 272,
+     "err": null,
+     "mass": 0.9966,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      0,
+      2,
+      3,
+      4
+     ]
+    },
+    "qwen": {
+     "pred_index": 1,
+     "probs": [
+      0.0031711665265828234,
+      0.9963510292047847,
+      8.4508725436698e-05,
+      3.7500519590915266e-05,
+      0.0003557950236047918
+     ],
+     "ms": 463,
+     "cost": 1.1978999999999998e-05,
+     "in_tok": 198,
+     "err": null,
+     "mass": 0.9987,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      0,
+      2,
+      3,
+      4
+     ]
+    },
+    "deepseek": {
+     "pred_index": 1,
+     "probs": [
+      9.4224362671082e-07,
+      0.9999978045156943,
+      0.0,
+      1.8553877098610288e-07,
+      1.0677019080194418e-06
+     ],
+     "ms": 1524,
+     "cost": 3.4160000000000005e-05,
+     "in_tok": 244,
+     "err": null,
+     "mass": 0.9999,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      0,
+      2,
+      3,
+      4
+     ]
+    },
+    "jev": {
+     "ms": 222,
+     "in_tok": 551,
+     "cost": 2.3142e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "계산기",
+      "probabilities": {
+       "도구 없음": 0.02,
+       "캘린더": 0,
+       "웹 검색": 0,
+       "파일 읽기": 0,
+       "계산기": 0.98
+      },
+      "confidence": 0.98
+     },
+     "choice": "계산기",
+     "probabilities": {
+      "도구 없음": 0.02,
+      "캘린더": 0,
+      "웹 검색": 0,
+      "파일 읽기": 0,
+      "계산기": 0.98
+     },
+     "pred_index": 1
+    }
+   }
+  },
+  {
+   "id": "agent-tool-pick-013",
+   "target": 4,
+   "label": 4,
+   "class": "T4-도구 없음",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 4,
+     "probs": [
+      4.537964702489651e-05,
+      0.00012335466988966175,
+      0.00020337746808727795,
+      7.481838930681067e-05,
+      0.9995530698256914
+     ],
+     "ms": 603,
+     "cost": 1.72425e-05,
+     "in_tok": 285,
+     "err": null,
+     "mass": 0.9967,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      0,
+      1,
+      4,
+      3
+     ]
+    },
+    "qwen": {
+     "pred_index": 4,
+     "probs": [
+      0.0,
+      8.480332622000105e-05,
+      2.930724532940084e-05,
+      6.20434388492133e-05,
+      0.9998238459896014
+     ],
+     "ms": 625,
+     "cost": 1.2342e-05,
+     "in_tok": 204,
+     "err": null,
+     "mass": 0.9978,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      0,
+      1,
+      4,
+      3
+     ]
+    },
+    "deepseek": {
+     "pred_index": 4,
+     "probs": [
+      2.699555240640099e-07,
+      0.0,
+      0.0,
+      7.889256843558622e-06,
+      0.9999918407876324
+     ],
+     "ms": 1275,
+     "cost": 3.5980000000000004e-05,
+     "in_tok": 257,
+     "err": null,
+     "mass": 0.9991,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      0,
+      1,
+      4,
+      3
+     ]
+    },
+    "jev": {
+     "ms": 249,
+     "in_tok": 565,
+     "cost": 2.373e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "도구 없음",
+      "probabilities": {
+       "캘린더": 0,
+       "계산기": 0,
+       "파일 읽기": 0,
+       "웹 검색": 0,
+       "도구 없음": 1
+      },
+      "confidence": 1
+     },
+     "choice": "도구 없음",
+     "probabilities": {
+      "캘린더": 0,
+      "계산기": 0,
+      "파일 읽기": 0,
+      "웹 검색": 0,
+      "도구 없음": 1
+     },
+     "pred_index": 4
+    }
+   }
+  },
+  {
+   "id": "agent-tool-pick-014",
+   "target": 2,
+   "label": 2,
+   "class": "T2-캘린더",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 2,
+     "probs": [
+      0.00012332642028473095,
+      0.0,
+      0.9993239631733942,
+      0.0,
+      0.000552710406321075
+     ],
+     "ms": 409,
+     "cost": 1.66375e-05,
+     "in_tok": 275,
+     "err": null,
+     "mass": 0.9937,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      0,
+      4,
+      1,
+      3
+     ]
+    },
+    "qwen": {
+     "pred_index": 2,
+     "probs": [
+      0.0002453267439990859,
+      0.0,
+      0.9995805951912039,
+      1.5683214040667042e-05,
+      0.0001583948507563625
+     ],
+     "ms": 821,
+     "cost": 1.19185e-05,
+     "in_tok": 197,
+     "err": null,
+     "mass": 0.9991,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      0,
+      4,
+      1,
+      3
+     ]
+    },
+    "deepseek": {
+     "pred_index": 2,
+     "probs": [
+      0.0,
+      0.0,
+      0.9999973918045424,
+      2.5612839064859168e-06,
+      4.691155112272246e-08
+     ],
+     "ms": 1306,
+     "cost": 3.43e-05,
+     "in_tok": 245,
+     "err": null,
+     "mass": 1.0,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      0,
+      4,
+      1,
+      3
+     ]
+    },
+    "jev": {
+     "ms": 235,
+     "in_tok": 551,
+     "cost": 2.3142e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "캘린더",
+      "probabilities": {
+       "계산기": 0,
+       "파일 읽기": 0,
+       "캘린더": 1,
+       "웹 검색": 0,
+       "도구 없음": 0
+      },
+      "confidence": 1
+     },
+     "choice": "캘린더",
+     "probabilities": {
+      "계산기": 0,
+      "파일 읽기": 0,
+      "캘린더": 1,
+      "웹 검색": 0,
+      "도구 없음": 0
+     },
+     "pred_index": 2
+    }
+   }
+  },
+  {
+   "id": "agent-tool-pick-015",
+   "target": 0,
+   "label": 0,
+   "class": "T0-웹 검색",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 0,
+     "probs": [
+      0.9517038042264131,
+      0.04738253989578454,
+      0.0005263724716753985,
+      0.00019364170306351383,
+      0.00019364170306351383
+     ],
+     "ms": 4367,
+     "cost": 1.6939999999999997e-05,
+     "in_tok": 280,
+     "err": null,
+     "mass": 0.9802,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      2,
+      4,
+      0,
+      3
+     ]
+    },
+    "qwen": {
+     "pred_index": 0,
+     "probs": [
+      0.9977818625184373,
+      0.0019261722993526957,
+      6.191670710518018e-05,
+      0.0,
+      0.00023004847510482487
+     ],
+     "ms": 415,
+     "cost": 1.21605e-05,
+     "in_tok": 201,
+     "err": null,
+     "mass": 0.997,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      2,
+      4,
+      0,
+      3
+     ]
+    },
+    "deepseek": {
+     "pred_index": 0,
+     "probs": [
+      0.999858418107141,
+      0.00013982179619992716,
+      1.7600966591573007e-06,
+      0.0,
+      0.0
+     ],
+     "ms": 1753,
+     "cost": 3.5000000000000004e-05,
+     "in_tok": 250,
+     "err": null,
+     "mass": 0.9998,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      2,
+      4,
+      0,
+      3
+     ]
+    },
+    "jev": {
+     "ms": 260,
+     "in_tok": 561,
+     "cost": 2.3562e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "웹 검색",
+      "probabilities": {
+       "파일 읽기": 0,
+       "도구 없음": 0,
+       "캘린더": 0,
+       "계산기": 0.01,
+       "웹 검색": 0.99
+      },
+      "confidence": 0.99
+     },
+     "choice": "웹 검색",
+     "probabilities": {
+      "파일 읽기": 0,
+      "도구 없음": 0,
+      "캘린더": 0,
+      "계산기": 0.01,
+      "웹 검색": 0.99
+     },
+     "pred_index": 0
+    }
+   }
+  },
+  {
+   "id": "agent-tool-pick-016",
+   "target": 1,
+   "label": 1,
+   "class": "T1-계산기",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 1,
+     "probs": [
+      0.0,
+      0.9995413379115217,
+      0.00012335323400387287,
+      0.0,
+      0.000335308854474384
+     ],
+     "ms": 431,
+     "cost": 1.68795e-05,
+     "in_tok": 279,
+     "err": null,
+     "mass": 0.9955,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      3,
+      1,
+      4,
+      0
+     ]
+    },
+    "qwen": {
+     "pred_index": 1,
+     "probs": [
+      0.0,
+      0.994734342522609,
+      2.5731881855854644e-05,
+      0.005219885585796013,
+      2.0040009739240472e-05
+     ],
+     "ms": 539,
+     "cost": 1.21605e-05,
+     "in_tok": 201,
+     "err": null,
+     "mass": 0.9992,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      3,
+      1,
+      4,
+      0
+     ]
+    },
+    "deepseek": {
+     "pred_index": 1,
+     "probs": [
+      6.475953292719271e-07,
+      0.9999992248855896,
+      0.0,
+      0.0,
+      1.2751908114134682e-07
+     ],
+     "ms": 1216,
+     "cost": 3.4720000000000006e-05,
+     "in_tok": 248,
+     "err": null,
+     "mass": 1.0,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      3,
+      1,
+      4,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 295,
+     "in_tok": 556,
+     "cost": 2.3352e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "계산기",
+      "probabilities": {
+       "파일 읽기": 0,
+       "캘린더": 0,
+       "웹 검색": 0,
+       "계산기": 0.94,
+       "도구 없음": 0.06
+      },
+      "confidence": 0.92
+     },
+     "choice": "계산기",
+     "probabilities": {
+      "파일 읽기": 0,
+      "캘린더": 0,
+      "웹 검색": 0,
+      "계산기": 0.94,
+      "도구 없음": 0.06
+     },
+     "pred_index": 1
+    }
+   }
+  },
+  {
+   "id": "agent-tool-pick-017",
+   "target": 1,
+   "label": 1,
+   "class": "T1-계산기",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 1,
+     "probs": [
+      0.0,
+      0.9929847355605703,
+      0.00020204091817462448,
+      0.00012254401138940118,
+      0.006690679509865705
+     ],
+     "ms": 445,
+     "cost": 1.6577e-05,
+     "in_tok": 274,
+     "err": null,
+     "mass": 0.9928,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      2,
+      3,
+      1,
+      0
+     ]
+    },
+    "qwen": {
+     "pred_index": 1,
+     "probs": [
+      0.0,
+      0.9998401180485352,
+      6.204439999131613e-05,
+      2.7532035601741112e-05,
+      7.030551587161929e-05
+     ],
+     "ms": 816,
+     "cost": 1.21605e-05,
+     "in_tok": 201,
+     "err": null,
+     "mass": 0.9987,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      2,
+      3,
+      1,
+      0
+     ]
+    },
+    "deepseek": {
+     "pred_index": 1,
+     "probs": [
+      2.2603219866865635e-06,
+      0.9999968425469413,
+      5.0434600687639e-07,
+      0.0,
+      3.9278506509426863e-07
+     ],
+     "ms": 1095,
+     "cost": 3.4720000000000006e-05,
+     "in_tok": 248,
+     "err": null,
+     "mass": 1.0,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      2,
+      3,
+      1,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 229,
+     "in_tok": 554,
+     "cost": 2.3268e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "계산기",
+      "probabilities": {
+       "계산기": 0.97,
+       "도구 없음": 0.03,
+       "캘린더": 0,
+       "웹 검색": 0,
+       "파일 읽기": 0
+      },
+      "confidence": 0.96
+     },
+     "choice": "계산기",
+     "probabilities": {
+      "계산기": 0.97,
+      "도구 없음": 0.03,
+      "캘린더": 0,
+      "웹 검색": 0,
+      "파일 읽기": 0
+     },
+     "pred_index": 1
+    }
+   }
+  },
+  {
+   "id": "agent-tool-pick-018",
+   "target": 2,
+   "label": 2,
+   "class": "T2-캘린더",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 2,
+     "probs": [
+      0.00012330267660601326,
+      7.478685378617872e-05,
+      0.9991315676191708,
+      0.00033517142521848807,
+      0.00033517142521848807
+     ],
+     "ms": 1300,
+     "cost": 1.71215e-05,
+     "in_tok": 283,
+     "err": null,
+     "mass": 0.9962,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      1,
+      3,
+      2,
+      0
+     ]
+    },
+    "qwen": {
+     "pred_index": 2,
+     "probs": [
+      0.0,
+      3.763592462723706e-05,
+      0.999948518592453,
+      1.3845482919838494e-05,
+      0.0
+     ],
+     "ms": 472,
+     "cost": 1.2100000000000001e-05,
+     "in_tok": 200,
+     "err": null,
+     "mass": 0.9986,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      1,
+      3,
+      2,
+      0
+     ]
+    },
+    "deepseek": {
+     "pred_index": 2,
+     "probs": [
+      7.889264262542506e-06,
+      0.0,
+      0.9999921107357375,
+      0.0,
+      0.0
+     ],
+     "ms": 2425,
+     "cost": 3.542000000000001e-05,
+     "in_tok": 253,
+     "err": null,
+     "mass": 1.0,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      1,
+      3,
+      2,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 215,
+     "in_tok": 557,
+     "cost": 2.3394e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "캘린더",
+      "probabilities": {
+       "도구 없음": 0,
+       "웹 검색": 0,
+       "캘린더": 1,
+       "파일 읽기": 0,
+       "계산기": 0
+      },
+      "confidence": 1
+     },
+     "choice": "캘린더",
+     "probabilities": {
+      "도구 없음": 0,
+      "웹 검색": 0,
+      "캘린더": 1,
+      "파일 읽기": 0,
+      "계산기": 0
+     },
+     "pred_index": 2
+    }
+   }
+  },
+  {
+   "id": "agent-tool-pick-019",
+   "target": 3,
+   "label": 3,
+   "class": "T3-파일 읽기",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 3,
+     "probs": [
+      0.00020328946466744555,
+      0.0,
+      0.00012330129311737386,
+      0.9991208111844925,
+      0.0005525980577226844
+     ],
+     "ms": 436,
+     "cost": 1.68795e-05,
+     "in_tok": 279,
+     "err": null,
+     "mass": 0.997,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      4,
+      3,
+      1,
+      0
+     ]
+    },
+    "qwen": {
+     "pred_index": 3,
+     "probs": [
+      0.0,
+      0.0,
+      3.3213877667789155e-05,
+      0.999957270187058,
+      9.515935274149138e-06
+     ],
+     "ms": 623,
+     "cost": 1.21605e-05,
+     "in_tok": 201,
+     "err": null,
+     "mass": 0.9992,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      4,
+      3,
+      1,
+      0
+     ]
+    },
+    "deepseek": {
+     "pred_index": 3,
+     "probs": [
+      1.5534981975494167e-06,
+      0.0,
+      0.0,
+      0.9999984465018025,
+      0.0
+     ],
+     "ms": 1486,
+     "cost": 3.528e-05,
+     "in_tok": 252,
+     "err": null,
+     "mass": 0.9999,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      4,
+      3,
+      1,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 268,
+     "in_tok": 559,
+     "cost": 2.3478000000000005e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "파일 읽기",
+      "probabilities": {
+       "계산기": 0,
+       "웹 검색": 0,
+       "도구 없음": 0.06,
+       "캘린더": 0,
+       "파일 읽기": 0.94
+      },
+      "confidence": 0.93
+     },
+     "choice": "파일 읽기",
+     "probabilities": {
+      "계산기": 0,
+      "웹 검색": 0,
+      "도구 없음": 0.06,
+      "캘린더": 0,
+      "파일 읽기": 0.94
+     },
+     "pred_index": 3
+    }
+   }
+  },
+  {
+   "id": "agent-tool-pick-020",
+   "target": 3,
+   "label": 3,
+   "class": "T3-파일 읽기",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 3,
+     "probs": [
+      0.0009110510670322969,
+      0.0,
+      0.0,
+      0.9990889489329677,
+      0.0
+     ],
+     "ms": 429,
+     "cost": 1.67585e-05,
+     "in_tok": 277,
+     "err": null,
+     "mass": 0.9976,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      1,
+      2,
+      4,
+      0
+     ]
+    },
+    "qwen": {
+     "pred_index": 3,
+     "probs": [
+      1.892357914120658e-05,
+      1.4737698253685386e-05,
+      1.0129062003814401e-05,
+      0.9998979209332888,
+      5.828872731257831e-05
+     ],
+     "ms": 680,
+     "cost": 1.19185e-05,
+     "in_tok": 197,
+     "err": null,
+     "mass": 0.9993,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      1,
+      2,
+      4,
+      0
+     ]
+    },
+    "deepseek": {
+     "pred_index": 3,
+     "probs": [
+      1.1478706480908442e-05,
+      0.0,
+      0.0,
+      0.9999830991365088,
+      5.4221570103126645e-06
+     ],
+     "ms": 1315,
+     "cost": 3.444e-05,
+     "in_tok": 246,
+     "err": null,
+     "mass": 0.9999,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      1,
+      2,
+      4,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 287,
+     "in_tok": 554,
+     "cost": 2.3268e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "파일 읽기",
+      "probabilities": {
+       "계산기": 0,
+       "파일 읽기": 1,
+       "웹 검색": 0,
+       "도구 없음": 0,
+       "캘린더": 0
+      },
+      "confidence": 1
+     },
+     "choice": "파일 읽기",
+     "probabilities": {
+      "계산기": 0,
+      "파일 읽기": 1,
+      "웹 검색": 0,
+      "도구 없음": 0,
+      "캘린더": 0
+     },
+     "pred_index": 3
+    }
+   }
+  },
+  {
+   "id": "agent-tool-pick-021",
+   "target": 4,
+   "label": 4,
+   "class": "T4-도구 없음",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 4,
+     "probs": [
+      0.006688451976785122,
+      0.000201973652536179,
+      0.0003329982570573951,
+      0.00012250321271733882,
+      0.992654072900904
+     ],
+     "ms": 2671,
+     "cost": 1.6819e-05,
+     "in_tok": 278,
+     "err": null,
+     "mass": 0.9877,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      3,
+      1,
+      4,
+      0
+     ]
+    },
+    "qwen": {
+     "pred_index": 4,
+     "probs": [
+      0.0001313408407233813,
+      3.762978089089894e-05,
+      4.5390179989685886e-05,
+      0.0,
+      0.999785639198396
+     ],
+     "ms": 496,
+     "cost": 1.1978999999999998e-05,
+     "in_tok": 198,
+     "err": null,
+     "mass": 0.9977,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      3,
+      1,
+      4,
+      0
+     ]
+    },
+    "deepseek": {
+     "pred_index": 4,
+     "probs": [
+      0.0004305569986502189,
+      0.0,
+      0.0,
+      0.0,
+      0.9995694430013498
+     ],
+     "ms": 2120,
+     "cost": 3.4580000000000004e-05,
+     "in_tok": 247,
+     "err": null,
+     "mass": 0.9992,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      3,
+      1,
+      4,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 313,
+     "in_tok": 553,
+     "cost": 2.3226e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "도구 없음",
+      "probabilities": {
+       "웹 검색": 0,
+       "캘린더": 0,
+       "파일 읽기": 0,
+       "도구 없음": 1,
+       "계산기": 0
+      },
+      "confidence": 1
+     },
+     "choice": "도구 없음",
+     "probabilities": {
+      "웹 검색": 0,
+      "캘린더": 0,
+      "파일 읽기": 0,
+      "도구 없음": 1,
+      "계산기": 0
+     },
+     "pred_index": 4
+    }
+   }
+  },
+  {
+   "id": "agent-tool-pick-022",
+   "target": 2,
+   "label": 2,
+   "class": "T2-캘린더",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 2,
+     "probs": [
+      0.0005509245490658175,
+      0.0005509245490658175,
+      0.9960949259008788,
+      0.00033415247086042275,
+      0.002469072530129201
+     ],
+     "ms": 598,
+     "cost": 1.7061e-05,
+     "in_tok": 282,
+     "err": null,
+     "mass": 0.9937,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      0,
+      1,
+      2,
+      3
+     ]
+    },
+    "qwen": {
+     "pred_index": 2,
+     "probs": [
+      2.429626062118399e-05,
+      0.00013981532638759802,
+      0.9998115921523701,
+      0.0,
+      2.429626062118399e-05
+     ],
+     "ms": 716,
+     "cost": 1.20395e-05,
+     "in_tok": 199,
+     "err": null,
+     "mass": 0.9981,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      0,
+      1,
+      2,
+      3
+     ]
+    },
+    "deepseek": {
+     "pred_index": 2,
+     "probs": [
+      2.6995738305356133e-07,
+      0.0,
+      0.9999985201775637,
+      1.2098650530882122e-06,
+      0.0
+     ],
+     "ms": 1289,
+     "cost": 3.514e-05,
+     "in_tok": 251,
+     "err": null,
+     "mass": 1.0,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      0,
+      1,
+      2,
+      3
+     ]
+    },
+    "jev": {
+     "ms": 380,
+     "in_tok": 555,
+     "cost": 2.3310000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "캘린더",
+      "probabilities": {
+       "캘린더": 1,
+       "파일 읽기": 0,
+       "웹 검색": 0,
+       "도구 없음": 0,
+       "계산기": 0
+      },
+      "confidence": 1
+     },
+     "choice": "캘린더",
+     "probabilities": {
+      "캘린더": 1,
+      "파일 읽기": 0,
+      "웹 검색": 0,
+      "도구 없음": 0,
+      "계산기": 0
+     },
+     "pred_index": 2
+    }
+   }
+  },
+  {
+   "id": "agent-tool-pick-023",
+   "target": 0,
+   "label": 0,
+   "class": "T0-웹 검색",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 0,
+     "probs": [
+      0.9998017776578345,
+      0.00012338534653364789,
+      0.0,
+      0.0,
+      7.483699563192535e-05
+     ],
+     "ms": 805,
+     "cost": 1.6698e-05,
+     "in_tok": 276,
+     "err": null,
+     "mass": 0.9974,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      2,
+      4,
+      3,
+      1
+     ]
+    },
+    "qwen": {
+     "pred_index": 0,
+     "probs": [
+      0.9998667772442319,
+      1.1477367159385071e-05,
+      7.030739765432839e-05,
+      0.0,
+      5.143799095447311e-05
+     ],
+     "ms": 426,
+     "cost": 1.17975e-05,
+     "in_tok": 195,
+     "err": null,
+     "mass": 0.9983,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      2,
+      4,
+      3,
+      1
+     ]
+    },
+    "deepseek": {
+     "pred_index": 0,
+     "probs": [
+      0.9999999048079994,
+      3.6534811889121e-08,
+      0.0,
+      1.7257823147105527e-08,
+      4.1399365575244956e-08
+     ],
+     "ms": 1182,
+     "cost": 3.444e-05,
+     "in_tok": 246,
+     "err": null,
+     "mass": 1.0,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      2,
+      4,
+      3,
+      1
+     ]
+    },
+    "jev": {
+     "ms": 258,
+     "in_tok": 551,
+     "cost": 2.3142e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "웹 검색",
+      "probabilities": {
+       "계산기": 0,
+       "웹 검색": 1,
+       "도구 없음": 0,
+       "캘린더": 0,
+       "파일 읽기": 0
+      },
+      "confidence": 1
+     },
+     "choice": "웹 검색",
+     "probabilities": {
+      "계산기": 0,
+      "웹 검색": 1,
+      "도구 없음": 0,
+      "캘린더": 0,
+      "파일 읽기": 0
+     },
+     "pred_index": 0
+    }
+   }
+  },
+  {
+   "id": "agent-tool-pick-024",
+   "target": 0,
+   "label": 0,
+   "class": "T0-웹 검색",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 0,
+     "probs": [
+      0.9584392932635456,
+      0.000530097743470401,
+      0.028942356130228164,
+      0.0014409550633827357,
+      0.010647297799373205
+     ],
+     "ms": 533,
+     "cost": 1.6819e-05,
+     "in_tok": 278,
+     "err": null,
+     "mass": 0.9938,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      4,
+      2,
+      1,
+      3
+     ]
+    },
+    "qwen": {
+     "pred_index": 2,
+     "probs": [
+      0.2436804870402775,
+      0.0,
+      0.7505886971954407,
+      0.0,
+      0.005730815764281767
+     ],
+     "ms": 600,
+     "cost": 1.2100000000000001e-05,
+     "in_tok": 200,
+     "err": null,
+     "mass": 0.9979,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      4,
+      2,
+      1,
+      3
+     ]
+    },
+    "deepseek": {
+     "pred_index": 2,
+     "probs": [
+      0.0019267027484140538,
+      0.0,
+      0.9980566280066596,
+      1.6669244926293225e-05,
+      0.0
+     ],
+     "ms": 1417,
+     "cost": 3.486e-05,
+     "in_tok": 249,
+     "err": null,
+     "mass": 0.9996,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      4,
+      2,
+      1,
+      3
+     ]
+    },
+    "jev": {
+     "ms": 255,
+     "in_tok": 555,
+     "cost": 2.3310000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "캘린더",
+      "probabilities": {
+       "파일 읽기": 0,
+       "도구 없음": 0.05,
+       "캘린더": 0.7,
+       "웹 검색": 0.25,
+       "계산기": 0
+      },
+      "confidence": 0.62
+     },
+     "choice": "캘린더",
+     "probabilities": {
+      "파일 읽기": 0,
+      "도구 없음": 0.05,
+      "캘린더": 0.7,
+      "웹 검색": 0.25,
+      "계산기": 0
+     },
+     "pred_index": 2
+    }
+   }
+  },
+  {
+   "id": "agent-tool-pick-025",
+   "target": 3,
+   "label": 3,
+   "class": "T3-파일 읽기",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 3,
+     "probs": [
+      4.539242948530374e-05,
+      7.483946402117594e-05,
+      4.539242948530374e-05,
+      0.9998343756770081,
+      0.0
+     ],
+     "ms": 432,
+     "cost": 1.67585e-05,
+     "in_tok": 277,
+     "err": null,
+     "mass": 0.9987,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      3,
+      0,
+      4,
+      1
+     ]
+    },
+    "qwen": {
+     "pred_index": 3,
+     "probs": [
+      0.0,
+      0.0,
+      1.1478452475802797e-05,
+      0.999960986171467,
+      2.7535376057178798e-05
+     ],
+     "ms": 379,
+     "cost": 1.1978999999999998e-05,
+     "in_tok": 198,
+     "err": null,
+     "mass": 0.9994,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      3,
+      0,
+      4,
+      1
+     ]
+    },
+    "deepseek": {
+     "pred_index": 3,
+     "probs": [
+      0.0,
+      2.699579509928078e-07,
+      0.0,
+      0.999999730042049,
+      0.0
+     ],
+     "ms": 1208,
+     "cost": 3.486e-05,
+     "in_tok": 249,
+     "err": null,
+     "mass": 1.0,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      3,
+      0,
+      4,
+      1
+     ]
+    },
+    "jev": {
+     "ms": 253,
+     "in_tok": 554,
+     "cost": 2.3268e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "파일 읽기",
+      "probabilities": {
+       "파일 읽기": 1,
+       "도구 없음": 0,
+       "캘린더": 0,
+       "계산기": 0,
+       "웹 검색": 0
+      },
+      "confidence": 1
+     },
+     "choice": "파일 읽기",
+     "probabilities": {
+      "파일 읽기": 1,
+      "도구 없음": 0,
+      "캘린더": 0,
+      "계산기": 0,
+      "웹 검색": 0
+     },
+     "pred_index": 3
+    }
+   }
+  },
+  {
+   "id": "agent-tool-pick-026",
+   "target": 0,
+   "label": 0,
+   "class": "T0-웹 검색",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 0,
+     "probs": [
+      0.9971591119864514,
+      0.00012305926440457505,
+      0.00012305926440457505,
+      0.00012305926440457505,
+      0.002471710220334848
+     ],
+     "ms": 432,
+     "cost": 1.7303e-05,
+     "in_tok": 286,
+     "err": null,
+     "mass": 0.9971,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      2,
+      1,
+      3,
+      0
+     ]
+    },
+    "qwen": {
+     "pred_index": 0,
+     "probs": [
+      0.9991609868524782,
+      0.0,
+      6.600111482448219e-05,
+      0.000314873708540011,
+      0.0004581383241572813
+     ],
+     "ms": 455,
+     "cost": 1.21605e-05,
+     "in_tok": 201,
+     "err": null,
+     "mass": 0.9979,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      2,
+      1,
+      3,
+      0
+     ]
+    },
+    "deepseek": {
+     "pred_index": 0,
+     "probs": [
+      0.9999990577560859,
+      0.0,
+      0.0,
+      0.0,
+      9.422439141708868e-07
+     ],
+     "ms": 1314,
+     "cost": 3.570000000000001e-05,
+     "in_tok": 255,
+     "err": null,
+     "mass": 1.0,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      2,
+      1,
+      3,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 302,
+     "in_tok": 559,
+     "cost": 2.3478000000000005e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "웹 검색",
+      "probabilities": {
+       "웹 검색": 0.79,
+       "도구 없음": 0.21,
+       "계산기": 0,
+       "파일 읽기": 0,
+       "캘린더": 0
+      },
+      "confidence": 0.73
+     },
+     "choice": "웹 검색",
+     "probabilities": {
+      "웹 검색": 0.79,
+      "도구 없음": 0.21,
+      "계산기": 0,
+      "파일 읽기": 0,
+      "캘린더": 0
+     },
+     "pred_index": 0
+    }
+   }
+  },
+  {
+   "id": "agent-tool-pick-027",
+   "target": 2,
+   "label": 2,
+   "class": "T2-캘린더",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 2,
+     "probs": [
+      0.0024620562712859414,
+      0.0009057398852133173,
+      0.9932644076870016,
+      0.0024620562712859414,
+      0.0009057398852133173
+     ],
+     "ms": 413,
+     "cost": 1.6819e-05,
+     "in_tok": 278,
+     "err": null,
+     "mass": 0.9906,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      1,
+      3,
+      0,
+      2
+     ]
+    },
+    "qwen": {
+     "pred_index": 2,
+     "probs": [
+      0.0008040268565398344,
+      4.2611862300764724e-05,
+      0.999122602130434,
+      1.7763266980959275e-05,
+      1.2995883744421635e-05
+     ],
+     "ms": 410,
+     "cost": 1.20395e-05,
+     "in_tok": 199,
+     "err": null,
+     "mass": 0.9993,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      1,
+      3,
+      0,
+      2
+     ]
+    },
+    "deepseek": {
+     "pred_index": 2,
+     "probs": [
+      1.6373769067651335e-07,
+      0.0,
+      0.9999998362623094,
+      0.0,
+      0.0
+     ],
+     "ms": 1133,
+     "cost": 3.486e-05,
+     "in_tok": 249,
+     "err": null,
+     "mass": 1.0,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      4,
+      1,
+      3,
+      0,
+      2
+     ]
+    },
+    "jev": {
+     "ms": 228,
+     "in_tok": 553,
+     "cost": 2.3226e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "캘린더",
+      "probabilities": {
+       "웹 검색": 0,
+       "도구 없음": 0,
+       "파일 읽기": 0,
+       "캘린더": 1,
+       "계산기": 0
+      },
+      "confidence": 0.99
+     },
+     "choice": "캘린더",
+     "probabilities": {
+      "웹 검색": 0,
+      "도구 없음": 0,
+      "파일 읽기": 0,
+      "캘린더": 1,
+      "계산기": 0
+     },
+     "pred_index": 2
+    }
+   }
+  },
+  {
+   "id": "agent-tool-pick-028",
+   "target": 0,
+   "label": 0,
+   "class": "T0-웹 검색",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 0,
+     "probs": [
+      0.9990889486597934,
+      0.0,
+      0.0,
+      0.0,
+      0.0009110513402066968
+     ],
+     "ms": 405,
+     "cost": 1.67585e-05,
+     "in_tok": 277,
+     "err": null,
+     "mass": 0.9968,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      3,
+      1,
+      2,
+      4
+     ]
+    },
+    "qwen": {
+     "pred_index": 0,
+     "probs": [
+      0.9983951587915972,
+      2.011376790114454e-05,
+      1.7750337872065515e-05,
+      6.595050594546974e-05,
+      0.001501026596683902
+     ],
+     "ms": 702,
+     "cost": 1.19185e-05,
+     "in_tok": 197,
+     "err": null,
+     "mass": 0.9982,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      3,
+      1,
+      2,
+      4
+     ]
+    },
+    "deepseek": {
+     "pred_index": 0,
+     "probs": [
+      0.9999966526055449,
+      0.0,
+      4.450837603618804e-07,
+      0.0,
+      2.9023106947161754e-06
+     ],
+     "ms": 915,
+     "cost": 3.4720000000000006e-05,
+     "in_tok": 248,
+     "err": null,
+     "mass": 1.0,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      3,
+      1,
+      2,
+      4
+     ]
+    },
+    "jev": {
+     "ms": 264,
+     "in_tok": 552,
+     "cost": 2.3184e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "웹 검색",
+      "probabilities": {
+       "파일 읽기": 0,
+       "웹 검색": 0.97,
+       "계산기": 0,
+       "캘린더": 0,
+       "도구 없음": 0.03
+      },
+      "confidence": 0.96
+     },
+     "choice": "웹 검색",
+     "probabilities": {
+      "파일 읽기": 0,
+      "웹 검색": 0.97,
+      "계산기": 0,
+      "캘린더": 0,
+      "도구 없음": 0.03
+     },
+     "pred_index": 0
+    }
+   }
+  },
+  {
+   "id": "agent-tool-pick-029",
+   "target": 2,
+   "label": 2,
+   "class": "T2-캘린더",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 5,
+   "arms": {
+    "glm": {
+     "pred_index": 2,
+     "probs": [
+      0.0,
+      0.00020335875089614304,
+      0.9994613593509183,
+      0.0,
+      0.00033528189818547976
+     ],
+     "ms": 425,
+     "cost": 1.6819e-05,
+     "in_tok": 278,
+     "err": null,
+     "mass": 0.9912,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      3,
+      2,
+      0,
+      4
+     ]
+    },
+    "qwen": {
+     "pred_index": 2,
+     "probs": [
+      0.0,
+      1.6698801115826852e-05,
+      0.9998267032891784,
+      3.320953147614745e-05,
+      0.00012338837822973035
+     ],
+     "ms": 409,
+     "cost": 1.21605e-05,
+     "in_tok": 201,
+     "err": null,
+     "mass": 0.9987,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      3,
+      2,
+      0,
+      4
+     ]
+    },
+    "deepseek": {
+     "pred_index": 2,
+     "probs": [
+      2.102424028741047e-07,
+      0.0,
+      0.9999955669260514,
+      0.0,
+      4.222831545747527e-06
+     ],
+     "ms": 1193,
+     "cost": 3.5000000000000004e-05,
+     "in_tok": 250,
+     "err": null,
+     "mass": 0.9999,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      3,
+      2,
+      0,
+      4
+     ]
+    },
+    "jev": {
+     "ms": 293,
+     "in_tok": 553,
+     "cost": 2.3226e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "캘린더",
+      "probabilities": {
+       "파일 읽기": 0,
+       "웹 검색": 0.02,
+       "계산기": 0,
+       "도구 없음": 0.02,
+       "캘린더": 0.96
+      },
+      "confidence": 0.95
+     },
+     "choice": "캘린더",
+     "probabilities": {
+      "파일 읽기": 0,
+      "웹 검색": 0.02,
+      "계산기": 0,
+      "도구 없음": 0.02,
+      "캘린더": 0.96
+     },
+     "pred_index": 2
+    }
+   }
+  }
+ ],
+ "agg": {
+  "glm": {
+   "n": 30,
+   "ok": 30,
+   "hit": 30,
+   "ms": 22474,
+   "cost": 0.0005074739999999998
+  },
+  "qwen": {
+   "n": 30,
+   "ok": 30,
+   "hit": 29,
+   "ms": 15802,
+   "cost": 0.00036445199999999997
+  },
+  "deepseek": {
+   "n": 30,
+   "ok": 30,
+   "hit": 29,
+   "ms": 46619,
+   "cost": 0.0010522400000000005
+  },
+  "jev": {
+   "n": 30,
+   "ok": 30,
+   "hit": 28,
+   "ms": 8277,
+   "cost": 0.0007014419999999999
+  }
+ }
+}
