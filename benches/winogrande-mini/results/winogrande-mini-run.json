@@ -1,0 +1,7380 @@
+{
+ "task": "winogrande-mini",
+ "bench": "winogrande-mini@1",
+ "items_sha256": "cf4aaf4773da9b35632a97323d3a0ccd3eaf15e34e351534b0219160a39dd018",
+ "template": "generic",
+ "date": "2026-10-03",
+ "arms": {
+  "glm": {
+   "model": "z-ai/glm-4.7-flash",
+   "provider": "cloudflare",
+   "family": "GLM",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.0605,
+   "smoke": {
+    "arm": "glm",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [
+     "확률값 종류 3/10: 반올림된 로그확률 의심 (AUROC 를 믿지 마라)",
+     "뻔한 5건 중 3건 틀림 (winogrande-mini-041, winogrande-mini-043, winogrande-mini-042). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점"
+    ],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.917,
+    "spread": 0.0,
+    "distinct_p": 3,
+    "n_calls": 13,
+    "smoke_acc": 0.4,
+    "cost": 7.169250000000001e-05,
+    "per_item": [
+     {
+      "id": "winogrande-mini-040",
+      "target": 0,
+      "hit": 1,
+      "p": 0.5612
+     },
+     {
+      "id": "winogrande-mini-041",
+      "target": 0,
+      "hit": 0,
+      "p": 0.4388
+     },
+     {
+      "id": "winogrande-mini-043",
+      "target": 0,
+      "hit": 0,
+      "p": 0.4388
+     },
+     {
+      "id": "winogrande-mini-042",
+      "target": 1,
+      "hit": 0,
+      "p": 0.5612
+     },
+     {
+      "id": "winogrande-mini-047",
+      "target": 1,
+      "hit": 1,
+      "p": 0.4388
+     }
+    ]
+   }
+  },
+  "qwen": {
+   "model": "qwen/qwen3.8-27b",
+   "provider": "parasail",
+   "family": "Qwen",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.0605,
+   "smoke": {
+    "arm": "qwen",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [
+     "뻔한 5건 중 2건 틀림 (winogrande-mini-043, winogrande-mini-047). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점"
+    ],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9744,
+    "spread": 0.0,
+    "distinct_p": 8,
+    "n_calls": 13,
+    "smoke_acc": 0.6,
+    "cost": 6.461399999999999e-05,
+    "per_item": [
+     {
+      "id": "winogrande-mini-040",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9274
+     },
+     {
+      "id": "winogrande-mini-041",
+      "target": 0,
+      "hit": 1,
+      "p": 0.8439
+     },
+     {
+      "id": "winogrande-mini-043",
+      "target": 0,
+      "hit": 0,
+      "p": 0.4861
+     },
+     {
+      "id": "winogrande-mini-042",
+      "target": 1,
+      "hit": 1,
+      "p": 0.4861
+     },
+     {
+      "id": "winogrande-mini-047",
+      "target": 1,
+      "hit": 0,
+      "p": 0.5119
+     }
+    ]
+   }
+  },
+  "deepseek": {
+   "model": "deepseek/deepseek-v4-flash",
+   "provider": "digitalocean",
+   "family": "DeepSeek",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.14,
+   "smoke": {
+    "arm": "deepseek",
+    "mode": "logprob",
+    "usable": false,
+    "reasons": [
+     "3회 재현 편차 0.08 > 0.05",
+     "뻔한 5건 중 1건 틀림 (winogrande-mini-047). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점"
+    ],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9809,
+    "spread": 0.07736325922776083,
+    "distinct_p": 8,
+    "n_calls": 13,
+    "smoke_acc": 0.8,
+    "cost": 0.00014896000000000004,
+    "per_item": [
+     {
+      "id": "winogrande-mini-040",
+      "target": 0,
+      "hit": 1,
+      "p": 0.5131
+     },
+     {
+      "id": "winogrande-mini-041",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9912
+     },
+     {
+      "id": "winogrande-mini-043",
+      "target": 0,
+      "hit": 1,
+      "p": 0.5
+     },
+     {
+      "id": "winogrande-mini-042",
+      "target": 1,
+      "hit": 1,
+      "p": 0.4829
+     },
+     {
+      "id": "winogrande-mini-047",
+      "target": 1,
+      "hit": 0,
+      "p": 0.7146
+     }
+    ]
+   }
+  },
+  "jev": {
+   "model": "typesafe/jev-1.13",
+   "provider": "openrouter",
+   "family": "Jev",
+   "mode": "typed",
+   "prob_source": "typed",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.042,
+   "smoke": {
+    "arm": "jev",
+    "mode": "typed",
+    "usable": true,
+    "reasons": [
+     "뻔한 5건 중 2건 틀림 (winogrande-mini-042, winogrande-mini-047). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점"
+    ],
+    "has_logprobs": null,
+    "reasoning_tokens_zero": null,
+    "provider_match": null,
+    "mass_min": null,
+    "spread": null,
+    "distinct_p": null,
+    "n_calls": 5,
+    "smoke_acc": 0.6,
+    "cost": 6.6654e-05,
+    "per_item": [
+     {
+      "id": "winogrande-mini-040",
+      "target": 0,
+      "hit": 1,
+      "p": 0.69,
+      "pred": null
+     },
+     {
+      "id": "winogrande-mini-041",
+      "target": 0,
+      "hit": 1,
+      "p": 0.63,
+      "pred": null
+     },
+     {
+      "id": "winogrande-mini-043",
+      "target": 0,
+      "hit": 1,
+      "p": 0.65,
+      "pred": null
+     },
+     {
+      "id": "winogrande-mini-042",
+      "target": 1,
+      "hit": 0,
+      "p": 0.6,
+      "pred": null
+     },
+     {
+      "id": "winogrande-mini-047",
+      "target": 1,
+      "hit": 0,
+      "p": 0.7,
+      "pred": null
+     }
+    ]
+   }
+  }
+ },
+ "items": [
+  {
+   "id": "winogrande-mini-000",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6767589519861836,
+     "ms": 3103,
+     "cost": 1.1132e-05,
+     "in_tok": 184,
+     "err": null,
+     "mass": [
+      0.9778,
+      0.9863
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.894028829563855,
+     "ms": 932,
+     "cost": 1.0043e-05,
+     "in_tok": 166,
+     "err": null,
+     "mass": [
+      0.9937,
+      0.9812
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.996934411215822,
+     "ms": 3990,
+     "cost": 2.324e-05,
+     "in_tok": 166,
+     "err": null,
+     "mass": [
+      0.9959,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 221,
+     "in_tok": 319,
+     "cost": 1.3398000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.68
+     },
+     "p_violation": 0.68
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-001",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3775406687981454,
+     "ms": 949,
+     "cost": 1.0769e-05,
+     "in_tok": 178,
+     "err": null,
+     "mass": [
+      0.9177,
+      0.9537
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4706558710279379,
+     "ms": 909,
+     "cost": 9.68e-06,
+     "in_tok": 160,
+     "err": null,
+     "mass": [
+      0.988,
+      0.9809
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.2646561149631093,
+     "ms": 2210,
+     "cost": 2.2400000000000002e-05,
+     "in_tok": 160,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9949
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 275,
+     "in_tok": 317,
+     "cost": 1.3314000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.52
+     },
+     "p_violation": 0.52
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-002",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296585972708,
+     "ms": 1272,
+     "cost": 1.0527e-05,
+     "in_tok": 174,
+     "err": null,
+     "mass": [
+      0.9729,
+      0.9636
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.6587872369855942,
+     "ms": 1214,
+     "cost": 9.438e-06,
+     "in_tok": 156,
+     "err": null,
+     "mass": [
+      0.9843,
+      0.9815
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.5266968979109523,
+     "ms": 3185,
+     "cost": 2.184e-05,
+     "in_tok": 156,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9968
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 235,
+     "in_tok": 314,
+     "cost": 1.3188e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.52
+     },
+     "p_violation": 0.52
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-003",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6587872403192772,
+     "ms": 865,
+     "cost": 1.0527e-05,
+     "in_tok": 174,
+     "err": null,
+     "mass": [
+      0.9392,
+      0.9631
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5542996237140752,
+     "ms": 963,
+     "cost": 9.438e-06,
+     "in_tok": 156,
+     "err": null,
+     "mass": [
+      0.9883,
+      0.9832
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.7155653229514926,
+     "ms": 4404,
+     "cost": 2.184e-05,
+     "in_tok": 156,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9976
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 218,
+     "in_tok": 314,
+     "cost": 1.3188e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.52
+     },
+     "p_violation": 0.52
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-004",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296691027554,
+     "ms": 766,
+     "cost": 1.1132e-05,
+     "in_tok": 184,
+     "err": null,
+     "mass": [
+      0.9789,
+      0.9876
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.443440789152793,
+     "ms": 772,
+     "cost": 1.0043e-05,
+     "in_tok": 166,
+     "err": null,
+     "mass": [
+      0.989,
+      0.9911
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.5000218598573394,
+     "ms": 3395,
+     "cost": 2.324e-05,
+     "in_tok": 166,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 226,
+     "in_tok": 320,
+     "cost": 1.3440000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.49
+     },
+     "p_violation": 0.49
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-005",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 904,
+     "cost": 1.0647999999999999e-05,
+     "in_tok": 176,
+     "err": null,
+     "mass": [
+      0.9376,
+      0.9552
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4036307570090849,
+     "ms": 983,
+     "cost": 9.559e-06,
+     "in_tok": 158,
+     "err": null,
+     "mass": [
+      0.9895,
+      0.9824
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.49999999657343513,
+     "ms": 4077,
+     "cost": 2.184e-05,
+     "in_tok": 156,
+     "err": null,
+     "mass": [
+      0.9975,
+      0.9997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 230,
+     "in_tok": 315,
+     "cost": 1.3230000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.61
+     },
+     "p_violation": 0.61
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-006",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 43225,
+     "cost": 1.1737e-05,
+     "in_tok": 194,
+     "err": null,
+     "mass": [
+      0.9758,
+      0.9823
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.3166535488577565,
+     "ms": 1155,
+     "cost": 1.0647999999999999e-05,
+     "in_tok": 176,
+     "err": null,
+     "mass": [
+      0.9925,
+      0.9881
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.6008091733358938,
+     "ms": 2067,
+     "cost": 2.4920000000000002e-05,
+     "in_tok": 178,
+     "err": null,
+     "mass": [
+      0.9986,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 238,
+     "in_tok": 322,
+     "cost": 1.3524000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.51
+     },
+     "p_violation": 0.51
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-007",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296656009272,
+     "ms": 897,
+     "cost": 1.1252999999999999e-05,
+     "in_tok": 186,
+     "err": null,
+     "mass": [
+      0.9439,
+      0.9663
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7591953156180427,
+     "ms": 901,
+     "cost": 1.0164e-05,
+     "in_tok": 168,
+     "err": null,
+     "mass": [
+      0.9933,
+      0.9822
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9850999561488727,
+     "ms": 4491,
+     "cost": 2.2960000000000004e-05,
+     "in_tok": 164,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 241,
+     "in_tok": 319,
+     "cost": 1.3398000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.58
+     },
+     "p_violation": 0.58
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-008",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4387703414027292,
+     "ms": 744,
+     "cost": 1.1252999999999999e-05,
+     "in_tok": 186,
+     "err": null,
+     "mass": [
+      0.9352,
+      0.9561
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.127608275701259,
+     "ms": 1097,
+     "cost": 1.0164e-05,
+     "in_tok": 168,
+     "err": null,
+     "mass": [
+      0.986,
+      0.9919
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4663596493562319,
+     "ms": 3467,
+     "cost": 2.3520000000000002e-05,
+     "in_tok": 168,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9979
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 266,
+     "in_tok": 320,
+     "cost": 1.3440000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.58
+     },
+     "p_violation": 0.58
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-009",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.554299620784329,
+     "ms": 725,
+     "cost": 1.089e-05,
+     "in_tok": 180,
+     "err": null,
+     "mass": [
+      0.9563,
+      0.9386
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7200169013071486,
+     "ms": 926,
+     "cost": 9.801e-06,
+     "in_tok": 162,
+     "err": null,
+     "mass": [
+      0.9885,
+      0.9902
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.906177179748288,
+     "ms": 2834,
+     "cost": 2.2400000000000002e-05,
+     "in_tok": 160,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9996
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 272,
+     "in_tok": 317,
+     "cost": 1.3314000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.53
+     },
+     "p_violation": 0.53
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-010",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6767589549159297,
+     "ms": 833,
+     "cost": 1.089e-05,
+     "in_tok": 180,
+     "err": null,
+     "mass": [
+      0.9517,
+      0.9551
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7298511773013052,
+     "ms": 914,
+     "cost": 9.801e-06,
+     "in_tok": 162,
+     "err": null,
+     "mass": [
+      0.9754,
+      0.9866
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.6448881480186717,
+     "ms": 3124,
+     "cost": 2.2960000000000004e-05,
+     "in_tok": 164,
+     "err": null,
+     "mass": [
+      0.9919,
+      0.9989
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 242,
+     "in_tok": 318,
+     "cost": 1.3356e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.56
+     },
+     "p_violation": 0.56
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-011",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 892,
+     "cost": 1.0647999999999999e-05,
+     "in_tok": 176,
+     "err": null,
+     "mass": [
+      0.9632,
+      0.9654
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.3844707106849976,
+     "ms": 967,
+     "cost": 9.559e-06,
+     "in_tok": 158,
+     "err": null,
+     "mass": [
+      0.9909,
+      0.9805
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.8997941325908276,
+     "ms": 3137,
+     "cost": 2.212e-05,
+     "in_tok": 158,
+     "err": null,
+     "mass": [
+      0.9999,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 224,
+     "in_tok": 315,
+     "cost": 1.3230000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.63
+     },
+     "p_violation": 0.63
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-012",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 781,
+     "cost": 1.0527e-05,
+     "in_tok": 174,
+     "err": null,
+     "mass": [
+      0.8343,
+      0.8412
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.46985858484197174,
+     "ms": 791,
+     "cost": 9.438e-06,
+     "in_tok": 156,
+     "err": null,
+     "mass": [
+      0.9915,
+      0.9904
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.5481127692573575,
+     "ms": 4409,
+     "cost": 2.2400000000000002e-05,
+     "in_tok": 160,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 275,
+     "in_tok": 316,
+     "cost": 1.3272e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.61
+     },
+     "p_violation": 0.61
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-013",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 757,
+     "cost": 1.1857999999999999e-05,
+     "in_tok": 196,
+     "err": null,
+     "mass": [
+      0.9784,
+      0.9819
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.3232410421543242,
+     "ms": 1759,
+     "cost": 1.0769e-05,
+     "in_tok": 178,
+     "err": null,
+     "mass": [
+      0.9862,
+      0.9951
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.46303427790235185,
+     "ms": 4201,
+     "cost": 2.5200000000000003e-05,
+     "in_tok": 180,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 252,
+     "in_tok": 326,
+     "cost": 1.3692000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.43
+     },
+     "p_violation": 0.43
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-014",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3232410421543242,
+     "ms": 4429,
+     "cost": 1.089e-05,
+     "in_tok": 180,
+     "err": null,
+     "mass": [
+      0.9731,
+      0.9426
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.6359226463178429,
+     "ms": 1048,
+     "cost": 9.801e-06,
+     "in_tok": 162,
+     "err": null,
+     "mass": [
+      0.9892,
+      0.9885
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.28312331975687394,
+     "ms": 2636,
+     "cost": 2.2400000000000002e-05,
+     "in_tok": 160,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9976
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 237,
+     "in_tok": 316,
+     "cost": 1.3272e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.67
+     },
+     "p_violation": 0.67
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-015",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 1079,
+     "cost": 1.1011e-05,
+     "in_tok": 182,
+     "err": null,
+     "mass": [
+      0.9457,
+      0.9541
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5,
+     "ms": 964,
+     "cost": 9.922e-06,
+     "in_tok": 164,
+     "err": null,
+     "mass": [
+      0.9884,
+      0.9778
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4928036938718089,
+     "ms": 4109,
+     "cost": 2.2400000000000002e-05,
+     "in_tok": 160,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 267,
+     "in_tok": 319,
+     "cost": 1.3398000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.62
+     },
+     "p_violation": 0.62
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-016",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4387703343990727,
+     "ms": 784,
+     "cost": 1.089e-05,
+     "in_tok": 180,
+     "err": null,
+     "mass": [
+      0.9722,
+      0.8875
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5629724974498507,
+     "ms": 810,
+     "cost": 9.801e-06,
+     "in_tok": 162,
+     "err": null,
+     "mass": [
+      0.9938,
+      0.9911
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.48807327040340065,
+     "ms": 3239,
+     "cost": 2.2680000000000003e-05,
+     "in_tok": 162,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 229,
+     "in_tok": 317,
+     "cost": 1.3314000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.55
+     },
+     "p_violation": 0.55
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-017",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5000000070036563,
+     "ms": 5429,
+     "cost": 1.1132e-05,
+     "in_tok": 184,
+     "err": null,
+     "mass": [
+      0.9359,
+      0.9281
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.8103429937353208,
+     "ms": 995,
+     "cost": 1.0043e-05,
+     "in_tok": 166,
+     "err": null,
+     "mass": [
+      0.9898,
+      0.99
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4915027287265453,
+     "ms": 3055,
+     "cost": 2.3520000000000002e-05,
+     "in_tok": 168,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9916
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 315,
+     "in_tok": 320,
+     "cost": 1.3440000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.71
+     },
+     "p_violation": 0.71
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-018",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296656009272,
+     "ms": 728,
+     "cost": 1.089e-05,
+     "in_tok": 180,
+     "err": null,
+     "mass": [
+      0.9584,
+      0.9661
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5718042634756065,
+     "ms": 1084,
+     "cost": 9.801e-06,
+     "in_tok": 162,
+     "err": null,
+     "mass": [
+      0.9888,
+      0.9796
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.7353438857766692,
+     "ms": 3729,
+     "cost": 2.2680000000000003e-05,
+     "in_tok": 162,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 297,
+     "in_tok": 318,
+     "cost": 1.3356e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.46
+     },
+     "p_violation": 0.46
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-019",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.40244242972656075,
+     "ms": 777,
+     "cost": 1.0769e-05,
+     "in_tok": 178,
+     "err": null,
+     "mass": [
+      0.9435,
+      0.8834
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.22689277872287172,
+     "ms": 789,
+     "cost": 9.68e-06,
+     "in_tok": 160,
+     "err": null,
+     "mass": [
+      0.9914,
+      0.9911
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.28232456167787845,
+     "ms": 2743,
+     "cost": 2.2400000000000002e-05,
+     "in_tok": 160,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 349,
+     "in_tok": 315,
+     "cost": 1.3230000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.57
+     },
+     "p_violation": 0.57
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-020",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5000000070036563,
+     "ms": 945,
+     "cost": 1.1373999999999998e-05,
+     "in_tok": 188,
+     "err": null,
+     "mass": [
+      0.9475,
+      0.9621
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7146061286261077,
+     "ms": 974,
+     "cost": 1.0285e-05,
+     "in_tok": 170,
+     "err": null,
+     "mass": [
+      0.988,
+      0.9834
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.5356243076163114,
+     "ms": 4143,
+     "cost": 2.4360000000000004e-05,
+     "in_tok": 174,
+     "err": null,
+     "mass": [
+      0.9985,
+      0.9995
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 224,
+     "in_tok": 322,
+     "cost": 1.3524000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.46
+     },
+     "p_violation": 0.46
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-021",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 741,
+     "cost": 1.089e-05,
+     "in_tok": 180,
+     "err": null,
+     "mass": [
+      0.9705,
+      0.9425
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.46985858484197174,
+     "ms": 784,
+     "cost": 9.801e-06,
+     "in_tok": 162,
+     "err": null,
+     "mass": [
+      0.9877,
+      0.9883
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.3111315738356155,
+     "ms": 3774,
+     "cost": 2.2680000000000003e-05,
+     "in_tok": 162,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9963
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 298,
+     "in_tok": 317,
+     "cost": 1.3314000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.51
+     },
+     "p_violation": 0.51
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-022",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 800,
+     "cost": 1.089e-05,
+     "in_tok": 180,
+     "err": null,
+     "mass": [
+      0.97,
+      0.9782
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4024424319490162,
+     "ms": 794,
+     "cost": 9.801e-06,
+     "in_tok": 162,
+     "err": null,
+     "mass": [
+      0.9881,
+      0.9916
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.3852532665087104,
+     "ms": 4437,
+     "cost": 2.2680000000000003e-05,
+     "in_tok": 162,
+     "err": null,
+     "mass": [
+      0.9937,
+      0.9976
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 355,
+     "in_tok": 317,
+     "cost": 1.3314000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.51
+     },
+     "p_violation": 0.51
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-023",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.43877033439907276,
+     "ms": 854,
+     "cost": 1.1132e-05,
+     "in_tok": 184,
+     "err": null,
+     "mass": [
+      0.9613,
+      0.9008
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.714075067504665,
+     "ms": 818,
+     "cost": 1.0043e-05,
+     "in_tok": 166,
+     "err": null,
+     "mass": [
+      0.9905,
+      0.9947
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.7310585786300048,
+     "ms": 2452,
+     "cost": 2.324e-05,
+     "in_tok": 166,
+     "err": null,
+     "mass": [
+      0.9768,
+      0.9857
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 231,
+     "in_tok": 320,
+     "cost": 1.3440000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.47
+     },
+     "p_violation": 0.47
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-024",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296726045836,
+     "ms": 719,
+     "cost": 1.0769e-05,
+     "in_tok": 178,
+     "err": null,
+     "mass": [
+      0.9347,
+      0.9523
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.316482123534668,
+     "ms": 969,
+     "cost": 9.68e-06,
+     "in_tok": 160,
+     "err": null,
+     "mass": [
+      0.9815,
+      0.9822
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4716403249001178,
+     "ms": 2209,
+     "cost": 2.2400000000000002e-05,
+     "in_tok": 160,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9991
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 231,
+     "in_tok": 317,
+     "cost": 1.3314000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.51
+     },
+     "p_violation": 0.51
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-025",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 817,
+     "cost": 1.1132e-05,
+     "in_tok": 184,
+     "err": null,
+     "mass": [
+      0.9239,
+      0.9384
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.47065586426007766,
+     "ms": 1485,
+     "cost": 1.0043e-05,
+     "in_tok": 166,
+     "err": null,
+     "mass": [
+      0.9867,
+      0.9702
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.3408256611467751,
+     "ms": 3202,
+     "cost": 2.324e-05,
+     "in_tok": 166,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 264,
+     "in_tok": 320,
+     "cost": 1.3440000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.48
+     },
+     "p_violation": 0.48
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-026",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 3349,
+     "cost": 1.1857999999999999e-05,
+     "in_tok": 196,
+     "err": null,
+     "mass": [
+      0.9138,
+      0.9017
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5283596839867692,
+     "ms": 960,
+     "cost": 1.0769e-05,
+     "in_tok": 178,
+     "err": null,
+     "mass": [
+      0.9833,
+      0.9904
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.5211028713925399,
+     "ms": 2505,
+     "cost": 2.4920000000000002e-05,
+     "in_tok": 178,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 235,
+     "in_tok": 326,
+     "cost": 1.3692000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.47
+     },
+     "p_violation": 0.47
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-027",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 827,
+     "cost": 1.1252999999999999e-05,
+     "in_tok": 186,
+     "err": null,
+     "mass": [
+      0.979,
+      0.9523
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4866968387634546,
+     "ms": 1364,
+     "cost": 1.0164e-05,
+     "in_tok": 168,
+     "err": null,
+     "mass": [
+      0.9853,
+      0.9848
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.48394661771814057,
+     "ms": 3560,
+     "cost": 2.324e-05,
+     "in_tok": 166,
+     "err": null,
+     "mass": [
+      0.9943,
+      0.9976
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 212,
+     "in_tok": 320,
+     "cost": 1.3440000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.54
+     },
+     "p_violation": 0.54
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-028",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.44570037335617874,
+     "ms": 9151,
+     "cost": 1.0647999999999999e-05,
+     "in_tok": 176,
+     "err": null,
+     "mass": [
+      0.9496,
+      0.9811
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4621318561538823,
+     "ms": 757,
+     "cost": 9.559e-06,
+     "in_tok": 158,
+     "err": null,
+     "mass": [
+      0.9863,
+      0.989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.46390549499068906,
+     "ms": 2530,
+     "cost": 2.212e-05,
+     "in_tok": 158,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 266,
+     "in_tok": 315,
+     "cost": 1.3230000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.44
+     },
+     "p_violation": 0.44
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-029",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 913,
+     "cost": 1.1495000000000001e-05,
+     "in_tok": 190,
+     "err": null,
+     "mass": [
+      0.9704,
+      0.969
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.25701199415539966,
+     "ms": 788,
+     "cost": 1.0406e-05,
+     "in_tok": 172,
+     "err": null,
+     "mass": [
+      0.9736,
+      0.9896
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.14463689161722829,
+     "ms": 2636,
+     "cost": 2.3800000000000003e-05,
+     "in_tok": 170,
+     "err": null,
+     "mass": [
+      0.9985,
+      0.998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 215,
+     "in_tok": 321,
+     "cost": 1.3482e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.65
+     },
+     "p_violation": 0.65
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-030",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.44570037628592485,
+     "ms": 894,
+     "cost": 1.1252999999999999e-05,
+     "in_tok": 186,
+     "err": null,
+     "mass": [
+      0.9598,
+      0.9435
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5781524181145573,
+     "ms": 772,
+     "cost": 1.0164e-05,
+     "in_tok": 168,
+     "err": null,
+     "mass": [
+      0.9924,
+      0.992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.3182614785193859,
+     "ms": 2856,
+     "cost": 2.3800000000000003e-05,
+     "in_tok": 170,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 233,
+     "in_tok": 321,
+     "cost": 1.3482e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.57
+     },
+     "p_violation": 0.57
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-031",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 779,
+     "cost": 1.1616e-05,
+     "in_tok": 192,
+     "err": null,
+     "mass": [
+      0.9751,
+      0.9746
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.6966547076428098,
+     "ms": 1877,
+     "cost": 1.0527e-05,
+     "in_tok": 174,
+     "err": null,
+     "mass": [
+      0.9924,
+      0.9911
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4928036960253131,
+     "ms": 2927,
+     "cost": 2.4360000000000004e-05,
+     "in_tok": 174,
+     "err": null,
+     "mass": [
+      0.9999,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 235,
+     "in_tok": 323,
+     "cost": 1.3566e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.5
+     },
+     "p_violation": 0.5
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-032",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 6090,
+     "cost": 1.1132e-05,
+     "in_tok": 184,
+     "err": null,
+     "mass": [
+      0.9802,
+      0.9425
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.27232440384605705,
+     "ms": 948,
+     "cost": 1.0043e-05,
+     "in_tok": 166,
+     "err": null,
+     "mass": [
+      0.9657,
+      0.9807
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.46365724676136544,
+     "ms": 2876,
+     "cost": 2.324e-05,
+     "in_tok": 166,
+     "err": null,
+     "mass": [
+      0.9964,
+      0.982
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 235,
+     "in_tok": 319,
+     "cost": 1.3398000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.71
+     },
+     "p_violation": 0.71
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-033",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 833,
+     "cost": 1.1132e-05,
+     "in_tok": 184,
+     "err": null,
+     "mass": [
+      0.9701,
+      0.9595
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7864103838538203,
+     "ms": 991,
+     "cost": 1.0043e-05,
+     "in_tok": 166,
+     "err": null,
+     "mass": [
+      0.9837,
+      0.9906
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.24837179488516356,
+     "ms": 3720,
+     "cost": 2.324e-05,
+     "in_tok": 166,
+     "err": null,
+     "mass": [
+      0.9985,
+      0.9992
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 312,
+     "in_tok": 321,
+     "cost": 1.3482e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.67
+     },
+     "p_violation": 0.67
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-034",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 738,
+     "cost": 1.089e-05,
+     "in_tok": 180,
+     "err": null,
+     "mass": [
+      0.9639,
+      0.9497
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.44570037628592485,
+     "ms": 751,
+     "cost": 9.801e-06,
+     "in_tok": 162,
+     "err": null,
+     "mass": [
+      0.9854,
+      0.985
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.48257286884599815,
+     "ms": 2532,
+     "cost": 2.2960000000000004e-05,
+     "in_tok": 164,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 285,
+     "in_tok": 318,
+     "cost": 1.3356e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.73
+     },
+     "p_violation": 0.73
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-035",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3412127663480889,
+     "ms": 1144,
+     "cost": 1.0527e-05,
+     "in_tok": 174,
+     "err": null,
+     "mass": [
+      0.9469,
+      0.952
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7282392815098941,
+     "ms": 966,
+     "cost": 9.438e-06,
+     "in_tok": 156,
+     "err": null,
+     "mass": [
+      0.9873,
+      0.9911
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.09138043706651874,
+     "ms": 4435,
+     "cost": 2.212e-05,
+     "in_tok": 158,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9987
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 217,
+     "in_tok": 315,
+     "cost": 1.3230000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.63
+     },
+     "p_violation": 0.63
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-036",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5542996225699109,
+     "ms": 816,
+     "cost": 1.1132e-05,
+     "in_tok": 184,
+     "err": null,
+     "mass": [
+      0.975,
+      0.9576
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5872878272316275,
+     "ms": 799,
+     "cost": 1.0043e-05,
+     "in_tok": 166,
+     "err": null,
+     "mass": [
+      0.9877,
+      0.9925
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.7743165195135968,
+     "ms": 3566,
+     "cost": 2.324e-05,
+     "in_tok": 166,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 316,
+     "in_tok": 319,
+     "cost": 1.3398000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.49
+     },
+     "p_violation": 0.49
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-037",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.44570037221201453,
+     "ms": 7211,
+     "cost": 1.1011e-05,
+     "in_tok": 182,
+     "err": null,
+     "mass": [
+      0.9557,
+      0.9668
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.6180051396270857,
+     "ms": 732,
+     "cost": 9.922e-06,
+     "in_tok": 164,
+     "err": null,
+     "mass": [
+      0.9876,
+      0.987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.5192656469271673,
+     "ms": 3415,
+     "cost": 2.2960000000000004e-05,
+     "in_tok": 164,
+     "err": null,
+     "mass": [
+      0.9987,
+      0.9997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 211,
+     "in_tok": 317,
+     "cost": 1.3314000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.56
+     },
+     "p_violation": 0.56
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-038",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296656009272,
+     "ms": 779,
+     "cost": 1.1011e-05,
+     "in_tok": 182,
+     "err": null,
+     "mass": [
+      0.9559,
+      0.9696
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4601481337746024,
+     "ms": 1220,
+     "cost": 9.922e-06,
+     "in_tok": 164,
+     "err": null,
+     "mass": [
+      0.9938,
+      0.9934
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4123628611698054,
+     "ms": 2606,
+     "cost": 2.2960000000000004e-05,
+     "in_tok": 164,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 241,
+     "in_tok": 319,
+     "cost": 1.3398000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.41
+     },
+     "p_violation": 0.41
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-039",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296585972709,
+     "ms": 758,
+     "cost": 1.1616e-05,
+     "in_tok": 192,
+     "err": null,
+     "mass": [
+      0.9633,
+      0.9806
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.015208932834108187,
+     "ms": 973,
+     "cost": 1.0527e-05,
+     "in_tok": 174,
+     "err": null,
+     "mass": [
+      0.9975,
+      0.9982
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.5541079869317058,
+     "ms": 2592,
+     "cost": 2.4080000000000003e-05,
+     "in_tok": 172,
+     "err": null,
+     "mass": [
+      0.9887,
+      0.9995
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 276,
+     "in_tok": 323,
+     "cost": 1.3566e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.77
+     },
+     "p_violation": 0.77
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-040",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296656009272,
+     "ms": 907,
+     "cost": 1.1495000000000001e-05,
+     "in_tok": 190,
+     "err": null,
+     "mass": [
+      0.9768,
+      0.9739
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9274198586319322,
+     "ms": 949,
+     "cost": 1.0406e-05,
+     "in_tok": 172,
+     "err": null,
+     "mass": [
+      0.9953,
+      0.997
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.5079017454423608,
+     "ms": 4545,
+     "cost": 2.3520000000000002e-05,
+     "in_tok": 168,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 224,
+     "in_tok": 323,
+     "cost": 1.3566e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.71
+     },
+     "p_violation": 0.71
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-041",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4387703414027292,
+     "ms": 857,
+     "cost": 1.089e-05,
+     "in_tok": 180,
+     "err": null,
+     "mass": [
+      0.9706,
+      0.9476
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.830596246734961,
+     "ms": 1149,
+     "cost": 9.801e-06,
+     "in_tok": 162,
+     "err": null,
+     "mass": [
+      0.9936,
+      0.9858
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9936561685595842,
+     "ms": 2780,
+     "cost": 2.2680000000000003e-05,
+     "in_tok": 162,
+     "err": null,
+     "mass": [
+      0.9983,
+      0.9974
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 248,
+     "in_tok": 316,
+     "cost": 1.3272e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.65
+     },
+     "p_violation": 0.65
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-042",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296656009272,
+     "ms": 853,
+     "cost": 1.0406e-05,
+     "in_tok": 172,
+     "err": null,
+     "mass": [
+      0.9239,
+      0.9796
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4860880859922191,
+     "ms": 927,
+     "cost": 9.316999999999999e-06,
+     "in_tok": 154,
+     "err": null,
+     "mass": [
+      0.991,
+      0.9939
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4829228955212572,
+     "ms": 3040,
+     "cost": 2.2400000000000002e-05,
+     "in_tok": 160,
+     "err": null,
+     "mass": [
+      0.9979,
+      0.9995
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 292,
+     "in_tok": 314,
+     "cost": 1.3188e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.57
+     },
+     "p_violation": 0.57
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-043",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4387703343990727,
+     "ms": 1490,
+     "cost": 1.1252999999999999e-05,
+     "in_tok": 186,
+     "err": null,
+     "mass": [
+      0.917,
+      0.9546
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5,
+     "ms": 1860,
+     "cost": 1.0164e-05,
+     "in_tok": 168,
+     "err": null,
+     "mass": [
+      0.9794,
+      0.9816
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.6229820249891542,
+     "ms": 2134,
+     "cost": 2.3520000000000002e-05,
+     "in_tok": 168,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 251,
+     "in_tok": 320,
+     "cost": 1.3440000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.63
+     },
+     "p_violation": 0.63
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-044",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296656009272,
+     "ms": 1890,
+     "cost": 1.0406e-05,
+     "in_tok": 172,
+     "err": null,
+     "mass": [
+      0.8894,
+      0.9223
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5,
+     "ms": 729,
+     "cost": 9.316999999999999e-06,
+     "in_tok": 154,
+     "err": null,
+     "mass": [
+      0.9887,
+      0.9825
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.5735074834658105,
+     "ms": 2054,
+     "cost": 2.1560000000000004e-05,
+     "in_tok": 154,
+     "err": null,
+     "mass": [
+      0.9999,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 246,
+     "in_tok": 313,
+     "cost": 1.3146000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.64
+     },
+     "p_violation": 0.64
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-045",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6224593241981982,
+     "ms": 709,
+     "cost": 1.1495000000000001e-05,
+     "in_tok": 190,
+     "err": null,
+     "mass": [
+      0.9593,
+      0.9772
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.3256080785499831,
+     "ms": 753,
+     "cost": 1.0406e-05,
+     "in_tok": 172,
+     "err": null,
+     "mass": [
+      0.9808,
+      0.9507
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9619556520563377,
+     "ms": 2357,
+     "cost": 2.3800000000000003e-05,
+     "in_tok": 170,
+     "err": null,
+     "mass": [
+      0.9557,
+      0.9985
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 237,
+     "in_tok": 322,
+     "cost": 1.3524000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.64
+     },
+     "p_violation": 0.64
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-046",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5000000070036564,
+     "ms": 1014,
+     "cost": 1.1011e-05,
+     "in_tok": 182,
+     "err": null,
+     "mass": [
+      0.9709,
+      0.9493
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4880718015679227,
+     "ms": 1002,
+     "cost": 9.922e-06,
+     "in_tok": 164,
+     "err": null,
+     "mass": [
+      0.9815,
+      0.985
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.5965416231360441,
+     "ms": 4420,
+     "cost": 2.2960000000000004e-05,
+     "in_tok": 164,
+     "err": null,
+     "mass": [
+      0.9981,
+      0.998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 232,
+     "in_tok": 318,
+     "cost": 1.3356e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.41
+     },
+     "p_violation": 0.41
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-047",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4387703414027292,
+     "ms": 766,
+     "cost": 1.0406e-05,
+     "in_tok": 172,
+     "err": null,
+     "mass": [
+      0.9857,
+      0.9585
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5119282070485579,
+     "ms": 914,
+     "cost": 9.316999999999999e-06,
+     "in_tok": 154,
+     "err": null,
+     "mass": [
+      0.9744,
+      0.9819
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.714623006641899,
+     "ms": 2416,
+     "cost": 2.1560000000000004e-05,
+     "in_tok": 154,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 232,
+     "in_tok": 314,
+     "cost": 1.3188e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.71
+     },
+     "p_violation": 0.71
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-048",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296726045836,
+     "ms": 792,
+     "cost": 1.1495000000000001e-05,
+     "in_tok": 190,
+     "err": null,
+     "mass": [
+      0.9463,
+      0.9423
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5148963656238924,
+     "ms": 771,
+     "cost": 1.0406e-05,
+     "in_tok": 172,
+     "err": null,
+     "mass": [
+      0.9969,
+      0.9936
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.5044217485357946,
+     "ms": 3297,
+     "cost": 2.464e-05,
+     "in_tok": 176,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 220,
+     "in_tok": 322,
+     "cost": 1.3524000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.67
+     },
+     "p_violation": 0.67
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-049",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296620990991,
+     "ms": 781,
+     "cost": 1.0527e-05,
+     "in_tok": 174,
+     "err": null,
+     "mass": [
+      0.9817,
+      0.9556
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5456249789140492,
+     "ms": 764,
+     "cost": 9.438e-06,
+     "in_tok": 156,
+     "err": null,
+     "mass": [
+      0.9833,
+      0.9898
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.507199943859184,
+     "ms": 3789,
+     "cost": 2.184e-05,
+     "in_tok": 156,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9996
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 216,
+     "in_tok": 314,
+     "cost": 1.3188e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.59
+     },
+     "p_violation": 0.59
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-050",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.500000002929746,
+     "ms": 27047,
+     "cost": 1.0647999999999999e-05,
+     "in_tok": 176,
+     "err": null,
+     "mass": [
+      0.9036,
+      0.9598
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.8753804574183159,
+     "ms": 1181,
+     "cost": 9.559e-06,
+     "in_tok": 158,
+     "err": null,
+     "mass": [
+      0.991,
+      0.9925
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.5575663927518839,
+     "ms": 2983,
+     "cost": 2.212e-05,
+     "in_tok": 158,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 246,
+     "in_tok": 315,
+     "cost": 1.3230000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.47
+     },
+     "p_violation": 0.47
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-051",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.43877033439907276,
+     "ms": 943,
+     "cost": 1.0647999999999999e-05,
+     "in_tok": 176,
+     "err": null,
+     "mass": [
+      0.9602,
+      0.9398
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.6466175368281554,
+     "ms": 1009,
+     "cost": 9.559e-06,
+     "in_tok": 158,
+     "err": null,
+     "mass": [
+      0.986,
+      0.9835
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.38726408317172895,
+     "ms": 3747,
+     "cost": 2.212e-05,
+     "in_tok": 158,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9962
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 220,
+     "in_tok": 315,
+     "cost": 1.3230000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.52
+     },
+     "p_violation": 0.52
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-052",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 877,
+     "cost": 1.1132e-05,
+     "in_tok": 184,
+     "err": null,
+     "mass": [
+      0.9438,
+      0.9605
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5445891785061979,
+     "ms": 1017,
+     "cost": 1.0043e-05,
+     "in_tok": 166,
+     "err": null,
+     "mass": [
+      0.9819,
+      0.984
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.46985858484197174,
+     "ms": 2911,
+     "cost": 2.324e-05,
+     "in_tok": 166,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9972
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 254,
+     "in_tok": 318,
+     "cost": 1.3356e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.49
+     },
+     "p_violation": 0.49
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-053",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296585972709,
+     "ms": 830,
+     "cost": 1.089e-05,
+     "in_tok": 180,
+     "err": null,
+     "mass": [
+      0.9809,
+      0.9718
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5,
+     "ms": 780,
+     "cost": 9.801e-06,
+     "in_tok": 162,
+     "err": null,
+     "mass": [
+      0.98,
+      0.9801
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.20743377753213357,
+     "ms": 3863,
+     "cost": 2.2680000000000003e-05,
+     "in_tok": 162,
+     "err": null,
+     "mass": [
+      0.9975,
+      0.9967
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 301,
+     "in_tok": 319,
+     "cost": 1.3398000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.63
+     },
+     "p_violation": 0.63
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-054",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6155292951744946,
+     "ms": 15495,
+     "cost": 1.1011e-05,
+     "in_tok": 182,
+     "err": null,
+     "mass": [
+      0.9288,
+      0.9679
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7372060637658746,
+     "ms": 1680,
+     "cost": 9.922e-06,
+     "in_tok": 164,
+     "err": null,
+     "mass": [
+      0.9927,
+      0.978
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.7353438846385483,
+     "ms": 3353,
+     "cost": 2.2960000000000004e-05,
+     "in_tok": 164,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 221,
+     "in_tok": 318,
+     "cost": 1.3356e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.62
+     },
+     "p_violation": 0.62
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-055",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5000000070036563,
+     "ms": 1047,
+     "cost": 1.1737e-05,
+     "in_tok": 194,
+     "err": null,
+     "mass": [
+      0.9484,
+      0.9609
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.48736323062751297,
+     "ms": 1768,
+     "cost": 1.0647999999999999e-05,
+     "in_tok": 176,
+     "err": null,
+     "mass": [
+      0.9892,
+      0.9917
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.5147198281716227,
+     "ms": 2899,
+     "cost": 2.464e-05,
+     "in_tok": 176,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 274,
+     "in_tok": 325,
+     "cost": 1.365e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.54
+     },
+     "p_violation": 0.54
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-056",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296656009272,
+     "ms": 1229,
+     "cost": 1.089e-05,
+     "in_tok": 180,
+     "err": null,
+     "mass": [
+      0.9648,
+      0.9695
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.39723990990705016,
+     "ms": 893,
+     "cost": 9.801e-06,
+     "in_tok": 162,
+     "err": null,
+     "mass": [
+      0.9819,
+      0.9873
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.48468298050519604,
+     "ms": 3474,
+     "cost": 2.2960000000000004e-05,
+     "in_tok": 164,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 261,
+     "in_tok": 318,
+     "cost": 1.3356e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.53
+     },
+     "p_violation": 0.53
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-057",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.49999999299634357,
+     "ms": 11570,
+     "cost": 1.0647999999999999e-05,
+     "in_tok": 176,
+     "err": null,
+     "mass": [
+      0.96,
+      0.9706
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.50000000338393,
+     "ms": 880,
+     "cost": 9.559e-06,
+     "in_tok": 158,
+     "err": null,
+     "mass": [
+      0.9911,
+      0.9881
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.15081423219678144,
+     "ms": 3082,
+     "cost": 2.212e-05,
+     "in_tok": 158,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 219,
+     "in_tok": 316,
+     "cost": 1.3272e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.52
+     },
+     "p_violation": 0.52
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-058",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 14268,
+     "cost": 1.1132e-05,
+     "in_tok": 184,
+     "err": null,
+     "mass": [
+      0.9135,
+      0.9111
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.8354859663319026,
+     "ms": 991,
+     "cost": 1.0043e-05,
+     "in_tok": 166,
+     "err": null,
+     "mass": [
+      0.9872,
+      0.9807
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.6324356381319447,
+     "ms": 2931,
+     "cost": 2.324e-05,
+     "in_tok": 166,
+     "err": null,
+     "mass": [
+      0.995,
+      0.9985
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 263,
+     "in_tok": 317,
+     "cost": 1.3314000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.62
+     },
+     "p_violation": 0.62
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-059",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 798,
+     "cost": 1.1373999999999998e-05,
+     "in_tok": 188,
+     "err": null,
+     "mass": [
+      0.9645,
+      0.9576
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.858794048088461,
+     "ms": 640,
+     "cost": 1.0285e-05,
+     "in_tok": 170,
+     "err": null,
+     "mass": [
+      0.9907,
+      0.9943
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.5533856320543112,
+     "ms": 5229,
+     "cost": 2.2960000000000004e-05,
+     "in_tok": 164,
+     "err": null,
+     "mass": [
+      0.9975,
+      0.9901
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 215,
+     "in_tok": 322,
+     "cost": 1.3524000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.59
+     },
+     "p_violation": 0.59
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-060",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 908,
+     "cost": 1.089e-05,
+     "in_tok": 180,
+     "err": null,
+     "mass": [
+      0.9696,
+      0.9775
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.513911917391711,
+     "ms": 914,
+     "cost": 9.801e-06,
+     "in_tok": 162,
+     "err": null,
+     "mass": [
+      0.9889,
+      0.9927
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.537344338755856,
+     "ms": 3933,
+     "cost": 2.2960000000000004e-05,
+     "in_tok": 164,
+     "err": null,
+     "mass": [
+      0.9977,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 233,
+     "in_tok": 317,
+     "cost": 1.3314000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.43
+     },
+     "p_violation": 0.43
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-061",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296656009272,
+     "ms": 919,
+     "cost": 1.0647999999999999e-05,
+     "in_tok": 176,
+     "err": null,
+     "mass": [
+      0.978,
+      0.9632
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4378234991142019,
+     "ms": 841,
+     "cost": 9.559e-06,
+     "in_tok": 158,
+     "err": null,
+     "mass": [
+      0.9865,
+      0.995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4539116098216168,
+     "ms": 3443,
+     "cost": 2.1560000000000004e-05,
+     "in_tok": 154,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 234,
+     "in_tok": 314,
+     "cost": 1.3188e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.51
+     },
+     "p_violation": 0.51
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-062",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6155292951744946,
+     "ms": 817,
+     "cost": 1.1011e-05,
+     "in_tok": 182,
+     "err": null,
+     "mass": [
+      0.9492,
+      0.9559
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.8461004092749016,
+     "ms": 804,
+     "cost": 9.922e-06,
+     "in_tok": 164,
+     "err": null,
+     "mass": [
+      0.995,
+      0.9922
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.5604471018385564,
+     "ms": 2772,
+     "cost": 2.2960000000000004e-05,
+     "in_tok": 164,
+     "err": null,
+     "mass": [
+      0.9264,
+      0.9977
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 269,
+     "in_tok": 317,
+     "cost": 1.3314000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.54
+     },
+     "p_violation": 0.54
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-063",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4999999929963435,
+     "ms": 1366,
+     "cost": 1.1252999999999999e-05,
+     "in_tok": 186,
+     "err": null,
+     "mass": [
+      0.9713,
+      0.9388
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4880717957084304,
+     "ms": 1218,
+     "cost": 1.0164e-05,
+     "in_tok": 168,
+     "err": null,
+     "mass": [
+      0.9918,
+      0.9884
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.5553601587665126,
+     "ms": 3680,
+     "cost": 2.3800000000000003e-05,
+     "in_tok": 170,
+     "err": null,
+     "mass": [
+      0.839,
+      0.9975
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 211,
+     "in_tok": 320,
+     "cost": 1.3440000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.43
+     },
+     "p_violation": 0.43
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-064",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4387703414027292,
+     "ms": 747,
+     "cost": 1.0647999999999999e-05,
+     "in_tok": 176,
+     "err": null,
+     "mass": [
+      0.9252,
+      0.9637
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.6274574961908024,
+     "ms": 819,
+     "cost": 9.559e-06,
+     "in_tok": 158,
+     "err": null,
+     "mass": [
+      0.9844,
+      0.9872
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.22568348913036318,
+     "ms": 5287,
+     "cost": 2.2400000000000002e-05,
+     "in_tok": 160,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9995
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 242,
+     "in_tok": 316,
+     "cost": 1.3272e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.53
+     },
+     "p_violation": 0.53
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-065",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 775,
+     "cost": 1.2342e-05,
+     "in_tok": 204,
+     "err": null,
+     "mass": [
+      0.927,
+      0.9399
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7780027048740819,
+     "ms": 1200,
+     "cost": 1.1252999999999999e-05,
+     "in_tok": 186,
+     "err": null,
+     "mass": [
+      0.9865,
+      0.9808
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.7811863416434484,
+     "ms": 3844,
+     "cost": 2.5480000000000003e-05,
+     "in_tok": 182,
+     "err": null,
+     "mass": [
+      0.9966,
+      0.9988
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 431,
+     "in_tok": 327,
+     "cost": 1.3734e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.57
+     },
+     "p_violation": 0.57
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-066",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5542996272159033,
+     "ms": 782,
+     "cost": 1.2342e-05,
+     "in_tok": 204,
+     "err": null,
+     "mass": [
+      0.9852,
+      0.9793
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9257424176074418,
+     "ms": 982,
+     "cost": 1.1252999999999999e-05,
+     "in_tok": 186,
+     "err": null,
+     "mass": [
+      0.997,
+      0.9906
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.6113076552688341,
+     "ms": 3492,
+     "cost": 2.6320000000000002e-05,
+     "in_tok": 188,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9996
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 261,
+     "in_tok": 328,
+     "cost": 1.3776000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.58
+     },
+     "p_violation": 0.58
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-067",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6224593312018545,
+     "ms": 840,
+     "cost": 1.0769e-05,
+     "in_tok": 178,
+     "err": null,
+     "mass": [
+      0.9258,
+      0.967
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.8249332377768941,
+     "ms": 848,
+     "cost": 9.68e-06,
+     "in_tok": 160,
+     "err": null,
+     "mass": [
+      0.9913,
+      0.9919
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9955806635225469,
+     "ms": 4133,
+     "cost": 2.212e-05,
+     "in_tok": 158,
+     "err": null,
+     "mass": [
+      0.9968,
+      0.9997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 237,
+     "in_tok": 314,
+     "cost": 1.3188e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.71
+     },
+     "p_violation": 0.71
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-068",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 911,
+     "cost": 1.1857999999999999e-05,
+     "in_tok": 196,
+     "err": null,
+     "mass": [
+      0.9692,
+      0.9836
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4855522333857982,
+     "ms": 668,
+     "cost": 1.0769e-05,
+     "in_tok": 178,
+     "err": null,
+     "mass": [
+      0.9887,
+      0.9905
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.78101833942186,
+     "ms": 2721,
+     "cost": 2.4920000000000002e-05,
+     "in_tok": 178,
+     "err": null,
+     "mass": [
+      0.9996,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 267,
+     "in_tok": 326,
+     "cost": 1.3692000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.46
+     },
+     "p_violation": 0.46
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-069",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 1107,
+     "cost": 1.2100000000000001e-05,
+     "in_tok": 200,
+     "err": null,
+     "mass": [
+      0.9083,
+      0.9058
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.3150167720150819,
+     "ms": 915,
+     "cost": 1.1011e-05,
+     "in_tok": 182,
+     "err": null,
+     "mass": [
+      0.9806,
+      0.9729
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.18537366520128126,
+     "ms": 2446,
+     "cost": 2.5200000000000003e-05,
+     "in_tok": 180,
+     "err": null,
+     "mass": [
+      0.9986,
+      0.9996
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 362,
+     "in_tok": 324,
+     "cost": 1.3608e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.58
+     },
+     "p_violation": 0.58
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-070",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4387703273954164,
+     "ms": 770,
+     "cost": 1.0285e-05,
+     "in_tok": 170,
+     "err": null,
+     "mass": [
+      0.973,
+      0.9284
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.8537445567807811,
+     "ms": 959,
+     "cost": 9.196e-06,
+     "in_tok": 152,
+     "err": null,
+     "mass": [
+      0.9935,
+      0.993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9647983823361448,
+     "ms": 3842,
+     "cost": 2.1280000000000003e-05,
+     "in_tok": 152,
+     "err": null,
+     "mass": [
+      0.9936,
+      0.9992
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 253,
+     "in_tok": 313,
+     "cost": 1.3146000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.73
+     },
+     "p_violation": 0.73
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-071",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4457003827174991,
+     "ms": 8054,
+     "cost": 1.0769e-05,
+     "in_tok": 178,
+     "err": null,
+     "mass": [
+      0.9835,
+      0.9705
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.26279393597700973,
+     "ms": 1058,
+     "cost": 9.68e-06,
+     "in_tok": 160,
+     "err": null,
+     "mass": [
+      0.986,
+      0.9881
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.47355959062652897,
+     "ms": 2035,
+     "cost": 2.2400000000000002e-05,
+     "in_tok": 160,
+     "err": null,
+     "mass": [
+      0.9977,
+      0.9942
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 223,
+     "in_tok": 316,
+     "cost": 1.3272e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.51
+     },
+     "p_violation": 0.51
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-072",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4457003704264327,
+     "ms": 1291,
+     "cost": 1.0406e-05,
+     "in_tok": 172,
+     "err": null,
+     "mass": [
+      0.9622,
+      0.9661
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.05154262653652818,
+     "ms": 906,
+     "cost": 9.316999999999999e-06,
+     "in_tok": 154,
+     "err": null,
+     "mass": [
+      0.996,
+      0.9944
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.3633022854605364,
+     "ms": 1877,
+     "cost": 2.1560000000000004e-05,
+     "in_tok": 154,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 218,
+     "in_tok": 313,
+     "cost": 1.3146000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.5
+     },
+     "p_violation": 0.5
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-073",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6224593312018546,
+     "ms": 705,
+     "cost": 1.089e-05,
+     "in_tok": 180,
+     "err": null,
+     "mass": [
+      0.9113,
+      0.9276
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.16451403745512466,
+     "ms": 904,
+     "cost": 9.801e-06,
+     "in_tok": 162,
+     "err": null,
+     "mass": [
+      0.9931,
+      0.9906
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.5,
+     "ms": 2835,
+     "cost": 2.2680000000000003e-05,
+     "in_tok": 162,
+     "err": null,
+     "mass": [
+      0.9912,
+      0.9958
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 353,
+     "in_tok": 316,
+     "cost": 1.3272e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.52
+     },
+     "p_violation": 0.52
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-074",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 52824,
+     "cost": 1.1495000000000001e-05,
+     "in_tok": 190,
+     "err": null,
+     "mass": [
+      0.9741,
+      0.9838
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7214867925608929,
+     "ms": 757,
+     "cost": 1.0406e-05,
+     "in_tok": 172,
+     "err": null,
+     "mass": [
+      0.9883,
+      0.9762
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4928252407257957,
+     "ms": 3352,
+     "cost": 2.4080000000000003e-05,
+     "in_tok": 172,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 248,
+     "in_tok": 323,
+     "cost": 1.3566e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.45
+     },
+     "p_violation": 0.45
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-075",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 868,
+     "cost": 1.0647999999999999e-05,
+     "in_tok": 176,
+     "err": null,
+     "mass": [
+      0.9392,
+      0.961
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.33026181896975537,
+     "ms": -1248,
+     "cost": 9.559e-06,
+     "in_tok": 158,
+     "err": null,
+     "mass": [
+      0.9854,
+      0.9899
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.7740564373649832,
+     "ms": 2143,
+     "cost": 2.212e-05,
+     "in_tok": 158,
+     "err": null,
+     "mass": [
+      0.9973,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 249,
+     "in_tok": 315,
+     "cost": 1.3230000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.59
+     },
+     "p_violation": 0.59
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-076",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 822,
+     "cost": 1.0769e-05,
+     "in_tok": 178,
+     "err": null,
+     "mass": [
+      0.9753,
+      0.9629
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.6593102932396211,
+     "ms": 916,
+     "cost": 9.68e-06,
+     "in_tok": 160,
+     "err": null,
+     "mass": [
+      0.987,
+      0.9893
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.6593102853962345,
+     "ms": 2331,
+     "cost": 2.2680000000000003e-05,
+     "in_tok": 162,
+     "err": null,
+     "mass": [
+      0.9984,
+      0.9991
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 220,
+     "in_tok": 316,
+     "cost": 1.3272e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.45
+     },
+     "p_violation": 0.45
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-077",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6224593312018546,
+     "ms": 748,
+     "cost": 1.1132e-05,
+     "in_tok": 184,
+     "err": null,
+     "mass": [
+      0.947,
+      0.9769
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.3662910081821504,
+     "ms": 759,
+     "cost": 1.0043e-05,
+     "in_tok": 166,
+     "err": null,
+     "mass": [
+      0.9932,
+      0.9857
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.6206775956726955,
+     "ms": 4505,
+     "cost": 2.3520000000000002e-05,
+     "in_tok": 168,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 308,
+     "in_tok": 318,
+     "cost": 1.3356e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.45
+     },
+     "p_violation": 0.45
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-078",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4387703273954163,
+     "ms": 743,
+     "cost": 1.1495000000000001e-05,
+     "in_tok": 190,
+     "err": null,
+     "mass": [
+      0.952,
+      0.8842
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.31486159319710344,
+     "ms": 1045,
+     "cost": 1.0406e-05,
+     "in_tok": 172,
+     "err": null,
+     "mass": [
+      0.9913,
+      0.9901
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4983533047509115,
+     "ms": 3956,
+     "cost": 2.3520000000000002e-05,
+     "in_tok": 168,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 245,
+     "in_tok": 321,
+     "cost": 1.3482e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.62
+     },
+     "p_violation": 0.62
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-079",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 810,
+     "cost": 1.1132e-05,
+     "in_tok": 184,
+     "err": null,
+     "mass": [
+      0.9827,
+      0.9576
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.786410391925755,
+     "ms": 684,
+     "cost": 1.0043e-05,
+     "in_tok": 166,
+     "err": null,
+     "mass": [
+      0.9854,
+      0.9871
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.5166811264097829,
+     "ms": 3815,
+     "cost": 2.3520000000000002e-05,
+     "in_tok": 168,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 221,
+     "in_tok": 318,
+     "cost": 1.3356e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.53
+     },
+     "p_violation": 0.53
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-080",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296656009272,
+     "ms": 802,
+     "cost": 1.1011e-05,
+     "in_tok": 182,
+     "err": null,
+     "mass": [
+      0.9562,
+      0.9543
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.21358960909871386,
+     "ms": 834,
+     "cost": 9.922e-06,
+     "in_tok": 164,
+     "err": null,
+     "mass": [
+      0.9862,
+      0.9931
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.13605705491626405,
+     "ms": 2604,
+     "cost": 2.2960000000000004e-05,
+     "in_tok": 164,
+     "err": null,
+     "mass": [
+      0.9707,
+      0.9772
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 251,
+     "in_tok": 317,
+     "cost": 1.3314000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.51
+     },
+     "p_violation": 0.51
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-081",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4387703343990727,
+     "ms": 841,
+     "cost": 1.1495000000000001e-05,
+     "in_tok": 190,
+     "err": null,
+     "mass": [
+      0.9524,
+      0.97
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.11982740907771935,
+     "ms": 1162,
+     "cost": 1.0406e-05,
+     "in_tok": 172,
+     "err": null,
+     "mass": [
+      0.9896,
+      0.9931
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.44939164276892307,
+     "ms": 2846,
+     "cost": 2.4080000000000003e-05,
+     "in_tok": 172,
+     "err": null,
+     "mass": [
+      0.9913,
+      0.9978
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 265,
+     "in_tok": 322,
+     "cost": 1.3524000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.7
+     },
+     "p_violation": 0.7
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-082",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 870,
+     "cost": 1.1011e-05,
+     "in_tok": 182,
+     "err": null,
+     "mass": [
+      0.9717,
+      0.9668
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.16577092961969606,
+     "ms": 842,
+     "cost": 9.922e-06,
+     "in_tok": 164,
+     "err": null,
+     "mass": [
+      0.9914,
+      0.9906
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.014804092249597119,
+     "ms": 2641,
+     "cost": 2.2960000000000004e-05,
+     "in_tok": 164,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 369,
+     "in_tok": 319,
+     "cost": 1.3398000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.57
+     },
+     "p_violation": 0.57
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-083",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 744,
+     "cost": 1.1857999999999999e-05,
+     "in_tok": 196,
+     "err": null,
+     "mass": [
+      0.9769,
+      0.9783
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.23744004676595062,
+     "ms": 1075,
+     "cost": 1.0769e-05,
+     "in_tok": 178,
+     "err": null,
+     "mass": [
+      0.9877,
+      0.9952
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.5107380941149414,
+     "ms": 4273,
+     "cost": 2.4920000000000002e-05,
+     "in_tok": 178,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 234,
+     "in_tok": 326,
+     "cost": 1.3692000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.51
+     },
+     "p_violation": 0.51
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-084",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 994,
+     "cost": 1.089e-05,
+     "in_tok": 180,
+     "err": null,
+     "mass": [
+      0.9593,
+      0.9431
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4642425838459614,
+     "ms": 824,
+     "cost": 9.801e-06,
+     "in_tok": 162,
+     "err": null,
+     "mass": [
+      0.9875,
+      0.9834
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.22594356370268656,
+     "ms": 4251,
+     "cost": 2.324e-05,
+     "in_tok": 166,
+     "err": null,
+     "mass": [
+      0.9268,
+      0.8821
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 261,
+     "in_tok": 318,
+     "cost": 1.3356e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.47
+     },
+     "p_violation": 0.47
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-085",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5748692535852545,
+     "ms": 1049,
+     "cost": 1.0647999999999999e-05,
+     "in_tok": 176,
+     "err": null,
+     "mass": [
+      0.9623,
+      0.961
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4716403192601192,
+     "ms": 787,
+     "cost": 9.559e-06,
+     "in_tok": 158,
+     "err": null,
+     "mass": [
+      0.9838,
+      0.9803
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.6070613263401302,
+     "ms": 2493,
+     "cost": 2.2400000000000002e-05,
+     "in_tok": 160,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 231,
+     "in_tok": 316,
+     "cost": 1.3272e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.58
+     },
+     "p_violation": 0.58
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-086",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296585972708,
+     "ms": 823,
+     "cost": 1.1011e-05,
+     "in_tok": 182,
+     "err": null,
+     "mass": [
+      0.9313,
+      0.9183
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4999999966160698,
+     "ms": 947,
+     "cost": 9.922e-06,
+     "in_tok": 164,
+     "err": null,
+     "mass": [
+      0.9885,
+      0.985
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4410610429099915,
+     "ms": 2493,
+     "cost": 2.2680000000000003e-05,
+     "in_tok": 162,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9983
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 284,
+     "in_tok": 317,
+     "cost": 1.3314000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.7
+     },
+     "p_violation": 0.7
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-087",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3412127619031782,
+     "ms": 867,
+     "cost": 1.0647999999999999e-05,
+     "in_tok": 176,
+     "err": null,
+     "mass": [
+      0.9587,
+      0.9509
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.12480775047130387,
+     "ms": 864,
+     "cost": 9.559e-06,
+     "in_tok": 158,
+     "err": null,
+     "mass": [
+      0.9942,
+      0.9912
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.00047008858756757697,
+     "ms": 2964,
+     "cost": 2.212e-05,
+     "in_tok": 158,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 266,
+     "in_tok": 315,
+     "cost": 1.3230000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.5
+     },
+     "p_violation": 0.5
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-088",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 870,
+     "cost": 1.1011e-05,
+     "in_tok": 182,
+     "err": null,
+     "mass": [
+      0.9411,
+      0.977
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9364885232876812,
+     "ms": 930,
+     "cost": 9.922e-06,
+     "in_tok": 164,
+     "err": null,
+     "mass": [
+      0.9817,
+      0.9834
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.7777418244821523,
+     "ms": 2316,
+     "cost": 2.2960000000000004e-05,
+     "in_tok": 164,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.94
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 275,
+     "in_tok": 317,
+     "cost": 1.3314000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.66
+     },
+     "p_violation": 0.66
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-089",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4567420449547515,
+     "ms": 928,
+     "cost": 1.1978999999999998e-05,
+     "in_tok": 198,
+     "err": null,
+     "mass": [
+      0.9731,
+      0.9658
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.8052177880979092,
+     "ms": 858,
+     "cost": 1.089e-05,
+     "in_tok": 180,
+     "err": null,
+     "mass": [
+      0.9913,
+      0.9916
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.5000000021200819,
+     "ms": 2378,
+     "cost": 2.5200000000000003e-05,
+     "in_tok": 180,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 231,
+     "in_tok": 325,
+     "cost": 1.365e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.54
+     },
+     "p_violation": 0.54
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-090",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 2977,
+     "cost": 1.2705e-05,
+     "in_tok": 210,
+     "err": null,
+     "mass": [
+      0.9828,
+      0.9809
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.22270013366638425,
+     "ms": 799,
+     "cost": 1.1616e-05,
+     "in_tok": 192,
+     "err": null,
+     "mass": [
+      0.9833,
+      0.9924
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.20256282943801096,
+     "ms": 1895,
+     "cost": 2.6320000000000002e-05,
+     "in_tok": 188,
+     "err": null,
+     "mass": [
+      0.9859,
+      0.9905
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 230,
+     "in_tok": 334,
+     "cost": 1.4028e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.56
+     },
+     "p_violation": 0.56
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-091",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.43877033439907276,
+     "ms": 714,
+     "cost": 1.1011e-05,
+     "in_tok": 182,
+     "err": null,
+     "mass": [
+      0.9711,
+      0.9503
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9418004594871932,
+     "ms": 975,
+     "cost": 9.922e-06,
+     "in_tok": 164,
+     "err": null,
+     "mass": [
+      0.9892,
+      0.985
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9997808621256326,
+     "ms": 2570,
+     "cost": 2.2960000000000004e-05,
+     "in_tok": 164,
+     "err": null,
+     "mass": [
+      0.9975,
+      0.9959
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 220,
+     "in_tok": 319,
+     "cost": 1.3398000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.76
+     },
+     "p_violation": 0.76
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-092",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.49999999299634357,
+     "ms": 860,
+     "cost": 1.1737e-05,
+     "in_tok": 194,
+     "err": null,
+     "mass": [
+      0.9435,
+      0.938
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.8910401001204094,
+     "ms": 863,
+     "cost": 1.0647999999999999e-05,
+     "in_tok": 176,
+     "err": null,
+     "mass": [
+      0.9971,
+      0.9957
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9993215676521777,
+     "ms": 2895,
+     "cost": 2.4920000000000002e-05,
+     "in_tok": 178,
+     "err": null,
+     "mass": [
+      0.9983,
+      0.9996
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 227,
+     "in_tok": 327,
+     "cost": 1.3734e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.54
+     },
+     "p_violation": 0.54
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-093",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.2689414184402491,
+     "ms": 742,
+     "cost": 1.1978999999999998e-05,
+     "in_tok": 198,
+     "err": null,
+     "mass": [
+      0.9684,
+      0.9809
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.04515958482824291,
+     "ms": 757,
+     "cost": 1.089e-05,
+     "in_tok": 180,
+     "err": null,
+     "mass": [
+      0.9971,
+      0.9948
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.49557824984877485,
+     "ms": 3219,
+     "cost": 2.4920000000000002e-05,
+     "in_tok": 178,
+     "err": null,
+     "mass": [
+      0.9973,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 278,
+     "in_tok": 325,
+     "cost": 1.365e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.73
+     },
+     "p_violation": 0.73
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-094",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3708311172615401,
+     "ms": 786,
+     "cost": 1.1495000000000001e-05,
+     "in_tok": 190,
+     "err": null,
+     "mass": [
+      0.9567,
+      0.968
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.12760826915789952,
+     "ms": 1199,
+     "cost": 1.0406e-05,
+     "in_tok": 172,
+     "err": null,
+     "mass": [
+      0.9879,
+      0.9881
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.0014039865584827044,
+     "ms": 2193,
+     "cost": 2.4080000000000003e-05,
+     "in_tok": 172,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9996
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 254,
+     "in_tok": 321,
+     "cost": 1.3482e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.74
+     },
+     "p_violation": 0.74
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-095",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296656009272,
+     "ms": 725,
+     "cost": 1.1011e-05,
+     "in_tok": 182,
+     "err": null,
+     "mass": [
+      0.9743,
+      0.9643
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7519859027883162,
+     "ms": 857,
+     "cost": 9.922e-06,
+     "in_tok": 164,
+     "err": null,
+     "mass": [
+      0.9866,
+      0.9893
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.41361294545031063,
+     "ms": 3522,
+     "cost": 2.2680000000000003e-05,
+     "in_tok": 162,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9977
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 346,
+     "in_tok": 318,
+     "cost": 1.3356e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.53
+     },
+     "p_violation": 0.53
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-096",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296585972708,
+     "ms": 722,
+     "cost": 1.1011e-05,
+     "in_tok": 182,
+     "err": null,
+     "mass": [
+      0.9539,
+      0.9508
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7386827429045697,
+     "ms": 823,
+     "cost": 9.922e-06,
+     "in_tok": 164,
+     "err": null,
+     "mass": [
+      0.99,
+      0.9925
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4976169417990363,
+     "ms": 2213,
+     "cost": 2.2680000000000003e-05,
+     "in_tok": 162,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 215,
+     "in_tok": 318,
+     "cost": 1.3356e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.63
+     },
+     "p_violation": 0.63
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-097",
+   "target": 1,
+   "label": 0,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5542996266438213,
+     "ms": 715,
+     "cost": 1.0527e-05,
+     "in_tok": 174,
+     "err": null,
+     "mass": [
+      0.965,
+      0.9699
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.3084189113892306,
+     "ms": 896,
+     "cost": 9.438e-06,
+     "in_tok": 156,
+     "err": null,
+     "mass": [
+      0.9833,
+      0.9894
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.26148868537032693,
+     "ms": 3258,
+     "cost": 2.184e-05,
+     "in_tok": 156,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 237,
+     "in_tok": 315,
+     "cost": 1.3230000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.65
+     },
+     "p_violation": 0.65
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-098",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6155292863852564,
+     "ms": 681,
+     "cost": 1.0527e-05,
+     "in_tok": 174,
+     "err": null,
+     "mass": [
+      0.97,
+      0.9607
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7862447337109294,
+     "ms": 834,
+     "cost": 9.438e-06,
+     "in_tok": 156,
+     "err": null,
+     "mass": [
+      0.9923,
+      0.9967
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9054408131216496,
+     "ms": 5741,
+     "cost": 2.184e-05,
+     "in_tok": 156,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 221,
+     "in_tok": 315,
+     "cost": 1.3230000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.44
+     },
+     "p_violation": 0.44
+    }
+   }
+  },
+  {
+   "id": "winogrande-mini-099",
+   "target": 0,
+   "label": 1,
+   "class": "pronoun",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5000000070036564,
+     "ms": 743,
+     "cost": 1.1495000000000001e-05,
+     "in_tok": 190,
+     "err": null,
+     "mass": [
+      0.9628,
+      0.9322
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5774202598274936,
+     "ms": 776,
+     "cost": 1.0406e-05,
+     "in_tok": 172,
+     "err": null,
+     "mass": [
+      0.992,
+      0.9908
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9698478702343449,
+     "ms": 8093,
+     "cost": 2.4360000000000004e-05,
+     "in_tok": 174,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9993
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 222,
+     "in_tok": 321,
+     "cost": 1.3482e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.54
+     },
+     "p_violation": 0.54
+    }
+   }
+  }
+ ],
+ "agg": {
+  "glm": {
+   "n": 100,
+   "ok": 100,
+   "hit": 54,
+   "ms": 288520,
+   "cost": 0.001109570000000001
+  },
+  "qwen": {
+   "n": 100,
+   "ok": 100,
+   "hit": 73,
+   "ms": 94203,
+   "cost": 0.0010006700000000008
+  },
+  "deepseek": {
+   "n": 100,
+   "ok": 100,
+   "hit": 60,
+   "ms": 328079,
+   "cost": 0.002315320000000001
+  },
+  "jev": {
+   "n": 100,
+   "ok": 100,
+   "hit": 47,
+   "ms": 25475,
+   "cost": 0.0013390859999999993
+  }
+ }
+}
