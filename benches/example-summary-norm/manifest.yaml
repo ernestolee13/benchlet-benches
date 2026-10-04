@@ -7,18 +7,32 @@ guide: '이 요약 문장이 편집 규범을 위반하는가. 위반은 다음 
 choices:
 - 위반
 - 통과
+task_signature:
+  goal: compliance
+  answer: binary
+  prob_use: accuracy_only
+  label: constructed
+  unit: sentence
+  language: ko
 license: CC-BY-4.0
-visibility: full
+visibility: sample
+taxonomy:
+  domain:
+  - editorial
+  input_kind: sentence
+  source_kind: synthetic-rules
+  language: ko
+keywords:
+- 편집 규범
+- 예시
 owner: ernestolee13
 items_sha256: d777a2e3a4c154e67d11317d9ec0f470198768933db70b5c0ec1b6c42ca85626
 n: 6
+choices_note: null
 question: '이 요약 문장이 편집 규범을 위반하는가. 위반은 다음 셋이다. (1) 판단이나 비난이 담긴 어휘를 쓴다 (2) 강조 부사를 쓴다
   (예: 무려, 심지어, 결국) (3) 두 문장 이상이다. 사실만 담은 한 문장은 통과다. 입력은 요약 문장 하나다.'
-published_at: '2026-09-30'
+published_at: '2026-10-04'
 type: binary
-task_signature:
-  answer: binary
-  language: ko
 classes:
 - CLEAN
 - W1-forbidden

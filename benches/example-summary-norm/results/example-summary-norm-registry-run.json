@@ -1,0 +1,693 @@
+{
+ "task": "samples",
+ "bench": "samples@1",
+ "items_sha256": "76cc35707eb844769f38f54bbfca017a4b8b229dec188abbea3c0ca1f480e794",
+ "template": "generic",
+ "date": "2026-09-30",
+ "arms": {
+  "glm": {
+   "model": "z-ai/glm-4.7-flash",
+   "provider": "cloudflare",
+   "family": "GLM",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.0605,
+   "smoke": {
+    "arm": "glm",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [
+     "오류 timeout",
+     "뻔한 4건 중 2건 틀림 (example-summary-norm-001, example-summary-norm-003). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점"
+    ],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9855,
+    "spread": 7.003656432580385e-09,
+    "distinct_p": 5,
+    "n_calls": 13,
+    "smoke_acc": 0.5,
+    "cost": 0.000128502,
+    "per_item": [
+     {
+      "id": "example-summary-norm-001",
+      "target": 0,
+      "hit": 0,
+      "p": 0.4457
+     },
+     {
+      "id": "example-summary-norm-003",
+      "target": 0,
+      "hit": 0,
+      "p": 0.3845
+     },
+     {
+      "id": "example-summary-norm-000",
+      "target": 1,
+      "hit": 1,
+      "p": 0.4457
+     },
+     {
+      "id": "example-summary-norm-004",
+      "target": 1,
+      "hit": 1,
+      "p": 0.28
+     }
+    ]
+   }
+  },
+  "qwen": {
+   "model": "qwen/qwen3.8-27b",
+   "provider": "parasail",
+   "family": "Qwen",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.0605,
+   "smoke": {
+    "arm": "qwen",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9951,
+    "spread": 0.0,
+    "distinct_p": 10,
+    "n_calls": 13,
+    "smoke_acc": 1.0,
+    "cost": 0.0001070245,
+    "per_item": [
+     {
+      "id": "example-summary-norm-001",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9996
+     },
+     {
+      "id": "example-summary-norm-002",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9941
+     },
+     {
+      "id": "example-summary-norm-003",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9872
+     },
+     {
+      "id": "example-summary-norm-000",
+      "target": 1,
+      "hit": 1,
+      "p": 0.1381
+     },
+     {
+      "id": "example-summary-norm-004",
+      "target": 1,
+      "hit": 1,
+      "p": 0.1099
+     }
+    ]
+   }
+  },
+  "deepseek": {
+   "model": "deepseek/deepseek-v4-flash",
+   "provider": "digitalocean",
+   "family": "DeepSeek",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.14,
+   "smoke": {
+    "arm": "deepseek",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9995,
+    "spread": 4.7168608788838995e-06,
+    "distinct_p": 5,
+    "n_calls": 13,
+    "smoke_acc": 1.0,
+    "cost": 0.00028756000000000007,
+    "per_item": [
+     {
+      "id": "example-summary-norm-001",
+      "target": 0,
+      "hit": 1,
+      "p": 1.0
+     },
+     {
+      "id": "example-summary-norm-002",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9853
+     },
+     {
+      "id": "example-summary-norm-003",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9995
+     },
+     {
+      "id": "example-summary-norm-000",
+      "target": 1,
+      "hit": 1,
+      "p": 0.0001
+     },
+     {
+      "id": "example-summary-norm-004",
+      "target": 1,
+      "hit": 1,
+      "p": 0.0
+     }
+    ]
+   }
+  },
+  "jev": {
+   "model": "typesafe/jev-1.13",
+   "provider": "openrouter",
+   "family": "Jev",
+   "mode": "typed",
+   "prob_source": "typed",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.042,
+   "smoke": {
+    "arm": "jev",
+    "mode": "typed",
+    "usable": true,
+    "reasons": [],
+    "has_logprobs": null,
+    "reasoning_tokens_zero": null,
+    "provider_match": null,
+    "mass_min": null,
+    "spread": null,
+    "distinct_p": null,
+    "n_calls": 5,
+    "smoke_acc": 1.0,
+    "cost": 8.400000000000001e-05,
+    "per_item": [
+     {
+      "id": "example-summary-norm-001",
+      "target": 0,
+      "hit": 1,
+      "p": 0.93,
+      "pred": null
+     },
+     {
+      "id": "example-summary-norm-002",
+      "target": 0,
+      "hit": 1,
+      "p": 0.67,
+      "pred": null
+     },
+     {
+      "id": "example-summary-norm-003",
+      "target": 0,
+      "hit": 1,
+      "p": 0.92,
+      "pred": null
+     },
+     {
+      "id": "example-summary-norm-000",
+      "target": 1,
+      "hit": 1,
+      "p": 0.09,
+      "pred": null
+     },
+     {
+      "id": "example-summary-norm-004",
+      "target": 1,
+      "hit": 1,
+      "p": 0.14,
+      "pred": null
+     }
+    ]
+   }
+  }
+ },
+ "items": [
+  {
+   "id": "example-summary-norm-000",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.40244242417042253,
+     "ms": 68722,
+     "cost": 2.178e-05,
+     "in_tok": 360,
+     "err": null,
+     "mass": [
+      0.9899,
+      0.9967
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.1337622789937858,
+     "ms": 1851,
+     "cost": 1.6577e-05,
+     "in_tok": 274,
+     "err": null,
+     "mass": [
+      0.9946,
+      0.9983
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 7.016319924904192e-05,
+     "ms": 2064,
+     "cost": 4.452e-05,
+     "in_tok": 318,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 237,
+     "in_tok": 401,
+     "cost": 1.6842e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1
+     },
+     "p_violation": 0.1
+    }
+   }
+  },
+  {
+   "id": "example-summary-norm-001",
+   "target": 0,
+   "label": 1,
+   "class": "W2-intensifier",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4024424262247326,
+     "ms": 27343,
+     "cost": 2.0933e-05,
+     "in_tok": 346,
+     "err": null,
+     "mass": [
+      0.9972,
+      0.9984
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9995381205048119,
+     "ms": 969,
+     "cost": 1.6335e-05,
+     "in_tok": 270,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.9988
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999163120671861,
+     "ms": 4225,
+     "cost": 4.312000000000001e-05,
+     "in_tok": 308,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 244,
+     "in_tok": 394,
+     "cost": 1.6548e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.93
+     },
+     "p_violation": 0.93
+    }
+   }
+  },
+  {
+   "id": "example-summary-norm-002",
+   "target": 0,
+   "label": 1,
+   "class": "W3-two-sentences",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 72834,
+     "cost": 2.2385e-05,
+     "in_tok": 370,
+     "err": null,
+     "mass": [
+      0.9949,
+      0.9957
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9936552462612133,
+     "ms": 943,
+     "cost": 1.6577e-05,
+     "in_tok": 274,
+     "err": null,
+     "mass": [
+      0.9976,
+      0.9979
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9698549606886405,
+     "ms": 2124,
+     "cost": 4.6200000000000005e-05,
+     "in_tok": 330,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 219,
+     "in_tok": 405,
+     "cost": 1.701e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.66
+     },
+     "p_violation": 0.66
+    }
+   }
+  },
+  {
+   "id": "example-summary-norm-003",
+   "target": 0,
+   "label": 1,
+   "class": "W1-forbidden",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3844707077552515,
+     "ms": 24132,
+     "cost": 2.1417e-05,
+     "in_tok": 354,
+     "err": null,
+     "mass": [
+      0.9951,
+      0.9975
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9867181524056343,
+     "ms": 820,
+     "cost": 1.6214e-05,
+     "in_tok": 268,
+     "err": null,
+     "mass": [
+      0.997,
+      0.9965
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9997828581672803,
+     "ms": 3347,
+     "cost": 4.368e-05,
+     "in_tok": 312,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 237,
+     "in_tok": 397,
+     "cost": 1.6674e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.92
+     },
+     "p_violation": 0.92
+    }
+   }
+  },
+  {
+   "id": "example-summary-norm-004",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3232410509435626,
+     "ms": 1823,
+     "cost": 2.178e-05,
+     "in_tok": 360,
+     "err": null,
+     "mass": [
+      0.9938,
+      0.9973
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.11107278908880915,
+     "ms": 1044,
+     "cost": 1.6819e-05,
+     "in_tok": 278,
+     "err": null,
+     "mass": [
+      0.996,
+      0.9981
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 6.659856408002988e-05,
+     "ms": 2343,
+     "cost": 4.5360000000000006e-05,
+     "in_tok": 324,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 234,
+     "in_tok": 403,
+     "cost": 1.6926e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.12
+     },
+     "p_violation": 0.12
+    }
+   }
+  },
+  {
+   "id": "example-summary-norm-005",
+   "target": 1,
+   "label": 0,
+   "class": "CLEAN",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.2799830951910232,
+     "ms": 37144,
+     "cost": 2.2022e-05,
+     "in_tok": 364,
+     "err": null,
+     "mass": [
+      0.9951,
+      0.9978
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.12151624374568405,
+     "ms": 1039,
+     "cost": 1.6819e-05,
+     "in_tok": 278,
+     "err": null,
+     "mass": [
+      0.9959,
+      0.9977
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 2.7929776305099305e-06,
+     "ms": 1915,
+     "cost": 4.452e-05,
+     "in_tok": 318,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 303,
+     "in_tok": 404,
+     "cost": 1.6968e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.08
+     },
+     "p_violation": 0.08
+    }
+   }
+  }
+ ],
+ "agg": {
+  "glm": {
+   "n": 6,
+   "ok": 6,
+   "hit": 4,
+   "ms": 231998,
+   "cost": 0.00013031700000000002
+  },
+  "qwen": {
+   "n": 6,
+   "ok": 6,
+   "hit": 6,
+   "ms": 6666,
+   "cost": 9.934100000000001e-05
+  },
+  "deepseek": {
+   "n": 6,
+   "ok": 6,
+   "hit": 6,
+   "ms": 16018,
+   "cost": 0.00026740000000000005
+  },
+  "jev": {
+   "n": 6,
+   "ok": 6,
+   "hit": 6,
+   "ms": 1474,
+   "cost": 0.00010096800000000001
+  }
+ }
+}
