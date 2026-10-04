@@ -1,0 +1,3156 @@
+{
+ "task": "support-escalation-route",
+ "bench": "support-escalation-route@1",
+ "items_sha256": "8b96300150ae15ae6714712b6766e9b94e2e8d62b743e5d1ab2c94d097ab63c5",
+ "template": "generic",
+ "date": "2026-10-04",
+ "arms": {
+  "glm": {
+   "model": "z-ai/glm-4.7-flash",
+   "provider": "cloudflare",
+   "family": "GLM",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.0605,
+   "smoke": {
+    "arm": "glm",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9983,
+    "spread": 0.0017715627981319537,
+    "distinct_p": 5,
+    "n_calls": 8,
+    "smoke_acc": 1.0,
+    "cost": 0.00015524299999999998,
+    "per_item": [
+     {
+      "id": "support-escalation-route-000",
+      "target": 0,
+      "hit": 1,
+      "pred": 0
+     },
+     {
+      "id": "support-escalation-route-001",
+      "target": 1,
+      "hit": 1,
+      "pred": 1
+     },
+     {
+      "id": "support-escalation-route-002",
+      "target": 3,
+      "hit": 1,
+      "pred": 3
+     },
+     {
+      "id": "support-escalation-route-003",
+      "target": 3,
+      "hit": 1,
+      "pred": 3
+     },
+     {
+      "id": "support-escalation-route-004",
+      "target": 3,
+      "hit": 1,
+      "pred": 3
+     }
+    ]
+   }
+  },
+  "qwen": {
+   "model": "qwen/qwen3.8-27b",
+   "provider": "parasail",
+   "family": "Qwen",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.0605,
+   "smoke": {
+    "arm": "qwen",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9966,
+    "spread": 0.0022389342248875232,
+    "distinct_p": 4,
+    "n_calls": 8,
+    "smoke_acc": 1.0,
+    "cost": 0.000107085,
+    "per_item": [
+     {
+      "id": "support-escalation-route-000",
+      "target": 0,
+      "hit": 1,
+      "pred": 0
+     },
+     {
+      "id": "support-escalation-route-001",
+      "target": 1,
+      "hit": 1,
+      "pred": 1
+     },
+     {
+      "id": "support-escalation-route-002",
+      "target": 3,
+      "hit": 1,
+      "pred": 3
+     },
+     {
+      "id": "support-escalation-route-003",
+      "target": 3,
+      "hit": 1,
+      "pred": 3
+     },
+     {
+      "id": "support-escalation-route-004",
+      "target": 3,
+      "hit": 1,
+      "pred": 3
+     }
+    ]
+   }
+  },
+  "deepseek": {
+   "model": "deepseek/deepseek-v4-flash",
+   "provider": "digitalocean",
+   "family": "DeepSeek",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.14,
+   "smoke": {
+    "arm": "deepseek",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [
+     "확률값 종류 2/5: 반올림된 로그확률 의심 (AUROC 를 믿지 마라)"
+    ],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9997,
+    "spread": 3.873467928072749e-06,
+    "distinct_p": 2,
+    "n_calls": 8,
+    "smoke_acc": 1.0,
+    "cost": 0.00032032,
+    "per_item": [
+     {
+      "id": "support-escalation-route-000",
+      "target": 0,
+      "hit": 1,
+      "pred": 0
+     },
+     {
+      "id": "support-escalation-route-001",
+      "target": 1,
+      "hit": 1,
+      "pred": 1
+     },
+     {
+      "id": "support-escalation-route-002",
+      "target": 3,
+      "hit": 1,
+      "pred": 3
+     },
+     {
+      "id": "support-escalation-route-003",
+      "target": 3,
+      "hit": 1,
+      "pred": 3
+     },
+     {
+      "id": "support-escalation-route-004",
+      "target": 3,
+      "hit": 1,
+      "pred": 3
+     }
+    ]
+   }
+  },
+  "jev": {
+   "model": "typesafe/jev-1.13",
+   "provider": "openrouter",
+   "family": "Jev",
+   "mode": "typed",
+   "prob_source": "typed",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.042,
+   "smoke": {
+    "arm": "jev",
+    "mode": "typed",
+    "usable": true,
+    "reasons": [],
+    "has_logprobs": null,
+    "reasoning_tokens_zero": null,
+    "provider_match": null,
+    "mass_min": null,
+    "spread": null,
+    "distinct_p": null,
+    "n_calls": 5,
+    "smoke_acc": 1.0,
+    "cost": 0.000122766,
+    "per_item": [
+     {
+      "id": "support-escalation-route-000",
+      "target": 0,
+      "hit": 1,
+      "p": null,
+      "pred": 0
+     },
+     {
+      "id": "support-escalation-route-001",
+      "target": 1,
+      "hit": 1,
+      "p": null,
+      "pred": 1
+     },
+     {
+      "id": "support-escalation-route-002",
+      "target": 3,
+      "hit": 1,
+      "p": null,
+      "pred": 3
+     },
+     {
+      "id": "support-escalation-route-003",
+      "target": 3,
+      "hit": 1,
+      "p": null,
+      "pred": 3
+     },
+     {
+      "id": "support-escalation-route-004",
+      "target": 3,
+      "hit": 1,
+      "p": null,
+      "pred": 3
+     }
+    ]
+   }
+  }
+ },
+ "items": [
+  {
+   "id": "support-escalation-route-000",
+   "target": 0,
+   "label": 0,
+   "class": "E0-봇 자동응답",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 0,
+     "probs": [
+      0.9983343444231245,
+      0.0009103630878764653,
+      0.0002031293647314427,
+      0.0005521631242677425
+     ],
+     "ms": 368,
+     "cost": 1.9118e-05,
+     "in_tok": 316,
+     "err": null,
+     "mass": 0.9993,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      0,
+      2,
+      1
+     ]
+    },
+    "qwen": {
+     "pred_index": 0,
+     "probs": [
+      0.9998053598615925,
+      4.0057508152716926e-05,
+      3.119681871722512e-05,
+      0.00012338581153767007
+     ],
+     "ms": 389,
+     "cost": 1.3189e-05,
+     "in_tok": 218,
+     "err": null,
+     "mass": 0.9977,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      0,
+      2,
+      1
+     ]
+    },
+    "deepseek": {
+     "pred_index": 0,
+     "probs": [
+      0.9999951029692385,
+      2.9023065712243426e-06,
+      1.9947241901670777e-06,
+      0.0
+     ],
+     "ms": 2077,
+     "cost": 3.9340000000000006e-05,
+     "in_tok": 281,
+     "err": null,
+     "mass": 0.9998,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      0,
+      2,
+      1
+     ]
+    },
+    "jev": {
+     "ms": 300,
+     "in_tok": 577,
+     "cost": 2.4234000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "봇 자동응답",
+      "probabilities": {
+       "무시": 0,
+       "긴급 대응": 0,
+       "봇 자동응답": 1,
+       "상담사 연결": 0
+      },
+      "confidence": 1
+     },
+     "choice": "봇 자동응답",
+     "probabilities": {
+      "무시": 0,
+      "긴급 대응": 0,
+      "봇 자동응답": 1,
+      "상담사 연결": 0
+     },
+     "pred_index": 0
+    }
+   }
+  },
+  {
+   "id": "support-escalation-route-001",
+   "target": 1,
+   "label": 1,
+   "class": "E1-상담사 연결",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 1,
+     "probs": [
+      0.11735810056730149,
+      0.8671656404428341,
+      0.005842917169526735,
+      0.009633341820337715
+     ],
+     "ms": 18443,
+     "cost": 1.8573499999999998e-05,
+     "in_tok": 307,
+     "err": null,
+     "mass": 0.9971,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      0,
+      1,
+      2
+     ]
+    },
+    "qwen": {
+     "pred_index": 1,
+     "probs": [
+      4.5375249685808425e-05,
+      0.9994566700232759,
+      0.00048783014030911564,
+      1.0124586729169424e-05
+     ],
+     "ms": 572,
+     "cost": 1.2947e-05,
+     "in_tok": 214,
+     "err": null,
+     "mass": 0.9996,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      0,
+      1,
+      2
+     ]
+    },
+    "deepseek": {
+     "pred_index": 1,
+     "probs": [
+      1.76029921337247e-06,
+      0.999973939519706,
+      2.4300181080675812e-05,
+      0.0
+     ],
+     "ms": 1431,
+     "cost": 3.850000000000001e-05,
+     "in_tok": 275,
+     "err": null,
+     "mass": 1.0,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      0,
+      1,
+      2
+     ]
+    },
+    "jev": {
+     "ms": 220,
+     "in_tok": 574,
+     "cost": 2.4108e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "상담사 연결",
+      "probabilities": {
+       "무시": 0,
+       "긴급 대응": 0,
+       "봇 자동응답": 0.01,
+       "상담사 연결": 0.99
+      },
+      "confidence": 0.99
+     },
+     "choice": "상담사 연결",
+     "probabilities": {
+      "무시": 0,
+      "긴급 대응": 0,
+      "봇 자동응답": 0.01,
+      "상담사 연결": 0.99
+     },
+     "pred_index": 1
+    }
+   }
+  },
+  {
+   "id": "support-escalation-route-002",
+   "target": 3,
+   "label": 3,
+   "class": "E3-무시",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 3,
+     "probs": [
+      0.3172653317148807,
+      0.11671537902078434,
+      0.04293718841027923,
+      0.5230821008540557
+     ],
+     "ms": 13816,
+     "cost": 2.0206999999999998e-05,
+     "in_tok": 334,
+     "err": null,
+     "mass": 0.9963,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      0,
+      2,
+      1
+     ]
+    },
+    "qwen": {
+     "pred_index": 3,
+     "probs": [
+      0.00035601147264907834,
+      0.002471209428315062,
+      0.00021593177040679531,
+      0.9969568473286291
+     ],
+     "ms": 428,
+     "cost": 1.4157e-05,
+     "in_tok": 234,
+     "err": null,
+     "mass": 0.9967,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      0,
+      2,
+      1
+     ]
+    },
+    "deepseek": {
+     "pred_index": 3,
+     "probs": [
+      4.784539019839312e-06,
+      8.480798335233417e-05,
+      3.119911352253368e-05,
+      0.9998792083641054
+     ],
+     "ms": 1238,
+     "cost": 4.186e-05,
+     "in_tok": 299,
+     "err": null,
+     "mass": 0.9999,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      0,
+      2,
+      1
+     ]
+    },
+    "jev": {
+     "ms": 225,
+     "in_tok": 598,
+     "cost": 2.5116e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "무시",
+      "probabilities": {
+       "긴급 대응": 0,
+       "무시": 0.87,
+       "상담사 연결": 0.06,
+       "봇 자동응답": 0.07
+      },
+      "confidence": 0.81
+     },
+     "choice": "무시",
+     "probabilities": {
+      "긴급 대응": 0,
+      "무시": 0.87,
+      "상담사 연결": 0.06,
+      "봇 자동응답": 0.07
+     },
+     "pred_index": 3
+    }
+   }
+  },
+  {
+   "id": "support-escalation-route-003",
+   "target": 3,
+   "label": 3,
+   "class": "E3-무시",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 3,
+     "probs": [
+      0.006649484501697434,
+      0.0024462086425626186,
+      0.004033116221563476,
+      0.9868711906341765
+     ],
+     "ms": 342,
+     "cost": 1.89365e-05,
+     "in_tok": 313,
+     "err": null,
+     "mass": 0.9981,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      2,
+      0,
+      1
+     ]
+    },
+    "qwen": {
+     "pred_index": 3,
+     "probs": [
+      3.534344628406125e-05,
+      0.00020338749056552366,
+      0.0001583983369193578,
+      0.999602870726231
+     ],
+     "ms": 492,
+     "cost": 1.31285e-05,
+     "in_tok": 217,
+     "err": null,
+     "mass": 0.9983,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      2,
+      0,
+      1
+     ]
+    },
+    "deepseek": {
+     "pred_index": 3,
+     "probs": [
+      3.288747224949689e-06,
+      7.338186949907283e-07,
+      1.8553842223542227e-07,
+      0.9999957918956578
+     ],
+     "ms": 1892,
+     "cost": 3.92e-05,
+     "in_tok": 280,
+     "err": null,
+     "mass": 0.9999,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      2,
+      0,
+      1
+     ]
+    },
+    "jev": {
+     "ms": 419,
+     "in_tok": 577,
+     "cost": 2.4234000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "무시",
+      "probabilities": {
+       "봇 자동응답": 0.01,
+       "상담사 연결": 0.04,
+       "긴급 대응": 0,
+       "무시": 0.95
+      },
+      "confidence": 0.92
+     },
+     "choice": "무시",
+     "probabilities": {
+      "봇 자동응답": 0.01,
+      "상담사 연결": 0.04,
+      "긴급 대응": 0,
+      "무시": 0.95
+     },
+     "pred_index": 3
+    }
+   }
+  },
+  {
+   "id": "support-escalation-route-004",
+   "target": 3,
+   "label": 3,
+   "class": "E3-무시",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 3,
+     "probs": [
+      0.0024698980096051776,
+      0.0005511087384334915,
+      0.0005511087384334915,
+      0.9964278845135277
+     ],
+     "ms": 753,
+     "cost": 2.1054e-05,
+     "in_tok": 348,
+     "err": null,
+     "mass": 0.9979,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      0,
+      1,
+      2
+     ]
+    },
+    "qwen": {
+     "pred_index": 3,
+     "probs": [
+      0.000551751900682691,
+      0.000158079490844125,
+      0.001699515500905373,
+      0.9975906531075679
+     ],
+     "ms": 327,
+     "cost": 1.40965e-05,
+     "in_tok": 233,
+     "err": null,
+     "mass": 0.9986,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      0,
+      1,
+      2
+     ]
+    },
+    "deepseek": {
+     "pred_index": 3,
+     "probs": [
+      0.0,
+      1.637370034915167e-07,
+      3.7266370223953398e-06,
+      0.9999961096259741
+     ],
+     "ms": 1936,
+     "cost": 4.3400000000000005e-05,
+     "in_tok": 310,
+     "err": null,
+     "mass": 1.0,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      0,
+      1,
+      2
+     ]
+    },
+    "jev": {
+     "ms": 245,
+     "in_tok": 597,
+     "cost": 2.5074e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "무시",
+      "probabilities": {
+       "무시": 1,
+       "긴급 대응": 0,
+       "봇 자동응답": 0,
+       "상담사 연결": 0
+      },
+      "confidence": 1
+     },
+     "choice": "무시",
+     "probabilities": {
+      "무시": 1,
+      "긴급 대응": 0,
+      "봇 자동응답": 0,
+      "상담사 연결": 0
+     },
+     "pred_index": 3
+    }
+   }
+  },
+  {
+   "id": "support-escalation-route-005",
+   "target": 0,
+   "label": 0,
+   "class": "E0-봇 자동응답",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 0,
+     "probs": [
+      0.9976287880466219,
+      0.0009097195709332523,
+      0.0009097195709332523,
+      0.0005517728115116393
+     ],
+     "ms": 336,
+     "cost": 1.9057500000000002e-05,
+     "in_tok": 315,
+     "err": null,
+     "mass": 0.9992,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      2,
+      0,
+      3
+     ]
+    },
+    "qwen": {
+     "pred_index": 0,
+     "probs": [
+      0.9989031962646204,
+      3.1168667167004995e-05,
+      0.0009696288144465299,
+      9.600625376612702e-05
+     ],
+     "ms": 375,
+     "cost": 1.3189e-05,
+     "in_tok": 218,
+     "err": null,
+     "mass": 0.9981,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      2,
+      0,
+      3
+     ]
+    },
+    "deepseek": {
+     "pred_index": 0,
+     "probs": [
+      0.9999992182565093,
+      2.1024320553613463e-07,
+      0.0,
+      5.715002851658549e-07
+     ],
+     "ms": 1018,
+     "cost": 3.9340000000000006e-05,
+     "in_tok": 281,
+     "err": null,
+     "mass": 0.9999,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      2,
+      0,
+      3
+     ]
+    },
+    "jev": {
+     "ms": 233,
+     "in_tok": 580,
+     "cost": 2.436e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "봇 자동응답",
+      "probabilities": {
+       "봇 자동응답": 1,
+       "무시": 0,
+       "상담사 연결": 0,
+       "긴급 대응": 0
+      },
+      "confidence": 1
+     },
+     "choice": "봇 자동응답",
+     "probabilities": {
+      "봇 자동응답": 1,
+      "무시": 0,
+      "상담사 연결": 0,
+      "긴급 대응": 0
+     },
+     "pred_index": 0
+    }
+   }
+  },
+  {
+   "id": "support-escalation-route-006",
+   "target": 2,
+   "label": 2,
+   "class": "E2-긴급 대응",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 2,
+     "probs": [
+      7.473181489077087e-05,
+      0.0015010286273254043,
+      0.998396747259484,
+      2.749229829974446e-05
+     ],
+     "ms": 1480,
+     "cost": 1.9723e-05,
+     "in_tok": 326,
+     "err": null,
+     "mass": 0.9994,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      3,
+      2,
+      1
+     ]
+    },
+    "qwen": {
+     "pred_index": 2,
+     "probs": [
+      2.4297789944716307e-05,
+      9.027724158043414e-05,
+      0.9998752961426847,
+      1.0128825790078593e-05
+     ],
+     "ms": 339,
+     "cost": 1.3733499999999998e-05,
+     "in_tok": 227,
+     "err": null,
+     "mass": 0.9991,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      3,
+      2,
+      1
+     ]
+    },
+    "deepseek": {
+     "pred_index": 2,
+     "probs": [
+      3.9278610154934354e-07,
+      2.3823681329867674e-07,
+      0.9999993689770851,
+      0.0
+     ],
+     "ms": 1030,
+     "cost": 4.1020000000000004e-05,
+     "in_tok": 293,
+     "err": null,
+     "mass": 0.9999,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      3,
+      2,
+      1
+     ]
+    },
+    "jev": {
+     "ms": 245,
+     "in_tok": 591,
+     "cost": 2.4822000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "긴급 대응",
+      "probabilities": {
+       "무시": 0,
+       "상담사 연결": 0,
+       "봇 자동응답": 0,
+       "긴급 대응": 1
+      },
+      "confidence": 1
+     },
+     "choice": "긴급 대응",
+     "probabilities": {
+      "무시": 0,
+      "상담사 연결": 0,
+      "봇 자동응답": 0,
+      "긴급 대응": 1
+     },
+     "pred_index": 2
+    }
+   }
+  },
+  {
+   "id": "support-escalation-route-007",
+   "target": 2,
+   "label": 2,
+   "class": "E2-긴급 대응",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 2,
+     "probs": [
+      0.010602815419108066,
+      0.017481087310790764,
+      0.9544350099593104,
+      0.017481087310790764
+     ],
+     "ms": 363,
+     "cost": 1.8513e-05,
+     "in_tok": 306,
+     "err": null,
+     "mass": 0.9977,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      1,
+      3,
+      2
+     ]
+    },
+    "qwen": {
+     "pred_index": 2,
+     "probs": [
+      3.737829587623168e-05,
+      0.0001675179000963699,
+      0.993103624757986,
+      0.006691479046041432
+     ],
+     "ms": 414,
+     "cost": 1.2947e-05,
+     "in_tok": 214,
+     "err": null,
+     "mass": 0.9978,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      1,
+      3,
+      2
+     ]
+    },
+    "deepseek": {
+     "pred_index": 2,
+     "probs": [
+      4.784967265160047e-06,
+      1.6701176795636817e-05,
+      0.9999683840801594,
+      1.0129775779834924e-05
+     ],
+     "ms": 1746,
+     "cost": 3.8360000000000005e-05,
+     "in_tok": 274,
+     "err": null,
+     "mass": 0.9992,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      1,
+      3,
+      2
+     ]
+    },
+    "jev": {
+     "ms": 315,
+     "in_tok": 573,
+     "cost": 2.4066000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "긴급 대응",
+      "probabilities": {
+       "상담사 연결": 0,
+       "긴급 대응": 0.97,
+       "봇 자동응답": 0,
+       "무시": 0.03
+      },
+      "confidence": 0.95
+     },
+     "choice": "긴급 대응",
+     "probabilities": {
+      "상담사 연결": 0,
+      "긴급 대응": 0.97,
+      "봇 자동응답": 0,
+      "무시": 0.03
+     },
+     "pred_index": 2
+    }
+   }
+  },
+  {
+   "id": "support-escalation-route-008",
+   "target": 0,
+   "label": 0,
+   "class": "E0-봇 자동응답",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 0,
+     "probs": [
+      0.9660006031444214,
+      0.029170694076760532,
+      0.0039478241450869676,
+      0.000880878633731093
+     ],
+     "ms": 346,
+     "cost": 2.01465e-05,
+     "in_tok": 333,
+     "err": null,
+     "mass": 0.9983,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      2,
+      3,
+      1
+     ]
+    },
+    "qwen": {
+     "pred_index": 0,
+     "probs": [
+      0.8906125157943815,
+      0.05024492143228126,
+      0.05693495499545373,
+      0.0022076077778834624
+     ],
+     "ms": 545,
+     "cost": 1.4035999999999999e-05,
+     "in_tok": 232,
+     "err": null,
+     "mass": 0.9961,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      2,
+      3,
+      1
+     ]
+    },
+    "deepseek": {
+     "pred_index": 0,
+     "probs": [
+      0.9959275802919064,
+      0.004070128441199208,
+      3.0465656170173545e-07,
+      1.986610332678707e-06
+     ],
+     "ms": 1778,
+     "cost": 4.186e-05,
+     "in_tok": 299,
+     "err": null,
+     "mass": 1.0,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      2,
+      3,
+      1
+     ]
+    },
+    "jev": {
+     "ms": 255,
+     "in_tok": 599,
+     "cost": 2.5158000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "봇 자동응답",
+      "probabilities": {
+       "무시": 0,
+       "긴급 대응": 0,
+       "봇 자동응답": 0.93,
+       "상담사 연결": 0.07
+      },
+      "confidence": 0.91
+     },
+     "choice": "봇 자동응답",
+     "probabilities": {
+      "무시": 0,
+      "긴급 대응": 0,
+      "봇 자동응답": 0.93,
+      "상담사 연결": 0.07
+     },
+     "pred_index": 0
+    }
+   }
+  },
+  {
+   "id": "support-escalation-route-009",
+   "target": 2,
+   "label": 2,
+   "class": "E2-긴급 대응",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 2,
+     "probs": [
+      0.00020330536995006476,
+      0.0005526412927634046,
+      0.9991986897775306,
+      4.5363559755993726e-05
+     ],
+     "ms": 321,
+     "cost": 2.01465e-05,
+     "in_tok": 333,
+     "err": null,
+     "mass": 0.9951,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      1,
+      0,
+      3
+     ]
+    },
+    "qwen": {
+     "pred_index": 2,
+     "probs": [
+      1.8921388788198847e-05,
+      0.00012338295379328687,
+      0.999782860113057,
+      7.483554436153565e-05
+     ],
+     "ms": 352,
+     "cost": 1.3794e-05,
+     "in_tok": 228,
+     "err": null,
+     "mass": 0.9991,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      1,
+      0,
+      3
+     ]
+    },
+    "deepseek": {
+     "pred_index": 2,
+     "probs": [
+      7.734423227205609e-08,
+      3.9278602880026207e-07,
+      0.9999989583694392,
+      5.715002996863589e-07
+     ],
+     "ms": 1144,
+     "cost": 4.1160000000000006e-05,
+     "in_tok": 294,
+     "err": null,
+     "mass": 0.9999,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      1,
+      0,
+      3
+     ]
+    },
+    "jev": {
+     "ms": 265,
+     "in_tok": 595,
+     "cost": 2.4990000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "긴급 대응",
+      "probabilities": {
+       "상담사 연결": 0,
+       "긴급 대응": 1,
+       "무시": 0,
+       "봇 자동응답": 0
+      },
+      "confidence": 1
+     },
+     "choice": "긴급 대응",
+     "probabilities": {
+      "상담사 연결": 0,
+      "긴급 대응": 1,
+      "무시": 0,
+      "봇 자동응답": 0
+     },
+     "pred_index": 2
+    }
+   }
+  },
+  {
+   "id": "support-escalation-route-010",
+   "target": 1,
+   "label": 1,
+   "class": "E1-상담사 연결",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 1,
+     "probs": [
+      0.11868468810882053,
+      0.876967740113133,
+      0.0021737858890232007,
+      0.0021737858890232007
+     ],
+     "ms": 467,
+     "cost": 1.9602e-05,
+     "in_tok": 324,
+     "err": null,
+     "mass": 0.9973,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      0,
+      1,
+      2
+     ]
+    },
+    "qwen": {
+     "pred_index": 1,
+     "probs": [
+      0.0003999873543998397,
+      0.9884890334200022,
+      0.010981122406000519,
+      0.000129856819597475
+     ],
+     "ms": 405,
+     "cost": 1.3612499999999999e-05,
+     "in_tok": 225,
+     "err": null,
+     "mass": 0.9992,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      0,
+      1,
+      2
+     ]
+    },
+    "deepseek": {
+     "pred_index": 1,
+     "probs": [
+      9.421824484235241e-07,
+      0.9999330057284991,
+      6.605208905254311e-05,
+      0.0
+     ],
+     "ms": 1239,
+     "cost": 4.0600000000000004e-05,
+     "in_tok": 290,
+     "err": null,
+     "mass": 0.9999,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      0,
+      1,
+      2
+     ]
+    },
+    "jev": {
+     "ms": 257,
+     "in_tok": 589,
+     "cost": 2.4738000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "상담사 연결",
+      "probabilities": {
+       "봇 자동응답": 0,
+       "상담사 연결": 0.95,
+       "무시": 0,
+       "긴급 대응": 0.05
+      },
+      "confidence": 0.93
+     },
+     "choice": "상담사 연결",
+     "probabilities": {
+      "봇 자동응답": 0,
+      "상담사 연결": 0.95,
+      "무시": 0,
+      "긴급 대응": 0.05
+     },
+     "pred_index": 1
+    }
+   }
+  },
+  {
+   "id": "support-escalation-route-011",
+   "target": 0,
+   "label": 0,
+   "class": "E0-봇 자동응답",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 0,
+     "probs": [
+      0.9980932662805063,
+      0.0015005728233604175,
+      0.0002030804480666457,
+      0.0002030804480666457
+     ],
+     "ms": 369,
+     "cost": 2.06305e-05,
+     "in_tok": 341,
+     "err": null,
+     "mass": 0.9982,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      2,
+      1,
+      3
+     ]
+    },
+    "qwen": {
+     "pred_index": 0,
+     "probs": [
+      0.9979722520421932,
+      3.528580351792494e-05,
+      0.0019265395945117145,
+      6.592255977711096e-05
+     ],
+     "ms": 406,
+     "cost": 1.4217499999999999e-05,
+     "in_tok": 235,
+     "err": null,
+     "mass": 0.9976,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      2,
+      1,
+      3
+     ]
+    },
+    "deepseek": {
+     "pred_index": 0,
+     "probs": [
+      0.999993518067048,
+      6.144172688092765e-06,
+      2.1024202796846537e-07,
+      1.2751823592303522e-07
+     ],
+     "ms": 911,
+     "cost": 4.2420000000000004e-05,
+     "in_tok": 303,
+     "err": null,
+     "mass": 0.9999,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      2,
+      1,
+      3
+     ]
+    },
+    "jev": {
+     "ms": 250,
+     "in_tok": 609,
+     "cost": 2.5577999999999998e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "봇 자동응답",
+      "probabilities": {
+       "무시": 0,
+       "상담사 연결": 0,
+       "봇 자동응답": 1,
+       "긴급 대응": 0
+      },
+      "confidence": 1
+     },
+     "choice": "봇 자동응답",
+     "probabilities": {
+      "무시": 0,
+      "상담사 연결": 0,
+      "봇 자동응답": 1,
+      "긴급 대응": 0
+     },
+     "pred_index": 0
+    }
+   }
+  },
+  {
+   "id": "support-escalation-route-012",
+   "target": 2,
+   "label": 2,
+   "class": "E2-긴급 대응",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 2,
+     "probs": [
+      0.043890359340805006,
+      0.07236296902385726,
+      0.8815614987931611,
+      0.0021851728421765164
+     ],
+     "ms": 353,
+     "cost": 1.9965e-05,
+     "in_tok": 330,
+     "err": null,
+     "mass": 0.9969,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      3,
+      2,
+      0
+     ]
+    },
+    "qwen": {
+     "pred_index": 2,
+     "probs": [
+      4.004116024122532e-05,
+      0.0004044011998959274,
+      0.9993971917790341,
+      0.00015836586082880317
+     ],
+     "ms": 328,
+     "cost": 1.3733499999999998e-05,
+     "in_tok": 227,
+     "err": null,
+     "mass": 0.9987,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      3,
+      2,
+      0
+     ]
+    },
+    "deepseek": {
+     "pred_index": 2,
+     "probs": [
+      2.7040435199633413e-05,
+      0.01798571922691443,
+      0.981987240337886,
+      0.0
+     ],
+     "ms": 2392,
+     "cost": 4.1020000000000004e-05,
+     "in_tok": 293,
+     "err": null,
+     "mass": 0.991,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      3,
+      2,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 224,
+     "in_tok": 592,
+     "cost": 2.4864e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "긴급 대응",
+      "probabilities": {
+       "긴급 대응": 1,
+       "봇 자동응답": 0,
+       "무시": 0,
+       "상담사 연결": 0
+      },
+      "confidence": 1
+     },
+     "choice": "긴급 대응",
+     "probabilities": {
+      "긴급 대응": 1,
+      "봇 자동응답": 0,
+      "무시": 0,
+      "상담사 연결": 0
+     },
+     "pred_index": 2
+    }
+   }
+  },
+  {
+   "id": "support-escalation-route-013",
+   "target": 3,
+   "label": 3,
+   "class": "E3-무시",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 3,
+     "probs": [
+      0.00020336047234048983,
+      0.00012334436144815003,
+      0.00020336047234048983,
+      0.9994699346938709
+     ],
+     "ms": 443,
+     "cost": 2.03885e-05,
+     "in_tok": 337,
+     "err": null,
+     "mass": 0.9995,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      3,
+      0,
+      2
+     ]
+    },
+    "qwen": {
+     "pred_index": 3,
+     "probs": [
+      0.0,
+      2.585761436960083e-05,
+      0.00037997468819758203,
+      0.9995941676974328
+     ],
+     "ms": 389,
+     "cost": 1.3854500000000001e-05,
+     "in_tok": 229,
+     "err": null,
+     "mass": 0.9972,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      3,
+      0,
+      2
+     ]
+    },
+    "deepseek": {
+     "pred_index": 3,
+     "probs": [
+      1.0676938213592554e-06,
+      4.450810027700837e-07,
+      7.889249542505177e-06,
+      0.9999905979756334
+     ],
+     "ms": 1627,
+     "cost": 4.2e-05,
+     "in_tok": 300,
+     "err": null,
+     "mass": 0.9995,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      3,
+      0,
+      2
+     ]
+    },
+    "jev": {
+     "ms": 251,
+     "in_tok": 597,
+     "cost": 2.5074e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "무시",
+      "probabilities": {
+       "긴급 대응": 0,
+       "무시": 1,
+       "상담사 연결": 0,
+       "봇 자동응답": 0
+      },
+      "confidence": 1
+     },
+     "choice": "무시",
+     "probabilities": {
+      "긴급 대응": 0,
+      "무시": 1,
+      "상담사 연결": 0,
+      "봇 자동응답": 0
+     },
+     "pred_index": 3
+    }
+   }
+  },
+  {
+   "id": "support-escalation-route-014",
+   "target": 3,
+   "label": 3,
+   "class": "E3-무시",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 3,
+     "probs": [
+      0.001498453455807671,
+      0.000908857963099702,
+      0.000908857963099702,
+      0.9966838306179928
+     ],
+     "ms": 352,
+     "cost": 1.86945e-05,
+     "in_tok": 309,
+     "err": null,
+     "mass": 0.9992,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      1,
+      0,
+      3
+     ]
+    },
+    "qwen": {
+     "pred_index": 3,
+     "probs": [
+      0.0,
+      1.7778218919525582e-05,
+      1.8924815529263634e-05,
+      0.9999632969655513
+     ],
+     "ms": 761,
+     "cost": 1.3007499999999999e-05,
+     "in_tok": 215,
+     "err": null,
+     "mass": 0.9985,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      1,
+      0,
+      3
+     ]
+    },
+    "deepseek": {
+     "pred_index": 3,
+     "probs": [
+      0.0,
+      0.0,
+      7.889266222772775e-06,
+      0.9999921107337771
+     ],
+     "ms": 1352,
+     "cost": 3.864e-05,
+     "in_tok": 276,
+     "err": null,
+     "mass": 0.9997,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      1,
+      0,
+      3
+     ]
+    },
+    "jev": {
+     "ms": 362,
+     "in_tok": 572,
+     "cost": 2.4024000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "무시",
+      "probabilities": {
+       "봇 자동응답": 0,
+       "상담사 연결": 0,
+       "무시": 0.99,
+       "긴급 대응": 0.01
+      },
+      "confidence": 0.98
+     },
+     "choice": "무시",
+     "probabilities": {
+      "봇 자동응답": 0,
+      "상담사 연결": 0,
+      "무시": 0.99,
+      "긴급 대응": 0.01
+     },
+     "pred_index": 3
+    }
+   }
+  },
+  {
+   "id": "support-escalation-route-015",
+   "target": 2,
+   "label": 2,
+   "class": "E2-긴급 대응",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 2,
+     "probs": [
+      0.006567420426962483,
+      0.017852099606462862,
+      0.9746916762629577,
+      0.0008888037036168835
+     ],
+     "ms": 447,
+     "cost": 2.0086e-05,
+     "in_tok": 332,
+     "err": null,
+     "mass": 0.9982,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      0,
+      3,
+      1
+     ]
+    },
+    "qwen": {
+     "pred_index": 2,
+     "probs": [
+      4.831106846474514e-05,
+      0.0002611671686394103,
+      0.9996504704804082,
+      4.005128248768061e-05
+     ],
+     "ms": 379,
+     "cost": 1.39755e-05,
+     "in_tok": 231,
+     "err": null,
+     "mass": 0.9974,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      0,
+      3,
+      1
+     ]
+    },
+    "deepseek": {
+     "pred_index": 2,
+     "probs": [
+      1.637362835219635e-07,
+      8.939698173601606e-06,
+      0.9999906266100494,
+      2.699554934280481e-07
+     ],
+     "ms": 1293,
+     "cost": 4.1580000000000005e-05,
+     "in_tok": 297,
+     "err": null,
+     "mass": 1.0,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      0,
+      3,
+      1
+     ]
+    },
+    "jev": {
+     "ms": 245,
+     "in_tok": 596,
+     "cost": 2.5032e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "긴급 대응",
+      "probabilities": {
+       "봇 자동응답": 0,
+       "무시": 0,
+       "상담사 연결": 0,
+       "긴급 대응": 1
+      },
+      "confidence": 1
+     },
+     "choice": "긴급 대응",
+     "probabilities": {
+      "봇 자동응답": 0,
+      "무시": 0,
+      "상담사 연결": 0,
+      "긴급 대응": 1
+     },
+     "pred_index": 2
+    }
+   }
+  },
+  {
+   "id": "support-escalation-route-016",
+   "target": 1,
+   "label": 1,
+   "class": "E1-상담사 연결",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 1,
+     "probs": [
+      0.00012318430470036295,
+      0.9981730263482722,
+      0.0015006927636515306,
+      0.00020309658337589422
+     ],
+     "ms": 381,
+     "cost": 1.9420499999999998e-05,
+     "in_tok": 321,
+     "err": null,
+     "mass": 0.9977,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      2,
+      1,
+      3
+     ]
+    },
+    "qwen": {
+     "pred_index": 1,
+     "probs": [
+      0.0,
+      0.9626648298876509,
+      0.03732656410056873,
+      8.606011780373132e-06
+     ],
+     "ms": 417,
+     "cost": 1.34915e-05,
+     "in_tok": 223,
+     "err": null,
+     "mass": 0.999,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      2,
+      1,
+      3
+     ]
+    },
+    "deepseek": {
+     "pred_index": 1,
+     "probs": [
+      0.0,
+      0.9999982186349328,
+      1.2098652090771858e-06,
+      5.714998580930772e-07
+     ],
+     "ms": 1204,
+     "cost": 3.9760000000000006e-05,
+     "in_tok": 284,
+     "err": null,
+     "mass": 1.0,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      2,
+      1,
+      3
+     ]
+    },
+    "jev": {
+     "ms": 234,
+     "in_tok": 586,
+     "cost": 2.4612000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "상담사 연결",
+      "probabilities": {
+       "긴급 대응": 0,
+       "봇 자동응답": 0,
+       "무시": 0,
+       "상담사 연결": 1
+      },
+      "confidence": 1
+     },
+     "choice": "상담사 연결",
+     "probabilities": {
+      "긴급 대응": 0,
+      "봇 자동응답": 0,
+      "무시": 0,
+      "상담사 연결": 1
+     },
+     "pred_index": 1
+    }
+   }
+  },
+  {
+   "id": "support-escalation-route-017",
+   "target": 0,
+   "label": 0,
+   "class": "E0-봇 자동응답",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 0,
+     "probs": [
+      0.9909297554562557,
+      0.006676831264211495,
+      0.001489802429267554,
+      0.0009036108502651334
+     ],
+     "ms": 376,
+     "cost": 1.88155e-05,
+     "in_tok": 311,
+     "err": null,
+     "mass": 0.9993,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      0,
+      3,
+      1
+     ]
+    },
+    "qwen": {
+     "pred_index": 0,
+     "probs": [
+      0.9995267000731308,
+      0.00013977538942602625,
+      0.0002959045017369406,
+      3.762003570621474e-05
+     ],
+     "ms": 786,
+     "cost": 1.3068e-05,
+     "in_tok": 216,
+     "err": null,
+     "mass": 0.9982,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      0,
+      3,
+      1
+     ]
+    },
+    "deepseek": {
+     "pred_index": 0,
+     "probs": [
+      0.9999826582794198,
+      1.0129924560273878e-05,
+      1.0676861935230515e-06,
+      6.1441098263821245e-06
+     ],
+     "ms": 1110,
+     "cost": 3.8360000000000005e-05,
+     "in_tok": 274,
+     "err": null,
+     "mass": 0.9999,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      0,
+      3,
+      1
+     ]
+    },
+    "jev": {
+     "ms": 259,
+     "in_tok": 576,
+     "cost": 2.4192e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "봇 자동응답",
+      "probabilities": {
+       "상담사 연결": 0.01,
+       "긴급 대응": 0,
+       "무시": 0.01,
+       "봇 자동응답": 0.98
+      },
+      "confidence": 0.97
+     },
+     "choice": "봇 자동응답",
+     "probabilities": {
+      "상담사 연결": 0.01,
+      "긴급 대응": 0,
+      "무시": 0.01,
+      "봇 자동응답": 0.98
+     },
+     "pred_index": 0
+    }
+   }
+  },
+  {
+   "id": "support-escalation-route-018",
+   "target": 2,
+   "label": 2,
+   "class": "E2-긴급 대응",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 2,
+     "probs": [
+      4.5392270006577435e-05,
+      0.00012338898271138597,
+      0.9998312187472821,
+      0.0
+     ],
+     "ms": 364,
+     "cost": 2.03885e-05,
+     "in_tok": 337,
+     "err": null,
+     "mass": 0.9985,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      1,
+      3,
+      0
+     ]
+    },
+    "qwen": {
+     "pred_index": 2,
+     "probs": [
+      1.0129497909692942e-05,
+      3.5355421691721204e-05,
+      0.9999415085476243,
+      1.3006532774331087e-05
+     ],
+     "ms": 673,
+     "cost": 1.4035999999999999e-05,
+     "in_tok": 232,
+     "err": null,
+     "mass": 0.9989,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      1,
+      3,
+      0
+     ]
+    },
+    "deepseek": {
+     "pred_index": 2,
+     "probs": [
+      9.931193019912724e-08,
+      1.6373769175358777e-07,
+      0.999999736950378,
+      0.0
+     ],
+     "ms": 2401,
+     "cost": 4.2420000000000004e-05,
+     "in_tok": 303,
+     "err": null,
+     "mass": 1.0,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      1,
+      3,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 280,
+     "in_tok": 603,
+     "cost": 2.5326e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "긴급 대응",
+      "probabilities": {
+       "상담사 연결": 0,
+       "긴급 대응": 1,
+       "봇 자동응답": 0,
+       "무시": 0
+      },
+      "confidence": 1
+     },
+     "choice": "긴급 대응",
+     "probabilities": {
+      "상담사 연결": 0,
+      "긴급 대응": 1,
+      "봇 자동응답": 0,
+      "무시": 0
+     },
+     "pred_index": 2
+    }
+   }
+  },
+  {
+   "id": "support-escalation-route-019",
+   "target": 1,
+   "label": 1,
+   "class": "E1-상담사 연결",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 0,
+     "probs": [
+      0.49836398943667,
+      0.49836398943667,
+      0.002036700082179113,
+      0.001235321044480872
+     ],
+     "ms": 349,
+     "cost": 1.9481000000000002e-05,
+     "in_tok": 322,
+     "err": null,
+     "mass": 0.9986,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      1,
+      0,
+      3
+     ]
+    },
+    "qwen": {
+     "pred_index": 1,
+     "probs": [
+      0.0004580081563877962,
+      0.9988768358831449,
+      0.00040419077937071116,
+      0.0002609651810964409
+     ],
+     "ms": 607,
+     "cost": 1.3430999999999999e-05,
+     "in_tok": 222,
+     "err": null,
+     "mass": 0.9975,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      1,
+      0,
+      3
+     ]
+    },
+    "deepseek": {
+     "pred_index": 1,
+     "probs": [
+      5.422166323966712e-06,
+      0.9999847133578103,
+      6.962199373481597e-06,
+      2.9022764922339844e-06
+     ],
+     "ms": 1161,
+     "cost": 4.018e-05,
+     "in_tok": 287,
+     "err": null,
+     "mass": 0.9997,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      1,
+      0,
+      3
+     ]
+    },
+    "jev": {
+     "ms": 240,
+     "in_tok": 584,
+     "cost": 2.4528e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "상담사 연결",
+      "probabilities": {
+       "봇 자동응답": 0,
+       "무시": 0,
+       "상담사 연결": 1,
+       "긴급 대응": 0
+      },
+      "confidence": 1
+     },
+     "choice": "상담사 연결",
+     "probabilities": {
+      "봇 자동응답": 0,
+      "무시": 0,
+      "상담사 연결": 1,
+      "긴급 대응": 0
+     },
+     "pred_index": 1
+    }
+   }
+  },
+  {
+   "id": "support-escalation-route-020",
+   "target": 1,
+   "label": 1,
+   "class": "E1-상담사 연결",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 0,
+     "probs": [
+      0.7060189942119993,
+      0.2597298885282414,
+      0.02131992754242608,
+      0.012931189717333234
+     ],
+     "ms": 348,
+     "cost": 2.0086e-05,
+     "in_tok": 332,
+     "err": null,
+     "mass": 0.9962,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      3,
+      1,
+      0
+     ]
+    },
+    "qwen": {
+     "pred_index": 0,
+     "probs": [
+      0.9025002501149831,
+      0.09512283503365164,
+      0.0009325512383617403,
+      0.0014443636130034448
+     ],
+     "ms": 674,
+     "cost": 1.39755e-05,
+     "in_tok": 231,
+     "err": null,
+     "mass": 0.9955,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      3,
+      1,
+      0
+     ]
+    },
+    "deepseek": {
+     "pred_index": 1,
+     "probs": [
+      0.006692773654937356,
+      0.9932956882408205,
+      7.83643463006425e-06,
+      3.7016696119837585e-06
+     ],
+     "ms": 1548,
+     "cost": 4.186e-05,
+     "in_tok": 299,
+     "err": null,
+     "mass": 0.9997,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      2,
+      3,
+      1,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 259,
+     "in_tok": 597,
+     "cost": 2.5074e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "상담사 연결",
+      "probabilities": {
+       "상담사 연결": 0.65,
+       "긴급 대응": 0,
+       "봇 자동응답": 0.35,
+       "무시": 0
+      },
+      "confidence": 0.53
+     },
+     "choice": "상담사 연결",
+     "probabilities": {
+      "상담사 연결": 0.65,
+      "긴급 대응": 0,
+      "봇 자동응답": 0.35,
+      "무시": 0
+     },
+     "pred_index": 1
+    }
+   }
+  },
+  {
+   "id": "support-escalation-route-021",
+   "target": 1,
+   "label": 1,
+   "class": "E1-상담사 연결",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 1,
+     "probs": [
+      0.3227174760986055,
+      0.5320711355565191,
+      0.11872112476341327,
+      0.02649026358146212
+     ],
+     "ms": 423,
+     "cost": 1.9420499999999998e-05,
+     "in_tok": 321,
+     "err": null,
+     "mass": 0.9976,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      1,
+      2,
+      3
+     ]
+    },
+    "qwen": {
+     "pred_index": 1,
+     "probs": [
+      0.06214623623536466,
+      0.8579023284959424,
+      0.06214623623536466,
+      0.017805199033328285
+     ],
+     "ms": 421,
+     "cost": 1.34915e-05,
+     "in_tok": 223,
+     "err": null,
+     "mass": 0.9969,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      1,
+      2,
+      3
+     ]
+    },
+    "deepseek": {
+     "pred_index": 1,
+     "probs": [
+      0.06008600381599444,
+      0.9399032071288171,
+      1.0789055188417348e-05,
+      0.0
+     ],
+     "ms": 2611,
+     "cost": 3.99e-05,
+     "in_tok": 285,
+     "err": null,
+     "mass": 0.9996,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      1,
+      2,
+      3
+     ]
+    },
+    "jev": {
+     "ms": 238,
+     "in_tok": 585,
+     "cost": 2.4570000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "상담사 연결",
+      "probabilities": {
+       "봇 자동응답": 0.49,
+       "상담사 연결": 0.51,
+       "긴급 대응": 0,
+       "무시": 0
+      },
+      "confidence": 0.34
+     },
+     "choice": "상담사 연결",
+     "probabilities": {
+      "봇 자동응답": 0.49,
+      "상담사 연결": 0.51,
+      "긴급 대응": 0,
+      "무시": 0
+     },
+     "pred_index": 1
+    }
+   }
+  },
+  {
+   "id": "support-escalation-route-022",
+   "target": 1,
+   "label": 1,
+   "class": "E1-상담사 연결",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 0,
+     "probs": [
+      0.4658867734991435,
+      0.4658867734991435,
+      0.06305091844769821,
+      0.0051755345540148625
+     ],
+     "ms": 361,
+     "cost": 1.9420499999999998e-05,
+     "in_tok": 321,
+     "err": null,
+     "mass": 0.9961,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      2,
+      0,
+      3
+     ]
+    },
+    "qwen": {
+     "pred_index": 1,
+     "probs": [
+      0.0010759016018323947,
+      0.9781459008767706,
+      0.02030076907967196,
+      0.00047742844172505016
+     ],
+     "ms": 553,
+     "cost": 1.3612499999999999e-05,
+     "in_tok": 225,
+     "err": null,
+     "mass": 0.9976,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      2,
+      0,
+      3
+     ]
+    },
+    "deepseek": {
+     "pred_index": 1,
+     "probs": [
+      2.4299526386435402e-05,
+      0.9999456043516401,
+      2.75349707350458e-05,
+      2.5611512383508526e-06
+     ],
+     "ms": 1613,
+     "cost": 4.018e-05,
+     "in_tok": 287,
+     "err": null,
+     "mass": 0.9999,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      2,
+      0,
+      3
+     ]
+    },
+    "jev": {
+     "ms": 258,
+     "in_tok": 589,
+     "cost": 2.4738000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "상담사 연결",
+      "probabilities": {
+       "무시": 0,
+       "긴급 대응": 0,
+       "봇 자동응답": 0,
+       "상담사 연결": 1
+      },
+      "confidence": 0.99
+     },
+     "choice": "상담사 연결",
+     "probabilities": {
+      "무시": 0,
+      "긴급 대응": 0,
+      "봇 자동응답": 0,
+      "상담사 연결": 1
+     },
+     "pred_index": 1
+    }
+   }
+  },
+  {
+   "id": "support-escalation-route-023",
+   "target": 0,
+   "label": 0,
+   "class": "E0-봇 자동응답",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 0,
+     "probs": [
+      0.9994180565592959,
+      0.00033526744216838734,
+      0.00012333799926788518,
+      0.00012333799926788518
+     ],
+     "ms": 447,
+     "cost": 1.9118e-05,
+     "in_tok": 316,
+     "err": null,
+     "mass": 0.9996,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      2,
+      0,
+      3
+     ]
+    },
+    "qwen": {
+     "pred_index": 0,
+     "probs": [
+      0.9970499387500795,
+      7.944432228974446e-05,
+      0.002800507559282099,
+      7.010936834863182e-05
+     ],
+     "ms": 654,
+     "cost": 1.31285e-05,
+     "in_tok": 217,
+     "err": null,
+     "mass": 0.9989,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      2,
+      0,
+      3
+     ]
+    },
+    "deepseek": {
+     "pred_index": 0,
+     "probs": [
+      0.9999972714521219,
+      1.9947283334352414e-06,
+      0.0,
+      7.338195445929991e-07
+     ],
+     "ms": 1441,
+     "cost": 3.92e-05,
+     "in_tok": 280,
+     "err": null,
+     "mass": 0.9999,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      2,
+      0,
+      3
+     ]
+    },
+    "jev": {
+     "ms": 215,
+     "in_tok": 580,
+     "cost": 2.436e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "봇 자동응답",
+      "probabilities": {
+       "무시": 0,
+       "긴급 대응": 0,
+       "봇 자동응답": 1,
+       "상담사 연결": 0
+      },
+      "confidence": 1
+     },
+     "choice": "봇 자동응답",
+     "probabilities": {
+      "무시": 0,
+      "긴급 대응": 0,
+      "봇 자동응답": 1,
+      "상담사 연결": 0
+     },
+     "pred_index": 0
+    }
+   }
+  },
+  {
+   "id": "support-escalation-route-024",
+   "target": 0,
+   "label": 0,
+   "class": "E0-봇 자동응답",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 0,
+     "probs": [
+      0.9985512887838052,
+      0.00033497665393752133,
+      0.00020317361090105532,
+      0.0009105609513563783
+     ],
+     "ms": 690,
+     "cost": 1.8513e-05,
+     "in_tok": 306,
+     "err": null,
+     "mass": 0.9992,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      3,
+      0,
+      2
+     ]
+    },
+    "qwen": {
+     "pred_index": 0,
+     "probs": [
+      0.9991359600847923,
+      0.00012330313163458234,
+      3.117591396394725e-05,
+      0.0007095608696091624
+     ],
+     "ms": 423,
+     "cost": 1.2947e-05,
+     "in_tok": 214,
+     "err": null,
+     "mass": 0.9987,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      3,
+      0,
+      2
+     ]
+    },
+    "deepseek": {
+     "pred_index": 0,
+     "probs": [
+      0.9999993963409786,
+      9.931184699904853e-08,
+      5.043471744174844e-07,
+      0.0
+     ],
+     "ms": 1090,
+     "cost": 3.822e-05,
+     "in_tok": 273,
+     "err": null,
+     "mass": 0.9999,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      3,
+      0,
+      2
+     ]
+    },
+    "jev": {
+     "ms": 224,
+     "in_tok": 571,
+     "cost": 2.3982000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "봇 자동응답",
+      "probabilities": {
+       "무시": 0,
+       "긴급 대응": 0,
+       "상담사 연결": 0,
+       "봇 자동응답": 1
+      },
+      "confidence": 1
+     },
+     "choice": "봇 자동응답",
+     "probabilities": {
+      "무시": 0,
+      "긴급 대응": 0,
+      "상담사 연결": 0,
+      "봇 자동응답": 1
+     },
+     "pred_index": 0
+    }
+   }
+  },
+  {
+   "id": "support-escalation-route-025",
+   "target": 2,
+   "label": 2,
+   "class": "E2-긴급 대응",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 2,
+     "probs": [
+      0.05545677825666195,
+      0.24854000736076404,
+      0.6756018057883447,
+      0.020401408594229387
+     ],
+     "ms": 349,
+     "cost": 1.9602e-05,
+     "in_tok": 324,
+     "err": null,
+     "mass": 0.9947,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      0,
+      2,
+      3
+     ]
+    },
+    "qwen": {
+     "pred_index": 2,
+     "probs": [
+      0.0002956541381564843,
+      0.00031472219182371287,
+      0.9986803866006276,
+      0.0007092370693920562
+     ],
+     "ms": 391,
+     "cost": 1.3733499999999998e-05,
+     "in_tok": 227,
+     "err": null,
+     "mass": 0.9975,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      0,
+      2,
+      3
+     ]
+    },
+    "deepseek": {
+     "pred_index": 2,
+     "probs": [
+      1.4670963310837406e-05,
+      0.004609479649659203,
+      0.9953704522412457,
+      5.397145784237598e-06
+     ],
+     "ms": 1182,
+     "cost": 4.0740000000000006e-05,
+     "in_tok": 291,
+     "err": null,
+     "mass": 0.9997,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      1,
+      0,
+      2,
+      3
+     ]
+    },
+    "jev": {
+     "ms": 243,
+     "in_tok": 590,
+     "cost": 2.4780000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "긴급 대응",
+      "probabilities": {
+       "무시": 0,
+       "상담사 연결": 0,
+       "봇 자동응답": 0,
+       "긴급 대응": 1
+      },
+      "confidence": 0.99
+     },
+     "choice": "긴급 대응",
+     "probabilities": {
+      "무시": 0,
+      "상담사 연결": 0,
+      "봇 자동응답": 0,
+      "긴급 대응": 1
+     },
+     "pred_index": 2
+    }
+   }
+  },
+  {
+   "id": "support-escalation-route-026",
+   "target": 1,
+   "label": 1,
+   "class": "E1-상담사 연결",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 1,
+     "probs": [
+      0.004062698035280801,
+      0.9941092324782351,
+      0.000333486403616594,
+      0.0014945830828674179
+     ],
+     "ms": 366,
+     "cost": 1.95415e-05,
+     "in_tok": 323,
+     "err": null,
+     "mass": 0.9982,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      1,
+      3,
+      2
+     ]
+    },
+    "qwen": {
+     "pred_index": 1,
+     "probs": [
+      1.2984771490768357e-05,
+      0.9982685968885961,
+      0.0017006702615819454,
+      1.774807833105403e-05
+     ],
+     "ms": 430,
+     "cost": 1.3733499999999998e-05,
+     "in_tok": 227,
+     "err": null,
+     "mass": 0.9995,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      1,
+      3,
+      2
+     ]
+    },
+    "deepseek": {
+     "pred_index": 1,
+     "probs": [
+      6.144103258285936e-06,
+      0.9999821725104259,
+      1.0129913731313986e-05,
+      1.5534725844076421e-06
+     ],
+     "ms": 1407,
+     "cost": 4.046e-05,
+     "in_tok": 289,
+     "err": null,
+     "mass": 0.9999,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      0,
+      1,
+      3,
+      2
+     ]
+    },
+    "jev": {
+     "ms": 230,
+     "in_tok": 590,
+     "cost": 2.4780000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "상담사 연결",
+      "probabilities": {
+       "무시": 0,
+       "상담사 연결": 1,
+       "긴급 대응": 0,
+       "봇 자동응답": 0
+      },
+      "confidence": 1
+     },
+     "choice": "상담사 연결",
+     "probabilities": {
+      "무시": 0,
+      "상담사 연결": 1,
+      "긴급 대응": 0,
+      "봇 자동응답": 0
+     },
+     "pred_index": 1
+    }
+   }
+  },
+  {
+   "id": "support-escalation-route-027",
+   "target": 3,
+   "label": 3,
+   "class": "E3-무시",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 4,
+   "arms": {
+    "glm": {
+     "pred_index": 3,
+     "probs": [
+      0.0752175197707619,
+      0.00617423000687607,
+      0.002271372284593519,
+      0.9163368779377686
+     ],
+     "ms": 357,
+     "cost": 1.9723e-05,
+     "in_tok": 326,
+     "err": null,
+     "mass": 0.999,
+     "provider": "Cloudflare",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      0,
+      2,
+      1
+     ]
+    },
+    "qwen": {
+     "pred_index": 3,
+     "probs": [
+      0.010753754044448073,
+      0.02009065752076052,
+      0.0011334373374138392,
+      0.9680221510973775
+     ],
+     "ms": 386,
+     "cost": 1.4035999999999999e-05,
+     "in_tok": 232,
+     "err": null,
+     "mass": 0.9979,
+     "provider": "Parasail",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      0,
+      2,
+      1
+     ]
+    },
+    "deepseek": {
+     "pred_index": 3,
+     "probs": [
+      0.00010879059514292048,
+      0.0009108915899119836,
+      6.598483144256558e-05,
+      0.9989143329835025
+     ],
+     "ms": 1219,
+     "cost": 4.0600000000000004e-05,
+     "in_tok": 290,
+     "err": null,
+     "mass": 0.9991,
+     "provider": "DigitalOcean",
+     "reasoning_tokens": 0,
+     "order": [
+      3,
+      0,
+      2,
+      1
+     ]
+    },
+    "jev": {
+     "ms": 250,
+     "in_tok": 599,
+     "cost": 2.5158000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "무시",
+      "probabilities": {
+       "상담사 연결": 0,
+       "긴급 대응": 0,
+       "무시": 1,
+       "봇 자동응답": 0
+      },
+      "confidence": 0.99
+     },
+     "choice": "무시",
+     "probabilities": {
+      "상담사 연결": 0,
+      "긴급 대응": 0,
+      "무시": 1,
+      "봇 자동응답": 0
+     },
+     "pred_index": 3
+    }
+   }
+  }
+ ],
+ "agg": {
+  "glm": {
+   "n": 28,
+   "ok": 28,
+   "hit": 25,
+   "ms": 43810,
+   "cost": 0.0005483719999999999
+  },
+  "qwen": {
+   "n": 28,
+   "ok": 28,
+   "hit": 27,
+   "ms": 13316,
+   "cost": 0.0003803029999999999
+  },
+  "deepseek": {
+   "n": 28,
+   "ok": 28,
+   "hit": 28,
+   "ms": 42091,
+   "cost": 0.0011321800000000002
+  },
+  "jev": {
+   "n": 28,
+   "ok": 28,
+   "hit": 28,
+   "ms": 7241,
+   "cost": 0.0006915719999999999
+  }
+ }
+}

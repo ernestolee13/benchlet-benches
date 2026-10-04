@@ -1,0 +1,296 @@
+name: support-escalation-route
+version: 1
+task_signature:
+  goal: route
+  answer: choice(4)
+  prob_use: accuracy_only
+  label: constructed
+  unit: record
+  language: ko
+  n: 28
+question: '이 고객 메시지는 어디로 보내야 하는가. 넷 중 하나다. 봇 자동응답: 영업시간·요금·비밀번호 재설정 방법·배송 조회처럼 안내문으로
+  끝나는 질문. 상담사 연결: 개별 계정 조치가 필요하거나(환불·정정·계약 변경), 안내로 해결되지 않았다고 말하거나, 감정이 격앙돼 사람이 받아야
+  하는 것. 긴급 대응: 안전·보안·금전 피해가 진행 중인 것(계정 도용, 결제 오류로 돈이 반복 빠짐, 서비스 전면 장애, 개인정보 노출). 무시:
+  광고·스팸·서비스와 무관한 메시지. 겹치면 긴급 > 상담사 > 봇 > 무시 순. 입력은 메시지 본문이다.'
+choices:
+- 봇 자동응답
+- 상담사 연결
+- 긴급 대응
+- 무시
+generator:
+  script: src/build_samples.py
+  seed: 20261001
+source: 고객 메시지 라우팅 샘플 28건. 분류마다 6건 + 겹침·함정 4건. 우선순위 규칙 포함
+domain:
+- support-escalation-route
+- sample
+visibility: sample
+items_sha256: 8b96300150ae15ae6714712b6766e9b94e2e8d62b743e5d1ab2c94d097ab63c5
+license: CC-BY-4.0
+review:
+  checks_run: 5
+  human_reviewed_fraction: 0.0
+  flagged: 4
+  decided: 0
+note: benchlet 샘플. 작성자가 규칙을 먼저 적고 그 규칙대로 항목을 썼다(constructed). 기계 검증기가 있는 둘은 machine
+owner: ernestolee13
+n: 28
+choices_note: null
+published_at: '2026-10-04'
+type: multiclass
+classes:
+- E0-봇 자동응답
+- E1-상담사 연결
+- E2-긴급 대응
+- E3-무시
+label_source_mix:
+  machine: 0
+  constructed: 28
+  judged: 0
+  outcome: 0
+experiment:
+  date: '2026-10-04'
+  template: generic
+  runner: benchlet
+  arms:
+    glm:
+      model: z-ai/glm-4.7-flash
+      provider: cloudflare
+      family: GLM
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke:
+        arm: glm
+        mode: logprob
+        usable: true
+        reasons: []
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9983
+        spread: 0.0017715627981319537
+        distinct_p: 5
+        n_calls: 8
+        smoke_acc: 1.0
+        cost: 0.00015524299999999998
+        per_item:
+        - id: support-escalation-route-000
+          target: 0
+          hit: 1
+          pred: 0
+        - id: support-escalation-route-001
+          target: 1
+          hit: 1
+          pred: 1
+        - id: support-escalation-route-002
+          target: 3
+          hit: 1
+          pred: 3
+        - id: support-escalation-route-003
+          target: 3
+          hit: 1
+          pred: 3
+        - id: support-escalation-route-004
+          target: 3
+          hit: 1
+          pred: 3
+    qwen:
+      model: qwen/qwen3.8-27b
+      provider: parasail
+      family: Qwen
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke:
+        arm: qwen
+        mode: logprob
+        usable: true
+        reasons: []
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9966
+        spread: 0.0022389342248875232
+        distinct_p: 4
+        n_calls: 8
+        smoke_acc: 1.0
+        cost: 0.000107085
+        per_item:
+        - id: support-escalation-route-000
+          target: 0
+          hit: 1
+          pred: 0
+        - id: support-escalation-route-001
+          target: 1
+          hit: 1
+          pred: 1
+        - id: support-escalation-route-002
+          target: 3
+          hit: 1
+          pred: 3
+        - id: support-escalation-route-003
+          target: 3
+          hit: 1
+          pred: 3
+        - id: support-escalation-route-004
+          target: 3
+          hit: 1
+          pred: 3
+    deepseek:
+      model: deepseek/deepseek-v4-flash
+      provider: digitalocean
+      family: DeepSeek
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.14
+      smoke:
+        arm: deepseek
+        mode: logprob
+        usable: true
+        reasons:
+        - '확률값 종류 2/5: 반올림된 로그확률 의심 (AUROC 를 믿지 마라)'
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9997
+        spread: 3.873467928072749e-06
+        distinct_p: 2
+        n_calls: 8
+        smoke_acc: 1.0
+        cost: 0.00032032
+        per_item:
+        - id: support-escalation-route-000
+          target: 0
+          hit: 1
+          pred: 0
+        - id: support-escalation-route-001
+          target: 1
+          hit: 1
+          pred: 1
+        - id: support-escalation-route-002
+          target: 3
+          hit: 1
+          pred: 3
+        - id: support-escalation-route-003
+          target: 3
+          hit: 1
+          pred: 3
+        - id: support-escalation-route-004
+          target: 3
+          hit: 1
+          pred: 3
+    jev:
+      model: typesafe/jev-1.13
+      provider: openrouter
+      family: Jev
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.042
+      smoke:
+        arm: jev
+        mode: typed
+        usable: true
+        reasons: []
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 1.0
+        cost: 0.000122766
+        per_item:
+        - id: support-escalation-route-000
+          target: 0
+          hit: 1
+          p: null
+          pred: 0
+        - id: support-escalation-route-001
+          target: 1
+          hit: 1
+          p: null
+          pred: 1
+        - id: support-escalation-route-002
+          target: 3
+          hit: 1
+          p: null
+          pred: 3
+        - id: support-escalation-route-003
+          target: 3
+          hit: 1
+          p: null
+          pred: 3
+        - id: support-escalation-route-004
+          target: 3
+          hit: 1
+          p: null
+          pred: 3
+  protocol:
+    decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
+    logprob_call:
+      max_tokens: 1
+      temperature: 0
+      logprobs: true
+      top_logprobs: 8
+      reasoning:
+        enabled: false
+    provider_pin: provider.only=[pin], allow_fallbacks=false, require_parameters=true
+    binary: '극성 반전 2회 호출 평균: p = ½[P(A|choices[0]=A) + P(B|choices[0]=B)]'
+    multiclass: 항목별 결정론적 셔플 뒤 원 인덱스로 복원(generic) 또는 파일에 든 셔플 그대로(legacy-seed)
+    typed: Jev noul(이진)/choice(다지), 질문을 instructions 로 그대로 전달
+    label_mass: 상위 8토큰 중 라벨 토큰 질량 < 0.5 이면 오류로 두고 세지 않음
+    renormalize: 라벨 토큰 확률을 라벨 집합 안에서 재정규화
+  items_sha256: 8b96300150ae15ae6714712b6766e9b94e2e8d62b743e5d1ab2c94d097ab63c5
+results:
+- results/support-escalation-route-run.json
+result_summary:
+  glm:
+    acc: 0.8928571428571429
+    ci95:
+    - 0.7280377463234292
+    - 0.9628823079452006
+    auroc: null
+    brier: null
+    n: 28
+    prob_source: logprob
+    model: z-ai/glm-4.7-flash
+    source_badge: author-run
+  qwen:
+    acc: 0.9642857142857143
+    ci95:
+    - 0.8228742388150134
+    - 0.9936676435024582
+    auroc: null
+    brier: null
+    n: 28
+    prob_source: logprob
+    model: qwen/qwen3.8-27b
+    source_badge: author-run
+  deepseek:
+    acc: 1.0
+    ci95:
+    - 0.8793527963418923
+    - 1.0
+    auroc: null
+    brier: null
+    n: 28
+    prob_source: logprob
+    model: deepseek/deepseek-v4-flash
+    source_badge: author-run
+  jev:
+    acc: 1.0
+    ci95:
+    - 0.8793527963418923
+    - 1.0
+    auroc: null
+    brier: null
+    n: 28
+    prob_source: typed
+    model: typesafe/jev-1.13
+    source_badge: author-run
