@@ -1,0 +1,4607 @@
+{
+ "task": "warmpod-event-gate",
+ "bench": "warmpod-event-gate@1",
+ "items_sha256": "cb0d95c757e7e5d7cf22fe384324668fccc0178ee5ef3dc6ed857671e2e6c968",
+ "template": "generic",
+ "date": "2026-09-30",
+ "arms": {
+  "qwen": {
+   "model": "qwen/qwen3.8-27b",
+   "provider": "parasail",
+   "family": "Qwen",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.0605,
+   "smoke": {
+    "arm": "qwen",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9982,
+    "spread": 0.0,
+    "distinct_p": 7,
+    "n_calls": 13,
+    "smoke_acc": 1.0,
+    "cost": 0.0002982045,
+    "per_item": [
+     {
+      "id": "wp-gate-006",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9758
+     },
+     {
+      "id": "wp-gate-000",
+      "target": 0,
+      "hit": 1,
+      "p": 0.8807
+     },
+     {
+      "id": "wp-gate-002",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9283
+     },
+     {
+      "id": "wp-gate-056",
+      "target": 1,
+      "hit": 1,
+      "p": 0.0031
+     },
+     {
+      "id": "wp-gate-001",
+      "target": 1,
+      "hit": 1,
+      "p": 0.0317
+     }
+    ]
+   }
+  },
+  "deepseek": {
+   "model": "deepseek/deepseek-v4-flash",
+   "provider": "digitalocean",
+   "family": "DeepSeek",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.14,
+   "smoke": {
+    "arm": "deepseek",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9989,
+    "spread": 1.8821940138691318e-06,
+    "distinct_p": 7,
+    "n_calls": 13,
+    "smoke_acc": 1.0,
+    "cost": 0.0008997800000000001,
+    "per_item": [
+     {
+      "id": "wp-gate-006",
+      "target": 0,
+      "hit": 1,
+      "p": 1.0
+     },
+     {
+      "id": "wp-gate-000",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9983
+     },
+     {
+      "id": "wp-gate-002",
+      "target": 0,
+      "hit": 1,
+      "p": 0.5612
+     },
+     {
+      "id": "wp-gate-056",
+      "target": 1,
+      "hit": 1,
+      "p": 0.0
+     },
+     {
+      "id": "wp-gate-001",
+      "target": 1,
+      "hit": 1,
+      "p": 0.3122
+     }
+    ]
+   }
+  },
+  "jev": {
+   "model": "typesafe/jev-1.13",
+   "provider": "openrouter",
+   "family": "Jev",
+   "mode": "typed",
+   "prob_source": "typed",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.042,
+   "smoke": {
+    "arm": "jev",
+    "mode": "typed",
+    "usable": true,
+    "reasons": [],
+    "has_logprobs": null,
+    "reasoning_tokens_zero": null,
+    "provider_match": null,
+    "mass_min": null,
+    "spread": null,
+    "distinct_p": null,
+    "n_calls": 5,
+    "smoke_acc": 1.0,
+    "cost": 0.00015036,
+    "per_item": [
+     {
+      "id": "wp-gate-006",
+      "target": 0,
+      "hit": 1,
+      "p": 0.95,
+      "pred": null
+     },
+     {
+      "id": "wp-gate-000",
+      "target": 0,
+      "hit": 1,
+      "p": 0.92,
+      "pred": null
+     },
+     {
+      "id": "wp-gate-002",
+      "target": 0,
+      "hit": 1,
+      "p": 0.76,
+      "pred": null
+     },
+     {
+      "id": "wp-gate-056",
+      "target": 1,
+      "hit": 1,
+      "p": 0.05,
+      "pred": null
+     },
+     {
+      "id": "wp-gate-001",
+      "target": 1,
+      "hit": 1,
+      "p": 0.23,
+      "pred": null
+     }
+    ]
+   }
+  }
+ },
+ "items": [
+  {
+   "id": "wp-gate-000",
+   "target": 0,
+   "label": 1,
+   "class": "E-incident",
+   "label_source": "judged",
+   "cluster": "wpg-1c3b1052",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.8911401940245589,
+     "ms": 879,
+     "cost": 4.5254e-05,
+     "in_tok": 748,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9985484092794763,
+     "ms": 3538,
+     "cost": 0.00013888000000000003,
+     "in_tok": 992,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 253,
+     "in_tok": 715,
+     "cost": 3.0030000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.92
+     },
+     "p_violation": 0.92
+    }
+   }
+  },
+  {
+   "id": "wp-gate-001",
+   "target": 1,
+   "label": 0,
+   "class": "N-otherco",
+   "label_source": "judged",
+   "cluster": "wpg-a1490ec4",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.025898102255733628,
+     "ms": 1033,
+     "cost": 4.5011999999999995e-05,
+     "in_tok": 744,
+     "err": null,
+     "mass": [
+      0.9979,
+      0.9988
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.2812188456997227,
+     "ms": 2437,
+     "cost": 0.00013608,
+     "in_tok": 972,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 236,
+     "in_tok": 712,
+     "cost": 2.9904e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.32
+     },
+     "p_violation": 0.32
+    }
+   }
+  },
+  {
+   "id": "wp-gate-002",
+   "target": 0,
+   "label": 1,
+   "class": "E-conduct",
+   "label_source": "judged",
+   "cluster": "wpg-16298c86",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.9282975643094051,
+     "ms": 858,
+     "cost": 4.6222e-05,
+     "in_tok": 764,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.6898754922683821,
+     "ms": 2024,
+     "cost": 0.00014196,
+     "in_tok": 1014,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9994
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 232,
+     "in_tok": 722,
+     "cost": 3.0324e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.75
+     },
+     "p_violation": 0.75
+    }
+   }
+  },
+  {
+   "id": "wp-gate-003",
+   "target": 0,
+   "label": 1,
+   "class": "E-conduct",
+   "label_source": "judged",
+   "cluster": "wpg-24892d77",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.714327361145378,
+     "ms": 773,
+     "cost": 4.5617e-05,
+     "in_tok": 754,
+     "err": null,
+     "mass": [
+      0.9969,
+      0.9984
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.7310585845283628,
+     "ms": 2163,
+     "cost": 0.00013972,
+     "in_tok": 998,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9991
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 251,
+     "in_tok": 715,
+     "cost": 3.0030000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.81
+     },
+     "p_violation": 0.81
+    }
+   }
+  },
+  {
+   "id": "wp-gate-004",
+   "target": 1,
+   "label": 0,
+   "class": "N-column",
+   "label_source": "judged",
+   "cluster": "wpg-c8a1f498",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.14185970100744752,
+     "ms": 1260,
+     "cost": 4.7431999999999996e-05,
+     "in_tok": 784,
+     "err": null,
+     "mass": [
+      0.9974,
+      0.9972
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.00043055709545157224,
+     "ms": 3190,
+     "cost": 0.00014420000000000004,
+     "in_tok": 1030,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 251,
+     "in_tok": 728,
+     "cost": 3.0576e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.29
+     },
+     "p_violation": 0.29
+    }
+   }
+  },
+  {
+   "id": "wp-gate-005",
+   "target": 1,
+   "label": 0,
+   "class": "N-policy",
+   "label_source": "judged",
+   "cluster": "wpg-4a9a39b4",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.03373347802016764,
+     "ms": 981,
+     "cost": 4.5617e-05,
+     "in_tok": 754,
+     "err": null,
+     "mass": [
+      0.9986,
+      0.9983
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 4.81456145208803e-05,
+     "ms": 2362,
+     "cost": 0.00013804,
+     "in_tok": 986,
+     "err": null,
+     "mass": [
+      0.9999,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 226,
+     "in_tok": 715,
+     "cost": 3.0030000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.19
+     },
+     "p_violation": 0.19
+    }
+   }
+  },
+  {
+   "id": "wp-gate-006",
+   "target": 0,
+   "label": 1,
+   "class": "E-sanction",
+   "label_source": "judged",
+   "cluster": "gs-fine",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.9758315356875318,
+     "ms": 864,
+     "cost": 4.6101e-05,
+     "in_tok": 762,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9997
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999977219940759,
+     "ms": 2385,
+     "cost": 0.00013692,
+     "in_tok": 978,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 228,
+     "in_tok": 713,
+     "cost": 2.9946e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.95
+     },
+     "p_violation": 0.95
+    }
+   }
+  },
+  {
+   "id": "wp-gate-007",
+   "target": 0,
+   "label": 1,
+   "class": "E-incident",
+   "label_source": "judged",
+   "cluster": "wpg-66f92eaa",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.8719640255535435,
+     "ms": 863,
+     "cost": 4.791599999999999e-05,
+     "in_tok": 792,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.6303673345611975,
+     "ms": 2112,
+     "cost": 0.0001456,
+     "in_tok": 1040,
+     "err": null,
+     "mass": [
+      0.9999,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 268,
+     "in_tok": 740,
+     "cost": 3.108e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.89
+     },
+     "p_violation": 0.89
+    }
+   }
+  },
+  {
+   "id": "wp-gate-008",
+   "target": 1,
+   "label": 0,
+   "class": "N-promo",
+   "label_source": "judged",
+   "cluster": "wpg-ff47ee8f",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.02244432644661656,
+     "ms": 833,
+     "cost": 4.4891e-05,
+     "in_tok": 742,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9997
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.005661147273243027,
+     "ms": 2584,
+     "cost": 0.0001372,
+     "in_tok": 980,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 224,
+     "in_tok": 708,
+     "cost": 2.9736e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.14
+     },
+     "p_violation": 0.14
+    }
+   }
+  },
+  {
+   "id": "wp-gate-009",
+   "target": 0,
+   "label": 1,
+   "class": "E-conduct",
+   "label_source": "judged",
+   "cluster": "wpg-d2b2ef99",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.8548765829058234,
+     "ms": 963,
+     "cost": 4.6101e-05,
+     "in_tok": 762,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9985484101040312,
+     "ms": 3497,
+     "cost": 0.00014028000000000003,
+     "in_tok": 1002,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 282,
+     "in_tok": 721,
+     "cost": 3.0282e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.82
+     },
+     "p_violation": 0.82
+    }
+   }
+  },
+  {
+   "id": "wp-gate-010",
+   "target": 0,
+   "label": 1,
+   "class": "E-incident",
+   "label_source": "judged",
+   "cluster": "wpg-fe27b11b",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.9620034804423516,
+     "ms": 1022,
+     "cost": 4.6584999999999995e-05,
+     "in_tok": 770,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.999
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9970015637632665,
+     "ms": 2050,
+     "cost": 0.00014196,
+     "in_tok": 1014,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 302,
+     "in_tok": 724,
+     "cost": 3.0408000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.89
+     },
+     "p_violation": 0.89
+    }
+   }
+  },
+  {
+   "id": "wp-gate-011",
+   "target": 0,
+   "label": 1,
+   "class": "E-incident",
+   "label_source": "judged",
+   "cluster": "cj-leak",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.7103230521690838,
+     "ms": 1114,
+     "cost": 4.6222e-05,
+     "in_tok": 764,
+     "err": null,
+     "mass": [
+      0.9983,
+      0.9983
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9489788405268552,
+     "ms": 3101,
+     "cost": 0.00013888000000000003,
+     "in_tok": 992,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 230,
+     "in_tok": 720,
+     "cost": 3.0240000000000005e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.77
+     },
+     "p_violation": 0.77
+    }
+   }
+  },
+  {
+   "id": "wp-gate-012",
+   "target": 1,
+   "label": 0,
+   "class": "N-column",
+   "label_source": "judged",
+   "cluster": "wpg-80d6f7fa",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.003396144752560528,
+     "ms": 838,
+     "cost": 4.5617e-05,
+     "in_tok": 754,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.000757094668302288,
+     "ms": 2619,
+     "cost": 0.00013916000000000002,
+     "in_tok": 994,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 269,
+     "in_tok": 714,
+     "cost": 2.9988e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.11
+     },
+     "p_violation": 0.11
+    }
+   }
+  },
+  {
+   "id": "wp-gate-013",
+   "target": 0,
+   "label": 1,
+   "class": "E-conduct",
+   "label_source": "judged",
+   "cluster": "wpg-9b379d9e",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.6954266852463229,
+     "ms": 716,
+     "cost": 4.6584999999999995e-05,
+     "in_tok": 770,
+     "err": null,
+     "mass": [
+      0.999,
+      0.998
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9320275871712558,
+     "ms": 3318,
+     "cost": 0.00014028000000000003,
+     "in_tok": 1002,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 305,
+     "in_tok": 722,
+     "cost": 3.0324e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.72
+     },
+     "p_violation": 0.72
+    }
+   }
+  },
+  {
+   "id": "wp-gate-014",
+   "target": 1,
+   "label": 0,
+   "class": "N-policy",
+   "label_source": "judged",
+   "cluster": "wpg-c59ff16e",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.002054725639321767,
+     "ms": 832,
+     "cost": 4.6343e-05,
+     "in_tok": 766,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.0001049392448548205,
+     "ms": 2405,
+     "cost": 0.00014000000000000001,
+     "in_tok": 1000,
+     "err": null,
+     "mass": [
+      0.9999,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 251,
+     "in_tok": 724,
+     "cost": 3.0408000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "p_violation": 0.06
+    }
+   }
+  },
+  {
+   "id": "wp-gate-015",
+   "target": 0,
+   "label": 1,
+   "class": "E-conduct",
+   "label_source": "judged",
+   "cluster": "wpg-e4176b37",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.20480073320930275,
+     "ms": 916,
+     "cost": 4.6222e-05,
+     "in_tok": 764,
+     "err": null,
+     "mass": [
+      0.9979,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.06859456463698947,
+     "ms": 2761,
+     "cost": 0.00014056,
+     "in_tok": 1004,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 229,
+     "in_tok": 723,
+     "cost": 3.0366000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.74
+     },
+     "p_violation": 0.74
+    }
+   }
+  },
+  {
+   "id": "wp-gate-016",
+   "target": 1,
+   "label": 0,
+   "class": "N-otherco",
+   "label_source": "judged",
+   "cluster": "wpg-7a5730f7",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.08418977769650281,
+     "ms": 896,
+     "cost": 4.5011999999999995e-05,
+     "in_tok": 744,
+     "err": null,
+     "mass": [
+      0.998,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.43632466000609427,
+     "ms": 2720,
+     "cost": 0.00013804,
+     "in_tok": 986,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 229,
+     "in_tok": 710,
+     "cost": 2.9820000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.32
+     },
+     "p_violation": 0.32
+    }
+   }
+  },
+  {
+   "id": "wp-gate-017",
+   "target": 1,
+   "label": 0,
+   "class": "N-policy",
+   "label_source": "judged",
+   "cluster": "wpg-b5a32c1f",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.0014247091132234546,
+     "ms": 1028,
+     "cost": 4.3923e-05,
+     "in_tok": 726,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9997
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 4.478492413087627e-06,
+     "ms": 3293,
+     "cost": 0.00013384,
+     "in_tok": 956,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 375,
+     "in_tok": 698,
+     "cost": 2.9316000000000005e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.07
+     },
+     "p_violation": 0.07
+    }
+   }
+  },
+  {
+   "id": "wp-gate-018",
+   "target": 1,
+   "label": 0,
+   "class": "N-column",
+   "label_source": "judged",
+   "cluster": "wpg-accafd79",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.0043733755351085465,
+     "ms": 917,
+     "cost": 4.477e-05,
+     "in_tok": 740,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 1.2120309215729526e-06,
+     "ms": 2690,
+     "cost": 0.00013692,
+     "in_tok": 978,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 278,
+     "in_tok": 711,
+     "cost": 2.9862000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.17
+     },
+     "p_violation": 0.17
+    }
+   }
+  },
+  {
+   "id": "wp-gate-019",
+   "target": 0,
+   "label": 1,
+   "class": "E-incident",
+   "label_source": "judged",
+   "cluster": "wpg-109252cd",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.9639218666328926,
+     "ms": 716,
+     "cost": 4.5738e-05,
+     "in_tok": 756,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.9984
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999998574257587,
+     "ms": 3098,
+     "cost": 0.00013944,
+     "in_tok": 996,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 493,
+     "in_tok": 717,
+     "cost": 3.0114e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.95
+     },
+     "p_violation": 0.95
+    }
+   }
+  },
+  {
+   "id": "wp-gate-020",
+   "target": 1,
+   "label": 0,
+   "class": "N-otherco",
+   "label_source": "judged",
+   "cluster": "cj-leak",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.013247637765213337,
+     "ms": 861,
+     "cost": 4.6101e-05,
+     "in_tok": 762,
+     "err": null,
+     "mass": [
+      0.9985,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 6.279914497700541e-05,
+     "ms": 2449,
+     "cost": 0.00014056,
+     "in_tok": 1004,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 245,
+     "in_tok": 717,
+     "cost": 3.0114e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "p_violation": 0.06
+    }
+   }
+  },
+  {
+   "id": "wp-gate-021",
+   "target": 0,
+   "label": 1,
+   "class": "E-conduct",
+   "label_source": "judged",
+   "cluster": "wpg-ae98e7bc",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.9854349812817741,
+     "ms": 800,
+     "cost": 4.5617e-05,
+     "in_tok": 754,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999542470427966,
+     "ms": 2628,
+     "cost": 0.00013888000000000003,
+     "in_tok": 992,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 220,
+     "in_tok": 717,
+     "cost": 3.0114e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.93
+     },
+     "p_violation": 0.93
+    }
+   }
+  },
+  {
+   "id": "wp-gate-022",
+   "target": 0,
+   "label": 1,
+   "class": "E-sanction",
+   "label_source": "judged",
+   "cluster": "wpg-1891f300",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.9754367028976584,
+     "ms": 858,
+     "cost": 4.6101e-05,
+     "in_tok": 762,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9996
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999612345504707,
+     "ms": 2387,
+     "cost": 0.00013776,
+     "in_tok": 984,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 267,
+     "in_tok": 716,
+     "cost": 3.0072e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.91
+     },
+     "p_violation": 0.91
+    }
+   }
+  },
+  {
+   "id": "wp-gate-023",
+   "target": 1,
+   "label": 0,
+   "class": "N-column",
+   "label_source": "judged",
+   "cluster": "wpg-073555fe",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.003383142874410582,
+     "ms": 869,
+     "cost": 4.5254e-05,
+     "in_tok": 748,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.999
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 2.11620251426842e-05,
+     "ms": 2518,
+     "cost": 0.0001386,
+     "in_tok": 990,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 249,
+     "in_tok": 715,
+     "cost": 3.0030000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.25
+     },
+     "p_violation": 0.25
+    }
+   }
+  },
+  {
+   "id": "wp-gate-024",
+   "target": 0,
+   "label": 1,
+   "class": "E-incident",
+   "label_source": "judged",
+   "cluster": "wpg-b39af5fc",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.9818706674951354,
+     "ms": 722,
+     "cost": 4.6827e-05,
+     "in_tok": 774,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.999994761685035,
+     "ms": 2401,
+     "cost": 0.00013916000000000002,
+     "in_tok": 994,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 227,
+     "in_tok": 721,
+     "cost": 3.0282e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.95
+     },
+     "p_violation": 0.95
+    }
+   }
+  },
+  {
+   "id": "wp-gate-025",
+   "target": 1,
+   "label": 0,
+   "class": "N-otherco",
+   "label_source": "judged",
+   "cluster": "hyundai-cartel",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.20808537640161112,
+     "ms": 804,
+     "cost": 4.6101e-05,
+     "in_tok": 762,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.999
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4823685997227669,
+     "ms": 2509,
+     "cost": 0.00013972,
+     "in_tok": 998,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 252,
+     "in_tok": 724,
+     "cost": 3.0408000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.11
+     },
+     "p_violation": 0.11
+    }
+   }
+  },
+  {
+   "id": "wp-gate-026",
+   "target": 0,
+   "label": 1,
+   "class": "E-incident",
+   "label_source": "judged",
+   "cluster": "wpg-0657ce35",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.9366099120947893,
+     "ms": 1121,
+     "cost": 4.5375e-05,
+     "in_tok": 750,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9864762475690929,
+     "ms": 3303,
+     "cost": 0.00013664000000000002,
+     "in_tok": 976,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 244,
+     "in_tok": 711,
+     "cost": 2.9862000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.89
+     },
+     "p_violation": 0.89
+    }
+   }
+  },
+  {
+   "id": "wp-gate-027",
+   "target": 1,
+   "label": 0,
+   "class": "N-union",
+   "label_source": "judged",
+   "cluster": "emart-union",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.012201245969611965,
+     "ms": 1160,
+     "cost": 4.4407e-05,
+     "in_tok": 734,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 3.651514181799849e-05,
+     "ms": 4097,
+     "cost": 0.00013580000000000002,
+     "in_tok": 970,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 267,
+     "in_tok": 702,
+     "cost": 2.9484000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "p_violation": 0.06
+    }
+   }
+  },
+  {
+   "id": "wp-gate-028",
+   "target": 0,
+   "label": 1,
+   "class": "E-sanction",
+   "label_source": "judged",
+   "cluster": "wpg-739a4bb8",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.9931216626728068,
+     "ms": 872,
+     "cost": 4.6948e-05,
+     "in_tok": 776,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9996
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999809268290717,
+     "ms": 2618,
+     "cost": 0.00013972,
+     "in_tok": 998,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 288,
+     "in_tok": 723,
+     "cost": 3.0366000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.95
+     },
+     "p_violation": 0.95
+    }
+   }
+  },
+  {
+   "id": "wp-gate-029",
+   "target": 1,
+   "label": 0,
+   "class": "N-policy",
+   "label_source": "judged",
+   "cluster": "wpg-b5b31de9",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.05784090803298917,
+     "ms": 1239,
+     "cost": 4.549599999999999e-05,
+     "in_tok": 752,
+     "err": null,
+     "mass": [
+      0.9987,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.00027697578806490375,
+     "ms": 2815,
+     "cost": 0.00013832000000000002,
+     "in_tok": 988,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 233,
+     "in_tok": 714,
+     "cost": 2.9988e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.47
+     },
+     "p_violation": 0.47
+    }
+   }
+  },
+  {
+   "id": "wp-gate-030",
+   "target": 0,
+   "label": 1,
+   "class": "E-conduct",
+   "label_source": "judged",
+   "cluster": "wpg-6e2892a9",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.8750138942801942,
+     "ms": 928,
+     "cost": 4.5617e-05,
+     "in_tok": 754,
+     "err": null,
+     "mass": [
+      0.9981,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.3793224108641543,
+     "ms": 3134,
+     "cost": 0.00013776,
+     "in_tok": 984,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 309,
+     "in_tok": 714,
+     "cost": 2.9988e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.82
+     },
+     "p_violation": 0.82
+    }
+   }
+  },
+  {
+   "id": "wp-gate-031",
+   "target": 1,
+   "label": 0,
+   "class": "N-union",
+   "label_source": "judged",
+   "cluster": "emart-union",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.02284066662793022,
+     "ms": 1365,
+     "cost": 4.6222e-05,
+     "in_tok": 764,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.00037753414365553626,
+     "ms": 2155,
+     "cost": 0.00014252,
+     "in_tok": 1018,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 305,
+     "in_tok": 724,
+     "cost": 3.0408000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.09
+     },
+     "p_violation": 0.09
+    }
+   }
+  },
+  {
+   "id": "wp-gate-032",
+   "target": 0,
+   "label": 1,
+   "class": "E-sanction",
+   "label_source": "judged",
+   "cluster": "wpg-1d12b32b",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.9920048190160716,
+     "ms": 1009,
+     "cost": 4.6584999999999995e-05,
+     "in_tok": 770,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999975514799603,
+     "ms": 5037,
+     "cost": 0.00014028000000000003,
+     "in_tok": 1002,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 227,
+     "in_tok": 723,
+     "cost": 3.0366000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.95
+     },
+     "p_violation": 0.95
+    }
+   }
+  },
+  {
+   "id": "wp-gate-033",
+   "target": 0,
+   "label": 1,
+   "class": "E-sanction",
+   "label_source": "judged",
+   "cluster": "wpg-59c874d3",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.9801002465831018,
+     "ms": 1359,
+     "cost": 4.5858999999999996e-05,
+     "in_tok": 758,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9845932926793812,
+     "ms": 3012,
+     "cost": 0.00013972,
+     "in_tok": 998,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9996
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 225,
+     "in_tok": 721,
+     "cost": 3.0282e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.94
+     },
+     "p_violation": 0.94
+    }
+   }
+  },
+  {
+   "id": "wp-gate-034",
+   "target": 1,
+   "label": 0,
+   "class": "N-column",
+   "label_source": "judged",
+   "cluster": "wpg-75327c62",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.0027856599916928557,
+     "ms": 820,
+     "cost": 4.5738e-05,
+     "in_tok": 756,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9996
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.000603504297000957,
+     "ms": 3538,
+     "cost": 0.00014028000000000003,
+     "in_tok": 1002,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 315,
+     "in_tok": 720,
+     "cost": 3.0240000000000005e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.12
+     },
+     "p_violation": 0.12
+    }
+   }
+  },
+  {
+   "id": "wp-gate-035",
+   "target": 0,
+   "label": 1,
+   "class": "E-conduct",
+   "label_source": "judged",
+   "cluster": "wpg-479da65e",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.8708581460635473,
+     "ms": 841,
+     "cost": 4.549599999999999e-05,
+     "in_tok": 752,
+     "err": null,
+     "mass": [
+      0.9987,
+      0.9972
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.8369792908142475,
+     "ms": 3736,
+     "cost": 0.0001386,
+     "in_tok": 990,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 229,
+     "in_tok": 713,
+     "cost": 2.9946e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.84
+     },
+     "p_violation": 0.84
+    }
+   }
+  },
+  {
+   "id": "wp-gate-036",
+   "target": 0,
+   "label": 1,
+   "class": "E-incident",
+   "label_source": "judged",
+   "cluster": "wpg-719b7f3d",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.9937559369793201,
+     "ms": 873,
+     "cost": 4.5980000000000004e-05,
+     "in_tok": 760,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.99999138502133,
+     "ms": 4807,
+     "cost": 0.0001386,
+     "in_tok": 990,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 255,
+     "in_tok": 718,
+     "cost": 3.0156e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.97
+     },
+     "p_violation": 0.97
+    }
+   }
+  },
+  {
+   "id": "wp-gate-037",
+   "target": 1,
+   "label": 0,
+   "class": "N-promo",
+   "label_source": "judged",
+   "cluster": "wpg-7d5acf0e",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.030744746171927774,
+     "ms": 831,
+     "cost": 4.549599999999999e-05,
+     "in_tok": 752,
+     "err": null,
+     "mass": [
+      0.9987,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4406325103566209,
+     "ms": 3252,
+     "cost": 0.00013832000000000002,
+     "in_tok": 988,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 246,
+     "in_tok": 713,
+     "cost": 2.9946e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.19
+     },
+     "p_violation": 0.19
+    }
+   }
+  },
+  {
+   "id": "wp-gate-038",
+   "target": 1,
+   "label": 0,
+   "class": "N-promo",
+   "label_source": "judged",
+   "cluster": "wpg-5a6b5a9c",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.012889148460521502,
+     "ms": 784,
+     "cost": 4.6705999999999996e-05,
+     "in_tok": 772,
+     "err": null,
+     "mass": [
+      0.9987,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.018675592068112392,
+     "ms": 2922,
+     "cost": 0.00014056,
+     "in_tok": 1004,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 288,
+     "in_tok": 725,
+     "cost": 3.0449999999999998e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.08
+     },
+     "p_violation": 0.08
+    }
+   }
+  },
+  {
+   "id": "wp-gate-039",
+   "target": 1,
+   "label": 0,
+   "class": "N-union",
+   "label_source": "judged",
+   "cluster": "samsung-union",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.0783123434754545,
+     "ms": 1279,
+     "cost": 4.549599999999999e-05,
+     "in_tok": 752,
+     "err": null,
+     "mass": [
+      0.9979,
+      0.9979
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.25334642628650156,
+     "ms": 2509,
+     "cost": 0.00013776,
+     "in_tok": 984,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 273,
+     "in_tok": 715,
+     "cost": 3.0030000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.2
+     },
+     "p_violation": 0.2
+    }
+   }
+  },
+  {
+   "id": "wp-gate-040",
+   "target": 1,
+   "label": 0,
+   "class": "N-policy",
+   "label_source": "judged",
+   "cluster": "wpg-129461bf",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.021397229313222216,
+     "ms": 944,
+     "cost": 4.5738e-05,
+     "in_tok": 756,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.09324783103271557,
+     "ms": 3039,
+     "cost": 0.00013972,
+     "in_tok": 998,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 265,
+     "in_tok": 714,
+     "cost": 2.9988e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.15
+     },
+     "p_violation": 0.15
+    }
+   }
+  },
+  {
+   "id": "wp-gate-041",
+   "target": 1,
+   "label": 0,
+   "class": "N-column",
+   "label_source": "judged",
+   "cluster": "wpg-a7fe374d",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.00370612630392681,
+     "ms": 753,
+     "cost": 4.6343e-05,
+     "in_tok": 766,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 2.9298593617671125e-05,
+     "ms": 2929,
+     "cost": 0.00014000000000000001,
+     "in_tok": 1000,
+     "err": null,
+     "mass": [
+      0.9998,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 321,
+     "in_tok": 722,
+     "cost": 3.0324e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.16
+     },
+     "p_violation": 0.16
+    }
+   }
+  },
+  {
+   "id": "wp-gate-042",
+   "target": 1,
+   "label": 0,
+   "class": "N-promo",
+   "label_source": "judged",
+   "cluster": "wpg-8925f41a",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.025332607342391147,
+     "ms": 950,
+     "cost": 4.6705999999999996e-05,
+     "in_tok": 772,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 4.890912219595171e-05,
+     "ms": 3389,
+     "cost": 0.00014000000000000001,
+     "in_tok": 1000,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 266,
+     "in_tok": 719,
+     "cost": 3.0198e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.09
+     },
+     "p_violation": 0.09
+    }
+   }
+  },
+  {
+   "id": "wp-gate-043",
+   "target": 0,
+   "label": 1,
+   "class": "E-sanction",
+   "label_source": "judged",
+   "cluster": "wpg-c29b8ab6",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.9961980494360678,
+     "ms": 965,
+     "cost": 4.5858999999999996e-05,
+     "in_tok": 758,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9996
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999651509481702,
+     "ms": 3369,
+     "cost": 0.00013664000000000002,
+     "in_tok": 976,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 244,
+     "in_tok": 710,
+     "cost": 2.9820000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.94
+     },
+     "p_violation": 0.94
+    }
+   }
+  },
+  {
+   "id": "wp-gate-044",
+   "target": 1,
+   "label": 0,
+   "class": "N-promo",
+   "label_source": "judged",
+   "cluster": "wpg-eb6b9102",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.007179193731630011,
+     "ms": 746,
+     "cost": 4.4649e-05,
+     "in_tok": 738,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 4.917747180351882e-05,
+     "ms": 2583,
+     "cost": 0.00013748000000000002,
+     "in_tok": 982,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 260,
+     "in_tok": 711,
+     "cost": 2.9862000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.07
+     },
+     "p_violation": 0.07
+    }
+   }
+  },
+  {
+   "id": "wp-gate-045",
+   "target": 0,
+   "label": 1,
+   "class": "E-conduct",
+   "label_source": "judged",
+   "cluster": "wpg-5eae0059",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": null,
+     "ms": 662,
+     "cost": 2.28085e-05,
+     "in_tok": 377,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"qwen/qwen3.8-27b is temporarily rate-limited upstream. Please retry shortly, or add ",
+     "mass": [
+      0.9988,
+      null
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      null
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.7919146141416147,
+     "ms": 2977,
+     "cost": 0.00013888000000000003,
+     "in_tok": 992,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 246,
+     "in_tok": 715,
+     "cost": 3.0030000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.83
+     },
+     "p_violation": 0.83
+    }
+   }
+  },
+  {
+   "id": "wp-gate-046",
+   "target": 1,
+   "label": 0,
+   "class": "N-union",
+   "label_source": "judged",
+   "cluster": "samsung-union",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.11556273047737524,
+     "ms": 990,
+     "cost": 4.6101e-05,
+     "in_tok": 762,
+     "err": null,
+     "mass": [
+      0.9971,
+      0.9981
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.09550150688811064,
+     "ms": 2751,
+     "cost": 0.00013916000000000002,
+     "in_tok": 994,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 239,
+     "in_tok": 717,
+     "cost": 3.0114e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.15
+     },
+     "p_violation": 0.15
+    }
+   }
+  },
+  {
+   "id": "wp-gate-047",
+   "target": 1,
+   "label": 0,
+   "class": "N-union",
+   "label_source": "judged",
+   "cluster": "wpg-4374b600",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.10586887206547642,
+     "ms": 915,
+     "cost": 4.5375e-05,
+     "in_tok": 750,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9988
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.005039332544078849,
+     "ms": 3051,
+     "cost": 0.00013692,
+     "in_tok": 978,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 225,
+     "in_tok": 709,
+     "cost": 2.9778000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.17
+     },
+     "p_violation": 0.17
+    }
+   }
+  },
+  {
+   "id": "wp-gate-048",
+   "target": 0,
+   "label": 1,
+   "class": "E-incident",
+   "label_source": "judged",
+   "cluster": "wpg-26e7e1e4",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.9845932948428624,
+     "ms": 859,
+     "cost": 4.6343e-05,
+     "in_tok": 766,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999997052084592,
+     "ms": 2195,
+     "cost": 0.00014168000000000004,
+     "in_tok": 1012,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 257,
+     "in_tok": 727,
+     "cost": 3.0534e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.96
+     },
+     "p_violation": 0.96
+    }
+   }
+  },
+  {
+   "id": "wp-gate-049",
+   "target": 0,
+   "label": 1,
+   "class": "E-conduct",
+   "label_source": "judged",
+   "cluster": "wpg-0b46dca0",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.9532479718887625,
+     "ms": 744,
+     "cost": 4.5375e-05,
+     "in_tok": 750,
+     "err": null,
+     "mass": [
+      0.9985,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9980588231470631,
+     "ms": 3642,
+     "cost": 0.00013804,
+     "in_tok": 986,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 262,
+     "in_tok": 712,
+     "cost": 2.9904e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.92
+     },
+     "p_violation": 0.92
+    }
+   }
+  },
+  {
+   "id": "wp-gate-050",
+   "target": 0,
+   "label": 1,
+   "class": "E-sanction",
+   "label_source": "judged",
+   "cluster": "wpg-68abd283",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.995548868864546,
+     "ms": 4482,
+     "cost": 4.5617e-05,
+     "in_tok": 754,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999996263691086,
+     "ms": 3982,
+     "cost": 0.00013804,
+     "in_tok": 986,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 252,
+     "in_tok": 712,
+     "cost": 2.9904e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.93
+     },
+     "p_violation": 0.93
+    }
+   }
+  },
+  {
+   "id": "wp-gate-051",
+   "target": 0,
+   "label": 1,
+   "class": "E-incident",
+   "label_source": "judged",
+   "cluster": "wpg-0b7c7389",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.9097885785561435,
+     "ms": 778,
+     "cost": 4.6948e-05,
+     "in_tok": 776,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9983
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9942912507760124,
+     "ms": 3008,
+     "cost": 0.00014056,
+     "in_tok": 1004,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 274,
+     "in_tok": 724,
+     "cost": 3.0408000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.89
+     },
+     "p_violation": 0.89
+    }
+   }
+  },
+  {
+   "id": "wp-gate-052",
+   "target": 1,
+   "label": 0,
+   "class": "N-promo",
+   "label_source": "judged",
+   "cluster": "wpg-73eecb12",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.007802166276056535,
+     "ms": 887,
+     "cost": 4.6464e-05,
+     "in_tok": 768,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9997
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.13482554596127969,
+     "ms": 3639,
+     "cost": 0.00014112,
+     "in_tok": 1008,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 256,
+     "in_tok": 720,
+     "cost": 3.0240000000000005e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.11
+     },
+     "p_violation": 0.11
+    }
+   }
+  },
+  {
+   "id": "wp-gate-053",
+   "target": 0,
+   "label": 1,
+   "class": "E-incident",
+   "label_source": "judged",
+   "cluster": "wpg-57b694e4",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.986666485671736,
+     "ms": 850,
+     "cost": 4.5133e-05,
+     "in_tok": 746,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999998001047345,
+     "ms": 3691,
+     "cost": 0.00013692,
+     "in_tok": 978,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 247,
+     "in_tok": 712,
+     "cost": 2.9904e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.96
+     },
+     "p_violation": 0.96
+    }
+   }
+  },
+  {
+   "id": "wp-gate-054",
+   "target": 1,
+   "label": 0,
+   "class": "N-otherco",
+   "label_source": "judged",
+   "cluster": "wpg-4e4da98b",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.027059362866516713,
+     "ms": 1346,
+     "cost": 4.6584999999999995e-05,
+     "in_tok": 770,
+     "err": null,
+     "mass": [
+      0.9986,
+      0.998
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.0019267344977552912,
+     "ms": 2847,
+     "cost": 0.00014000000000000001,
+     "in_tok": 1000,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 282,
+     "in_tok": 722,
+     "cost": 3.0324e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.52
+     },
+     "p_violation": 0.52
+    }
+   }
+  },
+  {
+   "id": "wp-gate-055",
+   "target": 1,
+   "label": 0,
+   "class": "N-policy",
+   "label_source": "judged",
+   "cluster": "wpg-42d68a84",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.45366670002296516,
+     "ms": 842,
+     "cost": 4.5980000000000004e-05,
+     "in_tok": 760,
+     "err": null,
+     "mass": [
+      0.9975,
+      0.9977
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.6417472087525198,
+     "ms": 3063,
+     "cost": 0.00013916000000000002,
+     "in_tok": 994,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 246,
+     "in_tok": 714,
+     "cost": 2.9988e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.41
+     },
+     "p_violation": 0.41
+    }
+   }
+  },
+  {
+   "id": "wp-gate-056",
+   "target": 1,
+   "label": 0,
+   "class": "N-promo",
+   "label_source": "judged",
+   "cluster": "wpg-79f24ea7",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": null,
+     "ms": 579,
+     "cost": 2.3232e-05,
+     "in_tok": 384,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"qwen/qwen3.8-27b is temporarily rate-limited upstream. Please retry shortly, or add ",
+     "mass": [
+      null,
+      0.9996
+     ],
+     "provider": null,
+     "reasoning_tokens": [
+      null,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 1.7245330886509095e-05,
+     "ms": 2879,
+     "cost": 0.00014056,
+     "in_tok": 1004,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 271,
+     "in_tok": 718,
+     "cost": 3.0156e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "p_violation": 0.06
+    }
+   }
+  },
+  {
+   "id": "wp-gate-057",
+   "target": 1,
+   "label": 0,
+   "class": "N-union",
+   "label_source": "judged",
+   "cluster": "samsung-union",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.1682440471104415,
+     "ms": 811,
+     "cost": 4.4286e-05,
+     "in_tok": 732,
+     "err": null,
+     "mass": [
+      0.9977,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.00023087948934471256,
+     "ms": 2913,
+     "cost": 0.00013580000000000002,
+     "in_tok": 970,
+     "err": null,
+     "mass": [
+      0.9999,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 241,
+     "in_tok": 705,
+     "cost": 2.9610000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.17
+     },
+     "p_violation": 0.17
+    }
+   }
+  },
+  {
+   "id": "wp-gate-058",
+   "target": 0,
+   "label": 1,
+   "class": "E-incident",
+   "label_source": "judged",
+   "cluster": "wpg-7ba79071",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.9876609527951401,
+     "ms": 766,
+     "cost": 4.5375e-05,
+     "in_tok": 750,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9990210319508471,
+     "ms": 3051,
+     "cost": 0.00013608,
+     "in_tok": 972,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 236,
+     "in_tok": 708,
+     "cost": 2.9736e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.95
+     },
+     "p_violation": 0.95
+    }
+   }
+  },
+  {
+   "id": "wp-gate-059",
+   "target": 1,
+   "label": 0,
+   "class": "N-column",
+   "label_source": "judged",
+   "cluster": "wpg-3f2673cb",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.07547523005619934,
+     "ms": 1034,
+     "cost": 4.7674e-05,
+     "in_tok": 788,
+     "err": null,
+     "mass": [
+      0.9978,
+      0.9984
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 6.67622710574342e-05,
+     "ms": 2351,
+     "cost": 0.00014252,
+     "in_tok": 1018,
+     "err": null,
+     "mass": [
+      0.9999,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 387,
+     "in_tok": 727,
+     "cost": 3.0534e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.36
+     },
+     "p_violation": 0.36
+    }
+   }
+  },
+  {
+   "id": "wp-gate-060",
+   "target": 0,
+   "label": 1,
+   "class": "E-incident",
+   "label_source": "judged",
+   "cluster": "wpg-d00be346",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.9374430025122849,
+     "ms": 806,
+     "cost": 4.549599999999999e-05,
+     "in_tok": 752,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9811212770737587,
+     "ms": 3235,
+     "cost": 0.00013776,
+     "in_tok": 984,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 293,
+     "in_tok": 712,
+     "cost": 2.9904e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.88
+     },
+     "p_violation": 0.88
+    }
+   }
+  },
+  {
+   "id": "wp-gate-061",
+   "target": 1,
+   "label": 0,
+   "class": "N-promo",
+   "label_source": "judged",
+   "cluster": "wpg-15de680d",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.027406844851883813,
+     "ms": 999,
+     "cost": 4.549599999999999e-05,
+     "in_tok": 752,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.000981045532076159,
+     "ms": 1883,
+     "cost": 0.00013832000000000002,
+     "in_tok": 988,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 256,
+     "in_tok": 712,
+     "cost": 2.9904e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "p_violation": 0.06
+    }
+   }
+  },
+  {
+   "id": "wp-gate-062",
+   "target": 0,
+   "label": 1,
+   "class": "E-sanction",
+   "label_source": "judged",
+   "cluster": "wpg-722c61c7",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.9706882729012177,
+     "ms": 973,
+     "cost": 4.5738e-05,
+     "in_tok": 756,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.999
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9997834408646027,
+     "ms": 1871,
+     "cost": 0.00013944,
+     "in_tok": 996,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 270,
+     "in_tok": 714,
+     "cost": 2.9988e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.85
+     },
+     "p_violation": 0.85
+    }
+   }
+  },
+  {
+   "id": "wp-gate-063",
+   "target": 1,
+   "label": 0,
+   "class": "N-column",
+   "label_source": "judged",
+   "cluster": "wpg-661ce185",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.030152127697912076,
+     "ms": 766,
+     "cost": 4.6827e-05,
+     "in_tok": 774,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9996
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 2.297043548254688e-05,
+     "ms": 1540,
+     "cost": 0.00014196,
+     "in_tok": 1014,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 218,
+     "in_tok": 727,
+     "cost": 3.0534e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.16
+     },
+     "p_violation": 0.16
+    }
+   }
+  },
+  {
+   "id": "wp-gate-064",
+   "target": 0,
+   "label": 1,
+   "class": "E-incident",
+   "label_source": "judged",
+   "cluster": "wpg-543bf248",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.9712632652457434,
+     "ms": 952,
+     "cost": 4.549599999999999e-05,
+     "in_tok": 752,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999827510271035,
+     "ms": 1915,
+     "cost": 0.0001372,
+     "in_tok": 980,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 326,
+     "in_tok": 709,
+     "cost": 2.9778000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.93
+     },
+     "p_violation": 0.93
+    }
+   }
+  },
+  {
+   "id": "wp-gate-065",
+   "target": 0,
+   "label": 1,
+   "class": "E-sanction",
+   "label_source": "judged",
+   "cluster": "wpg-cf64c16c",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.9916919680245793,
+     "ms": 870,
+     "cost": 4.6343e-05,
+     "in_tok": 766,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9996
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999983035958866,
+     "ms": 2590,
+     "cost": 0.00013972,
+     "in_tok": 998,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 276,
+     "in_tok": 722,
+     "cost": 3.0324e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.96
+     },
+     "p_violation": 0.96
+    }
+   }
+  },
+  {
+   "id": "wp-gate-066",
+   "target": 1,
+   "label": 0,
+   "class": "N-policy",
+   "label_source": "judged",
+   "cluster": "wpg-fc1a7487",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.025898101705489444,
+     "ms": 839,
+     "cost": 4.5858999999999996e-05,
+     "in_tok": 758,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9988
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.16375708345423443,
+     "ms": 2097,
+     "cost": 0.00014000000000000001,
+     "in_tok": 1000,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 279,
+     "in_tok": 721,
+     "cost": 3.0282e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.16
+     },
+     "p_violation": 0.16
+    }
+   }
+  },
+  {
+   "id": "wp-gate-067",
+   "target": 0,
+   "label": 1,
+   "class": "E-sanction",
+   "label_source": "judged",
+   "cluster": "wpg-d0ecfc00",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.9902500037252657,
+     "ms": 777,
+     "cost": 4.8884e-05,
+     "in_tok": 808,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999957977502827,
+     "ms": 2332,
+     "cost": 0.00014532000000000002,
+     "in_tok": 1038,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 592,
+     "in_tok": 743,
+     "cost": 3.1206e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.96
+     },
+     "p_violation": 0.96
+    }
+   }
+  },
+  {
+   "id": "wp-gate-068",
+   "target": 0,
+   "label": 1,
+   "class": "E-sanction",
+   "label_source": "judged",
+   "cluster": "wpg-537b057e",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.9926348354207637,
+     "ms": 1066,
+     "cost": 4.6343e-05,
+     "in_tok": 766,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9996
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999982966715464,
+     "ms": 1487,
+     "cost": 0.00014028000000000003,
+     "in_tok": 1002,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 217,
+     "in_tok": 721,
+     "cost": 3.0282e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.93
+     },
+     "p_violation": 0.93
+    }
+   }
+  },
+  {
+   "id": "wp-gate-069",
+   "target": 1,
+   "label": 0,
+   "class": "N-otherco",
+   "label_source": "judged",
+   "cluster": "gs-fine",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.016982157061743004,
+     "ms": 1186,
+     "cost": 4.6584999999999995e-05,
+     "in_tok": 770,
+     "err": null,
+     "mass": [
+      0.9985,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.009577861231515408,
+     "ms": 2551,
+     "cost": 0.00013916000000000002,
+     "in_tok": 994,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 230,
+     "in_tok": 722,
+     "cost": 3.0324e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "p_violation": 0.06
+    }
+   }
+  },
+  {
+   "id": "wp-gate-070",
+   "target": 1,
+   "label": 0,
+   "class": "N-union",
+   "label_source": "judged",
+   "cluster": "wpg-4001717a",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.12432875192247807,
+     "ms": 1352,
+     "cost": 4.6343e-05,
+     "in_tok": 766,
+     "err": null,
+     "mass": [
+      0.9969,
+      0.9988
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.1624457230238891,
+     "ms": 2553,
+     "cost": 0.00014000000000000001,
+     "in_tok": 1000,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 274,
+     "in_tok": 718,
+     "cost": 3.0156e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.18
+     },
+     "p_violation": 0.18
+    }
+   }
+  },
+  {
+   "id": "wp-gate-071",
+   "target": 0,
+   "label": 1,
+   "class": "E-conduct",
+   "label_source": "judged",
+   "cluster": "wpg-bf753436",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": null,
+     "ms": 677,
+     "cost": 2.25665e-05,
+     "in_tok": 373,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"qwen/qwen3.8-27b is temporarily rate-limited upstream. Please retry shortly, or add ",
+     "mass": [
+      0.9986,
+      null
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      null
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9932702167390548,
+     "ms": 2370,
+     "cost": 0.00013804,
+     "in_tok": 986,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 243,
+     "in_tok": 713,
+     "cost": 2.9946e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.93
+     },
+     "p_violation": 0.93
+    }
+   }
+  },
+  {
+   "id": "wp-gate-072",
+   "target": 0,
+   "label": 1,
+   "class": "E-sanction",
+   "label_source": "judged",
+   "cluster": "wpg-a32fd833",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.9891713111639695,
+     "ms": 1048,
+     "cost": 4.7311e-05,
+     "in_tok": 782,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999998032276561,
+     "ms": 2791,
+     "cost": 0.00014084000000000001,
+     "in_tok": 1006,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 296,
+     "in_tok": 724,
+     "cost": 3.0408000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.83
+     },
+     "p_violation": 0.83
+    }
+   }
+  },
+  {
+   "id": "wp-gate-073",
+   "target": 0,
+   "label": 1,
+   "class": "E-sanction",
+   "label_source": "judged",
+   "cluster": "wpg-f91e371e",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.978371382347212,
+     "ms": 748,
+     "cost": 4.6343e-05,
+     "in_tok": 766,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9941249160863609,
+     "ms": 3319,
+     "cost": 0.00014000000000000001,
+     "in_tok": 1000,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 252,
+     "in_tok": 721,
+     "cost": 3.0282e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.87
+     },
+     "p_violation": 0.87
+    }
+   }
+  },
+  {
+   "id": "wp-gate-074",
+   "target": 1,
+   "label": 0,
+   "class": "N-otherco",
+   "label_source": "judged",
+   "cluster": "wpg-5e8af4c0",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.9512346500891573,
+     "ms": 796,
+     "cost": 4.6343e-05,
+     "in_tok": 766,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999968560379084,
+     "ms": 3353,
+     "cost": 0.00013804,
+     "in_tok": 986,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 227,
+     "in_tok": 718,
+     "cost": 3.0156e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.93
+     },
+     "p_violation": 0.93
+    }
+   }
+  },
+  {
+   "id": "wp-gate-075",
+   "target": 1,
+   "label": 0,
+   "class": "N-policy",
+   "label_source": "judged",
+   "cluster": "wpg-1d6e2631",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.07200873560727453,
+     "ms": 1092,
+     "cost": 4.5254e-05,
+     "in_tok": 748,
+     "err": null,
+     "mass": [
+      0.9986,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.02569525484217341,
+     "ms": 2203,
+     "cost": 0.00013832000000000002,
+     "in_tok": 988,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 321,
+     "in_tok": 711,
+     "cost": 2.9862000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.54
+     },
+     "p_violation": 0.54
+    }
+   }
+  },
+  {
+   "id": "wp-gate-076",
+   "target": 0,
+   "label": 1,
+   "class": "E-conduct",
+   "label_source": "judged",
+   "cluster": "wpg-1713d55a",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.8739938110157695,
+     "ms": 784,
+     "cost": 4.5858999999999996e-05,
+     "in_tok": 758,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9931011953100491,
+     "ms": 2319,
+     "cost": 0.00014028000000000003,
+     "in_tok": 1002,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 235,
+     "in_tok": 716,
+     "cost": 3.0072e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.87
+     },
+     "p_violation": 0.87
+    }
+   }
+  },
+  {
+   "id": "wp-gate-077",
+   "target": 0,
+   "label": 1,
+   "class": "E-conduct",
+   "label_source": "judged",
+   "cluster": "wpg-ee808324",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.9899955527633542,
+     "ms": 845,
+     "cost": 4.4044e-05,
+     "in_tok": 728,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.999
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999348955341824,
+     "ms": 2395,
+     "cost": 0.00013608,
+     "in_tok": 972,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 226,
+     "in_tok": 702,
+     "cost": 2.9484000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.9
+     },
+     "p_violation": 0.9
+    }
+   }
+  },
+  {
+   "id": "wp-gate-078",
+   "target": 1,
+   "label": 0,
+   "class": "N-union",
+   "label_source": "judged",
+   "cluster": "samsung-union",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.028567171996072147,
+     "ms": 722,
+     "cost": 4.477e-05,
+     "in_tok": 740,
+     "err": null,
+     "mass": [
+      0.9984,
+      0.9986
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.12034317947198499,
+     "ms": 2133,
+     "cost": 0.00013804,
+     "in_tok": 986,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9996
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 241,
+     "in_tok": 710,
+     "cost": 2.9820000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.09
+     },
+     "p_violation": 0.09
+    }
+   }
+  },
+  {
+   "id": "wp-gate-079",
+   "target": 1,
+   "label": 0,
+   "class": "N-otherco",
+   "label_source": "judged",
+   "cluster": "hyundai-cartel",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.6107577724286893,
+     "ms": 769,
+     "cost": 4.6222e-05,
+     "in_tok": 764,
+     "err": null,
+     "mass": [
+      0.9984,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9067521706310258,
+     "ms": 2666,
+     "cost": 0.00013944,
+     "in_tok": 996,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 234,
+     "in_tok": 718,
+     "cost": 3.0156e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.57
+     },
+     "p_violation": 0.57
+    }
+   }
+  }
+ ],
+ "agg": {
+  "qwen": {
+   "n": 80,
+   "ok": 77,
+   "hit": 74,
+   "ms": 76667,
+   "cost": 0.0036053159999999995
+  },
+  "deepseek": {
+   "n": 80,
+   "ok": 80,
+   "hit": 75,
+   "ms": 225126,
+   "cost": 0.011135040000000004
+  },
+  "jev": {
+   "n": 80,
+   "ok": 80,
+   "hit": 76,
+   "ms": 21359,
+   "cost": 0.00240954
+  }
+ }
+}
