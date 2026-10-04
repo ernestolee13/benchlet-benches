@@ -1,0 +1,2851 @@
+{
+ "task": "sns-banban-review-hard",
+ "bench": "sns-banban-review-hard@1",
+ "items_sha256": "940eefb113cad4ef2939903a06cb6ab8452aefc90cec8487aca35d3cfa01c976",
+ "template": "generic",
+ "date": "2026-09-30",
+ "arms": {
+  "qwen": {
+   "model": "qwen/qwen3.8-27b",
+   "provider": "parasail",
+   "family": "Qwen",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.0605,
+   "smoke": {
+    "arm": "qwen",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [
+     "뻔한 5건 중 2건 틀림 (sns-bbr-001, sns-bbr-004). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점"
+    ],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9967,
+    "spread": 0.020120822929902728,
+    "distinct_p": 10,
+    "n_calls": 13,
+    "smoke_acc": 0.6,
+    "cost": 0.000493317,
+    "per_item": [
+     {
+      "id": "sns-bbr-001",
+      "target": 0,
+      "hit": 0,
+      "p": 0.2274
+     },
+     {
+      "id": "sns-bbr-003",
+      "target": 0,
+      "hit": 1,
+      "p": 0.8168
+     },
+     {
+      "id": "sns-bbr-004",
+      "target": 0,
+      "hit": 0,
+      "p": 0.1586
+     },
+     {
+      "id": "sns-bbr-000",
+      "target": 1,
+      "hit": 1,
+      "p": 0.1871
+     },
+     {
+      "id": "sns-bbr-006",
+      "target": 1,
+      "hit": 1,
+      "p": 0.083
+     }
+    ]
+   }
+  },
+  "deepseek": {
+   "model": "deepseek/deepseek-v4-flash",
+   "provider": "digitalocean",
+   "family": "DeepSeek",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.14,
+   "smoke": {
+    "arm": "deepseek",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [
+     "뻔한 5건 중 3건 틀림 (sns-bbr-001, sns-bbr-003, sns-bbr-004). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점"
+    ],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9935,
+    "spread": 0.002143403371926109,
+    "distinct_p": 10,
+    "n_calls": 13,
+    "smoke_acc": 0.4,
+    "cost": 0.0014039200000000001,
+    "per_item": [
+     {
+      "id": "sns-bbr-001",
+      "target": 0,
+      "hit": 0,
+      "p": 0.252
+     },
+     {
+      "id": "sns-bbr-003",
+      "target": 0,
+      "hit": 0,
+      "p": 0.4968
+     },
+     {
+      "id": "sns-bbr-004",
+      "target": 0,
+      "hit": 0,
+      "p": 0.2191
+     },
+     {
+      "id": "sns-bbr-000",
+      "target": 1,
+      "hit": 1,
+      "p": 0.4715
+     },
+     {
+      "id": "sns-bbr-006",
+      "target": 1,
+      "hit": 1,
+      "p": 0.4533
+     }
+    ]
+   }
+  },
+  "jev": {
+   "model": "typesafe/jev-1.13",
+   "provider": "openrouter",
+   "family": "Jev",
+   "mode": "typed",
+   "prob_source": "typed",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.042,
+   "smoke": {
+    "arm": "jev",
+    "mode": "typed",
+    "usable": true,
+    "reasons": [],
+    "has_logprobs": null,
+    "reasoning_tokens_zero": null,
+    "provider_match": null,
+    "mass_min": null,
+    "spread": null,
+    "distinct_p": null,
+    "n_calls": 5,
+    "smoke_acc": 1.0,
+    "cost": 0.000215712,
+    "per_item": [
+     {
+      "id": "sns-bbr-001",
+      "target": 0,
+      "hit": 1,
+      "p": 0.81,
+      "pred": null
+     },
+     {
+      "id": "sns-bbr-003",
+      "target": 0,
+      "hit": 1,
+      "p": 0.88,
+      "pred": null
+     },
+     {
+      "id": "sns-bbr-004",
+      "target": 0,
+      "hit": 1,
+      "p": 0.76,
+      "pred": null
+     },
+     {
+      "id": "sns-bbr-000",
+      "target": 1,
+      "hit": 1,
+      "p": 0.46,
+      "pred": null
+     },
+     {
+      "id": "sns-bbr-006",
+      "target": 1,
+      "hit": 1,
+      "p": 0.33,
+      "pred": null
+     }
+    ]
+   }
+  }
+ },
+ "items": [
+  {
+   "id": "sns-bbr-000",
+   "target": 1,
+   "label": 0,
+   "class": "OK-trap",
+   "label_source": "constructed",
+   "cluster": "bb-291",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.2767016621692912,
+     "ms": 1024,
+     "cost": 7.7803e-05,
+     "in_tok": 1286,
+     "err": null,
+     "mass": [
+      0.9967,
+      0.999
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4628214971326846,
+     "ms": 2637,
+     "cost": 0.00022008000000000002,
+     "in_tok": 1572,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.992
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 278,
+     "in_tok": 1029,
+     "cost": 4.3218e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.37
+     },
+     "p_violation": 0.37
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-001",
+   "target": 0,
+   "label": 1,
+   "class": "V-name",
+   "label_source": "constructed",
+   "cluster": "bb-259",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.27694483494651,
+     "ms": 1054,
+     "cost": 7.3568e-05,
+     "in_tok": 1216,
+     "err": null,
+     "mass": [
+      0.9968,
+      0.9983
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.48737895486036986,
+     "ms": 3044,
+     "cost": 0.00020776000000000003,
+     "in_tok": 1484,
+     "err": null,
+     "mass": [
+      0.9998,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 270,
+     "in_tok": 996,
+     "cost": 4.1832e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.8
+     },
+     "p_violation": 0.8
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-002",
+   "target": 1,
+   "label": 0,
+   "class": "OK-trap",
+   "label_source": "judged",
+   "cluster": "bb-247",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.19803550610701426,
+     "ms": 1014,
+     "cost": 7.6835e-05,
+     "in_tok": 1270,
+     "err": null,
+     "mass": [
+      0.9979,
+      0.9988
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.48963262646288064,
+     "ms": 2435,
+     "cost": 0.00022064,
+     "in_tok": 1576,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 224,
+     "in_tok": 1020,
+     "cost": 4.284e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.23
+     },
+     "p_violation": 0.23
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-003",
+   "target": 0,
+   "label": 1,
+   "class": "V-claim",
+   "label_source": "constructed",
+   "cluster": "bb-260",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.8078806327006636,
+     "ms": 971,
+     "cost": 7.8166e-05,
+     "in_tok": 1292,
+     "err": null,
+     "mass": [
+      0.9987,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.5090568275802181,
+     "ms": 2323,
+     "cost": 0.00022428000000000001,
+     "in_tok": 1602,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9935
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 239,
+     "in_tok": 1046,
+     "cost": 4.3932000000000006e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.87
+     },
+     "p_violation": 0.87
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-004",
+   "target": 0,
+   "label": 1,
+   "class": "V-fit",
+   "label_source": "constructed",
+   "cluster": "bb-185",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.17189933609908384,
+     "ms": 1290,
+     "cost": 7.7077e-05,
+     "in_tok": 1274,
+     "err": null,
+     "mass": [
+      0.9977,
+      0.999
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.44114913126969735,
+     "ms": 2621,
+     "cost": 0.00022512000000000004,
+     "in_tok": 1608,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9987
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 262,
+     "in_tok": 1040,
+     "cost": 4.368e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.75
+     },
+     "p_violation": 0.75
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-005",
+   "target": 1,
+   "label": 0,
+   "class": "OK-trap",
+   "label_source": "judged",
+   "cluster": "bb-223",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": null,
+     "ms": 401,
+     "cost": 0.0,
+     "in_tok": 0,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"qwen/qwen3.8-27b is temporarily rate-limited upstream. Please retry shortly, or add ",
+     "mass": [
+      null,
+      null
+     ],
+     "provider": null,
+     "reasoning_tokens": [
+      null,
+      null
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4886903094481238,
+     "ms": 2691,
+     "cost": 0.00022036000000000004,
+     "in_tok": 1574,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 362,
+     "in_tok": 1042,
+     "cost": 4.3764e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.44
+     },
+     "p_violation": 0.44
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-006",
+   "target": 1,
+   "label": 0,
+   "class": "OK-plain",
+   "label_source": "judged",
+   "cluster": "bb-271",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.08301669956351002,
+     "ms": 932,
+     "cost": 7.6351e-05,
+     "in_tok": 1262,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.47674258879778086,
+     "ms": 2465,
+     "cost": 0.00021504000000000003,
+     "in_tok": 1536,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 235,
+     "in_tok": 1025,
+     "cost": 4.305000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.27
+     },
+     "p_violation": 0.27
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-007",
+   "target": 1,
+   "label": 0,
+   "class": "OK-trap",
+   "label_source": "constructed",
+   "cluster": "bb-293",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.24895507254020074,
+     "ms": 1191,
+     "cost": 7.6714e-05,
+     "in_tok": 1268,
+     "err": null,
+     "mass": [
+      0.9971,
+      0.9988
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.49832131990526723,
+     "ms": 3402,
+     "cost": 0.00021924,
+     "in_tok": 1566,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9996
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 366,
+     "in_tok": 1036,
+     "cost": 4.3512000000000006e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.47
+     },
+     "p_violation": 0.47
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-008",
+   "target": 1,
+   "label": 0,
+   "class": "OK-plain",
+   "label_source": "judged",
+   "cluster": "bb-204",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.1561005890868546,
+     "ms": 862,
+     "cost": 7.5625e-05,
+     "in_tok": 1250,
+     "err": null,
+     "mass": [
+      0.9987,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.49788988626416125,
+     "ms": 2027,
+     "cost": 0.00021392000000000004,
+     "in_tok": 1528,
+     "err": null,
+     "mass": [
+      0.9998,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 245,
+     "in_tok": 1017,
+     "cost": 4.2714e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.71
+     },
+     "p_violation": 0.71
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-009",
+   "target": 1,
+   "label": 0,
+   "class": "OK-plain",
+   "label_source": "judged",
+   "cluster": "bb-243",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.1138852930948698,
+     "ms": 992,
+     "cost": 7.8408e-05,
+     "in_tok": 1296,
+     "err": null,
+     "mass": [
+      0.9974,
+      0.9988
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.38940051741559967,
+     "ms": 2149,
+     "cost": 0.00022316000000000003,
+     "in_tok": 1594,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9991
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 267,
+     "in_tok": 1043,
+     "cost": 4.380600000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.22
+     },
+     "p_violation": 0.22
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-010",
+   "target": 0,
+   "label": 1,
+   "class": "V-claim",
+   "label_source": "constructed",
+   "cluster": "bb-228",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.824112204815356,
+     "ms": 1101,
+     "cost": 8.2401e-05,
+     "in_tok": 1362,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.5030524312026987,
+     "ms": 2523,
+     "cost": 0.00023380000000000002,
+     "in_tok": 1670,
+     "err": null,
+     "mass": [
+      0.9988,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 248,
+     "in_tok": 1096,
+     "cost": 4.6032e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.87
+     },
+     "p_violation": 0.87
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-011",
+   "target": 1,
+   "label": 0,
+   "class": "OK-plain",
+   "label_source": "judged",
+   "cluster": "bb-225",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.20436588325104135,
+     "ms": 1003,
+     "cost": 7.502e-05,
+     "in_tok": 1240,
+     "err": null,
+     "mass": [
+      0.9954,
+      0.9988
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.49729759954316627,
+     "ms": 2960,
+     "cost": 0.00020860000000000003,
+     "in_tok": 1490,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 323,
+     "in_tok": 986,
+     "cost": 4.1411999999999996e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.42
+     },
+     "p_violation": 0.42
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-012",
+   "target": 1,
+   "label": 0,
+   "class": "OK-trap",
+   "label_source": "judged",
+   "cluster": "bb-264",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.09318378630555346,
+     "ms": 974,
+     "cost": 7.792400000000001e-05,
+     "in_tok": 1288,
+     "err": null,
+     "mass": [
+      0.9963,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.471991743550017,
+     "ms": 2271,
+     "cost": 0.00022176000000000002,
+     "in_tok": 1584,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 239,
+     "in_tok": 1043,
+     "cost": 4.380600000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.34
+     },
+     "p_violation": 0.34
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-013",
+   "target": 1,
+   "label": 0,
+   "class": "OK-trap",
+   "label_source": "constructed",
+   "cluster": "bb-274",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.12789306005428866,
+     "ms": 1030,
+     "cost": 7.8408e-05,
+     "in_tok": 1296,
+     "err": null,
+     "mass": [
+      0.9971,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.16045870703103765,
+     "ms": 3394,
+     "cost": 0.00022064,
+     "in_tok": 1576,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 283,
+     "in_tok": 1039,
+     "cost": 4.3638000000000005e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.41
+     },
+     "p_violation": 0.41
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-014",
+   "target": 0,
+   "label": 1,
+   "class": "V-fit",
+   "label_source": "constructed",
+   "cluster": "bb-146",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.09670623325586326,
+     "ms": 1227,
+     "cost": 7.114799999999999e-05,
+     "in_tok": 1176,
+     "err": null,
+     "mass": [
+      0.9959,
+      0.9985
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.31198025654417805,
+     "ms": 3245,
+     "cost": 0.00020608000000000003,
+     "in_tok": 1472,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 279,
+     "in_tok": 993,
+     "cost": 4.1706000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.67
+     },
+     "p_violation": 0.67
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-015",
+   "target": 0,
+   "label": 1,
+   "class": "V-claim",
+   "label_source": "constructed",
+   "cluster": "bb-233",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.8221678087732015,
+     "ms": 887,
+     "cost": 7.9013e-05,
+     "in_tok": 1306,
+     "err": null,
+     "mass": [
+      0.9986,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4986886440530661,
+     "ms": 2771,
+     "cost": 0.00022624000000000003,
+     "in_tok": 1616,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9994
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 248,
+     "in_tok": 1071,
+     "cost": 4.4982e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.9
+     },
+     "p_violation": 0.9
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-016",
+   "target": 0,
+   "label": 1,
+   "class": "V-name",
+   "label_source": "constructed",
+   "cluster": "bb-208",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.4124939694537224,
+     "ms": 959,
+     "cost": 7.502e-05,
+     "in_tok": 1240,
+     "err": null,
+     "mass": [
+      0.9963,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4911213768143174,
+     "ms": 4232,
+     "cost": 0.00021532000000000005,
+     "in_tok": 1538,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 262,
+     "in_tok": 998,
+     "cost": 4.1916e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.79
+     },
+     "p_violation": 0.79
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-017",
+   "target": 0,
+   "label": 1,
+   "class": "V-fit",
+   "label_source": "constructed",
+   "cluster": "bb-182",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.14120594580797421,
+     "ms": 941,
+     "cost": 7.489899999999999e-05,
+     "in_tok": 1238,
+     "err": null,
+     "mass": [
+      0.9962,
+      0.9984
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.09138043771129416,
+     "ms": 2406,
+     "cost": 0.00021896000000000003,
+     "in_tok": 1564,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9987
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 229,
+     "in_tok": 1008,
+     "cost": 4.2336e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.65
+     },
+     "p_violation": 0.65
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-018",
+   "target": 0,
+   "label": 1,
+   "class": "V-claim",
+   "label_source": "constructed",
+   "cluster": "bb-201",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.9355442954660781,
+     "ms": 906,
+     "cost": 7.7561e-05,
+     "in_tok": 1282,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.5210502185418743,
+     "ms": 3699,
+     "cost": 0.00022176000000000002,
+     "in_tok": 1584,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9996
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 269,
+     "in_tok": 1045,
+     "cost": 4.389e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.93
+     },
+     "p_violation": 0.93
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-019",
+   "target": 0,
+   "label": 1,
+   "class": "V-fit",
+   "label_source": "constructed",
+   "cluster": "bb-145",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.13719862082890844,
+     "ms": 1484,
+     "cost": 6.933300000000001e-05,
+     "in_tok": 1146,
+     "err": null,
+     "mass": [
+      0.9973,
+      0.9986
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.21918813893984299,
+     "ms": 3046,
+     "cost": 0.00019740000000000003,
+     "in_tok": 1410,
+     "err": null,
+     "mass": [
+      1.0,
+      0.997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 284,
+     "in_tok": 952,
+     "cost": 3.9984e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.66
+     },
+     "p_violation": 0.66
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-020",
+   "target": 1,
+   "label": 0,
+   "class": "OK-plain",
+   "label_source": "judged",
+   "cluster": "bb-229",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.10885981099481289,
+     "ms": 1047,
+     "cost": 7.8408e-05,
+     "in_tok": 1296,
+     "err": null,
+     "mass": [
+      0.9971,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.45278079764206974,
+     "ms": 2727,
+     "cost": 0.00022260000000000002,
+     "in_tok": 1590,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 284,
+     "in_tok": 1046,
+     "cost": 4.3932000000000006e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.18
+     },
+     "p_violation": 0.18
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-021",
+   "target": 0,
+   "label": 1,
+   "class": "V-claim",
+   "label_source": "constructed",
+   "cluster": "bb-239",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.7932910528726578,
+     "ms": 925,
+     "cost": 7.368899999999999e-05,
+     "in_tok": 1218,
+     "err": null,
+     "mass": [
+      0.9975,
+      0.9971
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.42932282507789377,
+     "ms": 2170,
+     "cost": 0.00020888000000000002,
+     "in_tok": 1492,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9984
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 275,
+     "in_tok": 996,
+     "cost": 4.1832e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.82
+     },
+     "p_violation": 0.82
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-022",
+   "target": 0,
+   "label": 1,
+   "class": "V-name",
+   "label_source": "constructed",
+   "cluster": "bb-222",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.586795977914107,
+     "ms": 1132,
+     "cost": 7.2721e-05,
+     "in_tok": 1202,
+     "err": null,
+     "mass": [
+      0.9969,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.500000000565044,
+     "ms": 2454,
+     "cost": 0.00020580000000000002,
+     "in_tok": 1470,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 274,
+     "in_tok": 999,
+     "cost": 4.195800000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.83
+     },
+     "p_violation": 0.83
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-023",
+   "target": 0,
+   "label": 1,
+   "class": "V-fit",
+   "label_source": "constructed",
+   "cluster": "bb-200",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.18711232029944305,
+     "ms": 938,
+     "cost": 7.6714e-05,
+     "in_tok": 1268,
+     "err": null,
+     "mass": [
+      0.9966,
+      0.9981
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4900976573741762,
+     "ms": 2849,
+     "cost": 0.00022036000000000004,
+     "in_tok": 1574,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 393,
+     "in_tok": 1049,
+     "cost": 4.4058000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.48
+     },
+     "p_violation": 0.48
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-024",
+   "target": 1,
+   "label": 0,
+   "class": "OK-plain",
+   "label_source": "judged",
+   "cluster": "bb-206",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.18897868563161288,
+     "ms": 1007,
+     "cost": 7.8287e-05,
+     "in_tok": 1294,
+     "err": null,
+     "mass": [
+      0.998,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4269397626252926,
+     "ms": 2432,
+     "cost": 0.00022120000000000004,
+     "in_tok": 1580,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9979
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 241,
+     "in_tok": 1027,
+     "cost": 4.3134e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.32
+     },
+     "p_violation": 0.32
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-025",
+   "target": 1,
+   "label": 0,
+   "class": "OK-plain",
+   "label_source": "judged",
+   "cluster": "bb-211",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.34400803371193317,
+     "ms": 1058,
+     "cost": 7.8408e-05,
+     "in_tok": 1296,
+     "err": null,
+     "mass": [
+      0.9968,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.5023830591998136,
+     "ms": 2441,
+     "cost": 0.00022428000000000001,
+     "in_tok": 1602,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 230,
+     "in_tok": 1056,
+     "cost": 4.4352000000000005e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.35
+     },
+     "p_violation": 0.35
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-026",
+   "target": 1,
+   "label": 0,
+   "class": "OK-plain",
+   "label_source": "judged",
+   "cluster": "bb-230",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.12195047051124078,
+     "ms": 790,
+     "cost": 7.489899999999999e-05,
+     "in_tok": 1238,
+     "err": null,
+     "mass": [
+      0.9969,
+      0.9986
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.41002355247369665,
+     "ms": 3064,
+     "cost": 0.00021588000000000003,
+     "in_tok": 1542,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9987
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 226,
+     "in_tok": 1021,
+     "cost": 4.2882e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.28
+     },
+     "p_violation": 0.28
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-027",
+   "target": 0,
+   "label": 1,
+   "class": "V-name",
+   "label_source": "constructed",
+   "cluster": "bb-180",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.2681686624024494,
+     "ms": 1213,
+     "cost": 7.5504e-05,
+     "in_tok": 1248,
+     "err": null,
+     "mass": [
+      0.9939,
+      0.9981
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.48579941062337006,
+     "ms": 2848,
+     "cost": 0.00021196000000000002,
+     "in_tok": 1514,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 279,
+     "in_tok": 997,
+     "cost": 4.1874000000000006e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.81
+     },
+     "p_violation": 0.81
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-028",
+   "target": 1,
+   "label": 0,
+   "class": "OK-plain",
+   "label_source": "judged",
+   "cluster": "bb-181",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.09523690982369531,
+     "ms": 954,
+     "cost": 7.381e-05,
+     "in_tok": 1220,
+     "err": null,
+     "mass": [
+      0.997,
+      0.9979
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.42801146648214056,
+     "ms": 2359,
+     "cost": 0.00021168000000000003,
+     "in_tok": 1512,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9987
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 275,
+     "in_tok": 993,
+     "cost": 4.1706000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.45
+     },
+     "p_violation": 0.45
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-029",
+   "target": 1,
+   "label": 0,
+   "class": "OK-trap",
+   "label_source": "judged",
+   "cluster": "bb-122",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.15551457629489826,
+     "ms": 1114,
+     "cost": 6.909099999999999e-05,
+     "in_tok": 1142,
+     "err": null,
+     "mass": [
+      0.996,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.31158449852187486,
+     "ms": 2998,
+     "cost": 0.00020132000000000003,
+     "in_tok": 1438,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9996
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 297,
+     "in_tok": 961,
+     "cost": 4.0362000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.27
+     },
+     "p_violation": 0.27
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-030",
+   "target": 1,
+   "label": 0,
+   "class": "OK-plain",
+   "label_source": "judged",
+   "cluster": "bb-227",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.21225165454371442,
+     "ms": 901,
+     "cost": 7.7319e-05,
+     "in_tok": 1278,
+     "err": null,
+     "mass": [
+      0.9976,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.463657253743022,
+     "ms": 2461,
+     "cost": 0.00022316000000000003,
+     "in_tok": 1594,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9996
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 232,
+     "in_tok": 1044,
+     "cost": 4.3848000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.54
+     },
+     "p_violation": 0.54
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-031",
+   "target": 0,
+   "label": 1,
+   "class": "V-name",
+   "label_source": "constructed",
+   "cluster": "bb-205",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.2993780303796192,
+     "ms": 897,
+     "cost": 7.308400000000001e-05,
+     "in_tok": 1208,
+     "err": null,
+     "mass": [
+      0.9979,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.47674259106017847,
+     "ms": 2358,
+     "cost": 0.00020692,
+     "in_tok": 1478,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9993
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 258,
+     "in_tok": 1018,
+     "cost": 4.2756e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.83
+     },
+     "p_violation": 0.83
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-032",
+   "target": 1,
+   "label": 0,
+   "class": "OK-trap",
+   "label_source": "judged",
+   "cluster": "bb-237",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.10270144840847915,
+     "ms": 965,
+     "cost": 7.1874e-05,
+     "in_tok": 1188,
+     "err": null,
+     "mass": [
+      0.9985,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.479633491246661,
+     "ms": 2484,
+     "cost": 0.00020720000000000002,
+     "in_tok": 1480,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9989
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 227,
+     "in_tok": 989,
+     "cost": 4.153800000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.31
+     },
+     "p_violation": 0.31
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-033",
+   "target": 0,
+   "label": 1,
+   "class": "V-fit",
+   "label_source": "constructed",
+   "cluster": "bb-183",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.2098141984319772,
+     "ms": 929,
+     "cost": 7.1753e-05,
+     "in_tok": 1186,
+     "err": null,
+     "mass": [
+      0.9978,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.19211676019694202,
+     "ms": 2759,
+     "cost": 0.00020244000000000002,
+     "in_tok": 1446,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 275,
+     "in_tok": 972,
+     "cost": 4.0824e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.54
+     },
+     "p_violation": 0.54
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-034",
+   "target": 1,
+   "label": 0,
+   "class": "OK-plain",
+   "label_source": "judged",
+   "cluster": "bb-209",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.23131985427087665,
+     "ms": 1288,
+     "cost": 7.7198e-05,
+     "in_tok": 1276,
+     "err": null,
+     "mass": [
+      0.9973,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.5056630075491058,
+     "ms": 2119,
+     "cost": 0.00022512000000000004,
+     "in_tok": 1608,
+     "err": null,
+     "mass": [
+      0.9935,
+      0.9991
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 306,
+     "in_tok": 1059,
+     "cost": 4.4478000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.43
+     },
+     "p_violation": 0.43
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-035",
+   "target": 0,
+   "label": 1,
+   "class": "V-fit",
+   "label_source": "constructed",
+   "cluster": "bb-121",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.2273796381264141,
+     "ms": 970,
+     "cost": 7.2963e-05,
+     "in_tok": 1206,
+     "err": null,
+     "mass": [
+      0.9963,
+      0.998
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4816913914701102,
+     "ms": 2529,
+     "cost": 0.00020972000000000002,
+     "in_tok": 1498,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 290,
+     "in_tok": 981,
+     "cost": 4.120200000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.74
+     },
+     "p_violation": 0.74
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-036",
+   "target": 1,
+   "label": 0,
+   "class": "OK-trap",
+   "label_source": "judged",
+   "cluster": "bb-207",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.08197679347223111,
+     "ms": 892,
+     "cost": 7.284199999999999e-05,
+     "in_tok": 1204,
+     "err": null,
+     "mass": [
+      0.9985,
+      0.9978
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4265611567864619,
+     "ms": 2921,
+     "cost": 0.00021168000000000003,
+     "in_tok": 1512,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 230,
+     "in_tok": 1006,
+     "cost": 4.2252e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.19
+     },
+     "p_violation": 0.19
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-037",
+   "target": 0,
+   "label": 1,
+   "class": "V-claim",
+   "label_source": "constructed",
+   "cluster": "bb-261",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.28207004994004325,
+     "ms": 1485,
+     "cost": 8.0586e-05,
+     "in_tok": 1332,
+     "err": null,
+     "mass": [
+      0.9985,
+      0.999
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4999999989184644,
+     "ms": 2327,
+     "cost": 0.00022540000000000003,
+     "in_tok": 1610,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9988
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 291,
+     "in_tok": 1052,
+     "cost": 4.4184e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.83
+     },
+     "p_violation": 0.83
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-038",
+   "target": 1,
+   "label": 0,
+   "class": "OK-trap",
+   "label_source": "constructed",
+   "cluster": "bb-290",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.09242440605288355,
+     "ms": 1312,
+     "cost": 7.8771e-05,
+     "in_tok": 1302,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4819213107919553,
+     "ms": 2580,
+     "cost": 0.00022400000000000002,
+     "in_tok": 1600,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9996
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 315,
+     "in_tok": 1046,
+     "cost": 4.3932000000000006e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.26
+     },
+     "p_violation": 0.26
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-039",
+   "target": 0,
+   "label": 1,
+   "class": "V-name",
+   "label_source": "constructed",
+   "cluster": "bb-198",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.2837733479161565,
+     "ms": 963,
+     "cost": 7.5625e-05,
+     "in_tok": 1250,
+     "err": null,
+     "mass": [
+      0.995,
+      0.9986
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.477250431871364,
+     "ms": 3081,
+     "cost": 0.00021840000000000002,
+     "in_tok": 1560,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9995
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 290,
+     "in_tok": 1018,
+     "cost": 4.2756e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.82
+     },
+     "p_violation": 0.82
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-040",
+   "target": 1,
+   "label": 0,
+   "class": "OK-trap",
+   "label_source": "judged",
+   "cluster": "bb-224",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.255439178172072,
+     "ms": 983,
+     "cost": 7.368899999999999e-05,
+     "in_tok": 1218,
+     "err": null,
+     "mass": [
+      0.9977,
+      0.9982
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.3902362684527208,
+     "ms": 3536,
+     "cost": 0.00021588000000000003,
+     "in_tok": 1542,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9959
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 495,
+     "in_tok": 1028,
+     "cost": 4.317600000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.47
+     },
+     "p_violation": 0.47
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-041",
+   "target": 1,
+   "label": 0,
+   "class": "OK-plain",
+   "label_source": "judged",
+   "cluster": "bb-292",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.04588228841397912,
+     "ms": 808,
+     "cost": 7.695599999999999e-05,
+     "in_tok": 1272,
+     "err": null,
+     "mass": [
+      0.9968,
+      0.999
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.2818388415032162,
+     "ms": 2278,
+     "cost": 0.00021532000000000005,
+     "in_tok": 1538,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9977
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 328,
+     "in_tok": 1020,
+     "cost": 4.284e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.23
+     },
+     "p_violation": 0.23
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-042",
+   "target": 1,
+   "label": 0,
+   "class": "OK-trap",
+   "label_source": "judged",
+   "cluster": "bb-143",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.17715081967132024,
+     "ms": 827,
+     "cost": 7.114799999999999e-05,
+     "in_tok": 1176,
+     "err": null,
+     "mass": [
+      0.9972,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.41213366812643054,
+     "ms": 2157,
+     "cost": 0.0002044,
+     "in_tok": 1460,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 298,
+     "in_tok": 981,
+     "cost": 4.120200000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.41
+     },
+     "p_violation": 0.41
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-043",
+   "target": 0,
+   "label": 1,
+   "class": "V-name",
+   "label_source": "constructed",
+   "cluster": "bb-273",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.28004332277270944,
+     "ms": 826,
+     "cost": 7.3568e-05,
+     "in_tok": 1216,
+     "err": null,
+     "mass": [
+      0.9984,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.13605705626745232,
+     "ms": 3869,
+     "cost": 0.00021000000000000004,
+     "in_tok": 1500,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9982
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 244,
+     "in_tok": 990,
+     "cost": 4.1580000000000005e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.71
+     },
+     "p_violation": 0.71
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-044",
+   "target": 0,
+   "label": 1,
+   "class": "V-name",
+   "label_source": "constructed",
+   "cluster": "bb-241",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.29254952250351013,
+     "ms": 792,
+     "cost": 7.5504e-05,
+     "in_tok": 1248,
+     "err": null,
+     "mass": [
+      0.9982,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.44136191171643374,
+     "ms": 2596,
+     "cost": 0.00021196000000000002,
+     "in_tok": 1514,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9978
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 289,
+     "in_tok": 1022,
+     "cost": 4.2924e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.76
+     },
+     "p_violation": 0.76
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-045",
+   "target": 0,
+   "label": 1,
+   "class": "V-fit",
+   "label_source": "constructed",
+   "cluster": "bb-184",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.46213186540464735,
+     "ms": 842,
+     "cost": 7.284199999999999e-05,
+     "in_tok": 1204,
+     "err": null,
+     "mass": [
+      0.9976,
+      0.9983
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4999999981494201,
+     "ms": 2427,
+     "cost": 0.00020944,
+     "in_tok": 1496,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9996
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 219,
+     "in_tok": 999,
+     "cost": 4.195800000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.81
+     },
+     "p_violation": 0.81
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-046",
+   "target": 0,
+   "label": 1,
+   "class": "V-claim",
+   "label_source": "constructed",
+   "cluster": "bb-226",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.8553631106785772,
+     "ms": 942,
+     "cost": 7.8166e-05,
+     "in_tok": 1292,
+     "err": null,
+     "mass": [
+      0.998,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4856202744335398,
+     "ms": 2558,
+     "cost": 0.00022176000000000002,
+     "in_tok": 1584,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9991
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 250,
+     "in_tok": 1066,
+     "cost": 4.4772000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.87
+     },
+     "p_violation": 0.87
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-047",
+   "target": 0,
+   "label": 1,
+   "class": "V-claim",
+   "label_source": "constructed",
+   "cluster": "bb-213",
+   "n_options": 2,
+   "arms": {
+    "qwen": {
+     "p_violation": 0.9546348912623801,
+     "ms": 970,
+     "cost": 8.0223e-05,
+     "in_tok": 1326,
+     "err": null,
+     "mass": [
+      0.9985,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.5000000014653307,
+     "ms": 2973,
+     "cost": 0.00023828000000000003,
+     "in_tok": 1702,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9985
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 235,
+     "in_tok": 1089,
+     "cost": 4.5738e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.91
+     },
+     "p_violation": 0.91
+    }
+   }
+  }
+ ],
+ "agg": {
+  "qwen": {
+   "n": 48,
+   "ok": 47,
+   "hit": 31,
+   "ms": 48013,
+   "cost": 0.0035569160000000015
+  },
+  "deepseek": {
+   "n": 48,
+   "ok": 48,
+   "hit": 27,
+   "ms": 130696,
+   "cost": 0.010385200000000002
+  },
+  "jev": {
+   "n": 48,
+   "ok": 48,
+   "hit": 45,
+   "ms": 13258,
+   "cost": 0.0020601
+  }
+ }
+}
