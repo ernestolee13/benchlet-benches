@@ -1,0 +1,1976 @@
+{
+ "task": "rag-passage-relevance",
+ "bench": "rag-passage-relevance@1",
+ "items_sha256": "de3b7db62c6887cbaa576a6e50fe0fb4e727d6c09a98926f6ea06259d957ff41",
+ "template": "generic",
+ "date": "2026-10-04",
+ "arms": {
+  "glm": {
+   "model": "z-ai/glm-4.7-flash",
+   "provider": "cloudflare",
+   "family": "GLM",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.0605,
+   "smoke": {
+    "arm": "glm",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9794,
+    "spread": 0.0009714411902003173,
+    "distinct_p": 7,
+    "n_calls": 13,
+    "smoke_acc": 1.0,
+    "cost": 0.00017018650000000002,
+    "per_item": [
+     {
+      "id": "rag-passage-relevance-001",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9846
+     },
+     {
+      "id": "rag-passage-relevance-003",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9799
+     },
+     {
+      "id": "rag-passage-relevance-004",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9566
+     },
+     {
+      "id": "rag-passage-relevance-000",
+      "target": 1,
+      "hit": 1,
+      "p": 0.4388
+     },
+     {
+      "id": "rag-passage-relevance-002",
+      "target": 1,
+      "hit": 1,
+      "p": 0.28
+     }
+    ]
+   }
+  },
+  "qwen": {
+   "model": "qwen/qwen3.8-27b",
+   "provider": "parasail",
+   "family": "Qwen",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.0605,
+   "smoke": {
+    "arm": "qwen",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.997,
+    "spread": 0.0,
+    "distinct_p": 9,
+    "n_calls": 13,
+    "smoke_acc": 1.0,
+    "cost": 0.00013098249999999998,
+    "per_item": [
+     {
+      "id": "rag-passage-relevance-001",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9997
+     },
+     {
+      "id": "rag-passage-relevance-003",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9995
+     },
+     {
+      "id": "rag-passage-relevance-004",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9949
+     },
+     {
+      "id": "rag-passage-relevance-000",
+      "target": 1,
+      "hit": 1,
+      "p": 0.001
+     },
+     {
+      "id": "rag-passage-relevance-002",
+      "target": 1,
+      "hit": 1,
+      "p": 0.0002
+     }
+    ]
+   }
+  },
+  "deepseek": {
+   "model": "deepseek/deepseek-v4-flash",
+   "provider": "digitalocean",
+   "family": "DeepSeek",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.14,
+   "smoke": {
+    "arm": "deepseek",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [
+     "확률값 종류 2/10: 반올림된 로그확률 의심 (AUROC 를 믿지 마라)"
+    ],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9999,
+    "spread": 1.2720293907086955e-07,
+    "distinct_p": 2,
+    "n_calls": 13,
+    "smoke_acc": 1.0,
+    "cost": 0.00035742000000000006,
+    "per_item": [
+     {
+      "id": "rag-passage-relevance-001",
+      "target": 0,
+      "hit": 1,
+      "p": 1.0
+     },
+     {
+      "id": "rag-passage-relevance-003",
+      "target": 0,
+      "hit": 1,
+      "p": 1.0
+     },
+     {
+      "id": "rag-passage-relevance-004",
+      "target": 0,
+      "hit": 1,
+      "p": 1.0
+     },
+     {
+      "id": "rag-passage-relevance-000",
+      "target": 1,
+      "hit": 1,
+      "p": 0.0
+     },
+     {
+      "id": "rag-passage-relevance-002",
+      "target": 1,
+      "hit": 1,
+      "p": 0.0
+     }
+    ]
+   }
+  },
+  "jev": {
+   "model": "typesafe/jev-1.13",
+   "provider": "openrouter",
+   "family": "Jev",
+   "mode": "typed",
+   "prob_source": "typed",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.042,
+   "smoke": {
+    "arm": "jev",
+    "mode": "typed",
+    "usable": true,
+    "reasons": [],
+    "has_logprobs": null,
+    "reasoning_tokens_zero": null,
+    "provider_match": null,
+    "mass_min": null,
+    "spread": null,
+    "distinct_p": null,
+    "n_calls": 5,
+    "smoke_acc": 1.0,
+    "cost": 8.9586e-05,
+    "per_item": [
+     {
+      "id": "rag-passage-relevance-001",
+      "target": 0,
+      "hit": 1,
+      "p": 0.91,
+      "pred": null
+     },
+     {
+      "id": "rag-passage-relevance-003",
+      "target": 0,
+      "hit": 1,
+      "p": 0.97,
+      "pred": null
+     },
+     {
+      "id": "rag-passage-relevance-004",
+      "target": 0,
+      "hit": 1,
+      "p": 0.92,
+      "pred": null
+     },
+     {
+      "id": "rag-passage-relevance-000",
+      "target": 1,
+      "hit": 1,
+      "p": 0.11,
+      "pred": null
+     },
+     {
+      "id": "rag-passage-relevance-002",
+      "target": 1,
+      "hit": 1,
+      "p": 0.04,
+      "pred": null
+     }
+    ]
+   }
+  }
+ },
+ "items": [
+  {
+   "id": "rag-passage-relevance-000",
+   "target": 1,
+   "label": 0,
+   "class": "N-adjacent",
+   "label_source": "constructed",
+   "cluster": "무료 체험 기간은 며칠인가요",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.43877033439907276,
+     "ms": 747,
+     "cost": 2.7466999999999996e-05,
+     "in_tok": 454,
+     "err": null,
+     "mass": [
+      0.987,
+      0.9932
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0009343357082722745,
+     "ms": 769,
+     "cost": 2.0086e-05,
+     "in_tok": 332,
+     "err": null,
+     "mass": [
+      0.9983,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 1.1387844602326812e-06,
+     "ms": 3442,
+     "cost": 5.7400000000000006e-05,
+     "in_tok": 410,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 350,
+     "in_tok": 433,
+     "cost": 1.8186000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.13
+     },
+     "p_violation": 0.13
+    }
+   }
+  },
+  {
+   "id": "rag-passage-relevance-001",
+   "target": 0,
+   "label": 1,
+   "class": "R-direct",
+   "label_source": "constructed",
+   "cluster": "API 호출 한도는 분당 몇 회인가요",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9848883584646857,
+     "ms": 781,
+     "cost": 2.5531e-05,
+     "in_tok": 422,
+     "err": null,
+     "mass": [
+      0.9961,
+      0.9983
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9997259625246318,
+     "ms": 984,
+     "cost": 2.0448999999999997e-05,
+     "in_tok": 338,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9979
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999997217381098,
+     "ms": 2720,
+     "cost": 5.4600000000000006e-05,
+     "in_tok": 390,
+     "err": null,
+     "mass": [
+      0.9999,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 259,
+     "in_tok": 424,
+     "cost": 1.7808000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.92
+     },
+     "p_violation": 0.92
+    }
+   }
+  },
+  {
+   "id": "rag-passage-relevance-002",
+   "target": 1,
+   "label": 0,
+   "class": "N-topic-only",
+   "label_source": "constructed",
+   "cluster": "API 호출 한도는 분당 몇 회인가요",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.22568347955889567,
+     "ms": 1083,
+     "cost": 2.4804999999999997e-05,
+     "in_tok": 410,
+     "err": null,
+     "mass": [
+      0.993,
+      0.9953
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.00020866931843389693,
+     "ms": 801,
+     "cost": 1.9238999999999997e-05,
+     "in_tok": 318,
+     "err": null,
+     "mass": [
+      0.998,
+      0.9982
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 1.7365081551747592e-07,
+     "ms": 3596,
+     "cost": 5.152000000000001e-05,
+     "in_tok": 368,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 258,
+     "in_tok": 419,
+     "cost": 1.7598e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "p_violation": 0.05
+    }
+   }
+  },
+  {
+   "id": "rag-passage-relevance-003",
+   "target": 0,
+   "label": 1,
+   "class": "R-direct",
+   "label_source": "constructed",
+   "cluster": "데이터는 어느 지역 서버에 저장되나요",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9742519929832617,
+     "ms": 758,
+     "cost": 2.6499e-05,
+     "in_tok": 438,
+     "err": null,
+     "mass": [
+      0.9947,
+      0.9985
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9994881634671358,
+     "ms": 884,
+     "cost": 2.0328e-05,
+     "in_tok": 336,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.997
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.999999774656092,
+     "ms": 2548,
+     "cost": 5.432e-05,
+     "in_tok": 388,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 215,
+     "in_tok": 427,
+     "cost": 1.7934e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.97
+     },
+     "p_violation": 0.97
+    }
+   }
+  },
+  {
+   "id": "rag-passage-relevance-004",
+   "target": 0,
+   "label": 1,
+   "class": "R-direct",
+   "label_source": "constructed",
+   "cluster": "2단계 인증에 어떤 앱을 쓸 수 있나",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9600358421515183,
+     "ms": 728,
+     "cost": 2.7588e-05,
+     "in_tok": 456,
+     "err": null,
+     "mass": [
+      0.9959,
+      0.9977
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9945917630918353,
+     "ms": 743,
+     "cost": 2.0206999999999998e-05,
+     "in_tok": 334,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9945
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999997722515097,
+     "ms": 2642,
+     "cost": 5.7680000000000003e-05,
+     "in_tok": 412,
+     "err": null,
+     "mass": [
+      0.9999,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 313,
+     "in_tok": 430,
+     "cost": 1.806e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.91
+     },
+     "p_violation": 0.91
+    }
+   }
+  },
+  {
+   "id": "rag-passage-relevance-005",
+   "target": 1,
+   "label": 0,
+   "class": "N-adjacent",
+   "label_source": "constructed",
+   "cluster": "파일 하나의 최대 크기는 얼마인가요",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.27998309963593393,
+     "ms": 753,
+     "cost": 2.5894e-05,
+     "in_tok": 428,
+     "err": null,
+     "mass": [
+      0.998,
+      0.9917
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0004859099595560651,
+     "ms": 1289,
+     "cost": 1.9723e-05,
+     "in_tok": 326,
+     "err": null,
+     "mass": [
+      0.9982,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 7.232960668676242e-07,
+     "ms": 5101,
+     "cost": 5.348000000000001e-05,
+     "in_tok": 382,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 228,
+     "in_tok": 421,
+     "cost": 1.7682e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "p_violation": 0.05
+    }
+   }
+  },
+  {
+   "id": "rag-passage-relevance-006",
+   "target": 0,
+   "label": 1,
+   "class": "R-direct",
+   "label_source": "constructed",
+   "cluster": "서비스 점검은 보통 언제 하나요",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9742519961539697,
+     "ms": 10591,
+     "cost": 2.6741e-05,
+     "in_tok": 442,
+     "err": null,
+     "mass": [
+      0.991,
+      0.9974
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9983121167503135,
+     "ms": 801,
+     "cost": 1.9723e-05,
+     "in_tok": 326,
+     "err": null,
+     "mass": [
+      0.996,
+      0.9968
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9997219662694081,
+     "ms": 3233,
+     "cost": 5.516e-05,
+     "in_tok": 394,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 215,
+     "in_tok": 425,
+     "cost": 1.785e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.97
+     },
+     "p_violation": 0.97
+    }
+   }
+  },
+  {
+   "id": "rag-passage-relevance-007",
+   "target": 1,
+   "label": 0,
+   "class": "N-topic-only",
+   "label_source": "constructed",
+   "cluster": "구독을 해지하면 데이터는 언제 삭제되",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.06859456792033097,
+     "ms": 709,
+     "cost": 2.6378e-05,
+     "in_tok": 436,
+     "err": null,
+     "mass": [
+      0.9983,
+      0.9986
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0007151781181647253,
+     "ms": 731,
+     "cost": 2.0086e-05,
+     "in_tok": 332,
+     "err": null,
+     "mass": [
+      0.9986,
+      0.9983
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 3.8761004949167725e-07,
+     "ms": 2843,
+     "cost": 5.432e-05,
+     "in_tok": 388,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 217,
+     "in_tok": 429,
+     "cost": 1.8018000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.07
+     },
+     "p_violation": 0.07
+    }
+   }
+  },
+  {
+   "id": "rag-passage-relevance-008",
+   "target": 0,
+   "label": 1,
+   "class": "R-direct",
+   "label_source": "constructed",
+   "cluster": "비밀번호는 최소 몇 자여야 하나요",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9565774389838757,
+     "ms": 761,
+     "cost": 2.6014999999999997e-05,
+     "in_tok": 430,
+     "err": null,
+     "mass": [
+      0.9953,
+      0.9983
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9997272272507871,
+     "ms": 787,
+     "cost": 1.9723e-05,
+     "in_tok": 326,
+     "err": null,
+     "mass": [
+      0.997,
+      0.9983
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999993904524647,
+     "ms": 2461,
+     "cost": 5.3200000000000006e-05,
+     "in_tok": 380,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 229,
+     "in_tok": 425,
+     "cost": 1.785e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.97
+     },
+     "p_violation": 0.97
+    }
+   }
+  },
+  {
+   "id": "rag-passage-relevance-009",
+   "target": 0,
+   "label": 1,
+   "class": "R-direct",
+   "label_source": "constructed",
+   "cluster": "해외 배송은 어느 나라가 가능한가요",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9383634652184534,
+     "ms": 766,
+     "cost": 2.6741e-05,
+     "in_tok": 442,
+     "err": null,
+     "mass": [
+      0.9934,
+      0.9969
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9996358845669986,
+     "ms": 900,
+     "cost": 1.9481000000000002e-05,
+     "in_tok": 322,
+     "err": null,
+     "mass": [
+      0.9987,
+      0.9984
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999995288778684,
+     "ms": 2591,
+     "cost": 5.488e-05,
+     "in_tok": 392,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 237,
+     "in_tok": 427,
+     "cost": 1.7934e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.97
+     },
+     "p_violation": 0.97
+    }
+   }
+  },
+  {
+   "id": "rag-passage-relevance-010",
+   "target": 1,
+   "label": 0,
+   "class": "N-keyword",
+   "label_source": "constructed",
+   "cluster": "데이터는 어느 지역 서버에 저장되나요",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.047425871158012764,
+     "ms": 746,
+     "cost": 2.541e-05,
+     "in_tok": 420,
+     "err": null,
+     "mass": [
+      0.9987,
+      0.9988
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0005333205012920323,
+     "ms": 883,
+     "cost": 1.9844e-05,
+     "in_tok": 328,
+     "err": null,
+     "mass": [
+      0.9968,
+      0.998
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 3.6356738436427355e-08,
+     "ms": 4650,
+     "cost": 5.1800000000000005e-05,
+     "in_tok": 370,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 234,
+     "in_tok": 421,
+     "cost": 1.7682e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.03
+     },
+     "p_violation": 0.03
+    }
+   }
+  },
+  {
+   "id": "rag-passage-relevance-011",
+   "target": 1,
+   "label": 0,
+   "class": "N-topic-only",
+   "label_source": "constructed",
+   "cluster": "환불은 결제 후 며칠 안에 신청해야 ",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.1940721699322236,
+     "ms": 717,
+     "cost": 2.6378e-05,
+     "in_tok": 436,
+     "err": null,
+     "mass": [
+      0.9965,
+      0.9965
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.00022089083023631119,
+     "ms": 708,
+     "cost": 1.9481000000000002e-05,
+     "in_tok": 322,
+     "err": null,
+     "mass": [
+      0.9987,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 9.870013372484823e-08,
+     "ms": 4450,
+     "cost": 5.4040000000000004e-05,
+     "in_tok": 386,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 218,
+     "in_tok": 429,
+     "cost": 1.8018000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "p_violation": 0.05
+    }
+   }
+  },
+  {
+   "id": "rag-passage-relevance-012",
+   "target": 1,
+   "label": 0,
+   "class": "N-adjacent",
+   "label_source": "constructed",
+   "cluster": "해외 배송은 어느 나라가 가능한가요",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.06164202735673795,
+     "ms": 798,
+     "cost": 2.662e-05,
+     "in_tok": 440,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9987
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0002730742414485196,
+     "ms": 1111,
+     "cost": 1.9965e-05,
+     "in_tok": 330,
+     "err": null,
+     "mass": [
+      0.997,
+      0.9973
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 2.4191256045097956e-06,
+     "ms": 4709,
+     "cost": 5.5440000000000005e-05,
+     "in_tok": 396,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 227,
+     "in_tok": 425,
+     "cost": 1.785e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.03
+     },
+     "p_violation": 0.03
+    }
+   }
+  },
+  {
+   "id": "rag-passage-relevance-013",
+   "target": 1,
+   "label": 0,
+   "class": "N-adjacent",
+   "label_source": "constructed",
+   "cluster": "서비스 점검은 보통 언제 하나요",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.24837179421838085,
+     "ms": 741,
+     "cost": 2.6983e-05,
+     "in_tok": 446,
+     "err": null,
+     "mass": [
+      0.9949,
+      0.9959
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0005547870940065733,
+     "ms": 969,
+     "cost": 1.9723e-05,
+     "in_tok": 326,
+     "err": null,
+     "mass": [
+      0.9974,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 3.095543147739735e-06,
+     "ms": 2808,
+     "cost": 5.348000000000001e-05,
+     "in_tok": 382,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 240,
+     "in_tok": 423,
+     "cost": 1.7766e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.16
+     },
+     "p_violation": 0.16
+    }
+   }
+  },
+  {
+   "id": "rag-passage-relevance-014",
+   "target": 1,
+   "label": 0,
+   "class": "N-topic-only",
+   "label_source": "constructed",
+   "cluster": "비밀번호는 최소 몇 자여야 하나요",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.18242551602776286,
+     "ms": 9917,
+     "cost": 2.6499e-05,
+     "in_tok": 438,
+     "err": null,
+     "mass": [
+      0.9984,
+      0.9989
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0005105971172555221,
+     "ms": 756,
+     "cost": 2.0086e-05,
+     "in_tok": 332,
+     "err": null,
+     "mass": [
+      0.9958,
+      0.9978
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 1.5324633284189485e-07,
+     "ms": 2735,
+     "cost": 5.516e-05,
+     "in_tok": 394,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 217,
+     "in_tok": 426,
+     "cost": 1.7892e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.03
+     },
+     "p_violation": 0.03
+    }
+   }
+  },
+  {
+   "id": "rag-passage-relevance-015",
+   "target": 1,
+   "label": 0,
+   "class": "N-topic-only",
+   "label_source": "constructed",
+   "cluster": "2단계 인증에 어떤 앱을 쓸 수 있나",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3232410480138164,
+     "ms": 1031,
+     "cost": 2.6257e-05,
+     "in_tok": 434,
+     "err": null,
+     "mass": [
+      0.9978,
+      0.9974
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0007797367424284239,
+     "ms": 752,
+     "cost": 1.9965e-05,
+     "in_tok": 330,
+     "err": null,
+     "mass": [
+      0.9983,
+      0.9997
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 4.5443610771909524e-07,
+     "ms": 3528,
+     "cost": 5.5440000000000005e-05,
+     "in_tok": 396,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 237,
+     "in_tok": 429,
+     "cost": 1.8018000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.08
+     },
+     "p_violation": 0.08
+    }
+   }
+  },
+  {
+   "id": "rag-passage-relevance-016",
+   "target": 1,
+   "label": 0,
+   "class": "N-topic-only",
+   "label_source": "constructed",
+   "cluster": "영수증을 회사 이름으로 받을 수 있나",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.43877033439907276,
+     "ms": 851,
+     "cost": 2.5652e-05,
+     "in_tok": 424,
+     "err": null,
+     "mass": [
+      0.9692,
+      0.9908
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0006116675373937752,
+     "ms": 1096,
+     "cost": 1.936e-05,
+     "in_tok": 320,
+     "err": null,
+     "mass": [
+      0.9986,
+      0.9982
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 9.188434686101045e-07,
+     "ms": 3180,
+     "cost": 5.376000000000001e-05,
+     "in_tok": 384,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 240,
+     "in_tok": 420,
+     "cost": 1.764e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1
+     },
+     "p_violation": 0.1
+    }
+   }
+  },
+  {
+   "id": "rag-passage-relevance-017",
+   "target": 0,
+   "label": 1,
+   "class": "R-direct",
+   "label_source": "constructed",
+   "cluster": "파일 하나의 최대 크기는 얼마인가요",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9845932929767933,
+     "ms": 1315,
+     "cost": 2.6014999999999997e-05,
+     "in_tok": 430,
+     "err": null,
+     "mass": [
+      0.9944,
+      0.9982
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9998593076628356,
+     "ms": 987,
+     "cost": 2.0086e-05,
+     "in_tok": 332,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999842257182827,
+     "ms": 2793,
+     "cost": 5.376000000000001e-05,
+     "in_tok": 384,
+     "err": null,
+     "mass": [
+      0.9999,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 233,
+     "in_tok": 424,
+     "cost": 1.7808000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.98
+     },
+     "p_violation": 0.98
+    }
+   }
+  },
+  {
+   "id": "rag-passage-relevance-018",
+   "target": 1,
+   "label": 0,
+   "class": "N-topic-only",
+   "label_source": "constructed",
+   "cluster": "팀 요금제에 멤버를 몇 명까지 넣을 ",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.18242552714003937,
+     "ms": 757,
+     "cost": 2.6861999999999998e-05,
+     "in_tok": 444,
+     "err": null,
+     "mass": [
+      0.9976,
+      0.9978
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.00028906873347694993,
+     "ms": 983,
+     "cost": 2.0086e-05,
+     "in_tok": 332,
+     "err": null,
+     "mass": [
+      0.9978,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 1.9681721531408207e-06,
+     "ms": 1898,
+     "cost": 5.6000000000000006e-05,
+     "in_tok": 400,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 217,
+     "in_tok": 427,
+     "cost": 1.7934e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "p_violation": 0.06
+    }
+   }
+  },
+  {
+   "id": "rag-passage-relevance-019",
+   "target": 0,
+   "label": 1,
+   "class": "R-direct",
+   "label_source": "constructed",
+   "cluster": "구독을 해지하면 데이터는 언제 삭제되",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9608345976306023,
+     "ms": 10168,
+     "cost": 2.8193e-05,
+     "in_tok": 466,
+     "err": null,
+     "mass": [
+      0.9869,
+      0.9983
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9998121848978735,
+     "ms": 913,
+     "cost": 2.1658999999999997e-05,
+     "in_tok": 358,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999624840932139,
+     "ms": 3033,
+     "cost": 5.8800000000000006e-05,
+     "in_tok": 420,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 228,
+     "in_tok": 447,
+     "cost": 1.8774000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.97
+     },
+     "p_violation": 0.97
+    }
+   }
+  },
+  {
+   "id": "rag-passage-relevance-020",
+   "target": 0,
+   "label": 1,
+   "class": "R-direct",
+   "label_source": "constructed",
+   "cluster": "무료 체험 기간은 며칠인가요",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9848883588375124,
+     "ms": 1722,
+     "cost": 2.6136e-05,
+     "in_tok": 432,
+     "err": null,
+     "mass": [
+      0.9976,
+      0.9989
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9997256814247517,
+     "ms": 833,
+     "cost": 1.9481000000000002e-05,
+     "in_tok": 322,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9969
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999998732665478,
+     "ms": 3958,
+     "cost": 5.376000000000001e-05,
+     "in_tok": 384,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 218,
+     "in_tok": 422,
+     "cost": 1.7724000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.98
+     },
+     "p_violation": 0.98
+    }
+   }
+  },
+  {
+   "id": "rag-passage-relevance-021",
+   "target": 0,
+   "label": 1,
+   "class": "R-direct",
+   "label_source": "constructed",
+   "cluster": "팀 요금제에 멤버를 몇 명까지 넣을 ",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9391622235791326,
+     "ms": 6691,
+     "cost": 2.7224999999999998e-05,
+     "in_tok": 450,
+     "err": null,
+     "mass": [
+      0.9969,
+      0.9969
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9998421593580198,
+     "ms": 809,
+     "cost": 2.0691e-05,
+     "in_tok": 342,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9988
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999998470489766,
+     "ms": 1968,
+     "cost": 5.7400000000000006e-05,
+     "in_tok": 410,
+     "err": null,
+     "mass": [
+      0.9999,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 345,
+     "in_tok": 435,
+     "cost": 1.827e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.98
+     },
+     "p_violation": 0.98
+    }
+   }
+  },
+  {
+   "id": "rag-passage-relevance-022",
+   "target": 0,
+   "label": 1,
+   "class": "R-direct",
+   "label_source": "constructed",
+   "cluster": "영수증을 회사 이름으로 받을 수 있나",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9897705835139012,
+     "ms": 1138,
+     "cost": 2.7709000000000002e-05,
+     "in_tok": 458,
+     "err": null,
+     "mass": [
+      0.9965,
+      0.9979
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9974188251047887,
+     "ms": 800,
+     "cost": 2.1175e-05,
+     "in_tok": 350,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9982
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9852739727841352,
+     "ms": 3101,
+     "cost": 5.796e-05,
+     "in_tok": 414,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 265,
+     "in_tok": 442,
+     "cost": 1.8564e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.96
+     },
+     "p_violation": 0.96
+    }
+   }
+  },
+  {
+   "id": "rag-passage-relevance-023",
+   "target": 0,
+   "label": 1,
+   "class": "R-direct",
+   "label_source": "constructed",
+   "cluster": "환불은 결제 후 며칠 안에 신청해야 ",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.7516282065638822,
+     "ms": 10023,
+     "cost": 2.7104e-05,
+     "in_tok": 448,
+     "err": null,
+     "mass": [
+      0.9874,
+      0.9911
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9997531067803586,
+     "ms": 934,
+     "cost": 2.0328e-05,
+     "in_tok": 336,
+     "err": null,
+     "mass": [
+      0.998,
+      0.9978
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999799340237369,
+     "ms": 2119,
+     "cost": 5.5440000000000005e-05,
+     "in_tok": 396,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 231,
+     "in_tok": 434,
+     "cost": 1.8228e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.96
+     },
+     "p_violation": 0.96
+    }
+   }
+  }
+ ],
+ "agg": {
+  "glm": {
+   "n": 24,
+   "ok": 24,
+   "hit": 24,
+   "ms": 64292,
+   "cost": 0.000636702
+  },
+  "qwen": {
+   "n": 24,
+   "ok": 24,
+   "hit": 24,
+   "ms": 21223,
+   "cost": 0.0004809750000000001
+  },
+  "deepseek": {
+   "n": 24,
+   "ok": 24,
+   "hit": 24,
+   "ms": 76107,
+   "cost": 0.0013187999999999997
+  },
+  "jev": {
+   "n": 24,
+   "ok": 24,
+   "hit": 24,
+   "ms": 5871,
+   "cost": 0.00043108800000000004
+  }
+ }
+}

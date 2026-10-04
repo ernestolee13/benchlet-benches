@@ -1,0 +1,292 @@
+name: rag-passage-relevance
+version: 1
+task_signature:
+  goal: gate
+  answer: binary
+  prob_use: accuracy_only
+  label: constructed
+  unit: pair
+  language: ko
+  n: 24
+question: 이 문단은 질의에 답하는 근거로 쓸 수 있는가. 쓸 수 있다는 것은 문단이 질의가 묻는 사실(값·방법·조건)을 직접 담고 있는 것이다.
+  같은 주제라도 묻는 사실이 없으면 쓸 수 없다. 질의의 낱말이 겹치기만 하는 문단도 쓸 수 없다. 입력은 [질의] 와 [문단]이다.
+choices:
+- 쓸 수 있다
+- 쓸 수 없다
+generator:
+  script: src/build_samples.py
+  seed: 20261001
+source: RAG 근거 선별 샘플 24건. 질의 12개마다 근거 문단 1 + 같은 주제 비근거 문단 1 의 쌍
+domain:
+- rag-passage-relevance
+- sample
+visibility: sample
+items_sha256: de3b7db62c6887cbaa576a6e50fe0fb4e727d6c09a98926f6ea06259d957ff41
+license: CC-BY-4.0
+review:
+  checks_run: 5
+  human_reviewed_fraction: 0.0
+  flagged: 5
+  decided: 0
+note: benchlet 샘플. 작성자가 규칙을 먼저 적고 그 규칙대로 항목을 썼다(constructed). 기계 검증기가 있는 둘은 machine
+owner: ernestolee13
+n: 24
+choices_note: null
+published_at: '2026-10-04'
+type: binary
+classes:
+- N-adjacent
+- N-keyword
+- N-topic-only
+- R-direct
+label_source_mix:
+  machine: 0
+  constructed: 24
+  judged: 0
+  outcome: 0
+experiment:
+  date: '2026-10-04'
+  template: generic
+  runner: benchlet
+  arms:
+    glm:
+      model: z-ai/glm-4.7-flash
+      provider: cloudflare
+      family: GLM
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke:
+        arm: glm
+        mode: logprob
+        usable: true
+        reasons: []
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9794
+        spread: 0.0009714411902003173
+        distinct_p: 7
+        n_calls: 13
+        smoke_acc: 1.0
+        cost: 0.00017018650000000002
+        per_item:
+        - id: rag-passage-relevance-001
+          target: 0
+          hit: 1
+          p: 0.9846
+        - id: rag-passage-relevance-003
+          target: 0
+          hit: 1
+          p: 0.9799
+        - id: rag-passage-relevance-004
+          target: 0
+          hit: 1
+          p: 0.9566
+        - id: rag-passage-relevance-000
+          target: 1
+          hit: 1
+          p: 0.4388
+        - id: rag-passage-relevance-002
+          target: 1
+          hit: 1
+          p: 0.28
+    qwen:
+      model: qwen/qwen3.8-27b
+      provider: parasail
+      family: Qwen
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke:
+        arm: qwen
+        mode: logprob
+        usable: true
+        reasons: []
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.997
+        spread: 0.0
+        distinct_p: 9
+        n_calls: 13
+        smoke_acc: 1.0
+        cost: 0.00013098249999999998
+        per_item:
+        - id: rag-passage-relevance-001
+          target: 0
+          hit: 1
+          p: 0.9997
+        - id: rag-passage-relevance-003
+          target: 0
+          hit: 1
+          p: 0.9995
+        - id: rag-passage-relevance-004
+          target: 0
+          hit: 1
+          p: 0.9949
+        - id: rag-passage-relevance-000
+          target: 1
+          hit: 1
+          p: 0.001
+        - id: rag-passage-relevance-002
+          target: 1
+          hit: 1
+          p: 0.0002
+    deepseek:
+      model: deepseek/deepseek-v4-flash
+      provider: digitalocean
+      family: DeepSeek
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.14
+      smoke:
+        arm: deepseek
+        mode: logprob
+        usable: true
+        reasons:
+        - '확률값 종류 2/10: 반올림된 로그확률 의심 (AUROC 를 믿지 마라)'
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9999
+        spread: 1.2720293907086955e-07
+        distinct_p: 2
+        n_calls: 13
+        smoke_acc: 1.0
+        cost: 0.00035742000000000006
+        per_item:
+        - id: rag-passage-relevance-001
+          target: 0
+          hit: 1
+          p: 1.0
+        - id: rag-passage-relevance-003
+          target: 0
+          hit: 1
+          p: 1.0
+        - id: rag-passage-relevance-004
+          target: 0
+          hit: 1
+          p: 1.0
+        - id: rag-passage-relevance-000
+          target: 1
+          hit: 1
+          p: 0.0
+        - id: rag-passage-relevance-002
+          target: 1
+          hit: 1
+          p: 0.0
+    jev:
+      model: typesafe/jev-1.13
+      provider: openrouter
+      family: Jev
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.042
+      smoke:
+        arm: jev
+        mode: typed
+        usable: true
+        reasons: []
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 1.0
+        cost: 8.9586e-05
+        per_item:
+        - id: rag-passage-relevance-001
+          target: 0
+          hit: 1
+          p: 0.91
+          pred: null
+        - id: rag-passage-relevance-003
+          target: 0
+          hit: 1
+          p: 0.97
+          pred: null
+        - id: rag-passage-relevance-004
+          target: 0
+          hit: 1
+          p: 0.92
+          pred: null
+        - id: rag-passage-relevance-000
+          target: 1
+          hit: 1
+          p: 0.11
+          pred: null
+        - id: rag-passage-relevance-002
+          target: 1
+          hit: 1
+          p: 0.04
+          pred: null
+  protocol:
+    decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
+    logprob_call:
+      max_tokens: 1
+      temperature: 0
+      logprobs: true
+      top_logprobs: 8
+      reasoning:
+        enabled: false
+    provider_pin: provider.only=[pin], allow_fallbacks=false, require_parameters=true
+    binary: '극성 반전 2회 호출 평균: p = ½[P(A|choices[0]=A) + P(B|choices[0]=B)]'
+    multiclass: 항목별 결정론적 셔플 뒤 원 인덱스로 복원(generic) 또는 파일에 든 셔플 그대로(legacy-seed)
+    typed: Jev noul(이진)/choice(다지), 질문을 instructions 로 그대로 전달
+    label_mass: 상위 8토큰 중 라벨 토큰 질량 < 0.5 이면 오류로 두고 세지 않음
+    renormalize: 라벨 토큰 확률을 라벨 집합 안에서 재정규화
+  items_sha256: de3b7db62c6887cbaa576a6e50fe0fb4e727d6c09a98926f6ea06259d957ff41
+results:
+- results/rag-passage-relevance-run.json
+result_summary:
+  glm:
+    acc: 1.0
+    ci95:
+    - 0.8620194241710247
+    - 1.0000000000000002
+    auroc: 1.0
+    brier: 0.036326754116475124
+    n: 24
+    prob_source: logprob
+    model: z-ai/glm-4.7-flash
+    source_badge: author-run
+  qwen:
+    acc: 1.0
+    ci95:
+    - 0.8620194241710247
+    - 1.0000000000000002
+    auroc: 1.0
+    brier: 1.8011158596316137e-06
+    n: 24
+    prob_source: logprob
+    model: qwen/qwen3.8-27b
+    source_badge: author-run
+  deepseek:
+    acc: 1.0
+    ci95:
+    - 0.8620194241710247
+    - 1.0000000000000002
+    auroc: 1.0
+    brier: 9.038969268307494e-06
+    n: 24
+    prob_source: logprob
+    model: deepseek/deepseek-v4-flash
+    source_badge: author-run
+  jev:
+    acc: 1.0
+    ci95:
+    - 0.8620194241710247
+    - 1.0000000000000002
+    auroc: 1.0
+    brier: 0.004208333333333334
+    n: 24
+    prob_source: typed
+    model: typesafe/jev-1.13
+    source_badge: author-run
