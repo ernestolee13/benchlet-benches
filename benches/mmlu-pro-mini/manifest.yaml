@@ -1,0 +1,1452 @@
+name: mmlu-pro-mini
+version: 1
+task_signature:
+  goal: classify
+  answer: choice(n)
+  prob_use: accuracy_only
+  label: machine
+  unit: query
+  language: en
+  n: 100
+question: 다음 시험 문제의 정답은 보기 중 무엇인가. 보기는 최대 열 개이고 하나만 맞다. 입력은 영어 문제와 분야, 보기다.
+choices:
+- '"the message is within his “latitude of acceptance."""'
+- $0.8570$
+- $0.8750$
+- $0.8990$
+- $0.9100$
+- $0.9270$
+- $0.9500$
+- $0.9650$
+- $0.9800$
+- '$0.9830$ '
+- $0.9920$
+- $1,750
+- $1.92 \times 10^{21} \mathrm{~N} / \mathrm{C}$
+- $10,000
+- $10.09
+- $10.42
+- $100
+- $11
+- $17,280
+- $19,440
+- $2,000
+- $2.21 \times 10^{21} \mathrm{~N} / \mathrm{C}$
+- $2.75$$10^{21} \mathrm{~N} / \mathrm{C}$
+- $21,760
+- $22,000
+- $24,560
+- $26,160
+- $27,200
+- $29,360
+- '$3.07$$10^{21} \mathrm{~N} / \mathrm{C}$ '
+- $3.50$$10^{21} \mathrm{~N} / \mathrm{C}$
+- $3.98 \times 10^{21} \mathrm{~N} / \mathrm{C}$
+- $30
+- $30,000
+- $32,700
+- $35,000
+- $4,500
+- $4.10$$10^{21} \mathrm{~N} / \mathrm{C}$
+- $4.78 \times 10^{21} \mathrm{~N} / \mathrm{C}$
+- $40
+- $40,000
+- $45
+- $45,225
+- $5,000
+- $5,500
+- $5.33 \times 10^{21} \mathrm{~N} / \mathrm{C}$
+- $50
+- $50,000
+- $55
+- $55,000
+- $6,000
+- $6.11 \times 10^{21} \mathrm{~N} / \mathrm{C}$
+- $60
+- $60,000
+- $65
+- $65,000
+- $7,500
+- $7.85
+- $7.92
+- $70,000
+- $75
+- $75,000
+- $8,250
+- $8.26
+- $8.42
+- $8.70
+- $85
+- $9
+- $9,500
+- $9.50
+- + 140 (Kcal / mole)
+- + 150( Kcal / mole)
+- + 160 (Kcal / mole)
+- + 170( Kcal / mole)
+- + 180 (Kcal / mole)
+- + 190( Kcal / mole)
+- + 200( Kcal / mole)
+- + 210 (Kcal / mole)
+- + 220 (Kcal / mole)
+- + 230 (Kcal / mole)
+- '- 14.75 cal/deg'
+- '- 15.30 cal/deg'
+- '- 15.60 cal/deg'
+- '- 15.88 cal/deg'
+- '- 15.95 cal/deg'
+- '- 16.14 cal/deg'
+- '- 16.33 cal/deg'
+- '- 16.75 cal/deg'
+- '- 17.05 cal/deg'
+- '- 18.20 cal/deg'
+- -100.456 kJ/kg
+- -150.210 kJ/kg
+- -200.352 kJ/kg
+- -34.087 kJ/kg
+- -50.000 kJ/kg
+- 0.05%
+- 0.1%
+- 0.2%
+- '0.25012345'
+- '0.28934765'
+- '0.29744254'
+- 0.3%
+- '0.32876543'
+- '0.35462541'
+- '0.37654298'
+- '0.41123567'
+- '0.42365489'
+- '0.46789234'
+- 0.5%
+- '0.50567891'
+- 0.656 [{2^(2N)S^2P_eI^2} / {2 T_s}]
+- 0.656 [{2^(2N)S^2P_eI^2} / {3 T_s}]
+- 0.656 [{2^(2N+1)S^2P_eI^2} / {2 T_s}]
+- 0.656 [{2^(2N-1)S^2P_eI^2} / {3 T_s}]
+- 0.7%
+- 0.756 [{2^(2N)S^2P_eI^2} / {2 T_s}]
+- 0.756 [{2^(2N)S^2P_eI^2} / {3 T_s}]
+- 0.756 [{2^(2N+1)S^2P_eI^2} / {3 T_s}]
+- 0.8 × 10^-8 moles^2/liter^2
+- 0.856 [{2^(2N)S^2P_eI^2} / {2 T_s}]
+- 0.856 [{2^(2N)S^2P_eI^2} / {3 T_s}]
+- 0.856 [{2^(2N-1)S^2P_eI^2} / {3 T_s}]
+- 0.9922187 J mol^-1K^-1
+- 1 GHz
+- 1 to 2
+- 1 to 3
+- 1 to 4
+- 1 x 10^5nt
+- 1 x 10^6nt
+- 1%
+- 1.0 × 10^-7 moles^2/liter^2
+- 1.01 × 10^4
+- 1.5%
+- '1.5893'
+- 1.6 × 10^-8 moles^2/liter^2
+- '1.6234'
+- '1.6452'
+- 1.65 × 10^3
+- '1.6758'
+- '1.7100'
+- '1.7323'
+- '1.7671'
+- '1.8432'
+- '1.8500'
+- 1.88 × 10^-5 m^3atm mol^-1K^-1
+- 1.905 J mol^-1K^-1
+- '1.9321'
+- 1.992 × 10^-3 J mol^-1K^-1
+- 1/1024, 1/1024, 1023/1,024
+- 1/16, 1/16, 81/1,024
+- 1/16, 3/16, 729/1,024
+- 1/2, 1/2, 1/1,024
+- 1/32, 1/32, 243/1,024
+- 1/32, 1/64, 255/1,024
+- 1/4, 1/4, 512/1,024
+- 1/4, 1/8, 961/1,024
+- 1/64, 1/4, 342/1,024
+- 1/8, 1/8, 121/1,024
+- 10 MHz
+- 10 degrees, 20 degrees
+- 10%
+- 100 + 100i
+- 100 - 100i
+- 100 MHz
+- 110 $\mathrm{g} \mathrm{mol}^{-1}$
+- '12'
+- 12 degrees, 24 degrees
+- 120°F and 70°F
+- 123 $\mathrm{g} \mathrm{mol}^{-1}$
+- 125.789 kJ/kg
+- 125°F and 74°F
+- '128'
+- '13'
+- 13.93 MHz
+- 130°F and 76°F
+- '1326'
+- 135°F and 68°F
+- 14 degrees, 28 degrees
+- 140°F and 72°F
+- 142 $\mathrm{g} \mathrm{mol}^{-1}$
+- 145°F and 80°F
+- 147°F and 66°F
+- 15 ohms
+- 15%
+- 150 $\mathrm{g} \mathrm{mol}^{-1}$
+- 150°F
+- 150°F and 78°F
+- 155°F and 62°F
+- 158°F
+- '16'
+- 16 per cent
+- 16.6 degrees, 30 degrees
+- 160 $\mathrm{g} \mathrm{mol}^{-1}$
+- 160°F
+- 160°F and 64°F
+- 165°F
+- 166.265 kJ/kg
+- 169 $\mathrm{g} \mathrm{mol}^{-1}$
+- 170°F
+- 172°F
+- 175 $\mathrm{g} \mathrm{mol}^{-1}$
+- 176°F
+- 18 degrees, 36 degrees
+- 18 ohms
+- 180°F
+- 185°F
+- 190 $\mathrm{g} \mathrm{mol}^{-1}$
+- 190°F
+- '2'
+- 2 to 3
+- 2 to 5
+- 2 x 10^5nt
+- 2%
+- 2.0 × 10^-9 moles^2/liter^2
+- 2.2187 × 10^-3 J mol^-1K^-1
+- 2.48 × 10^3
+- 2.5 × 10^-8 moles^2/liter^2
+- 20 degrees, 40 degrees
+- 20 ohms
+- 20 per cent
+- 20%
+- 20.0A
+- 200 $\mathrm{g} \mathrm{mol}^{-1}$
+- 205 $\mathrm{g} \mathrm{mol}^{-1}$
+- '21'
+- '2197'
+- 22 degrees, 44 degrees
+- 23.56 GHz
+- '24'
+- 24 ohms
+- 24 per cent
+- 25 + 25i
+- 25 degrees, 50 degrees
+- 25 ohms
+- 25 – 25i
+- 25%
+- 25.0A
+- '25.67890123'
+- 250 Btu/lbm, 0.34 Btu/lbm-°R
+- '26.78901234'
+- '2652'
+- 267 Btu/lbm, 0.36 Btu/lbm-°R
+- '27.65432109'
+- 27.7g
+- 275 Btu/lbm, 0.35 Btu/lbm-°R
+- 28 ohms
+- '28.17283950'
+- 28.5A
+- 28.7g
+- 280 Btu/lbm, 0.38 Btu/lbm-°R
+- '29.12345678'
+- 29.7g
+- 290 watts/m^2, 255 K, 14.5 watts/m^2
+- 2900 Btu/hr
+- 3 to 1
+- 3 to 2
+- 3 x 10^5nt
+- 3%
+- 3.14 × 10^3
+- 3.2 × 10^-8 moles^2/liter^2
+- 3.85 × 10^-4 m^3atm mol^-1K^-1
+- 30 degrees, 60 degrees
+- 30 ohms
+- 30%
+- 30.0A
+- '30.15928896'
+- 30.7g
+- '31.41592654'
+- 31.7g
+- '32'
+- 32 ohms
+- 32 per cent
+- 32.7g
+- '32.98765432'
+- 3200 Btu/hr
+- 325 watts/m^2, 250 K, 16.25 watts/m^2
+- '3250'
+- '33.33333333'
+- 33.7g
+- 34.087 kJ/kg
+- '34.56789012'
+- 34.7g
+- 35%
+- 35.5A
+- 35.7g
+- 350 watts/m^2, 260 K, 15 watts/m^2
+- 36 ohms
+- 36 per cent
+- 36.7g
+- 368 watts/m^2, 264 K, 18.4 watts/m^2
+- 380 watts/m^2, 265 K, 19 watts/m^2
+- 385.30 × 10^-6 K^-1
+- 4 to 1
+- 4 to 3
+- 4 x 10^5nt
+- 4.0 × 10^-8 moles^2/liter^2
+- 4.20 × 10^3
+- 4.482 × 10^-5 m^3atm mol^-1K^-1
+- 40 ohms
+- 40 per cent
+- 40%
+- 40.0A
+- 400 watts/m^2, 275 K, 20 watts/m^2
+- 4100 Btu/hr
+- 42.58 MHz
+- 420 watts/m^2, 285 K, 21 watts/m^2
+- 44.82 × 10^-6atm^-1
+- 45.0A
+- 450 watts/m^2, 270 K, 22.5 watts/m^2
+- 4500 Btu/hr
+- 475 watts/m^2, 290 K, 23.75 watts/m^2
+- '48'
+- 48 per cent
+- 49%
+- '5'
+- 5 GHz
+- 5 to 3
+- 5 x 10^5nt
+- 5%
+- 5.0 × 10^-8 moles^2/liter^2
+- 5.29 × 10^3
+- 5.30 × 10^-4 m^3atm mol^-1K^-1
+- 50 + 25i
+- 50 + 50i
+- 50 - 25i
+- 50 MHz
+- 50 – 50i
+- 50%
+- 50.000 kJ/kg
+- 50.0A
+- 500 watts/m^2, 280 K, 25 watts/m^2
+- 5000 Btu/hr
+- '52'
+- 52 per cent
+- 5353 Btu/hr
+- 55%
+- 55.0A
+- '56'
+- 59%
+- 6 x 10^5nt
+- 6.02 × 10^3
+- 6.25 × 10^-9 moles^2/liter^2
+- 60.0A
+- 6000 Btu/hr
+- 6200 Btu/hr
+- '64'
+- 64 per cent
+- 64%
+- 68 per cent
+- 6800 Btu/hr
+- 69%
+- '693'
+- 7 x 10^5nt
+- 7.8 × 10^-8 moles^2/liter^2
+- 7.89 × 10^3
+- '72'
+- 74.34 kHz
+- 75 + 75i
+- 75 - 75i
+- 75%
+- 75.123 kJ/kg
+- 7500 Btu/hr
+- 79%
+- '8'
+- 8 degrees, 16 degrees
+- 8 x 10^5nt
+- 8%
+- 8.66 × 10^3
+- 84%
+- 85.16 MHz
+- '8788'
+- 89%
+- 9 x 10^5nt
+- 9.81 × 10^3
+- 99%
+- A misdemeanor has occurred, and an officer must believe that the person he has arrested
+  committed it.
+- A) 2.46, B) 4.6 × 10^-5 mole/liter
+- A) 2.96, B) 4.4 × 10^-5 mole/liter
+- A) 3.16, B) 5.1 × 10^-5 mole/liter
+- A) 3.24, B) 3.5 × 10^-5 mole/liter
+- A) 3.46, B) 5.6 × 10^-5 mole/liter
+- A) 3.54, B) 5.0 × 10^-5 mole/liter
+- A) 4.16, B) 6.9 × 10^-5 mole/liter
+- A) 4.46, B) 6.6 × 10^-5 mole/liter
+- A) 4.54, B) 7.6 × 10^-5 mole/liter
+- ASIC
+- Acts jure gestionis are all actions performed by the State in a public capacity
+- Acts jure gestionis are all decisions made by State courts
+- Acts jure gestionis are all legislative decisions made by the State.
+- Acts jure gestionis are military actions undertaken by States
+- Acts jure gestionis are those undertaken by States in a private capacity
+- 'Adjusted Gross Income: $10,500, Gross Income: $20,500'
+- 'Adjusted Gross Income: $11,500, Gross Income: $22,500'
+- 'Adjusted Gross Income: $12,000, Gross Income: $27,000'
+- 'Adjusted Gross Income: $16,500, Gross Income: $28,500'
+- 'Adjusted Gross Income: $18,500, Gross Income: $24,500'
+- 'Adjusted Gross Income: $19,000, Gross Income: $26,000'
+- 'Adjusted Gross Income: $19,500, Gross Income: $25,500'
+- 'Adjusted Gross Income: $20,000, Gross Income: $25,000'
+- 'Adjusted Gross Income: $8,500, Gross Income: $23,500'
+- 'Adjusted Gross Income: $9,000, Gross Income: $21,000'
+- Adler’s individual psychology.
+- All acts undertaken by State corporations are jure gestionis
+- All conduct undertaken by government officials in their free time is considered
+  jus gestionis.
+- All diplomatic missions undertaken by the State are acts jure gestionis
+- All international treaties signed by the State are acts jure gestionis
+- All purchases by the State are acts jure gestionis
+- An officer may arrest for a felony committed in his presence.
+- An officer may arrest for a misdemeanor that is a breach of peace and committed
+  in arresting party's presence.
+- An officer must have probable cause that a felony has occurred and that the arrested
+  person committed it.
+- Application layer
+- At preschool age, children's vocabulary shrinks before it begins to grow again.
+- Attribute sampling.
+- Available technology and resource prices
+- Bandura's social learning theory
+- Beck’s cognitive-behavioral therapy.
+- Bending stress.
+- Biome maps are based solely on temperature, ignoring other ecological factors
+- Biome maps are outdated
+- Biome maps are too detailed
+- Biome maps classify vegetation based on animal population distribution rather than
+  plant characteristics
+- Biome maps use inaccurate color coding that does not reflect the true diversity
+  of vegetation
+- Both.
+- Breathing involves the conversion of glucose to energy within the mitochondria,
+  while respiration is the act of inhaling and exhaling air.
+- Breathing is the chemical process that occurs within cells, while respiration is
+  the physical movement of the diaphragm and rib muscles.
+- Breathing is the process of breaking down food into energy, while respiration is
+  the act of air moving in and out of the lungs.
+- Breathing refers to the exchange of gases between cells and environment, while respiration
+  is the mechanical process of taking air into the lungs and expelling it.
+- CL circuit.
+- CLR circuit.
+- CO
+- CO2
+- CO3
+- CO32-
+- CPLD
+- CR circuit.
+- Category B agents are characterised by a low mortality rate and are easy to prevent
+  through vaccination.
+- Category B agents are characterised by high mortality rates and include agents which
+  are difficult to treat medically.
+- Category B agents are diseases that only affect animals and pose no direct threat
+  to humans.
+- Category B agents are non-communicable diseases that pose a high threat to individuals
+  but a low threat to population health.
+- Category B agents are those that have been eradicated but could potentially reemerge
+  due to lowered immunity in the population.
+- Category B agents are those that present little to no risk or morbidity within infected
+  populations, but can have detrimental effects on the ability of a group to perform
+  physical tasks.
+- Category B agents include food and water security threats, with moderate morbidity
+  rates.
+- Category B agents refer to diseases that are prevalent in underdeveloped regions
+  and pose little threat to developed countries.
+- Cluster sampling.
+- Communication layer
+- Complementarity
+- Consumer behavior
+- Consumer preferences
+- Content validity and face validity are the same
+- Content validity involves ensuring the test challenges are suitable for the intended
+  age group, while face validity involves the test's ability to predict future performance.
+- Content validity is determined by expert consensus, while face validity is based
+  on statistical analysis.
+- Content validity measures the extent to which a test measures a sample of the behavioral
+  domain of interest, while face validity refers to the extent that the test looks
+  like it measures what it purports to measure.
+- Convenience sampling.
+- Custom and General Principles of Law are of equal importance, but both supersede
+  treaties
+- Custom supersedes treaties
+- Data-link Layer
+- Demand and supply
+- Discovery sampling.
+- Distance decay
+- Dominance of the subsistence economy
+- During preschool age, children communicate exclusively through non-verbal means
+  and gestures, with no advancement in spoken language.
+- During preschool age, children learn an entirely new language spontaneously without
+  prior exposure.
+- During preschool age, children only learn how to perfectly use grammar without developing
+  their vocabulary.
+- During preschool age, the language development of the child progresses beyond the
+  formation of two-word sentences. He begins to form three-word sentences and, from
+  this point on, his language and grammar become more diverse and complex.
+- EEPROM
+- Economic equality
+- Electronegativity increases with increasing atomic number
+- Electrons are easier to remove from elements with lower atomic number
+- Environmental factors and climate change
+- Erikson's stages of psychosocial development
+- Exposure to high noise levels, maternal hydration levels, paternal exercise habits
+- FPGA
+- Face validity concerns the appropriateness of the content of a test for a particular
+  situation, while content validity is about the appearance of accuracy.
+- Face validity is about the coverage of the material within a test, while content
+  validity is about the test's difficulty.
+- Face validity is measured quantitatively, while content validity is assessed qualitatively.
+- Face validity is related to the test's transparency to the examinees, whereas content
+  validity deals with the test's alignment with curriculum standards.
+- Face validity measures the extent to which a test measures a sample of the behavioral
+  domain of interest, while content validity refers to the extent that the test looks
+  like it measures what it purports to measure
+- Face validity refers to the relevance of the test, while content validity refers
+  to the complexity of the test
+- False, False
+- False, Not Enough Information
+- False, True
+- Father's age, father's diet, teratogens, parental education
+- February 10th
+- February 1st
+- February 21st
+- Freud's psychoanalytic theory
+- Friction.
+- General Principles of Law supersede both custom and treaties
+- Government regulations
+- Halogens gain electrons more readily with increasing atomic number, increasing their
+  electronegativity
+- He failed to modernize France's military, leaving it vulnerable to foreign attacks.
+- He left the administration of his kingdom to professional bureaucrats known as intendants.
+- He was at war for 2/3 of his reign and united the other major powers against him.
+- He was so concerned with ceremonies and appearances that he did not rule his country
+  well.
+- He was too focused on architectural projects, neglecting the needs of his people.
+- Height of AABB = 15 cm, height of aabb = 5 cm, height of AaBb = 10 cm, phenotypic
+  ratios in the F2 generation are 15cm:10cm:5cm = 1:2:1
+- Height of AABB = 20 cm, height of aabb = 10 cm, height of AaBb = 15 cm, phenotypic
+  ratios in the F2 generation are 20cm:15cm:10cm:5cm = 1:4:3:2
+- Height of AABB = 20 cm, height of aabb = 5 cm, height of AaBb = 12.5 cm, phenotypic
+  ratios in the F2 generation are 20cm:15cm:12.5cm:10cm:5cm = 1:1:1:1:1
+- Height of AABB = 20 cm, height of aabb = 5 cm, height of AaBb = 17.5 cm, phenotypic
+  ratios in the F2 generation are 20cm:17.5cm:15cm:10cm:5cm = 1:2:4:2:1
+- Height of AABB = 25 cm, height of aabb = 10 cm, height of AaBb = 17.5 cm, phenotypic
+  ratios in the F2 generation are 25cm:17.5cm:10cm:5cm = 1:1:1:1
+- Height of AABB = 25 cm, height of aabb = 10 cm, height of AaBb = 20 cm, phenotypic
+  ratios in the F2 generation are 25cm:20cm:15cm:10cm:5cm = 1:2:2:1
+- Height of AABB = 25 cm, height of aabb = 5 cm, height of AaBb = 10 cm, phenotypic
+  ratios in the F2 generation are 25cm:15cm:10cm:5cm = 3:3:1:3
+- Height of AABB = 25 cm, height of aabb = 5 cm, height of AaBb = 15 cm, phenotypic
+  ratios in the F2 generation are 25cm:20cm:15cm:10cm:5cm = 1:4:6:4:1
+- Height of AABB = 25 cm, height of aabb = 5 cm, height of AaBb = 20 cm, phenotypic
+  ratios in the F2 generation are 25cm:20cm:15cm:10cm = 1:2:1:2
+- Height of AABB = 30 cm, height of aabb = 5 cm, height of AaBb = 20 cm, phenotypic
+  ratios in the F2 generation are 30cm:20cm:15cm:10cm:5cm = 1:3:3:2:1
+- High birth and death rates
+- High levels of political instability
+- His domination of the nobility left him without friends and allies.
+- His inability to produce a male heir led to a succession crisis.
+- His insistence on religious uniformity led to civil unrest and division.
+- His lack of interest in foreign affairs led to international isolation.
+- His lavish spending led to the financial ruin of his kingdom.
+- Historical patterns of production and cultural practices
+- Household saving can never be negative.
+- Household saving can occasionally be negative.
+- Household saving is always equal to investment.
+- If good A is a complement of good B, the cross elasticity of demand for A with respect
+  to the price of B will be negative. If good A is a substitute for good B, the cross
+  elasticity of demand for A with respect to the price of B will be positive.
+- If good A is a complement of good B, the cross elasticity of demand for A with respect
+  to the price of B will be positive. If good A is a substitute for good B, the cross
+  elasticity of demand for A with respect to the price of B will be negative.
+- Interchanging line 1 and line 2
+- Interchanging line 1 and line 3
+- Interchanging line 3 and line 5
+- Interchanging line 5 and line 6
+- Interchanging line 6 and line 7
+- Interchanging line 7 and line 8
+- Interchanging line 8 and line 9
+- Interface layer
+- International trade agreements
+- Investment is always greater than savings.
+- Investment is always less than savings.
+- Ionization potentials decrease with increasing atomic number
+- Ionization potentials increase with increasing atomic number
+- It cannot call procedures implemented in a different language.
+- It cannot pass parameters by reference.
+- It cannot return a value.
+- It causes the pH to become extremely acidic.
+- It causes the pH to become extremely basic.
+- It causes the pH to equalize with the water's pH.
+- It causes the pH to fluctuate unpredictably.
+- It changes the pH asymptotically to the pKa of the acid.
+- It doubles the pH value.
+- It has little effect.
+- It is used to call procedures with addresses that are farther than 2^16 bytes away.
+- It neutralizes the pH completely.
+- It significantly decreases the pH.
+- It significantly increases the pH.
+- January 10th
+- January 15th
+- January 21st
+- January 28th
+- January 31st
+- Judicial decisions and teachings of the most highly qualified publicists are the
+  only sources of international law.
+- Judicial decisions and teachings of the most highly qualified publicists supersede
+  both custom and treaties
+- LC circuit.
+- LCR circuit.
+- LRC circuit.
+- Language development during preschool age involves understanding complex grammatical
+  rules without the ability to apply them in speech.
+- Language development during preschool age is limited to two-word sentences.
+- Language development regresses during preschool age.
+- Limited access to clean water and sanitation
+- Lower levels of literacy and education
+- Mahler’s object relations theory.
+- Main disease related to age and lifestyle
+- Majority of the population lives in rural areas
+- March 10th
+- March 1st
+- Market saturation
+- Marketing strategies and advertising
+- Mother's blood type, father's blood pressure, season of conception
+- Mother's diet, mother's age, emotional stress in mother, mother's attitude, social
+  class
+- Mother's exercise habits, father's income, baby's gender
+- Movement bias
+- 'NO'
+- NO2
+- NO2-
+- NO3
+- NO3-
+- Neither.
+- Network layer
+- No, because a condition to the homeowner's obligation to pay was not satisfied.
+- No, because a determination of the sufficiency of the evidence is solely within
+  sufficiency of the evidence is solely within the jury's province.
+- No, because even though the wife was the victim of spousal abuse, she could have
+  avoided the danger by safely retreating.
+- No, because the chemist did not directly receive the envelope from the police officers.
+- No, because the chemist did not personally witness the seizure of the powder.
+- No, because the chemist lacks firsthand knowledge that the powder came from the
+  defendant.
+- No, because the contractor breached his duty of good faith and fair dealing by supplying
+  unsatisfactory materials.
+- No, because the contractor should have ensured the homeowner's satisfaction before
+  seeking payment.
+- No, because the homeowner has a right to withhold payment if not completely satisfied.
+- No, because the homeowner was not satisfied with the finish on the cabinets.
+- No, because the wholesaler did not raise the sufficiency-of-the-evidence issue in
+  a motion for judgment as a matter of law before the case went to the jury.
+- No, because the wholesaler's challenge is merely a disagreement with the jury's
+  verdict, not a legal issue for the appellate court.
+- No, because the wife had the opportunity to leave the house but instead chose to
+  kill her husband.
+- No, because the wife's belief in the necessity of deadly force in self-defense was
+  unreasonable.
+- No, because there is no proof that the powder in the envelope is the same powder
+  that was seized.
+- No, unless the envelope and powder are produced in court or their absence is explained.
+- Normal force.
+- Not Enough Information, False
+- Not Enough Information, True
+- O2
+- Over 50% of workforce engaged in agriculture
+- P(total) = 200psia, x(CO_2) = 0.5, x(N_2) = 0.5, M(mixture) = 30lbm/1b - mole, R
+  = 40 (ft - lb) / (lbm-°R)
+- P(total) = 210psia, x(CO_2) = 0.48, x(N_2) = 0.52, M(mixture) = 32lbm/1b - mole,
+  R = 41 (ft - lb) / (lbm-°R)
+- P(total) = 215psia, x(CO_2) = 0.46, x(N_2) = 0.54, M(mixture) = 33lbm/1b - mole,
+  R = 42.5 (ft - lb) / (lbm-°R)
+- P(total) = 220psia, x(CO_2) = 0.42, x(N_2) = 0.58, M(mixture) = 34lbm/1b - mole,
+  R = 42 (ft - lb) / (lbm-°R)
+- P(total) = 229.49psia, x(CO_2) = 0.459, x(N_2) = 0.541, M(mixture) = 35.35lbm/1b
+  - mole, R = 43.7 (ft - lb) / (lbm-°R)
+- P(total) = 230psia, x(CO_2) = 0.45, x(N_2) = 0.55, M(mixture) = 36lbm/1b - mole,
+  R = 44 (ft - lb) / (lbm-°R)
+- P(total) = 235psia, x(CO_2) = 0.47, x(N_2) = 0.53, M(mixture) = 37lbm/1b - mole,
+  R = 44.5 (ft - lb) / (lbm-°R)
+- P(total) = 240psia, x(CO_2) = 0.5, x(N_2) = 0.5, M(mixture) = 38lbm/1b - mole, R
+  = 46 (ft - lb) / (lbm-°R)
+- P(total) = 245psia, x(CO_2) = 0.44, x(N_2) = 0.56, M(mixture) = 39lbm/1b - mole,
+  R = 47 (ft - lb) / (lbm-°R)
+- P(total) = 250psia, x(CO_2) = 0.4, x(N_2) = 0.6, M(mixture) = 40lbm/1b - mole, R
+  = 45 (ft - lb) / (lbm-°R)
+- PAL
+- PLA
+- PLD
+- PROM
+- Parental religion, mother's music preference, father's height
+- Perls’s Gestalt therapy.
+- Physical layer
+- Piaget's theory of cognitive development
+- Population density
+- Preschool children develop the ability to write sentences before they can speak
+  them.
+- Preschool children's language is limited to mimicking sounds without forming coherent
+  words or sentences.
+- Presentation layer
+- Quota sampling.
+- RAM
+- RC circuit.
+- RCL circuit.
+- RL Circuit.
+- RLC circuit.
+- ROM
+- Random-number sampling.
+- Real vegetation types usually grade one into another so it's hard to draw distinct
+  boundaries
+- Removing line 1
+- Removing line 2
+- Removing line 5
+- Respiration and breathing are the same process.
+- Respiration is a voluntary action controlled by the nervous system, while breathing
+  is an involuntary process controlled by the brain stem.
+- Respiration is an energy consuming process, while breathing results in energy production
+  in the cells.
+- Respiration is the process by which organisms produce sound, while breathing is
+  solely for gas exchange purposes.
+- Respiration only occurs in the presence of oxygen, while breathing can occur without
+  oxygen.
+- Respiration refers to the oxidative degradation of nutrients in cells or the exchange
+  of gases between cells and environment, while breathing is the mechanical process
+  of taking air into the lungs and expelling it.
+- Rogers's person-centered therapy
+- Sandel's view is based on a misunderstanding of nature.
+- Saving is equal to zero when consumption equals disposable income.
+- Saving is equal to zero when consumption exceeds disposable income.
+- Security layer
+- Session layer
+- Shear stress.
+- Skinner's behaviorism
+- Snowball sampling.
+- 'Store A: $10.82, Store B: $7.57'
+- 'Store A: $15.00, Store B: $20.00'
+- 'Store A: $18.39, Store B: $23.95'
+- 'Store A: $18.39, Store B: $36.07'
+- 'Store A: $20.57, Store B: $25.72'
+- 'Store A: $23.95, Store B: $18.39'
+- 'Store A: $25.00, Store B: $30.00'
+- 'Store A: $30.00, Store B: $25.00'
+- 'Store A: $36.07, Store B: $18.39'
+- 'Store A: $7.57, Store B: $10.82'
+- Strain.
+- Stratified sampling.
+- Subsidization happens when the free market price is low.
+- Subsidization happens when the government offers low-interest loans to farmers during
+  times of high market volatility.
+- Subsidization happens when the government provides direct cash payments to farmers
+  regardless of market prices.
+- Subsidization is applied when the government enforces a fixed price for agricultural
+  products that is above the market rate.
+- Subsidization occurs when the agriculturists don't have strong political support.
+- Subsidization occurs when the government encourages the export of agricultural products
+  through financial incentives.
+- Subsidization occurs when the government grants tax exemptions to farmers during
+  periods of high agricultural productivity.
+- Subsidization occurs when the price is high and the government sells.
+- Subsidization of agriculture occurs when the government buys when the price is de-pressed,
+  but cannot sell overtly when the price is high.
+- Subsidization takes place when the government imposes tariffs on imported agricultural
+  products to increase their prices.
+- Supply and demand
+- Systematic sampling.
+- The atomic radius decreases with increasing atomic number, which increases electronegativity
+- The country's overall level of education
+- The cross elasticity of demand for A will be infinite if good B's price changes.
+- The cross elasticity of demand for A with respect to the price of B will always
+  be negative
+- The cross elasticity of demand for A with respect to the price of B will always
+  be positive
+- The cross elasticity of demand for A with respect to the price of B will be positive
+  if A and B are unrelated goods.
+- The cross elasticity of demand for A with respect to the price of B will be positive
+  if A is a normal good and B is an inferior good.
+- The cross elasticity of demand for A with respect to the price of B will be positive
+  only if both goods are luxury items.
+- The cross elasticity of demand for A with respect to the price of B will be the
+  same regardless of whether A is a complement or substitute for B.
+- The cross elasticity of demand for A with respect to the price of B will be zero
+- The defendant believed the victim had already evacuated the house.
+- The defendant did not intend to kill the victim.
+- The defendant lacked the requisite mental state required for the commission of the
+  crime.
+- The defendant thought the house was empty when he set the fire.
+- The defendant was acting under duress.
+- The defendant was coerced by another to set the fire.
+- The defendant was insane when he set the fire.
+- The defendant was legally insane at the time of the incident.
+- The defendant was not present at the scene of the accident.
+- The defendant was not responsible for his nephew's safety.
+- The defendant was suffering from temporary insanity.
+- The defendant's actions were an accident, not a crime.
+- The defendant's actions were justifiable under the circumstances.
+- The defendant's criminal liability was superseded by that of the truck driver.
+- The defendant's failure to act was not voluntary.
+- The economy is in equilibrium when consumption equals saving.
+- The economy is in equilibrium when consumption exceeds saving.
+- The economy is in equilibrium when investment equals saving.
+- The most important characteristics of weak states are their frequent inability to
+  establish and maintain a monopoly of control over the instruments of violence. Even
+  within states with well developed coercive power they do not always retain absolute
+  loyalty and are faced with a real possibility of military intervention. Whilst armed
+  forces are ill-equipped, poorly managed and prone to factional divisions, social
+  actors are powerful enough to resist governance. Therefore, monopoly over the instruments
+  of violence is infrequent.
+- The nuclear charge decreases with increasing atomic number, making the atoms less
+  electronegative
+- The program adds I and J and stores the result in K.
+- The program calculates the arithmetic mean of I and J and stores the result in K.
+- The program calculates the least common multiple of I and J.
+- The program computes the sum of all integers between I and J and assigns it to K.
+- The program determines if I is a multiple of J and stores the boolean result in
+  K.
+- The program finds the greatest common divisor K of two positive integers I and J.
+- The program finds the least common multiple of I and J and assigns it to K.
+- The program generates a random number between I and J and assigns it to K.
+- The program multiplies I and J and assigns the product to K.
+- The program subtracts J from I and stores the result in K.
+- The size and influence of the firm
+- The valence electron shell becomes more shielded with increasing atomic number,
+  thus reducing electronegativity
+- The valence electrons become more tightly bound with increasing atomic number, leading
+  to higher electronegativity
+- The victim died of a heart attack before the fire spread to his bedroom.
+- There is a hierarchy, but it varies from case to case
+- There is no hierarchy between the formal sources of international law
+- They have a special layer of fur for insulation
+- They have gills that extract oxygen from water and help regulate body temperature
+- They hibernate during cold weather
+- They maintain a constant internal body temperature and have a tremendous amount
+  of subcutaneous fat serving an insulating function
+- They produce antifreeze proteins to prevent their blood from freezing
+- They utilize blubber to generate heat through a shivering mechanism
+- Torsion.
+- Transport layer
+- Treaties and General Principles of Law are of equal importance, but both supersede
+  custom
+- Treaties and custom are of equal importance, but General Principles of Law supersede
+  both
+- Treaties supersede custom
+- True, Both are True
+- True, False
+- True, Not Enough Information
+- True, True
+- Unlike Category A agents, B agents refer to emerging security threats which have
+  the potential to be utilised as biological weapons after further development.
+- Unlike Category A agents, Category B agents refer to diseases that are easily transmitted
+  through air.
+- V_ab(t) = - 15te^-4t + 15e^-4t + 18e^-2t
+- V_ab(t) = - 15te^-4t - 15e^-4t + 18e^-2t
+- V_ab(t) = - 15te^-4t - 15e^-4t - 18e^-2t
+- V_ab(t) = -30te^-4t - 30e^-4t + 36e^-2t
+- V_ab(t) = 15te^-4t + 15e^-4t + 18e^-2t
+- V_ab(t) = 15te^-4t + 15e^-4t - 18e^-2t
+- V_ab(t) = 15te^-4t - 15e^-4t + 18e^-2t
+- V_ab(t) = 30te^-4t + 30e^-4t - 36e^-2t
+- V_ab(t) = 30te^-4t - 30e^-4t + 36e^-2t
+- Variable sampling.
+- Velocity is (0, 2, -1), acceleration is (-4, -4, 0), velocity magnitude is √5, acceleration
+  magnitude is √32
+- Velocity is (1, -2, 0), acceleration is (2, 3, -1), velocity magnitude is √6, acceleration
+  magnitude is √14
+- Velocity is (1, 0, -2), acceleration is (0, -3, 1), velocity magnitude is √5, acceleration
+  magnitude is √17
+- Velocity is (1, 1, -1), acceleration is (0, -2, 1), velocity magnitude is √3, acceleration
+  magnitude is √6
+- Velocity is (1, 2, -1), acceleration is (0, -3, 2), velocity magnitude is √4, acceleration
+  magnitude is √16
+- Velocity is (2, -1, -2), acceleration is (4, 4, 1), velocity magnitude is √9, acceleration
+  magnitude is √33
+- Velocity is (2, -2, -1), acceleration is (4, 0, 1), velocity magnitude is √9, acceleration
+  magnitude is √18
+- Velocity is (2, 0, -1), acceleration is (0, -4, 1), velocity magnitude is √4, acceleration
+  magnitude is √16
+- Velocity is (2, 0, -1), acceleration is (0, -4, 1), velocity magnitude is √5, acceleration
+  magnitude is √17
+- Velocity is (2, 2, -2), acceleration is (0, -4, 2), velocity magnitude is √12, acceleration
+  magnitude is √20
+- Weak states are characterized by a high level of social-political cohesion and a
+  strong monopoly over the instruments of violence. The regime is often legitimized
+  through the use of force.
+- Weak states do not utilize coercive capabilities in normal policy. State institutions
+  typically have a developed bureaucracy which legitimizes the regime's ability to
+  rule. Paradoxically, however, the more a weak state exercises its coercive power
+  the more it reinforces its infrastructural power but reduces its ability to rule.
+- Weak states have a monopoly on the instruments of violence and have the coercive
+  capability to force compliance even when social actors attempt to resist. The regimes
+  lack popular legitimacy, the integrity of the regime's survival is consolidated
+  by power resulting in the naturalization of violence within society.
+- Weak states have a monopoly over social actors and are able to maintain control
+  through the use of force. They also have well-equipped and well-managed armed forces.
+- Weak states have a well-developed bureaucracy and are able to enforce their policies
+  through a cohesive social-political structure. They often rely on the legitimacy
+  of the regime to maintain control.
+- Weak states have strong military capabilities and maintain absolute loyalty from
+  the armed forces. They frequently intervene in social matters to maintain control.
+- Weak states possess high levels of social-political cohesion which is correlated
+  to the hegemonic enforcement idea of the regime, which in turn becomes accepted
+  to the point of being legitimized as the social norm.
+- Women held in inferior place in society
+- Yes, because a criminal defendant's Sixth Amendment right to a jury trial prohibits
+  a court from refusing to submit affirmative defenses to the jury.
+- Yes, because an object in official custody is self-authenticating.
+- Yes, because the appellate court has the power to review all aspects of the case,
+  including the sufficiency of the evidence.
+- Yes, because the challenge was raised and ruled on by the trial court before the
+  wholesaler filed the appeal.
+- Yes, because the chemist's recognition of the officers' handwriting is sufficient
+  authentication.
+- Yes, because the contractor fulfilled his part of the contract by completing the
+  renovation.
+- Yes, because the contractor has the right to sue for the balance of the contract
+  price.
+- Yes, because the envelope was properly sealed and initialed by the officers.
+- Yes, because the homeowner breached the covenant of good faith and fair dealing
+  by rejecting the cabinets without justification.
+- Yes, because the homeowner cannot base the payment on personal satisfaction.
+- Yes, because the homeowner was the first party to breach the contract.
+- Yes, because the powder is sufficiently identified as having come from the defendant.
+- Yes, because the wholesaler has the right to appeal the trial court's decisions.
+- Yes, because the wholesaler's challenge pertains to a fundamental aspect of the
+  trial process.
+- Yes, because the wife had no other means to protect herself from the husband's constant
+  violent attacks.
+- Yes, because the wife was acting under duress due to constant physical abuse.
+- Yes, because the wife was suffering from a psychological condition, battered women's
+  syndrome, which justifies her actions.
+- Yes, because, as the trial court acknowledged, the wholesaler has strong arguments
+  on the challenge.
+- Yes, because, on these facts, a reasonable jury could conclude that the wife acted
+  in self- defense by using necessary force to protect herself from the husband's
+  constant violent attacks.
+- '[0, 1, 2]'
+- '[0, 1, 3]'
+- '[0, 1, 4]'
+- '[0, 1]'
+- '[0, 2, 3]'
+- '[0, 2, 4]'
+- '[0, 2]'
+- '[0, 3, 4]'
+- '[0, 3]'
+- '[0, 4]'
+- a cell wall made of cellulose
+- a curved line sloping upward from left to right.
+- a straight diagonal line sloping downward from left to right.
+- a straight diagonal line sloping downward from right to left.
+- a straight diagonal line sloping upward from left to right.
+- a straight horizontal line.
+- a straight vertical line.
+- a) Volume of liquid = 0.005 ft^3, Mass of liquid = 0.8 lbm. b) Volume of vapor =
+  9.995 ft^3, Mass of vapor = 2.2 lbm
+- a) Volume of liquid = 0.008 ft^3, Mass of liquid = 0.75 lbm. b) Volume of vapor
+  = 9.992 ft^3, Mass of vapor = 2.25 lbm
+- a) Volume of liquid = 0.01 ft^3, Mass of liquid = 0.7 lbm. b) Volume of vapor =
+  10 ft^3, Mass of vapor = 2 lbm
+- a) Volume of liquid = 0.0133 ft^3, Mass of liquid = 0.747 lbm. b) Volume of vapor
+  = 9.99 ft^3, Mass of vapor = 2.253 lbm
+- a) Volume of liquid = 0.015 ft^3, Mass of liquid = 0.9 lbm. b) Volume of vapor =
+  9.985 ft^3, Mass of vapor = 2.1 lbm
+- a) Volume of liquid = 0.018 ft^3, Mass of liquid = 0.95 lbm. b) Volume of vapor
+  = 9.982 ft^3, Mass of vapor = 2.05 lbm
+- a) Volume of liquid = 0.02 ft^3, Mass of liquid = 1 lbm. b) Volume of vapor = 9.98
+  ft^3, Mass of vapor = 2.4 lbm
+- a) Volume of liquid = 0.025 ft^3, Mass of liquid = 0.85 lbm. b) Volume of vapor
+  = 9.975 ft^3, Mass of vapor = 2.15 lbm
+- a) Volume of liquid = 0.03 ft^3, Mass of liquid = 0.9 lbm. b) Volume of vapor =
+  9 ft^3, Mass of vapor = 2.3 lbm
+- a) Volume of liquid = 0.2 ft^3, Mass of liquid = 0.8 lbm. b) Volume of vapor = 8
+  ft^3, Mass of vapor = 2.5 lbm
+- achieve stoic wisdom.
+- acrosomal reaction
+- admissible, as long as the evidence of past crimes does not outweigh its probative
+  value.
+- admissible, because a common plan or scheme may be proven by other similar criminal
+  acts.
+- admissible, because the evidence of past crimes is relevant to the case at hand.
+- admissible, because the man's past crimes demonstrate a pattern of behavior.
+- admissible, because the man's past crimes may be introduced to show that he is more
+  likely to have committed the crime with which he is charged.
+- amplitude
+- an irregular zig-zag line.
+- build grit.
+- calcium reaction
+- centrioles within centrosomes
+- compression.
+- concave to the origin.
+- convex to the origin.
+- cortical reaction
+- decreases
+- develop artistic skills.
+- disappears completely
+- dollar will appreciate.
+- dollar will depreciate.
+- dollar will lose its status as a global currency.
+- dollar will remain stable.
+- duration
+- each is closely related to their local wild ancestors, suggesting that domestication
+  must have occurred very recently and no earlier than 2,000 years ago.
+- each is more closely related to local wild ancestors than one another, suggesting
+  that these modern varieties of rice were domesticated separately in east Asia and
+  south Asia.
+- each is more closely related to one another than their local wild ancestors, suggesting
+  that these modern varieties of rice were developed recently in east Asia.
+- each is unrelated to one another, suggesting that these modern varieties of rice
+  were domesticated independently in east Asia and western Europe.
+- echo
+- enhance physical strength.
+- enhancement is always morally superior to treatment.
+- enhancement is inherently unnatural.
+- enzymatic reaction
+- everyone else in the group agrees with the message.
+- everyone else in the group disagrees with the message.
+- exchange rate will not be affected.
+- exchange rates will be affected but not the value of the dollar.
+- exchange rates will rise but the value of the dollar will not be affected.
+- experienced confusion
+- experienced guilt
+- experienced regret
+- experienced relief
+- felt disappointment
+- felt excitement
+- felt fear
+- felt glad
+- felt indifference
+- felt shame
+- fertilization reaction
+- frequency
+- gets distributed equally among the particles
+- he is distracted while receiving the message.
+- he is in a neutral or slightly negative mood.
+- he is wise because he knows that he can learn from others.
+- he knows what he is supposed to be looking for--knowledge of the essences of things.
+- he strongly disagrees with the message.
+- he thinks the message is boring.
+- his method of asking questions about essences is itself unjustified because he does
+  not know why he engages in such a practice.
+- his wisdom is based on his ability to question everything and everyone.
+- his wisdom is in knowing that he doesn't need to know the essence of things to be
+  wise.
+- his wisdom lies in knowing that he knows more than he thinks he does.
+- human beings have a moral duty to enhance themselves.
+- human beings want enhancement more than they want treatment.
+- improve memory retention.
+- inadmissible, because past crimes are not relevant to the case at hand.
+- inadmissible, because past crimes may not be introduced to prove disposition to
+  commit certain acts.
+- inadmissible, because the evidence of past crimes is prejudicial and would bias
+  the jury.
+- inadmissible, because the man's past crimes are not similar enough to the current
+  charge.
+- inadmissible, because the prosecution cannot initiate evidence of bad character.
+- increase emotional intelligence.
+- increases
+- inflation will rise.
+- intracellular reaction
+- is converted into light and heat
+- is split into smaller particles
+- is transferred to another particle
+- justice, like knowledge, requires that we admit that we know nothing and never will.
+- large vacuoles that store water
+- lysosomes
+- maximize athletic performance.
+- may decrease or increase
+- medical treatment is always more morally acceptable than enhancement.
+- nature in itself has no moral value.
+- nature is sacred and should be honored.
+- oocyte reaction
+- overtones
+- pitch
+- polyspermy reaction
+- producers are operating at the maximum of their production.
+- producers are operating near the limits of their production.
+- producers are under less competitive pressure.
+- producers have fewer alternative goods to produce.
+- producers have less capital to invest.
+- producers have less time to respond to price changes.
+- producers have more time to respond to price changes.
+- promote spiritual growth.
+- proteolytic reaction
+- q* = 100, P* = 10, q* = 93, P* = 10.36 with tax
+- q* = 110, P* = 12, q* = 97, P* = 11.36 with tax
+- q* = 120, P* = 9, q* = 115, P* = 8.86 with tax
+- q* = 130, P* = 7.5, q* = 120, P* = 7.14 with tax
+- q* = 140, P* = 8, q* = 130, P* = 7.36 with tax
+- q* = 150, P* = 7.5, q* = 140, P* = 7.14 with tax
+- q* = 160, P* = 7, q* = 150, P* = 6.64 with tax
+- q* = 70, P* = 11.5, q* = 65, P* = 11.14 with tax
+- q* = 80, P* = 8, q* = 88, P* = 8.36 with tax
+- q* = 90, P* = 15, q* = 95, P* = 9.36 with tax
+- remains unchanged; is conserved
+- resonance
+- reward good behavior.
+- tension.
+- the essence of things is not important for him to be wise.
+- the message is irrelevant to his current situation.
+- the message is outside his "latitude of acceptance."
+- there is a clear moral hierarchy between treatment and enhancement.
+- there is no moral difference between treatment and enhancement.
+- timbre
+- undefined.
+- value of other currencies will fall.
+- velocity
+- wavelength
+- zona reaction
+choices_note: 항목마다 선택지 순서가 다르다(파일에 든 셔플). 여기는 이름 집합
+generator:
+  script: src/build_public_seeds.py
+  seed: 20261003
+source: MMLU-Pro (TIGER-Lab) 1,000건 공통 부분집합, 항목 본문은 OpenEval item 테이블 에서 metabench
+  정오 행렬(모델 121개)로 100건 축약
+domain:
+- mmlu-pro
+- public-seed
+- english
+visibility: sample
+items_sha256: a9d05c09702c12848a298a17b4441774354f6289d92a9621a8f0f8651e59e29e
+license: MIT
+attribution:
+  items: MMLU-Pro (TIGER-Lab) 1,000건 공통 부분집합, 항목 본문은 OpenEval item 테이블
+  model_responses: OpenEval (Open-Eval-Commons, CC-BY-NC-4.0) chain_of_thought_correctness,
+    2024~2026 모델 121개(GPT-5.x, Claude 3.5, Qwen 3 등), 응답 1회 샘플
+  method: 'difficulty-stratified (5 quantiles) + swap search on fit models (objective:
+    mean and max |acc_sub - acc_full| and 1 - Kendall tau); val models held out'
+distill:
+  n: 100
+  seed: 20261003
+  n_items_total: 998
+  n_items_usable: 994
+  n_models: 121
+  fit_models: 84
+  val_models: 37
+  val:
+    mae: 0.02143781608570341
+    max_err: 0.061911468812877235
+    kendall: 0.948170731707317
+    spearman: 0.9913407018673761
+    n_models: 37
+  baseline_val:
+    mae: 0.02738049921148512
+    max_err: 0.07901408450704225
+    kendall: 0.9179331306990881
+    spearman: 0.982803715897936
+    n_models: 37
+  fit:
+    mae: 0.00656558398007091
+    max_err: 0.018913480885311862
+    kendall: 0.991869918699187
+    spearman: 0.9990379335861163
+    n_models: 84
+review:
+  checks_run: 5
+  human_reviewed_fraction: 0.0
+  flagged: 3
+  decided: 0
+note: 공개 벤치의 축약 시드. 라벨은 원천 정답 키. 검증 모델에서의 전체 정확도 재현 오차를 distill.val 에 적었다
+taxonomy:
+  domain:
+  - knowledge-exam
+  input_kind: query
+  source_kind: public-distilled
+  language: en
+keywords:
+- 시험
+owner: ernestolee13
+n: 100
+published_at: '2026-10-04'
+type: multiclass
+classes:
+- biology
+- business
+- chemistry
+- computer science
+- economics
+- engineering
+- history
+- law
+- math
+- other
+- philosophy
+- physics
+- psychology
+label_source_mix:
+  machine: 100
+  constructed: 0
+  judged: 0
+  outcome: 0
+experiment:
+  date: '2026-10-04'
+  template: generic
+  runner: benchlet
+  arms:
+    glm:
+      model: z-ai/glm-4.7-flash
+      provider: cloudflare
+      family: GLM
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke:
+        arm: glm
+        mode: logprob
+        usable: true
+        reasons:
+        - 뻔한 5건 중 5건 틀림 (mmlu-pro-mini-000, mmlu-pro-mini-001, mmlu-pro-mini-002,
+          mmlu-pro-mini-003, mmlu-pro-mini-004). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.7273
+        spread: 0.026266068092165598
+        distinct_p: 4
+        n_calls: 8
+        smoke_acc: 0.0
+        cost: 0.000149435
+        per_item:
+        - id: mmlu-pro-mini-000
+          target: 8
+          hit: 0
+          pred: 2
+        - id: mmlu-pro-mini-001
+          target: 0
+          hit: 0
+          pred: 4
+        - id: mmlu-pro-mini-002
+          target: 9
+          hit: 0
+          pred: 2
+        - id: mmlu-pro-mini-003
+          target: 2
+          hit: 0
+          pred: 1
+        - id: mmlu-pro-mini-004
+          target: 8
+          hit: 0
+          pred: 9
+    qwen:
+      model: qwen/qwen3.8-27b
+      provider: parasail
+      family: Qwen
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke:
+        arm: qwen
+        mode: logprob
+        usable: true
+        reasons:
+        - 뻔한 5건 중 4건 틀림 (mmlu-pro-mini-001, mmlu-pro-mini-002, mmlu-pro-mini-003,
+          mmlu-pro-mini-004). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9485
+        spread: 0.0
+        distinct_p: 5
+        n_calls: 8
+        smoke_acc: 0.2
+        cost: 0.0001617165
+        per_item:
+        - id: mmlu-pro-mini-000
+          target: 8
+          hit: 1
+          pred: 8
+        - id: mmlu-pro-mini-001
+          target: 0
+          hit: 0
+          pred: 9
+        - id: mmlu-pro-mini-002
+          target: 9
+          hit: 0
+          pred: 2
+        - id: mmlu-pro-mini-003
+          target: 2
+          hit: 0
+          pred: 1
+        - id: mmlu-pro-mini-004
+          target: 8
+          hit: 0
+          pred: 1
+    deepseek:
+      model: deepseek/deepseek-v4-flash
+      provider: digitalocean
+      family: DeepSeek
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.14
+      smoke:
+        arm: deepseek
+        mode: logprob
+        usable: true
+        reasons:
+        - 라벨 질량 최소 0.20 < 0.5. 첫 토큰이 라벨이 아닌 항목이 있다 (오류로 두고 세지 않는다)
+        - 뻔한 5건 중 3건 틀림 (mmlu-pro-mini-000, mmlu-pro-mini-001, mmlu-pro-mini-003).
+          다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.1981
+        spread: 0.009209192578752414
+        distinct_p: 3
+        n_calls: 8
+        smoke_acc: 0.4
+        cost: 0.0003409
+        per_item:
+        - id: mmlu-pro-mini-000
+          target: 8
+          hit: 0
+          pred: 9
+        - id: mmlu-pro-mini-001
+          target: 0
+          hit: 0
+          pred: 9
+        - id: mmlu-pro-mini-002
+          target: 9
+          hit: 1
+          pred: 9
+        - id: mmlu-pro-mini-003
+          target: 2
+          hit: 0
+          pred: 6
+        - id: mmlu-pro-mini-004
+          target: 8
+          hit: 1
+          pred: 8
+    jev:
+      model: typesafe/jev-1.13
+      provider: openrouter
+      family: Jev
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.042
+      smoke:
+        arm: jev
+        mode: typed
+        usable: true
+        reasons:
+        - 뻔한 5건 중 3건 틀림 (mmlu-pro-mini-001, mmlu-pro-mini-002, mmlu-pro-mini-003).
+          다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 0.4
+        cost: 0.000157962
+        per_item:
+        - id: mmlu-pro-mini-000
+          target: 8
+          hit: 1
+          p: null
+          pred: 8
+        - id: mmlu-pro-mini-001
+          target: 0
+          hit: 0
+          p: null
+          pred: 9
+        - id: mmlu-pro-mini-002
+          target: 9
+          hit: 0
+          p: null
+          pred: 2
+        - id: mmlu-pro-mini-003
+          target: 2
+          hit: 0
+          p: null
+          pred: 0
+        - id: mmlu-pro-mini-004
+          target: 8
+          hit: 1
+          p: null
+          pred: 8
+  protocol:
+    decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
+    logprob_call:
+      max_tokens: 1
+      temperature: 0
+      logprobs: true
+      top_logprobs: 8
+      reasoning:
+        enabled: false
+    provider_pin: provider.only=[pin], allow_fallbacks=false, require_parameters=true
+    binary: '극성 반전 2회 호출 평균: p = ½[P(A|choices[0]=A) + P(B|choices[0]=B)]'
+    multiclass: 항목별 결정론적 셔플 뒤 원 인덱스로 복원(generic) 또는 파일에 든 셔플 그대로(legacy-seed)
+    typed: Jev noul(이진)/choice(다지), 질문을 instructions 로 그대로 전달
+    label_mass: 상위 8토큰 중 라벨 토큰 질량 < 0.5 이면 오류로 두고 세지 않음
+    renormalize: 라벨 토큰 확률을 라벨 집합 안에서 재정규화
+  items_sha256: a9d05c09702c12848a298a17b4441774354f6289d92a9621a8f0f8651e59e29e
+results:
+- results/mmlu-pro-mini-run.json
+result_summary:
+  glm:
+    acc: 0.42
+    ci95:
+    - 0.327982249185113
+    - 0.5179369200110472
+    auroc: null
+    brier: null
+    n: 100
+    prob_source: logprob
+    model: z-ai/glm-4.7-flash
+    source_badge: author-run
+  qwen:
+    acc: 0.6262626262626263
+    ci95:
+    - 0.5279226260765785
+    - 0.7151696634249464
+    auroc: null
+    brier: null
+    n: 99
+    prob_source: logprob
+    model: qwen/qwen3.8-27b
+    source_badge: author-run
+  deepseek:
+    acc: 0.5876288659793815
+    ci95:
+    - 0.4881528773280669
+    - 0.6804283431206368
+    auroc: null
+    brier: null
+    n: 97
+    prob_source: logprob
+    model: deepseek/deepseek-v4-flash
+    source_badge: author-run
+  jev:
+    acc: 0.87
+    ci95:
+    - 0.7901947810519012
+    - 0.9224290614158573
+    auroc: null
+    brier: null
+    n: 100
+    prob_source: typed
+    model: typesafe/jev-1.13
+    source_badge: author-run
