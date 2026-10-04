@@ -1,0 +1,1980 @@
+{
+ "task": "duplicate-issue-pair",
+ "bench": "duplicate-issue-pair@1",
+ "items_sha256": "b4e30298cbf0198827f31b2d1e5c0ad07e0661d90705e1f6a1f9b5d8cb051f2c",
+ "template": "generic",
+ "date": "2026-10-04",
+ "arms": {
+  "glm": {
+   "model": "z-ai/glm-4.7-flash",
+   "provider": "cloudflare",
+   "family": "GLM",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.0605,
+   "smoke": {
+    "arm": "glm",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [
+     "뻔한 5건 중 1건 틀림 (duplicate-issue-pair-001). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점"
+    ],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.6607,
+    "spread": 0.0,
+    "distinct_p": 8,
+    "n_calls": 13,
+    "smoke_acc": 0.8,
+    "cost": 0.00016080899999999998,
+    "per_item": [
+     {
+      "id": "duplicate-issue-pair-003",
+      "target": 0,
+      "hit": 1,
+      "p": 0.7743
+     },
+     {
+      "id": "duplicate-issue-pair-005",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9349
+     },
+     {
+      "id": "duplicate-issue-pair-006",
+      "target": 0,
+      "hit": 1,
+      "p": 0.8709
+     },
+     {
+      "id": "duplicate-issue-pair-000",
+      "target": 1,
+      "hit": 1,
+      "p": 0.3802
+     },
+     {
+      "id": "duplicate-issue-pair-001",
+      "target": 1,
+      "hit": 0,
+      "p": 0.6588
+     }
+    ]
+   }
+  },
+  "qwen": {
+   "model": "qwen/qwen3.8-27b",
+   "provider": "parasail",
+   "family": "Qwen",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.0605,
+   "smoke": {
+    "arm": "qwen",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [
+     "뻔한 5건 중 1건 틀림 (duplicate-issue-pair-003). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점"
+    ],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9882,
+    "spread": 0.0,
+    "distinct_p": 9,
+    "n_calls": 13,
+    "smoke_acc": 0.8,
+    "cost": 0.0001200925,
+    "per_item": [
+     {
+      "id": "duplicate-issue-pair-003",
+      "target": 0,
+      "hit": 0,
+      "p": 0.1192
+     },
+     {
+      "id": "duplicate-issue-pair-005",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9797
+     },
+     {
+      "id": "duplicate-issue-pair-006",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9937
+     },
+     {
+      "id": "duplicate-issue-pair-000",
+      "target": 1,
+      "hit": 1,
+      "p": 0.0033
+     },
+     {
+      "id": "duplicate-issue-pair-001",
+      "target": 1,
+      "hit": 1,
+      "p": 0.0047
+     }
+    ]
+   }
+  },
+  "deepseek": {
+   "model": "deepseek/deepseek-v4-flash",
+   "provider": "digitalocean",
+   "family": "DeepSeek",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.14,
+   "smoke": {
+    "arm": "deepseek",
+    "mode": "logprob",
+    "usable": false,
+    "reasons": [
+     "3회 재현 편차 0.08 > 0.05"
+    ],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9998,
+    "spread": 0.08187603448259673,
+    "distinct_p": 5,
+    "n_calls": 13,
+    "smoke_acc": 1.0,
+    "cost": 0.00031906,
+    "per_item": [
+     {
+      "id": "duplicate-issue-pair-003",
+      "target": 0,
+      "hit": 1,
+      "p": 0.932
+     },
+     {
+      "id": "duplicate-issue-pair-005",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9999
+     },
+     {
+      "id": "duplicate-issue-pair-006",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9999
+     },
+     {
+      "id": "duplicate-issue-pair-000",
+      "target": 1,
+      "hit": 1,
+      "p": 0.0
+     },
+     {
+      "id": "duplicate-issue-pair-001",
+      "target": 1,
+      "hit": 1,
+      "p": 0.0
+     }
+    ]
+   }
+  },
+  "jev": {
+   "model": "typesafe/jev-1.13",
+   "provider": "openrouter",
+   "family": "Jev",
+   "mode": "typed",
+   "prob_source": "typed",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.042,
+   "smoke": {
+    "arm": "jev",
+    "mode": "typed",
+    "usable": true,
+    "reasons": [],
+    "has_logprobs": null,
+    "reasoning_tokens_zero": null,
+    "provider_match": null,
+    "mass_min": null,
+    "spread": null,
+    "distinct_p": null,
+    "n_calls": 5,
+    "smoke_acc": 1.0,
+    "cost": 8.727600000000001e-05,
+    "per_item": [
+     {
+      "id": "duplicate-issue-pair-003",
+      "target": 0,
+      "hit": 1,
+      "p": 0.69,
+      "pred": null
+     },
+     {
+      "id": "duplicate-issue-pair-005",
+      "target": 0,
+      "hit": 1,
+      "p": 0.56,
+      "pred": null
+     },
+     {
+      "id": "duplicate-issue-pair-006",
+      "target": 0,
+      "hit": 1,
+      "p": 0.57,
+      "pred": null
+     },
+     {
+      "id": "duplicate-issue-pair-000",
+      "target": 1,
+      "hit": 1,
+      "p": 0.02,
+      "pred": null
+     },
+     {
+      "id": "duplicate-issue-pair-001",
+      "target": 1,
+      "hit": 1,
+      "p": 0.03,
+      "pred": null
+     }
+    ]
+   }
+  }
+ },
+ "items": [
+  {
+   "id": "duplicate-issue-pair-000",
+   "target": 1,
+   "label": 0,
+   "class": "N-diff-symptom",
+   "label_source": "constructed",
+   "cluster": "지도에서 현재 위치 버튼이 동",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.380185398513201,
+     "ms": 769,
+     "cost": 2.3111e-05,
+     "in_tok": 382,
+     "err": null,
+     "mass": [
+      0.9914,
+      0.973
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.003268153389142643,
+     "ms": 800,
+     "cost": 1.7545e-05,
+     "in_tok": 290,
+     "err": null,
+     "mass": [
+      0.9932,
+      0.9957
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 6.424860270966198e-06,
+     "ms": 2534,
+     "cost": 4.7040000000000004e-05,
+     "in_tok": 336,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 227,
+     "in_tok": 406,
+     "cost": 1.7052000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.02
+     },
+     "p_violation": 0.02
+    }
+   }
+  },
+  {
+   "id": "duplicate-issue-pair-001",
+   "target": 1,
+   "label": 0,
+   "class": "N-diff-symptom",
+   "label_source": "constructed",
+   "cluster": "다크 모드에서 버튼 글자가 안",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": null,
+     "ms": 8352,
+     "cost": 2.5531e-05,
+     "in_tok": 422,
+     "err": "logprobs 없음",
+     "mass": [
+      0.7608,
+      null
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.004746889077474023,
+     "ms": 802,
+     "cost": 1.8996999999999998e-05,
+     "in_tok": 314,
+     "err": null,
+     "mass": [
+      0.9967,
+      0.9951
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 6.9283181002078985e-06,
+     "ms": 3346,
+     "cost": 4.9840000000000004e-05,
+     "in_tok": 356,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 358,
+     "in_tok": 423,
+     "cost": 1.7766e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.03
+     },
+     "p_violation": 0.03
+    }
+   }
+  },
+  {
+   "id": "duplicate-issue-pair-002",
+   "target": 1,
+   "label": 0,
+   "class": "N-diff-symptom",
+   "label_source": "constructed",
+   "cluster": "2단계 인증 코드가 안 맞음",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.44570038328958117,
+     "ms": 733,
+     "cost": 2.3837e-05,
+     "in_tok": 394,
+     "err": null,
+     "mass": [
+      0.9559,
+      0.9647
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.00961552834588928,
+     "ms": 766,
+     "cost": 1.8392e-05,
+     "in_tok": 304,
+     "err": null,
+     "mass": [
+      0.9953,
+      0.9968
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 2.7140712607363717e-05,
+     "ms": 2069,
+     "cost": 4.8440000000000004e-05,
+     "in_tok": 346,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 353,
+     "in_tok": 414,
+     "cost": 1.7388e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "p_violation": 0.05
+    }
+   }
+  },
+  {
+   "id": "duplicate-issue-pair-003",
+   "target": 0,
+   "label": 1,
+   "class": "D-same",
+   "label_source": "constructed",
+   "cluster": "앱이 열리고 3초 뒤 꺼짐",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8059278283039437,
+     "ms": 724,
+     "cost": 2.4925999999999998e-05,
+     "in_tok": 412,
+     "err": null,
+     "mass": [
+      0.9139,
+      0.8061
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.11920291654627559,
+     "ms": 1299,
+     "cost": 1.8513e-05,
+     "in_tok": 306,
+     "err": null,
+     "mass": [
+      0.9937,
+      0.9921
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.7313365572801754,
+     "ms": 2172,
+     "cost": 4.9000000000000005e-05,
+     "in_tok": 350,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 229,
+     "in_tok": 412,
+     "cost": 1.7304e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.67
+     },
+     "p_violation": 0.67
+    }
+   }
+  },
+  {
+   "id": "duplicate-issue-pair-004",
+   "target": 1,
+   "label": 0,
+   "class": "N-diff-symptom",
+   "label_source": "constructed",
+   "cluster": "한글 검색이 0건",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.42513075052536786,
+     "ms": 685,
+     "cost": 2.2747999999999996e-05,
+     "in_tok": 376,
+     "err": null,
+     "mass": [
+      0.988,
+      0.9736
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.005189083961765314,
+     "ms": 775,
+     "cost": 1.7545e-05,
+     "in_tok": 290,
+     "err": null,
+     "mass": [
+      0.996,
+      0.997
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.0066928519251498635,
+     "ms": 4342,
+     "cost": 4.592000000000001e-05,
+     "in_tok": 328,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 216,
+     "in_tok": 406,
+     "cost": 1.7052000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.04
+     },
+     "p_violation": 0.04
+    }
+   }
+  },
+  {
+   "id": "duplicate-issue-pair-005",
+   "target": 0,
+   "label": 1,
+   "class": "D-same",
+   "label_source": "constructed",
+   "cluster": "업로드가 95%에서 멈춤",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9349050641671273,
+     "ms": 799,
+     "cost": 2.4442e-05,
+     "in_tok": 404,
+     "err": null,
+     "mass": [
+      0.9484,
+      0.9938
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9855450810966807,
+     "ms": 1028,
+     "cost": 1.8513e-05,
+     "in_tok": 306,
+     "err": null,
+     "mass": [
+      0.9983,
+      0.9956
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9992420392705761,
+     "ms": 2345,
+     "cost": 4.928e-05,
+     "in_tok": 352,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 225,
+     "in_tok": 418,
+     "cost": 1.7556000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.53
+     },
+     "p_violation": 0.53
+    }
+   }
+  },
+  {
+   "id": "duplicate-issue-pair-006",
+   "target": 0,
+   "label": 1,
+   "class": "D-same",
+   "label_source": "constructed",
+   "cluster": "CSV 내보내기 날짜가 하루 ",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8708581517423937,
+     "ms": 777,
+     "cost": 2.541e-05,
+     "in_tok": 420,
+     "err": null,
+     "mass": [
+      0.9221,
+      0.9598
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9936980407314591,
+     "ms": 791,
+     "cost": 1.8755e-05,
+     "in_tok": 310,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9949
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9998916362509012,
+     "ms": 3141,
+     "cost": 5.0400000000000005e-05,
+     "in_tok": 360,
+     "err": null,
+     "mass": [
+      0.9999,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 218,
+     "in_tok": 419,
+     "cost": 1.7598e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.6
+     },
+     "p_violation": 0.6
+    }
+   }
+  },
+  {
+   "id": "duplicate-issue-pair-007",
+   "target": 0,
+   "label": 1,
+   "class": "D-same",
+   "label_source": "constructed",
+   "cluster": "알림을 꺼도 푸시가 계속 옴",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.7743165292303427,
+     "ms": 873,
+     "cost": 2.4442e-05,
+     "in_tok": 404,
+     "err": null,
+     "mass": [
+      0.9661,
+      0.9599
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9911601036247597,
+     "ms": 787,
+     "cost": 1.8149999999999997e-05,
+     "in_tok": 300,
+     "err": null,
+     "mass": [
+      0.9978,
+      0.9961
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9997230057833352,
+     "ms": 2768,
+     "cost": 4.928e-05,
+     "in_tok": 352,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 252,
+     "in_tok": 415,
+     "cost": 1.743e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.9
+     },
+     "p_violation": 0.9
+    }
+   }
+  },
+  {
+   "id": "duplicate-issue-pair-008",
+   "target": 1,
+   "label": 0,
+   "class": "N-diff-symptom",
+   "label_source": "constructed",
+   "cluster": "결제 완료 뒤 영수증이 두 장",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.7743165233708504,
+     "ms": 972,
+     "cost": 2.2990000000000002e-05,
+     "in_tok": 380,
+     "err": null,
+     "mass": [
+      0.9768,
+      0.9896
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.11982742583322722,
+     "ms": 1021,
+     "cost": 1.7545e-05,
+     "in_tok": 290,
+     "err": null,
+     "mass": [
+      0.9931,
+      0.9956
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.8290484677887031,
+     "ms": 4539,
+     "cost": 4.6200000000000005e-05,
+     "in_tok": 330,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 229,
+     "in_tok": 405,
+     "cost": 1.701e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.29
+     },
+     "p_violation": 0.29
+    }
+   }
+  },
+  {
+   "id": "duplicate-issue-pair-009",
+   "target": 1,
+   "label": 0,
+   "class": "N-diff-symptom",
+   "label_source": "constructed",
+   "cluster": "CSV 내보내기 날짜가 하루 ",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.46838870289486223,
+     "ms": 899,
+     "cost": 2.4684e-05,
+     "in_tok": 408,
+     "err": null,
+     "mass": [
+      0.9646,
+      0.9739
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0033961440012897893,
+     "ms": 889,
+     "cost": 1.8755e-05,
+     "in_tok": 310,
+     "err": null,
+     "mass": [
+      0.9952,
+      0.9961
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 1.0462126398357607e-05,
+     "ms": 2460,
+     "cost": 4.928e-05,
+     "in_tok": 352,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 225,
+     "in_tok": 415,
+     "cost": 1.743e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.03
+     },
+     "p_violation": 0.03
+    }
+   }
+  },
+  {
+   "id": "duplicate-issue-pair-010",
+   "target": 0,
+   "label": 1,
+   "class": "D-same",
+   "label_source": "constructed",
+   "cluster": "비밀번호 재설정 메일이 안 옴",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9841075740728171,
+     "ms": 838,
+     "cost": 2.541e-05,
+     "in_tok": 420,
+     "err": null,
+     "mass": [
+      0.919,
+      0.9941
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9948567733494875,
+     "ms": 904,
+     "cost": 1.9118e-05,
+     "in_tok": 316,
+     "err": null,
+     "mass": [
+      0.9982,
+      0.9948
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9992420393066044,
+     "ms": 2146,
+     "cost": 5.1800000000000005e-05,
+     "in_tok": 370,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 231,
+     "in_tok": 427,
+     "cost": 1.7934e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.93
+     },
+     "p_violation": 0.93
+    }
+   }
+  },
+  {
+   "id": "duplicate-issue-pair-011",
+   "target": 1,
+   "label": 0,
+   "class": "N-diff-symptom",
+   "label_source": "constructed",
+   "cluster": "알림을 꺼도 푸시가 계속 옴",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4457003862193273,
+     "ms": 12752,
+     "cost": 2.3474e-05,
+     "in_tok": 388,
+     "err": null,
+     "mass": [
+      0.9577,
+      0.9679
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.00528218949046503,
+     "ms": 842,
+     "cost": 1.7424e-05,
+     "in_tok": 288,
+     "err": null,
+     "mass": [
+      0.9932,
+      0.9965
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.0001035767635344727,
+     "ms": 3328,
+     "cost": 4.7040000000000004e-05,
+     "in_tok": 336,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9988
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 268,
+     "in_tok": 406,
+     "cost": 1.7052000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.03
+     },
+     "p_violation": 0.03
+    }
+   }
+  },
+  {
+   "id": "duplicate-issue-pair-012",
+   "target": 0,
+   "label": 1,
+   "class": "D-same",
+   "label_source": "constructed",
+   "cluster": "프로필 사진 변경이 반영 안 ",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9474147971269367,
+     "ms": 715,
+     "cost": 2.4563e-05,
+     "in_tok": 406,
+     "err": null,
+     "mass": [
+      0.8777,
+      0.9492
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9896522905464542,
+     "ms": 704,
+     "cost": 1.8271000000000002e-05,
+     "in_tok": 302,
+     "err": null,
+     "mass": [
+      0.9978,
+      0.9946
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9998599423295071,
+     "ms": 2123,
+     "cost": 5.012e-05,
+     "in_tok": 358,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 224,
+     "in_tok": 419,
+     "cost": 1.7598e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.93
+     },
+     "p_violation": 0.93
+    }
+   }
+  },
+  {
+   "id": "duplicate-issue-pair-013",
+   "target": 0,
+   "label": 1,
+   "class": "D-same",
+   "label_source": "constructed",
+   "cluster": "2단계 인증 코드가 안 맞음",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8708581487417151,
+     "ms": 698,
+     "cost": 2.5047e-05,
+     "in_tok": 414,
+     "err": null,
+     "mass": [
+      0.8785,
+      0.9488
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9286123271208875,
+     "ms": 906,
+     "cost": 1.8996999999999998e-05,
+     "in_tok": 314,
+     "err": null,
+     "mass": [
+      0.9973,
+      0.9951
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9510889593223916,
+     "ms": 2945,
+     "cost": 5.068000000000001e-05,
+     "in_tok": 362,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 244,
+     "in_tok": 422,
+     "cost": 1.7724000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.85
+     },
+     "p_violation": 0.85
+    }
+   }
+  },
+  {
+   "id": "duplicate-issue-pair-014",
+   "target": 1,
+   "label": 0,
+   "class": "N-diff-symptom",
+   "label_source": "constructed",
+   "cluster": "프로필 사진 변경이 반영 안 ",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.49999999999999994,
+     "ms": 713,
+     "cost": 2.3837e-05,
+     "in_tok": 394,
+     "err": null,
+     "mass": [
+      0.7692,
+      0.9634
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.005565597000701219,
+     "ms": 783,
+     "cost": 1.8392e-05,
+     "in_tok": 304,
+     "err": null,
+     "mass": [
+      0.9932,
+      0.9971
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.008577484002062935,
+     "ms": 2350,
+     "cost": 4.788000000000001e-05,
+     "in_tok": 342,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9988
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 318,
+     "in_tok": 415,
+     "cost": 1.743e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "p_violation": 0.06
+    }
+   }
+  },
+  {
+   "id": "duplicate-issue-pair-015",
+   "target": 0,
+   "label": 1,
+   "class": "D-same",
+   "label_source": "constructed",
+   "cluster": "댓글 삭제 뒤에도 알림 센터에",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9383579692917872,
+     "ms": 1994,
+     "cost": 2.4200000000000002e-05,
+     "in_tok": 400,
+     "err": null,
+     "mass": [
+      0.985,
+      0.9942
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9971790984322839,
+     "ms": 717,
+     "cost": 1.7786999999999998e-05,
+     "in_tok": 294,
+     "err": null,
+     "mass": [
+      0.9977,
+      0.9974
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999191375793792,
+     "ms": 3765,
+     "cost": 4.8440000000000004e-05,
+     "in_tok": 346,
+     "err": null,
+     "mass": [
+      0.9999,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 245,
+     "in_tok": 410,
+     "cost": 1.722e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.97
+     },
+     "p_violation": 0.97
+    }
+   }
+  },
+  {
+   "id": "duplicate-issue-pair-016",
+   "target": 0,
+   "label": 1,
+   "class": "D-same",
+   "label_source": "constructed",
+   "cluster": "결제 완료 뒤 영수증이 두 장",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8491857731744471,
+     "ms": 743,
+     "cost": 2.4079e-05,
+     "in_tok": 398,
+     "err": null,
+     "mass": [
+      0.9507,
+      0.9873
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9808407184385765,
+     "ms": 929,
+     "cost": 1.8392e-05,
+     "in_tok": 304,
+     "err": null,
+     "mass": [
+      0.9981,
+      0.9919
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9998288437583064,
+     "ms": 4156,
+     "cost": 4.872000000000001e-05,
+     "in_tok": 348,
+     "err": null,
+     "mass": [
+      0.9999,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 247,
+     "in_tok": 415,
+     "cost": 1.743e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.83
+     },
+     "p_violation": 0.83
+    }
+   }
+  },
+  {
+   "id": "duplicate-issue-pair-017",
+   "target": 0,
+   "label": 1,
+   "class": "D-same",
+   "label_source": "constructed",
+   "cluster": "한글 검색이 0건",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.7743165237747873,
+     "ms": 717,
+     "cost": 2.3957999999999997e-05,
+     "in_tok": 396,
+     "err": null,
+     "mass": [
+      0.8928,
+      0.9576
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.993676189111108,
+     "ms": 934,
+     "cost": 1.8149999999999997e-05,
+     "in_tok": 300,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9984
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9834195868632312,
+     "ms": 2681,
+     "cost": 4.8440000000000004e-05,
+     "in_tok": 346,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 273,
+     "in_tok": 416,
+     "cost": 1.7472e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.95
+     },
+     "p_violation": 0.95
+    }
+   }
+  },
+  {
+   "id": "duplicate-issue-pair-018",
+   "target": 0,
+   "label": 1,
+   "class": "D-same",
+   "label_source": "constructed",
+   "cluster": "지도에서 현재 위치 버튼이 동",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.95657743504009,
+     "ms": 662,
+     "cost": 2.3595e-05,
+     "in_tok": 390,
+     "err": null,
+     "mass": [
+      0.9639,
+      0.9835
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9903581244645794,
+     "ms": 778,
+     "cost": 1.8029e-05,
+     "in_tok": 298,
+     "err": null,
+     "mass": [
+      0.9987,
+      0.9926
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999968782585504,
+     "ms": 2182,
+     "cost": 4.8160000000000006e-05,
+     "in_tok": 344,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 228,
+     "in_tok": 413,
+     "cost": 1.7346000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.86
+     },
+     "p_violation": 0.86
+    }
+   }
+  },
+  {
+   "id": "duplicate-issue-pair-019",
+   "target": 1,
+   "label": 0,
+   "class": "N-diff-symptom",
+   "label_source": "constructed",
+   "cluster": "댓글 삭제 뒤에도 알림 센터에",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6767589677790782,
+     "ms": 700,
+     "cost": 2.3715999999999998e-05,
+     "in_tok": 392,
+     "err": null,
+     "mass": [
+      0.9447,
+      0.9802
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.004437782870942467,
+     "ms": 1132,
+     "cost": 1.7545e-05,
+     "in_tok": 290,
+     "err": null,
+     "mass": [
+      0.9944,
+      0.9972
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.00013085913637279372,
+     "ms": 3614,
+     "cost": 4.8440000000000004e-05,
+     "in_tok": 346,
+     "err": null,
+     "mass": [
+      0.9999,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 245,
+     "in_tok": 406,
+     "cost": 1.7052000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.07
+     },
+     "p_violation": 0.07
+    }
+   }
+  },
+  {
+   "id": "duplicate-issue-pair-020",
+   "target": 0,
+   "label": 1,
+   "class": "D-same",
+   "label_source": "constructed",
+   "cluster": "다크 모드에서 버튼 글자가 안",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9349050696287812,
+     "ms": 690,
+     "cost": 2.541e-05,
+     "in_tok": 420,
+     "err": null,
+     "mass": [
+      0.9194,
+      0.7484
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9839750826314204,
+     "ms": 939,
+     "cost": 1.8876e-05,
+     "in_tok": 312,
+     "err": null,
+     "mass": [
+      0.997,
+      0.9937
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9997832703518224,
+     "ms": 2149,
+     "cost": 5.1240000000000004e-05,
+     "in_tok": 366,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 253,
+     "in_tok": 421,
+     "cost": 1.7682e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.86
+     },
+     "p_violation": 0.86
+    }
+   }
+  },
+  {
+   "id": "duplicate-issue-pair-021",
+   "target": 1,
+   "label": 0,
+   "class": "N-diff-symptom",
+   "label_source": "constructed",
+   "cluster": "비밀번호 재설정 메일이 안 옴",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.7200168922491819,
+     "ms": 973,
+     "cost": 2.3715999999999998e-05,
+     "in_tok": 392,
+     "err": null,
+     "mass": [
+      0.8073,
+      0.8905
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.038627579854127486,
+     "ms": 844,
+     "cost": 1.8029e-05,
+     "in_tok": 298,
+     "err": null,
+     "mass": [
+      0.9952,
+      0.996
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.011028170752667652,
+     "ms": 3296,
+     "cost": 4.8440000000000004e-05,
+     "in_tok": 346,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 239,
+     "in_tok": 414,
+     "cost": 1.7388e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.07
+     },
+     "p_violation": 0.07
+    }
+   }
+  },
+  {
+   "id": "duplicate-issue-pair-022",
+   "target": 1,
+   "label": 0,
+   "class": "N-diff-symptom",
+   "label_source": "constructed",
+   "cluster": "업로드가 95%에서 멈춤",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5000000087892384,
+     "ms": 788,
+     "cost": 2.3352999999999998e-05,
+     "in_tok": 386,
+     "err": null,
+     "mass": [
+      0.7682,
+      0.9864
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.00582368912409343,
+     "ms": 880,
+     "cost": 1.8149999999999997e-05,
+     "in_tok": 300,
+     "err": null,
+     "mass": [
+      0.9937,
+      0.9952
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.001801620168025652,
+     "ms": 3283,
+     "cost": 4.732e-05,
+     "in_tok": 338,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9993
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 336,
+     "in_tok": 412,
+     "cost": 1.7304e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.04
+     },
+     "p_violation": 0.04
+    }
+   }
+  },
+  {
+   "id": "duplicate-issue-pair-023",
+   "target": 1,
+   "label": 0,
+   "class": "N-diff-symptom",
+   "label_source": "constructed",
+   "cluster": "앱이 열리고 3초 뒤 꺼짐",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 800,
+     "cost": 2.4200000000000002e-05,
+     "in_tok": 400,
+     "err": null,
+     "mass": [
+      0.8398,
+      0.8775
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.004914848081390255,
+     "ms": 708,
+     "cost": 1.8633999999999998e-05,
+     "in_tok": 308,
+     "err": null,
+     "mass": [
+      0.9965,
+      0.9978
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.002171096143413974,
+     "ms": 1958,
+     "cost": 4.8160000000000006e-05,
+     "in_tok": 344,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 226,
+     "in_tok": 411,
+     "cost": 1.7262000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.07
+     },
+     "p_violation": 0.07
+    }
+   }
+  }
+ ],
+ "agg": {
+  "glm": {
+   "n": 24,
+   "ok": 23,
+   "hit": 18,
+   "ms": 39366,
+   "cost": 0.0005806790000000001
+  },
+  "qwen": {
+   "n": 24,
+   "ok": 24,
+   "hit": 23,
+   "ms": 20958,
+   "cost": 0.00043850399999999993
+  },
+  "deepseek": {
+   "n": 24,
+   "ok": 24,
+   "hit": 23,
+   "ms": 69692,
+   "cost": 0.00116956
+  },
+  "jev": {
+   "n": 24,
+   "ok": 24,
+   "hit": 24,
+   "ms": 6109,
+   "cost": 0.00041748
+  }
+ }
+}

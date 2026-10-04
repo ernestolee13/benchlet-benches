@@ -1,0 +1,292 @@
+name: duplicate-issue-pair
+version: 1
+task_signature:
+  goal: fit
+  answer: binary
+  prob_use: accuracy_only
+  label: constructed
+  unit: pair
+  language: ko
+  n: 24
+question: 두 이슈는 같은 문제를 보고하는가. 같은 문제란 같은 기능에서 같은 현상(증상·조건)이 나는 것이다. 같은 기능이라도 현상이 다르면
+  다른 문제고, 표현이 달라도 현상이 같으면 같은 문제다. 원인 추정이 달라도 현상이 같으면 같은 문제다. 입력은 [이슈 A] 와 [이슈 B]다.
+choices:
+- 같은 문제
+- 다른 문제
+generator:
+  script: src/build_samples.py
+  seed: 20261001
+source: 중복 이슈 판정 샘플 24건. 이슈 12개마다 같은 문제 1 + 같은 기능 다른 현상 1
+domain:
+- duplicate-issue-pair
+- sample
+visibility: sample
+items_sha256: b4e30298cbf0198827f31b2d1e5c0ad07e0661d90705e1f6a1f9b5d8cb051f2c
+license: CC-BY-4.0
+review:
+  checks_run: 5
+  human_reviewed_fraction: 0.0
+  flagged: 5
+  decided: 0
+note: benchlet 샘플. 작성자가 규칙을 먼저 적고 그 규칙대로 항목을 썼다(constructed). 기계 검증기가 있는 둘은 machine
+owner: ernestolee13
+n: 24
+choices_note: null
+published_at: '2026-10-04'
+type: binary
+classes:
+- D-same
+- N-diff-symptom
+label_source_mix:
+  machine: 0
+  constructed: 24
+  judged: 0
+  outcome: 0
+experiment:
+  date: '2026-10-04'
+  template: generic
+  runner: benchlet
+  arms:
+    glm:
+      model: z-ai/glm-4.7-flash
+      provider: cloudflare
+      family: GLM
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke:
+        arm: glm
+        mode: logprob
+        usable: true
+        reasons:
+        - 뻔한 5건 중 1건 틀림 (duplicate-issue-pair-001). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.6607
+        spread: 0.0
+        distinct_p: 8
+        n_calls: 13
+        smoke_acc: 0.8
+        cost: 0.00016080899999999998
+        per_item:
+        - id: duplicate-issue-pair-003
+          target: 0
+          hit: 1
+          p: 0.7743
+        - id: duplicate-issue-pair-005
+          target: 0
+          hit: 1
+          p: 0.9349
+        - id: duplicate-issue-pair-006
+          target: 0
+          hit: 1
+          p: 0.8709
+        - id: duplicate-issue-pair-000
+          target: 1
+          hit: 1
+          p: 0.3802
+        - id: duplicate-issue-pair-001
+          target: 1
+          hit: 0
+          p: 0.6588
+    qwen:
+      model: qwen/qwen3.8-27b
+      provider: parasail
+      family: Qwen
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke:
+        arm: qwen
+        mode: logprob
+        usable: true
+        reasons:
+        - 뻔한 5건 중 1건 틀림 (duplicate-issue-pair-003). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9882
+        spread: 0.0
+        distinct_p: 9
+        n_calls: 13
+        smoke_acc: 0.8
+        cost: 0.0001200925
+        per_item:
+        - id: duplicate-issue-pair-003
+          target: 0
+          hit: 0
+          p: 0.1192
+        - id: duplicate-issue-pair-005
+          target: 0
+          hit: 1
+          p: 0.9797
+        - id: duplicate-issue-pair-006
+          target: 0
+          hit: 1
+          p: 0.9937
+        - id: duplicate-issue-pair-000
+          target: 1
+          hit: 1
+          p: 0.0033
+        - id: duplicate-issue-pair-001
+          target: 1
+          hit: 1
+          p: 0.0047
+    deepseek:
+      model: deepseek/deepseek-v4-flash
+      provider: digitalocean
+      family: DeepSeek
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.14
+      smoke:
+        arm: deepseek
+        mode: logprob
+        usable: false
+        reasons:
+        - 3회 재현 편차 0.08 > 0.05
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9998
+        spread: 0.08187603448259673
+        distinct_p: 5
+        n_calls: 13
+        smoke_acc: 1.0
+        cost: 0.00031906
+        per_item:
+        - id: duplicate-issue-pair-003
+          target: 0
+          hit: 1
+          p: 0.932
+        - id: duplicate-issue-pair-005
+          target: 0
+          hit: 1
+          p: 0.9999
+        - id: duplicate-issue-pair-006
+          target: 0
+          hit: 1
+          p: 0.9999
+        - id: duplicate-issue-pair-000
+          target: 1
+          hit: 1
+          p: 0.0
+        - id: duplicate-issue-pair-001
+          target: 1
+          hit: 1
+          p: 0.0
+    jev:
+      model: typesafe/jev-1.13
+      provider: openrouter
+      family: Jev
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.042
+      smoke:
+        arm: jev
+        mode: typed
+        usable: true
+        reasons: []
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 1.0
+        cost: 8.727600000000001e-05
+        per_item:
+        - id: duplicate-issue-pair-003
+          target: 0
+          hit: 1
+          p: 0.69
+          pred: null
+        - id: duplicate-issue-pair-005
+          target: 0
+          hit: 1
+          p: 0.56
+          pred: null
+        - id: duplicate-issue-pair-006
+          target: 0
+          hit: 1
+          p: 0.57
+          pred: null
+        - id: duplicate-issue-pair-000
+          target: 1
+          hit: 1
+          p: 0.02
+          pred: null
+        - id: duplicate-issue-pair-001
+          target: 1
+          hit: 1
+          p: 0.03
+          pred: null
+  protocol:
+    decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
+    logprob_call:
+      max_tokens: 1
+      temperature: 0
+      logprobs: true
+      top_logprobs: 8
+      reasoning:
+        enabled: false
+    provider_pin: provider.only=[pin], allow_fallbacks=false, require_parameters=true
+    binary: '극성 반전 2회 호출 평균: p = ½[P(A|choices[0]=A) + P(B|choices[0]=B)]'
+    multiclass: 항목별 결정론적 셔플 뒤 원 인덱스로 복원(generic) 또는 파일에 든 셔플 그대로(legacy-seed)
+    typed: Jev noul(이진)/choice(다지), 질문을 instructions 로 그대로 전달
+    label_mass: 상위 8토큰 중 라벨 토큰 질량 < 0.5 이면 오류로 두고 세지 않음
+    renormalize: 라벨 토큰 확률을 라벨 집합 안에서 재정규화
+  items_sha256: b4e30298cbf0198827f31b2d1e5c0ad07e0661d90705e1f6a1f9b5d8cb051f2c
+results:
+- results/duplicate-issue-pair-run.json
+result_summary:
+  glm:
+    acc: 0.782608695652174
+    ci95:
+    - 0.5809611981726509
+    - 0.9033616439828095
+    auroc: 1.0
+    brier: 0.1513375571496505
+    n: 23
+    prob_source: logprob
+    model: z-ai/glm-4.7-flash
+    source_badge: author-run
+  qwen:
+    acc: 0.9583333333333334
+    ci95:
+    - 0.7975777375115778
+    - 0.9926067346451949
+    auroc: 0.9930555555555556
+    brier: 0.03326151249212902
+    n: 24
+    prob_source: logprob
+    model: qwen/qwen3.8-27b
+    source_badge: author-run
+  deepseek:
+    acc: 0.9583333333333334
+    ci95:
+    - 0.7975777375115778
+    - 0.9926067346451949
+    auroc: 0.9930555555555556
+    brier: 0.0317674134847991
+    n: 24
+    prob_source: logprob
+    model: deepseek/deepseek-v4-flash
+    source_badge: author-run
+  jev:
+    acc: 1.0
+    ci95:
+    - 0.8620194241710247
+    - 1.0000000000000002
+    auroc: 1.0
+    brier: 0.02978333333333334
+    n: 24
+    prob_source: typed
+    model: typesafe/jev-1.13
+    source_badge: author-run
