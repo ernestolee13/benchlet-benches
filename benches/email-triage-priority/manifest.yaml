@@ -1,0 +1,297 @@
+name: email-triage-priority
+version: 1
+task_signature:
+  goal: classify
+  answer: choice(4)
+  prob_use: accuracy_only
+  label: constructed
+  unit: record
+  language: ko
+  n: 28
+question: '이 메일은 언제 처리해야 하는가. 넷 중 하나다. 지금: 오늘 안에 기한이 끝나거나 사람이 기다리고 있거나 장애·보안 사고. 오늘:
+  기한이 내일이거나 상대가 오늘 답을 요청. 이번 주: 기한이 이번 주 안이거나 답은 필요하지만 급하지 않음. 보관: 답할 필요가 없는 알림·뉴스레터·참조만
+  된 메일. 기준일은 입력 첫 줄의 날짜(요일 포함)다. 입력은 기준일과 메일 제목·본문이다.'
+choices:
+- 지금
+- 오늘
+- 이번 주
+- 보관
+generator:
+  script: src/build_samples.py
+  seed: 20261001
+source: 메일 우선순위 샘플 28건. 분류마다 6건 + 기준일 변화 2건 + 말투 함정 2건
+domain:
+- email-triage-priority
+- sample
+visibility: sample
+items_sha256: 484315629d69ac44cdcab34617885cfa8744f6b3ec268760cc783471f58a9e11
+license: CC-BY-4.0
+review:
+  checks_run: 5
+  human_reviewed_fraction: 0.0
+  flagged: 4
+  decided: 0
+note: benchlet 샘플. 작성자가 규칙을 먼저 적고 그 규칙대로 항목을 썼다(constructed). 기계 검증기가 있는 둘은 machine
+owner: ernestolee13
+n: 28
+choices_note: null
+published_at: '2026-10-04'
+type: multiclass
+classes:
+- P0-지금
+- P1-오늘
+- P2-이번 주
+- P3-보관
+label_source_mix:
+  machine: 0
+  constructed: 28
+  judged: 0
+  outcome: 0
+experiment:
+  date: '2026-10-04'
+  template: generic
+  runner: benchlet
+  arms:
+    glm:
+      model: z-ai/glm-4.7-flash
+      provider: cloudflare
+      family: GLM
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke:
+        arm: glm
+        mode: logprob
+        usable: false
+        reasons:
+        - 3회 재현 편차 0.10 > 0.05
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.941
+        spread: 0.10001665605959176
+        distinct_p: 5
+        n_calls: 8
+        smoke_acc: 1.0
+        cost: 0.00012444850000000002
+        per_item:
+        - id: email-triage-priority-000
+          target: 0
+          hit: 1
+          pred: 0
+        - id: email-triage-priority-001
+          target: 1
+          hit: 1
+          pred: 1
+        - id: email-triage-priority-002
+          target: 0
+          hit: 1
+          pred: 0
+        - id: email-triage-priority-003
+          target: 0
+          hit: 1
+          pred: 0
+        - id: email-triage-priority-004
+          target: 1
+          hit: 1
+          pred: 1
+    qwen:
+      model: qwen/qwen3.8-27b
+      provider: parasail
+      family: Qwen
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke:
+        arm: qwen
+        mode: logprob
+        usable: true
+        reasons: []
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9919
+        spread: 0.0009544257288507385
+        distinct_p: 5
+        n_calls: 8
+        smoke_acc: 1.0
+        cost: 9.716300000000002e-05
+        per_item:
+        - id: email-triage-priority-000
+          target: 0
+          hit: 1
+          pred: 0
+        - id: email-triage-priority-001
+          target: 1
+          hit: 1
+          pred: 1
+        - id: email-triage-priority-002
+          target: 0
+          hit: 1
+          pred: 0
+        - id: email-triage-priority-003
+          target: 0
+          hit: 1
+          pred: 0
+        - id: email-triage-priority-004
+          target: 1
+          hit: 1
+          pred: 1
+    deepseek:
+      model: deepseek/deepseek-v4-flash
+      provider: digitalocean
+      family: DeepSeek
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.14
+      smoke:
+        arm: deepseek
+        mode: logprob
+        usable: true
+        reasons:
+        - 뻔한 5건 중 1건 틀림 (email-triage-priority-001). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9854
+        spread: 0.0012416992785998504
+        distinct_p: 5
+        n_calls: 8
+        smoke_acc: 0.8
+        cost: 0.00026138
+        per_item:
+        - id: email-triage-priority-000
+          target: 0
+          hit: 1
+          pred: 0
+        - id: email-triage-priority-001
+          target: 1
+          hit: 0
+          pred: 0
+        - id: email-triage-priority-002
+          target: 0
+          hit: 1
+          pred: 0
+        - id: email-triage-priority-003
+          target: 0
+          hit: 1
+          pred: 0
+        - id: email-triage-priority-004
+          target: 1
+          hit: 1
+          pred: 1
+    jev:
+      model: typesafe/jev-1.13
+      provider: openrouter
+      family: Jev
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.042
+      smoke:
+        arm: jev
+        mode: typed
+        usable: true
+        reasons:
+        - 뻔한 5건 중 1건 틀림 (email-triage-priority-003). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 0.8
+        cost: 0.000111762
+        per_item:
+        - id: email-triage-priority-000
+          target: 0
+          hit: 1
+          p: null
+          pred: 0
+        - id: email-triage-priority-001
+          target: 1
+          hit: 1
+          p: null
+          pred: 1
+        - id: email-triage-priority-002
+          target: 0
+          hit: 1
+          p: null
+          pred: 0
+        - id: email-triage-priority-003
+          target: 0
+          hit: 0
+          p: null
+          pred: 1
+        - id: email-triage-priority-004
+          target: 1
+          hit: 1
+          p: null
+          pred: 1
+  protocol:
+    decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
+    logprob_call:
+      max_tokens: 1
+      temperature: 0
+      logprobs: true
+      top_logprobs: 8
+      reasoning:
+        enabled: false
+    provider_pin: provider.only=[pin], allow_fallbacks=false, require_parameters=true
+    binary: '극성 반전 2회 호출 평균: p = ½[P(A|choices[0]=A) + P(B|choices[0]=B)]'
+    multiclass: 항목별 결정론적 셔플 뒤 원 인덱스로 복원(generic) 또는 파일에 든 셔플 그대로(legacy-seed)
+    typed: Jev noul(이진)/choice(다지), 질문을 instructions 로 그대로 전달
+    label_mass: 상위 8토큰 중 라벨 토큰 질량 < 0.5 이면 오류로 두고 세지 않음
+    renormalize: 라벨 토큰 확률을 라벨 집합 안에서 재정규화
+  items_sha256: 484315629d69ac44cdcab34617885cfa8744f6b3ec268760cc783471f58a9e11
+results:
+- results/email-triage-priority-run.json
+result_summary:
+  glm:
+    acc: 0.7857142857142857
+    ci95:
+    - 0.6046105292072612
+    - 0.8978767829881058
+    auroc: null
+    brier: null
+    n: 28
+    prob_source: logprob
+    model: z-ai/glm-4.7-flash
+    source_badge: author-run
+  qwen:
+    acc: 1.0
+    ci95:
+    - 0.8793527963418923
+    - 1.0
+    auroc: null
+    brier: null
+    n: 28
+    prob_source: logprob
+    model: qwen/qwen3.8-27b
+    source_badge: author-run
+  deepseek:
+    acc: 0.9285714285714286
+    ci95:
+    - 0.7735426157408215
+    - 0.9801883525522292
+    auroc: null
+    brier: null
+    n: 28
+    prob_source: logprob
+    model: deepseek/deepseek-v4-flash
+    source_badge: author-run
+  jev:
+    acc: 0.9285714285714286
+    ci95:
+    - 0.7735426157408215
+    - 0.9801883525522292
+    auroc: null
+    brier: null
+    n: 28
+    prob_source: typed
+    model: typesafe/jev-1.13
+    source_badge: author-run
