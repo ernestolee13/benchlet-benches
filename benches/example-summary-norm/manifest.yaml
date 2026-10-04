@@ -43,4 +43,252 @@ label_source_mix:
   constructed: 6
   judged: 0
   outcome: 0
-results: pending
+experiment:
+  date: '2026-10-04'
+  template: generic
+  runner: benchlet
+  arms:
+    glm:
+      model: z-ai/glm-4.7-flash
+      provider: cloudflare
+      family: GLM
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke:
+        arm: glm
+        mode: logprob
+        usable: false
+        reasons:
+        - 3회 재현 편차 0.11 > 0.05
+        - '확률값 종류 4/10: 반올림된 로그확률 의심 (AUROC 를 믿지 마라)'
+        - 뻔한 5건 중 3건 틀림 (example-summary-norm-001, example-summary-norm-002, example-summary-norm-003).
+          다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9855
+        spread: 0.10859923570916574
+        distinct_p: 4
+        n_calls: 13
+        smoke_acc: 0.4
+        cost: 0.0001396945
+        per_item:
+        - id: example-summary-norm-001
+          target: 0
+          hit: 0
+          p: 0.4024
+        - id: example-summary-norm-002
+          target: 0
+          hit: 0
+          p: 0.4388
+        - id: example-summary-norm-003
+          target: 0
+          hit: 0
+          p: 0.3412
+        - id: example-summary-norm-000
+          target: 1
+          hit: 1
+          p: 0.4024
+        - id: example-summary-norm-004
+          target: 1
+          hit: 1
+          p: 0.28
+    qwen:
+      model: qwen/qwen3.8-27b
+      provider: parasail
+      family: Qwen
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke:
+        arm: qwen
+        mode: logprob
+        usable: true
+        reasons: []
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9956
+        spread: 0.0
+        distinct_p: 10
+        n_calls: 13
+        smoke_acc: 1.0
+        cost: 0.0001070245
+        per_item:
+        - id: example-summary-norm-001
+          target: 0
+          hit: 1
+          p: 0.9994
+        - id: example-summary-norm-002
+          target: 0
+          hit: 1
+          p: 0.993
+        - id: example-summary-norm-003
+          target: 0
+          hit: 1
+          p: 0.99
+        - id: example-summary-norm-000
+          target: 1
+          hit: 1
+          p: 0.1451
+        - id: example-summary-norm-004
+          target: 1
+          hit: 1
+          p: 0.0974
+    deepseek:
+      model: deepseek/deepseek-v4-flash
+      provider: digitalocean
+      family: DeepSeek
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.14
+      smoke:
+        arm: deepseek
+        mode: logprob
+        usable: true
+        reasons: []
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9991
+        spread: 2.554095468587647e-05
+        distinct_p: 6
+        n_calls: 13
+        smoke_acc: 1.0
+        cost: 0.00028756000000000007
+        per_item:
+        - id: example-summary-norm-001
+          target: 0
+          hit: 1
+          p: 1.0
+        - id: example-summary-norm-002
+          target: 0
+          hit: 1
+          p: 0.9852
+        - id: example-summary-norm-003
+          target: 0
+          hit: 1
+          p: 1.0
+        - id: example-summary-norm-000
+          target: 1
+          hit: 1
+          p: 0.0001
+        - id: example-summary-norm-004
+          target: 1
+          hit: 1
+          p: 0.0002
+    jev:
+      model: typesafe/jev-1.13
+      provider: openrouter
+      family: Jev
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.042
+      smoke:
+        arm: jev
+        mode: typed
+        usable: true
+        reasons: []
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 1.0
+        cost: 8.400000000000001e-05
+        per_item:
+        - id: example-summary-norm-001
+          target: 0
+          hit: 1
+          p: 0.93
+          pred: null
+        - id: example-summary-norm-002
+          target: 0
+          hit: 1
+          p: 0.69
+          pred: null
+        - id: example-summary-norm-003
+          target: 0
+          hit: 1
+          p: 0.93
+          pred: null
+        - id: example-summary-norm-000
+          target: 1
+          hit: 1
+          p: 0.11
+          pred: null
+        - id: example-summary-norm-004
+          target: 1
+          hit: 1
+          p: 0.12
+          pred: null
+  protocol:
+    decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
+    logprob_call:
+      max_tokens: 1
+      temperature: 0
+      logprobs: true
+      top_logprobs: 8
+      reasoning:
+        enabled: false
+    provider_pin: provider.only=[pin], allow_fallbacks=false, require_parameters=true
+    binary: '극성 반전 2회 호출 평균: p = ½[P(A|choices[0]=A) + P(B|choices[0]=B)]'
+    multiclass: 항목별 결정론적 셔플 뒤 원 인덱스로 복원(generic) 또는 파일에 든 셔플 그대로(legacy-seed)
+    typed: Jev noul(이진)/choice(다지), 질문을 instructions 로 그대로 전달
+    label_mass: 상위 8토큰 중 라벨 토큰 질량 < 0.5 이면 오류로 두고 세지 않음
+    renormalize: 라벨 토큰 확률을 라벨 집합 안에서 재정규화
+  items_sha256: d777a2e3a4c154e67d11317d9ec0f470198768933db70b5c0ec1b6c42ca85626
+results:
+- results/example-summary-norm-run.json
+result_summary:
+  glm:
+    acc: 0.5
+    ci95:
+    - 0.1876128068994087
+    - 0.8123871931005913
+    auroc: 0.7777777777777778
+    brier: 0.237465898642792
+    n: 6
+    prob_source: logprob
+    model: z-ai/glm-4.7-flash
+    source_badge: author-run
+  qwen:
+    acc: 1.0
+    ci95:
+    - 0.6096569663469354
+    - 1.0
+    auroc: 1.0
+    brier: 0.008667628314607883
+    n: 6
+    prob_source: logprob
+    model: qwen/qwen3.8-27b
+    source_badge: author-run
+  deepseek:
+    acc: 1.0
+    ci95:
+    - 0.6096569663469354
+    - 1.0
+    auroc: 1.0
+    brier: 0.0013871664129155616
+    n: 6
+    prob_source: logprob
+    model: deepseek/deepseek-v4-flash
+    source_badge: author-run
+  jev:
+    acc: 1.0
+    ci95:
+    - 0.6096569663469354
+    - 1.0
+    auroc: 1.0
+    brier: 0.027583333333333324
+    n: 6
+    prob_source: typed
+    model: typesafe/jev-1.13
+    source_badge: author-run
