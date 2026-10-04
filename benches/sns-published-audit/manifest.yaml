@@ -1,0 +1,164 @@
+name: sns-published-audit
+version: 1
+task_signature:
+  goal: compliance
+  answer: binary
+  prob_use: accuracy_only
+  label: machine
+  unit: post
+  language: ko
+  n: 88
+question: 이 글 본문에 발행 전 지워야 할 잔재가 남아 있는가
+choices:
+- 있다
+- 없다
+generator:
+  script: src/build_sns_audit.py
+  seed: 20260930
+source: 발행된 스레드 글과 감사 스크립트 규칙 6종 (원자료 비공개). 입력은 전부 앞 120자 미리보기(dim_post.text_preview)이다.
+  실제 양성(daily)의 전문은 DB에 없다. 양성 중 실제 16건은 머리말 잔재, 32건은 실제 글에 규칙대로 심음. 음성은 감사 통과 실제
+  글과 오탐 함정
+label_paths:
+  real_sampling: 48
+  planted: 40
+visibility: sample
+items_sha256: 037e3cf377f41b4efdeaf9fcbfb9b567c7c924c398f603dcacc0a2a239ff3692
+review:
+  checks_run: 0
+  human_reviewed_fraction: 1.0
+  flagged: 0
+  decided: 0
+license: CC-BY-4.0
+taxonomy:
+  domain:
+  - editorial
+  - product-ops
+  input_kind: paragraph
+  source_kind: own-data
+  language: ko
+keywords:
+- 잔재
+- 발행 전 점검
+owner: ernestolee13
+n: 88
+choices_note: null
+published_at: '2026-10-04'
+type: binary
+classes:
+- CLEAN
+- CLEAN-trap
+- R1-header-only
+- R1R2-header
+- R3-instruction-echo
+- R4-code-fence
+- R5-model-artifact
+- R6-placeholder
+label_source_mix:
+  machine: 48
+  constructed: 40
+  judged: 0
+  outcome: 0
+experiment:
+  date: '2026-09-30'
+  template: legacy-seed
+  runner: src/run.py (구식 러너, 팔 메타는 프리셋에서 채움)
+  arms:
+    glm:
+      model: z-ai/glm-4.7-flash
+      provider: cloudflare
+      family: GLM
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke: null
+    qwen:
+      model: qwen/qwen3.8-27b
+      provider: parasail
+      family: Qwen
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke: null
+    deepseek:
+      model: deepseek/deepseek-v4-flash
+      provider: digitalocean
+      family: DeepSeek
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.14
+      smoke: null
+    jev:
+      model: typesafe/jev-1.13
+      provider: openrouter
+      family: Jev
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.042
+      smoke: null
+  protocol:
+    decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
+    logprob_call:
+      max_tokens: 1
+      temperature: 0
+      logprobs: true
+      top_logprobs: 8
+      reasoning:
+        enabled: false
+    provider_pin: provider.only=[pin], allow_fallbacks=false, require_parameters=true
+    binary: '극성 반전 2회 호출 평균: p = ½[P(A|choices[0]=A) + P(B|choices[0]=B)]'
+    multiclass: 항목별 결정론적 셔플 뒤 원 인덱스로 복원(generic) 또는 파일에 든 셔플 그대로(legacy-seed)
+    typed: Jev noul(이진)/choice(다지), 질문을 instructions 로 그대로 전달
+    label_mass: 상위 8토큰 중 라벨 토큰 질량 < 0.5 이면 오류로 두고 세지 않음
+    renormalize: 라벨 토큰 확률을 라벨 집합 안에서 재정규화
+  items_sha256: null
+results:
+- results/sns-published-audit-run.json
+result_summary:
+  glm:
+    acc: 0.38571428571428573
+    ci95:
+    - 0.28047517785454174
+    - 0.5028447935436945
+    auroc: 0.48086734693877553
+    brier: 0.2701869093977344
+    n: 70
+    prob_source: logprob
+    model: z-ai/glm-4.7-flash
+    source_badge: author-run
+  qwen:
+    acc: 0.5454545454545454
+    ci95:
+    - 0.44169880685506685
+    - 0.6454076895474348
+    auroc: 0.8630208333333333
+    brier: 0.24040962132442464
+    n: 88
+    prob_source: logprob
+    model: qwen/qwen3.8-27b
+    source_badge: author-run
+  deepseek:
+    acc: 0.6136363636363636
+    ci95:
+    - 0.5091856433622111
+    - 0.7085805976440432
+    auroc: 0.5893229166666667
+    brier: 0.25983939968927416
+    n: 88
+    prob_source: logprob
+    model: deepseek/deepseek-v4-flash
+    source_badge: author-run
+  jev:
+    acc: 0.5227272727272727
+    ci95:
+    - 0.4196177626380677
+    - 0.6239354855631831
+    auroc: 0.5979166666666667
+    brier: 0.24224659090909098
+    n: 88
+    prob_source: typed
+    model: typesafe/jev-1.13
+    source_badge: author-run
