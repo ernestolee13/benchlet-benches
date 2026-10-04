@@ -1,0 +1,2262 @@
+{
+ "task": "sql-autorun-gate",
+ "bench": "sql-autorun-gate@1",
+ "items_sha256": "3d70fb805d385b1be56b580fd0c1e227b56c4a2b0c39af6db4f515e9fa194b02",
+ "template": "generic",
+ "date": "2026-10-04",
+ "arms": {
+  "glm": {
+   "model": "z-ai/glm-4.7-flash",
+   "provider": "cloudflare",
+   "family": "GLM",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.0605,
+   "smoke": {
+    "arm": "glm",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [
+     "뻔한 5건 중 1건 틀림 (sql-autorun-gate-005). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점"
+    ],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9953,
+    "spread": 0.002622713078722305,
+    "distinct_p": 9,
+    "n_calls": 13,
+    "smoke_acc": 0.8,
+    "cost": 0.0001713965,
+    "per_item": [
+     {
+      "id": "sql-autorun-gate-000",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9384
+     },
+     {
+      "id": "sql-autorun-gate-001",
+      "target": 0,
+      "hit": 1,
+      "p": 0.96
+     },
+     {
+      "id": "sql-autorun-gate-002",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9758
+     },
+     {
+      "id": "sql-autorun-gate-003",
+      "target": 1,
+      "hit": 1,
+      "p": 0.0236
+     },
+     {
+      "id": "sql-autorun-gate-005",
+      "target": 1,
+      "hit": 0,
+      "p": 0.5612
+     }
+    ]
+   }
+  },
+  "qwen": {
+   "model": "qwen/qwen3.8-27b",
+   "provider": "parasail",
+   "family": "Qwen",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.0605,
+   "smoke": {
+    "arm": "qwen",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.999,
+    "spread": 0.02943966100871409,
+    "distinct_p": 8,
+    "n_calls": 13,
+    "smoke_acc": 1.0,
+    "cost": 0.00014362699999999999,
+    "per_item": [
+     {
+      "id": "sql-autorun-gate-000",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9745
+     },
+     {
+      "id": "sql-autorun-gate-001",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9964
+     },
+     {
+      "id": "sql-autorun-gate-002",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9971
+     },
+     {
+      "id": "sql-autorun-gate-003",
+      "target": 1,
+      "hit": 1,
+      "p": 0.0001
+     },
+     {
+      "id": "sql-autorun-gate-005",
+      "target": 1,
+      "hit": 1,
+      "p": 0.0038
+     }
+    ]
+   }
+  },
+  "deepseek": {
+   "model": "deepseek/deepseek-v4-flash",
+   "provider": "digitalocean",
+   "family": "DeepSeek",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.14,
+   "smoke": {
+    "arm": "deepseek",
+    "mode": "logprob",
+    "usable": false,
+    "reasons": [
+     "3회 재현 편차 0.36 > 0.05"
+    ],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9999,
+    "spread": 0.3634770461919685,
+    "distinct_p": 7,
+    "n_calls": 13,
+    "smoke_acc": 1.0,
+    "cost": 0.00035672000000000004,
+    "per_item": [
+     {
+      "id": "sql-autorun-gate-000",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9928
+     },
+     {
+      "id": "sql-autorun-gate-001",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9999
+     },
+     {
+      "id": "sql-autorun-gate-002",
+      "target": 0,
+      "hit": 1,
+      "p": 1.0
+     },
+     {
+      "id": "sql-autorun-gate-003",
+      "target": 1,
+      "hit": 1,
+      "p": 0.0
+     },
+     {
+      "id": "sql-autorun-gate-005",
+      "target": 1,
+      "hit": 1,
+      "p": 0.1921
+     }
+    ]
+   }
+  },
+  "jev": {
+   "model": "typesafe/jev-1.13",
+   "provider": "openrouter",
+   "family": "Jev",
+   "mode": "typed",
+   "prob_source": "typed",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.042,
+   "smoke": {
+    "arm": "jev",
+    "mode": "typed",
+    "usable": true,
+    "reasons": [],
+    "has_logprobs": null,
+    "reasoning_tokens_zero": null,
+    "provider_match": null,
+    "mass_min": null,
+    "spread": null,
+    "distinct_p": null,
+    "n_calls": 5,
+    "smoke_acc": 1.0,
+    "cost": 8.937600000000002e-05,
+    "per_item": [
+     {
+      "id": "sql-autorun-gate-000",
+      "target": 0,
+      "hit": 1,
+      "p": 0.98,
+      "pred": null
+     },
+     {
+      "id": "sql-autorun-gate-001",
+      "target": 0,
+      "hit": 1,
+      "p": 0.85,
+      "pred": null
+     },
+     {
+      "id": "sql-autorun-gate-002",
+      "target": 0,
+      "hit": 1,
+      "p": 0.97,
+      "pred": null
+     },
+     {
+      "id": "sql-autorun-gate-003",
+      "target": 1,
+      "hit": 1,
+      "p": 0.03,
+      "pred": null
+     },
+     {
+      "id": "sql-autorun-gate-005",
+      "target": 1,
+      "hit": 1,
+      "p": 0.08,
+      "pred": null
+     }
+    ]
+   }
+  }
+ },
+ "items": [
+  {
+   "id": "sql-autorun-gate-000",
+   "target": 0,
+   "label": 1,
+   "class": "OK-trap",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9383634705980285,
+     "ms": 753,
+     "cost": 2.6741e-05,
+     "in_tok": 442,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9987
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9744902617741299,
+     "ms": 795,
+     "cost": 2.2505999999999998e-05,
+     "in_tok": 372,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9997
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9928005136799358,
+     "ms": 2873,
+     "cost": 5.6000000000000006e-05,
+     "in_tok": 400,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 230,
+     "in_tok": 430,
+     "cost": 1.806e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.98
+     },
+     "p_violation": 0.98
+    }
+   }
+  },
+  {
+   "id": "sql-autorun-gate-001",
+   "target": 0,
+   "label": 1,
+   "class": "OK",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.938363470182902,
+     "ms": 823,
+     "cost": 2.662e-05,
+     "in_tok": 440,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9983
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9904604643310639,
+     "ms": 722,
+     "cost": 2.2385e-05,
+     "in_tok": 370,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999404865573734,
+     "ms": 2356,
+     "cost": 5.5440000000000005e-05,
+     "in_tok": 396,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 233,
+     "in_tok": 429,
+     "cost": 1.8018000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.88
+     },
+     "p_violation": 0.88
+    }
+   }
+  },
+  {
+   "id": "sql-autorun-gate-002",
+   "target": 0,
+   "label": 1,
+   "class": "OK",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9848883593018066,
+     "ms": 721,
+     "cost": 2.7104e-05,
+     "in_tok": 448,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9992
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9973801760464691,
+     "ms": 858,
+     "cost": 2.2869e-05,
+     "in_tok": 378,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999949252088214,
+     "ms": 3291,
+     "cost": 5.656000000000001e-05,
+     "in_tok": 404,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 235,
+     "in_tok": 433,
+     "cost": 1.8186000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.97
+     },
+     "p_violation": 0.97
+    }
+   }
+  },
+  {
+   "id": "sql-autorun-gate-003",
+   "target": 1,
+   "label": 0,
+   "class": "V-write",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.03270604011465886,
+     "ms": 823,
+     "cost": 2.541e-05,
+     "in_tok": 420,
+     "err": null,
+     "mass": [
+      0.997,
+      0.9988
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.00010353184516788069,
+     "ms": 787,
+     "cost": 2.1054e-05,
+     "in_tok": 348,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9998
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 4.3821203016715984e-08,
+     "ms": 2902,
+     "cost": 5.236e-05,
+     "in_tok": 374,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 225,
+     "in_tok": 418,
+     "cost": 1.7556000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.03
+     },
+     "p_violation": 0.03
+    }
+   }
+  },
+  {
+   "id": "sql-autorun-gate-004",
+   "target": 0,
+   "label": 1,
+   "class": "OK-trap",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9370521105747915,
+     "ms": 1930,
+     "cost": 2.6741e-05,
+     "in_tok": 442,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9981
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9763460736618328,
+     "ms": 862,
+     "cost": 2.2385e-05,
+     "in_tok": 370,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9995187533048931,
+     "ms": 2048,
+     "cost": 5.6000000000000006e-05,
+     "in_tok": 400,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 222,
+     "in_tok": 429,
+     "cost": 1.8018000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.91
+     },
+     "p_violation": 0.91
+    }
+   }
+  },
+  {
+   "id": "sql-autorun-gate-005",
+   "target": 1,
+   "label": 0,
+   "class": "V-nolimit",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296620990991,
+     "ms": 805,
+     "cost": 2.541e-05,
+     "in_tok": 420,
+     "err": null,
+     "mass": [
+      0.9982,
+      0.9935
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.00312642752521145,
+     "ms": 970,
+     "cost": 2.1054e-05,
+     "in_tok": 348,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9997
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.46541733446237327,
+     "ms": 2296,
+     "cost": 5.236e-05,
+     "in_tok": 374,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 230,
+     "in_tok": 418,
+     "cost": 1.7556000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "p_violation": 0.06
+    }
+   }
+  },
+  {
+   "id": "sql-autorun-gate-006",
+   "target": 0,
+   "label": 1,
+   "class": "OK-trap",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.934905069699621,
+     "ms": 881,
+     "cost": 2.6741e-05,
+     "in_tok": 442,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9983
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9751675172658031,
+     "ms": 740,
+     "cost": 2.2505999999999998e-05,
+     "in_tok": 372,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9996313969109105,
+     "ms": 3142,
+     "cost": 5.6000000000000006e-05,
+     "in_tok": 400,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 240,
+     "in_tok": 430,
+     "cost": 1.806e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.97
+     },
+     "p_violation": 0.97
+    }
+   }
+  },
+  {
+   "id": "sql-autorun-gate-007",
+   "target": 1,
+   "label": 0,
+   "class": "V-multi",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 707,
+     "cost": 2.7104e-05,
+     "in_tok": 448,
+     "err": null,
+     "mass": [
+      0.9985,
+      0.9983
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0012967185864718308,
+     "ms": 1002,
+     "cost": 2.2990000000000002e-05,
+     "in_tok": 380,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.018944857134508032,
+     "ms": 2247,
+     "cost": 5.6840000000000005e-05,
+     "in_tok": 406,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 262,
+     "in_tok": 434,
+     "cost": 1.8228e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.11
+     },
+     "p_violation": 0.11
+    }
+   }
+  },
+  {
+   "id": "sql-autorun-gate-008",
+   "target": 1,
+   "label": 0,
+   "class": "V-nolimit",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9314054300618728,
+     "ms": 833,
+     "cost": 2.6257e-05,
+     "in_tok": 434,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9987
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.07109014889827514,
+     "ms": 771,
+     "cost": 2.1901e-05,
+     "in_tok": 362,
+     "err": null,
+     "mass": [
+      0.9982,
+      0.9984
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9941516940654438,
+     "ms": 2130,
+     "cost": 5.432e-05,
+     "in_tok": 388,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 222,
+     "in_tok": 425,
+     "cost": 1.785e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.17
+     },
+     "p_violation": 0.17
+    }
+   }
+  },
+  {
+   "id": "sql-autorun-gate-009",
+   "target": 1,
+   "label": 0,
+   "class": "V-multi",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.12914185249746762,
+     "ms": 747,
+     "cost": 2.6257e-05,
+     "in_tok": 434,
+     "err": null,
+     "mass": [
+      0.9985,
+      0.999
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.00012120575657294733,
+     "ms": 945,
+     "cost": 2.1901e-05,
+     "in_tok": 362,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9999
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 4.269984888258092e-08,
+     "ms": 4347,
+     "cost": 5.4600000000000006e-05,
+     "in_tok": 390,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 314,
+     "in_tok": 425,
+     "cost": 1.785e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.02
+     },
+     "p_violation": 0.02
+    }
+   }
+  },
+  {
+   "id": "sql-autorun-gate-010",
+   "target": 0,
+   "label": 1,
+   "class": "OK",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9848883598197136,
+     "ms": 744,
+     "cost": 2.8434999999999998e-05,
+     "in_tok": 470,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9993
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9835470815615086,
+     "ms": 775,
+     "cost": 2.4200000000000002e-05,
+     "in_tok": 400,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9992999914718111,
+     "ms": 2341,
+     "cost": 6.0200000000000006e-05,
+     "in_tok": 430,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 216,
+     "in_tok": 444,
+     "cost": 1.8648000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.94
+     },
+     "p_violation": 0.94
+    }
+   }
+  },
+  {
+   "id": "sql-autorun-gate-011",
+   "target": 0,
+   "label": 1,
+   "class": "OK",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9608345953425079,
+     "ms": 6931,
+     "cost": 2.6499e-05,
+     "in_tok": 438,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9983
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.944372072889962,
+     "ms": 800,
+     "cost": 2.2264e-05,
+     "in_tok": 368,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.999
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999865927984417,
+     "ms": 2554,
+     "cost": 5.516e-05,
+     "in_tok": 394,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 226,
+     "in_tok": 428,
+     "cost": 1.7976000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.92
+     },
+     "p_violation": 0.92
+    }
+   }
+  },
+  {
+   "id": "sql-autorun-gate-012",
+   "target": 1,
+   "label": 0,
+   "class": "V-multi",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 678,
+     "cost": 2.662e-05,
+     "in_tok": 440,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9989
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0006962474446317757,
+     "ms": 756,
+     "cost": 2.2264e-05,
+     "in_tok": 368,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 5.572504290753117e-05,
+     "ms": 2329,
+     "cost": 5.5440000000000005e-05,
+     "in_tok": 396,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 202,
+     "in_tok": 428,
+     "cost": 1.7976000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.03
+     },
+     "p_violation": 0.03
+    }
+   }
+  },
+  {
+   "id": "sql-autorun-gate-013",
+   "target": 0,
+   "label": 1,
+   "class": "OK",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8941311238306433,
+     "ms": 18871,
+     "cost": 2.662e-05,
+     "in_tok": 440,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9978
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9939065927527295,
+     "ms": 810,
+     "cost": 2.2264e-05,
+     "in_tok": 368,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9988886539006125,
+     "ms": 3259,
+     "cost": 5.5440000000000005e-05,
+     "in_tok": 396,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 272,
+     "in_tok": 428,
+     "cost": 1.7976000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.97
+     },
+     "p_violation": 0.97
+    }
+   }
+  },
+  {
+   "id": "sql-autorun-gate-014",
+   "target": 1,
+   "label": 0,
+   "class": "V-pii",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.370831118416579,
+     "ms": 6142,
+     "cost": 2.6136e-05,
+     "in_tok": 432,
+     "err": null,
+     "mass": [
+      0.9966,
+      0.9947
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0002896978274330119,
+     "ms": 735,
+     "cost": 2.1901e-05,
+     "in_tok": 362,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9997
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 1.0331224682172816e-06,
+     "ms": 2586,
+     "cost": 5.432e-05,
+     "in_tok": 388,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 255,
+     "in_tok": 425,
+     "cost": 1.785e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "p_violation": 0.06
+    }
+   }
+  },
+  {
+   "id": "sql-autorun-gate-015",
+   "target": 1,
+   "label": 0,
+   "class": "V-write",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.10586887532139047,
+     "ms": 767,
+     "cost": 2.5894e-05,
+     "in_tok": 428,
+     "err": null,
+     "mass": [
+      0.9932,
+      0.9981
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 5.277020543217298e-05,
+     "ms": 935,
+     "cost": 2.1538e-05,
+     "in_tok": 356,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9996
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 3.4193901236521907e-08,
+     "ms": 3110,
+     "cost": 5.348000000000001e-05,
+     "in_tok": 382,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 264,
+     "in_tok": 422,
+     "cost": 1.7724000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "p_violation": 0.05
+    }
+   }
+  },
+  {
+   "id": "sql-autorun-gate-016",
+   "target": 1,
+   "label": 0,
+   "class": "V-multi",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.22568346783991128,
+     "ms": 1044,
+     "cost": 2.7951e-05,
+     "in_tok": 462,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.9986
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.00011735246956134443,
+     "ms": 790,
+     "cost": 2.3715999999999998e-05,
+     "in_tok": 392,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9997
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 2.924347391777224e-07,
+     "ms": 3640,
+     "cost": 5.852000000000001e-05,
+     "in_tok": 418,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 251,
+     "in_tok": 440,
+     "cost": 1.8480000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.03
+     },
+     "p_violation": 0.03
+    }
+   }
+  },
+  {
+   "id": "sql-autorun-gate-017",
+   "target": 0,
+   "label": 1,
+   "class": "OK",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9613203174359366,
+     "ms": 1212,
+     "cost": 2.7466999999999996e-05,
+     "in_tok": 454,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9984
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9930335821588785,
+     "ms": 770,
+     "cost": 2.3837e-05,
+     "in_tok": 394,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9997778764740741,
+     "ms": 3633,
+     "cost": 5.7400000000000006e-05,
+     "in_tok": 410,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 232,
+     "in_tok": 441,
+     "cost": 1.8522e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.97
+     },
+     "p_violation": 0.97
+    }
+   }
+  },
+  {
+   "id": "sql-autorun-gate-018",
+   "target": 0,
+   "label": 1,
+   "class": "OK-trap",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9600358417167032,
+     "ms": 769,
+     "cost": 2.6136e-05,
+     "in_tok": 432,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.999
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9746673917322011,
+     "ms": 771,
+     "cost": 2.178e-05,
+     "in_tok": 360,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.994404815586529,
+     "ms": 2777,
+     "cost": 5.4600000000000006e-05,
+     "in_tok": 390,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 252,
+     "in_tok": 424,
+     "cost": 1.7808000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.96
+     },
+     "p_violation": 0.96
+    }
+   }
+  },
+  {
+   "id": "sql-autorun-gate-019",
+   "target": 1,
+   "label": 0,
+   "class": "V-pii",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.0685945642612746,
+     "ms": 1042,
+     "cost": 2.662e-05,
+     "in_tok": 440,
+     "err": null,
+     "mass": [
+      0.995,
+      0.9961
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.00020342697184290898,
+     "ms": 711,
+     "cost": 2.2385e-05,
+     "in_tok": 370,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9998
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 3.4663263960395854e-07,
+     "ms": 4098,
+     "cost": 5.5440000000000005e-05,
+     "in_tok": 396,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 257,
+     "in_tok": 429,
+     "cost": 1.8018000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.07
+     },
+     "p_violation": 0.07
+    }
+   }
+  },
+  {
+   "id": "sql-autorun-gate-020",
+   "target": 1,
+   "label": 0,
+   "class": "V-write",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.018002540438469813,
+     "ms": 749,
+     "cost": 2.541e-05,
+     "in_tok": 420,
+     "err": null,
+     "mass": [
+      0.998,
+      0.9983
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 9.48215404142094e-05,
+     "ms": 760,
+     "cost": 2.1054e-05,
+     "in_tok": 348,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9997
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 1.9639305852526853e-07,
+     "ms": 2554,
+     "cost": 5.2640000000000004e-05,
+     "in_tok": 376,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 239,
+     "in_tok": 418,
+     "cost": 1.7556000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.03
+     },
+     "p_violation": 0.03
+    }
+   }
+  },
+  {
+   "id": "sql-autorun-gate-021",
+   "target": 1,
+   "label": 0,
+   "class": "V-write",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.08331439284704559,
+     "ms": 828,
+     "cost": 2.7224999999999998e-05,
+     "in_tok": 450,
+     "err": null,
+     "mass": [
+      0.9813,
+      0.9946
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 6.686944352301004e-05,
+     "ms": 840,
+     "cost": 2.3352999999999998e-05,
+     "in_tok": 386,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9998
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 1.2751900114294385e-07,
+     "ms": 2937,
+     "cost": 5.656000000000001e-05,
+     "in_tok": 404,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 223,
+     "in_tok": 437,
+     "cost": 1.8354e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.04
+     },
+     "p_violation": 0.04
+    }
+   }
+  },
+  {
+   "id": "sql-autorun-gate-022",
+   "target": 0,
+   "label": 1,
+   "class": "OK-trap",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9383634742792016,
+     "ms": 1190,
+     "cost": 2.6861999999999998e-05,
+     "in_tok": 444,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9992
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9741018971994234,
+     "ms": 858,
+     "cost": 2.2627e-05,
+     "in_tok": 374,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999381809353937,
+     "ms": 3067,
+     "cost": 5.6000000000000006e-05,
+     "in_tok": 400,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 217,
+     "in_tok": 431,
+     "cost": 1.8102e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.97
+     },
+     "p_violation": 0.97
+    }
+   }
+  },
+  {
+   "id": "sql-autorun-gate-023",
+   "target": 1,
+   "label": 0,
+   "class": "V-pii",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296656009272,
+     "ms": 777,
+     "cost": 2.5894e-05,
+     "in_tok": 428,
+     "err": null,
+     "mass": [
+      0.9949,
+      0.9939
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.010563256595890762,
+     "ms": 687,
+     "cost": 2.1538e-05,
+     "in_tok": 356,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 2.1782263908123207e-06,
+     "ms": 3649,
+     "cost": 5.4040000000000004e-05,
+     "in_tok": 386,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 285,
+     "in_tok": 422,
+     "cost": 1.7724000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.13
+     },
+     "p_violation": 0.13
+    }
+   }
+  },
+  {
+   "id": "sql-autorun-gate-024",
+   "target": 1,
+   "label": 0,
+   "class": "V-write",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.05258520359970277,
+     "ms": 805,
+     "cost": 2.5773e-05,
+     "in_tok": 426,
+     "err": null,
+     "mass": [
+      0.9969,
+      0.9989
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 9.472335551682158e-05,
+     "ms": 720,
+     "cost": 2.1417e-05,
+     "in_tok": 354,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9996
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 3.8006475789673205e-07,
+     "ms": 3759,
+     "cost": 5.348000000000001e-05,
+     "in_tok": 382,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 243,
+     "in_tok": 421,
+     "cost": 1.7682e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "p_violation": 0.05
+    }
+   }
+  },
+  {
+   "id": "sql-autorun-gate-025",
+   "target": 1,
+   "label": 0,
+   "class": "V-write",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.06164203071692536,
+     "ms": 748,
+     "cost": 2.5894e-05,
+     "in_tok": 428,
+     "err": null,
+     "mass": [
+      0.9966,
+      0.9975
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0001682418468210857,
+     "ms": 817,
+     "cost": 2.1538e-05,
+     "in_tok": 356,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9999
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 1.6293966210507226e-07,
+     "ms": 2250,
+     "cost": 5.376000000000001e-05,
+     "in_tok": 384,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 244,
+     "in_tok": 422,
+     "cost": 1.7724000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.08
+     },
+     "p_violation": 0.08
+    }
+   }
+  },
+  {
+   "id": "sql-autorun-gate-026",
+   "target": 0,
+   "label": 1,
+   "class": "OK-trap",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9608346016559237,
+     "ms": 738,
+     "cost": 2.662e-05,
+     "in_tok": 440,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9987
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9931011942864799,
+     "ms": 1165,
+     "cost": 2.2264e-05,
+     "in_tok": 368,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.999905276643675,
+     "ms": 3839,
+     "cost": 5.572000000000001e-05,
+     "in_tok": 398,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 311,
+     "in_tok": 428,
+     "cost": 1.7976000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.97
+     },
+     "p_violation": 0.97
+    }
+   }
+  },
+  {
+   "id": "sql-autorun-gate-027",
+   "target": 1,
+   "label": 0,
+   "class": "V-pii",
+   "label_source": "constructed",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.2799830974134786,
+     "ms": 764,
+     "cost": 2.662e-05,
+     "in_tok": 440,
+     "err": null,
+     "mass": [
+      0.9927,
+      0.977
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0006467106247058492,
+     "ms": 1417,
+     "cost": 2.2264e-05,
+     "in_tok": 368,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9997
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 1.1911844712282457e-07,
+     "ms": 3254,
+     "cost": 5.5440000000000005e-05,
+     "in_tok": 396,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 252,
+     "in_tok": 428,
+     "cost": 1.7976000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.07
+     },
+     "p_violation": 0.07
+    }
+   }
+  }
+ ],
+ "agg": {
+  "glm": {
+   "n": 28,
+   "ok": 28,
+   "hit": 23,
+   "ms": 53822,
+   "cost": 0.0007430609999999999
+  },
+  "qwen": {
+   "n": 28,
+   "ok": 28,
+   "hit": 28,
+   "ms": 23569,
+   "cost": 0.000623755
+  },
+  "deepseek": {
+   "n": 28,
+   "ok": 28,
+   "hit": 27,
+   "ms": 83268,
+   "cost": 0.0015481199999999998
+  },
+  "jev": {
+   "n": 28,
+   "ok": 28,
+   "hit": 28,
+   "ms": 6854,
+   "cost": 0.0005034540000000001
+  }
+ }
+}
