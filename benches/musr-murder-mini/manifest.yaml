@@ -1,0 +1,600 @@
+name: musr-murder-mini
+version: 1
+task_signature:
+  goal: derive
+  answer: binary
+  prob_use: accuracy_only
+  label: machine
+  unit: document
+  language: en
+  n: 100
+question: 이 살인 미스터리 이야기에서 범인일 가능성이 가장 높은 사람은 둘 중 누구인가. 수단, 동기, 기회가 모두 성립하는 쪽을 고른다.
+choices:
+- Addison
+- Albert
+- Alex
+- Alfred
+- Alice
+- Amelia
+- Ana
+- Andrew
+- Aubrey
+- Autumn
+- Bella
+- Bethany
+- Brian
+- Brianna
+- Bridget
+- Bruce
+- Bryan
+- Camille
+- Catherine
+- Charlotte
+- Chester
+- Chris
+- Christine
+- Claire
+- Clara
+- Clyde
+- Daisy
+- Dale
+- Danielle
+- Deborah
+- Dennis
+- Dexter
+- Elizabeth
+- Emma
+- Erika
+- Ervin
+- Everett
+- Francis
+- Frank
+- Fred
+- Frederick
+- Freya
+- Garry
+- Gerald
+- Glenn
+- Gloria
+- Gordon
+- Grace
+- Gregory
+- Harper
+- Harry
+- Harvey
+- Helen
+- Homer
+- Hugo
+- Imogen
+- Irving
+- Isabelle
+- Isla
+- Jacqueline
+- Jay
+- Jerome
+- Jesse
+- Jose
+- Julia
+- Julius
+- Karl
+- Kimberly
+- Kinsley
+- Lance
+- Larry
+- Letti
+- Lillian
+- Lucy
+- Mackenzie
+- Madelyn
+- Madison
+- Mandy
+- Marianne
+- Mark
+- Martin
+- Maurice
+- Melody
+- Meredith
+- Mia
+- Michael
+- Miles
+- Milton
+- Mya
+- Naomi
+- Nathaniel
+- Nicole
+- Norris
+- Octavia
+- Orville
+- Oscar
+- Paige
+- Paul
+- Penelope
+- Priscilla
+- Rachel
+- Randy
+- Rex
+- Ricky
+- Ronald
+- Roscoe
+- Rose
+- Rosemary
+- Ruben
+- Ruby
+- Russell
+- Sam
+- Serenity
+- Sergio
+- Shawn
+- Sophia
+- Steve
+- Tessa
+- Timothy
+- Travis
+- Troy
+- Van
+- Warren
+- Wilfred
+- Willard
+- Xenia
+- Xochitl
+- Yolanda
+- Yvette
+- Zara
+- Zelda
+choices_note: 항목마다 선택지 순서가 다르다(파일에 든 셔플). 여기는 이름 집합
+generator:
+  script: src/build_nomatrix_seeds.py
+  seed: 20261003
+source: MuSR murder mysteries (Sprague et al. 2024), 250 에서 클래스 층화 무작위로 100건 축약 (전체
+  250건)
+domain:
+- musr-murder
+- public-seed
+- english
+visibility: sample
+items_sha256: 43aa88e03274205218117159c5b4f56a59dca541f12f64bf942b5f0f0160df93
+license: MIT
+attribution:
+  items: MuSR murder mysteries (Sprague et al. 2024), 250
+  model_responses: '원천에 모델별 항목 출력 없음. CoT+: GPT-4 80.4, GPT-3.5 61.6, Llama 2 70B
+    48.8 (논문 표 5)'
+  method: class-stratified random sample (no per-model matrix); validation = own arms
+    on the full set vs this subset (see distill.own_arms)
+distill:
+  method: class-stratified random
+  n: 100
+  n_items_total: 250
+  strata:
+    '2': 250
+  selected_keys_in_full:
+  - musr_mm.csv:1
+  - musr_mm.csv:100
+  - musr_mm.csv:103
+  - musr_mm.csv:109
+  - musr_mm.csv:110
+  - musr_mm.csv:112
+  - musr_mm.csv:116
+  - musr_mm.csv:117
+  - musr_mm.csv:12
+  - musr_mm.csv:123
+  - musr_mm.csv:125
+  - musr_mm.csv:128
+  - musr_mm.csv:129
+  - musr_mm.csv:13
+  - musr_mm.csv:130
+  - musr_mm.csv:133
+  - musr_mm.csv:134
+  - musr_mm.csv:139
+  - musr_mm.csv:14
+  - musr_mm.csv:143
+  - musr_mm.csv:144
+  - musr_mm.csv:145
+  - musr_mm.csv:147
+  - musr_mm.csv:150
+  - musr_mm.csv:158
+  - musr_mm.csv:16
+  - musr_mm.csv:161
+  - musr_mm.csv:167
+  - musr_mm.csv:169
+  - musr_mm.csv:172
+  - musr_mm.csv:174
+  - musr_mm.csv:175
+  - musr_mm.csv:176
+  - musr_mm.csv:177
+  - musr_mm.csv:179
+  - musr_mm.csv:180
+  - musr_mm.csv:183
+  - musr_mm.csv:184
+  - musr_mm.csv:185
+  - musr_mm.csv:187
+  - musr_mm.csv:188
+  - musr_mm.csv:190
+  - musr_mm.csv:193
+  - musr_mm.csv:194
+  - musr_mm.csv:195
+  - musr_mm.csv:196
+  - musr_mm.csv:198
+  - musr_mm.csv:2
+  - musr_mm.csv:200
+  - musr_mm.csv:209
+  - musr_mm.csv:21
+  - musr_mm.csv:213
+  - musr_mm.csv:215
+  - musr_mm.csv:216
+  - musr_mm.csv:218
+  - musr_mm.csv:219
+  - musr_mm.csv:225
+  - musr_mm.csv:228
+  - musr_mm.csv:229
+  - musr_mm.csv:23
+  - musr_mm.csv:231
+  - musr_mm.csv:237
+  - musr_mm.csv:238
+  - musr_mm.csv:239
+  - musr_mm.csv:240
+  - musr_mm.csv:243
+  - musr_mm.csv:244
+  - musr_mm.csv:246
+  - musr_mm.csv:247
+  - musr_mm.csv:29
+  - musr_mm.csv:30
+  - musr_mm.csv:37
+  - musr_mm.csv:38
+  - musr_mm.csv:39
+  - musr_mm.csv:40
+  - musr_mm.csv:41
+  - musr_mm.csv:5
+  - musr_mm.csv:50
+  - musr_mm.csv:57
+  - musr_mm.csv:58
+  - musr_mm.csv:59
+  - musr_mm.csv:62
+  - musr_mm.csv:63
+  - musr_mm.csv:68
+  - musr_mm.csv:69
+  - musr_mm.csv:70
+  - musr_mm.csv:72
+  - musr_mm.csv:74
+  - musr_mm.csv:75
+  - musr_mm.csv:76
+  - musr_mm.csv:77
+  - musr_mm.csv:84
+  - musr_mm.csv:85
+  - musr_mm.csv:86
+  - musr_mm.csv:89
+  - musr_mm.csv:9
+  - musr_mm.csv:93
+  - musr_mm.csv:94
+  - musr_mm.csv:95
+  - musr_mm.csv:98
+  own_arms:
+    date: '2026-10-05'
+    arms:
+      glm:
+        full_acc: 0.592
+        full_ok: 250
+        full_n: 250
+        mini_acc: 0.52
+        mini_ok: 100
+        same_items_in_full_run_acc: 0.55
+        gap_pp: 7.2
+      qwen:
+        full_acc: 0.712
+        full_ok: 250
+        full_n: 250
+        mini_acc: 0.7374
+        mini_ok: 99
+        same_items_in_full_run_acc: 0.72
+        gap_pp: 2.54
+      deepseek:
+        full_acc: 0.604
+        full_ok: 250
+        full_n: 250
+        mini_acc: 0.5844
+        mini_ok: 77
+        same_items_in_full_run_acc: 0.61
+        gap_pp: 1.96
+      jev:
+        full_acc: 0.5
+        full_ok: 250
+        full_n: 250
+        mini_acc: 0.47
+        mini_ok: 100
+        same_items_in_full_run_acc: 0.47
+        gap_pp: 3.0
+    mae_pp: 3.67
+    max_gap_pp: 7.2
+    rank_full:
+    - qwen
+    - deepseek
+    - glm
+    - jev
+    rank_mini:
+    - qwen
+    - deepseek
+    - glm
+    - jev
+    rank_preserved: true
+    excluded_arms_low_success: {}
+    sampling_se_pp_at_100: 정확도 80% 기준 이항 표준오차 약 4pp. 그 안의 차이는 표본 잡음이다
+    note: 검증 집단은 우리 4팔뿐이다. gap 에는 제공자 실행 잡음(같은 항목 재실행 차이 최대 2pp)이 섞여 있다
+taxonomy:
+  domain:
+  - commonsense
+  input_kind: document
+  source_kind: public-distilled
+  language: en
+  keywords:
+  - 추론
+  - 상식
+  - musr
+review:
+  checks_run: 0
+  human_reviewed_fraction: 0.0
+  flagged: 0
+  decided: 0
+note: 판단형 공개 벤치의 축약 시드(행렬 없는 경로). 라벨은 원천 라벨. 축약 검증은 원천 모델 집단이 아니라 우리 팔의 전체 대 축약 비교다
+owner: ernestolee13
+n: 100
+published_at: '2026-10-05'
+type: binary
+classes:
+- murder-mystery
+label_source_mix:
+  machine: 100
+  constructed: 0
+  judged: 0
+  outcome: 0
+experiment:
+  date: '2026-10-05'
+  template: generic
+  runner: benchlet
+  arms:
+    glm:
+      model: z-ai/glm-4.7-flash
+      provider: cloudflare
+      family: GLM
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke:
+        arm: glm
+        mode: logprob
+        usable: true
+        reasons:
+        - '확률값 종류 3/10: 반올림된 로그확률 의심 (AUROC 를 믿지 마라)'
+        - 뻔한 5건 중 2건 틀림 (musr-murder-mini-0008, musr-murder-mini-0001). 다른 팔도 틀리면
+          질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9733
+        spread: 0.0
+        distinct_p: 3
+        n_calls: 13
+        smoke_acc: 0.6
+        cost: 0.0009647330000000001
+        per_item:
+        - id: musr-murder-mini-0000
+          target: 0
+          hit: 1
+          p: 0.5
+        - id: musr-murder-mini-0008
+          target: 0
+          hit: 0
+          p: 0.4457
+        - id: musr-murder-mini-0009
+          target: 0
+          hit: 1
+          p: 0.5543
+        - id: musr-murder-mini-0001
+          target: 1
+          hit: 0
+          p: 0.5612
+        - id: musr-murder-mini-0002
+          target: 1
+          hit: 1
+          p: 0.4388
+    qwen:
+      model: qwen/qwen3.8-27b
+      provider: parasail
+      family: Qwen
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke:
+        arm: qwen
+        mode: logprob
+        usable: true
+        reasons:
+        - 뻔한 5건 중 1건 틀림 (musr-murder-mini-0002). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9987
+        spread: 0.0
+        distinct_p: 9
+        n_calls: 13
+        smoke_acc: 0.8
+        cost: 0.0009623734999999998
+        per_item:
+        - id: musr-murder-mini-0000
+          target: 0
+          hit: 1
+          p: 0.6867
+        - id: musr-murder-mini-0008
+          target: 0
+          hit: 1
+          p: 0.7385
+        - id: musr-murder-mini-0009
+          target: 0
+          hit: 1
+          p: 0.6647
+        - id: musr-murder-mini-0001
+          target: 1
+          hit: 1
+          p: 0.2188
+        - id: musr-murder-mini-0002
+          target: 1
+          hit: 0
+          p: 0.5216
+    deepseek:
+      model: deepseek/deepseek-v4-flash
+      provider: digitalocean
+      family: DeepSeek
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.14
+      smoke:
+        arm: deepseek
+        mode: logprob
+        usable: true
+        reasons:
+        - 뻔한 5건 중 2건 틀림 (musr-murder-mini-0008, musr-murder-mini-0001). 다른 팔도 틀리면
+          질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9998
+        spread: 0.0054861389867957525
+        distinct_p: 8
+        n_calls: 13
+        smoke_acc: 0.6
+        cost: 0.0022169000000000004
+        per_item:
+        - id: musr-murder-mini-0000
+          target: 0
+          hit: 1
+          p: 0.5043
+        - id: musr-murder-mini-0008
+          target: 0
+          hit: 0
+          p: 0.4993
+        - id: musr-murder-mini-0009
+          target: 0
+          hit: 1
+          p: 0.5031
+        - id: musr-murder-mini-0001
+          target: 1
+          hit: 0
+          p: 0.5013
+        - id: musr-murder-mini-0002
+          target: 1
+          hit: 1
+          p: 0.4961
+    jev:
+      model: typesafe/jev-1.13
+      provider: openrouter
+      family: Jev
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.042
+      smoke:
+        arm: jev
+        mode: typed
+        usable: true
+        reasons:
+        - 뻔한 5건 중 2건 틀림 (musr-murder-mini-0001, musr-murder-mini-0002). 다른 팔도 틀리면
+          질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 0.6
+        cost: 0.00031773
+        per_item:
+        - id: musr-murder-mini-0000
+          target: 0
+          hit: 1
+          p: 0.66
+          pred: null
+        - id: musr-murder-mini-0008
+          target: 0
+          hit: 1
+          p: 0.64
+          pred: null
+        - id: musr-murder-mini-0009
+          target: 0
+          hit: 1
+          p: 0.61
+          pred: null
+        - id: musr-murder-mini-0001
+          target: 1
+          hit: 0
+          p: 0.63
+          pred: null
+        - id: musr-murder-mini-0002
+          target: 1
+          hit: 0
+          p: 0.69
+          pred: null
+  protocol:
+    decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
+    logprob_call:
+      max_tokens: 1
+      temperature: 0
+      logprobs: true
+      top_logprobs: 8
+      reasoning:
+        enabled: false
+    provider_pin: provider.only=[pin], allow_fallbacks=false, require_parameters=true
+    binary: '극성 반전 2회 호출 평균: p = ½[P(A|choices[0]=A) + P(B|choices[0]=B)]'
+    multiclass: 항목별 결정론적 셔플 뒤 원 인덱스로 복원(generic) 또는 파일에 든 셔플 그대로(legacy-seed)
+    typed: Jev noul(이진)/choice(다지), 질문을 instructions 로 그대로 전달
+    label_mass: 상위 8토큰 중 라벨 토큰 질량 < 0.5 이면 오류로 두고 세지 않음
+    renormalize: 라벨 토큰 확률을 라벨 집합 안에서 재정규화
+  items_sha256: 43aa88e03274205218117159c5b4f56a59dca541f12f64bf942b5f0f0160df93
+results:
+- results/musr-murder-mini-run.json
+result_summary:
+  glm:
+    acc: 0.52
+    ci95:
+    - 0.42316405090176545
+    - 0.6153561567991945
+    auroc: 0.53472501003613
+    brier: 0.25208868392815975
+    n: 100
+    prob_source: logprob
+    model: z-ai/glm-4.7-flash
+    source_badge: author-run
+  qwen:
+    acc: 0.7373737373737373
+    ci95:
+    - 0.6429937858948775
+    - 0.8140197183679888
+    auroc: 0.7565466448445172
+    brier: 0.20079437733625777
+    n: 99
+    prob_source: logprob
+    model: qwen/qwen3.8-27b
+    source_badge: author-run
+  jev:
+    acc: 0.47
+    ci95:
+    - 0.3751065198210374
+    - 0.5671131686275227
+    auroc: 0.4381774387796066
+    brier: 0.29771499999999995
+    n: 100
+    prob_source: typed
+    model: typesafe/jev-1.13
+    source_badge: author-run
+  deepseek:
+    acc: 0.5844155844155844
+    ci95:
+    - 0.47289839936415395
+    - 0.6879098973543671
+    auroc: 0.5762483130904184
+    brier: 0.24871641170903275
+    n: 77
+    prob_source: logprob
+    model: deepseek/deepseek-v4-flash
+    source_badge: author-run

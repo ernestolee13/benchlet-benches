@@ -1,0 +1,7387 @@
+{
+ "task": "musr-murder-mini",
+ "bench": "musr-murder-mini@1",
+ "items_sha256": "43aa88e03274205218117159c5b4f56a59dca541f12f64bf942b5f0f0160df93",
+ "template": "generic",
+ "date": "2026-10-05",
+ "arms": {
+  "glm": {
+   "model": "z-ai/glm-4.7-flash",
+   "provider": "cloudflare",
+   "family": "GLM",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.0605,
+   "smoke": {
+    "arm": "glm",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [
+     "확률값 종류 3/10: 반올림된 로그확률 의심 (AUROC 를 믿지 마라)",
+     "뻔한 5건 중 2건 틀림 (musr-murder-mini-0008, musr-murder-mini-0001). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점"
+    ],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9733,
+    "spread": 0.0,
+    "distinct_p": 3,
+    "n_calls": 13,
+    "smoke_acc": 0.6,
+    "cost": 0.0009647330000000001,
+    "per_item": [
+     {
+      "id": "musr-murder-mini-0000",
+      "target": 0,
+      "hit": 1,
+      "p": 0.5
+     },
+     {
+      "id": "musr-murder-mini-0008",
+      "target": 0,
+      "hit": 0,
+      "p": 0.4457
+     },
+     {
+      "id": "musr-murder-mini-0009",
+      "target": 0,
+      "hit": 1,
+      "p": 0.5543
+     },
+     {
+      "id": "musr-murder-mini-0001",
+      "target": 1,
+      "hit": 0,
+      "p": 0.5612
+     },
+     {
+      "id": "musr-murder-mini-0002",
+      "target": 1,
+      "hit": 1,
+      "p": 0.4388
+     }
+    ]
+   }
+  },
+  "qwen": {
+   "model": "qwen/qwen3.8-27b",
+   "provider": "parasail",
+   "family": "Qwen",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.0605,
+   "smoke": {
+    "arm": "qwen",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [
+     "뻔한 5건 중 1건 틀림 (musr-murder-mini-0002). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점"
+    ],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9987,
+    "spread": 0.0,
+    "distinct_p": 9,
+    "n_calls": 13,
+    "smoke_acc": 0.8,
+    "cost": 0.0009623734999999998,
+    "per_item": [
+     {
+      "id": "musr-murder-mini-0000",
+      "target": 0,
+      "hit": 1,
+      "p": 0.6867
+     },
+     {
+      "id": "musr-murder-mini-0008",
+      "target": 0,
+      "hit": 1,
+      "p": 0.7385
+     },
+     {
+      "id": "musr-murder-mini-0009",
+      "target": 0,
+      "hit": 1,
+      "p": 0.6647
+     },
+     {
+      "id": "musr-murder-mini-0001",
+      "target": 1,
+      "hit": 1,
+      "p": 0.2188
+     },
+     {
+      "id": "musr-murder-mini-0002",
+      "target": 1,
+      "hit": 0,
+      "p": 0.5216
+     }
+    ]
+   }
+  },
+  "deepseek": {
+   "model": "deepseek/deepseek-v4-flash",
+   "provider": "digitalocean",
+   "family": "DeepSeek",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.14,
+   "smoke": {
+    "arm": "deepseek",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [
+     "뻔한 5건 중 2건 틀림 (musr-murder-mini-0008, musr-murder-mini-0001). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점"
+    ],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9998,
+    "spread": 0.0054861389867957525,
+    "distinct_p": 8,
+    "n_calls": 13,
+    "smoke_acc": 0.6,
+    "cost": 0.0022169000000000004,
+    "per_item": [
+     {
+      "id": "musr-murder-mini-0000",
+      "target": 0,
+      "hit": 1,
+      "p": 0.5043
+     },
+     {
+      "id": "musr-murder-mini-0008",
+      "target": 0,
+      "hit": 0,
+      "p": 0.4993
+     },
+     {
+      "id": "musr-murder-mini-0009",
+      "target": 0,
+      "hit": 1,
+      "p": 0.5031
+     },
+     {
+      "id": "musr-murder-mini-0001",
+      "target": 1,
+      "hit": 0,
+      "p": 0.5013
+     },
+     {
+      "id": "musr-murder-mini-0002",
+      "target": 1,
+      "hit": 1,
+      "p": 0.4961
+     }
+    ]
+   }
+  },
+  "jev": {
+   "model": "typesafe/jev-1.13",
+   "provider": "openrouter",
+   "family": "Jev",
+   "mode": "typed",
+   "prob_source": "typed",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.042,
+   "smoke": {
+    "arm": "jev",
+    "mode": "typed",
+    "usable": true,
+    "reasons": [
+     "뻔한 5건 중 2건 틀림 (musr-murder-mini-0001, musr-murder-mini-0002). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점"
+    ],
+    "has_logprobs": null,
+    "reasoning_tokens_zero": null,
+    "provider_match": null,
+    "mass_min": null,
+    "spread": null,
+    "distinct_p": null,
+    "n_calls": 5,
+    "smoke_acc": 0.6,
+    "cost": 0.00031773,
+    "per_item": [
+     {
+      "id": "musr-murder-mini-0000",
+      "target": 0,
+      "hit": 1,
+      "p": 0.66,
+      "pred": null
+     },
+     {
+      "id": "musr-murder-mini-0008",
+      "target": 0,
+      "hit": 1,
+      "p": 0.64,
+      "pred": null
+     },
+     {
+      "id": "musr-murder-mini-0009",
+      "target": 0,
+      "hit": 1,
+      "p": 0.61,
+      "pred": null
+     },
+     {
+      "id": "musr-murder-mini-0001",
+      "target": 1,
+      "hit": 0,
+      "p": 0.63,
+      "pred": null
+     },
+     {
+      "id": "musr-murder-mini-0002",
+      "target": 1,
+      "hit": 0,
+      "p": 0.69,
+      "pred": null
+     }
+    ]
+   }
+  }
+ },
+ "items": [
+  {
+   "id": "musr-murder-mini-0000",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 912,
+     "cost": 0.00014519999999999998,
+     "in_tok": 2400,
+     "err": null,
+     "mass": [
+      0.9885,
+      0.9792
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.6918457876191644,
+     "ms": 1125,
+     "cost": 0.000144111,
+     "in_tok": 2382,
+     "err": null,
+     "mass": [
+      0.9987,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 245,
+     "in_tok": 1464,
+     "cost": 6.1488e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.67
+     },
+     "p_violation": 0.67
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 56953,
+     "cost": 0.00016674000000000002,
+     "in_tok": 1191,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      1.0,
+      null
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      null
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0001",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296656009272,
+     "ms": 943,
+     "cost": 0.000148467,
+     "in_tok": 2454,
+     "err": null,
+     "mass": [
+      0.9841,
+      0.9888
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.2337100222696986,
+     "ms": 875,
+     "cost": 0.000147862,
+     "in_tok": 2444,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9996
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 324,
+     "in_tok": 1511,
+     "cost": 6.3462e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.61
+     },
+     "p_violation": 0.61
+    },
+    "deepseek": {
+     "p_violation": 0.5000173834030194,
+     "ms": 24086,
+     "cost": 0.00034020000000000003,
+     "in_tok": 2430,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0002",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.43877033439907276,
+     "ms": 1290,
+     "cost": 0.000133705,
+     "in_tok": 2210,
+     "err": null,
+     "mass": [
+      0.981,
+      0.9876
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4999999972430117,
+     "ms": 1567,
+     "cost": 0.00013334199999999997,
+     "in_tok": 2204,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 342,
+     "in_tok": 1367,
+     "cost": 5.7414e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.7
+     },
+     "p_violation": 0.7
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 56950,
+     "cost": 0.00015232,
+     "in_tok": 1088,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      1.0,
+      null
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      null
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0003",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5542996207843289,
+     "ms": 1003,
+     "cost": 0.000162382,
+     "in_tok": 2684,
+     "err": null,
+     "mass": [
+      0.9887,
+      0.9846
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.40607146815759937,
+     "ms": 1150,
+     "cost": 0.00016298700000000002,
+     "in_tok": 2694,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 527,
+     "in_tok": 1628,
+     "cost": 6.837600000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.65
+     },
+     "p_violation": 0.65
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 74373,
+     "cost": 0.0,
+     "in_tok": 0,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      null,
+      null
+     ],
+     "provider": null,
+     "reasoning_tokens": [
+      null,
+      null
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0004",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296656009272,
+     "ms": 15098,
+     "cost": 0.00013854499999999998,
+     "in_tok": 2290,
+     "err": null,
+     "mass": [
+      0.9867,
+      0.9817
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.41249397805861715,
+     "ms": 981,
+     "cost": 0.00013794,
+     "in_tok": 2280,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 224,
+     "in_tok": 1446,
+     "cost": 6.073200000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.63
+     },
+     "p_violation": 0.63
+    },
+    "deepseek": {
+     "p_violation": 0.48562529760249606,
+     "ms": 39156,
+     "cost": 0.00032144,
+     "in_tok": 2296,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0005",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4457003733561788,
+     "ms": 922,
+     "cost": 0.00014036,
+     "in_tok": 2320,
+     "err": null,
+     "mass": [
+      0.9722,
+      0.9909
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.1459593900941329,
+     "ms": 1016,
+     "cost": 0.00014036,
+     "in_tok": 2320,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 233,
+     "in_tok": 1470,
+     "cost": 6.174e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.76
+     },
+     "p_violation": 0.76
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 43752,
+     "cost": 0.00015834000000000003,
+     "in_tok": 1131,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      null,
+      1.0
+     ],
+     "provider": null,
+     "reasoning_tokens": [
+      null,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0006",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4387703379009009,
+     "ms": 2761,
+     "cost": 0.000153428,
+     "in_tok": 2536,
+     "err": null,
+     "mass": [
+      0.9834,
+      0.9835
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.2473739928539068,
+     "ms": 1049,
+     "cost": 0.000154396,
+     "in_tok": 2552,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9996
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 373,
+     "in_tok": 1549,
+     "cost": 6.5058e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.77
+     },
+     "p_violation": 0.77
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 43462,
+     "cost": 0.00017640000000000003,
+     "in_tok": 1260,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      null,
+      1.0
+     ],
+     "provider": null,
+     "reasoning_tokens": [
+      null,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0007",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.24837179541013152,
+     "ms": 1606,
+     "cost": 0.00016734299999999997,
+     "in_tok": 2766,
+     "err": null,
+     "mass": [
+      0.9906,
+      0.976
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.3344335506111648,
+     "ms": 1560,
+     "cost": 0.000167101,
+     "in_tok": 2762,
+     "err": null,
+     "mass": [
+      0.9983,
+      0.9967
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 457,
+     "in_tok": 1658,
+     "cost": 6.963600000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.69
+     },
+     "p_violation": 0.69
+    },
+    "deepseek": {
+     "p_violation": 0.4525405436313416,
+     "ms": 17770,
+     "cost": 0.00038332000000000004,
+     "in_tok": 2738,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9996
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0008",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4024424230591949,
+     "ms": 1209,
+     "cost": 0.00016625399999999998,
+     "in_tok": 2748,
+     "err": null,
+     "mass": [
+      0.9801,
+      0.9853
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7230551630232054,
+     "ms": 1874,
+     "cost": 0.000167222,
+     "in_tok": 2764,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 229,
+     "in_tok": 1680,
+     "cost": 7.056e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.64
+     },
+     "p_violation": 0.64
+    },
+    "deepseek": {
+     "p_violation": 0.5005749947170847,
+     "ms": 16335,
+     "cost": 0.00038416000000000004,
+     "in_tok": 2744,
+     "err": null,
+     "mass": [
+      0.9999,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0009",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5542996266438212,
+     "ms": 1221,
+     "cost": 0.000153307,
+     "in_tok": 2534,
+     "err": null,
+     "mass": [
+      0.9822,
+      0.9834
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.6833464542145083,
+     "ms": 893,
+     "cost": 0.00015367,
+     "in_tok": 2540,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9986
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 234,
+     "in_tok": 1543,
+     "cost": 6.4806e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.61
+     },
+     "p_violation": 0.61
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 37709,
+     "cost": 0.00017710000000000002,
+     "in_tok": 1265,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      null,
+      0.9999
+     ],
+     "provider": null,
+     "reasoning_tokens": [
+      null,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0010",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.32324104508407026,
+     "ms": 1510,
+     "cost": 0.000153065,
+     "in_tok": 2530,
+     "err": null,
+     "mass": [
+      0.9684,
+      0.9813
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5231206302539263,
+     "ms": 748,
+     "cost": 0.000154638,
+     "in_tok": 2556,
+     "err": null,
+     "mass": [
+      0.9966,
+      0.9977
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 240,
+     "in_tok": 1558,
+     "cost": 6.5436e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.66
+     },
+     "p_violation": 0.66
+    },
+    "deepseek": {
+     "p_violation": 0.5025083496233406,
+     "ms": 10363,
+     "cost": 0.00035252,
+     "in_tok": 2518,
+     "err": null,
+     "mass": [
+      0.9991,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0011",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3412127663480889,
+     "ms": 4417,
+     "cost": 0.000130438,
+     "in_tok": 2156,
+     "err": null,
+     "mass": [
+      0.9904,
+      0.9828
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.05916341570879244,
+     "ms": 1704,
+     "cost": 0.000130801,
+     "in_tok": 2162,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 419,
+     "in_tok": 1367,
+     "cost": 5.7414e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.73
+     },
+     "p_violation": 0.73
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 39792,
+     "cost": 0.00014924000000000003,
+     "in_tok": 1066,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      null,
+      1.0
+     ],
+     "provider": null,
+     "reasoning_tokens": [
+      null,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0012",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6587872425417324,
+     "ms": 1048,
+     "cost": 0.00013189,
+     "in_tok": 2180,
+     "err": null,
+     "mass": [
+      0.986,
+      0.9875
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7120709133844152,
+     "ms": 789,
+     "cost": 0.000130438,
+     "in_tok": 2156,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 239,
+     "in_tok": 1339,
+     "cost": 5.6238e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.64
+     },
+     "p_violation": 0.64
+    },
+    "deepseek": {
+     "p_violation": 0.4900976577867916,
+     "ms": 9127,
+     "cost": 0.00030128,
+     "in_tok": 2152,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0013",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.32324104801381637,
+     "ms": 1405,
+     "cost": 0.00015391199999999997,
+     "in_tok": 2544,
+     "err": null,
+     "mass": [
+      0.982,
+      0.9803
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.3242083472307106,
+     "ms": 1538,
+     "cost": 0.000154638,
+     "in_tok": 2556,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 283,
+     "in_tok": 1551,
+     "cost": 6.514200000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.78
+     },
+     "p_violation": 0.78
+    },
+    "deepseek": {
+     "p_violation": 0.4945322494024952,
+     "ms": 4796,
+     "cost": 0.00035252,
+     "in_tok": 2518,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0014",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296585972708,
+     "ms": 865,
+     "cost": 0.000138424,
+     "in_tok": 2288,
+     "err": null,
+     "mass": [
+      0.9657,
+      0.9799
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.2820700425493179,
+     "ms": 818,
+     "cost": 0.000136488,
+     "in_tok": 2256,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9986
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 229,
+     "in_tok": 1405,
+     "cost": 5.9010000000000006e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.63
+     },
+     "p_violation": 0.63
+    },
+    "deepseek": {
+     "p_violation": 0.49993136033963487,
+     "ms": 7259,
+     "cost": 0.0003178,
+     "in_tok": 2270,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0015",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 1067,
+     "cost": 0.00014943499999999998,
+     "in_tok": 2470,
+     "err": null,
+     "mass": [
+      0.9902,
+      0.9921
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": null,
+     "ms": 91068,
+     "cost": 7.5141e-05,
+     "in_tok": 1242,
+     "err": "timeout",
+     "mass": [
+      0.9993,
+      null
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      null
+     ]
+    },
+    "jev": {
+     "ms": 235,
+     "in_tok": 1539,
+     "cost": 6.4638e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.65
+     },
+     "p_violation": 0.65
+    },
+    "deepseek": {
+     "p_violation": 0.507406762672255,
+     "ms": 21659,
+     "cost": 0.00034356,
+     "in_tok": 2454,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0016",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 1208,
+     "cost": 0.000154638,
+     "in_tok": 2556,
+     "err": null,
+     "mass": [
+      0.9872,
+      0.9846
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.15101370011770335,
+     "ms": 656,
+     "cost": 0.000155122,
+     "in_tok": 2564,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 241,
+     "in_tok": 1570,
+     "cost": 6.594000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.66
+     },
+     "p_violation": 0.66
+    },
+    "deepseek": {
+     "p_violation": 0.48150423212318816,
+     "ms": 38477,
+     "cost": 0.00035448,
+     "in_tok": 2532,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0017",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6767589554880118,
+     "ms": 10554,
+     "cost": 0.000140602,
+     "in_tok": 2324,
+     "err": null,
+     "mass": [
+      0.9827,
+      0.9751
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.8228491940296695,
+     "ms": 2152,
+     "cost": 0.000141328,
+     "in_tok": 2336,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 236,
+     "in_tok": 1431,
+     "cost": 6.0102e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.69
+     },
+     "p_violation": 0.69
+    },
+    "deepseek": {
+     "p_violation": 0.4968325694109641,
+     "ms": 2250,
+     "cost": 0.00032256000000000006,
+     "in_tok": 2304,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0018",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 1135,
+     "cost": 0.000155243,
+     "in_tok": 2566,
+     "err": null,
+     "mass": [
+      0.9884,
+      0.9929
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.6503214041152862,
+     "ms": 1299,
+     "cost": 0.000156453,
+     "in_tok": 2586,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 459,
+     "in_tok": 1560,
+     "cost": 6.552000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.65
+     },
+     "p_violation": 0.65
+    },
+    "deepseek": {
+     "p_violation": 0.5024200712319475,
+     "ms": 27486,
+     "cost": 0.00035896,
+     "in_tok": 2564,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0019",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3775406687981454,
+     "ms": 1084,
+     "cost": 0.000155001,
+     "in_tok": 2562,
+     "err": null,
+     "mass": [
+      0.9781,
+      0.9812
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.3875460574353025,
+     "ms": 1281,
+     "cost": 0.00015572699999999998,
+     "in_tok": 2574,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9979
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 294,
+     "in_tok": 1574,
+     "cost": 6.610800000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.67
+     },
+     "p_violation": 0.67
+    },
+    "deepseek": {
+     "p_violation": 0.5031311457851894,
+     "ms": 13992,
+     "cost": 0.00035000000000000005,
+     "in_tok": 2500,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0020",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296656009272,
+     "ms": 1050,
+     "cost": 0.000159962,
+     "in_tok": 2644,
+     "err": null,
+     "mass": [
+      0.9912,
+      0.9858
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5595040416824624,
+     "ms": 1170,
+     "cost": 0.000160446,
+     "in_tok": 2652,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 252,
+     "in_tok": 1605,
+     "cost": 6.741000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.63
+     },
+     "p_violation": 0.63
+    },
+    "deepseek": {
+     "p_violation": 0.5108261738875516,
+     "ms": 26246,
+     "cost": 0.00036344000000000003,
+     "in_tok": 2596,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0021",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.37754066529631725,
+     "ms": 1057,
+     "cost": 0.000167585,
+     "in_tok": 2770,
+     "err": null,
+     "mass": [
+      0.9879,
+      0.9597
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.17907408685434467,
+     "ms": 2016,
+     "cost": 0.000167585,
+     "in_tok": 2770,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 275,
+     "in_tok": 1670,
+     "cost": 7.014e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.7
+     },
+     "p_violation": 0.7
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 38505,
+     "cost": 0.00019040000000000002,
+     "in_tok": 1360,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      null,
+      1.0
+     ],
+     "provider": null,
+     "reasoning_tokens": [
+      null,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0022",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 3143,
+     "cost": 0.000149677,
+     "in_tok": 2474,
+     "err": null,
+     "mass": [
+      0.9706,
+      0.9714
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.2646561169921138,
+     "ms": 930,
+     "cost": 0.00014979799999999998,
+     "in_tok": 2476,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9985
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 267,
+     "in_tok": 1502,
+     "cost": 6.308400000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.71
+     },
+     "p_violation": 0.71
+    },
+    "deepseek": {
+     "p_violation": 0.4992043078058335,
+     "ms": 76037,
+     "cost": 0.00034384,
+     "in_tok": 2456,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0023",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296656009272,
+     "ms": 3612,
+     "cost": 0.000165649,
+     "in_tok": 2738,
+     "err": null,
+     "mass": [
+      0.9913,
+      0.9899
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7334135167080008,
+     "ms": 1443,
+     "cost": 0.000168432,
+     "in_tok": 2784,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9996
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 225,
+     "in_tok": 1687,
+     "cost": 7.0854e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.71
+     },
+     "p_violation": 0.71
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 57123,
+     "cost": 0.00019138,
+     "in_tok": 1367,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      1.0,
+      null
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      null
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0024",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.445700379787753,
+     "ms": 9665,
+     "cost": 0.00013152700000000002,
+     "in_tok": 2174,
+     "err": null,
+     "mass": [
+      0.9919,
+      0.9917
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.3008774342709748,
+     "ms": 838,
+     "cost": 0.000132132,
+     "in_tok": 2184,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.999
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 360,
+     "in_tok": 1368,
+     "cost": 5.745600000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.65
+     },
+     "p_violation": 0.65
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 39652,
+     "cost": 0.00015064,
+     "in_tok": 1076,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      null,
+      1.0
+     ],
+     "provider": null,
+     "reasoning_tokens": [
+      null,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0025",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4387703308972445,
+     "ms": 12875,
+     "cost": 0.000132253,
+     "in_tok": 2186,
+     "err": null,
+     "mass": [
+      0.9932,
+      0.99
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.3875460652138961,
+     "ms": 999,
+     "cost": 0.000132253,
+     "in_tok": 2186,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 224,
+     "in_tok": 1367,
+     "cost": 5.7414e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.66
+     },
+     "p_violation": 0.66
+    },
+    "deepseek": {
+     "p_violation": 0.4925932350034606,
+     "ms": 14914,
+     "cost": 0.00030016000000000005,
+     "in_tok": 2144,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0026",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6224593241981982,
+     "ms": 985,
+     "cost": 0.000160204,
+     "in_tok": 2648,
+     "err": null,
+     "mass": [
+      0.9886,
+      0.9823
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.6587872347631387,
+     "ms": 1114,
+     "cost": 0.000160688,
+     "in_tok": 2656,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 270,
+     "in_tok": 1609,
+     "cost": 6.757800000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.65
+     },
+     "p_violation": 0.65
+    },
+    "deepseek": {
+     "p_violation": 0.5103673724508216,
+     "ms": 5225,
+     "cost": 0.00036568000000000006,
+     "in_tok": 2612,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0027",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.37754066529631725,
+     "ms": 1861,
+     "cost": 0.00014762,
+     "in_tok": 2440,
+     "err": null,
+     "mass": [
+      0.9883,
+      0.9893
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5691978851754423,
+     "ms": 1611,
+     "cost": 0.00014883,
+     "in_tok": 2460,
+     "err": null,
+     "mass": [
+      0.9985,
+      0.9975
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 272,
+     "in_tok": 1509,
+     "cost": 6.3378e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.62
+     },
+     "p_violation": 0.62
+    },
+    "deepseek": {
+     "p_violation": 0.4859286378080612,
+     "ms": 9304,
+     "cost": 0.0003374,
+     "in_tok": 2410,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0028",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6155292922447486,
+     "ms": 8583,
+     "cost": 0.000156574,
+     "in_tok": 2588,
+     "err": null,
+     "mass": [
+      0.9763,
+      0.9654
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.33010664578148363,
+     "ms": 1049,
+     "cost": 0.000156211,
+     "in_tok": 2582,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 295,
+     "in_tok": 1555,
+     "cost": 6.531e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.66
+     },
+     "p_violation": 0.66
+    },
+    "deepseek": {
+     "p_violation": 0.4915916489273936,
+     "ms": 4753,
+     "cost": 0.00036036,
+     "in_tok": 2574,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0029",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296656009272,
+     "ms": 1044,
+     "cost": 0.00013297899999999997,
+     "in_tok": 2198,
+     "err": null,
+     "mass": [
+      0.991,
+      0.9809
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.6521370828889286,
+     "ms": 1382,
+     "cost": 0.000132374,
+     "in_tok": 2188,
+     "err": null,
+     "mass": [
+      0.9984,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 388,
+     "in_tok": 1370,
+     "cost": 5.754e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.64
+     },
+     "p_violation": 0.64
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 44660,
+     "cost": 0.00015120000000000002,
+     "in_tok": 1080,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      null,
+      1.0
+     ],
+     "provider": null,
+     "reasoning_tokens": [
+      null,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0030",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3775406722999737,
+     "ms": 1072,
+     "cost": 0.000161293,
+     "in_tok": 2666,
+     "err": null,
+     "mass": [
+      0.9897,
+      0.9931
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.2879290863544282,
+     "ms": 1019,
+     "cost": 0.000161172,
+     "in_tok": 2664,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 228,
+     "in_tok": 1616,
+     "cost": 6.7872e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.71
+     },
+     "p_violation": 0.71
+    },
+    "deepseek": {
+     "p_violation": 0.4578187399429293,
+     "ms": 17250,
+     "cost": 0.00037044000000000004,
+     "in_tok": 2646,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0031",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296656009272,
+     "ms": 6824,
+     "cost": 0.00014568399999999998,
+     "in_tok": 2408,
+     "err": null,
+     "mass": [
+      0.9711,
+      0.975
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5313297457742353,
+     "ms": 3181,
+     "cost": 0.000145805,
+     "in_tok": 2410,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 233,
+     "in_tok": 1484,
+     "cost": 6.2328e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.64
+     },
+     "p_violation": 0.64
+    },
+    "deepseek": {
+     "p_violation": 0.49955127185797216,
+     "ms": 9200,
+     "cost": 0.00033516000000000004,
+     "in_tok": 2394,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9996
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0032",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.43877033439907276,
+     "ms": 969,
+     "cost": 0.00013866600000000002,
+     "in_tok": 2292,
+     "err": null,
+     "mass": [
+      0.9928,
+      0.9885
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7355613645453398,
+     "ms": 899,
+     "cost": 0.00013915,
+     "in_tok": 2300,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 244,
+     "in_tok": 1449,
+     "cost": 6.0858000000000006e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.69
+     },
+     "p_violation": 0.69
+    },
+    "deepseek": {
+     "p_violation": 0.49832131904147675,
+     "ms": 5752,
+     "cost": 0.0003194800000000001,
+     "in_tok": 2282,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0033",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.38447071068499755,
+     "ms": 900,
+     "cost": 0.00010660099999999999,
+     "in_tok": 1762,
+     "err": null,
+     "mass": [
+      0.9846,
+      0.9902
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.35090660632949294,
+     "ms": 897,
+     "cost": 0.00010611699999999999,
+     "in_tok": 1754,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 435,
+     "in_tok": 1140,
+     "cost": 4.788e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.68
+     },
+     "p_violation": 0.68
+    },
+    "deepseek": {
+     "p_violation": 0.459357086340901,
+     "ms": 6792,
+     "cost": 0.00024248000000000002,
+     "in_tok": 1732,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9995
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0034",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.43877033439907276,
+     "ms": 1049,
+     "cost": 0.000157542,
+     "in_tok": 2604,
+     "err": null,
+     "mass": [
+      0.9872,
+      0.984
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5,
+     "ms": 1048,
+     "cost": 0.000159357,
+     "in_tok": 2634,
+     "err": null,
+     "mass": [
+      0.9973,
+      0.9984
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 420,
+     "in_tok": 1592,
+     "cost": 6.6864e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.65
+     },
+     "p_violation": 0.65
+    },
+    "deepseek": {
+     "p_violation": 0.49897627930377775,
+     "ms": 30399,
+     "cost": 0.00036288000000000005,
+     "in_tok": 2592,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0035",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.40244242861533314,
+     "ms": 1531,
+     "cost": 0.000160446,
+     "in_tok": 2652,
+     "err": null,
+     "mass": [
+      0.9938,
+      0.9893
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.40793567023750354,
+     "ms": 1049,
+     "cost": 0.000161898,
+     "in_tok": 2676,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 283,
+     "in_tok": 1629,
+     "cost": 6.841800000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.78
+     },
+     "p_violation": 0.78
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 41607,
+     "cost": 0.00018396000000000002,
+     "in_tok": 1314,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      null,
+      1.0
+     ],
+     "provider": null,
+     "reasoning_tokens": [
+      null,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0036",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6767589484843554,
+     "ms": 9528,
+     "cost": 0.00013431,
+     "in_tok": 2220,
+     "err": null,
+     "mass": [
+      0.9901,
+      0.9909
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9025714178640629,
+     "ms": 1359,
+     "cost": 0.000134068,
+     "in_tok": 2216,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 287,
+     "in_tok": 1384,
+     "cost": 5.8128e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.71
+     },
+     "p_violation": 0.71
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 39886,
+     "cost": 0.00015414,
+     "in_tok": 1101,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      null,
+      1.0
+     ],
+     "provider": null,
+     "reasoning_tokens": [
+      null,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0037",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.43877033439907276,
+     "ms": 1097,
+     "cost": 0.000163955,
+     "in_tok": 2710,
+     "err": null,
+     "mass": [
+      0.9904,
+      0.9907
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.40244242528165014,
+     "ms": 1261,
+     "cost": 0.000165044,
+     "in_tok": 2728,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9996
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 217,
+     "in_tok": 1651,
+     "cost": 6.9342e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.66
+     },
+     "p_violation": 0.66
+    },
+    "deepseek": {
+     "p_violation": 0.4767425881507316,
+     "ms": 12595,
+     "cost": 0.00036792000000000004,
+     "in_tok": 2628,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0038",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6767589519861836,
+     "ms": 1307,
+     "cost": 0.000167706,
+     "in_tok": 2772,
+     "err": null,
+     "mass": [
+      0.9825,
+      0.985
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.614746733503756,
+     "ms": 1192,
+     "cost": 0.000168432,
+     "in_tok": 2784,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 255,
+     "in_tok": 1685,
+     "cost": 7.077e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.65
+     },
+     "p_violation": 0.65
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 48216,
+     "cost": 0.00019026,
+     "in_tok": 1359,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      null,
+      1.0
+     ],
+     "provider": null,
+     "reasoning_tokens": [
+      null,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0039",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4387703379009009,
+     "ms": 936,
+     "cost": 0.000140723,
+     "in_tok": 2326,
+     "err": null,
+     "mass": [
+      0.9897,
+      0.9691
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5923166357692353,
+     "ms": 1173,
+     "cost": 0.000140723,
+     "in_tok": 2326,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 299,
+     "in_tok": 1437,
+     "cost": 6.0354e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.66
+     },
+     "p_violation": 0.66
+    },
+    "deepseek": {
+     "p_violation": 0.49472180724252895,
+     "ms": 42800,
+     "cost": 0.00032312000000000004,
+     "in_tok": 2308,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0040",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4999999964981718,
+     "ms": 1049,
+     "cost": 0.000145926,
+     "in_tok": 2412,
+     "err": null,
+     "mass": [
+      0.9869,
+      0.9821
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.11744959805177559,
+     "ms": 831,
+     "cost": 0.00014519999999999998,
+     "in_tok": 2400,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 280,
+     "in_tok": 1492,
+     "cost": 6.266400000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.7
+     },
+     "p_violation": 0.7
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 76461,
+     "cost": 0.0,
+     "in_tok": 0,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      null,
+      null
+     ],
+     "provider": null,
+     "reasoning_tokens": [
+      null,
+      null
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0041",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3232410480138164,
+     "ms": 16710,
+     "cost": 0.000126687,
+     "in_tok": 2094,
+     "err": null,
+     "mass": [
+      0.9876,
+      0.9932
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4860880960069677,
+     "ms": 1205,
+     "cost": 0.000127171,
+     "in_tok": 2102,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 242,
+     "in_tok": 1311,
+     "cost": 5.506200000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.62
+     },
+     "p_violation": 0.62
+    },
+    "deepseek": {
+     "p_violation": 0.48569871875979254,
+     "ms": 2293,
+     "cost": 0.00028868000000000003,
+     "in_tok": 2062,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0042",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5542996237140752,
+     "ms": 1186,
+     "cost": 0.000149314,
+     "in_tok": 2468,
+     "err": null,
+     "mass": [
+      0.9801,
+      0.9667
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.3240235961966369,
+     "ms": 909,
+     "cost": 0.00014870900000000002,
+     "in_tok": 2458,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 253,
+     "in_tok": 1507,
+     "cost": 6.329400000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.71
+     },
+     "p_violation": 0.71
+    },
+    "deepseek": {
+     "p_violation": 0.36569695465378543,
+     "ms": 41418,
+     "cost": 0.00033964000000000005,
+     "in_tok": 2426,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0043",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 1050,
+     "cost": 0.000144958,
+     "in_tok": 2396,
+     "err": null,
+     "mass": [
+      0.9926,
+      0.9882
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.3708311320878285,
+     "ms": 1131,
+     "cost": 0.000145563,
+     "in_tok": 2406,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9983
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 321,
+     "in_tok": 1482,
+     "cost": 6.224400000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.67
+     },
+     "p_violation": 0.67
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 48627,
+     "cost": 0.00016786,
+     "in_tok": 1199,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      1.0,
+      null
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      null
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0044",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.22568346521351906,
+     "ms": 1112,
+     "cost": 0.000139997,
+     "in_tok": 2314,
+     "err": null,
+     "mass": [
+      0.9918,
+      0.9825
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.18088082382034232,
+     "ms": 1291,
+     "cost": 0.000139634,
+     "in_tok": 2308,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 290,
+     "in_tok": 1425,
+     "cost": 5.9850000000000005e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.68
+     },
+     "p_violation": 0.68
+    },
+    "deepseek": {
+     "p_violation": 0.4407117049642729,
+     "ms": 18353,
+     "cost": 0.00032228,
+     "in_tok": 2302,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0045",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4387703343990727,
+     "ms": 6124,
+     "cost": 0.000125598,
+     "in_tok": 2076,
+     "err": null,
+     "mass": [
+      0.981,
+      0.9708
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.6763622308241193,
+     "ms": 888,
+     "cost": 0.00012583999999999997,
+     "in_tok": 2080,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 229,
+     "in_tok": 1320,
+     "cost": 5.5440000000000005e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.64
+     },
+     "p_violation": 0.64
+    },
+    "deepseek": {
+     "p_violation": 0.5069580361219309,
+     "ms": 9181,
+     "cost": 0.00028560000000000006,
+     "in_tok": 2040,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0046",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6650573983993259,
+     "ms": 1064,
+     "cost": 0.000135399,
+     "in_tok": 2238,
+     "err": null,
+     "mass": [
+      0.9645,
+      0.9961
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.8753804537115446,
+     "ms": 1165,
+     "cost": 0.000136004,
+     "in_tok": 2248,
+     "err": null,
+     "mass": [
+      0.9987,
+      0.9988
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 230,
+     "in_tok": 1405,
+     "cost": 5.9010000000000006e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.79
+     },
+     "p_violation": 0.79
+    },
+    "deepseek": {
+     "p_violation": 0.688708632403882,
+     "ms": 42046,
+     "cost": 0.00031164000000000007,
+     "in_tok": 2226,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0047",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296656009272,
+     "ms": 1897,
+     "cost": 0.000162261,
+     "in_tok": 2682,
+     "err": null,
+     "mass": [
+      0.9891,
+      0.9609
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4308021104664415,
+     "ms": 902,
+     "cost": 0.00016298700000000002,
+     "in_tok": 2694,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9986
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 224,
+     "in_tok": 1612,
+     "cost": 6.7704e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.66
+     },
+     "p_violation": 0.66
+    },
+    "deepseek": {
+     "p_violation": 0.5002729440375386,
+     "ms": 4022,
+     "cost": 0.00037156000000000005,
+     "in_tok": 2654,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0048",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.40244242750410547,
+     "ms": 1038,
+     "cost": 0.000161293,
+     "in_tok": 2666,
+     "err": null,
+     "mass": [
+      0.987,
+      0.9942
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.42819573343012973,
+     "ms": 1124,
+     "cost": 0.000161898,
+     "in_tok": 2676,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.999
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 257,
+     "in_tok": 1615,
+     "cost": 6.783e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.72
+     },
+     "p_violation": 0.72
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 49927,
+     "cost": 0.0001855,
+     "in_tok": 1325,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      1.0,
+      null
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      null
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0049",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6155292893150024,
+     "ms": 1466,
+     "cost": 0.00015947799999999998,
+     "in_tok": 2636,
+     "err": null,
+     "mass": [
+      0.9646,
+      0.9793
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7573753157053735,
+     "ms": 3484,
+     "cost": 0.000161051,
+     "in_tok": 2662,
+     "err": null,
+     "mass": [
+      0.9986,
+      0.9983
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 217,
+     "in_tok": 1610,
+     "cost": 6.762e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.65
+     },
+     "p_violation": 0.65
+    },
+    "deepseek": {
+     "p_violation": 0.5145768976111278,
+     "ms": 5891,
+     "cost": 0.00036484,
+     "in_tok": 2606,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0050",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.44570037042643273,
+     "ms": 966,
+     "cost": 0.00014979799999999998,
+     "in_tok": 2476,
+     "err": null,
+     "mass": [
+      0.9854,
+      0.9696
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5629724956748561,
+     "ms": 2766,
+     "cost": 0.000150282,
+     "in_tok": 2484,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 225,
+     "in_tok": 1528,
+     "cost": 6.4176e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.65
+     },
+     "p_violation": 0.65
+    },
+    "deepseek": {
+     "p_violation": 0.5595315505099046,
+     "ms": 8225,
+     "cost": 0.00034412000000000006,
+     "in_tok": 2458,
+     "err": null,
+     "mass": [
+      0.9999,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0051",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4999999964981718,
+     "ms": 1214,
+     "cost": 0.000153065,
+     "in_tok": 2530,
+     "err": null,
+     "mass": [
+      0.9802,
+      0.9902
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.1175658939473997,
+     "ms": 1779,
+     "cost": 0.00015391199999999997,
+     "in_tok": 2544,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 210,
+     "in_tok": 1545,
+     "cost": 6.489e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.64
+     },
+     "p_violation": 0.64
+    },
+    "deepseek": {
+     "p_violation": 0.4946545075161996,
+     "ms": 2522,
+     "cost": 0.00035084000000000005,
+     "in_tok": 2506,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0052",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296656009272,
+     "ms": 9340,
+     "cost": 0.000127292,
+     "in_tok": 2104,
+     "err": null,
+     "mass": [
+      0.9849,
+      0.9826
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4686702547602976,
+     "ms": 1005,
+     "cost": 0.000127897,
+     "in_tok": 2114,
+     "err": null,
+     "mass": [
+      0.9959,
+      0.9971
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 251,
+     "in_tok": 1325,
+     "cost": 5.5650000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.71
+     },
+     "p_violation": 0.71
+    },
+    "deepseek": {
+     "p_violation": 0.6113243396542114,
+     "ms": 5185,
+     "cost": 0.00029064000000000005,
+     "in_tok": 2076,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0053",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6155292863852563,
+     "ms": 1009,
+     "cost": 0.0001694,
+     "in_tok": 2800,
+     "err": null,
+     "mass": [
+      0.9766,
+      0.9855
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5781524198134864,
+     "ms": 1517,
+     "cost": 0.000168432,
+     "in_tok": 2784,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 237,
+     "in_tok": 1700,
+     "cost": 7.14e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.6
+     },
+     "p_violation": 0.6
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 41071,
+     "cost": 0.00019390000000000002,
+     "in_tok": 1385,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      null,
+      0.9997
+     ],
+     "provider": null,
+     "reasoning_tokens": [
+      null,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0054",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5000000058594922,
+     "ms": 1076,
+     "cost": 0.000158752,
+     "in_tok": 2624,
+     "err": null,
+     "mass": [
+      0.9921,
+      0.993
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.13552119030230628,
+     "ms": 1960,
+     "cost": 0.000160809,
+     "in_tok": 2658,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 253,
+     "in_tok": 1622,
+     "cost": 6.8124e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.7
+     },
+     "p_violation": 0.7
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 40189,
+     "cost": 0.00018536000000000003,
+     "in_tok": 1324,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      1.0,
+      null
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      null
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0055",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6155292863852563,
+     "ms": 917,
+     "cost": 0.000136972,
+     "in_tok": 2264,
+     "err": null,
+     "mass": [
+      0.9757,
+      0.9921
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5517800638577752,
+     "ms": 1129,
+     "cost": 0.000136367,
+     "in_tok": 2254,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9982
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 338,
+     "in_tok": 1407,
+     "cost": 5.909400000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.62
+     },
+     "p_violation": 0.62
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 43387,
+     "cost": 0.00015652000000000003,
+     "in_tok": 1118,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      1.0,
+      null
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      null
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0056",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 1008,
+     "cost": 0.00014532099999999999,
+     "in_tok": 2402,
+     "err": null,
+     "mass": [
+      0.9882,
+      0.9725
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5875060180996451,
+     "ms": 1139,
+     "cost": 0.00014568399999999998,
+     "in_tok": 2408,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 371,
+     "in_tok": 1476,
+     "cost": 6.199200000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.63
+     },
+     "p_violation": 0.63
+    },
+    "deepseek": {
+     "p_violation": 0.518308608307459,
+     "ms": 9328,
+     "cost": 0.00032984,
+     "in_tok": 2356,
+     "err": null,
+     "mass": [
+      0.9999,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0057",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6155292863852564,
+     "ms": 1056,
+     "cost": 0.000168674,
+     "in_tok": 2788,
+     "err": null,
+     "mass": [
+      0.9821,
+      0.9661
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5432579502969839,
+     "ms": 1410,
+     "cost": 0.000169884,
+     "in_tok": 2808,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 418,
+     "in_tok": 1680,
+     "cost": 7.056e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.67
+     },
+     "p_violation": 0.67
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 43451,
+     "cost": 0.00019166000000000002,
+     "in_tok": 1369,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      null,
+      0.9998
+     ],
+     "provider": null,
+     "reasoning_tokens": [
+      null,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0058",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.37754066879814546,
+     "ms": 12753,
+     "cost": 0.00015233899999999998,
+     "in_tok": 2518,
+     "err": null,
+     "mass": [
+      0.9589,
+      0.9865
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5734159541364352,
+     "ms": 3013,
+     "cost": 0.00015318599999999998,
+     "in_tok": 2532,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 335,
+     "in_tok": 1570,
+     "cost": 6.594000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.64
+     },
+     "p_violation": 0.64
+    },
+    "deepseek": {
+     "p_violation": 0.49599267404985015,
+     "ms": 59915,
+     "cost": 0.00035084000000000005,
+     "in_tok": 2506,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0059",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4387703379009009,
+     "ms": 856,
+     "cost": 0.000163955,
+     "in_tok": 2710,
+     "err": null,
+     "mass": [
+      0.9872,
+      0.9861
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.31648212095785294,
+     "ms": 950,
+     "cost": 0.00016456,
+     "in_tok": 2720,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 347,
+     "in_tok": 1659,
+     "cost": 6.9678e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.67
+     },
+     "p_violation": 0.67
+    },
+    "deepseek": {
+     "p_violation": 0.46365724818979737,
+     "ms": 4719,
+     "cost": 0.00037548000000000003,
+     "in_tok": 2682,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0060",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.27998309963593393,
+     "ms": 1047,
+     "cost": 0.000146894,
+     "in_tok": 2428,
+     "err": null,
+     "mass": [
+      0.9873,
+      0.9711
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5490605725938359,
+     "ms": 1128,
+     "cost": 0.00014737799999999998,
+     "in_tok": 2436,
+     "err": null,
+     "mass": [
+      0.9984,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 219,
+     "in_tok": 1487,
+     "cost": 6.245400000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.62
+     },
+     "p_violation": 0.62
+    },
+    "deepseek": {
+     "p_violation": 0.4935529413282615,
+     "ms": 40395,
+     "cost": 0.00033544000000000005,
+     "in_tok": 2396,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0061",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296726045836,
+     "ms": 1077,
+     "cost": 0.00014568399999999998,
+     "in_tok": 2408,
+     "err": null,
+     "mass": [
+      0.959,
+      0.9526
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5558947286232269,
+     "ms": 1166,
+     "cost": 0.000147741,
+     "in_tok": 2442,
+     "err": null,
+     "mass": [
+      0.9977,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 410,
+     "in_tok": 1504,
+     "cost": 6.3168e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.62
+     },
+     "p_violation": 0.62
+    },
+    "deepseek": {
+     "p_violation": 0.5130697739659001,
+     "ms": 5802,
+     "cost": 0.00033292,
+     "in_tok": 2378,
+     "err": null,
+     "mass": [
+      0.9998,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0062",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296656009272,
+     "ms": 856,
+     "cost": 0.000154154,
+     "in_tok": 2548,
+     "err": null,
+     "mass": [
+      0.9855,
+      0.9901
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.45833715168242173,
+     "ms": 1030,
+     "cost": 0.000154759,
+     "in_tok": 2558,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 222,
+     "in_tok": 1554,
+     "cost": 6.5268e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.66
+     },
+     "p_violation": 0.66
+    },
+    "deepseek": {
+     "p_violation": 0.499765524476912,
+     "ms": 4882,
+     "cost": 0.00035784000000000006,
+     "in_tok": 2556,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0063",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296620990991,
+     "ms": 8497,
+     "cost": 0.000165528,
+     "in_tok": 2736,
+     "err": null,
+     "mass": [
+      0.9845,
+      0.9868
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.6655664582650573,
+     "ms": 3306,
+     "cost": 0.000166133,
+     "in_tok": 2746,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9988
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 253,
+     "in_tok": 1665,
+     "cost": 6.993e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.66
+     },
+     "p_violation": 0.66
+    },
+    "deepseek": {
+     "p_violation": 0.4995578059317817,
+     "ms": 5027,
+     "cost": 0.00038024000000000006,
+     "in_tok": 2716,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0064",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.43877033089724454,
+     "ms": 1326,
+     "cost": 0.00015584800000000002,
+     "in_tok": 2576,
+     "err": null,
+     "mass": [
+      0.9893,
+      0.9889
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.8158764093312842,
+     "ms": 1773,
+     "cost": 0.000158026,
+     "in_tok": 2612,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 234,
+     "in_tok": 1575,
+     "cost": 6.615000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.71
+     },
+     "p_violation": 0.71
+    },
+    "deepseek": {
+     "p_violation": 0.5010684740725636,
+     "ms": 6133,
+     "cost": 0.00035364000000000006,
+     "in_tok": 2526,
+     "err": null,
+     "mass": [
+      0.9999,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0065",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4387703343990727,
+     "ms": 1062,
+     "cost": 0.000163108,
+     "in_tok": 2696,
+     "err": null,
+     "mass": [
+      0.9862,
+      0.9888
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.36281542522957966,
+     "ms": 1271,
+     "cost": 0.00016456,
+     "in_tok": 2720,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 269,
+     "in_tok": 1642,
+     "cost": 6.8964e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.65
+     },
+     "p_violation": 0.65
+    },
+    "deepseek": {
+     "p_violation": 0.4996499702161534,
+     "ms": 5234,
+     "cost": 0.00037436000000000007,
+     "in_tok": 2674,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0066",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6767589572735937,
+     "ms": 2397,
+     "cost": 0.00015947799999999998,
+     "in_tok": 2636,
+     "err": null,
+     "mass": [
+      0.9931,
+      0.9943
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7334135202426955,
+     "ms": 1048,
+     "cost": 0.000161535,
+     "in_tok": 2670,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 235,
+     "in_tok": 1609,
+     "cost": 6.757800000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.72
+     },
+     "p_violation": 0.72
+    },
+    "deepseek": {
+     "p_violation": 0.501311356298447,
+     "ms": 6537,
+     "cost": 0.00036484,
+     "in_tok": 2606,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0067",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6155292951744946,
+     "ms": 1047,
+     "cost": 0.000143506,
+     "in_tok": 2372,
+     "err": null,
+     "mass": [
+      0.9904,
+      0.9937
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5259399335506715,
+     "ms": 1257,
+     "cost": 0.000143506,
+     "in_tok": 2372,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 408,
+     "in_tok": 1470,
+     "cost": 6.174e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.67
+     },
+     "p_violation": 0.67
+    },
+    "deepseek": {
+     "p_violation": 0.4636572564398542,
+     "ms": 2412,
+     "cost": 0.00032844000000000005,
+     "in_tok": 2346,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0068",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4387703343990727,
+     "ms": 1017,
+     "cost": 0.00015851,
+     "in_tok": 2620,
+     "err": null,
+     "mass": [
+      0.9904,
+      0.976
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.3934878990973853,
+     "ms": 843,
+     "cost": 0.000158873,
+     "in_tok": 2626,
+     "err": null,
+     "mass": [
+      0.9978,
+      0.9988
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 270,
+     "in_tok": 1589,
+     "cost": 6.6738e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.68
+     },
+     "p_violation": 0.68
+    },
+    "deepseek": {
+     "p_violation": 0.4091420785214974,
+     "ms": 4660,
+     "cost": 0.00036456000000000005,
+     "in_tok": 2604,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0069",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6224593312018546,
+     "ms": 1099,
+     "cost": 0.000173514,
+     "in_tok": 2868,
+     "err": null,
+     "mass": [
+      0.985,
+      0.9845
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.6593102901105685,
+     "ms": 1362,
+     "cost": 0.00017375599999999998,
+     "in_tok": 2872,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 227,
+     "in_tok": 1742,
+     "cost": 7.3164e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.65
+     },
+     "p_violation": 0.65
+    },
+    "deepseek": {
+     "p_violation": 0.49805403831234923,
+     "ms": 12497,
+     "cost": 0.00040264000000000006,
+     "in_tok": 2876,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0070",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4387703343990727,
+     "ms": 7003,
+     "cost": 0.000160204,
+     "in_tok": 2648,
+     "err": null,
+     "mass": [
+      0.9883,
+      0.9819
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.3236377741065718,
+     "ms": 2092,
+     "cost": 0.00015984099999999998,
+     "in_tok": 2642,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9996
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 363,
+     "in_tok": 1605,
+     "cost": 6.741000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.67
+     },
+     "p_violation": 0.67
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 40614,
+     "cost": 0.00018522000000000002,
+     "in_tok": 1323,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      null,
+      1.0
+     ],
+     "provider": null,
+     "reasoning_tokens": [
+      null,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0071",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.49999999649817173,
+     "ms": 1343,
+     "cost": 0.000145442,
+     "in_tok": 2404,
+     "err": null,
+     "mass": [
+      0.9873,
+      0.9787
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.39723990750670196,
+     "ms": 1035,
+     "cost": 0.00014616800000000001,
+     "in_tok": 2416,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 242,
+     "in_tok": 1492,
+     "cost": 6.266400000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.64
+     },
+     "p_violation": 0.64
+    },
+    "deepseek": {
+     "p_violation": 0.5000000020316718,
+     "ms": 23749,
+     "cost": 0.00033152,
+     "in_tok": 2368,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0072",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296620990991,
+     "ms": 980,
+     "cost": 0.000150403,
+     "in_tok": 2486,
+     "err": null,
+     "mass": [
+      0.9868,
+      0.9784
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7431591633050008,
+     "ms": 1302,
+     "cost": 0.000150282,
+     "in_tok": 2484,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 259,
+     "in_tok": 1523,
+     "cost": 6.3966e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.68
+     },
+     "p_violation": 0.68
+    },
+    "deepseek": {
+     "p_violation": 0.5182079202987337,
+     "ms": 3062,
+     "cost": 0.00034552000000000004,
+     "in_tok": 2468,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0073",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296691027554,
+     "ms": 995,
+     "cost": 0.00015197599999999998,
+     "in_tok": 2512,
+     "err": null,
+     "mass": [
+      0.9884,
+      0.9865
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.440495969612011,
+     "ms": 1022,
+     "cost": 0.00015209700000000002,
+     "in_tok": 2514,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 232,
+     "in_tok": 1521,
+     "cost": 6.388200000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.66
+     },
+     "p_violation": 0.66
+    },
+    "deepseek": {
+     "p_violation": 0.4272127131666038,
+     "ms": 37898,
+     "cost": 0.0003469200000000001,
+     "in_tok": 2478,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0074",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6587872414305047,
+     "ms": 3394,
+     "cost": 0.000164197,
+     "in_tok": 2714,
+     "err": null,
+     "mass": [
+      0.9916,
+      0.9936
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.8806967391031322,
+     "ms": 1844,
+     "cost": 0.000165891,
+     "in_tok": 2742,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9997
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 266,
+     "in_tok": 1648,
+     "cost": 6.9216e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.78
+     },
+     "p_violation": 0.78
+    },
+    "deepseek": {
+     "p_violation": 0.5002065054656496,
+     "ms": 4972,
+     "cost": 0.00038108000000000006,
+     "in_tok": 2722,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0075",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.49999999299634357,
+     "ms": 1249,
+     "cost": 0.000136125,
+     "in_tok": 2250,
+     "err": null,
+     "mass": [
+      0.9694,
+      0.9645
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.8804299440645033,
+     "ms": 1016,
+     "cost": 0.000136609,
+     "in_tok": 2258,
+     "err": null,
+     "mass": [
+      0.9977,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 232,
+     "in_tok": 1412,
+     "cost": 5.930400000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.66
+     },
+     "p_violation": 0.66
+    },
+    "deepseek": {
+     "p_violation": 0.49785295260563506,
+     "ms": 13386,
+     "cost": 0.00030828,
+     "in_tok": 2202,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9996
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0076",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.38447071068499755,
+     "ms": 1029,
+     "cost": 0.000135399,
+     "in_tok": 2238,
+     "err": null,
+     "mass": [
+      0.9861,
+      0.9535
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.15101369378150375,
+     "ms": 1573,
+     "cost": 0.000136246,
+     "in_tok": 2252,
+     "err": null,
+     "mass": [
+      0.9985,
+      0.9971
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 352,
+     "in_tok": 1412,
+     "cost": 5.930400000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.75
+     },
+     "p_violation": 0.75
+    },
+    "deepseek": {
+     "p_violation": 0.1888183855965275,
+     "ms": 2901,
+     "cost": 0.00031304000000000005,
+     "in_tok": 2236,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9996
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0077",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4457003704264326,
+     "ms": 1025,
+     "cost": 0.000146531,
+     "in_tok": 2422,
+     "err": null,
+     "mass": [
+      0.986,
+      0.9846
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.42658404346321654,
+     "ms": 891,
+     "cost": 0.000145079,
+     "in_tok": 2398,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 235,
+     "in_tok": 1474,
+     "cost": 6.1908e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.6
+     },
+     "p_violation": 0.6
+    },
+    "deepseek": {
+     "p_violation": 0.5091626429133629,
+     "ms": 6338,
+     "cost": 0.00033852000000000003,
+     "in_tok": 2418,
+     "err": null,
+     "mass": [
+      0.9999,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0078",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.49999999649817184,
+     "ms": 1019,
+     "cost": 0.000147257,
+     "in_tok": 2434,
+     "err": null,
+     "mass": [
+      0.987,
+      0.9894
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.8940288286668484,
+     "ms": 2262,
+     "cost": 0.000147499,
+     "in_tok": 2438,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 312,
+     "in_tok": 1487,
+     "cost": 6.245400000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.71
+     },
+     "p_violation": 0.71
+    },
+    "deepseek": {
+     "p_violation": 0.5022552278758178,
+     "ms": 7756,
+     "cost": 0.00033684000000000003,
+     "in_tok": 2406,
+     "err": null,
+     "mass": [
+      0.9999,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0079",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3844707136147437,
+     "ms": 1333,
+     "cost": 0.00013394699999999998,
+     "in_tok": 2214,
+     "err": null,
+     "mass": [
+      0.9947,
+      0.9907
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.2266994280658884,
+     "ms": 998,
+     "cost": 0.00013334199999999997,
+     "in_tok": 2204,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 259,
+     "in_tok": 1369,
+     "cost": 5.7498000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.67
+     },
+     "p_violation": 0.67
+    },
+    "deepseek": {
+     "p_violation": 0.4783221272946317,
+     "ms": 6155,
+     "cost": 0.0003066,
+     "in_tok": 2190,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0080",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.32324103922457814,
+     "ms": 1224,
+     "cost": 0.00014265899999999998,
+     "in_tok": 2358,
+     "err": null,
+     "mass": [
+      0.9881,
+      0.9883
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.20342645030472978,
+     "ms": 4185,
+     "cost": 0.000143506,
+     "in_tok": 2372,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 229,
+     "in_tok": 1493,
+     "cost": 6.2706e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.73
+     },
+     "p_violation": 0.73
+    },
+    "deepseek": {
+     "p_violation": 0.4910399208008157,
+     "ms": 4040,
+     "cost": 0.00032844000000000005,
+     "in_tok": 2346,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0081",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296656009272,
+     "ms": 1374,
+     "cost": 0.000157784,
+     "in_tok": 2608,
+     "err": null,
+     "mass": [
+      0.988,
+      0.985
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.6002989763587243,
+     "ms": 855,
+     "cost": 0.00015705799999999999,
+     "in_tok": 2596,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 243,
+     "in_tok": 1583,
+     "cost": 6.6486e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.62
+     },
+     "p_violation": 0.62
+    },
+    "deepseek": {
+     "p_violation": 0.5064470568431007,
+     "ms": 5122,
+     "cost": 0.00036876000000000004,
+     "in_tok": 2634,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0082",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3844707077552515,
+     "ms": 1041,
+     "cost": 0.00015354899999999998,
+     "in_tok": 2538,
+     "err": null,
+     "mass": [
+      0.9897,
+      0.9702
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.379594186325176,
+     "ms": 9145,
+     "cost": 0.00015246000000000001,
+     "in_tok": 2520,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 447,
+     "in_tok": 1535,
+     "cost": 6.447e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.7
+     },
+     "p_violation": 0.7
+    },
+    "deepseek": {
+     "p_violation": 0.4814064676004478,
+     "ms": 15545,
+     "cost": 0.00035196000000000007,
+     "in_tok": 2514,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0083",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 962,
+     "cost": 0.000147741,
+     "in_tok": 2442,
+     "err": null,
+     "mass": [
+      0.974,
+      0.9706
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.884437268939648,
+     "ms": 1044,
+     "cost": 0.00014822499999999998,
+     "in_tok": 2450,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9988
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 232,
+     "in_tok": 1497,
+     "cost": 6.287400000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.75
+     },
+     "p_violation": 0.75
+    },
+    "deepseek": {
+     "p_violation": 0.5738336086672094,
+     "ms": 7148,
+     "cost": 0.0003374,
+     "in_tok": 2410,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0084",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296691027554,
+     "ms": 1111,
+     "cost": 0.000141812,
+     "in_tok": 2344,
+     "err": null,
+     "mass": [
+      0.9896,
+      0.9895
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7355613592855798,
+     "ms": 855,
+     "cost": 0.000142054,
+     "in_tok": 2348,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 299,
+     "in_tok": 1447,
+     "cost": 6.0774e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.65
+     },
+     "p_violation": 0.65
+    },
+    "deepseek": {
+     "p_violation": 0.49951427942569737,
+     "ms": 7576,
+     "cost": 0.00032508,
+     "in_tok": 2322,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0085",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3844707048255054,
+     "ms": 869,
+     "cost": 0.000139755,
+     "in_tok": 2310,
+     "err": null,
+     "mass": [
+      0.9935,
+      0.984
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.42257973501358165,
+     "ms": 993,
+     "cost": 0.000140118,
+     "in_tok": 2316,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 224,
+     "in_tok": 1432,
+     "cost": 6.0144e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.63
+     },
+     "p_violation": 0.63
+    },
+    "deepseek": {
+     "p_violation": 0.5007363639376061,
+     "ms": 8860,
+     "cost": 0.0003178,
+     "in_tok": 2270,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0086",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4387703343990727,
+     "ms": 954,
+     "cost": 0.00015112899999999998,
+     "in_tok": 2498,
+     "err": null,
+     "mass": [
+      0.9847,
+      0.9737
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.17907409090441134,
+     "ms": 909,
+     "cost": 0.00015112899999999998,
+     "in_tok": 2498,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 336,
+     "in_tok": 1509,
+     "cost": 6.3378e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.59
+     },
+     "p_violation": 0.59
+    },
+    "deepseek": {
+     "p_violation": 0.5029915899677845,
+     "ms": 10933,
+     "cost": 0.0003458,
+     "in_tok": 2470,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0087",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6224593312018545,
+     "ms": 1094,
+     "cost": 0.000161414,
+     "in_tok": 2668,
+     "err": null,
+     "mass": [
+      0.9748,
+      0.9832
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4567420523294083,
+     "ms": 1060,
+     "cost": 0.000162745,
+     "in_tok": 2690,
+     "err": null,
+     "mass": [
+      0.9984,
+      0.9986
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 290,
+     "in_tok": 1630,
+     "cost": 6.846e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.64
+     },
+     "p_violation": 0.64
+    },
+    "deepseek": {
+     "p_violation": 0.6113406033743651,
+     "ms": 10353,
+     "cost": 0.00037156000000000005,
+     "in_tok": 2654,
+     "err": null,
+     "mass": [
+      0.9998,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0088",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296656009272,
+     "ms": 6295,
+     "cost": 0.000151371,
+     "in_tok": 2502,
+     "err": null,
+     "mass": [
+      0.9708,
+      0.9871
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5679886003873355,
+     "ms": 1293,
+     "cost": 0.00015209700000000002,
+     "in_tok": 2514,
+     "err": null,
+     "mass": [
+      0.9987,
+      0.9983
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 225,
+     "in_tok": 1534,
+     "cost": 6.4428e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.66
+     },
+     "p_violation": 0.66
+    },
+    "deepseek": {
+     "p_violation": 0.501961289761989,
+     "ms": 8606,
+     "cost": 0.00034972,
+     "in_tok": 2498,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0089",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 1664,
+     "cost": 0.000152702,
+     "in_tok": 2524,
+     "err": null,
+     "mass": [
+      0.9872,
+      0.987
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5781524187893983,
+     "ms": 830,
+     "cost": 0.00015318599999999998,
+     "in_tok": 2532,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 344,
+     "in_tok": 1530,
+     "cost": 6.426e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.68
+     },
+     "p_violation": 0.68
+    },
+    "deepseek": {
+     "p_violation": 0.7181611584038503,
+     "ms": 16431,
+     "cost": 0.00035280000000000006,
+     "in_tok": 2520,
+     "err": null,
+     "mass": [
+      0.9999,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0090",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6155292893150024,
+     "ms": 1219,
+     "cost": 0.000164318,
+     "in_tok": 2716,
+     "err": null,
+     "mass": [
+      0.9796,
+      0.9907
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.6650573975578451,
+     "ms": 943,
+     "cost": 0.000165286,
+     "in_tok": 2732,
+     "err": null,
+     "mass": [
+      0.9981,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 320,
+     "in_tok": 1654,
+     "cost": 6.9468e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.73
+     },
+     "p_violation": 0.73
+    },
+    "deepseek": {
+     "p_violation": 0.4977558268604973,
+     "ms": 8334,
+     "cost": 0.00037604000000000007,
+     "in_tok": 2686,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0091",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6587872403192772,
+     "ms": 1076,
+     "cost": 0.000141328,
+     "in_tok": 2336,
+     "err": null,
+     "mass": [
+      0.9874,
+      0.9908
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7230551618630428,
+     "ms": 826,
+     "cost": 0.000140723,
+     "in_tok": 2326,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9988
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 505,
+     "in_tok": 1435,
+     "cost": 6.0270000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.78
+     },
+     "p_violation": 0.78
+    },
+    "deepseek": {
+     "p_violation": 0.5013710625466198,
+     "ms": 11520,
+     "cost": 0.00032284,
+     "in_tok": 2306,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0092",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6587872380968218,
+     "ms": 1067,
+     "cost": 0.000158873,
+     "in_tok": 2626,
+     "err": null,
+     "mass": [
+      0.9913,
+      0.994
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.3450030139863522,
+     "ms": 2097,
+     "cost": 0.000159357,
+     "in_tok": 2634,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 228,
+     "in_tok": 1606,
+     "cost": 6.7452e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.72
+     },
+     "p_violation": 0.72
+    },
+    "deepseek": {
+     "p_violation": 0.49486136281806514,
+     "ms": 11608,
+     "cost": 0.00036512000000000003,
+     "in_tok": 2608,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0093",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 1068,
+     "cost": 0.000171336,
+     "in_tok": 2832,
+     "err": null,
+     "mass": [
+      0.9867,
+      0.9796
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5806253742304732,
+     "ms": 1551,
+     "cost": 0.000172788,
+     "in_tok": 2856,
+     "err": null,
+     "mass": [
+      0.9985,
+      0.9973
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 253,
+     "in_tok": 1710,
+     "cost": 7.182e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.66
+     },
+     "p_violation": 0.66
+    },
+    "deepseek": {
+     "p_violation": 0.5139055230299137,
+     "ms": 2147,
+     "cost": 0.00039032000000000004,
+     "in_tok": 2788,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0094",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4387703343990727,
+     "ms": 1051,
+     "cost": 0.000140723,
+     "in_tok": 2326,
+     "err": null,
+     "mass": [
+      0.9843,
+      0.9842
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.3875460652138961,
+     "ms": 1056,
+     "cost": 0.000140965,
+     "in_tok": 2330,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 252,
+     "in_tok": 1450,
+     "cost": 6.0899999999999996e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.66
+     },
+     "p_violation": 0.66
+    },
+    "deepseek": {
+     "p_violation": 0.496897502597412,
+     "ms": 2445,
+     "cost": 0.00032256000000000006,
+     "in_tok": 2304,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0095",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5542996237140752,
+     "ms": 1214,
+     "cost": 0.000167706,
+     "in_tok": 2772,
+     "err": null,
+     "mass": [
+      0.9658,
+      0.9786
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.29399677432418064,
+     "ms": 1253,
+     "cost": 0.00016734299999999997,
+     "in_tok": 2766,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9984
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 240,
+     "in_tok": 1670,
+     "cost": 7.014e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.74
+     },
+     "p_violation": 0.74
+    },
+    "deepseek": {
+     "p_violation": 0.4854455977607187,
+     "ms": 2206,
+     "cost": 0.00038948000000000005,
+     "in_tok": 2782,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0096",
+   "target": 0,
+   "label": 1,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6155292922447486,
+     "ms": 7098,
+     "cost": 0.00015354899999999998,
+     "in_tok": 2538,
+     "err": null,
+     "mass": [
+      0.9857,
+      0.9934
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7925662237360138,
+     "ms": 1285,
+     "cost": 0.00015451699999999998,
+     "in_tok": 2554,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9996
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 235,
+     "in_tok": 1546,
+     "cost": 6.493200000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.64
+     },
+     "p_violation": 0.64
+    },
+    "deepseek": {
+     "p_violation": 0.5473198928242147,
+     "ms": 59204,
+     "cost": 0.00035308000000000003,
+     "in_tok": 2522,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0097",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3844707165444899,
+     "ms": 888,
+     "cost": 0.000162745,
+     "in_tok": 2690,
+     "err": null,
+     "mass": [
+      0.9882,
+      0.9753
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.18581124595866377,
+     "ms": 1107,
+     "cost": 0.000164439,
+     "in_tok": 2718,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9988
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 313,
+     "in_tok": 1670,
+     "cost": 7.014e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.68
+     },
+     "p_violation": 0.68
+    },
+    "deepseek": {
+     "p_violation": 0.4957177624985063,
+     "ms": 14518,
+     "cost": 0.000371,
+     "in_tok": 2650,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0098",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 1765,
+     "cost": 0.00017036799999999998,
+     "in_tok": 2816,
+     "err": null,
+     "mass": [
+      0.9901,
+      0.9873
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.28774060851070304,
+     "ms": 1696,
+     "cost": 0.000172304,
+     "in_tok": 2848,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 242,
+     "in_tok": 1710,
+     "cost": 7.182e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.65
+     },
+     "p_violation": 0.65
+    },
+    "deepseek": {
+     "p_violation": 0.47752337210923845,
+     "ms": 7703,
+     "cost": 0.00039200000000000004,
+     "in_tok": 2800,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "musr-murder-mini-0099",
+   "target": 1,
+   "label": 0,
+   "class": "murder-mystery",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.32324103922457814,
+     "ms": 2673,
+     "cost": 0.00013673,
+     "in_tok": 2260,
+     "err": null,
+     "mass": [
+      0.9889,
+      0.9859
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.24262468656662475,
+     "ms": 1038,
+     "cost": 0.000136972,
+     "in_tok": 2264,
+     "err": null,
+     "mass": [
+      0.9981,
+      0.9983
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 313,
+     "in_tok": 1416,
+     "cost": 5.9472e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.7
+     },
+     "p_violation": 0.7
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 46986,
+     "cost": 0.0001575,
+     "in_tok": 1125,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      1.0,
+      null
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      null
+     ]
+    }
+   }
+  }
+ ],
+ "agg": {
+  "glm": {
+   "n": 100,
+   "ok": 100,
+   "hit": 52,
+   "ms": 257739,
+   "cost": 0.015034371000000001
+  },
+  "qwen": {
+   "n": 100,
+   "ok": 99,
+   "hit": 73,
+   "ms": 231611,
+   "cost": 0.015001943000000002
+  },
+  "deepseek": {
+   "n": 100,
+   "ok": 77,
+   "hit": 45,
+   "ms": 2214569,
+   "cost": 0.030151800000000003
+  },
+  "jev": {
+   "n": 100,
+   "ok": 100,
+   "hit": 47,
+   "ms": 28589,
+   "cost": 0.006411174000000001
+  }
+ },
+ "merged_runs": [
+  {
+   "date": "2026-10-05",
+   "arms": [
+    "deepseek"
+   ]
+  }
+ ]
+}
