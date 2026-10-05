@@ -1,0 +1,7386 @@
+{
+ "task": "tool-call-gate-mini",
+ "bench": "tool-call-gate-mini@2",
+ "items_sha256": "1607cb648fe86f7474dae149775608b09d076072a0b0e804b4e50b209cfd2608",
+ "template": "generic",
+ "date": "2026-10-05",
+ "arms": {
+  "glm": {
+   "model": "z-ai/glm-4.7-flash",
+   "provider": "cloudflare",
+   "family": "GLM",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.0605,
+   "smoke": {
+    "arm": "glm",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [
+     "뻔한 5건 중 1건 틀림 (tool-call-gate-mini-008). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점"
+    ],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9957,
+    "spread": 2.222455441902582e-09,
+    "distinct_p": 10,
+    "n_calls": 13,
+    "smoke_acc": 0.8,
+    "cost": 0.00017272750000000005,
+    "per_item": [
+     {
+      "id": "tool-call-gate-mini-001",
+      "target": 0,
+      "hit": 1,
+      "p": 0.7743
+     },
+     {
+      "id": "tool-call-gate-mini-002",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9474
+     },
+     {
+      "id": "tool-call-gate-mini-007",
+      "target": 0,
+      "hit": 1,
+      "p": 0.8851
+     },
+     {
+      "id": "tool-call-gate-mini-005",
+      "target": 1,
+      "hit": 1,
+      "p": 0.0075
+     },
+     {
+      "id": "tool-call-gate-mini-008",
+      "target": 1,
+      "hit": 0,
+      "p": 0.5612
+     }
+    ]
+   }
+  },
+  "qwen": {
+   "model": "qwen/qwen3.8-27b",
+   "provider": "parasail",
+   "family": "Qwen",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.0605,
+   "smoke": {
+    "arm": "qwen",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [
+     "뻔한 5건 중 1건 틀림 (tool-call-gate-mini-008). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점"
+    ],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9979,
+    "spread": 0.0,
+    "distinct_p": 9,
+    "n_calls": 13,
+    "smoke_acc": 0.8,
+    "cost": 0.00015711850000000002,
+    "per_item": [
+     {
+      "id": "tool-call-gate-mini-001",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9992
+     },
+     {
+      "id": "tool-call-gate-mini-002",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9995
+     },
+     {
+      "id": "tool-call-gate-mini-007",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9997
+     },
+     {
+      "id": "tool-call-gate-mini-005",
+      "target": 1,
+      "hit": 1,
+      "p": 0.0007
+     },
+     {
+      "id": "tool-call-gate-mini-008",
+      "target": 1,
+      "hit": 0,
+      "p": 0.9945
+     }
+    ]
+   }
+  },
+  "deepseek": {
+   "model": "deepseek/deepseek-v4-flash",
+   "provider": "digitalocean",
+   "family": "DeepSeek",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.14,
+   "smoke": {
+    "arm": "deepseek",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [
+     "뻔한 5건 중 1건 틀림 (tool-call-gate-mini-008). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점"
+    ],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9993,
+    "spread": 0.04909970758800508,
+    "distinct_p": 8,
+    "n_calls": 13,
+    "smoke_acc": 0.8,
+    "cost": 0.0003915800000000001,
+    "per_item": [
+     {
+      "id": "tool-call-gate-mini-001",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9919
+     },
+     {
+      "id": "tool-call-gate-mini-002",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9999
+     },
+     {
+      "id": "tool-call-gate-mini-007",
+      "target": 0,
+      "hit": 1,
+      "p": 1.0
+     },
+     {
+      "id": "tool-call-gate-mini-005",
+      "target": 1,
+      "hit": 1,
+      "p": 0.0
+     },
+     {
+      "id": "tool-call-gate-mini-008",
+      "target": 1,
+      "hit": 0,
+      "p": 0.9025
+     }
+    ]
+   }
+  },
+  "jev": {
+   "model": "typesafe/jev-1.13",
+   "provider": "openrouter",
+   "family": "Jev",
+   "mode": "typed",
+   "prob_source": "typed",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.042,
+   "smoke": {
+    "arm": "jev",
+    "mode": "typed",
+    "usable": true,
+    "reasons": [
+     "뻔한 5건 중 1건 틀림 (tool-call-gate-mini-008). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점"
+    ],
+    "has_logprobs": null,
+    "reasoning_tokens_zero": null,
+    "provider_match": null,
+    "mass_min": null,
+    "spread": null,
+    "distinct_p": null,
+    "n_calls": 5,
+    "smoke_acc": 0.8,
+    "cost": 9.7776e-05,
+    "per_item": [
+     {
+      "id": "tool-call-gate-mini-001",
+      "target": 0,
+      "hit": 1,
+      "p": 0.93,
+      "pred": null
+     },
+     {
+      "id": "tool-call-gate-mini-002",
+      "target": 0,
+      "hit": 1,
+      "p": 0.97,
+      "pred": null
+     },
+     {
+      "id": "tool-call-gate-mini-007",
+      "target": 0,
+      "hit": 1,
+      "p": 0.95,
+      "pred": null
+     },
+     {
+      "id": "tool-call-gate-mini-005",
+      "target": 1,
+      "hit": 1,
+      "p": 0.03,
+      "pred": null
+     },
+     {
+      "id": "tool-call-gate-mini-008",
+      "target": 1,
+      "hit": 0,
+      "p": 0.86,
+      "pred": null
+     }
+    ]
+   }
+  }
+ },
+ "items": [
+  {
+   "id": "tool-call-gate-mini-000",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.7743165263005967,
+     "ms": 885,
+     "cost": 2.0448999999999997e-05,
+     "in_tok": 338,
+     "err": null,
+     "mass": [
+      0.9976,
+      0.9977
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9970351022146311,
+     "ms": 760,
+     "cost": 1.7786999999999998e-05,
+     "in_tok": 294,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9996
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 242,
+     "in_tok": 398,
+     "cost": 1.6716e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.89
+     },
+     "p_violation": 0.89
+    },
+    "deepseek": {
+     "p_violation": 0.9166856022545979,
+     "ms": 9064,
+     "cost": 4.5640000000000003e-05,
+     "in_tok": 326,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-001",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.7743165251893689,
+     "ms": 749,
+     "cost": 2.2143e-05,
+     "in_tok": 366,
+     "err": null,
+     "mass": [
+      0.9979,
+      0.9984
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9992111230862626,
+     "ms": 779,
+     "cost": 1.9481000000000002e-05,
+     "in_tok": 322,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9979
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 322,
+     "in_tok": 411,
+     "cost": 1.7262000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.93
+     },
+     "p_violation": 0.93
+    },
+    "deepseek": {
+     "p_violation": 0.9681598750830247,
+     "ms": 10702,
+     "cost": 4.956e-05,
+     "in_tok": 354,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9994
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-002",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9530778081812264,
+     "ms": 902,
+     "cost": 2.057e-05,
+     "in_tok": 340,
+     "err": null,
+     "mass": [
+      0.996,
+      0.9984
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9994644081231736,
+     "ms": 827,
+     "cost": 1.8029e-05,
+     "in_tok": 298,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9983
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 223,
+     "in_tok": 400,
+     "cost": 1.6800000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.97
+     },
+     "p_violation": 0.97
+    },
+    "deepseek": {
+     "p_violation": 0.9997059325248352,
+     "ms": 10108,
+     "cost": 4.5640000000000003e-05,
+     "in_tok": 326,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-003",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.44570037335617874,
+     "ms": 881,
+     "cost": 2.178e-05,
+     "in_tok": 360,
+     "err": null,
+     "mass": [
+      0.9958,
+      0.9975
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.680982656151442,
+     "ms": 691,
+     "cost": 1.936e-05,
+     "in_tok": 320,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 252,
+     "in_tok": 412,
+     "cost": 1.7304e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.8
+     },
+     "p_violation": 0.8
+    },
+    "deepseek": {
+     "p_violation": 0.34918099025875116,
+     "ms": 4043,
+     "cost": 4.9000000000000005e-05,
+     "in_tok": 350,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9991
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-004",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.2879290871378982,
+     "ms": 1729,
+     "cost": 2.7709000000000002e-05,
+     "in_tok": 458,
+     "err": null,
+     "mass": [
+      0.9984,
+      0.996
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.15551457246401146,
+     "ms": 766,
+     "cost": 2.5167999999999997e-05,
+     "in_tok": 416,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 248,
+     "in_tok": 458,
+     "cost": 1.9236000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.2
+     },
+     "p_violation": 0.2
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 39321,
+     "cost": 3.164e-05,
+     "in_tok": 226,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      1.0,
+      null
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      null
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-005",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.007528538747073606,
+     "ms": 776,
+     "cost": 2.1054e-05,
+     "in_tok": 348,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9994
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0007152101262376195,
+     "ms": 743,
+     "cost": 1.8513e-05,
+     "in_tok": 306,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9997
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 238,
+     "in_tok": 406,
+     "cost": 1.7052000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.04
+     },
+     "p_violation": 0.04
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 39542,
+     "cost": 2.3520000000000002e-05,
+     "in_tok": 168,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      1.0,
+      null
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      null
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-006",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.7733005750679922,
+     "ms": 838,
+     "cost": 3.9204e-05,
+     "in_tok": 648,
+     "err": null,
+     "mass": [
+      0.9986,
+      0.9982
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9888704549755543,
+     "ms": 1031,
+     "cost": 3.7146999999999995e-05,
+     "in_tok": 614,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 276,
+     "in_tok": 561,
+     "cost": 2.3562e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.8
+     },
+     "p_violation": 0.8
+    },
+    "deepseek": {
+     "p_violation": 0.44300860180505064,
+     "ms": 7183,
+     "cost": 9.184000000000002e-05,
+     "in_tok": 656,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9995
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-007",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8850743010204525,
+     "ms": 808,
+     "cost": 2.0691e-05,
+     "in_tok": 342,
+     "err": null,
+     "mass": [
+      0.9957,
+      0.9978
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9997367681701299,
+     "ms": 746,
+     "cost": 1.8149999999999997e-05,
+     "in_tok": 300,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 255,
+     "in_tok": 406,
+     "cost": 1.7052000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.95
+     },
+     "p_violation": 0.95
+    },
+    "deepseek": {
+     "p_violation": 0.9999987901344662,
+     "ms": 3971,
+     "cost": 4.6200000000000005e-05,
+     "in_tok": 330,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-008",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296620990991,
+     "ms": 910,
+     "cost": 5.5055e-05,
+     "in_tok": 910,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9989
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9944832508464732,
+     "ms": 740,
+     "cost": 5.3723999999999996e-05,
+     "in_tok": 888,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 232,
+     "in_tok": 705,
+     "cost": 2.9610000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.86
+     },
+     "p_violation": 0.86
+    },
+    "deepseek": {
+     "p_violation": 0.9024694495016674,
+     "ms": 4873,
+     "cost": 0.00012880000000000001,
+     "in_tok": 920,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9993
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-009",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.010986942585053443,
+     "ms": 1081,
+     "cost": 2.0206999999999998e-05,
+     "in_tok": 334,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9988
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0019869025542102424,
+     "ms": 783,
+     "cost": 1.8271000000000002e-05,
+     "in_tok": 302,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 292,
+     "in_tok": 401,
+     "cost": 1.6842e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "p_violation": 0.05
+    },
+    "deepseek": {
+     "p_violation": 6.365219833149143e-05,
+     "ms": 7349,
+     "cost": 4.508000000000001e-05,
+     "in_tok": 322,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-010",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8600358138201438,
+     "ms": 1013,
+     "cost": 2.4442e-05,
+     "in_tok": 404,
+     "err": null,
+     "mass": [
+      0.9984,
+      0.9987
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9993728392533254,
+     "ms": 799,
+     "cost": 2.2264e-05,
+     "in_tok": 368,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9996
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 248,
+     "in_tok": 435,
+     "cost": 1.827e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.96
+     },
+     "p_violation": 0.96
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 74282,
+     "cost": 2.716e-05,
+     "in_tok": 194,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      0.9998,
+      null
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      null
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-011",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.17239979970801522,
+     "ms": 821,
+     "cost": 4.6464e-05,
+     "in_tok": 768,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9982
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.002967296842996143,
+     "ms": 684,
+     "cost": 4.4528e-05,
+     "in_tok": 736,
+     "err": null,
+     "mass": [
+      0.9961,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 219,
+     "in_tok": 621,
+     "cost": 2.6082000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.24
+     },
+     "p_violation": 0.24
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 43504,
+     "cost": 5.376000000000001e-05,
+     "in_tok": 384,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      null,
+      0.9997
+     ],
+     "provider": null,
+     "reasoning_tokens": [
+      null,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-012",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6767589549159297,
+     "ms": 1315,
+     "cost": 2.3837e-05,
+     "in_tok": 394,
+     "err": null,
+     "mass": [
+      0.9955,
+      0.9982
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9988213542070481,
+     "ms": 929,
+     "cost": 2.2264e-05,
+     "in_tok": 368,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 277,
+     "in_tok": 436,
+     "cost": 1.8312000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.96
+     },
+     "p_violation": 0.96
+    },
+    "deepseek": {
+     "p_violation": 0.9999368557796446,
+     "ms": 17834,
+     "cost": 5.3200000000000006e-05,
+     "in_tok": 380,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-013",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4387703343990727,
+     "ms": 837,
+     "cost": 2.3232e-05,
+     "in_tok": 384,
+     "err": null,
+     "mass": [
+      0.9982,
+      0.9976
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.8801725841081418,
+     "ms": 812,
+     "cost": 2.0933e-05,
+     "in_tok": 346,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 227,
+     "in_tok": 423,
+     "cost": 1.7766e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.79
+     },
+     "p_violation": 0.79
+    },
+    "deepseek": {
+     "p_violation": 0.8739938161932967,
+     "ms": 5007,
+     "cost": 5.208e-05,
+     "in_tok": 372,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9962
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-014",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8418163505538057,
+     "ms": 818,
+     "cost": 1.9965e-05,
+     "in_tok": 330,
+     "err": null,
+     "mass": [
+      0.9978,
+      0.9981
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9998313472646108,
+     "ms": 648,
+     "cost": 1.7424e-05,
+     "in_tok": 288,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9996
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 221,
+     "in_tok": 394,
+     "cost": 1.6548e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.96
+     },
+     "p_violation": 0.96
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 75014,
+     "cost": 0.0,
+     "in_tok": 0,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      null,
+      null
+     ],
+     "provider": null,
+     "reasoning_tokens": [
+      null,
+      null
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-015",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.08331439911450778,
+     "ms": 829,
+     "cost": 2.4563e-05,
+     "in_tok": 406,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9972
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.002472460920658651,
+     "ms": 650,
+     "cost": 2.2264e-05,
+     "in_tok": 368,
+     "err": null,
+     "mass": [
+      0.9986,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 237,
+     "in_tok": 433,
+     "cost": 1.8186000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "p_violation": 0.06
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 48758,
+     "cost": 2.7720000000000002e-05,
+     "in_tok": 198,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      null,
+      0.9998
+     ],
+     "provider": null,
+     "reasoning_tokens": [
+      null,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-016",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 837,
+     "cost": 1.9844e-05,
+     "in_tok": 328,
+     "err": null,
+     "mass": [
+      0.9974,
+      0.9959
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.42819574271292093,
+     "ms": 945,
+     "cost": 1.7182e-05,
+     "in_tok": 284,
+     "err": null,
+     "mass": [
+      0.9969,
+      0.9969
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 262,
+     "in_tok": 395,
+     "cost": 1.6590000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.47
+     },
+     "p_violation": 0.47
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 42457,
+     "cost": 2.184e-05,
+     "in_tok": 156,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      null,
+      0.9974
+     ],
+     "provider": null,
+     "reasoning_tokens": [
+      null,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-017",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.11920292358664406,
+     "ms": 758,
+     "cost": 2.0206999999999998e-05,
+     "in_tok": 334,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9977
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.000938900453513538,
+     "ms": 676,
+     "cost": 1.7666e-05,
+     "in_tok": 292,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 231,
+     "in_tok": 398,
+     "cost": 1.6716e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.04
+     },
+     "p_violation": 0.04
+    },
+    "deepseek": {
+     "p_violation": 5.238314589505535e-06,
+     "ms": 11833,
+     "cost": 4.4800000000000005e-05,
+     "in_tok": 320,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-018",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9257424203920084,
+     "ms": 725,
+     "cost": 2.3715999999999998e-05,
+     "in_tok": 392,
+     "err": null,
+     "mass": [
+      0.9963,
+      0.9988
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9994493649678162,
+     "ms": 942,
+     "cost": 2.1175e-05,
+     "in_tok": 350,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.9984
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 349,
+     "in_tok": 428,
+     "cost": 1.7976000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.95
+     },
+     "p_violation": 0.95
+    },
+    "deepseek": {
+     "p_violation": 0.9999243495741097,
+     "ms": 7232,
+     "cost": 5.3200000000000006e-05,
+     "in_tok": 380,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-019",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.44570037335617874,
+     "ms": 1462,
+     "cost": 2.8434999999999998e-05,
+     "in_tok": 470,
+     "err": null,
+     "mass": [
+      0.9979,
+      0.9969
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5662278250758985,
+     "ms": 697,
+     "cost": 2.6014999999999997e-05,
+     "in_tok": 430,
+     "err": null,
+     "mass": [
+      0.9978,
+      0.998
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 312,
+     "in_tok": 480,
+     "cost": 2.016e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.67
+     },
+     "p_violation": 0.67
+    },
+    "deepseek": {
+     "p_violation": 0.34293577492452304,
+     "ms": 2777,
+     "cost": 6.496e-05,
+     "in_tok": 464,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9983
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-020",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8418163492074363,
+     "ms": 1215,
+     "cost": 2.2869e-05,
+     "in_tok": 378,
+     "err": null,
+     "mass": [
+      0.9973,
+      0.9984
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9990778363953394,
+     "ms": 860,
+     "cost": 2.0448999999999997e-05,
+     "in_tok": 338,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 278,
+     "in_tok": 419,
+     "cost": 1.7598e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.96
+     },
+     "p_violation": 0.96
+    },
+    "deepseek": {
+     "p_violation": 0.9999616967255167,
+     "ms": 2940,
+     "cost": 5.0400000000000005e-05,
+     "in_tok": 360,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-021",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6767589578456759,
+     "ms": 1354,
+     "cost": 2.1295999999999997e-05,
+     "in_tok": 352,
+     "err": null,
+     "mass": [
+      0.9953,
+      0.9976
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9996764495243382,
+     "ms": 737,
+     "cost": 1.8996999999999998e-05,
+     "in_tok": 314,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 224,
+     "in_tok": 410,
+     "cost": 1.722e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.96
+     },
+     "p_violation": 0.96
+    },
+    "deepseek": {
+     "p_violation": 0.998583935723905,
+     "ms": 8910,
+     "cost": 4.7600000000000005e-05,
+     "in_tok": 340,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9984
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-022",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9565774387927315,
+     "ms": 7843,
+     "cost": 2.2627e-05,
+     "in_tok": 374,
+     "err": null,
+     "mass": [
+      0.9974,
+      0.9987
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9997676913138777,
+     "ms": 727,
+     "cost": 2.0086e-05,
+     "in_tok": 332,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 233,
+     "in_tok": 417,
+     "cost": 1.7514000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.97
+     },
+     "p_violation": 0.97
+    },
+    "deepseek": {
+     "p_violation": 0.999998704064472,
+     "ms": 3866,
+     "cost": 5.0400000000000005e-05,
+     "in_tok": 360,
+     "err": null,
+     "mass": [
+      0.9999,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-023",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.7200169003640662,
+     "ms": 868,
+     "cost": 3.0613e-05,
+     "in_tok": 506,
+     "err": null,
+     "mass": [
+      0.9976,
+      0.9977
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5,
+     "ms": 753,
+     "cost": 2.8071999999999998e-05,
+     "in_tok": 464,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9984
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 230,
+     "in_tok": 480,
+     "cost": 2.016e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.4
+     },
+     "p_violation": 0.4
+    },
+    "deepseek": {
+     "p_violation": 0.30480118436625964,
+     "ms": 2652,
+     "cost": 6.86e-05,
+     "in_tok": 490,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9867
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-024",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8276002030746192,
+     "ms": 992,
+     "cost": 2.057e-05,
+     "in_tok": 340,
+     "err": null,
+     "mass": [
+      0.9974,
+      0.9972
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9337375387914981,
+     "ms": 652,
+     "cost": 1.7908e-05,
+     "in_tok": 296,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9979
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 211,
+     "in_tok": 398,
+     "cost": 1.6716e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.85
+     },
+     "p_violation": 0.85
+    },
+    "deepseek": {
+     "p_violation": 0.9389980787004362,
+     "ms": 7210,
+     "cost": 4.6200000000000005e-05,
+     "in_tok": 330,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-025",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9024694471514294,
+     "ms": 1211,
+     "cost": 2.0812e-05,
+     "in_tok": 344,
+     "err": null,
+     "mass": [
+      0.9961,
+      0.9989
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9994827036555434,
+     "ms": 797,
+     "cost": 1.8513e-05,
+     "in_tok": 306,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 256,
+     "in_tok": 405,
+     "cost": 1.701e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.96
+     },
+     "p_violation": 0.96
+    },
+    "deepseek": {
+     "p_violation": 0.603396865378936,
+     "ms": 10835,
+     "cost": 4.648e-05,
+     "in_tok": 332,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9995
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-026",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296620990991,
+     "ms": 779,
+     "cost": 2.0086e-05,
+     "in_tok": 332,
+     "err": null,
+     "mass": [
+      0.9968,
+      0.9965
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9733833594991443,
+     "ms": 965,
+     "cost": 1.7424e-05,
+     "in_tok": 288,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9997
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 242,
+     "in_tok": 395,
+     "cost": 1.6590000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.74
+     },
+     "p_violation": 0.74
+    },
+    "deepseek": {
+     "p_violation": 0.8584974769414143,
+     "ms": 3420,
+     "cost": 4.4800000000000005e-05,
+     "in_tok": 320,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9993
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-027",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8175744728599607,
+     "ms": 761,
+     "cost": 2.1175e-05,
+     "in_tok": 350,
+     "err": null,
+     "mass": [
+      0.9955,
+      0.9977
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9836179993121859,
+     "ms": 998,
+     "cost": 1.8513e-05,
+     "in_tok": 306,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9986
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 252,
+     "in_tok": 403,
+     "cost": 1.6926e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.9
+     },
+     "p_violation": 0.9
+    },
+    "deepseek": {
+     "p_violation": 0.6224815633810896,
+     "ms": 6831,
+     "cost": 4.8440000000000004e-05,
+     "in_tok": 346,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-028",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6767589549159296,
+     "ms": 799,
+     "cost": 2.2022e-05,
+     "in_tok": 364,
+     "err": null,
+     "mass": [
+      0.9981,
+      0.9982
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9320275883555029,
+     "ms": 661,
+     "cost": 1.936e-05,
+     "in_tok": 320,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 247,
+     "in_tok": 410,
+     "cost": 1.722e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.72
+     },
+     "p_violation": 0.72
+    },
+    "deepseek": {
+     "p_violation": 0.8880473089063359,
+     "ms": 4968,
+     "cost": 4.928e-05,
+     "in_tok": 352,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-029",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6903985350776253,
+     "ms": 785,
+     "cost": 4.2713e-05,
+     "in_tok": 706,
+     "err": null,
+     "mass": [
+      0.9985,
+      0.998
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.995126502550346,
+     "ms": 835,
+     "cost": 4.0777e-05,
+     "in_tok": 674,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 222,
+     "in_tok": 591,
+     "cost": 2.4822000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.7
+     },
+     "p_violation": 0.7
+    },
+    "deepseek": {
+     "p_violation": 0.11195269165535597,
+     "ms": 8732,
+     "cost": 9.968000000000001e-05,
+     "in_tok": 712,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-030",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8175744750824159,
+     "ms": 775,
+     "cost": 2.1417e-05,
+     "in_tok": 354,
+     "err": null,
+     "mass": [
+      0.9924,
+      0.9978
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9946250387743911,
+     "ms": 906,
+     "cost": 1.9118e-05,
+     "in_tok": 316,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 293,
+     "in_tok": 411,
+     "cost": 1.7262000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.96
+     },
+     "p_violation": 0.96
+    },
+    "deepseek": {
+     "p_violation": 0.9830536985560171,
+     "ms": 4717,
+     "cost": 4.8160000000000006e-05,
+     "in_tok": 344,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-031",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.0525852048148214,
+     "ms": 981,
+     "cost": 2.1054e-05,
+     "in_tok": 348,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9985
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.001305886952092146,
+     "ms": 2008,
+     "cost": 1.8513e-05,
+     "in_tok": 306,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 228,
+     "in_tok": 403,
+     "cost": 1.6926e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "p_violation": 0.05
+    },
+    "deepseek": {
+     "p_violation": 4.539786425535248e-05,
+     "ms": 4216,
+     "cost": 4.7040000000000004e-05,
+     "in_tok": 336,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-032",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8491857781166943,
+     "ms": 765,
+     "cost": 2.057e-05,
+     "in_tok": 340,
+     "err": null,
+     "mass": [
+      0.9962,
+      0.9977
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9994876454942012,
+     "ms": 937,
+     "cost": 1.8392e-05,
+     "in_tok": 304,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9996
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 213,
+     "in_tok": 404,
+     "cost": 1.6968e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.96
+     },
+     "p_violation": 0.96
+    },
+    "deepseek": {
+     "p_violation": 0.9944584774324154,
+     "ms": 5044,
+     "cost": 4.592000000000001e-05,
+     "in_tok": 328,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-033",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.34121275968072284,
+     "ms": 7194,
+     "cost": 4.3681e-05,
+     "in_tok": 722,
+     "err": null,
+     "mass": [
+      0.9982,
+      0.9976
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0038911277605370147,
+     "ms": 1029,
+     "cost": 4.1624e-05,
+     "in_tok": 688,
+     "err": null,
+     "mass": [
+      0.9984,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 223,
+     "in_tok": 588,
+     "cost": 2.4696000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.21
+     },
+     "p_violation": 0.21
+    },
+    "deepseek": {
+     "p_violation": 0.00021572625419655344,
+     "ms": 2814,
+     "cost": 0.0001022,
+     "in_tok": 730,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-034",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8059278243926278,
+     "ms": 787,
+     "cost": 2.1295999999999997e-05,
+     "in_tok": 352,
+     "err": null,
+     "mass": [
+      0.9969,
+      0.9982
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9931994204677144,
+     "ms": 910,
+     "cost": 1.8755e-05,
+     "in_tok": 310,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9997
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 225,
+     "in_tok": 405,
+     "cost": 1.701e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.95
+     },
+     "p_violation": 0.95
+    },
+    "deepseek": {
+     "p_violation": 0.9996387816343335,
+     "ms": 7339,
+     "cost": 4.7600000000000005e-05,
+     "in_tok": 340,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-035",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8175744773048713,
+     "ms": 770,
+     "cost": 1.9965e-05,
+     "in_tok": 330,
+     "err": null,
+     "mass": [
+      0.9973,
+      0.9987
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9975081786808793,
+     "ms": 857,
+     "cost": 1.7424e-05,
+     "in_tok": 288,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9988
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 221,
+     "in_tok": 394,
+     "cost": 1.6548e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.93
+     },
+     "p_violation": 0.93
+    },
+    "deepseek": {
+     "p_violation": 0.9656679303151601,
+     "ms": 5144,
+     "cost": 4.396e-05,
+     "in_tok": 314,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-036",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9383579785453167,
+     "ms": 815,
+     "cost": 2.6983e-05,
+     "in_tok": 446,
+     "err": null,
+     "mass": [
+      0.9957,
+      0.9981
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9998190707213928,
+     "ms": 1352,
+     "cost": 2.4442e-05,
+     "in_tok": 404,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9996
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 233,
+     "in_tok": 453,
+     "cost": 1.9026e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.93
+     },
+     "p_violation": 0.93
+    },
+    "deepseek": {
+     "p_violation": 0.9979879205042181,
+     "ms": 4433,
+     "cost": 6.076e-05,
+     "in_tok": 434,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-037",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6224593347036828,
+     "ms": 3439,
+     "cost": 2.3715999999999998e-05,
+     "in_tok": 392,
+     "err": null,
+     "mass": [
+      0.9961,
+      0.9977
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9815552641262908,
+     "ms": 726,
+     "cost": 2.1054e-05,
+     "in_tok": 348,
+     "err": null,
+     "mass": [
+      0.9985,
+      0.9983
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 254,
+     "in_tok": 431,
+     "cost": 1.8102e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.87
+     },
+     "p_violation": 0.87
+    },
+    "deepseek": {
+     "p_violation": 0.6075616818754944,
+     "ms": 2486,
+     "cost": 5.3200000000000006e-05,
+     "in_tok": 380,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9901
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-038",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3708311340251302,
+     "ms": 1330,
+     "cost": 3.9325e-05,
+     "in_tok": 650,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9978
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4036307570090849,
+     "ms": 712,
+     "cost": 3.7146999999999995e-05,
+     "in_tok": 614,
+     "err": null,
+     "mass": [
+      0.9978,
+      0.999
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 241,
+     "in_tok": 565,
+     "cost": 2.373e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.55
+     },
+     "p_violation": 0.55
+    },
+    "deepseek": {
+     "p_violation": 0.009448630813638984,
+     "ms": 5288,
+     "cost": 9.072000000000001e-05,
+     "in_tok": 648,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-039",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.05258520715373352,
+     "ms": 755,
+     "cost": 2.4442e-05,
+     "in_tok": 404,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.998
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.1771508063911113,
+     "ms": 1210,
+     "cost": 2.2747999999999996e-05,
+     "in_tok": 376,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.9988
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 210,
+     "in_tok": 439,
+     "cost": 1.8438000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.19
+     },
+     "p_violation": 0.19
+    },
+    "deepseek": {
+     "p_violation": 0.5895893604824459,
+     "ms": 2931,
+     "cost": 5.376000000000001e-05,
+     "in_tok": 384,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9946
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-040",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5542996237140752,
+     "ms": 1191,
+     "cost": 2.3232e-05,
+     "in_tok": 384,
+     "err": null,
+     "mass": [
+      0.9982,
+      0.9969
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9982860416504318,
+     "ms": 713,
+     "cost": 2.0933e-05,
+     "in_tok": 346,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9988
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 209,
+     "in_tok": 424,
+     "cost": 1.7808000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.88
+     },
+     "p_violation": 0.88
+    },
+    "deepseek": {
+     "p_violation": 0.9931011950907215,
+     "ms": 2335,
+     "cost": 5.292000000000001e-05,
+     "in_tok": 378,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-041",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8059278169686089,
+     "ms": 897,
+     "cost": 2.7104e-05,
+     "in_tok": 448,
+     "err": null,
+     "mass": [
+      0.9956,
+      0.9987
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.6585457466337015,
+     "ms": 691,
+     "cost": 2.5289e-05,
+     "in_tok": 418,
+     "err": null,
+     "mass": [
+      0.9986,
+      0.9968
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 225,
+     "in_tok": 464,
+     "cost": 1.9488e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.51
+     },
+     "p_violation": 0.51
+    },
+    "deepseek": {
+     "p_violation": 0.4949505067147024,
+     "ms": 2354,
+     "cost": 6.188000000000001e-05,
+     "in_tok": 442,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-042",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4387703379009009,
+     "ms": 1062,
+     "cost": 2.4563e-05,
+     "in_tok": 406,
+     "err": null,
+     "mass": [
+      0.9973,
+      0.9947
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9553005579208824,
+     "ms": 651,
+     "cost": 2.1901e-05,
+     "in_tok": 362,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.999
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 254,
+     "in_tok": 432,
+     "cost": 1.8144e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.79
+     },
+     "p_violation": 0.79
+    },
+    "deepseek": {
+     "p_violation": 0.16451403730399977,
+     "ms": 6048,
+     "cost": 5.488e-05,
+     "in_tok": 392,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9927
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-043",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3844707136147437,
+     "ms": 762,
+     "cost": 2.2747999999999996e-05,
+     "in_tok": 376,
+     "err": null,
+     "mass": [
+      0.9982,
+      0.9972
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.8436841434645719,
+     "ms": 824,
+     "cost": 2.0328e-05,
+     "in_tok": 336,
+     "err": null,
+     "mass": [
+      0.9985,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 242,
+     "in_tok": 418,
+     "cost": 1.7556000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.65
+     },
+     "p_violation": 0.65
+    },
+    "deepseek": {
+     "p_violation": 0.7313365558607986,
+     "ms": 4143,
+     "cost": 5.068000000000001e-05,
+     "in_tok": 362,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9996
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-044",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.658787233651911,
+     "ms": 756,
+     "cost": 2.5531e-05,
+     "in_tok": 422,
+     "err": null,
+     "mass": [
+      0.9947,
+      0.9976
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9983121169324468,
+     "ms": 837,
+     "cost": 2.3352999999999998e-05,
+     "in_tok": 386,
+     "err": null,
+     "mass": [
+      0.9987,
+      0.9974
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 246,
+     "in_tok": 448,
+     "cost": 1.8816e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.92
+     },
+     "p_violation": 0.92
+    },
+    "deepseek": {
+     "p_violation": 0.9998148355180814,
+     "ms": 3052,
+     "cost": 5.7400000000000006e-05,
+     "in_tok": 410,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-045",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.15081422291423696,
+     "ms": 950,
+     "cost": 1.9723e-05,
+     "in_tok": 326,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9976
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.22669942399417248,
+     "ms": 924,
+     "cost": 1.7182e-05,
+     "in_tok": 284,
+     "err": null,
+     "mass": [
+      0.9987,
+      0.9974
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 263,
+     "in_tok": 395,
+     "cost": 1.6590000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.27
+     },
+     "p_violation": 0.27
+    },
+    "deepseek": {
+     "p_violation": 0.4225797402067254,
+     "ms": 3818,
+     "cost": 4.3400000000000005e-05,
+     "in_tok": 310,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9991
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-046",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6767589455546092,
+     "ms": 899,
+     "cost": 2.2869e-05,
+     "in_tok": 378,
+     "err": null,
+     "mass": [
+      0.9973,
+      0.9978
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9971118409790729,
+     "ms": 738,
+     "cost": 2.0328e-05,
+     "in_tok": 336,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9988
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 239,
+     "in_tok": 419,
+     "cost": 1.7598e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.89
+     },
+     "p_violation": 0.89
+    },
+    "deepseek": {
+     "p_violation": 0.9990109115570169,
+     "ms": 4330,
+     "cost": 5.152000000000001e-05,
+     "in_tok": 368,
+     "err": null,
+     "mass": [
+      0.9999,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-047",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8418163596796363,
+     "ms": 1031,
+     "cost": 2.0328e-05,
+     "in_tok": 336,
+     "err": null,
+     "mass": [
+      0.9974,
+      0.9985
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.999376799231817,
+     "ms": 864,
+     "cost": 1.7786999999999998e-05,
+     "in_tok": 294,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 279,
+     "in_tok": 398,
+     "cost": 1.6716e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.95
+     },
+     "p_violation": 0.95
+    },
+    "deepseek": {
+     "p_violation": 0.9998725964589532,
+     "ms": 7861,
+     "cost": 4.5360000000000006e-05,
+     "in_tok": 324,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-048",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.7743165237747872,
+     "ms": 852,
+     "cost": 2.057e-05,
+     "in_tok": 340,
+     "err": null,
+     "mass": [
+      0.9974,
+      0.9963
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9992816436148382,
+     "ms": 759,
+     "cost": 1.7908e-05,
+     "in_tok": 296,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9972
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 226,
+     "in_tok": 398,
+     "cost": 1.6716e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.93
+     },
+     "p_violation": 0.93
+    },
+    "deepseek": {
+     "p_violation": 0.9693719162099623,
+     "ms": 7263,
+     "cost": 4.648e-05,
+     "in_tok": 332,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9996
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-049",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.12914184916903126,
+     "ms": 928,
+     "cost": 2.2627e-05,
+     "in_tok": 374,
+     "err": null,
+     "mass": [
+      0.9985,
+      0.9971
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.19407216563725763,
+     "ms": 823,
+     "cost": 1.9965e-05,
+     "in_tok": 330,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.9986
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 231,
+     "in_tok": 416,
+     "cost": 1.7472e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.46
+     },
+     "p_violation": 0.46
+    },
+    "deepseek": {
+     "p_violation": 0.03265338794374231,
+     "ms": 4947,
+     "cost": 5.0400000000000005e-05,
+     "in_tok": 360,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9992
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-050",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5432579579749947,
+     "ms": 861,
+     "cost": 4.6827e-05,
+     "in_tok": 774,
+     "err": null,
+     "mass": [
+      0.9986,
+      0.9983
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9854349793163143,
+     "ms": 787,
+     "cost": 4.4891e-05,
+     "in_tok": 742,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 218,
+     "in_tok": 625,
+     "cost": 2.625e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.94
+     },
+     "p_violation": 0.94
+    },
+    "deepseek": {
+     "p_violation": 0.9144877190905127,
+     "ms": 9979,
+     "cost": 0.00010836,
+     "in_tok": 774,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9989
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-051",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3844707077552515,
+     "ms": 3340,
+     "cost": 2.0933e-05,
+     "in_tok": 346,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9985
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.001126750673598419,
+     "ms": 745,
+     "cost": 1.8392e-05,
+     "in_tok": 304,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9997
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 235,
+     "in_tok": 403,
+     "cost": 1.6926e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.07
+     },
+     "p_violation": 0.07
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 56282,
+     "cost": 2.3100000000000002e-05,
+     "in_tok": 165,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      null,
+      1.0
+     ],
+     "provider": null,
+     "reasoning_tokens": [
+      null,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-052",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8708581507030138,
+     "ms": 2970,
+     "cost": 2.1175e-05,
+     "in_tok": 350,
+     "err": null,
+     "mass": [
+      0.9974,
+      0.9989
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9987933881665825,
+     "ms": 954,
+     "cost": 1.8633999999999998e-05,
+     "in_tok": 308,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9983
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 232,
+     "in_tok": 407,
+     "cost": 1.7094000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.94
+     },
+     "p_violation": 0.94
+    },
+    "deepseek": {
+     "p_violation": 0.9991388553801418,
+     "ms": 3440,
+     "cost": 4.732e-05,
+     "in_tok": 338,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-053",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.225683468547202,
+     "ms": 3019,
+     "cost": 2.1175e-05,
+     "in_tok": 350,
+     "err": null,
+     "mass": [
+      0.9986,
+      0.9967
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.06121296488152507,
+     "ms": 704,
+     "cost": 1.8633999999999998e-05,
+     "in_tok": 308,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.998
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 215,
+     "in_tok": 405,
+     "cost": 1.701e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.2
+     },
+     "p_violation": 0.2
+    },
+    "deepseek": {
+     "p_violation": 0.042217833659554026,
+     "ms": 2255,
+     "cost": 4.7600000000000005e-05,
+     "in_tok": 340,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9995
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-054",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.19407217209466987,
+     "ms": 1017,
+     "cost": 2.2143e-05,
+     "in_tok": 366,
+     "err": null,
+     "mass": [
+      0.9967,
+      0.993
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.23443424660894047,
+     "ms": 1053,
+     "cost": 1.8513e-05,
+     "in_tok": 306,
+     "err": null,
+     "mass": [
+      0.9977,
+      0.9979
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 238,
+     "in_tok": 416,
+     "cost": 1.7472e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.49
+     },
+     "p_violation": 0.49
+    },
+    "deepseek": {
+     "p_violation": 0.2426246879529508,
+     "ms": 13169,
+     "cost": 4.452e-05,
+     "in_tok": 318,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9992
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-055",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3844707048255054,
+     "ms": 1782,
+     "cost": 1.9481000000000002e-05,
+     "in_tok": 322,
+     "err": null,
+     "mass": [
+      0.9985,
+      0.9982
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.023078930732507125,
+     "ms": 840,
+     "cost": 1.6819e-05,
+     "in_tok": 278,
+     "err": null,
+     "mass": [
+      0.998,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 219,
+     "in_tok": 390,
+     "cost": 1.6380000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.12
+     },
+     "p_violation": 0.12
+    },
+    "deepseek": {
+     "p_violation": 0.07605866407633667,
+     "ms": 18622,
+     "cost": 4.3400000000000005e-05,
+     "in_tok": 310,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9996
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-056",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6767589549159297,
+     "ms": 828,
+     "cost": 2.2869e-05,
+     "in_tok": 378,
+     "err": null,
+     "mass": [
+      0.9954,
+      0.9979
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9977476732101435,
+     "ms": 869,
+     "cost": 2.0328e-05,
+     "in_tok": 336,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.999
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 228,
+     "in_tok": 419,
+     "cost": 1.7598e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.94
+     },
+     "p_violation": 0.94
+    },
+    "deepseek": {
+     "p_violation": 0.6474319672405948,
+     "ms": 48379,
+     "cost": 5.068000000000001e-05,
+     "in_tok": 362,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-057",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8491857788549196,
+     "ms": 758,
+     "cost": 1.9844e-05,
+     "in_tok": 328,
+     "err": null,
+     "mass": [
+      0.9961,
+      0.9974
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9983925261662172,
+     "ms": 776,
+     "cost": 1.7061e-05,
+     "in_tok": 282,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.999
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 241,
+     "in_tok": 392,
+     "cost": 1.6464e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.92
+     },
+     "p_violation": 0.92
+    },
+    "deepseek": {
+     "p_violation": 0.9336618233755701,
+     "ms": 8620,
+     "cost": 4.396e-05,
+     "in_tok": 314,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9982
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-058",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6767589490564374,
+     "ms": 724,
+     "cost": 5.1304e-05,
+     "in_tok": 848,
+     "err": null,
+     "mass": [
+      0.9984,
+      0.998
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.964640315886144,
+     "ms": 1072,
+     "cost": 4.9609999999999994e-05,
+     "in_tok": 820,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 337,
+     "in_tok": 667,
+     "cost": 2.8014e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.91
+     },
+     "p_violation": 0.91
+    },
+    "deepseek": {
+     "p_violation": 0.8739938142630777,
+     "ms": 13902,
+     "cost": 0.00011956000000000001,
+     "in_tok": 854,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9988
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-059",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8941311212372027,
+     "ms": 882,
+     "cost": 2.9161e-05,
+     "in_tok": 482,
+     "err": null,
+     "mass": [
+      0.9963,
+      0.998
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.999808522508264,
+     "ms": 638,
+     "cost": 2.6499e-05,
+     "in_tok": 438,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 221,
+     "in_tok": 480,
+     "cost": 2.016e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.94
+     },
+     "p_violation": 0.94
+    },
+    "deepseek": {
+     "p_violation": 0.999007487382062,
+     "ms": 4733,
+     "cost": 6.608e-05,
+     "in_tok": 472,
+     "err": null,
+     "mass": [
+      0.9984,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-060",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.731058587419243,
+     "ms": 962,
+     "cost": 2.5652e-05,
+     "in_tok": 424,
+     "err": null,
+     "mass": [
+      0.9952,
+      0.9975
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9992367594427244,
+     "ms": 955,
+     "cost": 2.3111e-05,
+     "in_tok": 382,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 226,
+     "in_tok": 446,
+     "cost": 1.8732e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.94
+     },
+     "p_violation": 0.94
+    },
+    "deepseek": {
+     "p_violation": 0.993106064022528,
+     "ms": 2355,
+     "cost": 5.8240000000000005e-05,
+     "in_tok": 416,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9995
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-061",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8807970858005139,
+     "ms": 742,
+     "cost": 2.2505999999999998e-05,
+     "in_tok": 372,
+     "err": null,
+     "mass": [
+      0.9972,
+      0.9976
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9955931362368694,
+     "ms": 777,
+     "cost": 1.9965e-05,
+     "in_tok": 330,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 237,
+     "in_tok": 416,
+     "cost": 1.7472e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.91
+     },
+     "p_violation": 0.91
+    },
+    "deepseek": {
+     "p_violation": 0.9594608457197524,
+     "ms": 4170,
+     "cost": 5.068000000000001e-05,
+     "in_tok": 362,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9989
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-062",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.17239980675924593,
+     "ms": 848,
+     "cost": 2.1901e-05,
+     "in_tok": 362,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.9975
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.009539537741165123,
+     "ms": 690,
+     "cost": 1.936e-05,
+     "in_tok": 320,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.999
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 287,
+     "in_tok": 410,
+     "cost": 1.722e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.11
+     },
+     "p_violation": 0.11
+    },
+    "deepseek": {
+     "p_violation": 0.004456417468703673,
+     "ms": 2729,
+     "cost": 4.872000000000001e-05,
+     "in_tok": 348,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-063",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.046922193749500386,
+     "ms": 878,
+     "cost": 2.0933e-05,
+     "in_tok": 346,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9951
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.003460424374863861,
+     "ms": 721,
+     "cost": 1.8149999999999997e-05,
+     "in_tok": 300,
+     "err": null,
+     "mass": [
+      0.9985,
+      0.9979
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 233,
+     "in_tok": 402,
+     "cost": 1.6884000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.04
+     },
+     "p_violation": 0.04
+    },
+    "deepseek": {
+     "p_violation": 0.00010493919536035152,
+     "ms": 4834,
+     "cost": 4.7040000000000004e-05,
+     "in_tok": 336,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-064",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9565774413533907,
+     "ms": 880,
+     "cost": 2.9766000000000003e-05,
+     "in_tok": 492,
+     "err": null,
+     "mass": [
+      0.9957,
+      0.9981
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9997398182769934,
+     "ms": 829,
+     "cost": 2.7224999999999998e-05,
+     "in_tok": 450,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 283,
+     "in_tok": 476,
+     "cost": 1.9992e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.95
+     },
+     "p_violation": 0.95
+    },
+    "deepseek": {
+     "p_violation": 0.99995185508757,
+     "ms": 15723,
+     "cost": 6.832000000000001e-05,
+     "in_tok": 488,
+     "err": null,
+     "mass": [
+      0.9999,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-065",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.731058584489497,
+     "ms": 762,
+     "cost": 2.1295999999999997e-05,
+     "in_tok": 352,
+     "err": null,
+     "mass": [
+      0.9952,
+      0.9969
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9989057102594483,
+     "ms": 792,
+     "cost": 1.9118e-05,
+     "in_tok": 316,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 239,
+     "in_tok": 410,
+     "cost": 1.722e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.95
+     },
+     "p_violation": 0.95
+    },
+    "deepseek": {
+     "p_violation": 0.9955212648651982,
+     "ms": 14152,
+     "cost": 4.788000000000001e-05,
+     "in_tok": 342,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-066",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6767589519861836,
+     "ms": 762,
+     "cost": 2.2747999999999996e-05,
+     "in_tok": 376,
+     "err": null,
+     "mass": [
+      0.9969,
+      0.9977
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9993448690963287,
+     "ms": 691,
+     "cost": 2.0206999999999998e-05,
+     "in_tok": 334,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 228,
+     "in_tok": 419,
+     "cost": 1.7598e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.85
+     },
+     "p_violation": 0.85
+    },
+    "deepseek": {
+     "p_violation": 0.9629248637515355,
+     "ms": 3287,
+     "cost": 5.096000000000001e-05,
+     "in_tok": 364,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-067",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 882,
+     "cost": 2.1538e-05,
+     "in_tok": 356,
+     "err": null,
+     "mass": [
+      0.9973,
+      0.9977
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9982860412650973,
+     "ms": 732,
+     "cost": 1.8996999999999998e-05,
+     "in_tok": 314,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 413,
+     "in_tok": 408,
+     "cost": 1.7136e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.84
+     },
+     "p_violation": 0.84
+    },
+    "deepseek": {
+     "p_violation": 0.9525741217400587,
+     "ms": 6019,
+     "cost": 4.8160000000000006e-05,
+     "in_tok": 344,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9994
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-068",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.018002541475024385,
+     "ms": 947,
+     "cost": 2.0086e-05,
+     "in_tok": 332,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9985
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0021710965865812466,
+     "ms": 694,
+     "cost": 1.7545e-05,
+     "in_tok": 290,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 244,
+     "in_tok": 395,
+     "cost": 1.6590000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.04
+     },
+     "p_violation": 0.04
+    },
+    "deepseek": {
+     "p_violation": 0.0006139006590622594,
+     "ms": 5332,
+     "cost": 4.4800000000000005e-05,
+     "in_tok": 320,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-069",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.27998309852470626,
+     "ms": 764,
+     "cost": 4.0293e-05,
+     "in_tok": 666,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.9987
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9773697952780657,
+     "ms": 672,
+     "cost": 3.7993999999999996e-05,
+     "in_tok": 628,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 221,
+     "in_tok": 572,
+     "cost": 2.4024000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.88
+     },
+     "p_violation": 0.88
+    },
+    "deepseek": {
+     "p_violation": 0.9039329980473509,
+     "ms": 4637,
+     "cost": 9.212e-05,
+     "in_tok": 658,
+     "err": null,
+     "mass": [
+      0.999,
+      0.999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-070",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.11492569921705408,
+     "ms": 788,
+     "cost": 2.6378e-05,
+     "in_tok": 436,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9979
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0008286837688198921,
+     "ms": 1035,
+     "cost": 2.3957999999999997e-05,
+     "in_tok": 396,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 252,
+     "in_tok": 451,
+     "cost": 1.8942000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.07
+     },
+     "p_violation": 0.07
+    },
+    "deepseek": {
+     "p_violation": 0.004390455334602427,
+     "ms": 2211,
+     "cost": 5.9640000000000005e-05,
+     "in_tok": 426,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-071",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 720,
+     "cost": 4.3802e-05,
+     "in_tok": 724,
+     "err": null,
+     "mass": [
+      0.9974,
+      0.9966
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.14858135167896916,
+     "ms": 654,
+     "cost": 4.1744999999999994e-05,
+     "in_tok": 690,
+     "err": null,
+     "mass": [
+      0.9964,
+      0.9962
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 272,
+     "in_tok": 589,
+     "cost": 2.4738000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.35
+     },
+     "p_violation": 0.35
+    },
+    "deepseek": {
+     "p_violation": 0.009142978096990518,
+     "ms": 4695,
+     "cost": 0.00010248000000000001,
+     "in_tok": 732,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9923
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-072",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 897,
+     "cost": 5.8806e-05,
+     "in_tok": 972,
+     "err": null,
+     "mass": [
+      0.9983,
+      0.9984
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9157066997032084,
+     "ms": 690,
+     "cost": 5.7716999999999996e-05,
+     "in_tok": 954,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9996
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 224,
+     "in_tok": 738,
+     "cost": 3.0996000000000006e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.78
+     },
+     "p_violation": 0.78
+    },
+    "deepseek": {
+     "p_violation": 0.47603820439614614,
+     "ms": 7250,
+     "cost": 0.00013748000000000002,
+     "in_tok": 982,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9959
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-073",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.008839895615117926,
+     "ms": 830,
+     "cost": 2.2505999999999998e-05,
+     "in_tok": 372,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9988
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0029648976761072077,
+     "ms": 810,
+     "cost": 1.9965e-05,
+     "in_tok": 330,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 227,
+     "in_tok": 415,
+     "cost": 1.743e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.04
+     },
+     "p_violation": 0.04
+    },
+    "deepseek": {
+     "p_violation": 0.00015062702349266945,
+     "ms": 4367,
+     "cost": 4.956e-05,
+     "in_tok": 354,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-074",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.04342256091771434,
+     "ms": 1025,
+     "cost": 2.0812e-05,
+     "in_tok": 344,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9976
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0007869958342540932,
+     "ms": 990,
+     "cost": 1.8271000000000002e-05,
+     "in_tok": 302,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 227,
+     "in_tok": 408,
+     "cost": 1.7136e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "p_violation": 0.05
+    },
+    "deepseek": {
+     "p_violation": 0.001243680991402249,
+     "ms": 3483,
+     "cost": 4.7600000000000005e-05,
+     "in_tok": 340,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-075",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4387703343990727,
+     "ms": 896,
+     "cost": 2.3352999999999998e-05,
+     "in_tok": 386,
+     "err": null,
+     "mass": [
+      0.9921,
+      0.9963
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.8078806271445254,
+     "ms": 868,
+     "cost": 2.0691e-05,
+     "in_tok": 342,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 222,
+     "in_tok": 422,
+     "cost": 1.7724000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.56
+     },
+     "p_violation": 0.56
+    },
+    "deepseek": {
+     "p_violation": 0.43877033439907276,
+     "ms": 3190,
+     "cost": 5.1800000000000005e-05,
+     "in_tok": 370,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9928
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-076",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.2799830985247062,
+     "ms": 781,
+     "cost": 4.1866e-05,
+     "in_tok": 692,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9972
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.004990603891329572,
+     "ms": 902,
+     "cost": 3.9809e-05,
+     "in_tok": 658,
+     "err": null,
+     "mass": [
+      0.998,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 241,
+     "in_tok": 575,
+     "cost": 2.415e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.14
+     },
+     "p_violation": 0.14
+    },
+    "deepseek": {
+     "p_violation": 8.994288017507188e-05,
+     "ms": 14152,
+     "cost": 9.744000000000002e-05,
+     "in_tok": 696,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9984
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-077",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8491857714052904,
+     "ms": 802,
+     "cost": 2.0206999999999998e-05,
+     "in_tok": 334,
+     "err": null,
+     "mass": [
+      0.9968,
+      0.9977
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9129977203623514,
+     "ms": 1069,
+     "cost": 1.7666e-05,
+     "in_tok": 292,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 242,
+     "in_tok": 396,
+     "cost": 1.6632e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.93
+     },
+     "p_violation": 0.93
+    },
+    "deepseek": {
+     "p_violation": 0.986924974746676,
+     "ms": 7187,
+     "cost": 4.5360000000000006e-05,
+     "in_tok": 324,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-078",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9314054267628091,
+     "ms": 975,
+     "cost": 2.3474e-05,
+     "in_tok": 388,
+     "err": null,
+     "mass": [
+      0.9967,
+      0.9983
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9997395812270211,
+     "ms": 675,
+     "cost": 2.1295999999999997e-05,
+     "in_tok": 352,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9997
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 230,
+     "in_tok": 426,
+     "cost": 1.7892e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.95
+     },
+     "p_violation": 0.95
+    },
+    "deepseek": {
+     "p_violation": 0.9999854554081522,
+     "ms": 5740,
+     "cost": 5.1800000000000005e-05,
+     "in_tok": 370,
+     "err": null,
+     "mass": [
+      0.9997,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-079",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9314054358173598,
+     "ms": 774,
+     "cost": 2.7588e-05,
+     "in_tok": 456,
+     "err": null,
+     "mass": [
+      0.9961,
+      0.9979
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9995824806970993,
+     "ms": 1235,
+     "cost": 2.5047e-05,
+     "in_tok": 414,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 232,
+     "in_tok": 468,
+     "cost": 1.9656e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.95
+     },
+     "p_violation": 0.95
+    },
+    "deepseek": {
+     "p_violation": 0.9999988062423117,
+     "ms": 4032,
+     "cost": 6.328e-05,
+     "in_tok": 452,
+     "err": null,
+     "mass": [
+      0.9999,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-080",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.15081421756272906,
+     "ms": 847,
+     "cost": 2.178e-05,
+     "in_tok": 360,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9968
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.019889414042805042,
+     "ms": 886,
+     "cost": 1.9238999999999997e-05,
+     "in_tok": 318,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.9976
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 225,
+     "in_tok": 412,
+     "cost": 1.7304e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.11
+     },
+     "p_violation": 0.11
+    },
+    "deepseek": {
+     "p_violation": 0.00041653242769090835,
+     "ms": 5466,
+     "cost": 4.872000000000001e-05,
+     "in_tok": 348,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-081",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9474147958703184,
+     "ms": 727,
+     "cost": 3.3638e-05,
+     "in_tok": 556,
+     "err": null,
+     "mass": [
+      0.9974,
+      0.9985
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9997457311471984,
+     "ms": 880,
+     "cost": 3.1097000000000004e-05,
+     "in_tok": 514,
+     "err": null,
+     "mass": [
+      0.9987,
+      0.9986
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 233,
+     "in_tok": 530,
+     "cost": 2.226e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.88
+     },
+     "p_violation": 0.88
+    },
+    "deepseek": {
+     "p_violation": 0.9996543580010375,
+     "ms": 4836,
+     "cost": 7.588e-05,
+     "in_tok": 542,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9995
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-082",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.05258520869833775,
+     "ms": 844,
+     "cost": 2.0448999999999997e-05,
+     "in_tok": 338,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9982
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0023815561883527513,
+     "ms": 1198,
+     "cost": 1.8029e-05,
+     "in_tok": 298,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 232,
+     "in_tok": 401,
+     "cost": 1.6842e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "p_violation": 0.06
+    },
+    "deepseek": {
+     "p_violation": 0.01466988393443782,
+     "ms": 3153,
+     "cost": 4.5640000000000003e-05,
+     "in_tok": 326,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9992
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-083",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.09753054241075144,
+     "ms": 873,
+     "cost": 3.6784e-05,
+     "in_tok": 608,
+     "err": null,
+     "mass": [
+      0.9981,
+      0.995
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0009181585542123008,
+     "ms": 745,
+     "cost": 3.4364e-05,
+     "in_tok": 568,
+     "err": null,
+     "mass": [
+      0.9952,
+      0.9983
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 252,
+     "in_tok": 536,
+     "cost": 2.2512e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.07
+     },
+     "p_violation": 0.07
+    },
+    "deepseek": {
+     "p_violation": 0.0002919798641883899,
+     "ms": 2890,
+     "cost": 8.484000000000001e-05,
+     "in_tok": 606,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9996
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-084",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6224593312018546,
+     "ms": 725,
+     "cost": 1.8876e-05,
+     "in_tok": 312,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9987
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5872878241373638,
+     "ms": 713,
+     "cost": 1.6214e-05,
+     "in_tok": 268,
+     "err": null,
+     "mass": [
+      0.9983,
+      0.9986
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 319,
+     "in_tok": 385,
+     "cost": 1.617e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.78
+     },
+     "p_violation": 0.78
+    },
+    "deepseek": {
+     "p_violation": 0.46985858131691605,
+     "ms": 3063,
+     "cost": 4.144e-05,
+     "in_tok": 296,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9989
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-085",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.43877033439907276,
+     "ms": 963,
+     "cost": 2.662e-05,
+     "in_tok": 440,
+     "err": null,
+     "mass": [
+      0.9986,
+      0.9988
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9700712395470081,
+     "ms": 777,
+     "cost": 2.4200000000000002e-05,
+     "in_tok": 400,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.999
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 265,
+     "in_tok": 448,
+     "cost": 1.8816e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.7
+     },
+     "p_violation": 0.7
+    },
+    "deepseek": {
+     "p_violation": 0.102701451255433,
+     "ms": 3797,
+     "cost": 5.9640000000000005e-05,
+     "in_tok": 426,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9985
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-086",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8276001985779329,
+     "ms": 924,
+     "cost": 2.4563e-05,
+     "in_tok": 406,
+     "err": null,
+     "mass": [
+      0.9975,
+      0.9984
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9956902065720911,
+     "ms": 934,
+     "cost": 2.2264e-05,
+     "in_tok": 368,
+     "err": null,
+     "mass": [
+      0.9986,
+      0.9979
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 268,
+     "in_tok": 441,
+     "cost": 1.8522e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.94
+     },
+     "p_violation": 0.94
+    },
+    "deepseek": {
+     "p_violation": 0.9953548689428451,
+     "ms": 8642,
+     "cost": 5.628000000000001e-05,
+     "in_tok": 402,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-087",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8565361769939932,
+     "ms": 1384,
+     "cost": 2.0691e-05,
+     "in_tok": 342,
+     "err": null,
+     "mass": [
+      0.9983,
+      0.9985
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9997817630883681,
+     "ms": 741,
+     "cost": 1.8149999999999997e-05,
+     "in_tok": 300,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9997
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 208,
+     "in_tok": 400,
+     "cost": 1.6800000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.96
+     },
+     "p_violation": 0.96
+    },
+    "deepseek": {
+     "p_violation": 0.9999273778562265,
+     "ms": 2557,
+     "cost": 4.592000000000001e-05,
+     "in_tok": 328,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-088",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8941311231451268,
+     "ms": 818,
+     "cost": 1.9844e-05,
+     "in_tok": 328,
+     "err": null,
+     "mass": [
+      0.996,
+      0.998
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.999900411347924,
+     "ms": 842,
+     "cost": 1.7303e-05,
+     "in_tok": 286,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9996
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 212,
+     "in_tok": 393,
+     "cost": 1.6506e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.96
+     },
+     "p_violation": 0.96
+    },
+    "deepseek": {
+     "p_violation": 0.9999445792902486,
+     "ms": 5669,
+     "cost": 4.368e-05,
+     "in_tok": 312,
+     "err": null,
+     "mass": [
+      0.9999,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-089",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8276001953300078,
+     "ms": 807,
+     "cost": 2.1901e-05,
+     "in_tok": 362,
+     "err": null,
+     "mass": [
+      0.998,
+      0.9979
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.999519157879867,
+     "ms": 830,
+     "cost": 1.9844e-05,
+     "in_tok": 328,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 236,
+     "in_tok": 414,
+     "cost": 1.7388e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.97
+     },
+     "p_violation": 0.97
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 37761,
+     "cost": 2.4080000000000003e-05,
+     "in_tok": 172,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      1.0,
+      null
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      null
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-090",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4457003698543506,
+     "ms": 774,
+     "cost": 2.1538e-05,
+     "in_tok": 356,
+     "err": null,
+     "mass": [
+      0.9973,
+      0.9971
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9719683241811251,
+     "ms": 928,
+     "cost": 1.8876e-05,
+     "in_tok": 312,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9984
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 272,
+     "in_tok": 406,
+     "cost": 1.7052000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.81
+     },
+     "p_violation": 0.81
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 75752,
+     "cost": 2.4080000000000003e-05,
+     "in_tok": 172,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      null,
+      0.9984
+     ],
+     "provider": null,
+     "reasoning_tokens": [
+      null,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-091",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.27998309519102327,
+     "ms": 737,
+     "cost": 2.5894e-05,
+     "in_tok": 428,
+     "err": null,
+     "mass": [
+      0.9986,
+      0.9979
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.36886602106837335,
+     "ms": 747,
+     "cost": 2.3474e-05,
+     "in_tok": 388,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9986
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 229,
+     "in_tok": 447,
+     "cost": 1.8774000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.48
+     },
+     "p_violation": 0.48
+    },
+    "deepseek": {
+     "p_violation": 0.009743695971084848,
+     "ms": 44094,
+     "cost": 5.8240000000000005e-05,
+     "in_tok": 416,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9995
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-092",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6224593347036828,
+     "ms": 2203,
+     "cost": 5.6628e-05,
+     "in_tok": 936,
+     "err": null,
+     "mass": [
+      0.9981,
+      0.9975
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9912962131096528,
+     "ms": 661,
+     "cost": 5.4692e-05,
+     "in_tok": 904,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9985
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 254,
+     "in_tok": 715,
+     "cost": 3.0030000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.85
+     },
+     "p_violation": 0.85
+    },
+    "deepseek": {
+     "p_violation": 0.3708311339615374,
+     "ms": 11033,
+     "cost": 0.00013440000000000001,
+     "in_tok": 960,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9995
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-093",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3232410357227499,
+     "ms": 755,
+     "cost": 4.8278999999999996e-05,
+     "in_tok": 798,
+     "err": null,
+     "mass": [
+      0.9977,
+      0.9955
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.002785660537436685,
+     "ms": 1554,
+     "cost": 4.6222e-05,
+     "in_tok": 764,
+     "err": null,
+     "mass": [
+      0.9977,
+      0.9997
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 223,
+     "in_tok": 645,
+     "cost": 2.709e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.33
+     },
+     "p_violation": 0.33
+    },
+    "deepseek": {
+     "p_violation": 7.719683860382563e-05,
+     "ms": 4242,
+     "cost": 0.0001134,
+     "in_tok": 810,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-094",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8491857764278341,
+     "ms": -1389,
+     "cost": 2.2505999999999998e-05,
+     "in_tok": 372,
+     "err": null,
+     "mass": [
+      0.9965,
+      0.9976
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9973528380333121,
+     "ms": 1048,
+     "cost": 1.9844e-05,
+     "in_tok": 328,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 240,
+     "in_tok": 414,
+     "cost": 1.7388e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.86
+     },
+     "p_violation": 0.86
+    },
+    "deepseek": {
+     "p_violation": 0.87830166778604,
+     "ms": 21963,
+     "cost": 5.0400000000000005e-05,
+     "in_tok": 360,
+     "err": null,
+     "mass": [
+      0.9983,
+      0.9958
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-095",
+   "target": 0,
+   "label": 1,
+   "class": "call",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8708581449523196,
+     "ms": 713,
+     "cost": 2.0933e-05,
+     "in_tok": 346,
+     "err": null,
+     "mass": [
+      0.9974,
+      0.9983
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9992848219457081,
+     "ms": 718,
+     "cost": 1.8755e-05,
+     "in_tok": 310,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 227,
+     "in_tok": 407,
+     "cost": 1.7094000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.96
+     },
+     "p_violation": 0.96
+    },
+    "deepseek": {
+     "p_violation": 0.9811212761005674,
+     "ms": 15339,
+     "cost": 4.676e-05,
+     "in_tok": 334,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9992
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-096",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.1491268215409931,
+     "ms": 865,
+     "cost": 1.8271000000000002e-05,
+     "in_tok": 302,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9968
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.00040144787647681293,
+     "ms": 1246,
+     "cost": 1.5609e-05,
+     "in_tok": 258,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9998
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 218,
+     "in_tok": 379,
+     "cost": 1.5918000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "p_violation": 0.05
+    },
+    "deepseek": {
+     "p_violation": 3.407180958546401e-05,
+     "ms": 8673,
+     "cost": 4.0600000000000004e-05,
+     "in_tok": 290,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-097",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3232410421543242,
+     "ms": 926,
+     "cost": 2.7466999999999996e-05,
+     "in_tok": 454,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.9986
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.6603717142972771,
+     "ms": 948,
+     "cost": 2.5047e-05,
+     "in_tok": 414,
+     "err": null,
+     "mass": [
+      0.9984,
+      0.9978
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 306,
+     "in_tok": 463,
+     "cost": 1.9446e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.8
+     },
+     "p_violation": 0.8
+    },
+    "deepseek": {
+     "p_violation": 0.4798626870308147,
+     "ms": 6414,
+     "cost": 6.272000000000001e-05,
+     "in_tok": 448,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9982
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-098",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.28792909131640526,
+     "ms": 1128,
+     "cost": 2.1901e-05,
+     "in_tok": 362,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.998
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0019883846816104323,
+     "ms": 701,
+     "cost": 1.9481000000000002e-05,
+     "in_tok": 322,
+     "err": null,
+     "mass": [
+      0.9983,
+      0.9996
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 225,
+     "in_tok": 416,
+     "cost": 1.7472e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.04
+     },
+     "p_violation": 0.04
+    },
+    "deepseek": {
+     "p_violation": 0.0001814428712714362,
+     "ms": 3779,
+     "cost": 4.928e-05,
+     "in_tok": 352,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "tool-call-gate-mini-099",
+   "target": 1,
+   "label": 0,
+   "class": "no-fit",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.24837179149881575,
+     "ms": 7552,
+     "cost": 3.5573999999999995e-05,
+     "in_tok": 588,
+     "err": null,
+     "mass": [
+      0.9983,
+      0.9961
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.3096014602287956,
+     "ms": 865,
+     "cost": 3.3396e-05,
+     "in_tok": 552,
+     "err": null,
+     "mass": [
+      0.9987,
+      0.9974
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 258,
+     "in_tok": 522,
+     "cost": 2.1924000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.36
+     },
+     "p_violation": 0.36
+    },
+    "deepseek": {
+     "p_violation": 0.19407216763006532,
+     "ms": 2796,
+     "cost": 8.064000000000001e-05,
+     "in_tok": 576,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9967
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  }
+ ],
+ "agg": {
+  "glm": {
+   "n": 100,
+   "ok": 100,
+   "hit": 81,
+   "ms": 118792,
+   "cost": 0.0026346540000000006
+  },
+  "qwen": {
+   "n": 100,
+   "ok": 100,
+   "hit": 81,
+   "ms": 84985,
+   "cost": 0.002394953000000001
+  },
+  "deepseek": {
+   "n": 100,
+   "ok": 90,
+   "hit": 80,
+   "ms": 1186626,
+   "cost": 0.005660340000000001
+  },
+  "jev": {
+   "n": 100,
+   "ok": 100,
+   "hit": 81,
+   "ms": 24579,
+   "cost": 0.0018922680000000001
+  }
+ },
+ "merged_runs": [
+  {
+   "date": "2026-10-05",
+   "arms": [
+    "deepseek"
+   ]
+  }
+ ]
+}

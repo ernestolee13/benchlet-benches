@@ -1,0 +1,388 @@
+name: tool-call-gate-mini
+version: 1
+task_signature:
+  goal: gate
+  answer: binary
+  prob_use: accuracy_only
+  label: machine
+  unit: query
+  language: en
+  n: 100
+question: 이 요청을 처리하려면 주어진 도구 중 하나를 불러야 하는가. 요청을 해결할 수 있는 도구가 목록에 있으면 부른다, 목록의 도구로는
+  처리할 수 없거나 도구 없이 답해야 하면 부르지 않는다.
+choices:
+- 부른다
+- 부르지 않는다
+choices_note: null
+generator:
+  script: src/build_judgment_seeds.py
+  seed: 20261003
+source: BFCL v3 live_simple + live_irrelevance (gorilla-llm/Berkeley-Function-Calling-Leaderboard)
+  에서 모델별 정오 행렬로 100건 축약
+domain:
+- tool-call-gate
+- public-seed
+- english
+visibility: sample
+items_sha256: 1607cb648fe86f7474dae149775608b09d076072a0b0e804b4e50b209cfd2608
+license: Apache-2.0
+attribution:
+  items: BFCL v3 live_simple + live_irrelevance (gorilla-llm/Berkeley-Function-Calling-Leaderboard)
+  model_responses: BFCL-Result 2025-12-16 (github.com/HuanzhiMao/BFCL-Result) 모델 109개의
+    채점 파일에서 재구성, Apache-2.0. 양성(호출)의 정오는 「올바른 인자로 호출했나」라 우리 질문보다 엄격하다
+  method: 'difficulty-stratified (5 quantiles) + swap search on fit models (objective:
+    mean and max |acc_sub - acc_full| and 1 - Kendall tau); val models held out'
+distill:
+  parts:
+  - n: 50
+    seed: 20261003
+    n_items_total: 258
+    n_items_usable: 255
+    n_models: 109
+    fit_models: 76
+    val_models: 33
+    val:
+      mae: 0.02690433749257279
+      max_err: 0.07215686274509803
+      kendall: 0.9094488188976378
+      spearman: 0.9735261248277333
+      n_models: 33
+    baseline_val:
+      mae: 0.043719548425430764
+      max_err: 0.1047058823529411
+      kendall: 0.8074656188605108
+      spearman: 0.9263362265256568
+      n_models: 33
+    alt:
+      method: stratified random
+      val:
+        mae: 0.043719548425430764
+        max_err: 0.1047058823529411
+        kendall: 0.8074656188605108
+        spearman: 0.9263362265256568
+        n_models: 33
+    fit:
+      mae: 0.01215170278637771
+      max_err: 0.034901960784313735
+      kendall: 0.9410653570079335
+      spearman: 0.9774443418387897
+      n_models: 76
+    method: 'difficulty-stratified (5 quantiles) + swap search on fit models (objective:
+      mean and max |acc_sub - acc_full| and 1 - Kendall tau); val models held out'
+    method_key: stratified
+    matrix: BFCL-Result 2025-12-16 live_simple
+  - n: 50
+    seed: 20261003
+    n_items_total: 882
+    n_items_usable: 881
+    n_models: 109
+    fit_models: 76
+    val_models: 33
+    val:
+      mae: 0.032261548515805046
+      max_err: 0.10342792281498298
+      kendall: 0.8264299802761341
+      spearman: 0.9245946563890654
+      n_models: 33
+    baseline_val:
+      mae: 0.03599559728958141
+      max_err: 0.15228149829738935
+      kendall: 0.8267716535433071
+      spearman: 0.9170943807633999
+      n_models: 33
+    alt:
+      method: stratified random
+      val:
+        mae: 0.03599559728958141
+        max_err: 0.15228149829738935
+        kendall: 0.8267716535433071
+        spearman: 0.9170943807633999
+        n_models: 33
+    fit:
+      mae: 0.01097466993249298
+      max_err: 0.030442678774120324
+      kendall: 0.9610580455547392
+      spearman: 0.9888640336498735
+      n_models: 76
+    method: 'difficulty-stratified (5 quantiles) + swap search on fit models (objective:
+      mean and max |acc_sub - acc_full| and 1 - Kendall tau); val models held out'
+    method_key: stratified
+    matrix: BFCL-Result 2025-12-16 live_irrelevance
+taxonomy:
+  domain:
+  - agent-tools
+  input_kind: query
+  source_kind: public-distilled
+  language: en
+  keywords:
+  - 도구 선택
+  - 확인 게이트
+  - bfcl
+review:
+  checks_run: 0
+  human_reviewed_fraction: 0.0
+  flagged: 0
+  decided: 0
+note: 판단형 공개 벤치의 축약 시드. 라벨은 원천 정답 키. 축약 검증 집단은 원천 리더보드의 모델이다. 우리 4팔은 그 집단 밖이라 축약본
+  정확도가 전체 정확도와 같다는 보장은 없고, 100건의 Wilson 구간(약 ±6~10pp)이 그대로 적용된다
+owner: ernestolee13
+n: 100
+published_at: '2026-10-05'
+type: binary
+classes:
+- call
+- no-fit
+label_source_mix:
+  machine: 100
+  constructed: 0
+  judged: 0
+  outcome: 0
+experiment:
+  date: '2026-10-05'
+  template: generic
+  runner: benchlet
+  arms:
+    glm:
+      model: z-ai/glm-4.7-flash
+      provider: cloudflare
+      family: GLM
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke:
+        arm: glm
+        mode: logprob
+        usable: true
+        reasons:
+        - 뻔한 5건 중 1건 틀림 (tool-call-gate-mini-008). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9957
+        spread: 2.222455441902582e-09
+        distinct_p: 10
+        n_calls: 13
+        smoke_acc: 0.8
+        cost: 0.00017272750000000005
+        per_item:
+        - id: tool-call-gate-mini-001
+          target: 0
+          hit: 1
+          p: 0.7743
+        - id: tool-call-gate-mini-002
+          target: 0
+          hit: 1
+          p: 0.9474
+        - id: tool-call-gate-mini-007
+          target: 0
+          hit: 1
+          p: 0.8851
+        - id: tool-call-gate-mini-005
+          target: 1
+          hit: 1
+          p: 0.0075
+        - id: tool-call-gate-mini-008
+          target: 1
+          hit: 0
+          p: 0.5612
+    qwen:
+      model: qwen/qwen3.8-27b
+      provider: parasail
+      family: Qwen
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke:
+        arm: qwen
+        mode: logprob
+        usable: true
+        reasons:
+        - 뻔한 5건 중 1건 틀림 (tool-call-gate-mini-008). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9979
+        spread: 0.0
+        distinct_p: 9
+        n_calls: 13
+        smoke_acc: 0.8
+        cost: 0.00015711850000000002
+        per_item:
+        - id: tool-call-gate-mini-001
+          target: 0
+          hit: 1
+          p: 0.9992
+        - id: tool-call-gate-mini-002
+          target: 0
+          hit: 1
+          p: 0.9995
+        - id: tool-call-gate-mini-007
+          target: 0
+          hit: 1
+          p: 0.9997
+        - id: tool-call-gate-mini-005
+          target: 1
+          hit: 1
+          p: 0.0007
+        - id: tool-call-gate-mini-008
+          target: 1
+          hit: 0
+          p: 0.9945
+    deepseek:
+      model: deepseek/deepseek-v4-flash
+      provider: digitalocean
+      family: DeepSeek
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.14
+      smoke:
+        arm: deepseek
+        mode: logprob
+        usable: true
+        reasons:
+        - 뻔한 5건 중 1건 틀림 (tool-call-gate-mini-008). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9993
+        spread: 0.04909970758800508
+        distinct_p: 8
+        n_calls: 13
+        smoke_acc: 0.8
+        cost: 0.0003915800000000001
+        per_item:
+        - id: tool-call-gate-mini-001
+          target: 0
+          hit: 1
+          p: 0.9919
+        - id: tool-call-gate-mini-002
+          target: 0
+          hit: 1
+          p: 0.9999
+        - id: tool-call-gate-mini-007
+          target: 0
+          hit: 1
+          p: 1.0
+        - id: tool-call-gate-mini-005
+          target: 1
+          hit: 1
+          p: 0.0
+        - id: tool-call-gate-mini-008
+          target: 1
+          hit: 0
+          p: 0.9025
+    jev:
+      model: typesafe/jev-1.13
+      provider: openrouter
+      family: Jev
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.042
+      smoke:
+        arm: jev
+        mode: typed
+        usable: true
+        reasons:
+        - 뻔한 5건 중 1건 틀림 (tool-call-gate-mini-008). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 0.8
+        cost: 9.7776e-05
+        per_item:
+        - id: tool-call-gate-mini-001
+          target: 0
+          hit: 1
+          p: 0.93
+          pred: null
+        - id: tool-call-gate-mini-002
+          target: 0
+          hit: 1
+          p: 0.97
+          pred: null
+        - id: tool-call-gate-mini-007
+          target: 0
+          hit: 1
+          p: 0.95
+          pred: null
+        - id: tool-call-gate-mini-005
+          target: 1
+          hit: 1
+          p: 0.03
+          pred: null
+        - id: tool-call-gate-mini-008
+          target: 1
+          hit: 0
+          p: 0.86
+          pred: null
+  protocol:
+    decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
+    logprob_call:
+      max_tokens: 1
+      temperature: 0
+      logprobs: true
+      top_logprobs: 8
+      reasoning:
+        enabled: false
+    provider_pin: provider.only=[pin], allow_fallbacks=false, require_parameters=true
+    binary: '극성 반전 2회 호출 평균: p = ½[P(A|choices[0]=A) + P(B|choices[0]=B)]'
+    multiclass: 항목별 결정론적 셔플 뒤 원 인덱스로 복원(generic) 또는 파일에 든 셔플 그대로(legacy-seed)
+    typed: Jev noul(이진)/choice(다지), 질문을 instructions 로 그대로 전달
+    label_mass: 상위 8토큰 중 라벨 토큰 질량 < 0.5 이면 오류로 두고 세지 않음
+    renormalize: 라벨 토큰 확률을 라벨 집합 안에서 재정규화
+  items_sha256: 1607cb648fe86f7474dae149775608b09d076072a0b0e804b4e50b209cfd2608
+results:
+- results/tool-call-gate-mini-run.json
+result_summary:
+  glm:
+    acc: 0.81
+    ci95:
+    - 0.7222097592919214
+    - 0.8748534600729575
+    auroc: 0.9374
+    brier: 0.1169270123912349
+    n: 100
+    prob_source: logprob
+    model: z-ai/glm-4.7-flash
+    source_badge: author-run
+  qwen:
+    acc: 0.81
+    ci95:
+    - 0.7222097592919214
+    - 0.8748534600729575
+    auroc: 0.9484
+    brier: 0.15161284332229832
+    n: 100
+    prob_source: logprob
+    model: qwen/qwen3.8-27b
+    source_badge: author-run
+  jev:
+    acc: 0.81
+    ci95:
+    - 0.7222097592919214
+    - 0.8748534600729575
+    auroc: 0.9458
+    brier: 0.13811099999999996
+    n: 100
+    prob_source: typed
+    model: typesafe/jev-1.13
+    source_badge: author-run
+  deepseek:
+    acc: 0.8888888888888888
+    ci95:
+    - 0.8074203653741284
+    - 0.9385174702978974
+    auroc: 0.9564571994062345
+    brier: 0.09846145225676375
+    n: 90
+    prob_source: logprob
+    model: deepseek/deepseek-v4-flash
+    source_badge: author-run
