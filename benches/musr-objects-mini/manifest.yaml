@@ -1,0 +1,646 @@
+name: musr-objects-mini
+version: 1
+task_signature:
+  goal: derive
+  answer: choice(n)
+  prob_use: accuracy_only
+  label: machine
+  unit: document
+  language: en
+  n: 100
+question: 이 이야기에서 질문의 인물은 물건을 찾으러 어디를 볼 가능성이 가장 높은가. 그 인물이 마지막으로 본 위치를 기준으로 고른다.
+choices:
+- ' site manager''s cabin'
+- Amy's bag
+- Charlie's desk
+- Claire's desk
+- Desk
+- Dorothy's study table
+- Drug supply cabinet
+- Earth
+- Emily's bedroom
+- Emma's bag
+- Emma's head
+- Excavation kit
+- Fred's pocket
+- Inspection area
+- Jennifer's office
+- Lost and Found box
+- Marta's study room
+- Max's desk
+- Michael's room
+- Michelle’s desk
+- Pocket
+- Steve's desk
+- Zach's office cubby
+- auction block
+- backpack
+- 'backstage '
+- bakery
+- barn
+- beach set
+- bedside table
+- bell stand
+- bench
+- bidding table
+- book shelf
+- box
+- cabin
+- cabinets
+- camera
+- camp table
+- charging dock
+- chart table
+- class drawer
+- cleaning cart
+- cleaning section
+- coat pocket
+- coat rack
+- cockpit
+- cockpit dashboard
+- computer desk
+- conference room
+- construction site
+- counter
+- cupboard
+- desk
+- digging site
+- dining table
+- display cabinet
+- display case
+- display stand
+- display window
+- drafting table
+- drawer
+- drawing table
+- dressing room
+- dressing table
+- driveway
+- equipment bag
+- equipment case
+- equipment rack
+- equipment room
+- filing cabinet
+- firetruck
+- front counter
+- front desk
+- front table
+- galley
+- garage
+- garbage bin
+- green room
+- grinding stone
+- hallway
+- instrument area
+- instrument case
+- instrument room
+- jewelry box
+- kit bag
+- kitchen
+- kitchen counter
+- kitchen drawer
+- kitchen table
+- laundry room
+- linen closet
+- living room
+- living room floor
+- locked cabinet
+- locker
+- locker room
+- lost and found
+- main deck
+- main desk
+- main gallery
+- main stage
+- 'management office '
+- medical kit
+- meditation room
+- meeting room
+- milking area
+- mixing console
+- mixing table
+- music stand
+- nightstand
+- obscure back cupboard
+- office
+- office desk
+- oven
+- packing box
+- pantry shelf
+- passenger cabin
+- passenger seating area
+- personal bag
+- piano
+- piano bench
+- picnic table
+- prayer table
+- preparation table
+- producer's desk
+- record player
+- record shelf
+- recording booth
+- relics shelf
+- resting table
+- safe
+- safety deposit box
+- sand
+- security desk
+- server room
+- shared bookshelf
+- shed
+- shelf
+- shelves
+- shooting area
+- showcase
+- side drawer
+- side table
+- staff room
+- stage
+- storage
+- storage area
+- storage box
+- storage cabin
+- storage closet
+- storage compartment
+- storage cupboard
+- storage locker
+- storage room
+- storage shed
+- storage shelf
+- storeroom
+- studio
+- study desk
+- study room
+- supply rack
+- teacAlex's's desk
+- teacMadison's's desk
+- teacRachel's's desk
+- tent
+- the stand
+- tool box
+- top shelf
+- tripod
+- truck
+- under the desk
+- under the water tank
+- veterinarian's office
+- view deck
+- violin
+- wall
+- warming oven
+- working table
+- yoga hall
+- zookeeper's office
+choices_note: 항목마다 선택지 순서가 다르다(파일에 든 셔플). 여기는 이름 집합
+generator:
+  script: src/build_nomatrix_seeds.py
+  seed: 20261003
+source: MuSR object placements (Sprague et al. 2024), 256 에서 클래스 층화 무작위로 100건 축약 (전체
+  256건)
+domain:
+- musr-objects
+- public-seed
+- english
+visibility: sample
+items_sha256: 22e01bcfed6431ff74273953ccb06096397216153e713bca22e911417263bbbf
+license: MIT
+attribution:
+  items: MuSR object placements (Sprague et al. 2024), 256
+  model_responses: '원천에 모델별 항목 출력 없음. CoT+: GPT-4 60.9, GPT-3.5 46.9, Llama 2 70B
+    42.2 (논문 표 5)'
+  method: class-stratified random sample (no per-model matrix); validation = own arms
+    on the full set vs this subset (see distill.own_arms)
+distill:
+  method: class-stratified random
+  n: 100
+  n_items_total: 256
+  strata:
+    '3': 112
+    '4': 96
+    '5': 44
+    '2': 4
+  selected_keys_in_full:
+  - musr_object_placements.csv:10
+  - musr_object_placements.csv:102
+  - musr_object_placements.csv:105
+  - musr_object_placements.csv:107
+  - musr_object_placements.csv:108
+  - musr_object_placements.csv:109
+  - musr_object_placements.csv:111
+  - musr_object_placements.csv:112
+  - musr_object_placements.csv:119
+  - musr_object_placements.csv:120
+  - musr_object_placements.csv:125
+  - musr_object_placements.csv:129
+  - musr_object_placements.csv:132
+  - musr_object_placements.csv:138
+  - musr_object_placements.csv:144
+  - musr_object_placements.csv:146
+  - musr_object_placements.csv:15
+  - musr_object_placements.csv:150
+  - musr_object_placements.csv:151
+  - musr_object_placements.csv:152
+  - musr_object_placements.csv:156
+  - musr_object_placements.csv:160
+  - musr_object_placements.csv:162
+  - musr_object_placements.csv:163
+  - musr_object_placements.csv:164
+  - musr_object_placements.csv:165
+  - musr_object_placements.csv:170
+  - musr_object_placements.csv:174
+  - musr_object_placements.csv:175
+  - musr_object_placements.csv:178
+  - musr_object_placements.csv:179
+  - musr_object_placements.csv:18
+  - musr_object_placements.csv:181
+  - musr_object_placements.csv:185
+  - musr_object_placements.csv:186
+  - musr_object_placements.csv:191
+  - musr_object_placements.csv:192
+  - musr_object_placements.csv:193
+  - musr_object_placements.csv:196
+  - musr_object_placements.csv:2
+  - musr_object_placements.csv:206
+  - musr_object_placements.csv:207
+  - musr_object_placements.csv:21
+  - musr_object_placements.csv:211
+  - musr_object_placements.csv:212
+  - musr_object_placements.csv:213
+  - musr_object_placements.csv:215
+  - musr_object_placements.csv:216
+  - musr_object_placements.csv:218
+  - musr_object_placements.csv:221
+  - musr_object_placements.csv:227
+  - musr_object_placements.csv:228
+  - musr_object_placements.csv:231
+  - musr_object_placements.csv:232
+  - musr_object_placements.csv:237
+  - musr_object_placements.csv:238
+  - musr_object_placements.csv:241
+  - musr_object_placements.csv:242
+  - musr_object_placements.csv:244
+  - musr_object_placements.csv:249
+  - musr_object_placements.csv:25
+  - musr_object_placements.csv:250
+  - musr_object_placements.csv:253
+  - musr_object_placements.csv:26
+  - musr_object_placements.csv:27
+  - musr_object_placements.csv:3
+  - musr_object_placements.csv:34
+  - musr_object_placements.csv:38
+  - musr_object_placements.csv:39
+  - musr_object_placements.csv:45
+  - musr_object_placements.csv:47
+  - musr_object_placements.csv:48
+  - musr_object_placements.csv:50
+  - musr_object_placements.csv:52
+  - musr_object_placements.csv:54
+  - musr_object_placements.csv:57
+  - musr_object_placements.csv:58
+  - musr_object_placements.csv:6
+  - musr_object_placements.csv:60
+  - musr_object_placements.csv:66
+  - musr_object_placements.csv:67
+  - musr_object_placements.csv:70
+  - musr_object_placements.csv:71
+  - musr_object_placements.csv:72
+  - musr_object_placements.csv:73
+  - musr_object_placements.csv:74
+  - musr_object_placements.csv:75
+  - musr_object_placements.csv:79
+  - musr_object_placements.csv:80
+  - musr_object_placements.csv:81
+  - musr_object_placements.csv:83
+  - musr_object_placements.csv:84
+  - musr_object_placements.csv:87
+  - musr_object_placements.csv:90
+  - musr_object_placements.csv:91
+  - musr_object_placements.csv:94
+  - musr_object_placements.csv:95
+  - musr_object_placements.csv:96
+  - musr_object_placements.csv:97
+  - musr_object_placements.csv:98
+  own_arms:
+    date: '2026-10-05'
+    arms:
+      glm:
+        full_acc: 0.5195
+        full_ok: 256
+        full_n: 256
+        mini_acc: 0.49
+        mini_ok: 100
+        same_items_in_full_run_acc: 0.5
+        gap_pp: 2.95
+      qwen:
+        full_acc: 0.5039
+        full_ok: 256
+        full_n: 256
+        mini_acc: 0.49
+        mini_ok: 100
+        same_items_in_full_run_acc: 0.5
+        gap_pp: 1.39
+      jev:
+        full_acc: 0.5625
+        full_ok: 256
+        full_n: 256
+        mini_acc: 0.59
+        mini_ok: 100
+        same_items_in_full_run_acc: 0.57
+        gap_pp: 2.75
+    mae_pp: 2.36
+    max_gap_pp: 2.95
+    rank_full:
+    - jev
+    - glm
+    - qwen
+    rank_mini:
+    - jev
+    - glm
+    - qwen
+    rank_preserved: true
+    excluded_arms_low_success:
+      deepseek:
+        full_ok: 162
+        mini_ok: 93
+    sampling_se_pp_at_100: 정확도 80% 기준 이항 표준오차 약 4pp. 그 안의 차이는 표본 잡음이다
+    note: 검증 집단은 우리 4팔뿐이다. gap 에는 제공자 실행 잡음(같은 항목 재실행 차이 최대 2pp)이 섞여 있다
+taxonomy:
+  domain:
+  - commonsense
+  input_kind: document
+  source_kind: public-distilled
+  language: en
+  keywords:
+  - 추론
+  - 상식
+  - musr
+review:
+  checks_run: 0
+  human_reviewed_fraction: 0.0
+  flagged: 0
+  decided: 0
+note: 판단형 공개 벤치의 축약 시드(행렬 없는 경로). 라벨은 원천 라벨. 축약 검증은 원천 모델 집단이 아니라 우리 팔의 전체 대 축약 비교다
+owner: ernestolee13
+n: 100
+published_at: '2026-10-05'
+type: multiclass
+classes:
+- object-placement
+label_source_mix:
+  machine: 100
+  constructed: 0
+  judged: 0
+  outcome: 0
+experiment:
+  date: '2026-10-05'
+  template: generic
+  runner: benchlet
+  arms:
+    glm:
+      model: z-ai/glm-4.7-flash
+      provider: cloudflare
+      family: GLM
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke:
+        arm: glm
+        mode: logprob
+        usable: true
+        reasons:
+        - 뻔한 5건 중 2건 틀림 (musr-objects-mini-0003, musr-objects-mini-0004). 다른 팔도 틀리면
+          질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9299
+        spread: 7.226061686516072e-09
+        distinct_p: 5
+        n_calls: 8
+        smoke_acc: 0.6
+        cost: 0.0005443185
+        per_item:
+        - id: musr-objects-mini-0000
+          target: 3
+          hit: 1
+          pred: 3
+        - id: musr-objects-mini-0001
+          target: 1
+          hit: 1
+          pred: 1
+        - id: musr-objects-mini-0002
+          target: 1
+          hit: 1
+          pred: 1
+        - id: musr-objects-mini-0003
+          target: 4
+          hit: 0
+          pred: 2
+        - id: musr-objects-mini-0004
+          target: 2
+          hit: 0
+          pred: 1
+    qwen:
+      model: qwen/qwen3.8-27b
+      provider: parasail
+      family: Qwen
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke:
+        arm: qwen
+        mode: logprob
+        usable: true
+        reasons:
+        - 뻔한 5건 중 1건 틀림 (musr-objects-mini-0003). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9981
+        spread: 0.0
+        distinct_p: 5
+        n_calls: 8
+        smoke_acc: 0.8
+        cost: 0.0005418379999999999
+        per_item:
+        - id: musr-objects-mini-0000
+          target: 3
+          hit: 1
+          pred: 3
+        - id: musr-objects-mini-0001
+          target: 1
+          hit: 1
+          pred: 1
+        - id: musr-objects-mini-0002
+          target: 1
+          hit: 1
+          pred: 1
+        - id: musr-objects-mini-0003
+          target: 4
+          hit: 0
+          pred: 2
+        - id: musr-objects-mini-0004
+          target: 2
+          hit: 1
+          pred: 2
+    deepseek:
+      model: deepseek/deepseek-v4-flash
+      provider: digitalocean
+      family: DeepSeek
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.14
+      smoke:
+        arm: deepseek
+        mode: logprob
+        usable: false
+        reasons:
+        - 3회 재현 편차 0.05 > 0.05
+        - 뻔한 5건 중 3건 틀림 (musr-objects-mini-0000, musr-objects-mini-0003, musr-objects-mini-0004).
+          다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 1.0
+        spread: 0.05421796557039216
+        distinct_p: 5
+        n_calls: 8
+        smoke_acc: 0.4
+        cost: 0.00108094
+        per_item:
+        - id: musr-objects-mini-0000
+          target: 3
+          hit: 0
+          pred: 0
+        - id: musr-objects-mini-0001
+          target: 1
+          hit: 1
+          pred: 1
+        - id: musr-objects-mini-0002
+          target: 1
+          hit: 1
+          pred: 1
+        - id: musr-objects-mini-0003
+          target: 4
+          hit: 0
+          pred: 2
+        - id: musr-objects-mini-0004
+          target: 2
+          hit: 0
+          pred: 1
+    jev:
+      model: typesafe/jev-1.13
+      provider: openrouter
+      family: Jev
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.042
+      smoke:
+        arm: jev
+        mode: typed
+        usable: true
+        reasons:
+        - 뻔한 5건 중 3건 틀림 (musr-objects-mini-0001, musr-objects-mini-0002, musr-objects-mini-0003).
+          다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 0.4
+        cost: 0.00030349200000000004
+        per_item:
+        - id: musr-objects-mini-0000
+          target: 3
+          hit: 1
+          p: null
+          pred: 3
+        - id: musr-objects-mini-0001
+          target: 1
+          hit: 0
+          p: null
+          pred: 0
+        - id: musr-objects-mini-0002
+          target: 1
+          hit: 0
+          p: null
+          pred: 2
+        - id: musr-objects-mini-0003
+          target: 4
+          hit: 0
+          p: null
+          pred: 1
+        - id: musr-objects-mini-0004
+          target: 2
+          hit: 1
+          p: null
+          pred: 2
+  protocol:
+    decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
+    logprob_call:
+      max_tokens: 1
+      temperature: 0
+      logprobs: true
+      top_logprobs: 8
+      reasoning:
+        enabled: false
+    provider_pin: provider.only=[pin], allow_fallbacks=false, require_parameters=true
+    binary: '극성 반전 2회 호출 평균: p = ½[P(A|choices[0]=A) + P(B|choices[0]=B)]'
+    multiclass: 항목별 결정론적 셔플 뒤 원 인덱스로 복원(generic) 또는 파일에 든 셔플 그대로(legacy-seed)
+    typed: Jev noul(이진)/choice(다지), 질문을 instructions 로 그대로 전달
+    label_mass: 상위 8토큰 중 라벨 토큰 질량 < 0.5 이면 오류로 두고 세지 않음
+    renormalize: 라벨 토큰 확률을 라벨 집합 안에서 재정규화
+  items_sha256: 22e01bcfed6431ff74273953ccb06096397216153e713bca22e911417263bbbf
+results:
+- results/musr-objects-mini-run.json
+result_summary:
+  glm:
+    acc: 0.49
+    ci95:
+    - 0.3942183009238615
+    - 0.5865215952256585
+    auroc: null
+    brier: null
+    n: 100
+    prob_source: logprob
+    model: z-ai/glm-4.7-flash
+    source_badge: author-run
+  qwen:
+    acc: 0.49
+    ci95:
+    - 0.3942183009238615
+    - 0.5865215952256585
+    auroc: null
+    brier: null
+    n: 100
+    prob_source: logprob
+    model: qwen/qwen3.8-27b
+    source_badge: author-run
+  jev:
+    acc: 0.59
+    ci95:
+    - 0.4920125056109662
+    - 0.6813284290433533
+    auroc: null
+    brier: null
+    n: 100
+    prob_source: typed
+    model: typesafe/jev-1.13
+    source_badge: author-run
+  deepseek:
+    acc: 0.4731182795698925
+    ci95:
+    - 0.3747376923069333
+    - 0.5736316035328711
+    auroc: null
+    brier: null
+    n: 93
+    prob_source: logprob
+    model: deepseek/deepseek-v4-flash
+    source_badge: author-run
