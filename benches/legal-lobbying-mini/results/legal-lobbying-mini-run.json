@@ -1,0 +1,7387 @@
+{
+ "task": "legal-lobbying-mini",
+ "bench": "legal-lobbying-mini@1",
+ "items_sha256": "b6a29f3f3569c73fc3c1225ff1e54229ccd9bc981c3784e752e7da26e2357c54",
+ "template": "generic",
+ "date": "2026-10-05",
+ "arms": {
+  "glm": {
+   "model": "z-ai/glm-4.7-flash",
+   "provider": "cloudflare",
+   "family": "GLM",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.0605,
+   "smoke": {
+    "arm": "glm",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [
+     "뻔한 5건 중 1건 틀림 (legal-lobbying-mini-003). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점"
+    ],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9966,
+    "spread": 0.0,
+    "distinct_p": 8,
+    "n_calls": 13,
+    "smoke_acc": 0.8,
+    "cost": 0.0008411919999999998,
+    "per_item": [
+     {
+      "id": "legal-lobbying-mini-003",
+      "target": 0,
+      "hit": 0,
+      "p": 0.4457
+     },
+     {
+      "id": "legal-lobbying-mini-011",
+      "target": 0,
+      "hit": 1,
+      "p": 0.5976
+     },
+     {
+      "id": "legal-lobbying-mini-014",
+      "target": 0,
+      "hit": 1,
+      "p": 0.8276
+     },
+     {
+      "id": "legal-lobbying-mini-001",
+      "target": 1,
+      "hit": 1,
+      "p": 0.1291
+     },
+     {
+      "id": "legal-lobbying-mini-005",
+      "target": 1,
+      "hit": 1,
+      "p": 0.0271
+     }
+    ]
+   }
+  },
+  "qwen": {
+   "model": "qwen/qwen3.8-27b",
+   "provider": "parasail",
+   "family": "Qwen",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.0605,
+   "smoke": {
+    "arm": "qwen",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [
+     "뻔한 5건 중 1건 틀림 (legal-lobbying-mini-003). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점"
+    ],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9973,
+    "spread": 0.039143913407927,
+    "distinct_p": 7,
+    "n_calls": 13,
+    "smoke_acc": 0.8,
+    "cost": 0.0008498435000000001,
+    "per_item": [
+     {
+      "id": "legal-lobbying-mini-003",
+      "target": 0,
+      "hit": 0,
+      "p": 0.257
+     },
+     {
+      "id": "legal-lobbying-mini-011",
+      "target": 0,
+      "hit": 1,
+      "p": 0.743
+     },
+     {
+      "id": "legal-lobbying-mini-014",
+      "target": 0,
+      "hit": 1,
+      "p": 0.7848
+     },
+     {
+      "id": "legal-lobbying-mini-001",
+      "target": 1,
+      "hit": 1,
+      "p": 0.0047
+     },
+     {
+      "id": "legal-lobbying-mini-005",
+      "target": 1,
+      "hit": 1,
+      "p": 0.0122
+     }
+    ]
+   }
+  },
+  "deepseek": {
+   "model": "deepseek/deepseek-v4-flash",
+   "provider": "digitalocean",
+   "family": "DeepSeek",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.14,
+   "smoke": {
+    "arm": "deepseek",
+    "mode": "logprob",
+    "usable": false,
+    "reasons": [
+     "3회 재현 편차 0.11 > 0.05",
+     "뻔한 5건 중 1건 틀림 (legal-lobbying-mini-003). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점"
+    ],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 1.0,
+    "spread": 0.1065673366853507,
+    "distinct_p": 10,
+    "n_calls": 13,
+    "smoke_acc": 0.8,
+    "cost": 0.0019177200000000006,
+    "per_item": [
+     {
+      "id": "legal-lobbying-mini-003",
+      "target": 0,
+      "hit": 0,
+      "p": 0.0743
+     },
+     {
+      "id": "legal-lobbying-mini-011",
+      "target": 0,
+      "hit": 1,
+      "p": 0.8179
+     },
+     {
+      "id": "legal-lobbying-mini-014",
+      "target": 0,
+      "hit": 1,
+      "p": 0.8179
+     },
+     {
+      "id": "legal-lobbying-mini-001",
+      "target": 1,
+      "hit": 1,
+      "p": 0.0072
+     },
+     {
+      "id": "legal-lobbying-mini-005",
+      "target": 1,
+      "hit": 1,
+      "p": 0.0001
+     }
+    ]
+   }
+  },
+  "jev": {
+   "model": "typesafe/jev-1.13",
+   "provider": "openrouter",
+   "family": "Jev",
+   "mode": "typed",
+   "prob_source": "typed",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.042,
+   "smoke": {
+    "arm": "jev",
+    "mode": "typed",
+    "usable": true,
+    "reasons": [
+     "뻔한 5건 중 1건 틀림 (legal-lobbying-mini-003). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점"
+    ],
+    "has_logprobs": null,
+    "reasoning_tokens_zero": null,
+    "provider_match": null,
+    "mass_min": null,
+    "spread": null,
+    "distinct_p": null,
+    "n_calls": 5,
+    "smoke_acc": 0.8,
+    "cost": 0.000274386,
+    "per_item": [
+     {
+      "id": "legal-lobbying-mini-003",
+      "target": 0,
+      "hit": 0,
+      "p": 0.43,
+      "pred": null
+     },
+     {
+      "id": "legal-lobbying-mini-011",
+      "target": 0,
+      "hit": 1,
+      "p": 0.59,
+      "pred": null
+     },
+     {
+      "id": "legal-lobbying-mini-014",
+      "target": 0,
+      "hit": 1,
+      "p": 0.68,
+      "pred": null
+     },
+     {
+      "id": "legal-lobbying-mini-001",
+      "target": 1,
+      "hit": 1,
+      "p": 0.05,
+      "pred": null
+     },
+     {
+      "id": "legal-lobbying-mini-005",
+      "target": 1,
+      "hit": 1,
+      "p": 0.09,
+      "pred": null
+     }
+    ]
+   }
+  }
+ },
+ "items": [
+  {
+   "id": "legal-lobbying-mini-000",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6587872336519112,
+     "ms": 1840,
+     "cost": 0.00014447399999999999,
+     "in_tok": 2388,
+     "err": null,
+     "mass": [
+      0.997,
+      0.9976
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.23545473863227614,
+     "ms": 764,
+     "cost": 0.000145563,
+     "in_tok": 2406,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 336,
+     "in_tok": 1458,
+     "cost": 6.123600000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.4
+     },
+     "p_violation": 0.4
+    },
+    "deepseek": {
+     "p_violation": 0.4564619735042261,
+     "ms": 2690,
+     "cost": 0.00032928000000000005,
+     "in_tok": 2352,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-001",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.129141846946576,
+     "ms": 1075,
+     "cost": 5.8564e-05,
+     "in_tok": 968,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9966
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.005759344304069596,
+     "ms": 2007,
+     "cost": 5.8200999999999994e-05,
+     "in_tok": 962,
+     "err": null,
+     "mass": [
+      0.9979,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 248,
+     "in_tok": 730,
+     "cost": 3.066e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "p_violation": 0.05
+    },
+    "deepseek": {
+     "p_violation": 0.0005225101722198123,
+     "ms": 2631,
+     "cost": 0.00013132,
+     "in_tok": 938,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-002",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.03916540104264631,
+     "ms": 1512,
+     "cost": 0.000378246,
+     "in_tok": 6252,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.9981
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0006994540699187877,
+     "ms": 1621,
+     "cost": 0.00039082999999999994,
+     "in_tok": 6460,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9997
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 636,
+     "in_tok": 3550,
+     "cost": 0.00014910000000000002,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "p_violation": 0.06
+    },
+    "deepseek": {
+     "p_violation": 0.3675643535069468,
+     "ms": 2402,
+     "cost": 0.0008624,
+     "in_tok": 6160,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-003",
+   "target": 0,
+   "label": 1,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.44570037628592485,
+     "ms": 983,
+     "cost": 0.000143264,
+     "in_tok": 2368,
+     "err": null,
+     "mass": [
+      0.9978,
+      0.9976
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.23744004277716949,
+     "ms": 1127,
+     "cost": 0.00014604699999999998,
+     "in_tok": 2414,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.998
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 233,
+     "in_tok": 1468,
+     "cost": 6.1656e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.41
+     },
+     "p_violation": 0.41
+    },
+    "deepseek": {
+     "p_violation": 0.3240235964932603,
+     "ms": 7597,
+     "cost": 0.00032648000000000003,
+     "in_tok": 2332,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-004",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.34121276523686117,
+     "ms": 1213,
+     "cost": 0.00014229599999999998,
+     "in_tok": 2352,
+     "err": null,
+     "mass": [
+      0.9969,
+      0.9975
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.35090660872984114,
+     "ms": 1339,
+     "cost": 0.00014362699999999999,
+     "in_tok": 2374,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9984
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 267,
+     "in_tok": 1442,
+     "cost": 6.0564e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.46
+     },
+     "p_violation": 0.46
+    },
+    "deepseek": {
+     "p_violation": 0.16451404117976226,
+     "ms": 2410,
+     "cost": 0.00032816000000000003,
+     "in_tok": 2344,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-005",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.02705936106647778,
+     "ms": 1079,
+     "cost": 0.000126808,
+     "in_tok": 2096,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9983
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.00954246958846529,
+     "ms": 1469,
+     "cost": 0.000126808,
+     "in_tok": 2096,
+     "err": null,
+     "mass": [
+      0.9987,
+      0.9988
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 231,
+     "in_tok": 1314,
+     "cost": 5.518800000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1
+     },
+     "p_violation": 0.1
+    },
+    "deepseek": {
+     "p_violation": 0.00013796468195730751,
+     "ms": 2830,
+     "cost": 0.00028672,
+     "in_tok": 2048,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-006",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.49999999707025383,
+     "ms": 1101,
+     "cost": 0.000164923,
+     "in_tok": 2726,
+     "err": null,
+     "mass": [
+      0.9977,
+      0.9977
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.313279413995059,
+     "ms": 845,
+     "cost": 0.000166859,
+     "in_tok": 2758,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 284,
+     "in_tok": 1639,
+     "cost": 6.883800000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.43
+     },
+     "p_violation": 0.43
+    },
+    "deepseek": {
+     "p_violation": 0.6888684280563384,
+     "ms": 2558,
+     "cost": 0.0003780000000000001,
+     "in_tok": 2700,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-007",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.11492570132075608,
+     "ms": 993,
+     "cost": 0.000130317,
+     "in_tok": 2154,
+     "err": null,
+     "mass": [
+      0.9986,
+      0.9979
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.2601661757437811,
+     "ms": 979,
+     "cost": 0.000130317,
+     "in_tok": 2154,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 269,
+     "in_tok": 1336,
+     "cost": 5.6112e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.32
+     },
+     "p_violation": 0.32
+    },
+    "deepseek": {
+     "p_violation": 0.08867971574285387,
+     "ms": 3935,
+     "cost": 0.00030128,
+     "in_tok": 2152,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-008",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 1164,
+     "cost": 0.000140239,
+     "in_tok": 2318,
+     "err": null,
+     "mass": [
+      0.9975,
+      0.9973
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.8850743059183439,
+     "ms": 835,
+     "cost": 0.00014144899999999998,
+     "in_tok": 2338,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.9985
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 229,
+     "in_tok": 1410,
+     "cost": 5.9220000000000006e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.74
+     },
+     "p_violation": 0.74
+    },
+    "deepseek": {
+     "p_violation": 0.9909331198676602,
+     "ms": 4887,
+     "cost": 0.00032256000000000006,
+     "in_tok": 2304,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-009",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5000000035018282,
+     "ms": 1001,
+     "cost": 0.000153307,
+     "in_tok": 2534,
+     "err": null,
+     "mass": [
+      0.9981,
+      0.9976
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.692178013855309,
+     "ms": 832,
+     "cost": 0.00015318599999999998,
+     "in_tok": 2532,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9996
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 251,
+     "in_tok": 1533,
+     "cost": 6.4386e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.49
+     },
+     "p_violation": 0.49
+    },
+    "deepseek": {
+     "p_violation": 0.5432579510190161,
+     "ms": 12300,
+     "cost": 0.00035112,
+     "in_tok": 2508,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-010",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.03916539803999552,
+     "ms": 1388,
+     "cost": 0.000146531,
+     "in_tok": 2422,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9978
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0071791942865371645,
+     "ms": 1380,
+     "cost": 0.000151008,
+     "in_tok": 2496,
+     "err": null,
+     "mass": [
+      0.9983,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 230,
+     "in_tok": 1505,
+     "cost": 6.321e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1
+     },
+     "p_violation": 0.1
+    },
+    "deepseek": {
+     "p_violation": 0.018831121008447253,
+     "ms": 3887,
+     "cost": 0.00033488,
+     "in_tok": 2392,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-011",
+   "target": 0,
+   "label": 1,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5975575747183499,
+     "ms": 1169,
+     "cost": 0.000151734,
+     "in_tok": 2508,
+     "err": null,
+     "mass": [
+      0.997,
+      0.9976
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7429879990986714,
+     "ms": 646,
+     "cost": 0.000152944,
+     "in_tok": 2528,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9984
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 296,
+     "in_tok": 1539,
+     "cost": 6.4638e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.59
+     },
+     "p_violation": 0.59
+    },
+    "deepseek": {
+     "p_violation": 0.7334135171307649,
+     "ms": 6643,
+     "cost": 0.00035000000000000005,
+     "in_tok": 2500,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-012",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.735343883617362,
+     "ms": 1025,
+     "cost": 0.000134431,
+     "in_tok": 2222,
+     "err": null,
+     "mass": [
+      0.998,
+      0.9979
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.11239529347577755,
+     "ms": 965,
+     "cost": 0.000135883,
+     "in_tok": 2246,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 307,
+     "in_tok": 1372,
+     "cost": 5.7624e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.33
+     },
+     "p_violation": 0.33
+    },
+    "deepseek": {
+     "p_violation": 0.8016602600413508,
+     "ms": 2228,
+     "cost": 0.00030240000000000003,
+     "in_tok": 2160,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-013",
+   "target": 0,
+   "label": 1,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.11492570084810809,
+     "ms": 930,
+     "cost": 0.000174724,
+     "in_tok": 2888,
+     "err": null,
+     "mass": [
+      0.9986,
+      0.9976
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.020249785449702767,
+     "ms": 1059,
+     "cost": 0.000176176,
+     "in_tok": 2912,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 255,
+     "in_tok": 1738,
+     "cost": 7.2996e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.17
+     },
+     "p_violation": 0.17
+    },
+    "deepseek": {
+     "p_violation": 0.0014188928735885194,
+     "ms": 4135,
+     "cost": 0.00038696000000000005,
+     "in_tok": 2764,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-014",
+   "target": 0,
+   "label": 1,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8276001979985972,
+     "ms": 821,
+     "cost": 0.000145926,
+     "in_tok": 2412,
+     "err": null,
+     "mass": [
+      0.998,
+      0.9985
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.8010634890594547,
+     "ms": 1068,
+     "cost": 0.000146773,
+     "in_tok": 2426,
+     "err": null,
+     "mass": [
+      0.9969,
+      0.9988
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 235,
+     "in_tok": 1482,
+     "cost": 6.224400000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.67
+     },
+     "p_violation": 0.67
+    },
+    "deepseek": {
+     "p_violation": 0.4902543523855901,
+     "ms": 2445,
+     "cost": 0.00033348000000000004,
+     "in_tok": 2382,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-015",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.04342255994506246,
+     "ms": 1160,
+     "cost": 0.000133463,
+     "in_tok": 2206,
+     "err": null,
+     "mass": [
+      0.9981,
+      0.9982
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.014950320029055685,
+     "ms": 1191,
+     "cost": 0.000133463,
+     "in_tok": 2206,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 239,
+     "in_tok": 1367,
+     "cost": 5.7414e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.14
+     },
+     "p_violation": 0.14
+    },
+    "deepseek": {
+     "p_violation": 0.0006864686372075792,
+     "ms": 4979,
+     "cost": 0.00030576,
+     "in_tok": 2184,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-016",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.05258520550379396,
+     "ms": 1048,
+     "cost": 0.00016322899999999998,
+     "in_tok": 2698,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.9974
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.010333852293003145,
+     "ms": 1050,
+     "cost": 0.000166133,
+     "in_tok": 2746,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9997
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 243,
+     "in_tok": 1614,
+     "cost": 6.778800000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.08
+     },
+     "p_violation": 0.08
+    },
+    "deepseek": {
+     "p_violation": 0.0004854304397403285,
+     "ms": 3535,
+     "cost": 0.00038164000000000004,
+     "in_tok": 2726,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-017",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.025748007338873183,
+     "ms": 938,
+     "cost": 6.9696e-05,
+     "in_tok": 1152,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9982
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.004082824258313123,
+     "ms": 898,
+     "cost": 6.945399999999999e-05,
+     "in_tok": 1148,
+     "err": null,
+     "mass": [
+      0.9987,
+      0.9996
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 359,
+     "in_tok": 823,
+     "cost": 3.4566e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.04
+     },
+     "p_violation": 0.04
+    },
+    "deepseek": {
+     "p_violation": 0.00026119033144549373,
+     "ms": 5241,
+     "cost": 0.00015652000000000003,
+     "in_tok": 1118,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-018",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.009743694847607218,
+     "ms": 2003,
+     "cost": 0.000177386,
+     "in_tok": 2932,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.9983
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.015406707359839563,
+     "ms": 1139,
+     "cost": 0.000179806,
+     "in_tok": 2972,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 535,
+     "in_tok": 1762,
+     "cost": 7.4004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "p_violation": 0.06
+    },
+    "deepseek": {
+     "p_violation": 0.000294067469148193,
+     "ms": 6254,
+     "cost": 0.0003995600000000001,
+     "in_tok": 2854,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-019",
+   "target": 0,
+   "label": 1,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.12914185694237823,
+     "ms": 1091,
+     "cost": 0.000147862,
+     "in_tok": 2444,
+     "err": null,
+     "mass": [
+      0.9979,
+      0.9979
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.03100669072820339,
+     "ms": 898,
+     "cost": 0.000149556,
+     "in_tok": 2472,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 254,
+     "in_tok": 1533,
+     "cost": 6.4386e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.09
+     },
+     "p_violation": 0.09
+    },
+    "deepseek": {
+     "p_violation": 0.22014806116254992,
+     "ms": 2624,
+     "cost": 0.00033292,
+     "in_tok": 2378,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-020",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.09324782750105937,
+     "ms": 1070,
+     "cost": 0.00013334199999999997,
+     "in_tok": 2204,
+     "err": null,
+     "mass": [
+      0.9984,
+      0.9979
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.022444325399805388,
+     "ms": 970,
+     "cost": 0.000133705,
+     "in_tok": 2210,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.999
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 254,
+     "in_tok": 1364,
+     "cost": 5.7288000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.18
+     },
+     "p_violation": 0.18
+    },
+    "deepseek": {
+     "p_violation": 0.012239276548788695,
+     "ms": 2887,
+     "cost": 0.00030268,
+     "in_tok": 2162,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-021",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.2646561155876697,
+     "ms": 1101,
+     "cost": 0.000130075,
+     "in_tok": 2150,
+     "err": null,
+     "mass": [
+      0.9975,
+      0.9963
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.005476659140911363,
+     "ms": 957,
+     "cost": 0.000129954,
+     "in_tok": 2148,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9985
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 231,
+     "in_tok": 1329,
+     "cost": 5.581800000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.08
+     },
+     "p_violation": 0.08
+    },
+    "deepseek": {
+     "p_violation": 0.04153200563884085,
+     "ms": 2279,
+     "cost": 0.00029624,
+     "in_tok": 2116,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-022",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3775406687981454,
+     "ms": 1069,
+     "cost": 0.000109626,
+     "in_tok": 1812,
+     "err": null,
+     "mass": [
+      0.998,
+      0.9963
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.15313416162211674,
+     "ms": 2179,
+     "cost": 0.00011083600000000001,
+     "in_tok": 1832,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.999
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 305,
+     "in_tok": 1168,
+     "cost": 4.9056e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.35
+     },
+     "p_violation": 0.35
+    },
+    "deepseek": {
+     "p_violation": 0.8347636394814509,
+     "ms": 2441,
+     "cost": 0.00024892,
+     "in_tok": 1778,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-023",
+   "target": 0,
+   "label": 1,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8997941314214591,
+     "ms": 1121,
+     "cost": 0.00011833799999999999,
+     "in_tok": 1956,
+     "err": null,
+     "mass": [
+      0.9972,
+      0.9985
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9956368378876579,
+     "ms": 1115,
+     "cost": 0.00012148399999999999,
+     "in_tok": 2008,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 352,
+     "in_tok": 1254,
+     "cost": 5.2668e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.82
+     },
+     "p_violation": 0.82
+    },
+    "deepseek": {
+     "p_violation": 0.999948809041252,
+     "ms": 14846,
+     "cost": 0.00026740000000000005,
+     "in_tok": 1910,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-024",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.03916540183330158,
+     "ms": 1134,
+     "cost": 0.000139392,
+     "in_tok": 2304,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9973
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.007736992813029617,
+     "ms": 1046,
+     "cost": 0.000140118,
+     "in_tok": 2316,
+     "err": null,
+     "mass": [
+      0.9984,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 296,
+     "in_tok": 1401,
+     "cost": 5.8842e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.07
+     },
+     "p_violation": 0.07
+    },
+    "deepseek": {
+     "p_violation": 0.0012061166960304593,
+     "ms": 2519,
+     "cost": 0.00032144,
+     "in_tok": 2296,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-025",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.01589242656414177,
+     "ms": 868,
+     "cost": 0.00012922799999999998,
+     "in_tok": 2136,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9979
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.007365165033094422,
+     "ms": 823,
+     "cost": 0.000130317,
+     "in_tok": 2154,
+     "err": null,
+     "mass": [
+      0.9986,
+      0.999
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 228,
+     "in_tok": 1332,
+     "cost": 5.5944000000000005e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1
+     },
+     "p_violation": 0.1
+    },
+    "deepseek": {
+     "p_violation": 0.3115845008942862,
+     "ms": 12010,
+     "cost": 0.00029568000000000004,
+     "in_tok": 2112,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-026",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.009743694195331849,
+     "ms": 925,
+     "cost": 0.000142901,
+     "in_tok": 2362,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.9988
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.00917159239933675,
+     "ms": 761,
+     "cost": 0.00014278,
+     "in_tok": 2360,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 235,
+     "in_tok": 1449,
+     "cost": 6.0858000000000006e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.08
+     },
+     "p_violation": 0.08
+    },
+    "deepseek": {
+     "p_violation": 0.00022937220073508224,
+     "ms": 38942,
+     "cost": 0.00032732,
+     "in_tok": 2338,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-027",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.04342256566913478,
+     "ms": 1037,
+     "cost": 0.000174603,
+     "in_tok": 2886,
+     "err": null,
+     "mass": [
+      0.9986,
+      0.9977
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0760586699127662,
+     "ms": 867,
+     "cost": 0.00017508699999999999,
+     "in_tok": 2894,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 347,
+     "in_tok": 1666,
+     "cost": 6.9972e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.24
+     },
+     "p_violation": 0.24
+    },
+    "deepseek": {
+     "p_violation": 0.019626808633734626,
+     "ms": 2695,
+     "cost": 0.00040124000000000003,
+     "in_tok": 2866,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-028",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.2589931031715815,
+     "ms": 2134,
+     "cost": 0.000183315,
+     "in_tok": 3030,
+     "err": null,
+     "mass": [
+      0.9983,
+      0.9979
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.3551118522779517,
+     "ms": 857,
+     "cost": 0.000183678,
+     "in_tok": 3036,
+     "err": null,
+     "mass": [
+      0.9981,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 521,
+     "in_tok": 1796,
+     "cost": 7.5432e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.44
+     },
+     "p_violation": 0.44
+    },
+    "deepseek": {
+     "p_violation": 0.010579448883424988,
+     "ms": 2453,
+     "cost": 0.00040992000000000003,
+     "in_tok": 2928,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-029",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.38447071068499755,
+     "ms": 1132,
+     "cost": 0.00012305699999999998,
+     "in_tok": 2034,
+     "err": null,
+     "mass": [
+      0.9972,
+      0.9969
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.11957005413293886,
+     "ms": 983,
+     "cost": 0.00012305699999999998,
+     "in_tok": 2034,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.9988
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 302,
+     "in_tok": 1309,
+     "cost": 5.497800000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.53
+     },
+     "p_violation": 0.53
+    },
+    "deepseek": {
+     "p_violation": 0.7070646558415771,
+     "ms": 38763,
+     "cost": 0.00028084000000000003,
+     "in_tok": 2006,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-030",
+   "target": 0,
+   "label": 1,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.15818365121330413,
+     "ms": 935,
+     "cost": 0.000147015,
+     "in_tok": 2430,
+     "err": null,
+     "mass": [
+      0.9971,
+      0.997
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.16008616585775096,
+     "ms": 1146,
+     "cost": 0.000147499,
+     "in_tok": 2438,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 317,
+     "in_tok": 1478,
+     "cost": 6.2076e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.16
+     },
+     "p_violation": 0.16
+    },
+    "deepseek": {
+     "p_violation": 0.039036431323480364,
+     "ms": 13104,
+     "cost": 0.00033712000000000005,
+     "in_tok": 2408,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-031",
+   "target": 0,
+   "label": 1,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.827600195068851,
+     "ms": 1023,
+     "cost": 0.000142175,
+     "in_tok": 2350,
+     "err": null,
+     "mass": [
+      0.9977,
+      0.998
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9139531451921907,
+     "ms": 1047,
+     "cost": 0.000143264,
+     "in_tok": 2368,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 306,
+     "in_tok": 1424,
+     "cost": 5.9808e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.75
+     },
+     "p_violation": 0.75
+    },
+    "deepseek": {
+     "p_violation": 0.9795182104620004,
+     "ms": 14320,
+     "cost": 0.00032844000000000005,
+     "in_tok": 2346,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-032",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.01800254139058046,
+     "ms": 1209,
+     "cost": 9.8252e-05,
+     "in_tok": 1624,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9984
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.005438992863513665,
+     "ms": 1114,
+     "cost": 0.00010055100000000001,
+     "in_tok": 1662,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9988
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 525,
+     "in_tok": 1087,
+     "cost": 4.565400000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "p_violation": 0.05
+    },
+    "deepseek": {
+     "p_violation": 0.00026119038420392064,
+     "ms": 2595,
+     "cost": 0.00022428000000000001,
+     "in_tok": 1602,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-033",
+   "target": 0,
+   "label": 1,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6587872392080495,
+     "ms": 1128,
+     "cost": 0.000151734,
+     "in_tok": 2508,
+     "err": null,
+     "mass": [
+      0.9971,
+      0.9973
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9709935500444631,
+     "ms": 991,
+     "cost": 0.000154033,
+     "in_tok": 2546,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 260,
+     "in_tok": 1546,
+     "cost": 6.493200000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.81
+     },
+     "p_violation": 0.81
+    },
+    "deepseek": {
+     "p_violation": 0.9217350935847576,
+     "ms": 4305,
+     "cost": 0.00034328000000000006,
+     "in_tok": 2452,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-034",
+   "target": 0,
+   "label": 1,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.7733005797688124,
+     "ms": 932,
+     "cost": 0.000151855,
+     "in_tok": 2510,
+     "err": null,
+     "mass": [
+      0.996,
+      0.9977
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9806740442985091,
+     "ms": 1164,
+     "cost": 0.000161777,
+     "in_tok": 2674,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.999
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 229,
+     "in_tok": 1601,
+     "cost": 6.7242e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.68
+     },
+     "p_violation": 0.68
+    },
+    "deepseek": {
+     "p_violation": 0.9656679313254528,
+     "ms": 7664,
+     "cost": 0.0003458,
+     "in_tok": 2470,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-035",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.09753054188964502,
+     "ms": 21119,
+     "cost": 0.00011579699999999999,
+     "in_tok": 1914,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9964
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0051938476220169715,
+     "ms": 1470,
+     "cost": 0.000116644,
+     "in_tok": 1928,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 257,
+     "in_tok": 1227,
+     "cost": 5.1534000000000005e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.09
+     },
+     "p_violation": 0.09
+    },
+    "deepseek": {
+     "p_violation": 0.1370807682552658,
+     "ms": 4509,
+     "cost": 0.00026572,
+     "in_tok": 1898,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-036",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.006729783012675146,
+     "ms": 1159,
+     "cost": 0.000111078,
+     "in_tok": 1836,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9979
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0028392195997636923,
+     "ms": 2051,
+     "cost": 0.00011156199999999999,
+     "in_tok": 1844,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 314,
+     "in_tok": 1167,
+     "cost": 4.901400000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "p_violation": 0.06
+    },
+    "deepseek": {
+     "p_violation": 0.002825342065348083,
+     "ms": 4721,
+     "cost": 0.00025424000000000003,
+     "in_tok": 1816,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-037",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.1378171366548418,
+     "ms": 808,
+     "cost": 0.00013927099999999997,
+     "in_tok": 2302,
+     "err": null,
+     "mass": [
+      0.9985,
+      0.9984
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.047403760176007226,
+     "ms": 2744,
+     "cost": 0.000140481,
+     "in_tok": 2322,
+     "err": null,
+     "mass": [
+      0.9977,
+      0.9988
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 219,
+     "in_tok": 1434,
+     "cost": 6.0228e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.32
+     },
+     "p_violation": 0.32
+    },
+    "deepseek": {
+     "p_violation": 0.20849431222342685,
+     "ms": 38420,
+     "cost": 0.00031808000000000004,
+     "in_tok": 2272,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-038",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3096014555352168,
+     "ms": 938,
+     "cost": 0.00014907199999999998,
+     "in_tok": 2464,
+     "err": null,
+     "mass": [
+      0.9975,
+      0.9974
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.11556273138606103,
+     "ms": 962,
+     "cost": 0.00015076599999999999,
+     "in_tok": 2492,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9996
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 231,
+     "in_tok": 1501,
+     "cost": 6.3042e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.42
+     },
+     "p_violation": 0.42
+    },
+    "deepseek": {
+     "p_violation": 0.3745223954441242,
+     "ms": 8608,
+     "cost": 0.0003416,
+     "in_tok": 2440,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-039",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.12914185720353494,
+     "ms": 943,
+     "cost": 0.00014036,
+     "in_tok": 2320,
+     "err": null,
+     "mass": [
+      0.9986,
+      0.9967
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.04221783548764203,
+     "ms": 948,
+     "cost": 0.000141328,
+     "in_tok": 2336,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9996
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 222,
+     "in_tok": 1424,
+     "cost": 5.9808e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.45
+     },
+     "p_violation": 0.45
+    },
+    "deepseek": {
+     "p_violation": 0.0046451318774661295,
+     "ms": 2121,
+     "cost": 0.00032228,
+     "in_tok": 2302,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-040",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.19407216876631025,
+     "ms": 800,
+     "cost": 0.00012705,
+     "in_tok": 2100,
+     "err": null,
+     "mass": [
+      0.9982,
+      0.9982
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.011028171937852518,
+     "ms": 763,
+     "cost": 0.000127897,
+     "in_tok": 2114,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9996
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 306,
+     "in_tok": 1313,
+     "cost": 5.5146000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.13
+     },
+     "p_violation": 0.13
+    },
+    "deepseek": {
+     "p_violation": 0.0015911470499277627,
+     "ms": 8357,
+     "cost": 0.00029092,
+     "in_tok": 2078,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-041",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.15081422558999097,
+     "ms": 1035,
+     "cost": 0.000165528,
+     "in_tok": 2736,
+     "err": null,
+     "mass": [
+      0.9969,
+      0.9948
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.02295218496707374,
+     "ms": 908,
+     "cost": 0.00017036799999999998,
+     "in_tok": 2816,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9996
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 289,
+     "in_tok": 1689,
+     "cost": 7.0938e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.39
+     },
+     "p_violation": 0.39
+    },
+    "deepseek": {
+     "p_violation": 0.016982153329594088,
+     "ms": 6511,
+     "cost": 0.00037520000000000007,
+     "in_tok": 2680,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-042",
+   "target": 0,
+   "label": 1,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4024424263928778,
+     "ms": 5778,
+     "cost": 0.00015451699999999998,
+     "in_tok": 2554,
+     "err": null,
+     "mass": [
+      0.998,
+      0.9977
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.10386214271331673,
+     "ms": 1105,
+     "cost": 0.000157179,
+     "in_tok": 2598,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 225,
+     "in_tok": 1580,
+     "cost": 6.636000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.21
+     },
+     "p_violation": 0.21
+    },
+    "deepseek": {
+     "p_violation": 0.3232410480332493,
+     "ms": 6812,
+     "cost": 0.00035056000000000003,
+     "in_tok": 2504,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-043",
+   "target": 0,
+   "label": 1,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 1324,
+     "cost": 0.000115071,
+     "in_tok": 1902,
+     "err": null,
+     "mass": [
+      0.9973,
+      0.9976
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.1300135097020785,
+     "ms": 844,
+     "cost": 0.000114829,
+     "in_tok": 1898,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 313,
+     "in_tok": 1199,
+     "cost": 5.0358e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.33
+     },
+     "p_violation": 0.33
+    },
+    "deepseek": {
+     "p_violation": 0.5542996256801945,
+     "ms": 13401,
+     "cost": 0.00026460000000000003,
+     "in_tok": 1890,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-044",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.018002540657290407,
+     "ms": 900,
+     "cost": 0.00014568399999999998,
+     "in_tok": 2408,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9981
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.000742274500563722,
+     "ms": 1048,
+     "cost": 0.000148951,
+     "in_tok": 2462,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9998
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 243,
+     "in_tok": 1498,
+     "cost": 6.2916e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.04
+     },
+     "p_violation": 0.04
+    },
+    "deepseek": {
+     "p_violation": 0.00038295361653635924,
+     "ms": 4753,
+     "cost": 0.00032900000000000003,
+     "in_tok": 2350,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-045",
+   "target": 0,
+   "label": 1,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6587872403192772,
+     "ms": 3896,
+     "cost": 0.000148104,
+     "in_tok": 2448,
+     "err": null,
+     "mass": [
+      0.9981,
+      0.9976
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9560500171172097,
+     "ms": 828,
+     "cost": 0.00015016099999999997,
+     "in_tok": 2482,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9996
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 249,
+     "in_tok": 1516,
+     "cost": 6.367200000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.65
+     },
+     "p_violation": 0.65
+    },
+    "deepseek": {
+     "p_violation": 0.9613203237498731,
+     "ms": 3935,
+     "cost": 0.00033404,
+     "in_tok": 2386,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-046",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.0629478920635861,
+     "ms": 1048,
+     "cost": 0.000157905,
+     "in_tok": 2610,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.998
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.007221806594842824,
+     "ms": 892,
+     "cost": 0.000161293,
+     "in_tok": 2666,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 311,
+     "in_tok": 1590,
+     "cost": 6.678000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "p_violation": 0.06
+    },
+    "deepseek": {
+     "p_violation": 0.13996417670401004,
+     "ms": 4418,
+     "cost": 0.0003598,
+     "in_tok": 2570,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-047",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8708581427298643,
+     "ms": 974,
+     "cost": 0.000126566,
+     "in_tok": 2092,
+     "err": null,
+     "mass": [
+      0.9969,
+      0.9976
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.8806967315542638,
+     "ms": 753,
+     "cost": 0.000126929,
+     "in_tok": 2098,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 283,
+     "in_tok": 1299,
+     "cost": 5.4558e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.7
+     },
+     "p_violation": 0.7
+    },
+    "deepseek": {
+     "p_violation": 0.8866148705670474,
+     "ms": 3030,
+     "cost": 0.00028868000000000003,
+     "in_tok": 2062,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-048",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.43877033439907276,
+     "ms": 2249,
+     "cost": 0.000153065,
+     "in_tok": 2530,
+     "err": null,
+     "mass": [
+      0.9976,
+      0.9972
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7816771832764096,
+     "ms": 1049,
+     "cost": 0.000152944,
+     "in_tok": 2528,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9975
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 228,
+     "in_tok": 1531,
+     "cost": 6.430200000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.54
+     },
+     "p_violation": 0.54
+    },
+    "deepseek": {
+     "p_violation": 0.8146263320412565,
+     "ms": 19379,
+     "cost": 0.00035056000000000003,
+     "in_tok": 2504,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-049",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.38447071654448983,
+     "ms": 1062,
+     "cost": 0.00015572699999999998,
+     "in_tok": 2574,
+     "err": null,
+     "mass": [
+      0.9981,
+      0.9974
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.08775170369349863,
+     "ms": 1044,
+     "cost": 0.000159236,
+     "in_tok": 2632,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 270,
+     "in_tok": 1554,
+     "cost": 6.5268e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.25
+     },
+     "p_violation": 0.25
+    },
+    "deepseek": {
+     "p_violation": 0.1370807658186719,
+     "ms": 2617,
+     "cost": 0.00036456000000000005,
+     "in_tok": 2604,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-050",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9370521179458162,
+     "ms": 5794,
+     "cost": 0.00012172599999999999,
+     "in_tok": 2012,
+     "err": null,
+     "mass": [
+      0.9966,
+      0.9982
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.6317730429396954,
+     "ms": 1349,
+     "cost": 0.00012148399999999999,
+     "in_tok": 2008,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 257,
+     "in_tok": 1261,
+     "cost": 5.2962e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.52
+     },
+     "p_violation": 0.52
+    },
+    "deepseek": {
+     "p_violation": 0.9881564806564587,
+     "ms": 4718,
+     "cost": 0.0002772,
+     "in_tok": 1980,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-051",
+   "target": 0,
+   "label": 1,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6155292893150024,
+     "ms": 1462,
+     "cost": 0.000128502,
+     "in_tok": 2124,
+     "err": null,
+     "mass": [
+      0.9974,
+      0.9975
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.6888684232077547,
+     "ms": 1199,
+     "cost": 0.000132858,
+     "in_tok": 2196,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9996
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 313,
+     "in_tok": 1341,
+     "cost": 5.6322e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.69
+     },
+     "p_violation": 0.69
+    },
+    "deepseek": {
+     "p_violation": 0.8880473170716946,
+     "ms": 2401,
+     "cost": 0.000294,
+     "in_tok": 2100,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-052",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.02705936245027858,
+     "ms": 1027,
+     "cost": 0.00039458099999999997,
+     "in_tok": 6522,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9985
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0006999344218292981,
+     "ms": 1151,
+     "cost": 0.00040740700000000004,
+     "in_tok": 6734,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9998
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 282,
+     "in_tok": 3656,
+     "cost": 0.000153552,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.08
+     },
+     "p_violation": 0.08
+    },
+    "deepseek": {
+     "p_violation": 0.04813025439285299,
+     "ms": 3143,
+     "cost": 0.0009074800000000001,
+     "in_tok": 6482,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-053",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.04742587048482811,
+     "ms": 1096,
+     "cost": 0.00015125,
+     "in_tok": 2500,
+     "err": null,
+     "mass": [
+      0.9984,
+      0.9972
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.02511340118401728,
+     "ms": 1013,
+     "cost": 0.00015608999999999998,
+     "in_tok": 2580,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9997
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 332,
+     "in_tok": 1536,
+     "cost": 6.451200000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.18
+     },
+     "p_violation": 0.18
+    },
+    "deepseek": {
+     "p_violation": 0.000623200612269666,
+     "ms": 2630,
+     "cost": 0.0003469200000000001,
+     "in_tok": 2478,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-054",
+   "target": 0,
+   "label": 1,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8508731720695359,
+     "ms": 800,
+     "cost": 0.00013334199999999997,
+     "in_tok": 2204,
+     "err": null,
+     "mass": [
+      0.9967,
+      0.9982
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9097885701337882,
+     "ms": 1058,
+     "cost": 0.000133826,
+     "in_tok": 2212,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 241,
+     "in_tok": 1370,
+     "cost": 5.754e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.79
+     },
+     "p_violation": 0.79
+    },
+    "deepseek": {
+     "p_violation": 0.9983519612655759,
+     "ms": 7337,
+     "cost": 0.00030464,
+     "in_tok": 2176,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-055",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.34121276301440584,
+     "ms": 1474,
+     "cost": 0.00011640199999999999,
+     "in_tok": 1924,
+     "err": null,
+     "mass": [
+      0.9978,
+      0.9968
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.040884625227527796,
+     "ms": 1191,
+     "cost": 0.000116644,
+     "in_tok": 1928,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 332,
+     "in_tok": 1215,
+     "cost": 5.103e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.13
+     },
+     "p_violation": 0.13
+    },
+    "deepseek": {
+     "p_violation": 0.07771805387059605,
+     "ms": 9750,
+     "cost": 0.00026432,
+     "in_tok": 1888,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-056",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.02416846098641283,
+     "ms": 969,
+     "cost": 0.000190212,
+     "in_tok": 3144,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9985
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.010594127263385138,
+     "ms": 1041,
+     "cost": 0.00019347899999999998,
+     "in_tok": 3198,
+     "err": null,
+     "mass": [
+      0.9985,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 232,
+     "in_tok": 1882,
+     "cost": 7.904400000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.07
+     },
+     "p_violation": 0.07
+    },
+    "deepseek": {
+     "p_violation": 0.0016001095474654041,
+     "ms": 15861,
+     "cost": 0.00042336000000000007,
+     "in_tok": 3024,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-057",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.22669942232044096,
+     "ms": 953,
+     "cost": 0.00014036,
+     "in_tok": 2320,
+     "err": null,
+     "mass": [
+      0.9979,
+      0.9971
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.04876534949731296,
+     "ms": 1138,
+     "cost": 0.000140239,
+     "in_tok": 2318,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 273,
+     "in_tok": 1403,
+     "cost": 5.8926000000000005e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.16
+     },
+     "p_violation": 0.16
+    },
+    "deepseek": {
+     "p_violation": 0.037075140382371974,
+     "ms": 14824,
+     "cost": 0.00032396000000000004,
+     "in_tok": 2314,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-058",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.11920292123985457,
+     "ms": 1048,
+     "cost": 0.00012826,
+     "in_tok": 2120,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9977
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.002657489965976487,
+     "ms": 1031,
+     "cost": 0.000127897,
+     "in_tok": 2114,
+     "err": null,
+     "mass": [
+      0.9977,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 509,
+     "in_tok": 1319,
+     "cost": 5.539800000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "p_violation": 0.06
+    },
+    "deepseek": {
+     "p_violation": 0.08301671275122871,
+     "ms": 12780,
+     "cost": 0.00029232000000000005,
+     "in_tok": 2088,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-059",
+   "target": 0,
+   "label": 1,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.7516282006785526,
+     "ms": 1059,
+     "cost": 0.000165891,
+     "in_tok": 2742,
+     "err": null,
+     "mass": [
+      0.9974,
+      0.9978
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9305623427524935,
+     "ms": 1156,
+     "cost": 0.000170126,
+     "in_tok": 2812,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 254,
+     "in_tok": 1671,
+     "cost": 7.0182e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.66
+     },
+     "p_violation": 0.66
+    },
+    "deepseek": {
+     "p_violation": 0.9666102507764963,
+     "ms": 6286,
+     "cost": 0.00036708000000000004,
+     "in_tok": 2622,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-060",
+   "target": 0,
+   "label": 1,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.7200169014752937,
+     "ms": 886,
+     "cost": 0.000142175,
+     "in_tok": 2350,
+     "err": null,
+     "mass": [
+      0.997,
+      0.9971
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.20025901820416522,
+     "ms": 827,
+     "cost": 0.00014278,
+     "in_tok": 2360,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 217,
+     "in_tok": 1425,
+     "cost": 5.9850000000000005e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.33
+     },
+     "p_violation": 0.33
+    },
+    "deepseek": {
+     "p_violation": 0.9257424225633273,
+     "ms": 4586,
+     "cost": 0.00032368,
+     "in_tok": 2312,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-061",
+   "target": 0,
+   "label": 1,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9349050632856983,
+     "ms": 1018,
+     "cost": 0.000146894,
+     "in_tok": 2428,
+     "err": null,
+     "mass": [
+      0.9977,
+      0.9983
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9942625990844163,
+     "ms": 3464,
+     "cost": 0.00014943499999999998,
+     "in_tok": 2470,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9985
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 543,
+     "in_tok": 1513,
+     "cost": 6.3546e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.89
+     },
+     "p_violation": 0.89
+    },
+    "deepseek": {
+     "p_violation": 0.9999070140002281,
+     "ms": 5582,
+     "cost": 0.00034216000000000004,
+     "in_tok": 2444,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-062",
+   "target": 0,
+   "label": 1,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.676758961347504,
+     "ms": 3274,
+     "cost": 0.000142175,
+     "in_tok": 2350,
+     "err": null,
+     "mass": [
+      0.997,
+      0.9976
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9239413346802084,
+     "ms": 969,
+     "cost": 0.000143748,
+     "in_tok": 2376,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 302,
+     "in_tok": 1471,
+     "cost": 6.178200000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.74
+     },
+     "p_violation": 0.74
+    },
+    "deepseek": {
+     "p_violation": 0.9320275871466763,
+     "ms": 9061,
+     "cost": 0.00032116,
+     "in_tok": 2294,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-063",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.10586887881406709,
+     "ms": 1764,
+     "cost": 0.00011833799999999999,
+     "in_tok": 1956,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9976
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.031731629912861214,
+     "ms": 1416,
+     "cost": 0.00012027400000000001,
+     "in_tok": 1988,
+     "err": null,
+     "mass": [
+      0.9982,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 221,
+     "in_tok": 1246,
+     "cost": 5.2332e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.11
+     },
+     "p_violation": 0.11
+    },
+    "deepseek": {
+     "p_violation": 0.07737001981508158,
+     "ms": 7389,
+     "cost": 0.00027160000000000004,
+     "in_tok": 1940,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-064",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.03270603830009981,
+     "ms": 865,
+     "cost": 0.000157179,
+     "in_tok": 2598,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9981
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0042734965543937695,
+     "ms": 999,
+     "cost": 0.000160809,
+     "in_tok": 2658,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9985
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 232,
+     "in_tok": 1601,
+     "cost": 6.7242e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.07
+     },
+     "p_violation": 0.07
+    },
+    "deepseek": {
+     "p_violation": 0.048259487620047135,
+     "ms": 3538,
+     "cost": 0.00035868000000000006,
+     "in_tok": 2562,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-065",
+   "target": 0,
+   "label": 1,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.15818364895674275,
+     "ms": 1156,
+     "cost": 0.000129349,
+     "in_tok": 2138,
+     "err": null,
+     "mass": [
+      0.9979,
+      0.9981
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.08654697023148532,
+     "ms": 3876,
+     "cost": 0.00013297899999999997,
+     "in_tok": 2198,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 250,
+     "in_tok": 1356,
+     "cost": 5.6952000000000006e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.27
+     },
+     "p_violation": 0.27
+    },
+    "deepseek": {
+     "p_violation": 0.17189933587242803,
+     "ms": 17299,
+     "cost": 0.0002926,
+     "in_tok": 2090,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-066",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.024949250874770935,
+     "ms": 3689,
+     "cost": 0.00015488,
+     "in_tok": 2560,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.9978
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.004427757626991331,
+     "ms": 1023,
+     "cost": 0.00015572699999999998,
+     "in_tok": 2574,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 293,
+     "in_tok": 1541,
+     "cost": 6.472200000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.09
+     },
+     "p_violation": 0.09
+    },
+    "deepseek": {
+     "p_violation": 0.09179751264384173,
+     "ms": 8898,
+     "cost": 0.00035504000000000004,
+     "in_tok": 2536,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-067",
+   "target": 0,
+   "label": 1,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6903985421179939,
+     "ms": 2637,
+     "cost": 0.00015584800000000002,
+     "in_tok": 2576,
+     "err": null,
+     "mass": [
+      0.9976,
+      0.9985
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9508347478918862,
+     "ms": 1036,
+     "cost": 0.000155606,
+     "in_tok": 2572,
+     "err": null,
+     "mass": [
+      0.998,
+      0.9983
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 229,
+     "in_tok": 1596,
+     "cost": 6.7032e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.81
+     },
+     "p_violation": 0.81
+    },
+    "deepseek": {
+     "p_violation": 0.9855134255015503,
+     "ms": 10332,
+     "cost": 0.00035000000000000005,
+     "in_tok": 2500,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-068",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.22568347218423893,
+     "ms": 2418,
+     "cost": 0.00026983000000000004,
+     "in_tok": 4460,
+     "err": null,
+     "mass": [
+      0.9981,
+      0.9982
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.15313415249822068,
+     "ms": 1166,
+     "cost": 0.0002783,
+     "in_tok": 4600,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 314,
+     "in_tok": 2621,
+     "cost": 0.00011008200000000001,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.48
+     },
+     "p_violation": 0.48
+    },
+    "deepseek": {
+     "p_violation": 0.18537367527870346,
+     "ms": 2609,
+     "cost": 0.0006146,
+     "in_tok": 4390,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-069",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.24837180088597388,
+     "ms": 1058,
+     "cost": 0.000127171,
+     "in_tok": 2102,
+     "err": null,
+     "mass": [
+      0.9973,
+      0.9973
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.027501556058324987,
+     "ms": 1196,
+     "cost": 0.000126929,
+     "in_tok": 2098,
+     "err": null,
+     "mass": [
+      0.9985,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 273,
+     "in_tok": 1310,
+     "cost": 5.5020000000000005e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.11
+     },
+     "p_violation": 0.11
+    },
+    "deepseek": {
+     "p_violation": 0.17189933619794454,
+     "ms": 3669,
+     "cost": 0.00028812,
+     "in_tok": 2058,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-070",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.043422561267160965,
+     "ms": 831,
+     "cost": 0.000150403,
+     "in_tok": 2486,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9985
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0437858325701466,
+     "ms": 1196,
+     "cost": 0.000152218,
+     "in_tok": 2516,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 230,
+     "in_tok": 1502,
+     "cost": 6.308400000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.15
+     },
+     "p_violation": 0.15
+    },
+    "deepseek": {
+     "p_violation": 0.21936727513823587,
+     "ms": 8470,
+     "cost": 0.00034664,
+     "in_tok": 2476,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-071",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.17239980551048487,
+     "ms": 962,
+     "cost": 0.00013927099999999997,
+     "in_tok": 2302,
+     "err": null,
+     "mass": [
+      0.9981,
+      0.9977
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.12195047516040053,
+     "ms": 893,
+     "cost": 0.000143022,
+     "in_tok": 2364,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9996
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 250,
+     "in_tok": 1428,
+     "cost": 5.9976e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.45
+     },
+     "p_violation": 0.45
+    },
+    "deepseek": {
+     "p_violation": 0.21248326875076065,
+     "ms": 6948,
+     "cost": 0.00032116,
+     "in_tok": 2294,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-072",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.06509492727555194,
+     "ms": 1136,
+     "cost": 0.000158631,
+     "in_tok": 2622,
+     "err": null,
+     "mass": [
+      0.9984,
+      0.998
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.008212848483067253,
+     "ms": 877,
+     "cost": 0.00015851,
+     "in_tok": 2620,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 231,
+     "in_tok": 1567,
+     "cost": 6.5814e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1
+     },
+     "p_violation": 0.1
+    },
+    "deepseek": {
+     "p_violation": 0.02429769254986734,
+     "ms": 6123,
+     "cost": 0.00036064000000000007,
+     "in_tok": 2576,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-073",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.11492570138760161,
+     "ms": 1048,
+     "cost": 0.00019601999999999998,
+     "in_tok": 3240,
+     "err": null,
+     "mass": [
+      0.9985,
+      0.9976
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.01917955982170366,
+     "ms": 1077,
+     "cost": 0.000197956,
+     "in_tok": 3272,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 402,
+     "in_tok": 1924,
+     "cost": 8.0808e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.14
+     },
+     "p_violation": 0.14
+    },
+    "deepseek": {
+     "p_violation": 0.0014039868265194673,
+     "ms": 3560,
+     "cost": 0.00044800000000000005,
+     "in_tok": 3200,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-074",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.06294788727617497,
+     "ms": 1068,
+     "cost": 0.00013818199999999999,
+     "in_tok": 2284,
+     "err": null,
+     "mass": [
+      0.9987,
+      0.998
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.015058156767609429,
+     "ms": 1254,
+     "cost": 0.000140965,
+     "in_tok": 2330,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9986
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 262,
+     "in_tok": 1414,
+     "cost": 5.9388e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.13
+     },
+     "p_violation": 0.13
+    },
+    "deepseek": {
+     "p_violation": 0.0032713797261033533,
+     "ms": 2555,
+     "cost": 0.000315,
+     "in_tok": 2250,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-075",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.03996415756211733,
+     "ms": 860,
+     "cost": 0.000120395,
+     "in_tok": 1990,
+     "err": null,
+     "mass": [
+      0.9987,
+      0.9983
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0035779555632154524,
+     "ms": 1196,
+     "cost": 0.00011966900000000001,
+     "in_tok": 1978,
+     "err": null,
+     "mass": [
+      0.9975,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 314,
+     "in_tok": 1256,
+     "cost": 5.2752e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "p_violation": 0.05
+    },
+    "deepseek": {
+     "p_violation": 0.053168208168825996,
+     "ms": 2759,
+     "cost": 0.00027104,
+     "in_tok": 1936,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-076",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.024168463103652487,
+     "ms": 927,
+     "cost": 0.000136488,
+     "in_tok": 2256,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9985
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": null,
+     "ms": 90576,
+     "cost": 6.909099999999999e-05,
+     "in_tok": 1142,
+     "err": "timeout",
+     "mass": [
+      0.9988,
+      null
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      null
+     ]
+    },
+    "jev": {
+     "ms": 311,
+     "in_tok": 1400,
+     "cost": 5.8800000000000006e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.15
+     },
+     "p_violation": 0.15
+    },
+    "deepseek": {
+     "p_violation": 0.001665559685601867,
+     "ms": 3619,
+     "cost": 0.00031192000000000004,
+     "in_tok": 2228,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-077",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.22568347258817575,
+     "ms": 952,
+     "cost": 0.000127534,
+     "in_tok": 2108,
+     "err": null,
+     "mass": [
+      0.9979,
+      0.9973
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.29767473341356243,
+     "ms": 1090,
+     "cost": 0.000134189,
+     "in_tok": 2218,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 252,
+     "in_tok": 1345,
+     "cost": 5.649e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.19
+     },
+     "p_violation": 0.19
+    },
+    "deepseek": {
+     "p_violation": 0.0057698621182650746,
+     "ms": 2555,
+     "cost": 0.00029008,
+     "in_tok": 2072,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-078",
+   "target": 0,
+   "label": 1,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.7516281971767244,
+     "ms": 1110,
+     "cost": 0.000136609,
+     "in_tok": 2258,
+     "err": null,
+     "mass": [
+      0.998,
+      0.9984
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9544949419054801,
+     "ms": 1190,
+     "cost": 0.000135399,
+     "in_tok": 2238,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9996
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 298,
+     "in_tok": 1373,
+     "cost": 5.7666000000000007e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.77
+     },
+     "p_violation": 0.77
+    },
+    "deepseek": {
+     "p_violation": 0.9222819381659799,
+     "ms": 7679,
+     "cost": 0.00030436000000000005,
+     "in_tok": 2174,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-079",
+   "target": 0,
+   "label": 1,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6155292893150024,
+     "ms": 885,
+     "cost": 0.000120637,
+     "in_tok": 1994,
+     "err": null,
+     "mass": [
+      0.9967,
+      0.9974
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9433082810588359,
+     "ms": 965,
+     "cost": 0.000123541,
+     "in_tok": 2042,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 310,
+     "in_tok": 1262,
+     "cost": 5.300400000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.45
+     },
+     "p_violation": 0.45
+    },
+    "deepseek": {
+     "p_violation": 0.9113202876947193,
+     "ms": 4091,
+     "cost": 0.00027580000000000004,
+     "in_tok": 1970,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-080",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.7200169071995772,
+     "ms": 860,
+     "cost": 0.00014943499999999998,
+     "in_tok": 2470,
+     "err": null,
+     "mass": [
+      0.9967,
+      0.9979
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.09125133647064347,
+     "ms": 4110,
+     "cost": 0.00015016099999999997,
+     "in_tok": 2482,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 219,
+     "in_tok": 1521,
+     "cost": 6.388200000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.12
+     },
+     "p_violation": 0.12
+    },
+    "deepseek": {
+     "p_violation": 0.6386499349149652,
+     "ms": 4480,
+     "cost": 0.00033796,
+     "in_tok": 2414,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-081",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.22669942258159767,
+     "ms": 852,
+     "cost": 0.000131285,
+     "in_tok": 2170,
+     "err": null,
+     "mass": [
+      0.9977,
+      0.9965
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.05666783198547479,
+     "ms": 795,
+     "cost": 0.00013140599999999998,
+     "in_tok": 2172,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9988
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 314,
+     "in_tok": 1372,
+     "cost": 5.7624e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.3
+     },
+     "p_violation": 0.3
+    },
+    "deepseek": {
+     "p_violation": 0.8354859628725686,
+     "ms": 4019,
+     "cost": 0.00030100000000000005,
+     "in_tok": 2150,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-082",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.08331439550549696,
+     "ms": 857,
+     "cost": 0.00012801799999999998,
+     "in_tok": 2116,
+     "err": null,
+     "mass": [
+      0.9977,
+      0.9968
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.008858302126943732,
+     "ms": 913,
+     "cost": 0.000130075,
+     "in_tok": 2150,
+     "err": null,
+     "mass": [
+      0.9987,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 379,
+     "in_tok": 1321,
+     "cost": 5.5482e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.11
+     },
+     "p_violation": 0.11
+    },
+    "deepseek": {
+     "p_violation": 0.018520495923340225,
+     "ms": 9556,
+     "cost": 0.00029568000000000004,
+     "in_tok": 2112,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-083",
+   "target": 0,
+   "label": 1,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8276001985209105,
+     "ms": 1051,
+     "cost": 0.000137819,
+     "in_tok": 2278,
+     "err": null,
+     "mass": [
+      0.9977,
+      0.9976
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.07269794655456267,
+     "ms": 895,
+     "cost": 0.000138424,
+     "in_tok": 2288,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 352,
+     "in_tok": 1408,
+     "cost": 5.9136000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.33
+     },
+     "p_violation": 0.33
+    },
+    "deepseek": {
+     "p_violation": 0.9222819428073833,
+     "ms": 2364,
+     "cost": 0.00030856,
+     "in_tok": 2204,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-084",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.2483717961923947,
+     "ms": 894,
+     "cost": 0.00014858799999999998,
+     "in_tok": 2456,
+     "err": null,
+     "mass": [
+      0.9977,
+      0.9972
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.022280174915840886,
+     "ms": 965,
+     "cost": 0.00015391199999999997,
+     "in_tok": 2544,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 230,
+     "in_tok": 1523,
+     "cost": 6.3966e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1
+     },
+     "p_violation": 0.1
+    },
+    "deepseek": {
+     "p_violation": 0.16523636567880423,
+     "ms": 2702,
+     "cost": 0.00034272,
+     "in_tok": 2448,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-085",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.850873174999282,
+     "ms": 1007,
+     "cost": 0.000145805,
+     "in_tok": 2410,
+     "err": null,
+     "mass": [
+      0.9951,
+      0.9979
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.31327942267112774,
+     "ms": 1087,
+     "cost": 0.000149677,
+     "in_tok": 2474,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 239,
+     "in_tok": 1483,
+     "cost": 6.2286e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.52
+     },
+     "p_violation": 0.52
+    },
+    "deepseek": {
+     "p_violation": 0.9217350954544365,
+     "ms": 12609,
+     "cost": 0.00033096000000000004,
+     "in_tok": 2364,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-086",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.09670623065700064,
+     "ms": 1211,
+     "cost": 0.000136609,
+     "in_tok": 2258,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9984
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.005098166058023847,
+     "ms": 1101,
+     "cost": 0.000136367,
+     "in_tok": 2254,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.9996
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 234,
+     "in_tok": 1383,
+     "cost": 5.8086e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.12
+     },
+     "p_violation": 0.12
+    },
+    "deepseek": {
+     "p_violation": 6.656876091355447e-05,
+     "ms": 12416,
+     "cost": 0.00031248,
+     "in_tok": 2232,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-087",
+   "target": 0,
+   "label": 1,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4999999970702539,
+     "ms": 961,
+     "cost": 0.00013527800000000001,
+     "in_tok": 2236,
+     "err": null,
+     "mass": [
+      0.9974,
+      0.9974
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.6799537640232184,
+     "ms": 1020,
+     "cost": 0.00013515699999999998,
+     "in_tok": 2234,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9997
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 327,
+     "in_tok": 1374,
+     "cost": 5.7708000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.71
+     },
+     "p_violation": 0.71
+    },
+    "deepseek": {
+     "p_violation": 0.9814795026686167,
+     "ms": 2044,
+     "cost": 0.0003108000000000001,
+     "in_tok": 2220,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-088",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.15081422036281716,
+     "ms": 1095,
+     "cost": 0.000141328,
+     "in_tok": 2336,
+     "err": null,
+     "mass": [
+      0.9986,
+      0.9977
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.007694324874079155,
+     "ms": 2333,
+     "cost": 0.000144111,
+     "in_tok": 2382,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 254,
+     "in_tok": 1418,
+     "cost": 5.9556000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.08
+     },
+     "p_violation": 0.08
+    },
+    "deepseek": {
+     "p_violation": 0.0029648984094783606,
+     "ms": 4825,
+     "cost": 0.00033096000000000004,
+     "in_tok": 2364,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-089",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.1581836435867021,
+     "ms": 816,
+     "cost": 0.000158147,
+     "in_tok": 2614,
+     "err": null,
+     "mass": [
+      0.9986,
+      0.9964
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0028209018711303495,
+     "ms": 2177,
+     "cost": 0.00015947799999999998,
+     "in_tok": 2636,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9997
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 221,
+     "in_tok": 1568,
+     "cost": 6.5856e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.09
+     },
+     "p_violation": 0.09
+    },
+    "deepseek": {
+     "p_violation": 0.34117569656352664,
+     "ms": 6984,
+     "cost": 0.00035840000000000004,
+     "in_tok": 2560,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-090",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.015111641723309971,
+     "ms": 1253,
+     "cost": 0.00017411899999999998,
+     "in_tok": 2878,
+     "err": null,
+     "mass": [
+      0.9984,
+      0.9978
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.017506358548099243,
+     "ms": 1326,
+     "cost": 0.000174966,
+     "in_tok": 2892,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9985
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 222,
+     "in_tok": 1736,
+     "cost": 7.2912e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.13
+     },
+     "p_violation": 0.13
+    },
+    "deepseek": {
+     "p_violation": 0.06018621941774296,
+     "ms": 7338,
+     "cost": 0.00040236,
+     "in_tok": 2874,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-091",
+   "target": 0,
+   "label": 1,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.1399641845252417,
+     "ms": 880,
+     "cost": 0.000134068,
+     "in_tok": 2216,
+     "err": null,
+     "mass": [
+      0.9972,
+      0.9965
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.01833979042630737,
+     "ms": 979,
+     "cost": 0.00013915,
+     "in_tok": 2300,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.999
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 255,
+     "in_tok": 1426,
+     "cost": 5.9892e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.31
+     },
+     "p_violation": 0.31
+    },
+    "deepseek": {
+     "p_violation": 0.18537366763696259,
+     "ms": 12599,
+     "cost": 0.00030688000000000004,
+     "in_tok": 2192,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-092",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.0650949349747098,
+     "ms": 863,
+     "cost": 0.000139513,
+     "in_tok": 2306,
+     "err": null,
+     "mass": [
+      0.9985,
+      0.9979
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.010499527543703983,
+     "ms": 1183,
+     "cost": 0.00014483699999999998,
+     "in_tok": 2394,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9997
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 239,
+     "in_tok": 1432,
+     "cost": 6.0144e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.08
+     },
+     "p_violation": 0.08
+    },
+    "deepseek": {
+     "p_violation": 0.0422178344809684,
+     "ms": 4131,
+     "cost": 0.0003194800000000001,
+     "in_tok": 2282,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-093",
+   "target": 0,
+   "label": 1,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3844707077552515,
+     "ms": 1150,
+     "cost": 0.000174603,
+     "in_tok": 2886,
+     "err": null,
+     "mass": [
+      0.9977,
+      0.9973
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.23371002311126016,
+     "ms": 1064,
+     "cost": 0.00017544999999999998,
+     "in_tok": 2900,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9997
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 236,
+     "in_tok": 1697,
+     "cost": 7.1274e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.42
+     },
+     "p_violation": 0.42
+    },
+    "deepseek": {
+     "p_violation": 0.9073129541588598,
+     "ms": 2472,
+     "cost": 0.00038808000000000007,
+     "in_tok": 2772,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-094",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.2124832693372859,
+     "ms": 1160,
+     "cost": 0.000153428,
+     "in_tok": 2536,
+     "err": null,
+     "mass": [
+      0.9968,
+      0.9971
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.09606700002209823,
+     "ms": 1115,
+     "cost": 0.000156937,
+     "in_tok": 2594,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.999
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 343,
+     "in_tok": 1565,
+     "cost": 6.573000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.24
+     },
+     "p_violation": 0.24
+    },
+    "deepseek": {
+     "p_violation": 0.005875084101936361,
+     "ms": 4222,
+     "cost": 0.00034916000000000005,
+     "in_tok": 2494,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-095",
+   "target": 1,
+   "label": 0,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.005769860738924646,
+     "ms": 948,
+     "cost": 0.000133221,
+     "in_tok": 2202,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.9986
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.005370354193005611,
+     "ms": 967,
+     "cost": 0.000135036,
+     "in_tok": 2232,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 240,
+     "in_tok": 1361,
+     "cost": 5.7162000000000006e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "p_violation": 0.05
+    },
+    "deepseek": {
+     "p_violation": 0.04772278648162002,
+     "ms": 3968,
+     "cost": 0.00030576,
+     "in_tok": 2184,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-096",
+   "target": 0,
+   "label": 1,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6903985358598885,
+     "ms": 3760,
+     "cost": 0.000155606,
+     "in_tok": 2572,
+     "err": null,
+     "mass": [
+      0.9974,
+      0.9984
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9554154108440193,
+     "ms": 1055,
+     "cost": 0.00015536399999999998,
+     "in_tok": 2568,
+     "err": null,
+     "mass": [
+      0.9987,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 278,
+     "in_tok": 1594,
+     "cost": 6.6948e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.83
+     },
+     "p_violation": 0.83
+    },
+    "deepseek": {
+     "p_violation": 0.9842225729988576,
+     "ms": 2225,
+     "cost": 0.00034944,
+     "in_tok": 2496,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-097",
+   "target": 0,
+   "label": 1,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.38447071654448983,
+     "ms": 1138,
+     "cost": 0.000137214,
+     "in_tok": 2268,
+     "err": null,
+     "mass": [
+      0.9981,
+      0.9984
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.23757519122121992,
+     "ms": 1048,
+     "cost": 0.000139392,
+     "in_tok": 2304,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 229,
+     "in_tok": 1422,
+     "cost": 5.9724000000000006e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.32
+     },
+     "p_violation": 0.32
+    },
+    "deepseek": {
+     "p_violation": 0.754179219902348,
+     "ms": 5434,
+     "cost": 0.00030856,
+     "in_tok": 2204,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-098",
+   "target": 0,
+   "label": 1,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.934905073632219,
+     "ms": 988,
+     "cost": 0.00014858799999999998,
+     "in_tok": 2456,
+     "err": null,
+     "mass": [
+      0.993,
+      0.997
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.994078579178209,
+     "ms": 1078,
+     "cost": 0.000150524,
+     "in_tok": 2488,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9985
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 319,
+     "in_tok": 1515,
+     "cost": 6.363000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.87
+     },
+     "p_violation": 0.87
+    },
+    "deepseek": {
+     "p_violation": 0.9783120728790093,
+     "ms": 4699,
+     "cost": 0.00034804000000000004,
+     "in_tok": 2486,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "legal-lobbying-mini-099",
+   "target": 0,
+   "label": 1,
+   "class": "2-way",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.27998309963593393,
+     "ms": 925,
+     "cost": 0.000149919,
+     "in_tok": 2478,
+     "err": null,
+     "mass": [
+      0.9977,
+      0.9969
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.49030615281755113,
+     "ms": 1061,
+     "cost": 0.000160325,
+     "in_tok": 2650,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9988
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 235,
+     "in_tok": 1585,
+     "cost": 6.657000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.56
+     },
+     "p_violation": 0.56
+    },
+    "deepseek": {
+     "p_violation": 0.25261006240538475,
+     "ms": 2146,
+     "cost": 0.00034412000000000006,
+     "in_tok": 2458,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  }
+ ],
+ "agg": {
+  "glm": {
+   "n": 100,
+   "ok": 100,
+   "hit": 81,
+   "ms": 151280,
+   "cost": 0.014758249000000005
+  },
+  "qwen": {
+   "n": 100,
+   "ok": 99,
+   "hit": 81,
+   "ms": 209426,
+   "cost": 0.014894737000000002
+  },
+  "deepseek": {
+   "n": 100,
+   "ok": 100,
+   "hit": 79,
+   "ms": 691911,
+   "cost": 0.03365684000000001
+  },
+  "jev": {
+   "n": 100,
+   "ok": 100,
+   "hit": 81,
+   "ms": 28729,
+   "cost": 0.0062937
+  }
+ },
+ "merged_runs": [
+  {
+   "date": "2026-10-05",
+   "arms": [
+    "deepseek"
+   ]
+  }
+ ]
+}

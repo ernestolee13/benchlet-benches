@@ -1,0 +1,348 @@
+name: legal-lobbying-mini
+version: 1
+task_signature:
+  goal: fit
+  answer: binary
+  prob_use: accuracy_only
+  label: machine
+  unit: document
+  language: en
+  n: 100
+question: 이 법안은 이 회사와 관련이 있어 로비 대상이 되는가. 입력은 영어 법안 제목·요약과 회사 설명이다.
+choices:
+- 관련 있다
+- 관련 없다
+choices_note: null
+generator:
+  script: src/build_judgment_seeds.py
+  seed: 20261003
+source: LegalBench corporate_lobbying via HELM lite v1.13.0 에서 모델별 정오 행렬로 100건 축약
+domain:
+- legal-lobbying
+- public-seed
+- english
+visibility: sample
+items_sha256: b6a29f3f3569c73fc3c1225ff1e54229ccd9bc981c3784e752e7da26e2357c54
+license: CC-BY-4.0
+attribution:
+  items: LegalBench corporate_lobbying via HELM lite v1.13.0
+  model_responses: HELM 공개 버킷 HELM lite v1.13.0 legalbench corporate_lobbying 모델 89개의
+    항목별 정오, 결과 Apache-2.0
+  method: difficulty-stratified (5 quantiles) random sample; swap search skipped because
+    fit models 62 < 100 (it overfits); val models held out
+distill:
+  n: 100
+  seed: 20261003
+  n_items_total: 490
+  n_items_usable: 490
+  n_models: 89
+  fit_models: 62
+  val_models: 27
+  val:
+    mae: 0.025094482237339375
+    max_err: 0.06734693877551023
+    kendall: 0.8425655976676385
+    spearman: 0.9359527018082574
+    n_models: 27
+  baseline_val:
+    mae: 0.025094482237339375
+    max_err: 0.06734693877551023
+    kendall: 0.8425655976676385
+    spearman: 0.9359527018082574
+    n_models: 27
+  alt:
+    method: swap search
+    val:
+      mae: 0.023008314436885863
+      max_err: 0.06265306122448977
+      kendall: 0.8
+      spearman: 0.9146795834094965
+      n_models: 27
+  fit:
+    mae: 0.025760368663594466
+    max_err: 0.09632653061224494
+    kendall: 0.805921052631579
+    spearman: 0.9266400816384045
+    n_models: 62
+  method: difficulty-stratified (5 quantiles) random sample; swap search skipped because
+    fit models 62 < 100 (it overfits); val models held out
+  method_key: random
+  matrix: HELM lite v1.13.0 legalbench corporate_lobbying
+taxonomy:
+  domain:
+  - legal
+  input_kind: document
+  source_kind: public-distilled
+  language: en
+  keywords:
+  - 법률
+  - 정합
+  - legalbench
+review:
+  checks_run: 0
+  human_reviewed_fraction: 0.0
+  flagged: 0
+  decided: 0
+note: 판단형 공개 벤치의 축약 시드. 라벨은 원천 정답 키. 축약 검증 집단은 원천 리더보드의 모델이다. 우리 4팔은 그 집단 밖이라 축약본
+  정확도가 전체 정확도와 같다는 보장은 없고, 100건의 Wilson 구간(약 ±6~10pp)이 그대로 적용된다
+owner: ernestolee13
+n: 100
+published_at: '2026-10-05'
+type: binary
+classes:
+- 2-way
+label_source_mix:
+  machine: 100
+  constructed: 0
+  judged: 0
+  outcome: 0
+experiment:
+  date: '2026-10-05'
+  template: generic
+  runner: benchlet
+  arms:
+    glm:
+      model: z-ai/glm-4.7-flash
+      provider: cloudflare
+      family: GLM
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke:
+        arm: glm
+        mode: logprob
+        usable: true
+        reasons:
+        - 뻔한 5건 중 1건 틀림 (legal-lobbying-mini-003). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9966
+        spread: 0.0
+        distinct_p: 8
+        n_calls: 13
+        smoke_acc: 0.8
+        cost: 0.0008411919999999998
+        per_item:
+        - id: legal-lobbying-mini-003
+          target: 0
+          hit: 0
+          p: 0.4457
+        - id: legal-lobbying-mini-011
+          target: 0
+          hit: 1
+          p: 0.5976
+        - id: legal-lobbying-mini-014
+          target: 0
+          hit: 1
+          p: 0.8276
+        - id: legal-lobbying-mini-001
+          target: 1
+          hit: 1
+          p: 0.1291
+        - id: legal-lobbying-mini-005
+          target: 1
+          hit: 1
+          p: 0.0271
+    qwen:
+      model: qwen/qwen3.8-27b
+      provider: parasail
+      family: Qwen
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke:
+        arm: qwen
+        mode: logprob
+        usable: true
+        reasons:
+        - 뻔한 5건 중 1건 틀림 (legal-lobbying-mini-003). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9973
+        spread: 0.039143913407927
+        distinct_p: 7
+        n_calls: 13
+        smoke_acc: 0.8
+        cost: 0.0008498435000000001
+        per_item:
+        - id: legal-lobbying-mini-003
+          target: 0
+          hit: 0
+          p: 0.257
+        - id: legal-lobbying-mini-011
+          target: 0
+          hit: 1
+          p: 0.743
+        - id: legal-lobbying-mini-014
+          target: 0
+          hit: 1
+          p: 0.7848
+        - id: legal-lobbying-mini-001
+          target: 1
+          hit: 1
+          p: 0.0047
+        - id: legal-lobbying-mini-005
+          target: 1
+          hit: 1
+          p: 0.0122
+    deepseek:
+      model: deepseek/deepseek-v4-flash
+      provider: digitalocean
+      family: DeepSeek
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.14
+      smoke:
+        arm: deepseek
+        mode: logprob
+        usable: false
+        reasons:
+        - 3회 재현 편차 0.11 > 0.05
+        - 뻔한 5건 중 1건 틀림 (legal-lobbying-mini-003). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 1.0
+        spread: 0.1065673366853507
+        distinct_p: 10
+        n_calls: 13
+        smoke_acc: 0.8
+        cost: 0.0019177200000000006
+        per_item:
+        - id: legal-lobbying-mini-003
+          target: 0
+          hit: 0
+          p: 0.0743
+        - id: legal-lobbying-mini-011
+          target: 0
+          hit: 1
+          p: 0.8179
+        - id: legal-lobbying-mini-014
+          target: 0
+          hit: 1
+          p: 0.8179
+        - id: legal-lobbying-mini-001
+          target: 1
+          hit: 1
+          p: 0.0072
+        - id: legal-lobbying-mini-005
+          target: 1
+          hit: 1
+          p: 0.0001
+    jev:
+      model: typesafe/jev-1.13
+      provider: openrouter
+      family: Jev
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.042
+      smoke:
+        arm: jev
+        mode: typed
+        usable: true
+        reasons:
+        - 뻔한 5건 중 1건 틀림 (legal-lobbying-mini-003). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 0.8
+        cost: 0.000274386
+        per_item:
+        - id: legal-lobbying-mini-003
+          target: 0
+          hit: 0
+          p: 0.43
+          pred: null
+        - id: legal-lobbying-mini-011
+          target: 0
+          hit: 1
+          p: 0.59
+          pred: null
+        - id: legal-lobbying-mini-014
+          target: 0
+          hit: 1
+          p: 0.68
+          pred: null
+        - id: legal-lobbying-mini-001
+          target: 1
+          hit: 1
+          p: 0.05
+          pred: null
+        - id: legal-lobbying-mini-005
+          target: 1
+          hit: 1
+          p: 0.09
+          pred: null
+  protocol:
+    decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
+    logprob_call:
+      max_tokens: 1
+      temperature: 0
+      logprobs: true
+      top_logprobs: 8
+      reasoning:
+        enabled: false
+    provider_pin: provider.only=[pin], allow_fallbacks=false, require_parameters=true
+    binary: '극성 반전 2회 호출 평균: p = ½[P(A|choices[0]=A) + P(B|choices[0]=B)]'
+    multiclass: 항목별 결정론적 셔플 뒤 원 인덱스로 복원(generic) 또는 파일에 든 셔플 그대로(legacy-seed)
+    typed: Jev noul(이진)/choice(다지), 질문을 instructions 로 그대로 전달
+    label_mass: 상위 8토큰 중 라벨 토큰 질량 < 0.5 이면 오류로 두고 세지 않음
+    renormalize: 라벨 토큰 확률을 라벨 집합 안에서 재정규화
+  items_sha256: b6a29f3f3569c73fc3c1225ff1e54229ccd9bc981c3784e752e7da26e2357c54
+results:
+- results/legal-lobbying-mini-run.json
+result_summary:
+  glm:
+    acc: 0.81
+    ci95:
+    - 0.7222097592919214
+    - 0.8748534600729575
+    auroc: 0.8611500701262272
+    brier: 0.13898471972824447
+    n: 100
+    prob_source: logprob
+    model: z-ai/glm-4.7-flash
+    source_badge: author-run
+  qwen:
+    acc: 0.8181818181818182
+    ci95:
+    - 0.7308102684012943
+    - 0.8817823011425481
+    auroc: 0.8818785578747628
+    brier: 0.1381203101259824
+    n: 99
+    prob_source: logprob
+    model: qwen/qwen3.8-27b
+    source_badge: author-run
+  jev:
+    acc: 0.81
+    ci95:
+    - 0.7222097592919214
+    - 0.8748534600729575
+    auroc: 0.8637213651238896
+    brier: 0.13343600000000003
+    n: 100
+    prob_source: typed
+    model: typesafe/jev-1.13
+    source_badge: author-run
+  deepseek:
+    acc: 0.79
+    ci95:
+    - 0.7001985069803768
+    - 0.8583445046835422
+    auroc: 0.8695652173913043
+    brier: 0.15042420321701214
+    n: 100
+    prob_source: logprob
+    model: deepseek/deepseek-v4-flash
+    source_badge: author-run
