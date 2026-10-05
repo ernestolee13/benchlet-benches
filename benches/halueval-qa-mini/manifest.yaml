@@ -1,0 +1,457 @@
+name: halueval-qa-mini
+version: 1
+task_signature:
+  goal: derive
+  answer: binary
+  prob_use: accuracy_only
+  label: machine
+  unit: paragraph
+  language: en
+  n: 100
+question: 이 답변은 근거에 비추어 환각인가. 근거에 없는 사실을 말하거나 근거와 어긋나면 환각이고, 근거로 뒷받침되면 환각이 아니다.
+choices:
+- 환각이다
+- 환각이 아니다
+choices_note: null
+generator:
+  script: src/build_nomatrix_seeds.py
+  seed: 20261003
+source: HaluEval QA (Li et al. 2023), 10k 쌍 중 무작위 표본 에서 클래스 층화 무작위로 100건 축약 (전체 1000건)
+domain:
+- halueval-qa
+- public-seed
+- english
+visibility: sample
+items_sha256: e7244b1af0c71c2427ca01d24a65d7070b33b979c017d63d6450d0c85d891fe7
+license: MIT
+attribution:
+  items: HaluEval QA (Li et al. 2023), 10k 쌍 중 무작위 표본
+  model_responses: 원천에 모델별 항목 출력 없음. 인식 정확도 ChatGPT 62.6, Claude 2 69.8 (논문 표 5).
+    합성 음성이라 쉬울 수 있다
+  method: class-stratified random sample (no per-model matrix); validation = own arms
+    on the full set vs this subset (see distill.own_arms)
+distill:
+  method: class-stratified random
+  n: 100
+  n_items_total: 1000
+  strata:
+    right: 500
+    hallucinated: 500
+  selected_keys_in_full:
+  - 1111:right
+  - 1195:right
+  - 1214:hallucinated
+  - 1304:right
+  - 1331:hallucinated
+  - 1335:right
+  - 1360:hallucinated
+  - 1755:hallucinated
+  - 1841:hallucinated
+  - 1841:right
+  - 1957:hallucinated
+  - 1994:right
+  - 2052:right
+  - 2175:right
+  - 2242:right
+  - 2263:hallucinated
+  - 228:hallucinated
+  - 2474:right
+  - 2482:hallucinated
+  - 2586:hallucinated
+  - 25:right
+  - 2617:hallucinated
+  - 261:right
+  - 2774:right
+  - 2787:hallucinated
+  - 2847:right
+  - 2850:hallucinated
+  - 3062:hallucinated
+  - 3213:right
+  - 3254:hallucinated
+  - 3303:right
+  - 3390:right
+  - 3667:hallucinated
+  - 3729:right
+  - 3763:right
+  - 3810:hallucinated
+  - 3814:right
+  - 3862:right
+  - 3912:right
+  - 3973:hallucinated
+  - 4076:right
+  - 4136:hallucinated
+  - 4372:hallucinated
+  - 4477:right
+  - 455:hallucinated
+  - 4830:hallucinated
+  - 4893:right
+  - 4945:hallucinated
+  - 4988:hallucinated
+  - 5013:hallucinated
+  - 5293:right
+  - 5358:right
+  - 5366:right
+  - 5393:hallucinated
+  - 5403:hallucinated
+  - 5456:right
+  - 5783:hallucinated
+  - 5950:hallucinated
+  - 6111:hallucinated
+  - 6131:hallucinated
+  - 6144:right
+  - 6259:hallucinated
+  - 6381:hallucinated
+  - 6663:right
+  - 6769:right
+  - 6793:right
+  - 6814:hallucinated
+  - 6968:hallucinated
+  - 6968:right
+  - 7082:right
+  - 7145:hallucinated
+  - 7235:right
+  - 724:hallucinated
+  - 7334:hallucinated
+  - 7344:hallucinated
+  - 7371:right
+  - 7623:right
+  - 7661:right
+  - 7673:hallucinated
+  - 7740:right
+  - 7782:right
+  - 7820:hallucinated
+  - 7929:hallucinated
+  - 7992:right
+  - 8154:right
+  - 8354:right
+  - 8356:hallucinated
+  - 8391:hallucinated
+  - 8499:hallucinated
+  - 8708:hallucinated
+  - 8853:hallucinated
+  - 8987:hallucinated
+  - 9013:hallucinated
+  - 9018:right
+  - 9421:right
+  - 9504:hallucinated
+  - 9510:right
+  - 9557:right
+  - 9627:right
+  - 9978:right
+  own_arms:
+    date: '2026-10-05'
+    arms:
+      glm:
+        full_acc: 0.613
+        full_ok: 1000
+        full_n: 1000
+        mini_acc: 0.6
+        mini_ok: 100
+        same_items_in_full_run_acc: 0.6
+        gap_pp: 1.3
+      qwen:
+        full_acc: 0.906
+        full_ok: 1000
+        full_n: 1000
+        mini_acc: 0.95
+        mini_ok: 100
+        same_items_in_full_run_acc: 0.95
+        gap_pp: 4.4
+      jev:
+        full_acc: 0.839
+        full_ok: 1000
+        full_n: 1000
+        mini_acc: 0.86
+        mini_ok: 100
+        same_items_in_full_run_acc: 0.86
+        gap_pp: 2.1
+    mae_pp: 2.6
+    max_gap_pp: 4.4
+    rank_full:
+    - qwen
+    - jev
+    - glm
+    rank_mini:
+    - qwen
+    - jev
+    - glm
+    rank_preserved: true
+    excluded_arms_low_success:
+      deepseek:
+        full_ok: 152
+        mini_ok: 84
+    sampling_se_pp_at_100: 정확도 80% 기준 이항 표준오차 약 4pp. 그 안의 차이는 표본 잡음이다
+    note: 검증 집단은 우리 4팔뿐이다. gap 에는 제공자 실행 잡음(같은 항목 재실행 차이 최대 2pp)이 섞여 있다
+taxonomy:
+  domain:
+  - retrieval-rag
+  input_kind: paragraph
+  source_kind: public-distilled
+  language: en
+  keywords:
+  - 환각
+  - halueval
+review:
+  checks_run: 0
+  human_reviewed_fraction: 0.0
+  flagged: 0
+  decided: 0
+note: 판단형 공개 벤치의 축약 시드(행렬 없는 경로). 라벨은 원천 라벨. 축약 검증은 원천 모델 집단이 아니라 우리 팔의 전체 대 축약 비교다
+owner: ernestolee13
+n: 100
+published_at: '2026-10-05'
+type: binary
+classes:
+- hallucinated
+- right
+label_source_mix:
+  machine: 100
+  constructed: 0
+  judged: 0
+  outcome: 0
+experiment:
+  date: '2026-10-05'
+  template: generic
+  runner: benchlet
+  arms:
+    glm:
+      model: z-ai/glm-4.7-flash
+      provider: cloudflare
+      family: GLM
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke:
+        arm: glm
+        mode: logprob
+        usable: true
+        reasons:
+        - 뻔한 5건 중 2건 틀림 (halueval-qa-mini-0003, halueval-qa-mini-0006). 다른 팔도 틀리면
+          질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9933
+        spread: 0.0
+        distinct_p: 8
+        n_calls: 13
+        smoke_acc: 0.6
+        cost: 0.00019601999999999996
+        per_item:
+        - id: halueval-qa-mini-0001
+          target: 0
+          hit: 1
+          p: 0.5612
+        - id: halueval-qa-mini-0003
+          target: 0
+          hit: 0
+          p: 0.28
+        - id: halueval-qa-mini-0006
+          target: 0
+          hit: 0
+          p: 0.2267
+        - id: halueval-qa-mini-0000
+          target: 1
+          hit: 1
+          p: 0.0629
+        - id: halueval-qa-mini-0002
+          target: 1
+          hit: 1
+          p: 0.3349
+    qwen:
+      model: qwen/qwen3.8-27b
+      provider: parasail
+      family: Qwen
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke:
+        arm: qwen
+        mode: logprob
+        usable: true
+        reasons: []
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9965
+        spread: 0.0
+        distinct_p: 10
+        n_calls: 13
+        smoke_acc: 1.0
+        cost: 0.0001850695
+        per_item:
+        - id: halueval-qa-mini-0001
+          target: 0
+          hit: 1
+          p: 0.9997
+        - id: halueval-qa-mini-0003
+          target: 0
+          hit: 1
+          p: 0.7574
+        - id: halueval-qa-mini-0006
+          target: 0
+          hit: 1
+          p: 0.972
+        - id: halueval-qa-mini-0000
+          target: 1
+          hit: 1
+          p: 0.001
+        - id: halueval-qa-mini-0002
+          target: 1
+          hit: 1
+          p: 0.0205
+    deepseek:
+      model: deepseek/deepseek-v4-flash
+      provider: digitalocean
+      family: DeepSeek
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.14
+      smoke:
+        arm: deepseek
+        mode: logprob
+        usable: false
+        reasons:
+        - 오류 HTTP 429 {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"deepseek/deepseek-v4-flash
+          is temporarily rate-limited upstream. Please retry shortl
+        - 3회 재현 편차 0.25 > 0.05
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9995
+        spread: 0.24596405051709425
+        distinct_p: 8
+        n_calls: 13
+        smoke_acc: 1.0
+        cost: 0.00038444
+        per_item:
+        - id: halueval-qa-mini-0003
+          target: 0
+          hit: 1
+          p: 0.7574
+        - id: halueval-qa-mini-0006
+          target: 0
+          hit: 1
+          p: 0.9698
+        - id: halueval-qa-mini-0000
+          target: 1
+          hit: 1
+          p: 0.0115
+        - id: halueval-qa-mini-0002
+          target: 1
+          hit: 1
+          p: 0.007
+    jev:
+      model: typesafe/jev-1.13
+      provider: openrouter
+      family: Jev
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.042
+      smoke:
+        arm: jev
+        mode: typed
+        usable: true
+        reasons: []
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 1.0
+        cost: 9.8574e-05
+        per_item:
+        - id: halueval-qa-mini-0001
+          target: 0
+          hit: 1
+          p: 0.87
+          pred: null
+        - id: halueval-qa-mini-0003
+          target: 0
+          hit: 1
+          p: 0.65
+          pred: null
+        - id: halueval-qa-mini-0006
+          target: 0
+          hit: 1
+          p: 0.78
+          pred: null
+        - id: halueval-qa-mini-0000
+          target: 1
+          hit: 1
+          p: 0.16
+          pred: null
+        - id: halueval-qa-mini-0002
+          target: 1
+          hit: 1
+          p: 0.2
+          pred: null
+  protocol:
+    decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
+    logprob_call:
+      max_tokens: 1
+      temperature: 0
+      logprobs: true
+      top_logprobs: 8
+      reasoning:
+        enabled: false
+    provider_pin: provider.only=[pin], allow_fallbacks=false, require_parameters=true
+    binary: '극성 반전 2회 호출 평균: p = ½[P(A|choices[0]=A) + P(B|choices[0]=B)]'
+    multiclass: 항목별 결정론적 셔플 뒤 원 인덱스로 복원(generic) 또는 파일에 든 셔플 그대로(legacy-seed)
+    typed: Jev noul(이진)/choice(다지), 질문을 instructions 로 그대로 전달
+    label_mass: 상위 8토큰 중 라벨 토큰 질량 < 0.5 이면 오류로 두고 세지 않음
+    renormalize: 라벨 토큰 확률을 라벨 집합 안에서 재정규화
+  items_sha256: e7244b1af0c71c2427ca01d24a65d7070b33b979c017d63d6450d0c85d891fe7
+results:
+- results/halueval-qa-mini-run.json
+result_summary:
+  glm:
+    acc: 0.6
+    ci95:
+    - 0.5020007846184025
+    - 0.6906002538863971
+    auroc: 0.8464
+    brier: 0.2540854479478855
+    n: 100
+    prob_source: logprob
+    model: z-ai/glm-4.7-flash
+    source_badge: author-run
+  qwen:
+    acc: 0.95
+    ci95:
+    - 0.8882480347279117
+    - 0.9784566385436865
+    auroc: 0.9656
+    brier: 0.060762281680894425
+    n: 100
+    prob_source: logprob
+    model: qwen/qwen3.8-27b
+    source_badge: author-run
+  jev:
+    acc: 0.86
+    ci95:
+    - 0.7786263961619276
+    - 0.9147373424553509
+    auroc: 0.9132
+    brier: 0.10217999999999999
+    n: 100
+    prob_source: typed
+    model: typesafe/jev-1.13
+    source_badge: author-run
+  deepseek:
+    acc: 0.9047619047619048
+    ci95:
+    - 0.8231718131587017
+    - 0.9509488768105155
+    auroc: 0.970504821327283
+    brier: 0.08987833756789566
+    n: 84
+    prob_source: logprob
+    model: deepseek/deepseek-v4-flash
+    source_badge: author-run
