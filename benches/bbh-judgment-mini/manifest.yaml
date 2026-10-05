@@ -1,0 +1,470 @@
+name: bbh-judgment-mini
+version: 1
+task_signature:
+  goal: derive
+  answer: binary
+  prob_use: accuracy_only
+  label: machine
+  unit: paragraph
+  language: en
+  n: 100
+question: null
+choices:
+- 예
+- 아니오
+choices_note: null
+generator:
+  script: src/build_nomatrix_seeds.py
+  seed: 20261003
+source: BIG-Bench Hard causal_judgement, navigate, sports_understanding (Suzgun et
+  al. 2022) 에서 클래스 층화 무작위로 100건 축약 (전체 687건)
+domain:
+- bbh-judgment
+- public-seed
+- english
+visibility: sample
+items_sha256: 27390052c73aa22422a79d74220d976a7d5f89766a3c7a1564fc83e9b94d7402
+license: MIT
+attribution:
+  items: BIG-Bench Hard causal_judgement, navigate, sports_understanding (Suzgun et
+    al. 2022)
+  model_responses: 원천에 모델별 항목 출력 없음. causal_judgement GPT-4o 67.0, Claude 3.5 Sonnet
+    69.0 (arXiv 2411.05978); BBH 전체 Claude 3.5 Sonnet 93.1 (모델 카드)
+  method: class-stratified random sample (no per-model matrix); validation = own arms
+    on the full set vs this subset (see distill.own_arms)
+distill:
+  method: class-stratified random
+  n: 100
+  n_items_total: 687
+  strata:
+    causal_judgement:no: 90
+    causal_judgement:yes: 97
+    navigate:no: 145
+    navigate:yes: 105
+    sports_understanding:no: 135
+    sports_understanding:yes: 115
+  selected_keys_in_full:
+  - causal_judgement:111
+  - causal_judgement:134
+  - causal_judgement:14
+  - causal_judgement:149
+  - causal_judgement:152
+  - causal_judgement:165
+  - causal_judgement:166
+  - causal_judgement:170
+  - causal_judgement:181
+  - causal_judgement:22
+  - causal_judgement:27
+  - causal_judgement:30
+  - causal_judgement:31
+  - causal_judgement:33
+  - causal_judgement:34
+  - causal_judgement:35
+  - causal_judgement:43
+  - causal_judgement:52
+  - causal_judgement:56
+  - causal_judgement:60
+  - causal_judgement:66
+  - causal_judgement:80
+  - causal_judgement:81
+  - causal_judgement:91
+  - causal_judgement:94
+  - causal_judgement:97
+  - causal_judgement:98
+  - navigate:11
+  - navigate:114
+  - navigate:117
+  - navigate:133
+  - navigate:143
+  - navigate:146
+  - navigate:148
+  - navigate:15
+  - navigate:150
+  - navigate:151
+  - navigate:156
+  - navigate:157
+  - navigate:166
+  - navigate:168
+  - navigate:175
+  - navigate:19
+  - navigate:2
+  - navigate:205
+  - navigate:206
+  - navigate:214
+  - navigate:235
+  - navigate:24
+  - navigate:245
+  - navigate:248
+  - navigate:38
+  - navigate:56
+  - navigate:61
+  - navigate:62
+  - navigate:63
+  - navigate:67
+  - navigate:72
+  - navigate:77
+  - navigate:79
+  - navigate:9
+  - navigate:93
+  - navigate:97
+  - sports_understanding:1
+  - sports_understanding:102
+  - sports_understanding:116
+  - sports_understanding:118
+  - sports_understanding:123
+  - sports_understanding:134
+  - sports_understanding:136
+  - sports_understanding:139
+  - sports_understanding:141
+  - sports_understanding:145
+  - sports_understanding:15
+  - sports_understanding:151
+  - sports_understanding:152
+  - sports_understanding:153
+  - sports_understanding:157
+  - sports_understanding:159
+  - sports_understanding:160
+  - sports_understanding:164
+  - sports_understanding:178
+  - sports_understanding:185
+  - sports_understanding:192
+  - sports_understanding:203
+  - sports_understanding:218
+  - sports_understanding:230
+  - sports_understanding:241
+  - sports_understanding:244
+  - sports_understanding:246
+  - sports_understanding:52
+  - sports_understanding:6
+  - sports_understanding:61
+  - sports_understanding:64
+  - sports_understanding:68
+  - sports_understanding:70
+  - sports_understanding:76
+  - sports_understanding:78
+  - sports_understanding:79
+  - sports_understanding:92
+  own_arms:
+    date: '2026-10-05'
+    arms:
+      glm:
+        full_acc: 0.4876
+        full_ok: 687
+        full_n: 687
+        mini_acc: 0.46
+        mini_ok: 100
+        same_items_in_full_run_acc: 0.47
+        gap_pp: 2.76
+      qwen:
+        full_acc: 0.691
+        full_ok: 686
+        full_n: 687
+        mini_acc: 0.67
+        mini_ok: 100
+        same_items_in_full_run_acc: 0.68
+        gap_pp: 2.1
+      jev:
+        full_acc: 0.8544
+        full_ok: 687
+        full_n: 687
+        mini_acc: 0.82
+        mini_ok: 100
+        same_items_in_full_run_acc: 0.82
+        gap_pp: 3.44
+    mae_pp: 2.77
+    max_gap_pp: 3.44
+    rank_full:
+    - jev
+    - qwen
+    - glm
+    rank_mini:
+    - jev
+    - qwen
+    - glm
+    rank_preserved: true
+    excluded_arms_low_success:
+      deepseek:
+        full_ok: 298
+        mini_ok: 86
+    sampling_se_pp_at_100: 정확도 80% 기준 이항 표준오차 약 4pp. 그 안의 차이는 표본 잡음이다
+    note: 검증 집단은 우리 4팔뿐이다. gap 에는 제공자 실행 잡음(같은 항목 재실행 차이 최대 2pp)이 섞여 있다
+taxonomy:
+  domain:
+  - commonsense
+  input_kind: paragraph
+  source_kind: public-distilled
+  language: en
+  keywords:
+  - 추론
+  - 상식
+  - bbh
+review:
+  checks_run: 0
+  human_reviewed_fraction: 0.0
+  flagged: 0
+  decided: 0
+note: 판단형 공개 벤치의 축약 시드(행렬 없는 경로). 라벨은 원천 라벨. 축약 검증은 원천 모델 집단이 아니라 우리 팔의 전체 대 축약 비교다
+owner: ernestolee13
+n: 100
+published_at: '2026-10-05'
+type: binary
+classes:
+- causal_judgement
+- navigate
+- sports_understanding
+label_source_mix:
+  machine: 100
+  constructed: 0
+  judged: 0
+  outcome: 0
+experiment:
+  date: '2026-10-05'
+  template: generic
+  runner: benchlet
+  arms:
+    glm:
+      model: z-ai/glm-4.7-flash
+      provider: cloudflare
+      family: GLM
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke:
+        arm: glm
+        mode: logprob
+        usable: true
+        reasons:
+        - 뻔한 5건 중 2건 틀림 (bbh-judgment-mini-0001, bbh-judgment-mini-0008). 다른 팔도 틀리면
+          질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9165
+        spread: 0.0
+        distinct_p: 7
+        n_calls: 13
+        smoke_acc: 0.6
+        cost: 0.0001348545
+        per_item:
+        - id: bbh-judgment-mini-0000
+          target: 0
+          hit: 1
+          p: 0.7311
+        - id: bbh-judgment-mini-0002
+          target: 0
+          hit: 1
+          p: 0.9384
+        - id: bbh-judgment-mini-0004
+          target: 0
+          hit: 1
+          p: 0.5612
+        - id: bbh-judgment-mini-0001
+          target: 1
+          hit: 0
+          p: 0.6225
+        - id: bbh-judgment-mini-0008
+          target: 1
+          hit: 0
+          p: 0.5
+    qwen:
+      model: qwen/qwen3.8-27b
+      provider: parasail
+      family: Qwen
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke:
+        arm: qwen
+        mode: logprob
+        usable: false
+        reasons:
+        - 3회 재현 편차 0.06 > 0.05
+        - 뻔한 5건 중 1건 틀림 (bbh-judgment-mini-0004). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9921
+        spread: 0.061457226580313495
+        distinct_p: 9
+        n_calls: 13
+        smoke_acc: 0.8
+        cost: 0.0001341285
+        per_item:
+        - id: bbh-judgment-mini-0000
+          target: 0
+          hit: 1
+          p: 0.6738
+        - id: bbh-judgment-mini-0002
+          target: 0
+          hit: 1
+          p: 0.5896
+        - id: bbh-judgment-mini-0004
+          target: 0
+          hit: 0
+          p: 0.4664
+        - id: bbh-judgment-mini-0001
+          target: 1
+          hit: 1
+          p: 0.3954
+        - id: bbh-judgment-mini-0008
+          target: 1
+          hit: 1
+          p: 0.4266
+    deepseek:
+      model: deepseek/deepseek-v4-flash
+      provider: digitalocean
+      family: DeepSeek
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.14
+      smoke:
+        arm: deepseek
+        mode: logprob
+        usable: false
+        reasons:
+        - 3회 재현 편차 0.05 > 0.05
+        - 뻔한 5건 중 1건 틀림 (bbh-judgment-mini-0001). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9292
+        spread: 0.051879871164473346
+        distinct_p: 7
+        n_calls: 13
+        smoke_acc: 0.8
+        cost: 0.00030086
+        per_item:
+        - id: bbh-judgment-mini-0000
+          target: 0
+          hit: 1
+          p: 0.7051
+        - id: bbh-judgment-mini-0002
+          target: 0
+          hit: 1
+          p: 0.9398
+        - id: bbh-judgment-mini-0004
+          target: 0
+          hit: 1
+          p: 0.7215
+        - id: bbh-judgment-mini-0001
+          target: 1
+          hit: 0
+          p: 0.5
+        - id: bbh-judgment-mini-0008
+          target: 1
+          hit: 1
+          p: 0.1582
+    jev:
+      model: typesafe/jev-1.13
+      provider: openrouter
+      family: Jev
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.042
+      smoke:
+        arm: jev
+        mode: typed
+        usable: true
+        reasons: []
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 1.0
+        cost: 7.9464e-05
+        per_item:
+        - id: bbh-judgment-mini-0000
+          target: 0
+          hit: 1
+          p: 0.76
+          pred: null
+        - id: bbh-judgment-mini-0002
+          target: 0
+          hit: 1
+          p: 0.89
+          pred: null
+        - id: bbh-judgment-mini-0004
+          target: 0
+          hit: 1
+          p: 0.89
+          pred: null
+        - id: bbh-judgment-mini-0001
+          target: 1
+          hit: 1
+          p: 0.07
+          pred: null
+        - id: bbh-judgment-mini-0008
+          target: 1
+          hit: 1
+          p: 0.2
+          pred: null
+  protocol:
+    decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
+    logprob_call:
+      max_tokens: 1
+      temperature: 0
+      logprobs: true
+      top_logprobs: 8
+      reasoning:
+        enabled: false
+    provider_pin: provider.only=[pin], allow_fallbacks=false, require_parameters=true
+    binary: '극성 반전 2회 호출 평균: p = ½[P(A|choices[0]=A) + P(B|choices[0]=B)]'
+    multiclass: 항목별 결정론적 셔플 뒤 원 인덱스로 복원(generic) 또는 파일에 든 셔플 그대로(legacy-seed)
+    typed: Jev noul(이진)/choice(다지), 질문을 instructions 로 그대로 전달
+    label_mass: 상위 8토큰 중 라벨 토큰 질량 < 0.5 이면 오류로 두고 세지 않음
+    renormalize: 라벨 토큰 확률을 라벨 집합 안에서 재정규화
+  items_sha256: 27390052c73aa22422a79d74220d976a7d5f89766a3c7a1564fc83e9b94d7402
+results:
+- results/bbh-judgment-mini-run.json
+result_summary:
+  glm:
+    acc: 0.46
+    ci95:
+    - 0.36560643853331865
+    - 0.5573531460647615
+    auroc: 0.6751207729468599
+    brier: 0.2707745338706457
+    n: 100
+    prob_source: logprob
+    model: z-ai/glm-4.7-flash
+    source_badge: author-run
+  qwen:
+    acc: 0.67
+    ci95:
+    - 0.5730516033971138
+    - 0.7543701620610456
+    auroc: 0.749597423510467
+    brier: 0.19855782199845176
+    n: 100
+    prob_source: logprob
+    model: qwen/qwen3.8-27b
+    source_badge: author-run
+  jev:
+    acc: 0.82
+    ci95:
+    - 0.7333246397578691
+    - 0.8829986834574897
+    auroc: 0.9186795491143317
+    brier: 0.12227299999999997
+    n: 100
+    prob_source: typed
+    model: typesafe/jev-1.13
+    source_badge: author-run
+  deepseek:
+    acc: 0.5348837209302325
+    ci95:
+    - 0.43024115998789875
+    - 0.6365430468828601
+    auroc: 0.6288377192982456
+    brier: 0.29758965406010557
+    n: 86
+    prob_source: logprob
+    model: deepseek/deepseek-v4-flash
+    source_badge: author-run

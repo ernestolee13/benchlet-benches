@@ -1,0 +1,7386 @@
+{
+ "task": "bbh-judgment-mini",
+ "bench": "bbh-judgment-mini@1",
+ "items_sha256": "27390052c73aa22422a79d74220d976a7d5f89766a3c7a1564fc83e9b94d7402",
+ "template": "generic",
+ "date": "2026-10-05",
+ "arms": {
+  "glm": {
+   "model": "z-ai/glm-4.7-flash",
+   "provider": "cloudflare",
+   "family": "GLM",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.0605,
+   "smoke": {
+    "arm": "glm",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [
+     "뻔한 5건 중 2건 틀림 (bbh-judgment-mini-0001, bbh-judgment-mini-0008). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점"
+    ],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9165,
+    "spread": 0.0,
+    "distinct_p": 7,
+    "n_calls": 13,
+    "smoke_acc": 0.6,
+    "cost": 0.0001348545,
+    "per_item": [
+     {
+      "id": "bbh-judgment-mini-0000",
+      "target": 0,
+      "hit": 1,
+      "p": 0.7311
+     },
+     {
+      "id": "bbh-judgment-mini-0002",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9384
+     },
+     {
+      "id": "bbh-judgment-mini-0004",
+      "target": 0,
+      "hit": 1,
+      "p": 0.5612
+     },
+     {
+      "id": "bbh-judgment-mini-0001",
+      "target": 1,
+      "hit": 0,
+      "p": 0.6225
+     },
+     {
+      "id": "bbh-judgment-mini-0008",
+      "target": 1,
+      "hit": 0,
+      "p": 0.5
+     }
+    ]
+   }
+  },
+  "qwen": {
+   "model": "qwen/qwen3.8-27b",
+   "provider": "parasail",
+   "family": "Qwen",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.0605,
+   "smoke": {
+    "arm": "qwen",
+    "mode": "logprob",
+    "usable": false,
+    "reasons": [
+     "3회 재현 편차 0.06 > 0.05",
+     "뻔한 5건 중 1건 틀림 (bbh-judgment-mini-0004). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점"
+    ],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9921,
+    "spread": 0.061457226580313495,
+    "distinct_p": 9,
+    "n_calls": 13,
+    "smoke_acc": 0.8,
+    "cost": 0.0001341285,
+    "per_item": [
+     {
+      "id": "bbh-judgment-mini-0000",
+      "target": 0,
+      "hit": 1,
+      "p": 0.6738
+     },
+     {
+      "id": "bbh-judgment-mini-0002",
+      "target": 0,
+      "hit": 1,
+      "p": 0.5896
+     },
+     {
+      "id": "bbh-judgment-mini-0004",
+      "target": 0,
+      "hit": 0,
+      "p": 0.4664
+     },
+     {
+      "id": "bbh-judgment-mini-0001",
+      "target": 1,
+      "hit": 1,
+      "p": 0.3954
+     },
+     {
+      "id": "bbh-judgment-mini-0008",
+      "target": 1,
+      "hit": 1,
+      "p": 0.4266
+     }
+    ]
+   }
+  },
+  "deepseek": {
+   "model": "deepseek/deepseek-v4-flash",
+   "provider": "digitalocean",
+   "family": "DeepSeek",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.14,
+   "smoke": {
+    "arm": "deepseek",
+    "mode": "logprob",
+    "usable": false,
+    "reasons": [
+     "3회 재현 편차 0.05 > 0.05",
+     "뻔한 5건 중 1건 틀림 (bbh-judgment-mini-0001). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점"
+    ],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9292,
+    "spread": 0.051879871164473346,
+    "distinct_p": 7,
+    "n_calls": 13,
+    "smoke_acc": 0.8,
+    "cost": 0.00030086,
+    "per_item": [
+     {
+      "id": "bbh-judgment-mini-0000",
+      "target": 0,
+      "hit": 1,
+      "p": 0.7051
+     },
+     {
+      "id": "bbh-judgment-mini-0002",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9398
+     },
+     {
+      "id": "bbh-judgment-mini-0004",
+      "target": 0,
+      "hit": 1,
+      "p": 0.7215
+     },
+     {
+      "id": "bbh-judgment-mini-0001",
+      "target": 1,
+      "hit": 0,
+      "p": 0.5
+     },
+     {
+      "id": "bbh-judgment-mini-0008",
+      "target": 1,
+      "hit": 1,
+      "p": 0.1582
+     }
+    ]
+   }
+  },
+  "jev": {
+   "model": "typesafe/jev-1.13",
+   "provider": "openrouter",
+   "family": "Jev",
+   "mode": "typed",
+   "prob_source": "typed",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.042,
+   "smoke": {
+    "arm": "jev",
+    "mode": "typed",
+    "usable": true,
+    "reasons": [],
+    "has_logprobs": null,
+    "reasoning_tokens_zero": null,
+    "provider_match": null,
+    "mass_min": null,
+    "spread": null,
+    "distinct_p": null,
+    "n_calls": 5,
+    "smoke_acc": 1.0,
+    "cost": 7.9464e-05,
+    "per_item": [
+     {
+      "id": "bbh-judgment-mini-0000",
+      "target": 0,
+      "hit": 1,
+      "p": 0.76,
+      "pred": null
+     },
+     {
+      "id": "bbh-judgment-mini-0002",
+      "target": 0,
+      "hit": 1,
+      "p": 0.89,
+      "pred": null
+     },
+     {
+      "id": "bbh-judgment-mini-0004",
+      "target": 0,
+      "hit": 1,
+      "p": 0.89,
+      "pred": null
+     },
+     {
+      "id": "bbh-judgment-mini-0001",
+      "target": 1,
+      "hit": 1,
+      "p": 0.07,
+      "pred": null
+     },
+     {
+      "id": "bbh-judgment-mini-0008",
+      "target": 1,
+      "hit": 1,
+      "p": 0.2,
+      "pred": null
+     }
+    ]
+   }
+  }
+ },
+ "items": [
+  {
+   "id": "bbh-judgment-mini-0000",
+   "target": 0,
+   "label": 1,
+   "class": "causal_judgement",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.7310585698407663,
+     "ms": 3680,
+     "cost": 3.0855e-05,
+     "in_tok": 510,
+     "err": null,
+     "mass": [
+      0.9845,
+      0.9932
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.6737907989248255,
+     "ms": 1114,
+     "cost": 3.0855e-05,
+     "in_tok": 510,
+     "err": null,
+     "mass": [
+      0.9981,
+      0.9957
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 302,
+     "in_tok": 490,
+     "cost": 2.058e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.76
+     },
+     "p_violation": 0.76
+    },
+    "deepseek": {
+     "p_violation": 0.5283596872551941,
+     "ms": 24562,
+     "cost": 6.916000000000001e-05,
+     "in_tok": 494,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0001",
+   "target": 1,
+   "label": 0,
+   "class": "navigate",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6224593277000263,
+     "ms": 812,
+     "cost": 1.1252999999999999e-05,
+     "in_tok": 186,
+     "err": null,
+     "mass": [
+      0.9173,
+      0.9812
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.3954420308135696,
+     "ms": 1161,
+     "cost": 1.1011e-05,
+     "in_tok": 182,
+     "err": null,
+     "mass": [
+      0.9957,
+      0.9939
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 232,
+     "in_tok": 324,
+     "cost": 1.3608e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "p_violation": 0.06
+    },
+    "deepseek": {
+     "p_violation": 0.36135007460579815,
+     "ms": 2185,
+     "cost": 2.4920000000000002e-05,
+     "in_tok": 178,
+     "err": null,
+     "mass": [
+      0.9859,
+      0.999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0002",
+   "target": 0,
+   "label": 1,
+   "class": "sports_understanding",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9383579687259114,
+     "ms": 859,
+     "cost": 8.833e-06,
+     "in_tok": 146,
+     "err": null,
+     "mass": [
+      0.9831,
+      0.9916
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5895893528345849,
+     "ms": 1040,
+     "cost": 8.591e-06,
+     "in_tok": 142,
+     "err": null,
+     "mass": [
+      0.9971,
+      0.9944
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 221,
+     "in_tok": 300,
+     "cost": 1.26e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.9
+     },
+     "p_violation": 0.9
+    },
+    "deepseek": {
+     "p_violation": 0.9400853719484226,
+     "ms": 4761,
+     "cost": 1.8760000000000003e-05,
+     "in_tok": 134,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0003",
+   "target": 0,
+   "label": 1,
+   "class": "causal_judgement",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.7200168968622379,
+     "ms": 851,
+     "cost": 3.0492e-05,
+     "in_tok": 504,
+     "err": null,
+     "mass": [
+      0.9783,
+      0.9893
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7367318342723969,
+     "ms": 1001,
+     "cost": 3.0492e-05,
+     "in_tok": 504,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 252,
+     "in_tok": 487,
+     "cost": 2.0454e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.72
+     },
+     "p_violation": 0.72
+    },
+    "deepseek": {
+     "p_violation": 0.907312957694818,
+     "ms": 4958,
+     "cost": 6.916000000000001e-05,
+     "in_tok": 494,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0004",
+   "target": 0,
+   "label": 1,
+   "class": "navigate",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296620990991,
+     "ms": 906,
+     "cost": 1.0527e-05,
+     "in_tok": 174,
+     "err": null,
+     "mass": [
+      0.952,
+      0.9828
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.46643590750485814,
+     "ms": 984,
+     "cost": 1.0285e-05,
+     "in_tok": 170,
+     "err": null,
+     "mass": [
+      0.9921,
+      0.9949
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 252,
+     "in_tok": 318,
+     "cost": 1.3356e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.92
+     },
+     "p_violation": 0.92
+    },
+    "deepseek": {
+     "p_violation": 0.7070646526883466,
+     "ms": 13952,
+     "cost": 2.324e-05,
+     "in_tok": 166,
+     "err": null,
+     "mass": [
+      0.9438,
+      0.9995
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0005",
+   "target": 0,
+   "label": 1,
+   "class": "navigate",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.720016895582865,
+     "ms": 3651,
+     "cost": 1.1373999999999998e-05,
+     "in_tok": 188,
+     "err": null,
+     "mass": [
+      0.9522,
+      0.9533
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4842238864373066,
+     "ms": 851,
+     "cost": 1.1252999999999999e-05,
+     "in_tok": 186,
+     "err": null,
+     "mass": [
+      0.9908,
+      0.9912
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 317,
+     "in_tok": 326,
+     "cost": 1.3692000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.85
+     },
+     "p_violation": 0.85
+    },
+    "deepseek": {
+     "p_violation": 0.733413515405606,
+     "ms": 10967,
+     "cost": 2.5200000000000003e-05,
+     "in_tok": 180,
+     "err": null,
+     "mass": [
+      0.9725,
+      0.9952
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0006",
+   "target": 1,
+   "label": 0,
+   "class": "navigate",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6224593312018546,
+     "ms": 1042,
+     "cost": 1.0406e-05,
+     "in_tok": 172,
+     "err": null,
+     "mass": [
+      0.9121,
+      0.9756
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.419374630581667,
+     "ms": 1049,
+     "cost": 1.0164e-05,
+     "in_tok": 168,
+     "err": null,
+     "mass": [
+      0.9872,
+      0.9876
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 235,
+     "in_tok": 317,
+     "cost": 1.3314000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.08
+     },
+     "p_violation": 0.08
+    },
+    "deepseek": {
+     "p_violation": 0.8409751914900399,
+     "ms": 35877,
+     "cost": 2.2960000000000004e-05,
+     "in_tok": 164,
+     "err": null,
+     "mass": [
+      0.9815,
+      0.9994
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0007",
+   "target": 0,
+   "label": 1,
+   "class": "causal_judgement",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 1043,
+     "cost": 2.7224999999999998e-05,
+     "in_tok": 450,
+     "err": null,
+     "mass": [
+      0.9852,
+      0.9818
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4583371547766854,
+     "ms": 1001,
+     "cost": 2.7224999999999998e-05,
+     "in_tok": 450,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9978
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 242,
+     "in_tok": 460,
+     "cost": 1.932e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.2
+     },
+     "p_violation": 0.2
+    },
+    "deepseek": {
+     "p_violation": 0.01233953246993489,
+     "ms": 5795,
+     "cost": 6.16e-05,
+     "in_tok": 440,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0008",
+   "target": 1,
+   "label": 0,
+   "class": "causal_judgement",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.43877033439907276,
+     "ms": 1338,
+     "cost": 2.7104e-05,
+     "in_tok": 448,
+     "err": null,
+     "mass": [
+      0.9868,
+      0.9912
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4265840444467984,
+     "ms": 1207,
+     "cost": 2.7104e-05,
+     "in_tok": 448,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9979
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 250,
+     "in_tok": 460,
+     "cost": 1.932e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.21
+     },
+     "p_violation": 0.21
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 41801,
+     "cost": 3.0520000000000006e-05,
+     "in_tok": 218,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      null,
+      0.9998
+     ],
+     "provider": null,
+     "reasoning_tokens": [
+      null,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0009",
+   "target": 1,
+   "label": 0,
+   "class": "causal_judgement",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6224593312018546,
+     "ms": 1044,
+     "cost": 3.2306999999999994e-05,
+     "in_tok": 534,
+     "err": null,
+     "mass": [
+      0.975,
+      0.9864
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4536667000229651,
+     "ms": 1576,
+     "cost": 3.3033e-05,
+     "in_tok": 546,
+     "err": null,
+     "mass": [
+      0.9981,
+      0.9968
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 332,
+     "in_tok": 511,
+     "cost": 2.1462e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.67
+     },
+     "p_violation": 0.67
+    },
+    "deepseek": {
+     "p_violation": 0.6697381810302446,
+     "ms": 6676,
+     "cost": 7.336000000000002e-05,
+     "in_tok": 524,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0010",
+   "target": 0,
+   "label": 1,
+   "class": "causal_judgement",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4387703343990727,
+     "ms": 2282,
+     "cost": 2.783e-05,
+     "in_tok": 460,
+     "err": null,
+     "mass": [
+      0.9886,
+      0.9859
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.3256080718826171,
+     "ms": 2027,
+     "cost": 2.783e-05,
+     "in_tok": 460,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.9971
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 391,
+     "in_tok": 465,
+     "cost": 1.953e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.25
+     },
+     "p_violation": 0.25
+    },
+    "deepseek": {
+     "p_violation": 0.008577483530095647,
+     "ms": 22156,
+     "cost": 6.3e-05,
+     "in_tok": 450,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0011",
+   "target": 1,
+   "label": 0,
+   "class": "navigate",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6155292863852563,
+     "ms": 8444,
+     "cost": 9.68e-06,
+     "in_tok": 160,
+     "err": null,
+     "mass": [
+      0.8581,
+      0.9686
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4351507412484352,
+     "ms": 1534,
+     "cost": 9.559e-06,
+     "in_tok": 158,
+     "err": null,
+     "mass": [
+      0.9945,
+      0.9954
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 293,
+     "in_tok": 312,
+     "cost": 1.3104e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.03
+     },
+     "p_violation": 0.03
+    },
+    "deepseek": {
+     "p_violation": 0.7120709085873038,
+     "ms": 4690,
+     "cost": 2.1280000000000003e-05,
+     "in_tok": 152,
+     "err": null,
+     "mass": [
+      0.9883,
+      0.9976
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0012",
+   "target": 1,
+   "label": 0,
+   "class": "sports_understanding",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5216723759575866,
+     "ms": 820,
+     "cost": 9.559e-06,
+     "in_tok": 158,
+     "err": null,
+     "mass": [
+      0.9865,
+      0.9895
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.09337480345137333,
+     "ms": 1123,
+     "cost": 9.316999999999999e-06,
+     "in_tok": 154,
+     "err": null,
+     "mass": [
+      0.9963,
+      0.9967
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 245,
+     "in_tok": 306,
+     "cost": 1.2852000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.02
+     },
+     "p_violation": 0.02
+    },
+    "deepseek": {
+     "p_violation": 0.014693538727199834,
+     "ms": 24910,
+     "cost": 2.0160000000000003e-05,
+     "in_tok": 144,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9989
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0013",
+   "target": 0,
+   "label": 1,
+   "class": "sports_understanding",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6650573897968559,
+     "ms": 1213,
+     "cost": 9.559e-06,
+     "in_tok": 158,
+     "err": null,
+     "mass": [
+      0.9621,
+      0.9802
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.2029601700154071,
+     "ms": 2211,
+     "cost": 9.316999999999999e-06,
+     "in_tok": 154,
+     "err": null,
+     "mass": [
+      0.9925,
+      0.9951
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 446,
+     "in_tok": 307,
+     "cost": 1.2894e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.14
+     },
+     "p_violation": 0.14
+    },
+    "deepseek": {
+     "p_violation": 0.047425872838741834,
+     "ms": 5447,
+     "cost": 2.0160000000000003e-05,
+     "in_tok": 144,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9995
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0014",
+   "target": 0,
+   "label": 1,
+   "class": "causal_judgement",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.49999999299634357,
+     "ms": 920,
+     "cost": 2.2022e-05,
+     "in_tok": 364,
+     "err": null,
+     "mass": [
+      0.98,
+      0.9912
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.8290484716061586,
+     "ms": 726,
+     "cost": 2.2022e-05,
+     "in_tok": 364,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9986
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 224,
+     "in_tok": 418,
+     "cost": 1.7556000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.73
+     },
+     "p_violation": 0.73
+    },
+    "deepseek": {
+     "p_violation": 0.4626735319648843,
+     "ms": 8117,
+     "cost": 5.096000000000001e-05,
+     "in_tok": 364,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9991
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0015",
+   "target": 0,
+   "label": 1,
+   "class": "navigate",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6767589519861836,
+     "ms": 1046,
+     "cost": 1.1252999999999999e-05,
+     "in_tok": 186,
+     "err": null,
+     "mass": [
+      0.9486,
+      0.9671
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4888075652484051,
+     "ms": 1753,
+     "cost": 1.1011e-05,
+     "in_tok": 182,
+     "err": null,
+     "mass": [
+      0.9945,
+      0.9933
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 331,
+     "in_tok": 324,
+     "cost": 1.3608e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.88
+     },
+     "p_violation": 0.88
+    },
+    "deepseek": {
+     "p_violation": 0.870858154096753,
+     "ms": 5241,
+     "cost": 2.4920000000000002e-05,
+     "in_tok": 178,
+     "err": null,
+     "mass": [
+      0.9928,
+      0.9936
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0016",
+   "target": 0,
+   "label": 1,
+   "class": "navigate",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6224593312018546,
+     "ms": 976,
+     "cost": 1.1373999999999998e-05,
+     "in_tok": 188,
+     "err": null,
+     "mass": [
+      0.9407,
+      0.9689
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.403458375612408,
+     "ms": 879,
+     "cost": 1.1252999999999999e-05,
+     "in_tok": 186,
+     "err": null,
+     "mass": [
+      0.9916,
+      0.9871
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 227,
+     "in_tok": 326,
+     "cost": 1.3692000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.66
+     },
+     "p_violation": 0.66
+    },
+    "deepseek": {
+     "p_violation": 0.8347636433251984,
+     "ms": 19506,
+     "cost": 2.5200000000000003e-05,
+     "in_tok": 180,
+     "err": null,
+     "mass": [
+      0.9796,
+      0.9973
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0017",
+   "target": 1,
+   "label": 0,
+   "class": "navigate",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6224593171945417,
+     "ms": 784,
+     "cost": 1.1011e-05,
+     "in_tok": 182,
+     "err": null,
+     "mass": [
+      0.9466,
+      0.9706
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.44778751080743884,
+     "ms": 1046,
+     "cost": 1.0769e-05,
+     "in_tok": 178,
+     "err": null,
+     "mass": [
+      0.9906,
+      0.9879
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 262,
+     "in_tok": 322,
+     "cost": 1.3524000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.14
+     },
+     "p_violation": 0.14
+    },
+    "deepseek": {
+     "p_violation": 0.8409751946668614,
+     "ms": 3658,
+     "cost": 2.4360000000000004e-05,
+     "in_tok": 174,
+     "err": null,
+     "mass": [
+      0.9929,
+      0.9989
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0018",
+   "target": 0,
+   "label": 1,
+   "class": "sports_understanding",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9166856056040014,
+     "ms": 1615,
+     "cost": 8.954e-06,
+     "in_tok": 148,
+     "err": null,
+     "mass": [
+      0.9843,
+      0.9933
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9351660149192988,
+     "ms": 805,
+     "cost": 8.712e-06,
+     "in_tok": 144,
+     "err": null,
+     "mass": [
+      0.9958,
+      0.9965
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 217,
+     "in_tok": 302,
+     "cost": 1.2684000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.93
+     },
+     "p_violation": 0.93
+    },
+    "deepseek": {
+     "p_violation": 0.8621828601466552,
+     "ms": 7543,
+     "cost": 1.8760000000000003e-05,
+     "in_tok": 134,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9993
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0019",
+   "target": 1,
+   "label": 0,
+   "class": "navigate",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6767589519861836,
+     "ms": 819,
+     "cost": 1.2705e-05,
+     "in_tok": 210,
+     "err": null,
+     "mass": [
+      0.8947,
+      0.9417
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.3852788982925423,
+     "ms": 1059,
+     "cost": 1.2462999999999999e-05,
+     "in_tok": 206,
+     "err": null,
+     "mass": [
+      0.9913,
+      0.9934
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 222,
+     "in_tok": 336,
+     "cost": 1.4112e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.03
+     },
+     "p_violation": 0.03
+    },
+    "deepseek": {
+     "p_violation": 0.7799878918450626,
+     "ms": 11900,
+     "cost": 2.8280000000000004e-05,
+     "in_tok": 202,
+     "err": null,
+     "mass": [
+      0.9326,
+      0.9793
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0020",
+   "target": 1,
+   "label": 0,
+   "class": "sports_understanding",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.7120709071166544,
+     "ms": 1056,
+     "cost": 9.316999999999999e-06,
+     "in_tok": 154,
+     "err": null,
+     "mass": [
+      0.9768,
+      0.9826
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.20095283578446616,
+     "ms": 5753,
+     "cost": 9.074999999999999e-06,
+     "in_tok": 150,
+     "err": null,
+     "mass": [
+      0.9941,
+      0.9972
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 236,
+     "in_tok": 304,
+     "cost": 1.2768000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.03
+     },
+     "p_violation": 0.03
+    },
+    "deepseek": {
+     "p_violation": 0.004097016989271404,
+     "ms": 7775,
+     "cost": 1.96e-05,
+     "in_tok": 140,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0021",
+   "target": 1,
+   "label": 0,
+   "class": "navigate",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 843,
+     "cost": 1.0527e-05,
+     "in_tok": 174,
+     "err": null,
+     "mass": [
+      0.949,
+      0.979
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.3636065184374054,
+     "ms": 962,
+     "cost": 1.0285e-05,
+     "in_tok": 170,
+     "err": null,
+     "mass": [
+      0.9935,
+      0.991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 240,
+     "in_tok": 318,
+     "cost": 1.3356e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.03
+     },
+     "p_violation": 0.03
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 39758,
+     "cost": 1.162e-05,
+     "in_tok": 83,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      0.9364,
+      null
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      null
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0022",
+   "target": 0,
+   "label": 1,
+   "class": "causal_judgement",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5542996242861573,
+     "ms": 927,
+     "cost": 5.5902e-05,
+     "in_tok": 924,
+     "err": null,
+     "mass": [
+      0.9926,
+      0.987
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.8850742991841324,
+     "ms": 942,
+     "cost": 5.7596e-05,
+     "in_tok": 952,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 225,
+     "in_tok": 715,
+     "cost": 3.0030000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.83
+     },
+     "p_violation": 0.83
+    },
+    "deepseek": {
+     "p_violation": 0.8586066073344842,
+     "ms": 3594,
+     "cost": 0.00012712000000000002,
+     "in_tok": 908,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0023",
+   "target": 1,
+   "label": 0,
+   "class": "sports_understanding",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5975575702734393,
+     "ms": 831,
+     "cost": 8.954e-06,
+     "in_tok": 148,
+     "err": null,
+     "mass": [
+      0.9821,
+      0.9843
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5283596839867692,
+     "ms": 1421,
+     "cost": 8.712e-06,
+     "in_tok": 144,
+     "err": null,
+     "mass": [
+      0.9944,
+      0.9915
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 368,
+     "in_tok": 301,
+     "cost": 1.2642e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1
+     },
+     "p_violation": 0.1
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 38738,
+     "cost": 9.52e-06,
+     "in_tok": 68,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      1.0,
+      null
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      null
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0024",
+   "target": 1,
+   "label": 0,
+   "class": "causal_judgement",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6587872380968218,
+     "ms": 945,
+     "cost": 3.4243e-05,
+     "in_tok": 566,
+     "err": null,
+     "mass": [
+      0.9852,
+      0.992
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5811241906997909,
+     "ms": 896,
+     "cost": 3.4364e-05,
+     "in_tok": 568,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.9988
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 344,
+     "in_tok": 519,
+     "cost": 2.1798000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.47
+     },
+     "p_violation": 0.47
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 74707,
+     "cost": 3.892e-05,
+     "in_tok": 278,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      1.0,
+      null
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      null
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0025",
+   "target": 0,
+   "label": 1,
+   "class": "causal_judgement",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5542996237140752,
+     "ms": 1358,
+     "cost": 7.1511e-05,
+     "in_tok": 1182,
+     "err": null,
+     "mass": [
+      0.9924,
+      0.9887
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.814963415368946,
+     "ms": 808,
+     "cost": 7.417300000000001e-05,
+     "in_tok": 1226,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9988
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 244,
+     "in_tok": 854,
+     "cost": 3.5868e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.79
+     },
+     "p_violation": 0.79
+    },
+    "deepseek": {
+     "p_violation": 0.4414988975867776,
+     "ms": 21274,
+     "cost": 0.00016324000000000002,
+     "in_tok": 1166,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0026",
+   "target": 0,
+   "label": 1,
+   "class": "sports_understanding",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.7733005691089625,
+     "ms": 971,
+     "cost": 9.438e-06,
+     "in_tok": 156,
+     "err": null,
+     "mass": [
+      0.9627,
+      0.9673
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.345745380146314,
+     "ms": 681,
+     "cost": 9.196e-06,
+     "in_tok": 152,
+     "err": null,
+     "mass": [
+      0.9935,
+      0.9967
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 229,
+     "in_tok": 307,
+     "cost": 1.2894e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.12
+     },
+     "p_violation": 0.12
+    },
+    "deepseek": {
+     "p_violation": 0.384192730481944,
+     "ms": 19022,
+     "cost": 2.0160000000000003e-05,
+     "in_tok": 144,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9989
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0027",
+   "target": 1,
+   "label": 0,
+   "class": "navigate",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.622459338205511,
+     "ms": 837,
+     "cost": 1.2705e-05,
+     "in_tok": 210,
+     "err": null,
+     "mass": [
+      0.941,
+      0.9842
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.38213887174472483,
+     "ms": 995,
+     "cost": 1.2583999999999998e-05,
+     "in_tok": 208,
+     "err": null,
+     "mass": [
+      0.9954,
+      0.9919
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 255,
+     "in_tok": 337,
+     "cost": 1.4154e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.02
+     },
+     "p_violation": 0.02
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 40186,
+     "cost": 1.4140000000000002e-05,
+     "in_tok": 101,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      null,
+      0.989
+     ],
+     "provider": null,
+     "reasoning_tokens": [
+      null,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0028",
+   "target": 1,
+   "label": 0,
+   "class": "sports_understanding",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6587872369855942,
+     "ms": 1037,
+     "cost": 8.954e-06,
+     "in_tok": 148,
+     "err": null,
+     "mass": [
+      0.9797,
+      0.981
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.2722570412041934,
+     "ms": 845,
+     "cost": 8.712e-06,
+     "in_tok": 144,
+     "err": null,
+     "mass": [
+      0.995,
+      0.9975
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 323,
+     "in_tok": 301,
+     "cost": 1.2642e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.04
+     },
+     "p_violation": 0.04
+    },
+    "deepseek": {
+     "p_violation": 0.17095152779887363,
+     "ms": 18520,
+     "cost": 1.8480000000000003e-05,
+     "in_tok": 132,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9933
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0029",
+   "target": 1,
+   "label": 0,
+   "class": "navigate",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6224593312018545,
+     "ms": 1054,
+     "cost": 1.0406e-05,
+     "in_tok": 172,
+     "err": null,
+     "mass": [
+      0.9379,
+      0.9715
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4251322240903883,
+     "ms": 1116,
+     "cost": 1.0164e-05,
+     "in_tok": 168,
+     "err": null,
+     "mass": [
+      0.9834,
+      0.9884
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 235,
+     "in_tok": 317,
+     "cost": 1.3314000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "p_violation": 0.06
+    },
+    "deepseek": {
+     "p_violation": 0.9320275890153082,
+     "ms": 12648,
+     "cost": 2.2960000000000004e-05,
+     "in_tok": 164,
+     "err": null,
+     "mass": [
+      0.9948,
+      0.9985
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0030",
+   "target": 0,
+   "label": 1,
+   "class": "causal_judgement",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.7743165321600887,
+     "ms": 867,
+     "cost": 2.9523999999999997e-05,
+     "in_tok": 488,
+     "err": null,
+     "mass": [
+      0.9823,
+      0.9908
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7932910560712882,
+     "ms": 911,
+     "cost": 2.9523999999999997e-05,
+     "in_tok": 488,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9986
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 232,
+     "in_tok": 479,
+     "cost": 2.0118e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.84
+     },
+     "p_violation": 0.84
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 74075,
+     "cost": 0.0,
+     "in_tok": 0,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      null,
+      null
+     ],
+     "provider": null,
+     "reasoning_tokens": [
+      null,
+      null
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0031",
+   "target": 1,
+   "label": 0,
+   "class": "sports_understanding",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.7733005787241858,
+     "ms": 841,
+     "cost": 9.196e-06,
+     "in_tok": 152,
+     "err": null,
+     "mass": [
+      0.985,
+      0.9909
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.6155292893150024,
+     "ms": 828,
+     "cost": 8.954e-06,
+     "in_tok": 148,
+     "err": null,
+     "mass": [
+      0.9966,
+      0.9951
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 217,
+     "in_tok": 303,
+     "cost": 1.2726e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.62
+     },
+     "p_violation": 0.62
+    },
+    "deepseek": {
+     "p_violation": 0.8105671521989584,
+     "ms": 8551,
+     "cost": 1.932e-05,
+     "in_tok": 138,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9996
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0032",
+   "target": 1,
+   "label": 0,
+   "class": "sports_understanding",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.7120709071166544,
+     "ms": 802,
+     "cost": 8.833e-06,
+     "in_tok": 146,
+     "err": null,
+     "mass": [
+      0.978,
+      0.9875
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.05909251291761329,
+     "ms": 1628,
+     "cost": 8.591e-06,
+     "in_tok": 142,
+     "err": null,
+     "mass": [
+      0.9952,
+      0.9981
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 271,
+     "in_tok": 300,
+     "cost": 1.26e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.03
+     },
+     "p_violation": 0.03
+    },
+    "deepseek": {
+     "p_violation": 0.009956472122475805,
+     "ms": 9886,
+     "cost": 1.8760000000000003e-05,
+     "in_tok": 134,
+     "err": null,
+     "mass": [
+      0.9997,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0033",
+   "target": 0,
+   "label": 1,
+   "class": "sports_understanding",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6903985389889412,
+     "ms": 792,
+     "cost": 9.196e-06,
+     "in_tok": 152,
+     "err": null,
+     "mass": [
+      0.9853,
+      0.9922
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7200169059202044,
+     "ms": 1671,
+     "cost": 8.954e-06,
+     "in_tok": 148,
+     "err": null,
+     "mass": [
+      0.9957,
+      0.9974
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 239,
+     "in_tok": 304,
+     "cost": 1.2768000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.7
+     },
+     "p_violation": 0.7
+    },
+    "deepseek": {
+     "p_violation": 0.2124832724560976,
+     "ms": 12847,
+     "cost": 1.96e-05,
+     "in_tok": 140,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0034",
+   "target": 1,
+   "label": 0,
+   "class": "navigate",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6224593382055108,
+     "ms": 1142,
+     "cost": 9.801e-06,
+     "in_tok": 162,
+     "err": null,
+     "mass": [
+      0.9291,
+      0.9684
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.3589044009425051,
+     "ms": 964,
+     "cost": 9.559e-06,
+     "in_tok": 158,
+     "err": null,
+     "mass": [
+      0.9839,
+      0.9878
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 214,
+     "in_tok": 312,
+     "cost": 1.3104e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "p_violation": 0.06
+    },
+    "deepseek": {
+     "p_violation": 0.8059278172796163,
+     "ms": 3264,
+     "cost": 2.1560000000000004e-05,
+     "in_tok": 154,
+     "err": null,
+     "mass": [
+      0.9898,
+      0.9896
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0035",
+   "target": 1,
+   "label": 0,
+   "class": "navigate",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6767589619195861,
+     "ms": 1307,
+     "cost": 1.4157e-05,
+     "in_tok": 234,
+     "err": null,
+     "mass": [
+      0.8497,
+      0.9706
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.3173771643103196,
+     "ms": 878,
+     "cost": 1.4157e-05,
+     "in_tok": 234,
+     "err": null,
+     "mass": [
+      0.9966,
+      0.9964
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 331,
+     "in_tok": 350,
+     "cost": 1.4700000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "p_violation": 0.05
+    },
+    "deepseek": {
+     "p_violation": 0.7541792192718955,
+     "ms": 5324,
+     "cost": 3.164e-05,
+     "in_tok": 226,
+     "err": null,
+     "mass": [
+      0.9551,
+      0.9705
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0036",
+   "target": 0,
+   "label": 1,
+   "class": "sports_understanding",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8059278320159529,
+     "ms": 842,
+     "cost": 8.712e-06,
+     "in_tok": 144,
+     "err": null,
+     "mass": [
+      0.9845,
+      0.9865
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.2627939289733533,
+     "ms": 4120,
+     "cost": 8.469999999999999e-06,
+     "in_tok": 140,
+     "err": null,
+     "mass": [
+      0.9874,
+      0.9928
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 389,
+     "in_tok": 299,
+     "cost": 1.2558e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.85
+     },
+     "p_violation": 0.85
+    },
+    "deepseek": {
+     "p_violation": 0.5691978852407005,
+     "ms": 4420,
+     "cost": 1.82e-05,
+     "in_tok": 130,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9978
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0037",
+   "target": 0,
+   "label": 1,
+   "class": "sports_understanding",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8059278304514266,
+     "ms": 12940,
+     "cost": 9.801e-06,
+     "in_tok": 162,
+     "err": null,
+     "mass": [
+      0.9722,
+      0.991
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.6274574906768259,
+     "ms": 2423,
+     "cost": 9.559e-06,
+     "in_tok": 158,
+     "err": null,
+     "mass": [
+      0.9959,
+      0.9984
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 404,
+     "in_tok": 308,
+     "cost": 1.2936000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.77
+     },
+     "p_violation": 0.77
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 37991,
+     "cost": 1.036e-05,
+     "in_tok": 74,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      null,
+      0.9995
+     ],
+     "provider": null,
+     "reasoning_tokens": [
+      null,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0038",
+   "target": 0,
+   "label": 1,
+   "class": "sports_understanding",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9530777993946269,
+     "ms": 1042,
+     "cost": 8.954e-06,
+     "in_tok": 148,
+     "err": null,
+     "mass": [
+      0.9854,
+      0.9949
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9490922313305579,
+     "ms": 1049,
+     "cost": 8.712e-06,
+     "in_tok": 144,
+     "err": null,
+     "mass": [
+      0.9952,
+      0.9974
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 231,
+     "in_tok": 301,
+     "cost": 1.2642e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.93
+     },
+     "p_violation": 0.93
+    },
+    "deepseek": {
+     "p_violation": 0.8112231620348392,
+     "ms": 5714,
+     "cost": 1.904e-05,
+     "in_tok": 136,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9993
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0039",
+   "target": 1,
+   "label": 0,
+   "class": "sports_understanding",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5316113023323116,
+     "ms": 807,
+     "cost": 8.954e-06,
+     "in_tok": 148,
+     "err": null,
+     "mass": [
+      0.9706,
+      0.9807
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.20045279137314084,
+     "ms": 738,
+     "cost": 8.712e-06,
+     "in_tok": 144,
+     "err": null,
+     "mass": [
+      0.9933,
+      0.9967
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 223,
+     "in_tok": 301,
+     "cost": 1.2642e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.03
+     },
+     "p_violation": 0.03
+    },
+    "deepseek": {
+     "p_violation": 0.038144371396189036,
+     "ms": 9512,
+     "cost": 1.8760000000000003e-05,
+     "in_tok": 134,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0040",
+   "target": 0,
+   "label": 1,
+   "class": "sports_understanding",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.7516282038076053,
+     "ms": 806,
+     "cost": 9.438e-06,
+     "in_tok": 156,
+     "err": null,
+     "mass": [
+      0.979,
+      0.9835
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.36651129781706754,
+     "ms": 688,
+     "cost": 9.196e-06,
+     "in_tok": 152,
+     "err": null,
+     "mass": [
+      0.9942,
+      0.9949
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 253,
+     "in_tok": 305,
+     "cost": 1.2810000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.55
+     },
+     "p_violation": 0.55
+    },
+    "deepseek": {
+     "p_violation": 0.30480118680579915,
+     "ms": 11389,
+     "cost": 1.9880000000000003e-05,
+     "in_tok": 142,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.992
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0041",
+   "target": 0,
+   "label": 1,
+   "class": "sports_understanding",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8708581518089946,
+     "ms": 1051,
+     "cost": 9.316999999999999e-06,
+     "in_tok": 154,
+     "err": null,
+     "mass": [
+      0.9856,
+      0.9819
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.8229797705820208,
+     "ms": 1043,
+     "cost": 9.074999999999999e-06,
+     "in_tok": 150,
+     "err": null,
+     "mass": [
+      0.9947,
+      0.9952
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 304,
+     "in_tok": 305,
+     "cost": 1.2810000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.85
+     },
+     "p_violation": 0.85
+    },
+    "deepseek": {
+     "p_violation": 0.6570642293313292,
+     "ms": 18787,
+     "cost": 1.9880000000000003e-05,
+     "in_tok": 142,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0042",
+   "target": 0,
+   "label": 1,
+   "class": "navigate",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6767589549159296,
+     "ms": 828,
+     "cost": 1.1252999999999999e-05,
+     "in_tok": 186,
+     "err": null,
+     "mass": [
+      0.9346,
+      0.9838
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5679885957397127,
+     "ms": 1089,
+     "cost": 1.1132e-05,
+     "in_tok": 184,
+     "err": null,
+     "mass": [
+      0.992,
+      0.9935
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 304,
+     "in_tok": 325,
+     "cost": 1.365e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.86
+     },
+     "p_violation": 0.86
+    },
+    "deepseek": {
+     "p_violation": 0.8708581431342446,
+     "ms": 5089,
+     "cost": 2.4920000000000002e-05,
+     "in_tok": 178,
+     "err": null,
+     "mass": [
+      0.9928,
+      0.9977
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0043",
+   "target": 1,
+   "label": 0,
+   "class": "sports_understanding",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8941311234631141,
+     "ms": 1341,
+     "cost": 9.074999999999999e-06,
+     "in_tok": 150,
+     "err": null,
+     "mass": [
+      0.9814,
+      0.9927
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.20045278188799714,
+     "ms": 1055,
+     "cost": 8.833e-06,
+     "in_tok": 146,
+     "err": null,
+     "mass": [
+      0.9924,
+      0.9894
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 334,
+     "in_tok": 304,
+     "cost": 1.2768000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.08
+     },
+     "p_violation": 0.08
+    },
+    "deepseek": {
+     "p_violation": 0.4395528947114895,
+     "ms": 13159,
+     "cost": 1.904e-05,
+     "in_tok": 136,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0044",
+   "target": 1,
+   "label": 0,
+   "class": "navigate",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6224593382055109,
+     "ms": 958,
+     "cost": 1.1373999999999998e-05,
+     "in_tok": 188,
+     "err": null,
+     "mass": [
+      0.914,
+      0.9682
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5,
+     "ms": 972,
+     "cost": 1.1252999999999999e-05,
+     "in_tok": 186,
+     "err": null,
+     "mass": [
+      0.9872,
+      0.9905
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 234,
+     "in_tok": 326,
+     "cost": 1.3692000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.12
+     },
+     "p_violation": 0.12
+    },
+    "deepseek": {
+     "p_violation": 0.820925904927458,
+     "ms": 13709,
+     "cost": 2.5200000000000003e-05,
+     "in_tok": 180,
+     "err": null,
+     "mass": [
+      0.9982,
+      0.9988
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0045",
+   "target": 1,
+   "label": 0,
+   "class": "sports_understanding",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6508412377527423,
+     "ms": 1048,
+     "cost": 8.954e-06,
+     "in_tok": 148,
+     "err": null,
+     "mass": [
+      0.9767,
+      0.9852
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.039036427946868624,
+     "ms": 1758,
+     "cost": 8.712e-06,
+     "in_tok": 144,
+     "err": null,
+     "mass": [
+      0.9977,
+      0.9977
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 296,
+     "in_tok": 301,
+     "cost": 1.2642e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.04
+     },
+     "p_violation": 0.04
+    },
+    "deepseek": {
+     "p_violation": 0.014835108943737053,
+     "ms": 13661,
+     "cost": 1.8760000000000003e-05,
+     "in_tok": 134,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0046",
+   "target": 1,
+   "label": 0,
+   "class": "sports_understanding",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8276001948076943,
+     "ms": 2122,
+     "cost": 8.954e-06,
+     "in_tok": 148,
+     "err": null,
+     "mass": [
+      0.9888,
+      0.9915
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.6334887057834548,
+     "ms": 1576,
+     "cost": 8.712e-06,
+     "in_tok": 144,
+     "err": null,
+     "mass": [
+      0.9926,
+      0.997
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 220,
+     "in_tok": 301,
+     "cost": 1.2642e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.72
+     },
+     "p_violation": 0.72
+    },
+    "deepseek": {
+     "p_violation": 0.251623410882264,
+     "ms": 13220,
+     "cost": 1.8760000000000003e-05,
+     "in_tok": 134,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0047",
+   "target": 0,
+   "label": 1,
+   "class": "navigate",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.7310585786300048,
+     "ms": 1047,
+     "cost": 1.1011e-05,
+     "in_tok": 182,
+     "err": null,
+     "mass": [
+      0.9485,
+      0.9746
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4880717929514422,
+     "ms": 1682,
+     "cost": 1.0769e-05,
+     "in_tok": 178,
+     "err": null,
+     "mass": [
+      0.9954,
+      0.991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 235,
+     "in_tok": 322,
+     "cost": 1.3524000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.92
+     },
+     "p_violation": 0.92
+    },
+    "deepseek": {
+     "p_violation": 0.7313365582503824,
+     "ms": 4149,
+     "cost": 2.4360000000000004e-05,
+     "in_tok": 174,
+     "err": null,
+     "mass": [
+      0.9907,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0048",
+   "target": 1,
+   "label": 0,
+   "class": "navigate",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5000000070036563,
+     "ms": 810,
+     "cost": 9.801e-06,
+     "in_tok": 162,
+     "err": null,
+     "mass": [
+      0.8432,
+      0.9719
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.40345837477191543,
+     "ms": 2283,
+     "cost": 9.559e-06,
+     "in_tok": 158,
+     "err": null,
+     "mass": [
+      0.9951,
+      0.9935
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 233,
+     "in_tok": 312,
+     "cost": 1.3104e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.04
+     },
+     "p_violation": 0.04
+    },
+    "deepseek": {
+     "p_violation": 0.7051186410816489,
+     "ms": 3858,
+     "cost": 2.1560000000000004e-05,
+     "in_tok": 154,
+     "err": null,
+     "mass": [
+      0.9432,
+      0.9941
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0049",
+   "target": 1,
+   "label": 0,
+   "class": "navigate",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.731058584489497,
+     "ms": 804,
+     "cost": 1.2342e-05,
+     "in_tok": 204,
+     "err": null,
+     "mass": [
+      0.8986,
+      0.9555
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.41937464020594756,
+     "ms": 2224,
+     "cost": 1.2100000000000001e-05,
+     "in_tok": 200,
+     "err": null,
+     "mass": [
+      0.993,
+      0.9917
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 247,
+     "in_tok": 333,
+     "cost": 1.3986000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.15
+     },
+     "p_violation": 0.15
+    },
+    "deepseek": {
+     "p_violation": 0.8649369965951339,
+     "ms": 3244,
+     "cost": 2.744e-05,
+     "in_tok": 196,
+     "err": null,
+     "mass": [
+      0.9909,
+      0.9984
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0050",
+   "target": 1,
+   "label": 0,
+   "class": "sports_understanding",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.49999999444386173,
+     "ms": 815,
+     "cost": 9.196e-06,
+     "in_tok": 152,
+     "err": null,
+     "mass": [
+      0.9864,
+      0.9813
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.1346799509607708,
+     "ms": 2025,
+     "cost": 8.954e-06,
+     "in_tok": 148,
+     "err": null,
+     "mass": [
+      0.9962,
+      0.9972
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 247,
+     "in_tok": 304,
+     "cost": 1.2768000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.08
+     },
+     "p_violation": 0.08
+    },
+    "deepseek": {
+     "p_violation": 0.0370751372227063,
+     "ms": 4636,
+     "cost": 1.96e-05,
+     "in_tok": 140,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9867
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0051",
+   "target": 0,
+   "label": 1,
+   "class": "navigate",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6224593312018545,
+     "ms": 777,
+     "cost": 1.1252999999999999e-05,
+     "in_tok": 186,
+     "err": null,
+     "mass": [
+      0.9439,
+      0.984
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.37335216043464414,
+     "ms": 1544,
+     "cost": 1.1132e-05,
+     "in_tok": 184,
+     "err": null,
+     "mass": [
+      0.9901,
+      0.9949
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 281,
+     "in_tok": 325,
+     "cost": 1.365e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.84
+     },
+     "p_violation": 0.84
+    },
+    "deepseek": {
+     "p_violation": 0.6155292893150024,
+     "ms": 23363,
+     "cost": 2.4920000000000002e-05,
+     "in_tok": 178,
+     "err": null,
+     "mass": [
+      0.9497,
+      0.997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0052",
+   "target": 0,
+   "label": 1,
+   "class": "navigate",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.67675895898984,
+     "ms": 1037,
+     "cost": 1.2221e-05,
+     "in_tok": 202,
+     "err": null,
+     "mass": [
+      0.9139,
+      0.9576
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4686702575594477,
+     "ms": 1557,
+     "cost": 1.2100000000000001e-05,
+     "in_tok": 200,
+     "err": null,
+     "mass": [
+      0.9936,
+      0.9944
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 254,
+     "in_tok": 333,
+     "cost": 1.3986000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.48
+     },
+     "p_violation": 0.48
+    },
+    "deepseek": {
+     "p_violation": 0.8209259025933064,
+     "ms": 8847,
+     "cost": 2.716e-05,
+     "in_tok": 194,
+     "err": null,
+     "mass": [
+      0.9739,
+      0.9967
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0053",
+   "target": 1,
+   "label": 0,
+   "class": "causal_judgement",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 1031,
+     "cost": 6.7276e-05,
+     "in_tok": 1112,
+     "err": null,
+     "mass": [
+      0.985,
+      0.9834
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.654254612115299,
+     "ms": 1404,
+     "cost": 6.9938e-05,
+     "in_tok": 1156,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9978
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 351,
+     "in_tok": 819,
+     "cost": 3.4398e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.76
+     },
+     "p_violation": 0.76
+    },
+    "deepseek": {
+     "p_violation": 0.9286123306532332,
+     "ms": 2567,
+     "cost": 0.00015288,
+     "in_tok": 1092,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9995
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0054",
+   "target": 1,
+   "label": 0,
+   "class": "causal_judgement",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6587872358743665,
+     "ms": 811,
+     "cost": 3.0975999999999996e-05,
+     "in_tok": 512,
+     "err": null,
+     "mass": [
+      0.9798,
+      0.991
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9098049497281531,
+     "ms": 1341,
+     "cost": 3.0975999999999996e-05,
+     "in_tok": 512,
+     "err": null,
+     "mass": [
+      0.999,
+      0.999
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 372,
+     "in_tok": 494,
+     "cost": 2.0748e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.81
+     },
+     "p_violation": 0.81
+    },
+    "deepseek": {
+     "p_violation": 0.6224593347269103,
+     "ms": 23672,
+     "cost": 7.000000000000001e-05,
+     "in_tok": 500,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0055",
+   "target": 1,
+   "label": 0,
+   "class": "causal_judgement",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6224593312018545,
+     "ms": 1035,
+     "cost": 1.5851e-05,
+     "in_tok": 262,
+     "err": null,
+     "mass": [
+      0.9894,
+      0.9945
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4999999964981718,
+     "ms": 809,
+     "cost": 1.5851e-05,
+     "in_tok": 262,
+     "err": null,
+     "mass": [
+      0.9979,
+      0.9977
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 257,
+     "in_tok": 367,
+     "cost": 1.5414e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.07
+     },
+     "p_violation": 0.07
+    },
+    "deepseek": {
+     "p_violation": 0.10727619106023173,
+     "ms": 23172,
+     "cost": 3.528e-05,
+     "in_tok": 252,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9996
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0056",
+   "target": 1,
+   "label": 0,
+   "class": "sports_understanding",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5142161538570273,
+     "ms": 800,
+     "cost": 9.922e-06,
+     "in_tok": 164,
+     "err": null,
+     "mass": [
+      0.9937,
+      0.9915
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.018119373256262675,
+     "ms": 2839,
+     "cost": 9.68e-06,
+     "in_tok": 160,
+     "err": null,
+     "mass": [
+      0.998,
+      0.999
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 385,
+     "in_tok": 309,
+     "cost": 1.2978e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.02
+     },
+     "p_violation": 0.02
+    },
+    "deepseek": {
+     "p_violation": 0.0033620263543095077,
+     "ms": 7138,
+     "cost": 2.1e-05,
+     "in_tok": 150,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0057",
+   "target": 0,
+   "label": 1,
+   "class": "sports_understanding",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8059278333811726,
+     "ms": 1047,
+     "cost": 9.438e-06,
+     "in_tok": 156,
+     "err": null,
+     "mass": [
+      0.9726,
+      0.992
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5144477666142018,
+     "ms": 1567,
+     "cost": 9.074999999999999e-06,
+     "in_tok": 150,
+     "err": null,
+     "mass": [
+      0.9966,
+      0.9968
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 217,
+     "in_tok": 305,
+     "cost": 1.2810000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.78
+     },
+     "p_violation": 0.78
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 41386,
+     "cost": 9.940000000000001e-06,
+     "in_tok": 71,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      1.0,
+      null
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      null
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0058",
+   "target": 1,
+   "label": 0,
+   "class": "navigate",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.67675895898984,
+     "ms": 977,
+     "cost": 1.2705e-05,
+     "in_tok": 210,
+     "err": null,
+     "mass": [
+      0.8812,
+      0.97
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.3955726145966772,
+     "ms": 2854,
+     "cost": 1.2826e-05,
+     "in_tok": 212,
+     "err": null,
+     "mass": [
+      0.9931,
+      0.9951
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 256,
+     "in_tok": 339,
+     "cost": 1.4238000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "p_violation": 0.06
+    },
+    "deepseek": {
+     "p_violation": 0.5000000037286613,
+     "ms": 4645,
+     "cost": 2.8280000000000004e-05,
+     "in_tok": 202,
+     "err": null,
+     "mass": [
+      0.9607,
+      0.9909
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0059",
+   "target": 0,
+   "label": 1,
+   "class": "navigate",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.7310585786300048,
+     "ms": 1275,
+     "cost": 1.1978999999999998e-05,
+     "in_tok": 198,
+     "err": null,
+     "mass": [
+      0.9232,
+      0.9817
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4626735340621246,
+     "ms": 2608,
+     "cost": 1.1737e-05,
+     "in_tok": 194,
+     "err": null,
+     "mass": [
+      0.9833,
+      0.9891
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 301,
+     "in_tok": 330,
+     "cost": 1.3860000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.91
+     },
+     "p_violation": 0.91
+    },
+    "deepseek": {
+     "p_violation": 0.46985858484197174,
+     "ms": 4035,
+     "cost": 2.6600000000000003e-05,
+     "in_tok": 190,
+     "err": null,
+     "mass": [
+      0.951,
+      0.9962
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0060",
+   "target": 0,
+   "label": 1,
+   "class": "causal_judgement",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.7200169014752937,
+     "ms": 1098,
+     "cost": 2.7224999999999998e-05,
+     "in_tok": 450,
+     "err": null,
+     "mass": [
+      0.9875,
+      0.9861
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9798504155934986,
+     "ms": 2573,
+     "cost": 2.7224999999999998e-05,
+     "in_tok": 450,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 239,
+     "in_tok": 460,
+     "cost": 1.932e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.89
+     },
+     "p_violation": 0.89
+    },
+    "deepseek": {
+     "p_violation": 0.9143961747631089,
+     "ms": 38324,
+     "cost": 6.16e-05,
+     "in_tok": 440,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0061",
+   "target": 1,
+   "label": 0,
+   "class": "sports_understanding",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6508412367081153,
+     "ms": 1296,
+     "cost": 9.438e-06,
+     "in_tok": 156,
+     "err": null,
+     "mass": [
+      0.9811,
+      0.9889
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5445891852740581,
+     "ms": 2656,
+     "cost": 9.196e-06,
+     "in_tok": 152,
+     "err": null,
+     "mass": [
+      0.9981,
+      0.997
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 248,
+     "in_tok": 305,
+     "cost": 1.2810000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.11
+     },
+     "p_violation": 0.11
+    },
+    "deepseek": {
+     "p_violation": 0.2799831001437526,
+     "ms": 21628,
+     "cost": 1.9880000000000003e-05,
+     "in_tok": 142,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9991
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0062",
+   "target": 1,
+   "label": 0,
+   "class": "causal_judgement",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.7743165289269887,
+     "ms": 1159,
+     "cost": 3.4243e-05,
+     "in_tok": 566,
+     "err": null,
+     "mass": [
+      0.9869,
+      0.9934
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4076833719691516,
+     "ms": 2438,
+     "cost": 3.5211e-05,
+     "in_tok": 582,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 391,
+     "in_tok": 527,
+     "cost": 2.2134000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.6
+     },
+     "p_violation": 0.6
+    },
+    "deepseek": {
+     "p_violation": 0.10987620184658164,
+     "ms": 5116,
+     "cost": 7.784e-05,
+     "in_tok": 556,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9992
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0063",
+   "target": 0,
+   "label": 1,
+   "class": "sports_understanding",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9616309458784129,
+     "ms": 966,
+     "cost": 8.833e-06,
+     "in_tok": 146,
+     "err": null,
+     "mass": [
+      0.9836,
+      0.9919
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.6075616827239089,
+     "ms": 3188,
+     "cost": 8.591e-06,
+     "in_tok": 142,
+     "err": null,
+     "mass": [
+      0.9935,
+      0.9976
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 226,
+     "in_tok": 300,
+     "cost": 1.26e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.89
+     },
+     "p_violation": 0.89
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 39831,
+     "cost": 9.240000000000001e-06,
+     "in_tok": 66,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      null,
+      1.0
+     ],
+     "provider": null,
+     "reasoning_tokens": [
+      null,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0064",
+   "target": 0,
+   "label": 1,
+   "class": "sports_understanding",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9383579721122363,
+     "ms": 1047,
+     "cost": 8.712e-06,
+     "in_tok": 144,
+     "err": null,
+     "mass": [
+      0.9935,
+      0.9915
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9098049466115347,
+     "ms": 2809,
+     "cost": 8.469999999999999e-06,
+     "in_tok": 140,
+     "err": null,
+     "mass": [
+      0.9959,
+      0.9969
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 235,
+     "in_tok": 299,
+     "cost": 1.2558e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.92
+     },
+     "p_violation": 0.92
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 38686,
+     "cost": 9.1e-06,
+     "in_tok": 65,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      null,
+      0.9998
+     ],
+     "provider": null,
+     "reasoning_tokens": [
+      null,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0065",
+   "target": 0,
+   "label": 1,
+   "class": "navigate",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6155292863852563,
+     "ms": 877,
+     "cost": 1.4157e-05,
+     "in_tok": 234,
+     "err": null,
+     "mass": [
+      0.8922,
+      0.9709
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.39544203158750807,
+     "ms": 2973,
+     "cost": 1.3915e-05,
+     "in_tok": 230,
+     "err": null,
+     "mass": [
+      0.9923,
+      0.9907
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 299,
+     "in_tok": 348,
+     "cost": 1.4616e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.25
+     },
+     "p_violation": 0.25
+    },
+    "deepseek": {
+     "p_violation": 0.8807970743031068,
+     "ms": 10625,
+     "cost": 3.164e-05,
+     "in_tok": 226,
+     "err": null,
+     "mass": [
+      0.9321,
+      0.9978
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0066",
+   "target": 0,
+   "label": 1,
+   "class": "sports_understanding",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.925742429142103,
+     "ms": 799,
+     "cost": 8.833e-06,
+     "in_tok": 146,
+     "err": null,
+     "mass": [
+      0.9867,
+      0.9916
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9662665223500129,
+     "ms": 2349,
+     "cost": 8.591e-06,
+     "in_tok": 142,
+     "err": null,
+     "mass": [
+      0.9981,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 283,
+     "in_tok": 300,
+     "cost": 1.26e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.93
+     },
+     "p_violation": 0.93
+    },
+    "deepseek": {
+     "p_violation": 0.9604845665758164,
+     "ms": 5235,
+     "cost": 1.8480000000000003e-05,
+     "in_tok": 132,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0067",
+   "target": 1,
+   "label": 0,
+   "class": "sports_understanding",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8491857769614288,
+     "ms": 858,
+     "cost": 8.712e-06,
+     "in_tok": 144,
+     "err": null,
+     "mass": [
+      0.9847,
+      0.9865
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.2565807926590597,
+     "ms": 1151,
+     "cost": 8.469999999999999e-06,
+     "in_tok": 140,
+     "err": null,
+     "mass": [
+      0.9973,
+      0.9965
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 232,
+     "in_tok": 299,
+     "cost": 1.2558e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.71
+     },
+     "p_violation": 0.71
+    },
+    "deepseek": {
+     "p_violation": 0.9257424204662814,
+     "ms": 28118,
+     "cost": 1.82e-05,
+     "in_tok": 130,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0068",
+   "target": 0,
+   "label": 1,
+   "class": "navigate",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.7200169000277756,
+     "ms": 823,
+     "cost": 9.801e-06,
+     "in_tok": 162,
+     "err": null,
+     "mass": [
+      0.943,
+      0.989
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.41361294860354125,
+     "ms": 2095,
+     "cost": 9.559e-06,
+     "in_tok": 158,
+     "err": null,
+     "mass": [
+      0.992,
+      0.9948
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 228,
+     "in_tok": 312,
+     "cost": 1.3104e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.93
+     },
+     "p_violation": 0.93
+    },
+    "deepseek": {
+     "p_violation": 0.904650537084823,
+     "ms": 8512,
+     "cost": 2.1560000000000004e-05,
+     "in_tok": 154,
+     "err": null,
+     "mass": [
+      0.9932,
+      0.9988
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0069",
+   "target": 1,
+   "label": 0,
+   "class": "causal_judgement",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6155292922447485,
+     "ms": 1045,
+     "cost": 2.9161e-05,
+     "in_tok": 482,
+     "err": null,
+     "mass": [
+      0.9837,
+      0.9807
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.37254250656618587,
+     "ms": 2308,
+     "cost": 2.9161e-05,
+     "in_tok": 482,
+     "err": null,
+     "mass": [
+      0.9987,
+      0.9974
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 261,
+     "in_tok": 476,
+     "cost": 1.9992e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.2
+     },
+     "p_violation": 0.2
+    },
+    "deepseek": {
+     "p_violation": 0.01879403889579234,
+     "ms": 27745,
+     "cost": 6.608e-05,
+     "in_tok": 472,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0070",
+   "target": 0,
+   "label": 1,
+   "class": "causal_judgement",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.731058581559751,
+     "ms": 774,
+     "cost": 3.2548999999999996e-05,
+     "in_tok": 538,
+     "err": null,
+     "mass": [
+      0.9897,
+      0.9924
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4036307570090849,
+     "ms": 3664,
+     "cost": 3.2548999999999996e-05,
+     "in_tok": 538,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 259,
+     "in_tok": 504,
+     "cost": 2.1168e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.67
+     },
+     "p_violation": 0.67
+    },
+    "deepseek": {
+     "p_violation": 0.2124832703102062,
+     "ms": 4595,
+     "cost": 7.392000000000001e-05,
+     "in_tok": 528,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0071",
+   "target": 0,
+   "label": 1,
+   "class": "causal_judgement",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.7200169048089768,
+     "ms": 1000,
+     "cost": 3.2065e-05,
+     "in_tok": 530,
+     "err": null,
+     "mass": [
+      0.9855,
+      0.9903
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.8016602591677692,
+     "ms": 3461,
+     "cost": 3.2065e-05,
+     "in_tok": 530,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9985
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 243,
+     "in_tok": 500,
+     "cost": 2.1000000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.83
+     },
+     "p_violation": 0.83
+    },
+    "deepseek": {
+     "p_violation": 0.9044984953389423,
+     "ms": 6118,
+     "cost": 7.28e-05,
+     "in_tok": 520,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0072",
+   "target": 0,
+   "label": 1,
+   "class": "causal_judgement",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6767589607754219,
+     "ms": 804,
+     "cost": 3.0370999999999998e-05,
+     "in_tok": 502,
+     "err": null,
+     "mass": [
+      0.9795,
+      0.9929
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.885843141438962,
+     "ms": 2066,
+     "cost": 3.0370999999999998e-05,
+     "in_tok": 502,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9988
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 458,
+     "in_tok": 488,
+     "cost": 2.0496e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.81
+     },
+     "p_violation": 0.81
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 38346,
+     "cost": 3.4720000000000006e-05,
+     "in_tok": 248,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      null,
+      1.0
+     ],
+     "provider": null,
+     "reasoning_tokens": [
+      null,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0073",
+   "target": 1,
+   "label": 0,
+   "class": "sports_understanding",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5965416256933754,
+     "ms": 1117,
+     "cost": 9.196e-06,
+     "in_tok": 152,
+     "err": null,
+     "mass": [
+      0.9878,
+      0.9916
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.05447207886658791,
+     "ms": 1505,
+     "cost": 8.712e-06,
+     "in_tok": 144,
+     "err": null,
+     "mass": [
+      0.9957,
+      0.9986
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 486,
+     "in_tok": 301,
+     "cost": 1.2642e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "p_violation": 0.05
+    },
+    "deepseek": {
+     "p_violation": 0.06294788557184942,
+     "ms": 3633,
+     "cost": 1.904e-05,
+     "in_tok": 136,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9978
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0074",
+   "target": 1,
+   "label": 0,
+   "class": "sports_understanding",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8276002003490075,
+     "ms": 821,
+     "cost": 8.954e-06,
+     "in_tok": 148,
+     "err": null,
+     "mass": [
+      0.9766,
+      0.9899
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.6490933888698105,
+     "ms": 1044,
+     "cost": 8.712e-06,
+     "in_tok": 144,
+     "err": null,
+     "mass": [
+      0.9931,
+      0.9948
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 230,
+     "in_tok": 302,
+     "cost": 1.2684000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.22
+     },
+     "p_violation": 0.22
+    },
+    "deepseek": {
+     "p_violation": 0.038679676567109765,
+     "ms": 14934,
+     "cost": 1.904e-05,
+     "in_tok": 136,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0075",
+   "target": 1,
+   "label": 0,
+   "class": "navigate",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 824,
+     "cost": 1.3430999999999999e-05,
+     "in_tok": 222,
+     "err": null,
+     "mass": [
+      0.9282,
+      0.9539
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.43705895600939926,
+     "ms": 1009,
+     "cost": 1.3189e-05,
+     "in_tok": 218,
+     "err": null,
+     "mass": [
+      0.9922,
+      0.9896
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 372,
+     "in_tok": 342,
+     "cost": 1.4364000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "p_violation": 0.05
+    },
+    "deepseek": {
+     "p_violation": 0.7743165278527289,
+     "ms": 10337,
+     "cost": 2.996e-05,
+     "in_tok": 214,
+     "err": null,
+     "mass": [
+      0.9948,
+      0.9987
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0076",
+   "target": 0,
+   "label": 1,
+   "class": "navigate",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6767589619195861,
+     "ms": 817,
+     "cost": 1.1252999999999999e-05,
+     "in_tok": 186,
+     "err": null,
+     "mass": [
+      0.912,
+      0.9708
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4999999974205377,
+     "ms": 1076,
+     "cost": 1.1011e-05,
+     "in_tok": 182,
+     "err": null,
+     "mass": [
+      0.9946,
+      0.9918
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 229,
+     "in_tok": 324,
+     "cost": 1.3608e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.69
+     },
+     "p_violation": 0.69
+    },
+    "deepseek": {
+     "p_violation": 0.8095460290208237,
+     "ms": 23335,
+     "cost": 2.4920000000000002e-05,
+     "in_tok": 178,
+     "err": null,
+     "mass": [
+      0.958,
+      0.9949
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0077",
+   "target": 1,
+   "label": 0,
+   "class": "navigate",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6767589549159297,
+     "ms": 1020,
+     "cost": 1.1616e-05,
+     "in_tok": 192,
+     "err": null,
+     "mass": [
+      0.9407,
+      0.9661
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4124939710530375,
+     "ms": 1055,
+     "cost": 1.1616e-05,
+     "in_tok": 192,
+     "err": null,
+     "mass": [
+      0.9922,
+      0.9835
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 490,
+     "in_tok": 329,
+     "cost": 1.3818e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "p_violation": 0.05
+    },
+    "deepseek": {
+     "p_violation": 0.6448881505412561,
+     "ms": 2983,
+     "cost": 2.5760000000000004e-05,
+     "in_tok": 184,
+     "err": null,
+     "mass": [
+      0.9895,
+      0.9846
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0078",
+   "target": 0,
+   "label": 1,
+   "class": "sports_understanding",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8418163539884403,
+     "ms": 795,
+     "cost": 9.074999999999999e-06,
+     "in_tok": 150,
+     "err": null,
+     "mass": [
+      0.9794,
+      0.989
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9729406388868036,
+     "ms": 1571,
+     "cost": 8.712e-06,
+     "in_tok": 144,
+     "err": null,
+     "mass": [
+      0.9971,
+      0.9983
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 243,
+     "in_tok": 301,
+     "cost": 1.2642e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.92
+     },
+     "p_violation": 0.92
+    },
+    "deepseek": {
+     "p_violation": 0.6533788335816646,
+     "ms": 37976,
+     "cost": 1.8760000000000003e-05,
+     "in_tok": 134,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0079",
+   "target": 1,
+   "label": 0,
+   "class": "causal_judgement",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296656009272,
+     "ms": 984,
+     "cost": 6.509799999999999e-05,
+     "in_tok": 1076,
+     "err": null,
+     "mass": [
+      0.9939,
+      0.9932
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5432560528575501,
+     "ms": 1438,
+     "cost": 6.4977e-05,
+     "in_tok": 1074,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.999
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 253,
+     "in_tok": 787,
+     "cost": 3.3054000000000006e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.16
+     },
+     "p_violation": 0.16
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 39518,
+     "cost": 7.448e-05,
+     "in_tok": 532,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      null,
+      0.9994
+     ],
+     "provider": null,
+     "reasoning_tokens": [
+      null,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0080",
+   "target": 1,
+   "label": 0,
+   "class": "sports_understanding",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.7516282030253422,
+     "ms": 736,
+     "cost": 8.954e-06,
+     "in_tok": 148,
+     "err": null,
+     "mass": [
+      0.9845,
+      0.977
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.3769547612584573,
+     "ms": 1044,
+     "cost": 8.712e-06,
+     "in_tok": 144,
+     "err": null,
+     "mass": [
+      0.9937,
+      0.9887
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 236,
+     "in_tok": 301,
+     "cost": 1.2642e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "p_violation": 0.05
+    },
+    "deepseek": {
+     "p_violation": 0.5,
+     "ms": 40088,
+     "cost": 1.904e-05,
+     "in_tok": 136,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9985
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0081",
+   "target": 1,
+   "label": 0,
+   "class": "sports_understanding",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5975575691622116,
+     "ms": 1553,
+     "cost": 8.833e-06,
+     "in_tok": 146,
+     "err": null,
+     "mass": [
+      0.9739,
+      0.9829
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.3457453878847011,
+     "ms": 1121,
+     "cost": 8.591e-06,
+     "in_tok": 142,
+     "err": null,
+     "mass": [
+      0.9961,
+      0.9964
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 244,
+     "in_tok": 300,
+     "cost": 1.26e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1
+     },
+     "p_violation": 0.1
+    },
+    "deepseek": {
+     "p_violation": 0.6697381767026249,
+     "ms": 13225,
+     "cost": 1.8480000000000003e-05,
+     "in_tok": 132,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9976
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0082",
+   "target": 1,
+   "label": 0,
+   "class": "navigate",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6224593382055109,
+     "ms": 1725,
+     "cost": 1.1978999999999998e-05,
+     "in_tok": 198,
+     "err": null,
+     "mass": [
+      0.9131,
+      0.9786
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4320114109787177,
+     "ms": 919,
+     "cost": 1.1857999999999999e-05,
+     "in_tok": 196,
+     "err": null,
+     "mass": [
+      0.9924,
+      0.9923
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 225,
+     "in_tok": 331,
+     "cost": 1.3902000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.08
+     },
+     "p_violation": 0.08
+    },
+    "deepseek": {
+     "p_violation": 0.7655657491953651,
+     "ms": 15663,
+     "cost": 2.6600000000000003e-05,
+     "in_tok": 190,
+     "err": null,
+     "mass": [
+      0.9155,
+      0.9994
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0083",
+   "target": 0,
+   "label": 1,
+   "class": "navigate",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6767589537717654,
+     "ms": 943,
+     "cost": 1.1132e-05,
+     "in_tok": 184,
+     "err": null,
+     "mass": [
+      0.9665,
+      0.9737
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4351507474369627,
+     "ms": 928,
+     "cost": 1.089e-05,
+     "in_tok": 180,
+     "err": null,
+     "mass": [
+      0.9877,
+      0.9924
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 469,
+     "in_tok": 323,
+     "cost": 1.3566e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.78
+     },
+     "p_violation": 0.78
+    },
+    "deepseek": {
+     "p_violation": 0.9286123268605053,
+     "ms": 9963,
+     "cost": 2.464e-05,
+     "in_tok": 176,
+     "err": null,
+     "mass": [
+      0.9984,
+      0.9994
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0084",
+   "target": 0,
+   "label": 1,
+   "class": "navigate",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6224593382055109,
+     "ms": 849,
+     "cost": 1.0769e-05,
+     "in_tok": 178,
+     "err": null,
+     "mass": [
+      0.9609,
+      0.9641
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.45148109338939485,
+     "ms": 1092,
+     "cost": 1.0527e-05,
+     "in_tok": 174,
+     "err": null,
+     "mass": [
+      0.9876,
+      0.9856
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 225,
+     "in_tok": 320,
+     "cost": 1.3440000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.75
+     },
+     "p_violation": 0.75
+    },
+    "deepseek": {
+     "p_violation": 0.7974371675520779,
+     "ms": 8063,
+     "cost": 2.3800000000000003e-05,
+     "in_tok": 170,
+     "err": null,
+     "mass": [
+      0.9887,
+      0.9991
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0085",
+   "target": 0,
+   "label": 1,
+   "class": "sports_understanding",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5975575839444616,
+     "ms": 794,
+     "cost": 8.712e-06,
+     "in_tok": 144,
+     "err": null,
+     "mass": [
+      0.963,
+      0.9821
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.2627939352943894,
+     "ms": 1850,
+     "cost": 8.469999999999999e-06,
+     "in_tok": 140,
+     "err": null,
+     "mass": [
+      0.9851,
+      0.9929
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 420,
+     "in_tok": 299,
+     "cost": 1.2558e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.44
+     },
+     "p_violation": 0.44
+    },
+    "deepseek": {
+     "p_violation": 0.41236286687422724,
+     "ms": 31406,
+     "cost": 1.82e-05,
+     "in_tok": 130,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9918
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0086",
+   "target": 0,
+   "label": 1,
+   "class": "causal_judgement",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 1346,
+     "cost": 7.2116e-05,
+     "in_tok": 1192,
+     "err": null,
+     "mass": [
+      0.9903,
+      0.9914
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7385387282294296,
+     "ms": 1259,
+     "cost": 7.4778e-05,
+     "in_tok": 1236,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 236,
+     "in_tok": 860,
+     "cost": 3.612e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.79
+     },
+     "p_violation": 0.79
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 38603,
+     "cost": 8.218e-05,
+     "in_tok": 587,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      1.0,
+      null
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      null
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0087",
+   "target": 1,
+   "label": 0,
+   "class": "navigate",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6224593241981982,
+     "ms": 1049,
+     "cost": 1.4883000000000001e-05,
+     "in_tok": 246,
+     "err": null,
+     "mass": [
+      0.8675,
+      0.9723
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.36963267404352906,
+     "ms": 865,
+     "cost": 1.4761999999999999e-05,
+     "in_tok": 244,
+     "err": null,
+     "mass": [
+      0.9932,
+      0.9916
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 244,
+     "in_tok": 355,
+     "cost": 1.4910000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "p_violation": 0.06
+    },
+    "deepseek": {
+     "p_violation": 0.8807970890022084,
+     "ms": 22463,
+     "cost": 3.3320000000000006e-05,
+     "in_tok": 238,
+     "err": null,
+     "mass": [
+      0.9971,
+      0.994
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0088",
+   "target": 1,
+   "label": 0,
+   "class": "causal_judgement",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5000000035018282,
+     "ms": 834,
+     "cost": 7.1995e-05,
+     "in_tok": 1190,
+     "err": null,
+     "mass": [
+      0.9882,
+      0.9918
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7070646504873184,
+     "ms": 1037,
+     "cost": 7.4657e-05,
+     "in_tok": 1234,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9976
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 304,
+     "in_tok": 859,
+     "cost": 3.6078e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.84
+     },
+     "p_violation": 0.84
+    },
+    "deepseek": {
+     "p_violation": 0.8347636448166629,
+     "ms": 26185,
+     "cost": 0.00016408000000000001,
+     "in_tok": 1172,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0089",
+   "target": 1,
+   "label": 0,
+   "class": "sports_understanding",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5216723665704287,
+     "ms": 902,
+     "cost": 8.833e-06,
+     "in_tok": 146,
+     "err": null,
+     "mass": [
+      0.9919,
+      0.9939
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.07259284725541441,
+     "ms": 839,
+     "cost": 8.591e-06,
+     "in_tok": 142,
+     "err": null,
+     "mass": [
+      0.9965,
+      0.9977
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 315,
+     "in_tok": 300,
+     "cost": 1.26e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.03
+     },
+     "p_violation": 0.03
+    },
+    "deepseek": {
+     "p_violation": 0.00032444051838198453,
+     "ms": 5076,
+     "cost": 1.8480000000000003e-05,
+     "in_tok": 132,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0090",
+   "target": 1,
+   "label": 0,
+   "class": "navigate",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6224593312018546,
+     "ms": 969,
+     "cost": 1.1252999999999999e-05,
+     "in_tok": 186,
+     "err": null,
+     "mass": [
+      0.9126,
+      0.9731
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.41937463349997156,
+     "ms": 3069,
+     "cost": 1.1011e-05,
+     "in_tok": 182,
+     "err": null,
+     "mass": [
+      0.993,
+      0.98
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 223,
+     "in_tok": 324,
+     "cost": 1.3608e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.21
+     },
+     "p_violation": 0.21
+    },
+    "deepseek": {
+     "p_violation": 0.6587872366053573,
+     "ms": 43845,
+     "cost": 2.4920000000000002e-05,
+     "in_tok": 178,
+     "err": null,
+     "mass": [
+      0.9907,
+      0.9884
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0091",
+   "target": 1,
+   "label": 0,
+   "class": "navigate",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.67675895898984,
+     "ms": 786,
+     "cost": 1.2705e-05,
+     "in_tok": 210,
+     "err": null,
+     "mass": [
+      0.8497,
+      0.9742
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.46867025315669875,
+     "ms": 2871,
+     "cost": 1.2462999999999999e-05,
+     "in_tok": 206,
+     "err": null,
+     "mass": [
+      0.985,
+      0.9898
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 225,
+     "in_tok": 336,
+     "cost": 1.4112e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.07
+     },
+     "p_violation": 0.07
+    },
+    "deepseek": {
+     "p_violation": 0.7483765928463972,
+     "ms": 9435,
+     "cost": 2.8280000000000004e-05,
+     "in_tok": 202,
+     "err": null,
+     "mass": [
+      0.9743,
+      0.9974
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0092",
+   "target": 1,
+   "label": 0,
+   "class": "sports_understanding",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6291688741702771,
+     "ms": 1178,
+     "cost": 9.438e-06,
+     "in_tok": 156,
+     "err": null,
+     "mass": [
+      0.9815,
+      0.9904
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.29686506871918233,
+     "ms": 2376,
+     "cost": 9.196e-06,
+     "in_tok": 152,
+     "err": null,
+     "mass": [
+      0.9902,
+      0.9951
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 284,
+     "in_tok": 306,
+     "cost": 1.2852000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.03
+     },
+     "p_violation": 0.03
+    },
+    "deepseek": {
+     "p_violation": 0.33994417708422553,
+     "ms": 2145,
+     "cost": 2.0160000000000003e-05,
+     "in_tok": 144,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9994
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0093",
+   "target": 0,
+   "label": 1,
+   "class": "sports_understanding",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6155292922447485,
+     "ms": 862,
+     "cost": 9.559e-06,
+     "in_tok": 158,
+     "err": null,
+     "mass": [
+      0.9891,
+      0.9897
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5565592139414708,
+     "ms": 874,
+     "cost": 9.316999999999999e-06,
+     "in_tok": 154,
+     "err": null,
+     "mass": [
+      0.9941,
+      0.9953
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 262,
+     "in_tok": 307,
+     "cost": 1.2894e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "p_violation": 0.06
+    },
+    "deepseek": {
+     "p_violation": null,
+     "ms": 37546,
+     "cost": 1.0080000000000002e-05,
+     "in_tok": 72,
+     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash is temporarily rate-limited upstream. Please retry shortl",
+     "mass": [
+      null,
+      0.9992
+     ],
+     "provider": null,
+     "reasoning_tokens": [
+      null,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0094",
+   "target": 1,
+   "label": 0,
+   "class": "causal_judgement",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6155292834555102,
+     "ms": 1829,
+     "cost": 3.1702e-05,
+     "in_tok": 524,
+     "err": null,
+     "mass": [
+      0.9854,
+      0.9916
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.6386499305873456,
+     "ms": 876,
+     "cost": 3.1702e-05,
+     "in_tok": 524,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 237,
+     "in_tok": 497,
+     "cost": 2.0874000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.47
+     },
+     "p_violation": 0.47
+    },
+    "deepseek": {
+     "p_violation": 0.7624248070403363,
+     "ms": 38223,
+     "cost": 7.196000000000001e-05,
+     "in_tok": 514,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0095",
+   "target": 1,
+   "label": 0,
+   "class": "navigate",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6224593171945417,
+     "ms": 783,
+     "cost": 1.1857999999999999e-05,
+     "in_tok": 196,
+     "err": null,
+     "mass": [
+      0.9413,
+      0.9651
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.43955288446136503,
+     "ms": 1012,
+     "cost": 1.1737e-05,
+     "in_tok": 194,
+     "err": null,
+     "mass": [
+      0.9909,
+      0.99
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 343,
+     "in_tok": 330,
+     "cost": 1.3860000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.03
+     },
+     "p_violation": 0.03
+    },
+    "deepseek": {
+     "p_violation": 0.7919146186045267,
+     "ms": 2286,
+     "cost": 2.6320000000000002e-05,
+     "in_tok": 188,
+     "err": null,
+     "mass": [
+      0.9153,
+      0.9962
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0096",
+   "target": 1,
+   "label": 0,
+   "class": "causal_judgement",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.731058581559751,
+     "ms": 825,
+     "cost": 2.8071999999999998e-05,
+     "in_tok": 464,
+     "err": null,
+     "mass": [
+      0.9913,
+      0.9897
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.45833716137277736,
+     "ms": 1051,
+     "cost": 2.8314e-05,
+     "in_tok": 468,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.9972
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 358,
+     "in_tok": 469,
+     "cost": 1.9698000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.34
+     },
+     "p_violation": 0.34
+    },
+    "deepseek": {
+     "p_violation": 0.15081422203117967,
+     "ms": 7398,
+     "cost": 6.356000000000001e-05,
+     "in_tok": 454,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9994
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0097",
+   "target": 0,
+   "label": 1,
+   "class": "navigate",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6224593382055109,
+     "ms": 1046,
+     "cost": 1.0769e-05,
+     "in_tok": 178,
+     "err": null,
+     "mass": [
+      0.9613,
+      0.9726
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5096938492270112,
+     "ms": 1050,
+     "cost": 1.0527e-05,
+     "in_tok": 174,
+     "err": null,
+     "mass": [
+      0.9888,
+      0.9858
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 294,
+     "in_tok": 320,
+     "cost": 1.3440000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.84
+     },
+     "p_violation": 0.84
+    },
+    "deepseek": {
+     "p_violation": 0.8491857730528982,
+     "ms": 2162,
+     "cost": 2.3800000000000003e-05,
+     "in_tok": 170,
+     "err": null,
+     "mass": [
+      0.9751,
+      0.9897
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0098",
+   "target": 0,
+   "label": 1,
+   "class": "causal_judgement",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6767589578456759,
+     "ms": 868,
+     "cost": 2.8314e-05,
+     "in_tok": 468,
+     "err": null,
+     "mass": [
+      0.9901,
+      0.9906
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5272150751072847,
+     "ms": 1226,
+     "cost": 2.8556e-05,
+     "in_tok": 472,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9977
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 268,
+     "in_tok": 471,
+     "cost": 1.9782e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.37
+     },
+     "p_violation": 0.37
+    },
+    "deepseek": {
+     "p_violation": 0.1491268297496334,
+     "ms": 5333,
+     "cost": 6.412e-05,
+     "in_tok": 458,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9968
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "id": "bbh-judgment-mini-0099",
+   "target": 1,
+   "label": 0,
+   "class": "causal_judgement",
+   "label_source": "machine",
+   "cluster": null,
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.7200169025865215,
+     "ms": 1050,
+     "cost": 3.3033e-05,
+     "in_tok": 546,
+     "err": null,
+     "mass": [
+      0.9862,
+      0.993
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.43080401066203244,
+     "ms": 1571,
+     "cost": 3.3033e-05,
+     "in_tok": 546,
+     "err": null,
+     "mass": [
+      0.9978,
+      0.9982
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 236,
+     "in_tok": 508,
+     "cost": 2.1336e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.72
+     },
+     "p_violation": 0.72
+    },
+    "deepseek": {
+     "p_violation": 0.8276001952383649,
+     "ms": 23533,
+     "cost": 7.448e-05,
+     "in_tok": 532,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    }
+   }
+  }
+ ],
+ "agg": {
+  "glm": {
+   "n": 100,
+   "ok": 100,
+   "hit": 46,
+   "ms": 125657,
+   "cost": 0.0017733760000000006
+  },
+  "qwen": {
+   "n": 100,
+   "ok": 100,
+   "hit": 67,
+   "ms": 156053,
+   "cost": 0.0017719239999999998
+  },
+  "deepseek": {
+   "n": 100,
+   "ok": 86,
+   "hit": 46,
+   "ms": 1744470,
+   "cost": 0.0035379399999999985
+  },
+  "jev": {
+   "n": 100,
+   "ok": 100,
+   "hit": 82,
+   "ms": 28077,
+   "cost": 0.0015926400000000002
+  }
+ },
+ "merged_runs": [
+  {
+   "date": "2026-10-05",
+   "arms": [
+    "deepseek"
+   ]
+  }
+ ]
+}
