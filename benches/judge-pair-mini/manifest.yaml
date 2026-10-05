@@ -1,0 +1,352 @@
+name: judge-pair-mini
+version: 1
+task_signature:
+  goal: fit
+  answer: binary
+  prob_use: accuracy_only
+  label: machine
+  unit: pair
+  language: en
+  n: 100
+question: 두 응답 중 질문에 객관적으로 맞는 답을 낸 쪽은 어느 것인가. 둘 중 하나만 맞다. 길이나 문체가 아니라 결론의 정오로 고른다.
+choices:
+- 응답 A
+- 응답 B
+choices_note: null
+generator:
+  script: src/build_judgment_seeds.py
+  seed: 20261003
+source: JudgeBench (ScalerLab/JudgeBench, GPT-4o 쌍 350 + Claude 3.5 Sonnet 쌍 270)
+  에서 모델별 정오 행렬로 100건 축약
+domain:
+- judge-pair
+- public-seed
+- english
+visibility: sample
+items_sha256: bfa667f3f3fd42cdf7bd7b6d637c8a92d664985ec911ddfe5be2dfd219663d3d
+license: MIT
+attribution:
+  items: JudgeBench (ScalerLab/JudgeBench, GPT-4o 쌍 350 + Claude 3.5 Sonnet 쌍 270)
+  model_responses: 'JudgeBench HF 공간 outputs/ 의 심판 출력(심판 모델 약 40종: o3-mini, DeepSeek-R1,
+    GPT-4o, Claude 3.5, Gemini 1.5, Llama 3.1, 보상 모델). 정오 = 두 제시 순서 모두 라벨과 일치'
+  method: difficulty-stratified (5 quantiles) random sample; swap search skipped because
+    models 37 < 100 (it overfits); val models held out
+distill:
+  n: 100
+  seed: 20261003
+  n_items_total: 350
+  n_items_usable: 349
+  n_models: 37
+  fit_models: 25
+  val_models: 12
+  val:
+    mae: 0.02361270296084049
+    max_err: 0.043896848137535915
+    kendall: 0.9696969696969697
+    spearman: 0.993006993006993
+    n_models: 12
+  baseline_val:
+    mae: 0.02361270296084049
+    max_err: 0.043896848137535915
+    kendall: 0.9696969696969697
+    spearman: 0.993006993006993
+    n_models: 12
+  alt:
+    method: swap search
+    val:
+      mae: 0.030229226361031508
+      max_err: 0.0771633237822349
+      kendall: 0.8769230769230769
+      spearman: 0.9457107322567674
+      n_models: 12
+  fit:
+    mae: 0.019696275071633237
+    max_err: 0.05581661891117484
+    kendall: 0.9527027027027027
+    spearman: 0.9892224788298691
+    n_models: 25
+  method: difficulty-stratified (5 quantiles) random sample; swap search skipped because
+    models 37 < 100 (it overfits); val models held out
+  method_key: random
+  matrix: JudgeBench judge outputs (HF space ScalerLab/JudgeBench outputs/), rule=both_flip
+taxonomy:
+  domain:
+  - data-quality
+  input_kind: pair
+  source_kind: public-distilled
+  language: en
+  keywords:
+  - 심판
+  - 정합
+  - judgebench
+review:
+  checks_run: 0
+  human_reviewed_fraction: 0.0
+  flagged: 0
+  decided: 0
+note: 판단형 공개 벤치의 축약 시드. 라벨은 원천 정답 키. 축약 검증 집단은 원천 리더보드의 모델이다. 우리 4팔은 그 집단 밖이라 축약본
+  정확도가 전체 정확도와 같다는 보장은 없고, 100건의 Wilson 구간(약 ±6~10pp)이 그대로 적용된다
+owner: ernestolee13
+n: 100
+published_at: '2026-10-05'
+type: binary
+classes:
+- livebench
+- livecodebench
+- mmlu
+label_source_mix:
+  machine: 100
+  constructed: 0
+  judged: 0
+  outcome: 0
+experiment:
+  date: '2026-10-05'
+  template: generic
+  runner: benchlet
+  arms:
+    glm:
+      model: z-ai/glm-4.7-flash
+      provider: cloudflare
+      family: GLM
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke:
+        arm: glm
+        mode: logprob
+        usable: false
+        reasons:
+        - 3회 재현 편차 0.12 > 0.05
+        - 뻔한 5건 중 2건 틀림 (judge-pair-mini-019, judge-pair-mini-062). 다른 팔도 틀리면 질문 결함,
+          이 팔만 틀리면 팔 약점
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.8527
+        spread: 0.1224593312018546
+        distinct_p: 6
+        n_calls: 13
+        smoke_acc: 0.6
+        cost: 0.0009358140000000001
+        per_item:
+        - id: judge-pair-mini-013
+          target: 0
+          hit: 1
+          p: 0.72
+        - id: judge-pair-mini-064
+          target: 0
+          hit: 1
+          p: 0.6155
+        - id: judge-pair-mini-006
+          target: 0
+          hit: 1
+          p: 0.72
+        - id: judge-pair-mini-019
+          target: 1
+          hit: 0
+          p: 0.5766
+        - id: judge-pair-mini-062
+          target: 1
+          hit: 0
+          p: 0.5675
+    qwen:
+      model: qwen/qwen3.8-27b
+      provider: parasail
+      family: Qwen
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke:
+        arm: qwen
+        mode: logprob
+        usable: true
+        reasons: []
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9863
+        spread: 0.0
+        distinct_p: 9
+        n_calls: 13
+        smoke_acc: 1.0
+        cost: 0.0009727795
+        per_item:
+        - id: judge-pair-mini-013
+          target: 0
+          hit: 1
+          p: 0.6491
+        - id: judge-pair-mini-064
+          target: 0
+          hit: 1
+          p: 0.7817
+        - id: judge-pair-mini-006
+          target: 0
+          hit: 1
+          p: 0.5156
+        - id: judge-pair-mini-019
+          target: 1
+          hit: 1
+          p: 0.2043
+        - id: judge-pair-mini-062
+          target: 1
+          hit: 1
+          p: 0.1618
+    deepseek:
+      model: deepseek/deepseek-v4-flash
+      provider: digitalocean
+      family: DeepSeek
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.14
+      smoke:
+        arm: deepseek
+        mode: logprob
+        usable: true
+        reasons:
+        - 뻔한 5건 중 1건 틀림 (judge-pair-mini-013). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9605
+        spread: 0.02524208992638062
+        distinct_p: 9
+        n_calls: 13
+        smoke_acc: 0.8
+        cost: 0.0020966400000000003
+        per_item:
+        - id: judge-pair-mini-013
+          target: 0
+          hit: 0
+          p: 0.4963
+        - id: judge-pair-mini-064
+          target: 0
+          hit: 1
+          p: 0.5612
+        - id: judge-pair-mini-006
+          target: 0
+          hit: 1
+          p: 0.5039
+        - id: judge-pair-mini-019
+          target: 1
+          hit: 1
+          p: 0.4998
+        - id: judge-pair-mini-062
+          target: 1
+          hit: 1
+          p: 0.4999
+    jev:
+      model: typesafe/jev-1.13
+      provider: openrouter
+      family: Jev
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.042
+      smoke:
+        arm: jev
+        mode: typed
+        usable: true
+        reasons:
+        - 뻔한 5건 중 3건 틀림 (judge-pair-mini-006, judge-pair-mini-019, judge-pair-mini-062).
+          다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 0.4
+        cost: 0.000314916
+        per_item:
+        - id: judge-pair-mini-013
+          target: 0
+          hit: 1
+          p: 0.68
+          pred: null
+        - id: judge-pair-mini-064
+          target: 0
+          hit: 1
+          p: 0.88
+          pred: null
+        - id: judge-pair-mini-006
+          target: 0
+          hit: 0
+          p: 0.48
+          pred: null
+        - id: judge-pair-mini-019
+          target: 1
+          hit: 0
+          p: 0.83
+          pred: null
+        - id: judge-pair-mini-062
+          target: 1
+          hit: 0
+          p: 0.87
+          pred: null
+  protocol:
+    decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
+    logprob_call:
+      max_tokens: 1
+      temperature: 0
+      logprobs: true
+      top_logprobs: 8
+      reasoning:
+        enabled: false
+    provider_pin: provider.only=[pin], allow_fallbacks=false, require_parameters=true
+    binary: '극성 반전 2회 호출 평균: p = ½[P(A|choices[0]=A) + P(B|choices[0]=B)]'
+    multiclass: 항목별 결정론적 셔플 뒤 원 인덱스로 복원(generic) 또는 파일에 든 셔플 그대로(legacy-seed)
+    typed: Jev noul(이진)/choice(다지), 질문을 instructions 로 그대로 전달
+    label_mass: 상위 8토큰 중 라벨 토큰 질량 < 0.5 이면 오류로 두고 세지 않음
+    renormalize: 라벨 토큰 확률을 라벨 집합 안에서 재정규화
+  items_sha256: bfa667f3f3fd42cdf7bd7b6d637c8a92d664985ec911ddfe5be2dfd219663d3d
+results:
+- results/judge-pair-mini-run.json
+result_summary:
+  glm:
+    acc: 0.48
+    ci95:
+    - 0.38464384320080547
+    - 0.5768359490982345
+    auroc: 0.6208350060216781
+    brier: 0.27998298860022397
+    n: 100
+    prob_source: logprob
+    model: z-ai/glm-4.7-flash
+    source_badge: author-run
+  qwen:
+    acc: 0.79
+    ci95:
+    - 0.7001985069803768
+    - 0.8583445046835422
+    auroc: 0.8400240867121638
+    brier: 0.18326485102601403
+    n: 100
+    prob_source: logprob
+    model: qwen/qwen3.8-27b
+    source_badge: author-run
+  jev:
+    acc: 0.47
+    ci95:
+    - 0.3751065198210374
+    - 0.5671131686275227
+    auroc: 0.48012846246487356
+    brier: 0.30103599999999997
+    n: 100
+    prob_source: typed
+    model: typesafe/jev-1.13
+    source_badge: author-run
+  deepseek:
+    acc: 0.5050505050505051
+    ci95:
+    - 0.40822998685489836
+    - 0.6014937047251627
+    auroc: 0.5040916530278232
+    brier: 0.24950797005641334
+    n: 99
+    prob_source: logprob
+    model: deepseek/deepseek-v4-flash
+    source_badge: author-run
