@@ -11790,9 +11790,955 @@ review:
   decided: 0
 note: 판단형 공개 벤치의 축약 시드. 라벨은 원천 정답 키. 축약 검증 집단은 원천 리더보드의 모델이다. 우리 4팔은 그 집단 밖이라 축약본
   정확도가 전체 정확도와 같다는 보장은 없고, 100건의 Wilson 구간(약 ±6~10pp)이 그대로 적용된다
+source_results:
+  source: RewardBench 2 results
+  note: 원천이 그 모델을 돌린 항목별 정오에서 이 벤치의 항목만 골라 계산한 정확도. 프롬프트·채점 방식이 이 갤러리의 실행과 다르므로 참고값이다
+  n_models: 188
+  n_frontier: 25
+  models:
+  - model: Skywork/Skywork-Reward-V2-Llama-3.1-8B
+    acc_subset: 0.9
+    acc_full: 0.8939
+    n_subset: 100
+    frontier: true
+  - model: Skywork/Skywork-Reward-V2-Qwen3-8B
+    acc_subset: 0.85
+    acc_full: 0.8508
+    n_subset: 100
+    frontier: true
+  - model: Skywork/Skywork-Reward-V2-Qwen3-4B
+    acc_subset: 0.84
+    acc_full: 0.8366
+    n_subset: 100
+    frontier: true
+  - model: LxzGordon/URM-LLaMa-3.1-8B
+    acc_subset: 0.83
+    acc_full: 0.8043
+    n_subset: 100
+    frontier: true
+  - model: Skywork/Skywork-Reward-V2-Llama-3.2-3B
+    acc_subset: 0.82
+    acc_full: 0.8293
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_llama_1e-6_2_skyworkstulufull__1__1743800938
+    acc_subset: 0.82
+    acc_full: 0.8088
+    n_subset: 100
+    frontier: false
+  - model: Skywork/Skywork-Reward-Llama-3.1-8B-v0.2
+    acc_subset: 0.81
+    acc_full: 0.7981
+    n_subset: 100
+    frontier: true
+  - model: allenai/open_instruct_dev-rm_llama70b_skyworkstulufull__8__1745387923
+    acc_subset: 0.81
+    acc_full: 0.7901
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_llama_3e-6_2_skyworkstulufull__1__1743800713
+    acc_subset: 0.81
+    acc_full: 0.7856
+    n_subset: 100
+    frontier: false
+  - model: Skywork/Skywork-Reward-Llama-3.1-8B
+    acc_subset: 0.8
+    acc_full: 0.8026
+    n_subset: 100
+    frontier: true
+  - model: allenai/open_instruct_dev-rm_llama70b_3e-6_skyworkstulufull__8__1748239203
+    acc_subset: 0.8
+    acc_full: 0.7958
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_llama_3e-6_1_skyworkstulufull__2__1744311461
+    acc_subset: 0.8
+    acc_full: 0.7862
+    n_subset: 100
+    frontier: false
+  - model: anthropic/claude-3-7-sonnet-20250219
+    acc_subset: 0.8
+    acc_full: 0.789
+    n_subset: 100
+    frontier: true
+  - model: HFXM/RAMO-Llama3.1-8B
+    acc_subset: 0.79
+    acc_full: 0.7816
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_llama_2e-6_1_skyworkstulufull__1__1743893867
+    acc_subset: 0.79
+    acc_full: 0.7845
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_llama_4e-6_1_skyworkstulufull__1__1743893911
+    acc_subset: 0.79
+    acc_full: 0.7811
+    n_subset: 100
+    frontier: false
+  - model: infly/INF-ORM-Llama3.1-70B
+    acc_subset: 0.79
+    acc_full: 0.8106
+    n_subset: 100
+    frontier: false
+  - model: nicolinho/QRM-Llama3.1-8B-v2
+    acc_subset: 0.79
+    acc_full: 0.7765
+    n_subset: 100
+    frontier: false
+  - model: Qwen/WorldPM-72B
+    acc_subset: 0.78
+    acc_full: 0.7663
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_llama_3e-6_1_skyworkstulufull__1__1743713193
+    acc_subset: 0.78
+    acc_full: 0.7845
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_llama_3e-6_1_skyworkstulufull__3__1744311780
+    acc_subset: 0.78
+    acc_full: 0.772
+    n_subset: 100
+    frontier: false
+  - model: Skywork/Skywork-Reward-V2-Qwen3-1.7B
+    acc_subset: 0.77
+    acc_full: 0.7691
+    n_subset: 100
+    frontier: true
+  - model: allenai/open_instruct_dev-rm_3e-6_2_skyworkstulufull__1__1743446231
+    acc_subset: 0.77
+    acc_full: 0.7691
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_qwen32b_1e-6_skyworkstulufull__8__1748235917
+    acc_subset: 0.77
+    acc_full: 0.7487
+    n_subset: 100
+    frontier: true
+  - model: Skywork/Skywork-Reward-V2-Llama-3.2-1B
+    acc_subset: 0.76
+    acc_full: 0.7431
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-reward_modeling__1__1741292911
+    acc_subset: 0.76
+    acc_full: 0.7595
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_1e-6_2_dpo_skyworkstulufull__1__1743549902
+    acc_subset: 0.76
+    acc_full: 0.7612
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_1e-6_2_rl_skyworkstulufull__1__1743551515
+    acc_subset: 0.76
+    acc_full: 0.7635
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_tulu3_70b_1_skyworkstulufull__8__1743582087
+    acc_subset: 0.76
+    acc_full: 0.7612
+    n_subset: 100
+    frontier: false
+  - model: Skywork/Skywork-VL-Reward-7B
+    acc_subset: 0.75
+    acc_full: 0.7431
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-reward_modeling__1__1741287363
+    acc_subset: 0.75
+    acc_full: 0.7584
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_3e-6_2_dpo_skyworkstulufull__1__1743550187
+    acc_subset: 0.75
+    acc_full: 0.7629
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_3e-6_2_rl_skyworkstulufull__1__1743551498
+    acc_subset: 0.75
+    acc_full: 0.7533
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_llama70b_skyworkstulufull__4__1747266598
+    acc_subset: 0.75
+    acc_full: 0.7538
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_llama_1e-6_1_skyworks__1__1744062999
+    acc_subset: 0.75
+    acc_full: 0.7379
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_llama_1e-6_1_skyworkstulufull__1__1743712777
+    acc_subset: 0.75
+    acc_full: 0.7595
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_3e-6_1_dpo_skyworks__1__1744530368
+    acc_subset: 0.74
+    acc_full: 0.7487
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_3e-6_1_rl_skyworkstulufull__1__1743551530
+    acc_subset: 0.74
+    acc_full: 0.747
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_3e-6_1_skyworkstulufull__2__1744314745
+    acc_subset: 0.74
+    acc_full: 0.7396
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_llama_3e-6_1__2__1744311395
+    acc_subset: 0.74
+    acc_full: 0.7419
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_llama_3e-6_2__1__1743896489
+    acc_subset: 0.74
+    acc_full: 0.7311
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_qwen32b_3e-6_skyworkstulufull__8__1748288961
+    acc_subset: 0.74
+    acc_full: 0.7476
+    n_subset: 100
+    frontier: true
+  - model: anthropic/claude-opus-4-20250514
+    acc_subset: 0.74
+    acc_full: 0.7465
+    n_subset: 100
+    frontier: true
+  - model: allenai/open_instruct_dev-rm_3e-6_1_dpo_skyworkstulufull__1__1743550182
+    acc_subset: 0.73
+    acc_full: 0.7442
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_3e-6_1_skyworkstulufull__1__1743446486
+    acc_subset: 0.73
+    acc_full: 0.7368
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_llama_1e-6_2__1__1743896638
+    acc_subset: 0.73
+    acc_full: 0.7243
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_llamabase_3e-6_2_skyworkstulufull__1__1745386516
+    acc_subset: 0.73
+    acc_full: 0.7368
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_qwen_3e-6_1_skyworkstulufull__1__1743712916
+    acc_subset: 0.73
+    acc_full: 0.7436
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_qwenbase_2e-5_1_skyworkstulufull__1__1745388738
+    acc_subset: 0.73
+    acc_full: 0.7289
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_qwenbase_3e-6_2_skyworkstulufull__1__1745388138
+    acc_subset: 0.73
+    acc_full: 0.7277
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_tulu3_70b_2__8__1742982964
+    acc_subset: 0.73
+    acc_full: 0.7198
+    n_subset: 100
+    frontier: false
+  - model: Ray2333/GRM-Llama3-8B-rewardmodel-ft
+    acc_subset: 0.72
+    acc_full: 0.7504
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-reward_modeling__1__1741286813
+    acc_subset: 0.72
+    acc_full: 0.7374
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_1e-6_1_dpo_skyworkstulufull__1__1743550181
+    acc_subset: 0.72
+    acc_full: 0.7187
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_3e-6_1_rl_skyworks__1__1744530236
+    acc_subset: 0.72
+    acc_full: 0.7289
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_llama_1e-6_1__1__1743896628
+    acc_subset: 0.72
+    acc_full: 0.7039
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_llama_3e-6_1__1__1743929424
+    acc_subset: 0.72
+    acc_full: 0.7016
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_llama_3e-6_1__3__1744311491
+    acc_subset: 0.72
+    acc_full: 0.7187
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_llama_3e-6_1_skyworks__1__1744062787
+    acc_subset: 0.72
+    acc_full: 0.7708
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_llamabase_1e-6_2_skyworkstulufull__1__1745441922
+    acc_subset: 0.72
+    acc_full: 0.7028
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_qwen_2e-5_1_skyworkstulufull__1__1743713091
+    acc_subset: 0.72
+    acc_full: 0.7317
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_qwen_3e-6_1_skyworks__1__1744062829
+    acc_subset: 0.72
+    acc_full: 0.7158
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_qwen_3e-6_1_skyworks__2__1744576050
+    acc_subset: 0.72
+    acc_full: 0.7164
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_qwenbase_3e-6_1_skyworkstulufull__1__1745388737
+    acc_subset: 0.72
+    acc_full: 0.7119
+    n_subset: 100
+    frontier: false
+  - model: NCSOFT/Llama-3-OffsetBias-RM-8B
+    acc_subset: 0.71
+    acc_full: 0.7113
+    n_subset: 100
+    frontier: false
+  - model: Skywork/Skywork-Reward-V2-Qwen3-0.6B
+    acc_subset: 0.71
+    acc_full: 0.7079
+    n_subset: 100
+    frontier: true
+  - model: allenai/open_instruct_dev-rm_1e-6_1_rl_skyworkstulufull__1__1743551523
+    acc_subset: 0.71
+    acc_full: 0.7141
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_1e-6_2_5pctflipped__1__1743444636
+    acc_subset: 0.71
+    acc_full: 0.6897
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_3e-6_2_dpo__1__1743550180
+    acc_subset: 0.71
+    acc_full: 0.7011
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_llama_2e-5_2_skyworkstulufull__1__1743800773
+    acc_subset: 0.71
+    acc_full: 0.7039
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_llamabase_3e-6_1_skyworkstulufull__1__1745386507
+    acc_subset: 0.71
+    acc_full: 0.6721
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_qwen_3e-6_2__1__1743023576
+    acc_subset: 0.71
+    acc_full: 0.6926
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_tulu3_70b_1__8__1742924455
+    acc_subset: 0.71
+    acc_full: 0.6971
+    n_subset: 100
+    frontier: false
+  - model: Ray2333/GRM-gemma2-2B-rewardmodel-ft
+    acc_subset: 0.7
+    acc_full: 0.6807
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-reward_modeling__1__1742338142
+    acc_subset: 0.7
+    acc_full: 0.7062
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_3e-6_2_rl__1__1743551509
+    acc_subset: 0.7
+    acc_full: 0.7033
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-reward_modeling__1__1739925892
+    acc_subset: 0.69
+    acc_full: 0.7033
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-reward_modeling__1__1739943881
+    acc_subset: 0.69
+    acc_full: 0.6733
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-reward_modeling__1__1742519610
+    acc_subset: 0.69
+    acc_full: 0.6858
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_1e-6_2_10pctflipped__1__1743295427
+    acc_subset: 0.69
+    acc_full: 0.6937
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_3e-6_2_1pctflipped__1__1743445759
+    acc_subset: 0.69
+    acc_full: 0.6909
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_3e-6_2_20pctflipped__1__1743324905
+    acc_subset: 0.69
+    acc_full: 0.62
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_llama_2e-5_1_skyworkstulufull__1__1743712885
+    acc_subset: 0.69
+    acc_full: 0.7198
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_qwenbase_1e-6_2_skyworkstulufull__1__1745388604
+    acc_subset: 0.69
+    acc_full: 0.6778
+    n_subset: 100
+    frontier: false
+  - model: sfairXC/FsfairX-LLaMA3-RM-v0.1
+    acc_subset: 0.69
+    acc_full: 0.6574
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_1e-6_2_20pctflipped__1__1743295446
+    acc_subset: 0.68
+    acc_full: 0.6597
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_3e-6_1_10pctflipped__1__1743324835
+    acc_subset: 0.68
+    acc_full: 0.6704
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_3e-6_2_5pctflipped__1__1743444505
+    acc_subset: 0.68
+    acc_full: 0.6812
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_qwen_1e-6_1_skyworkstulufull__1__1743712914
+    acc_subset: 0.68
+    acc_full: 0.6835
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_qwen_3e-6_3__1__1743023619
+    acc_subset: 0.68
+    acc_full: 0.6841
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_qwenbase_2e-5_2_skyworkstulufull__1__1745388191
+    acc_subset: 0.68
+    acc_full: 0.7005
+    n_subset: 100
+    frontier: false
+  - model: anthropic/claude-sonnet-4-20250514
+    acc_subset: 0.68
+    acc_full: 0.641
+    n_subset: 100
+    frontier: true
+  - model: allenai/open_instruct_dev-reward_modeling__1__1739871066
+    acc_subset: 0.67
+    acc_full: 0.6608
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-reward_modeling__1__1739957701
+    acc_subset: 0.67
+    acc_full: 0.6778
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_3e-6_1_dpo__1__1743549903
+    acc_subset: 0.67
+    acc_full: 0.667
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_3e-6_1_skyworkstulufull__3__1744311661
+    acc_subset: 0.67
+    acc_full: 0.7198
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_3e-6_2_10pctflipped__1__1743295267
+    acc_subset: 0.67
+    acc_full: 0.6699
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_llamabase_2e-5_1_skyworkstulufull__1__1745386495
+    acc_subset: 0.67
+    acc_full: 0.6642
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-reward_modeling__1__1740129284
+    acc_subset: 0.66
+    acc_full: 0.6693
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_1e-6_1_dpo_skyworks__1__1744530271
+    acc_subset: 0.66
+    acc_full: 0.6665
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_1e-6_1_rl_skyworks__1__1744530262
+    acc_subset: 0.66
+    acc_full: 0.6619
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_1e-6_2_dpo__1__1743549325
+    acc_subset: 0.66
+    acc_full: 0.675
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_3e-6_2_skyworkstulu75__1__1743548926
+    acc_subset: 0.66
+    acc_full: 0.6381
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_qwen_1e-6_1_skyworks__1__1744062830
+    acc_subset: 0.66
+    acc_full: 0.6523
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-reward_modeling__1__1740005072
+    acc_subset: 0.65
+    acc_full: 0.6653
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_1e-6_2_rl__1__1743551238
+    acc_subset: 0.65
+    acc_full: 0.671
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_2e-5_1_5pctflipped__1__1743443747
+    acc_subset: 0.65
+    acc_full: 0.6041
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_3e-6_1_1pctflipped__1__1743445221
+    acc_subset: 0.65
+    acc_full: 0.6512
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_3e-6_1__2__1743897475
+    acc_subset: 0.65
+    acc_full: 0.6693
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_3e-6_1__3__1744311421
+    acc_subset: 0.65
+    acc_full: 0.6648
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_3e-6_1_rl__1__1743551527
+    acc_subset: 0.65
+    acc_full: 0.6625
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_3e-6_2_skyworkstulumix__1__1743205661
+    acc_subset: 0.65
+    acc_full: 0.6517
+    n_subset: 100
+    frontier: false
+  - model: Ray2333/GRM-llama3-8B-sftreg
+    acc_subset: 0.64
+    acc_full: 0.654
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-reward_modeling__1__1739971529
+    acc_subset: 0.64
+    acc_full: 0.62
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-reward_modeling__1__1739998765
+    acc_subset: 0.64
+    acc_full: 0.6557
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_1e-6_1_rl__1__1743551221
+    acc_subset: 0.64
+    acc_full: 0.6324
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_3e-6_1_no_if__2__1744316012
+    acc_subset: 0.64
+    acc_full: 0.6529
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_llamabase_2e-5_2_skyworkstulufull__1__1745386507
+    acc_subset: 0.64
+    acc_full: 0.6444
+    n_subset: 100
+    frontier: false
+  - model: openai/gpt-4.1-2025-04-14
+    acc_subset: 0.64
+    acc_full: 0.6665
+    n_subset: 100
+    frontier: true
+  - model: weqweasdas/RM-Mistral-7B
+    acc_subset: 0.64
+    acc_full: 0.6347
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-reward_modeling__1__1739590997
+    acc_subset: 0.63
+    acc_full: 0.6506
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_3e-6_1_20pctflipped__1__1743324826
+    acc_subset: 0.63
+    acc_full: 0.6364
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_3e-6_1_5pctflipped__1__1743444498
+    acc_subset: 0.63
+    acc_full: 0.6551
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_3e-6_1_no_if__3__1744315765
+    acc_subset: 0.63
+    acc_full: 0.654
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_qwen_1e-6_1_skyworks__2__1744576024
+    acc_subset: 0.63
+    acc_full: 0.641
+    n_subset: 100
+    frontier: false
+  - model: nicolinho/QRM-Gemma-2-27B
+    acc_subset: 0.63
+    acc_full: 0.6421
+    n_subset: 100
+    frontier: false
+  - model: Ray2333/GRM-llama3-8B-distill
+    acc_subset: 0.62
+    acc_full: 0.6268
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-reward_modeling__1__1742519628
+    acc_subset: 0.62
+    acc_full: 0.5956
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_1e-6_1_10pctflipped__1__1743295511
+    acc_subset: 0.62
+    acc_full: 0.6109
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_1e-6_1_dpo__1__1743550054
+    acc_subset: 0.62
+    acc_full: 0.6285
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_2e-5_2_20pctflipped__1__1743295366
+    acc_subset: 0.62
+    acc_full: 0.5349
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_3e-6_1_skyworkstulu75__1__1743534417
+    acc_subset: 0.62
+    acc_full: 0.6245
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_3e-6_1_skyworkstulumix__1__1743204472
+    acc_subset: 0.62
+    acc_full: 0.6211
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_llamabase_1e-6_1_skyworkstulufull__1__1745386412
+    acc_subset: 0.62
+    acc_full: 0.6001
+    n_subset: 100
+    frontier: false
+  - model: google/gemini-2.5-pro-preview-05-06
+    acc_subset: 0.62
+    acc_full: 0.62
+    n_subset: 100
+    frontier: true
+  - model: allenai/Llama-3.1-Tulu-3-8B-RM
+    acc_subset: 0.61
+    acc_full: 0.6324
+    n_subset: 100
+    frontier: true
+  - model: allenai/open_instruct_dev-rm_1e-6_2_skyworkstulumix__1__1743205906
+    acc_subset: 0.61
+    acc_full: 0.6075
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_2e-5_1_10pctflipped__1__1743295305
+    acc_subset: 0.61
+    acc_full: 0.6069
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_qwenbase_1e-6_1_skyworkstulufull__1__1745388583
+    acc_subset: 0.61
+    acc_full: 0.6086
+    n_subset: 100
+    frontier: false
+  - model: internlm/internlm2-20b-reward
+    acc_subset: 0.61
+    acc_full: 0.6035
+    n_subset: 100
+    frontier: false
+  - model: openbmb/Eurus-RM-7b
+    acc_subset: 0.61
+    acc_full: 0.6239
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-reward_modeling__1__1739971507
+    acc_subset: 0.6
+    acc_full: 0.6251
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_1e-6_1_5pctflipped__1__1743444535
+    acc_subset: 0.6
+    acc_full: 0.62
+    n_subset: 100
+    frontier: false
+  - model: hendrydong/Mistral-RM-for-RAFT-GSHF-v0
+    acc_subset: 0.6
+    acc_full: 0.6171
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_2e-5_1_20pctflipped__1__1743324778
+    acc_subset: 0.59
+    acc_full: 0.5757
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-reward_modeling__1__1739943972
+    acc_subset: 0.58
+    acc_full: 0.595
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_1e-6_1_skyworkstulumix__1__1743205750
+    acc_subset: 0.58
+    acc_full: 0.557
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_2e-5_2_5pctflipped__1__1743444634
+    acc_subset: 0.58
+    acc_full: 0.5559
+    n_subset: 100
+    frontier: false
+  - model: internlm/internlm2-7b-reward
+    acc_subset: 0.58
+    acc_full: 0.5621
+    n_subset: 100
+    frontier: false
+  - model: CIR-AMS/BTRM_Qwen2_7b_0613
+    acc_subset: 0.57
+    acc_full: 0.5786
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-reward_modeling__1__1739943850
+    acc_subset: 0.57
+    acc_full: 0.5763
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_1e-6_1_20pctflipped__1__1743295406
+    acc_subset: 0.57
+    acc_full: 0.5638
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_1e-6_2_30pctflipped__1__1743325094
+    acc_subset: 0.57
+    acc_full: 0.5837
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_3e-6_1_30pctflipped__1__1743326363
+    acc_subset: 0.57
+    acc_full: 0.578
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_2e-5_1_skyworkstulumix__1__1743205935
+    acc_subset: 0.56
+    acc_full: 0.5701
+    n_subset: 100
+    frontier: false
+  - model: Nexusflow/Starling-RM-34B
+    acc_subset: 0.55
+    acc_full: 0.5451
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_2e-5_2_10pctflipped__1__1743295360
+    acc_subset: 0.55
+    acc_full: 0.5355
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_2e-5_2_skyworkstulumix__1__1743205988
+    acc_subset: 0.55
+    acc_full: 0.5457
+    n_subset: 100
+    frontier: false
+  - model: openai/gpt-4o-2024-08-06
+    acc_subset: 0.55
+    acc_full: 0.5411
+    n_subset: 100
+    frontier: true
+  - model: openbmb/UltraRM-13b
+    acc_subset: 0.54
+    acc_full: 0.5207
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_3e-6_2_30pctflipped__1__1743326363
+    acc_subset: 0.52
+    acc_full: 0.523
+    n_subset: 100
+    frontier: false
+  - model: weqweasdas/RM-Gemma-7B
+    acc_subset: 0.5
+    acc_full: 0.4912
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_1e-6_1_30pctflipped__1__1743325136
+    acc_subset: 0.49
+    acc_full: 0.5054
+    n_subset: 100
+    frontier: false
+  - model: PKU-Alignment/beaver-7b-v1.0-cost
+    acc_subset: 0.45
+    acc_full: 0.4282
+    n_subset: 100
+    frontier: false
+  - model: ShikaiChen/LDL-Reward-Gemma-2-27B-v0.1
+    acc_subset: 0.45
+    acc_full: 0.46
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_2e-5_1_30pctflipped__1__1743326459
+    acc_subset: 0.45
+    acc_full: 0.4628
+    n_subset: 100
+    frontier: false
+  - model: openai/gpt-4.1-mini-2025-04-14
+    acc_subset: 0.45
+    acc_full: 0.4555
+    n_subset: 100
+    frontier: true
+  - model: google/gemini-2.5-flash-preview-04-17
+    acc_subset: 0.44
+    acc_full: 0.544
+    n_subset: 100
+    frontier: true
+  - model: internlm/internlm2-1_8b-reward
+    acc_subset: 0.44
+    acc_full: 0.4441
+    n_subset: 100
+    frontier: false
+  - model: PKU-Alignment/beaver-7b-v2.0-cost
+    acc_subset: 0.42
+    acc_full: 0.4248
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_2e-5_2_30pctflipped__1__1743326352
+    acc_subset: 0.4
+    acc_full: 0.3868
+    n_subset: 100
+    frontier: false
+  - model: openai/gpt-4.1-nano-2025-04-14
+    acc_subset: 0.38
+    acc_full: 0.367
+    n_subset: 100
+    frontier: true
+  - model: openai/gpt-4o-mini-2024-07-18
+    acc_subset: 0.38
+    acc_full: 0.388
+    n_subset: 100
+    frontier: true
+  - model: OpenAssistant/reward-model-deberta-v3-large-v2
+    acc_subset: 0.36
+    acc_full: 0.3494
+    n_subset: 100
+    frontier: false
+  - model: anthropic/claude-3-opus-20240229
+    acc_subset: 0.36
+    acc_full: 0.3505
+    n_subset: 100
+    frontier: true
+  - model: anthropic/claude-3-5-sonnet-20240620
+    acc_subset: 0.35
+    acc_full: 0.3358
+    n_subset: 100
+    frontier: true
+  - model: weqweasdas/RM-Gemma-2B
+    acc_subset: 0.33
+    acc_full: 0.3137
+    n_subset: 100
+    frontier: false
+  - model: OpenAssistant/oasst-rm-2.1-pythia-1.4b-epoch-2.5
+    acc_subset: 0.32
+    acc_full: 0.3137
+    n_subset: 100
+    frontier: false
+  - model: OpenAssistant/oasst-rm-2-pythia-6.9b-epoch-1
+    acc_subset: 0.3
+    acc_full: 0.2978
+    n_subset: 100
+    frontier: false
+  - model: weqweasdas/hh_rlhf_rm_open_llama_3b
+    acc_subset: 0.29
+    acc_full: 0.2859
+    n_subset: 100
+    frontier: false
+  - model: PKU-Alignment/beaver-7b-v2.0-reward
+    acc_subset: 0.27
+    acc_full: 0.2745
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_1e-6_1_50pctflipped__1__1744241398
+    acc_subset: 0.25
+    acc_full: 0.2547
+    n_subset: 100
+    frontier: false
+  - model: anthropic/claude-3-haiku-20240307
+    acc_subset: 0.16
+    acc_full: 0.1741
+    n_subset: 100
+    frontier: true
+  - model: google/gemini-1.5-flash-8b
+    acc_subset: 0.16
+    acc_full: 0.2121
+    n_subset: 100
+    frontier: true
+  - model: PKU-Alignment/beaver-7b-v1.0-reward
+    acc_subset: 0.15
+    acc_full: 0.1628
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_1e-6_1_100pctflipped__1__1744241455
+    acc_subset: 0.07
+    acc_full: 0.0658
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_2e-5_1_100pctflipped__1__1744241529
+    acc_subset: 0.07
+    acc_full: 0.0754
+    n_subset: 100
+    frontier: false
+  - model: allenai/open_instruct_dev-rm_3e-6_1_100pctflipped__1__1744242103
+    acc_subset: 0.05
+    acc_full: 0.0647
+    n_subset: 100
+    frontier: false
 owner: ernestolee13
 n: 100
-published_at: '2026-10-05'
+published_at: '2026-10-08'
 type: multiclass
 classes:
 - Factuality
