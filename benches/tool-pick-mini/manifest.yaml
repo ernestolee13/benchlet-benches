@@ -256,9 +256,560 @@ review:
   decided: 0
 note: 판단형 공개 벤치의 축약 시드. 라벨은 원천 정답 키. 축약 검증 집단은 원천 리더보드의 모델이다. 우리 4팔은 그 집단 밖이라 축약본
   정확도가 전체 정확도와 같다는 보장은 없고, 100건의 Wilson 구간(약 ±6~10pp)이 그대로 적용된다
+source_results:
+  source: BFCL-Result 2025-12-16 (함수 호출 채점)
+  note: 원천이 그 모델을 돌린 항목별 정오에서 이 벤치의 항목만 골라 계산한 정확도. 프롬프트·채점 방식이 이 갤러리의 실행과 다르므로 참고값이다
+  n_models: 109
+  n_frontier: 57
+  models:
+  - model: BitAgent/BitAgent-Bounty-8B
+    acc_subset: 0.96
+    acc_full: 0.9385
+    n_subset: 100
+    frontier: false
+  - model: Qwen/Qwen3-32B
+    acc_subset: 0.85
+    acc_full: 0.838
+    n_subset: 100
+    frontier: true
+  - model: gemini-3-pro-preview
+    acc_subset: 0.85
+    acc_full: 0.8412
+    n_subset: 100
+    frontier: true
+  - model: claude-sonnet-4-5-20250929-FC
+    acc_subset: 0.84
+    acc_full: 0.8164
+    n_subset: 100
+    frontier: true
+  - model: gemini-3-pro-preview-FC
+    acc_subset: 0.84
+    acc_full: 0.8268
+    n_subset: 100
+    frontier: true
+  - model: mistral-small-2506-FC
+    acc_subset: 0.84
+    acc_full: 0.8172
+    n_subset: 100
+    frontier: false
+  - model: Qwen/Qwen3-32B-FC
+    acc_subset: 0.83
+    acc_full: 0.8316
+    n_subset: 100
+    frontier: true
+  - model: Qwen/Qwen3-8B
+    acc_subset: 0.83
+    acc_full: 0.8156
+    n_subset: 100
+    frontier: true
+  - model: mistral-large-2411-FC
+    acc_subset: 0.83
+    acc_full: 0.8284
+    n_subset: 100
+    frontier: true
+  - model: nova-2-lite-v1.0
+    acc_subset: 0.83
+    acc_full: 0.8244
+    n_subset: 100
+    frontier: false
+  - model: Qwen/Qwen3-8B-FC
+    acc_subset: 0.82
+    acc_full: 0.8244
+    n_subset: 100
+    frontier: true
+  - model: mistral-small-2506
+    acc_subset: 0.82
+    acc_full: 0.814
+    n_subset: 100
+    frontier: false
+  - model: qwen3-14b-FC
+    acc_subset: 0.82
+    acc_full: 0.8132
+    n_subset: 100
+    frontier: true
+  - model: qwen3-235b-a22b-instruct-2507
+    acc_subset: 0.82
+    acc_full: 0.8061
+    n_subset: 100
+    frontier: true
+  - model: qwen3-30b-a3b-instruct-2507
+    acc_subset: 0.82
+    acc_full: 0.8005
+    n_subset: 100
+    frontier: true
+  - model: Nanbeige/Nanbeige4-3B-Thinking-2511
+    acc_subset: 0.81
+    acc_full: 0.8061
+    n_subset: 100
+    frontier: false
+  - model: Team-ACE/ToolACE-2-8B
+    acc_subset: 0.81
+    acc_full: 0.8132
+    n_subset: 100
+    frontier: false
+  - model: command-a-reasoning-08-2025-FC
+    acc_subset: 0.81
+    acc_full: 0.8085
+    n_subset: 100
+    frontier: false
+  - model: gpt-4.1-2025-04-14
+    acc_subset: 0.81
+    acc_full: 0.8005
+    n_subset: 100
+    frontier: true
+  - model: grok-4-1-fast-reasoning-FC
+    acc_subset: 0.81
+    acc_full: 0.7989
+    n_subset: 100
+    frontier: true
+  - model: katanemo/Arch-Agent-32B
+    acc_subset: 0.81
+    acc_full: 0.8156
+    n_subset: 100
+    frontier: false
+  - model: kimi-k2-0905-preview-FC
+    acc_subset: 0.81
+    acc_full: 0.8037
+    n_subset: 100
+    frontier: false
+  - model: palmyra-x-004
+    acc_subset: 0.81
+    acc_full: 0.8093
+    n_subset: 100
+    frontier: false
+  - model: tiiuae/Falcon3-10B-Instruct-FC
+    acc_subset: 0.81
+    acc_full: 0.7901
+    n_subset: 100
+    frontier: false
+  - model: claude-haiku-4-5-20251001-FC
+    acc_subset: 0.8
+    acc_full: 0.8029
+    n_subset: 100
+    frontier: true
+  - model: claude-opus-4-5-20251101-FC
+    acc_subset: 0.8
+    acc_full: 0.8101
+    n_subset: 100
+    frontier: true
+  - model: command-a-03-2025-FC
+    acc_subset: 0.8
+    acc_full: 0.7957
+    n_subset: 100
+    frontier: false
+  - model: glm-4.6-FC
+    acc_subset: 0.8
+    acc_full: 0.8156
+    n_subset: 100
+    frontier: true
+  - model: grok-4-1-fast-non-reasoning-FC
+    acc_subset: 0.8
+    acc_full: 0.7957
+    n_subset: 100
+    frontier: true
+  - model: Qwen/Qwen3-4B-Instruct-2507-FC
+    acc_subset: 0.79
+    acc_full: 0.7893
+    n_subset: 100
+    frontier: true
+  - model: meta-llama/Llama-3.3-70B-Instruct-FC
+    acc_subset: 0.79
+    acc_full: 0.7869
+    n_subset: 100
+    frontier: true
+  - model: qwen3-14b
+    acc_subset: 0.79
+    acc_full: 0.8061
+    n_subset: 100
+    frontier: true
+  - model: qwen3-30b-a3b-instruct-2507-FC
+    acc_subset: 0.79
+    acc_full: 0.7973
+    n_subset: 100
+    frontier: true
+  - model: DeepSeek-V3.2-Exp-thinking
+    acc_subset: 0.78
+    acc_full: 0.7757
+    n_subset: 100
+    frontier: true
+  - model: Qwen/Qwen3-4B-Instruct-2507
+    acc_subset: 0.78
+    acc_full: 0.7694
+    n_subset: 100
+    frontier: true
+  - model: Salesforce/xLAM-2-32b-fc-r
+    acc_subset: 0.78
+    acc_full: 0.7781
+    n_subset: 100
+    frontier: false
+  - model: gemini-2.5-flash
+    acc_subset: 0.78
+    acc_full: 0.7853
+    n_subset: 100
+    frontier: true
+  - model: grok-4-0709-FC
+    acc_subset: 0.78
+    acc_full: 0.7694
+    n_subset: 100
+    frontier: true
+  - model: nova-pro-v1.0
+    acc_subset: 0.78
+    acc_full: 0.8045
+    n_subset: 100
+    frontier: false
+  - model: open-mistral-nemo-2407-FC
+    acc_subset: 0.78
+    acc_full: 0.7606
+    n_subset: 100
+    frontier: false
+  - model: qwen3-1.7b-FC
+    acc_subset: 0.78
+    acc_full: 0.7725
+    n_subset: 100
+    frontier: true
+  - model: Salesforce/Llama-xLAM-2-70b-fc-r
+    acc_subset: 0.77
+    acc_full: 0.7486
+    n_subset: 100
+    frontier: false
+  - model: claude-opus-4-5-20251101
+    acc_subset: 0.77
+    acc_full: 0.7733
+    n_subset: 100
+    frontier: true
+  - model: google/gemma-3-27b-it
+    acc_subset: 0.77
+    acc_full: 0.7574
+    n_subset: 100
+    frontier: false
+  - model: gpt-4.1-mini-2025-04-14
+    acc_subset: 0.77
+    acc_full: 0.7646
+    n_subset: 100
+    frontier: true
+  - model: meta-llama/Llama-4-Scout-17B-16E-Instruct-FC
+    acc_subset: 0.77
+    acc_full: 0.7622
+    n_subset: 100
+    frontier: true
+  - model: open-mistral-nemo-2407
+    acc_subset: 0.77
+    acc_full: 0.7622
+    n_subset: 100
+    frontier: false
+  - model: gemini-2.5-flash-FC
+    acc_subset: 0.76
+    acc_full: 0.7502
+    n_subset: 100
+    frontier: true
+  - model: meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8-FC
+    acc_subset: 0.76
+    acc_full: 0.7494
+    n_subset: 100
+    frontier: true
+  - model: MadeAgents/Hammer2.1-3b
+    acc_subset: 0.75
+    acc_full: 0.7494
+    n_subset: 100
+    frontier: false
+  - model: google/gemma-3-12b-it
+    acc_subset: 0.75
+    acc_full: 0.755
+    n_subset: 100
+    frontier: false
+  - model: gpt-4.1-2025-04-14-FC
+    acc_subset: 0.75
+    acc_full: 0.7334
+    n_subset: 100
+    frontier: true
+  - model: katanemo/Arch-Agent-3B
+    acc_subset: 0.75
+    acc_full: 0.759
+    n_subset: 100
+    frontier: false
+  - model: meta-llama/Llama-3.1-8B-Instruct
+    acc_subset: 0.75
+    acc_full: 0.7502
+    n_subset: 100
+    frontier: true
+  - model: Salesforce/Llama-xLAM-2-8b-fc-r
+    acc_subset: 0.74
+    acc_full: 0.7095
+    n_subset: 100
+    frontier: false
+  - model: gpt-5.2-2025-12-11-FC
+    acc_subset: 0.74
+    acc_full: 0.7326
+    n_subset: 100
+    frontier: true
+  - model: grok-4-0709
+    acc_subset: 0.74
+    acc_full: 0.7398
+    n_subset: 100
+    frontier: true
+  - model: MadeAgents/Hammer2.1-1.5b
+    acc_subset: 0.73
+    acc_full: 0.7302
+    n_subset: 100
+    frontier: false
+  - model: command-r7b-12-2024-FC
+    acc_subset: 0.73
+    acc_full: 0.7398
+    n_subset: 100
+    frontier: false
+  - model: gpt-5-nano-2025-08-07
+    acc_subset: 0.73
+    acc_full: 0.7239
+    n_subset: 100
+    frontier: true
+  - model: katanemo/Arch-Agent-1.5B
+    acc_subset: 0.73
+    acc_full: 0.7175
+    n_subset: 100
+    frontier: false
+  - model: o3-2025-04-16
+    acc_subset: 0.73
+    acc_full: 0.7374
+    n_subset: 100
+    frontier: true
+  - model: gpt-4.1-mini-2025-04-14-FC
+    acc_subset: 0.72
+    acc_full: 0.7294
+    n_subset: 100
+    frontier: true
+  - model: o3-2025-04-16-FC
+    acc_subset: 0.71
+    acc_full: 0.7071
+    n_subset: 100
+    frontier: true
+  - model: o4-mini-2025-04-16-FC
+    acc_subset: 0.71
+    acc_full: 0.7039
+    n_subset: 100
+    frontier: true
+  - model: speakleash/Bielik-11B-v2.3-Instruct
+    acc_subset: 0.71
+    acc_full: 0.7039
+    n_subset: 100
+    frontier: false
+  - model: tiiuae/Falcon3-7B-Instruct-FC
+    acc_subset: 0.71
+    acc_full: 0.7039
+    n_subset: 100
+    frontier: false
+  - model: uiuc-convai/CoALM-70B
+    acc_subset: 0.71
+    acc_full: 0.7071
+    n_subset: 100
+    frontier: false
+  - model: uiuc-convai/CoALM-8B
+    acc_subset: 0.71
+    acc_full: 0.7063
+    n_subset: 100
+    frontier: false
+  - model: mistral-medium-2505-FC
+    acc_subset: 0.7
+    acc_full: 0.6975
+    n_subset: 100
+    frontier: false
+  - model: MadeAgents/Hammer2.1-7b
+    acc_subset: 0.69
+    acc_full: 0.7366
+    n_subset: 100
+    frontier: false
+  - model: gemini-2.5-flash-lite-FC
+    acc_subset: 0.69
+    acc_full: 0.6808
+    n_subset: 100
+    frontier: true
+  - model: gpt-5.2-2025-12-11
+    acc_subset: 0.69
+    acc_full: 0.6768
+    n_subset: 100
+    frontier: true
+  - model: mistral-large-2411
+    acc_subset: 0.69
+    acc_full: 0.6816
+    n_subset: 100
+    frontier: true
+  - model: nova-micro-v1.0
+    acc_subset: 0.69
+    acc_full: 0.6856
+    n_subset: 100
+    frontier: false
+  - model: ibm-granite/granite-3.1-8b-instruct
+    acc_subset: 0.68
+    acc_full: 0.6672
+    n_subset: 100
+    frontier: false
+  - model: mistral-medium-2505
+    acc_subset: 0.68
+    acc_full: 0.6704
+    n_subset: 100
+    frontier: false
+  - model: o4-mini-2025-04-16
+    acc_subset: 0.68
+    acc_full: 0.7191
+    n_subset: 100
+    frontier: true
+  - model: openbmb/MiniCPM3-4B-FC
+    acc_subset: 0.68
+    acc_full: 0.6816
+    n_subset: 100
+    frontier: false
+  - model: Salesforce/xLAM-2-3b-fc-r
+    acc_subset: 0.66
+    acc_full: 0.656
+    n_subset: 100
+    frontier: false
+  - model: ibm-granite/granite-3.2-8b-instruct
+    acc_subset: 0.66
+    acc_full: 0.656
+    n_subset: 100
+    frontier: false
+  - model: microsoft/phi-4
+    acc_subset: 0.65
+    acc_full: 0.6449
+    n_subset: 100
+    frontier: false
+  - model: google/gemma-3-4b-it
+    acc_subset: 0.64
+    acc_full: 0.6401
+    n_subset: 100
+    frontier: false
+  - model: gpt-4.1-nano-2025-04-14-FC
+    acc_subset: 0.64
+    acc_full: 0.6441
+    n_subset: 100
+    frontier: true
+  - model: ibm-granite/granite-20b-functioncalling
+    acc_subset: 0.64
+    acc_full: 0.6233
+    n_subset: 100
+    frontier: false
+  - model: qwen3-235b-a22b-instruct-2507-FC
+    acc_subset: 0.64
+    acc_full: 0.6608
+    n_subset: 100
+    frontier: true
+  - model: gpt-5-mini-2025-08-07
+    acc_subset: 0.63
+    acc_full: 0.6305
+    n_subset: 100
+    frontier: true
+  - model: Nanbeige3.5-Pro-Thinking-FC
+    acc_subset: 0.62
+    acc_full: 0.6592
+    n_subset: 100
+    frontier: false
+  - model: qwen3-0.6b-FC
+    acc_subset: 0.62
+    acc_full: 0.6097
+    n_subset: 100
+    frontier: true
+  - model: gpt-5-nano-2025-08-07-FC
+    acc_subset: 0.61
+    acc_full: 0.6057
+    n_subset: 100
+    frontier: true
+  - model: gpt-5-mini-2025-08-07-FC
+    acc_subset: 0.6
+    acc_full: 0.5986
+    n_subset: 100
+    frontier: true
+  - model: meta-llama/Llama-3.2-3B-Instruct-FC
+    acc_subset: 0.6
+    acc_full: 0.6321
+    n_subset: 100
+    frontier: false
+  - model: MadeAgents/Hammer2.1-0.5b
+    acc_subset: 0.59
+    acc_full: 0.5866
+    n_subset: 100
+    frontier: false
+  - model: Salesforce/xLAM-2-1b-fc-r
+    acc_subset: 0.58
+    acc_full: 0.5754
+    n_subset: 100
+    frontier: false
+  - model: gemini-2.5-flash-lite
+    acc_subset: 0.57
+    acc_full: 0.5722
+    n_subset: 100
+    frontier: true
+  - model: tiiuae/Falcon3-3B-Instruct-FC
+    acc_subset: 0.57
+    acc_full: 0.5714
+    n_subset: 100
+    frontier: false
+  - model: DeepSeek-V3.2-Exp-FC
+    acc_subset: 0.56
+    acc_full: 0.5531
+    n_subset: 100
+    frontier: true
+  - model: claude-haiku-4-5-20251001
+    acc_subset: 0.56
+    acc_full: 0.5531
+    n_subset: 100
+    frontier: true
+  - model: ibm-granite/granite-4.0-350m
+    acc_subset: 0.55
+    acc_full: 0.4916
+    n_subset: 100
+    frontier: false
+  - model: qwen3-0.6b
+    acc_subset: 0.53
+    acc_full: 0.5267
+    n_subset: 100
+    frontier: true
+  - model: phronetic-ai/RZN-T
+    acc_subset: 0.52
+    acc_full: 0.5172
+    n_subset: 100
+    frontier: false
+  - model: gpt-4.1-nano-2025-04-14
+    acc_subset: 0.49
+    acc_full: 0.4924
+    n_subset: 100
+    frontier: true
+  - model: openbmb/MiniCPM3-4B
+    acc_subset: 0.48
+    acc_full: 0.4781
+    n_subset: 100
+    frontier: false
+  - model: claude-sonnet-4-5-20250929
+    acc_subset: 0.47
+    acc_full: 0.4653
+    n_subset: 100
+    frontier: true
+  - model: google/gemma-3-1b-it
+    acc_subset: 0.13
+    acc_full: 0.1109
+    n_subset: 100
+    frontier: false
+  - model: meta-llama/Llama-3.2-1B-Instruct-FC
+    acc_subset: 0.12
+    acc_full: 0.1429
+    n_subset: 100
+    frontier: false
+  - model: tiiuae/Falcon3-1B-Instruct-FC
+    acc_subset: 0.03
+    acc_full: 0.0303
+    n_subset: 100
+    frontier: false
+  - model: mistralai/Ministral-8B-Instruct-2410
+    acc_subset: 0.0
+    acc_full: 0.0008
+    n_subset: 100
+    frontier: false
+  - model: nvidia/llama-3.1-nemotron-ultra-253b-v1
+    acc_subset: 0.0
+    acc_full: 0.0008
+    n_subset: 100
+    frontier: true
 owner: ernestolee13
 n: 100
-published_at: '2026-10-05'
+published_at: '2026-10-08'
 type: multiclass
 classes:
 - 10-way
