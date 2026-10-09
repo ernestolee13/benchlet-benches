@@ -1,0 +1,804 @@
+name: clinc50-router-mini
+version: 1
+task_signature:
+  goal: route
+  answer: choice(50)
+  prob_use: accuracy_only
+  label: machine
+  unit: query
+  language: en
+  n: 100
+question: Classify the user utterance into exactly one intent label from the allowed
+  list. Pick the label whose meaning matches what the user wants, not just shared
+  words.
+choices:
+- accept_reservations
+- account_blocked
+- alarm
+- application_status
+- are_you_a_bot
+- bill_balance
+- cancel_reservation
+- change_user_name
+- confirm_reservation
+- cook_time
+- credit_limit
+- credit_limit_change
+- credit_score
+- definition
+- distance
+- food_last
+- gas_type
+- improve_credit_score
+- income
+- ingredients_list
+- insurance_change
+- last_maintenance
+- make_call
+- meal_suggestion
+- meaning_of_life
+- measurement_conversion
+- meeting_schedule
+- order_checks
+- pay_bill
+- play_music
+- plug_type
+- recipe
+- replacement_card_duration
+- report_lost_card
+- schedule_maintenance
+- share_location
+- shopping_list_update
+- smart_home
+- spelling
+- spending_history
+- thank_you
+- time
+- tire_change
+- todo_list
+- translate
+- user_name
+- what_are_your_hobbies
+- what_can_i_ask_you
+- what_song
+- where_are_you_from
+choices_note: null
+generator:
+  script: src/build_router_seeds.py
+  seed: 3
+source: CLINC150 (Larson et al. 2019), test split, 50 of 150 intents (random subset,
+  seed 1) 에서 무작위 100건 (전체 1500건)
+domain:
+- clinc150
+- router
+- public-seed
+- english
+visibility: full
+items_sha256: 12e78782c85de0b0c540435c58c3980613d38d1154006bbcd72f4f0e4c8af487
+license: CC-BY-3.0
+attribution:
+  items: CLINC150 (Larson et al. 2019), test split, 50 of 150 intents (random subset,
+    seed 1)
+  model_responses: '원천에 모델별 항목 출력 없음. 같은 100건을 json_schema enum + 자기보고 confidence
+    로 돌린 2026-10-09 실측: Haiku 5.5 96%, Haiku 4.5 97%. 라벨 10개 부분집합은 둘 다 98% 라 벤치로 두지
+    않았다'
+  method: random sample of the test split (seed 3); label subset by seed 1 where noted.
+    No per-model matrix
+distill:
+  method: random
+  n: 100
+  n_items_total: 1500
+  n_labels: 50
+  classes_in_sample: 45
+  selected_keys_in_full:
+  - clinc150:487
+  - clinc150:1213
+  - clinc150:1114
+  - clinc150:267
+  - clinc150:757
+  - clinc150:1236
+  - clinc150:970
+  - clinc150:1281
+  - clinc150:1189
+  - clinc150:134
+  - clinc150:1240
+  - clinc150:26
+  - clinc150:960
+  - clinc150:531
+  - clinc150:1128
+  - clinc150:479
+  - clinc150:392
+  - clinc150:1468
+  - clinc150:963
+  - clinc150:1107
+  - clinc150:1125
+  - clinc150:975
+  - clinc150:813
+  - clinc150:1308
+  - clinc150:308
+  - clinc150:474
+  - clinc150:1300
+  - clinc150:310
+  - clinc150:1071
+  - clinc150:798
+  - clinc150:31
+  - clinc150:1375
+  - clinc150:131
+  - clinc150:326
+  - clinc150:1210
+  - clinc150:87
+  - clinc150:616
+  - clinc150:63
+  - clinc150:551
+  - clinc150:968
+  - clinc150:1218
+  - clinc150:1472
+  - clinc150:793
+  - clinc150:1462
+  - clinc150:874
+  - clinc150:808
+  - clinc150:1491
+  - clinc150:1181
+  - clinc150:910
+  - clinc150:274
+  - clinc150:748
+  - clinc150:199
+  - clinc150:73
+  - clinc150:278
+  - clinc150:1013
+  - clinc150:444
+  - clinc150:528
+  - clinc150:1376
+  - clinc150:893
+  - clinc150:1283
+  - clinc150:862
+  - clinc150:1038
+  - clinc150:790
+  - clinc150:1175
+  - clinc150:718
+  - clinc150:1093
+  - clinc150:1198
+  - clinc150:834
+  - clinc150:1196
+  - clinc150:475
+  - clinc150:689
+  - clinc150:1396
+  - clinc150:58
+  - clinc150:572
+  - clinc150:1374
+  - clinc150:1424
+  - clinc150:334
+  - clinc150:1430
+  - clinc150:668
+  - clinc150:1109
+  - clinc150:1171
+  - clinc150:1165
+  - clinc150:213
+  - clinc150:1461
+  - clinc150:1342
+  - clinc150:432
+  - clinc150:1296
+  - clinc150:1174
+  - clinc150:546
+  - clinc150:583
+  - clinc150:254
+  - clinc150:129
+  - clinc150:987
+  - clinc150:990
+  - clinc150:181
+  - clinc150:704
+  - clinc150:136
+  - clinc150:840
+  - clinc150:41
+  - clinc150:601
+review:
+  checks_run: 0
+  human_reviewed_fraction: 0.0
+  flagged: 0
+  decided: 0
+note: '비서 질의를 의도 50개 중 하나로 (150개 중 부분집합). 원천 라벨을 정답으로 쓴다. 비슷한 의도(예: card_arrival 과
+  card_delivery_estimate)가 많아 라벨 정의를 읽고 고르는 판단이 필요하다. 선택지가 많으면 첫 토큰 로그확률을 못 쓰므로 모든
+  모델이 라벨 이름 생성으로 돌고 정확도만 본다'
+taxonomy:
+  domain:
+  - agent-tools
+  - customer-support
+  input_kind: query
+  source_kind: public-distilled
+  language: en
+keywords:
+- 라우팅
+- 의도 분류
+- 다지선택
+- intent
+- router
+owner: ernestolee13
+n: 100
+published_at: '2026-10-09'
+type: multiclass
+classes:
+- accept_reservations
+- alarm
+- application_status
+- are_you_a_bot
+- bill_balance
+- cancel_reservation
+- change_user_name
+- credit_limit
+- credit_limit_change
+- credit_score
+- definition
+- distance
+- food_last
+- gas_type
+- improve_credit_score
+- income
+- ingredients_list
+- last_maintenance
+- make_call
+- meal_suggestion
+- meaning_of_life
+- measurement_conversion
+- meeting_schedule
+- order_checks
+- pay_bill
+- play_music
+- plug_type
+- recipe
+- report_lost_card
+- schedule_maintenance
+- share_location
+- shopping_list_update
+- smart_home
+- spelling
+- spending_history
+- thank_you
+- time
+- tire_change
+- todo_list
+- translate
+- user_name
+- what_are_your_hobbies
+- what_can_i_ask_you
+- what_song
+- where_are_you_from
+label_source_mix:
+  machine: 100
+  constructed: 0
+  judged: 0
+  outcome: 0
+experiment:
+  date: '2026-10-09'
+  template: generic
+  runner: benchlet
+  arms:
+    glm:
+      model: z-ai/glm-4.7-flash
+      provider: cloudflare
+      family: GLM
+      mode: label
+      prob_source: none
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke:
+        arm: glm
+        mode: label
+        usable: true
+        reasons:
+        - 뻔한 5건 중 1건 틀림 (clinc50-router-mini-0000). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 0.8
+        cost: 7.37495e-05
+        per_item:
+        - id: clinc50-router-mini-0000
+          target: 39
+          hit: 0
+          pred: 15
+        - id: clinc50-router-mini-0001
+          target: 46
+          hit: 1
+          pred: 46
+        - id: clinc50-router-mini-0002
+          target: 37
+          hit: 1
+          pred: 37
+        - id: clinc50-router-mini-0003
+          target: 7
+          hit: 1
+          pred: 7
+        - id: clinc50-router-mini-0004
+          target: 43
+          hit: 1
+          pred: 43
+      cache_warm: null
+    qwen:
+      model: qwen/qwen3.8-27b
+      provider: parasail
+      family: Qwen
+      mode: label
+      prob_source: none
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke:
+        arm: qwen
+        mode: label
+        usable: true
+        reasons: []
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 1.0
+        cost: 7.647200000000001e-05
+        per_item:
+        - id: clinc50-router-mini-0000
+          target: 39
+          hit: 1
+          pred: 39
+        - id: clinc50-router-mini-0001
+          target: 46
+          hit: 1
+          pred: 46
+        - id: clinc50-router-mini-0002
+          target: 37
+          hit: 1
+          pred: 37
+        - id: clinc50-router-mini-0003
+          target: 7
+          hit: 1
+          pred: 7
+        - id: clinc50-router-mini-0004
+          target: 43
+          hit: 1
+          pred: 43
+      cache_warm: null
+    deepseek:
+      model: deepseek/deepseek-v4-flash
+      provider: digitalocean
+      family: DeepSeek
+      mode: label
+      prob_source: none
+      base_url: openrouter.ai
+      in_per_m: 0.14
+      smoke:
+        arm: deepseek
+        mode: label
+        usable: true
+        reasons: []
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 1.0
+        cost: 0.00019306
+        per_item:
+        - id: clinc50-router-mini-0000
+          target: 39
+          hit: 1
+          pred: 39
+        - id: clinc50-router-mini-0001
+          target: 46
+          hit: 1
+          pred: 46
+        - id: clinc50-router-mini-0002
+          target: 37
+          hit: 1
+          pred: 37
+        - id: clinc50-router-mini-0003
+          target: 7
+          hit: 1
+          pred: 7
+        - id: clinc50-router-mini-0004
+          target: 43
+          hit: 1
+          pred: 43
+      cache_warm: null
+    jev:
+      model: typesafe/jev-1.13
+      provider: openrouter
+      family: Jev
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.042
+      smoke:
+        arm: jev
+        mode: typed
+        usable: true
+        reasons: []
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 1.0
+        cost: 0.00022890000000000003
+        per_item:
+        - id: clinc50-router-mini-0000
+          target: 39
+          hit: 1
+          p: null
+          pred: 39
+        - id: clinc50-router-mini-0001
+          target: 46
+          hit: 1
+          p: null
+          pred: 46
+        - id: clinc50-router-mini-0002
+          target: 37
+          hit: 1
+          p: null
+          pred: 37
+        - id: clinc50-router-mini-0003
+          target: 7
+          hit: 1
+          p: null
+          pred: 7
+        - id: clinc50-router-mini-0004
+          target: 43
+          hit: 1
+          p: null
+          pred: 43
+      cache_warm: null
+    anthropic:claude-haiku-5-5:
+      model: claude-haiku-5-5
+      provider: anthropic
+      family: Anthropic
+      mode: label
+      prob_source: none
+      base_url: api.anthropic.com
+      in_per_m: 0.1
+      smoke:
+        arm: anthropic:claude-haiku-5-5
+        mode: label
+        usable: true
+        reasons: []
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 1.0
+        cost: 0.00022298499999999998
+        per_item:
+        - id: clinc50-router-mini-0000
+          target: 39
+          hit: 1
+          pred: 39
+        - id: clinc50-router-mini-0001
+          target: 46
+          hit: 1
+          pred: 46
+        - id: clinc50-router-mini-0002
+          target: 37
+          hit: 1
+          pred: 37
+        - id: clinc50-router-mini-0003
+          target: 7
+          hit: 1
+          pred: 7
+        - id: clinc50-router-mini-0004
+          target: 43
+          hit: 1
+          pred: 43
+      cache_warm:
+        cost: 2.069e-05
+        err: null
+    anthropic:claude-haiku-4-5-20251001:
+      model: claude-haiku-4-5-20251001
+      provider: anthropic
+      family: Anthropic
+      mode: label
+      prob_source: none
+      base_url: api.anthropic.com
+      in_per_m: 1.0
+      smoke:
+        arm: anthropic:claude-haiku-4-5-20251001
+        mode: label
+        usable: true
+        reasons: []
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 1.0
+        cost: 0.004453
+        per_item:
+        - id: clinc50-router-mini-0000
+          target: 39
+          hit: 1
+          pred: 39
+        - id: clinc50-router-mini-0001
+          target: 46
+          hit: 1
+          pred: 46
+        - id: clinc50-router-mini-0002
+          target: 37
+          hit: 1
+          pred: 37
+        - id: clinc50-router-mini-0003
+          target: 7
+          hit: 1
+          pred: 7
+        - id: clinc50-router-mini-0004
+          target: 43
+          hit: 1
+          pred: 43
+      cache_warm:
+        cost: 0.000882
+        err: null
+    anthropic:claude-sonnet-5-5:
+      model: claude-sonnet-5-5
+      provider: anthropic
+      family: Anthropic
+      mode: label
+      prob_source: none
+      base_url: api.anthropic.com
+      in_per_m: 2.0
+      smoke:
+        arm: anthropic:claude-sonnet-5-5
+        mode: label
+        usable: true
+        reasons: []
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 1.0
+        cost: 0.004109
+        per_item:
+        - id: clinc50-router-mini-0000
+          target: 39
+          hit: 1
+          pred: 39
+        - id: clinc50-router-mini-0001
+          target: 46
+          hit: 1
+          pred: 46
+        - id: clinc50-router-mini-0002
+          target: 37
+          hit: 1
+          pred: 37
+        - id: clinc50-router-mini-0003
+          target: 7
+          hit: 1
+          pred: 7
+        - id: clinc50-router-mini-0004
+          target: 43
+          hit: 1
+          pred: 43
+      cache_warm:
+        cost: 0.000323
+        err: null
+    anthropic:claude-opus-5-5:
+      model: claude-opus-5-5
+      provider: anthropic
+      family: Anthropic
+      mode: label
+      prob_source: none
+      base_url: api.anthropic.com
+      in_per_m: 4.0
+      smoke:
+        arm: anthropic:claude-opus-5-5
+        mode: label
+        usable: true
+        reasons: []
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 1.0
+        cost: 0.008218
+        per_item:
+        - id: clinc50-router-mini-0000
+          target: 39
+          hit: 1
+          pred: 39
+        - id: clinc50-router-mini-0001
+          target: 46
+          hit: 1
+          pred: 46
+        - id: clinc50-router-mini-0002
+          target: 37
+          hit: 1
+          pred: 37
+        - id: clinc50-router-mini-0003
+          target: 7
+          hit: 1
+          pred: 7
+        - id: clinc50-router-mini-0004
+          target: 43
+          hit: 1
+          pred: 43
+      cache_warm:
+        cost: 0.000646
+        err: null
+    anthropic:claude-fable-5-1:
+      model: claude-fable-5-1
+      provider: anthropic
+      family: Anthropic
+      mode: label
+      prob_source: none
+      base_url: api.anthropic.com
+      in_per_m: 10.0
+      smoke:
+        arm: anthropic:claude-fable-5-1
+        mode: label
+        usable: true
+        reasons: []
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 1.0
+        cost: 0.019535
+        per_item:
+        - id: clinc50-router-mini-0000
+          target: 39
+          hit: 1
+          pred: 39
+        - id: clinc50-router-mini-0001
+          target: 46
+          hit: 1
+          pred: 46
+        - id: clinc50-router-mini-0002
+          target: 37
+          hit: 1
+          pred: 37
+        - id: clinc50-router-mini-0003
+          target: 7
+          hit: 1
+          pred: 7
+        - id: clinc50-router-mini-0004
+          target: 43
+          hit: 1
+          pred: 43
+      cache_warm:
+        cost: 0.0013625
+        err: null
+  protocol:
+    decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
+    logprob_call:
+      max_tokens: 1
+      temperature: 0
+      logprobs: true
+      top_logprobs: 8
+      reasoning:
+        enabled: false
+    provider_pin: provider.only=[pin], allow_fallbacks=false, require_parameters=true
+    binary: '극성 반전 2회 호출 평균: p = ½[P(A|choices[0]=A) + P(B|choices[0]=B)]'
+    multiclass: 항목별 결정론적 셔플 뒤 원 인덱스로 복원(generic) 또는 파일에 든 셔플 그대로(legacy-seed)
+    typed: Jev noul(이진)/choice(다지), 질문을 instructions 로 그대로 전달
+    label_mass: 상위 8토큰 중 라벨 토큰 질량 < 0.5 이면 오류로 두고 세지 않음
+    renormalize: 라벨 토큰 확률을 라벨 집합 안에서 재정규화
+  items_sha256: 12e78782c85de0b0c540435c58c3980613d38d1154006bbcd72f4f0e4c8af487
+results:
+- results/clinc50-router-mini-run.json
+result_summary:
+  glm:
+    acc: 0.9292929292929293
+    ci95:
+    - 0.8611835734333935
+    - 0.9653302108717903
+    auroc: null
+    brier: null
+    n: 99
+    prob_source: none
+    model: z-ai/glm-4.7-flash
+    source_badge: author-run
+  qwen:
+    acc: 0.96
+    ci95:
+    - 0.9016278276739262
+    - 0.9843369494481519
+    auroc: null
+    brier: null
+    n: 100
+    prob_source: none
+    model: qwen/qwen3.8-27b
+    source_badge: author-run
+  deepseek:
+    acc: 0.95
+    ci95:
+    - 0.8882480347279117
+    - 0.9784566385436865
+    auroc: null
+    brier: null
+    n: 100
+    prob_source: none
+    model: deepseek/deepseek-v4-flash
+    source_badge: author-run
+  jev:
+    acc: 0.96
+    ci95:
+    - 0.9016278276739262
+    - 0.9843369494481519
+    auroc: null
+    brier: null
+    n: 100
+    prob_source: typed
+    model: typesafe/jev-1.13
+    source_badge: author-run
+  anthropic:claude-haiku-5-5:
+    acc: 0.96
+    ci95:
+    - 0.9016278276739262
+    - 0.9843369494481519
+    auroc: null
+    brier: null
+    n: 100
+    prob_source: none
+    model: claude-haiku-5-5
+    source_badge: author-run
+  anthropic:claude-haiku-4-5-20251001:
+    acc: 0.98
+    ci95:
+    - 0.9299868370580062
+    - 0.9944981477650318
+    auroc: null
+    brier: null
+    n: 100
+    prob_source: none
+    model: claude-haiku-4-5-20251001
+    source_badge: author-run
+  anthropic:claude-sonnet-5-5:
+    acc: 0.99
+    ci95:
+    - 0.9455124752390653
+    - 0.9982326134344527
+    auroc: null
+    brier: null
+    n: 100
+    prob_source: none
+    model: claude-sonnet-5-5
+    source_badge: author-run
+  anthropic:claude-opus-5-5:
+    acc: 0.99
+    ci95:
+    - 0.9455124752390653
+    - 0.9982326134344527
+    auroc: null
+    brier: null
+    n: 100
+    prob_source: none
+    model: claude-opus-5-5
+    source_badge: author-run
+  anthropic:claude-fable-5-1:
+    acc: 0.99
+    ci95:
+    - 0.9455124752390653
+    - 0.9982326134344527
+    auroc: null
+    brier: null
+    n: 100
+    prob_source: none
+    model: claude-fable-5-1
+    source_badge: author-run
