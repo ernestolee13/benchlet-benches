@@ -147,7 +147,7 @@ domain:
 - winogrande
 - public-seed
 - english
-visibility: sample
+visibility: full
 items_sha256: cf4aaf4773da9b35632a97323d3a0ccd3eaf15e34e351534b0219160a39dd018
 license: CC-BY
 attribution:
@@ -198,7 +198,7 @@ keywords:
 - 대명사
 owner: ernestolee13
 n: 100
-published_at: '2026-10-04'
+published_at: '2026-10-10'
 type: binary
 classes:
 - pronoun
@@ -208,7 +208,7 @@ label_source_mix:
   judged: 0
   outcome: 0
 experiment:
-  date: '2026-10-03'
+  date: '2026-10-10'
   template: generic
   runner: benchlet
   arms:
@@ -398,6 +398,31 @@ experiment:
           hit: 0
           p: 0.7
           pred: null
+    anthropic:claude-haiku-5-5:
+      model: claude-haiku-5-5
+      provider: anthropic
+      family: Anthropic
+      mode: generative
+      prob_source: none
+      base_url: api.anthropic.com
+      in_per_m: 0.1
+      smoke:
+        arm: anthropic:claude-haiku-5-5
+        mode: generative
+        usable: true
+        reasons:
+        - 로그확률이 안 와서 생성 팔로 강등 (prob_source=none, 정확도만)
+        has_logprobs: false
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: 0
+        n_calls: 11
+        smoke_acc: null
+        cost: 0.0001737
+        per_item: []
+      cache_warm: null
   protocol:
     decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
     logprob_call:
@@ -460,4 +485,15 @@ result_summary:
     n: 100
     prob_source: typed
     model: typesafe/jev-1.13
+    source_badge: author-run
+  anthropic:claude-haiku-5-5:
+    acc: 0.71
+    ci95:
+    - 0.6146092505999206
+    - 0.7898529302601586
+    auroc: 0.7398538961038961
+    brier: 0.2375
+    n: 100
+    prob_source: none
+    model: claude-haiku-5-5
     source_badge: author-run
