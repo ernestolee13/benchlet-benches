@@ -1020,7 +1020,7 @@ domain:
 - mmlu-pro
 - public-seed
 - english
-visibility: sample
+visibility: full
 items_sha256: 13d828d03f54acc6f7786d462f9c2e5280d6d2d87abc81c0fff6e2df0ea866b8
 license: MIT
 attribution:
@@ -1426,7 +1426,7 @@ source_results:
     frontier: false
 owner: ernestolee13
 n: 100
-published_at: '2026-10-08'
+published_at: '2026-10-10'
 type: multiclass
 classes:
 - 10-way
@@ -1441,7 +1441,7 @@ label_source_mix:
   judged: 0
   outcome: 0
 experiment:
-  date: '2026-10-05'
+  date: '2026-10-10'
   template: generic
   runner: benchlet
   arms:
@@ -1629,6 +1629,31 @@ experiment:
           hit: 1
           p: null
           pred: 1
+    anthropic:claude-haiku-5-5:
+      model: claude-haiku-5-5
+      provider: anthropic
+      family: Anthropic
+      mode: generative
+      prob_source: none
+      base_url: api.anthropic.com
+      in_per_m: 0.1
+      smoke:
+        arm: anthropic:claude-haiku-5-5
+        mode: generative
+        usable: true
+        reasons:
+        - 로그확률이 안 와서 생성 팔로 강등 (prob_source=none, 정확도만)
+        has_logprobs: false
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: 0
+        n_calls: 6
+        smoke_acc: null
+        cost: 0.00031710000000000006
+        per_item: []
+      cache_warm: null
   protocol:
     decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
     logprob_call:
@@ -1691,4 +1716,15 @@ result_summary:
     n: 91
     prob_source: logprob
     model: deepseek/deepseek-v4-flash
+    source_badge: author-run
+  anthropic:claude-haiku-5-5:
+    acc: 0.6363636363636364
+    ci95:
+    - 0.5381571567598794
+    - 0.7243825159017672
+    auroc: null
+    brier: null
+    n: 99
+    prob_source: none
+    model: claude-haiku-5-5
     source_badge: author-run
