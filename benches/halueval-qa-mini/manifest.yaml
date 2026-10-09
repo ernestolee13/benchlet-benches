@@ -21,7 +21,7 @@ domain:
 - halueval-qa
 - public-seed
 - english
-visibility: sample
+visibility: full
 items_sha256: e7244b1af0c71c2427ca01d24a65d7070b33b979c017d63d6450d0c85d891fe7
 license: MIT
 attribution:
@@ -199,7 +199,7 @@ review:
 note: 판단형 공개 벤치의 축약 시드(행렬 없는 경로). 라벨은 원천 라벨. 축약 검증은 원천 모델 집단이 아니라 우리 팔의 전체 대 축약 비교다
 owner: ernestolee13
 n: 100
-published_at: '2026-10-05'
+published_at: '2026-10-10'
 type: binary
 classes:
 - hallucinated
@@ -210,7 +210,7 @@ label_source_mix:
   judged: 0
   outcome: 0
 experiment:
-  date: '2026-10-05'
+  date: '2026-10-10'
   template: generic
   runner: benchlet
   arms:
@@ -392,6 +392,31 @@ experiment:
           hit: 1
           p: 0.2
           pred: null
+    anthropic:claude-haiku-5-5:
+      model: claude-haiku-5-5
+      provider: anthropic
+      family: Anthropic
+      mode: generative
+      prob_source: none
+      base_url: api.anthropic.com
+      in_per_m: 0.1
+      smoke:
+        arm: anthropic:claude-haiku-5-5
+        mode: generative
+        usable: true
+        reasons:
+        - 로그확률이 안 와서 생성 팔로 강등 (prob_source=none, 정확도만)
+        has_logprobs: false
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: 0
+        n_calls: 11
+        smoke_acc: null
+        cost: 0.00040130000000000005
+        per_item: []
+      cache_warm: null
   protocol:
     decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
     logprob_call:
@@ -454,4 +479,15 @@ result_summary:
     n: 84
     prob_source: logprob
     model: deepseek/deepseek-v4-flash
+    source_badge: author-run
+  anthropic:claude-haiku-5-5:
+    acc: 0.88
+    ci95:
+    - 0.8018773199709163
+    - 0.9300066263473222
+    auroc: 0.8864
+    brier: 0.1225
+    n: 100
+    prob_source: none
+    model: claude-haiku-5-5
     source_badge: author-run
