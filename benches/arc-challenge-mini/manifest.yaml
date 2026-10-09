@@ -419,7 +419,7 @@ domain:
 - arc-challenge
 - public-seed
 - english
-visibility: sample
+visibility: full
 items_sha256: fff22ff1dfe3b7dc8110bf2038be32205c2d2f6dd527fd66ed50f2aeedd5412c
 license: CC-BY-SA-4.0
 attribution:
@@ -469,7 +469,7 @@ keywords:
 - 시험
 owner: ernestolee13
 n: 100
-published_at: '2026-10-04'
+published_at: '2026-10-10'
 type: multiclass
 classes:
 - 4-way
@@ -479,7 +479,7 @@ label_source_mix:
   judged: 0
   outcome: 0
 experiment:
-  date: '2026-10-03'
+  date: '2026-10-10'
   template: generic
   runner: benchlet
   arms:
@@ -668,6 +668,31 @@ experiment:
           hit: 1
           p: null
           pred: 1
+    anthropic:claude-haiku-5-5:
+      model: claude-haiku-5-5
+      provider: anthropic
+      family: Anthropic
+      mode: generative
+      prob_source: none
+      base_url: api.anthropic.com
+      in_per_m: 0.1
+      smoke:
+        arm: anthropic:claude-haiku-5-5
+        mode: generative
+        usable: true
+        reasons:
+        - 로그확률이 안 와서 생성 팔로 강등 (prob_source=none, 정확도만)
+        has_logprobs: false
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: 0
+        n_calls: 6
+        smoke_acc: null
+        cost: 0.00012360000000000002
+        per_item: []
+      cache_warm: null
   protocol:
     decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
     logprob_call:
@@ -730,4 +755,15 @@ result_summary:
     n: 100
     prob_source: typed
     model: typesafe/jev-1.13
+    source_badge: author-run
+  anthropic:claude-haiku-5-5:
+    acc: 0.94
+    ci95:
+    - 0.8752303146877749
+    - 0.9722142547333434
+    auroc: null
+    brier: null
+    n: 100
+    prob_source: none
+    model: claude-haiku-5-5
     source_badge: author-run

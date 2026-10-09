@@ -3,7 +3,7 @@
  "bench": "arc-challenge-mini@1",
  "items_sha256": "fff22ff1dfe3b7dc8110bf2038be32205c2d2f6dd527fd66ed50f2aeedd5412c",
  "template": "generic",
- "date": "2026-10-03",
+ "date": "2026-10-10",
  "arms": {
   "glm": {
    "model": "z-ai/glm-4.7-flash",
@@ -242,6 +242,34 @@
      }
     ]
    }
+  },
+  "anthropic:claude-haiku-5-5": {
+   "model": "claude-haiku-5-5",
+   "provider": "anthropic",
+   "family": "Anthropic",
+   "mode": "generative",
+   "prob_source": "none",
+   "base_url": "api.anthropic.com",
+   "in_per_m": 0.1,
+   "smoke": {
+    "arm": "anthropic:claude-haiku-5-5",
+    "mode": "generative",
+    "usable": true,
+    "reasons": [
+     "로그확률이 안 와서 생성 팔로 강등 (prob_source=none, 정확도만)"
+    ],
+    "has_logprobs": false,
+    "reasoning_tokens_zero": null,
+    "provider_match": null,
+    "mass_min": null,
+    "spread": null,
+    "distinct_p": 0,
+    "n_calls": 6,
+    "smoke_acc": null,
+    "cost": 0.00012360000000000002,
+    "per_item": []
+   },
+   "cache_warm": null
   }
  },
  "items": [
@@ -345,6 +373,24 @@
       "solar flares": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1265,
+     "cost": 4.45e-05,
+     "in_tok": 395,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      0,
+      2,
+      3
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -448,6 +494,24 @@
       "having a large number of seeds": 0
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1418,
+     "cost": 4.45e-05,
+     "in_tok": 395,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      0,
+      3,
+      1
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -551,6 +615,24 @@
       "83 331": 0.02
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1189,
+     "cost": 5.02e-05,
+     "in_tok": 452,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      2,
+      0,
+      1
+     ],
+     "raw_text": "{\"answer\": \"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -654,6 +736,24 @@
       "data table": 0
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1044,
+     "cost": 3.96e-05,
+     "in_tok": 346,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      3,
+      1,
+      0
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -757,6 +857,24 @@
       "plant height": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1212,
+     "cost": 3.9399999999999995e-05,
+     "in_tok": 344,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      3,
+      1,
+      0
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -855,6 +973,24 @@
       "Copper is an excellent conductor of heat.": 0.01
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1492,
+     "cost": 4.25e-05,
+     "in_tok": 375,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      0,
+      2,
+      1
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -953,6 +1089,24 @@
       "states of matter": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1167,
+     "cost": 3.8100000000000005e-05,
+     "in_tok": 331,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      3,
+      2,
+      0
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1056,6 +1210,24 @@
       "Water can be absorbed by plants.": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1265,
+     "cost": 4.11e-05,
+     "in_tok": 361,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      1,
+      0,
+      3
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1159,6 +1331,24 @@
       "renewable.": 0.3
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1221,
+     "cost": 3.97e-05,
+     "in_tok": 347,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      0,
+      1,
+      2
+     ],
+     "raw_text": "{\"answer\": \"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1262,6 +1452,24 @@
       "They interbreed to maintain uniformity of traits.": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1228,
+     "cost": 4.4800000000000005e-05,
+     "in_tok": 398,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1365,6 +1573,24 @@
       "Hills": 1
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1257,
+     "cost": 3.9300000000000007e-05,
+     "in_tok": 343,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1468,6 +1694,24 @@
       "shape": 0
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1292,
+     "cost": 4.2800000000000004e-05,
+     "in_tok": 378,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      2,
+      1,
+      0
+     ],
+     "raw_text": "{\"answer\": \"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1571,6 +1815,24 @@
       "The average high temperature in springtime is 22°C.": 0.04
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1113,
+     "cost": 4.21e-05,
+     "in_tok": 371,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      2,
+      3,
+      1
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1674,6 +1936,24 @@
       "electron": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 906,
+     "cost": 3.76e-05,
+     "in_tok": 326,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      3,
+      2,
+      1
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1777,6 +2057,24 @@
       "solid and liquid": 0.01
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1229,
+     "cost": 3.95e-05,
+     "in_tok": 345,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      2,
+      3,
+      0
+     ],
+     "raw_text": "{\"answer\": \"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1880,6 +2178,24 @@
       "nitrogen": 0
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1254,
+     "cost": 4.08e-05,
+     "in_tok": 358,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      2,
+      3,
+      1
+     ],
+     "raw_text": "{\"answer\": \"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1983,6 +2299,24 @@
       "They have almost the same gravitational pull.": 0
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1291,
+     "cost": 4.35e-05,
+     "in_tok": 385,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      0,
+      3,
+      2
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2086,6 +2420,24 @@
       "screws": 0
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1103,
+     "cost": 3.88e-05,
+     "in_tok": 338,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      2,
+      3,
+      0
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2189,6 +2541,24 @@
       "use carbon and release nitrogen": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1245,
+     "cost": 4.05e-05,
+     "in_tok": 355,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      1,
+      3,
+      2
+     ],
+     "raw_text": "{\"answer\": \"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2292,6 +2662,24 @@
       "because of the inherited information inside the seeds": 1
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 983,
+     "cost": 4.35e-05,
+     "in_tok": 385,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      0,
+      1,
+      3
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2395,6 +2783,24 @@
       "The chicken population would go down.": 0.01
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1188,
+     "cost": 4.85e-05,
+     "in_tok": 435,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      2,
+      1,
+      3
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2498,6 +2904,24 @@
       "It is completely destroyed.": 0
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1209,
+     "cost": 4.16e-05,
+     "in_tok": 366,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      1,
+      3,
+      0
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2601,6 +3025,24 @@
       "a mixture of water and sugar": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1394,
+     "cost": 3.9800000000000005e-05,
+     "in_tok": 348,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      0,
+      3,
+      2
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2704,6 +3146,24 @@
       "Compare their blood types.": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1145,
+     "cost": 4.0600000000000004e-05,
+     "in_tok": 356,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2807,6 +3267,24 @@
       "moisture on mirror after hot shower": 1
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1123,
+     "cost": 3.99e-05,
+     "in_tok": 349,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "raw_text": "{\"answer\": \"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2910,6 +3388,24 @@
       "group 3 (3B)": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1296,
+     "cost": 4.0600000000000004e-05,
+     "in_tok": 356,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      0,
+      1,
+      3
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -3013,6 +3509,24 @@
       "when there is a limited amount of water in their environment": 1
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1225,
+     "cost": 4.5e-05,
+     "in_tok": 400,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      0,
+      1,
+      3
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -3116,6 +3630,24 @@
       "increase in dissolved oxygen in surface waters": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1264,
+     "cost": 5.4300000000000005e-05,
+     "in_tok": 493,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      0,
+      1,
+      2
+     ],
+     "raw_text": "{\"answer\": \"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -3219,6 +3751,24 @@
       "immune system": 0
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1233,
+     "cost": 4.2300000000000005e-05,
+     "in_tok": 373,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      3,
+      1,
+      0
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -3322,6 +3872,24 @@
       "impacts from meteors": 0
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1201,
+     "cost": 4.26e-05,
+     "in_tok": 376,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      2,
+      3,
+      1
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -3425,6 +3993,24 @@
       "moving four legs while running": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1147,
+     "cost": 4.1e-05,
+     "in_tok": 360,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      0,
+      1,
+      2
+     ],
+     "raw_text": "{\"answer\": \"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -3528,6 +4114,24 @@
       "high and low tide": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1299,
+     "cost": 3.88e-05,
+     "in_tok": 338,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      1,
+      0,
+      3
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -3631,6 +4235,24 @@
       "hold a lamp near the floor": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1219,
+     "cost": 4.1e-05,
+     "in_tok": 360,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      2,
+      0,
+      3
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -3734,6 +4356,24 @@
       "to validate results": 1
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1406,
+     "cost": 4.0600000000000004e-05,
+     "in_tok": 356,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      2,
+      0,
+      1
+     ],
+     "raw_text": "{\"answer\": \"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -3837,6 +4477,24 @@
       "sodium and chlorine in salt": 0
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1231,
+     "cost": 4.24e-05,
+     "in_tok": 374,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      0,
+      1,
+      3
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -3940,6 +4598,24 @@
       "sunrise": 1
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 965,
+     "cost": 3.84e-05,
+     "in_tok": 334,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      0,
+      1,
+      3
+     ],
+     "raw_text": "{\"answer\": \"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -4043,6 +4719,24 @@
       "the amount of energy the star consumes": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 910,
+     "cost": 4.26e-05,
+     "in_tok": 376,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      3,
+      1,
+      2
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -4146,6 +4840,24 @@
       "decreasing the length of the ramp": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1049,
+     "cost": 4.36e-05,
+     "in_tok": 386,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      3,
+      0,
+      1
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -4249,6 +4961,24 @@
       "the Moon does not rotate on its axis.": 0
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1234,
+     "cost": 4.4e-05,
+     "in_tok": 390,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      3,
+      2,
+      0
+     ],
+     "raw_text": "{\"answer\": \"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -4352,6 +5082,24 @@
       "They both travel at the same speed.": 1
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1213,
+     "cost": 4.2e-05,
+     "in_tok": 370,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      2,
+      1,
+      3
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -4455,6 +5203,24 @@
       "truck drivers who carry the fish": 0
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1239,
+     "cost": 4.3100000000000004e-05,
+     "in_tok": 381,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      3,
+      0,
+      2
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -4558,6 +5324,24 @@
       "3:00 P.M.": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1170,
+     "cost": 4.41e-05,
+     "in_tok": 391,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      3,
+      2,
+      0
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -4661,6 +5445,24 @@
       "the velocity of the shuttle": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1225,
+     "cost": 4.26e-05,
+     "in_tok": 376,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      1,
+      3,
+      0
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -4764,6 +5566,24 @@
       "Observe the plants to identify the source of the damage.": 1
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1164,
+     "cost": 4.53e-05,
+     "in_tok": 403,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      1,
+      2,
+      0
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -4867,6 +5687,24 @@
       "erosion of the stream bank": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1336,
+     "cost": 4.09e-05,
+     "in_tok": 359,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      1,
+      0,
+      3
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -4970,6 +5808,24 @@
       "colorless": 0
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1168,
+     "cost": 3.9800000000000005e-05,
+     "in_tok": 348,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      1,
+      0,
+      2
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -5073,6 +5929,24 @@
       "Pour a bucket a sand through the air.": 0
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1367,
+     "cost": 4.26e-05,
+     "in_tok": 376,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      0,
+      1,
+      2
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -5176,6 +6050,24 @@
       "A plastic bottle": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1233,
+     "cost": 3.9300000000000007e-05,
+     "in_tok": 343,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      3,
+      0,
+      1
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -5279,6 +6171,24 @@
       "colorful flowers": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1311,
+     "cost": 4.1800000000000006e-05,
+     "in_tok": 368,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      2,
+      1,
+      3
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -5382,6 +6292,24 @@
       "breathing": 0
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1013,
+     "cost": 4.1899999999999995e-05,
+     "in_tok": 369,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      0,
+      3,
+      2
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -5485,6 +6413,24 @@
       "Stained glass windows": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1219,
+     "cost": 3.9e-05,
+     "in_tok": 340,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      3,
+      1,
+      2
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -5588,6 +6534,24 @@
       "It is a poor conductor.": 0.99
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1197,
+     "cost": 4.71e-05,
+     "in_tok": 421,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      2,
+      1,
+      0
+     ],
+     "raw_text": "{\"answer\": \"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -5691,6 +6655,24 @@
       "kind of surface on the ramp": 1
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 871,
+     "cost": 4.3100000000000004e-05,
+     "in_tok": 381,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      1,
+      3,
+      2
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -5794,6 +6776,24 @@
       "by collecting rainfall data while it is raining": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1229,
+     "cost": 4.58e-05,
+     "in_tok": 408,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      0,
+      2,
+      3
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -5897,6 +6897,24 @@
       "Planetary years will become longer.": 0
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1223,
+     "cost": 4.4e-05,
+     "in_tok": 390,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      1,
+      0,
+      3
+     ],
+     "raw_text": "{\"answer\": \"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -6000,6 +7018,24 @@
       "You get hungry and sweat less.": 0
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1099,
+     "cost": 4.41e-05,
+     "in_tok": 391,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      1,
+      2,
+      0
+     ],
+     "raw_text": "{\"answer\": \"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -6103,6 +7139,24 @@
       "Electricity heats an oven.": 1
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1261,
+     "cost": 4.07e-05,
+     "in_tok": 357,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      0,
+      1,
+      2
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -6206,6 +7260,24 @@
       "The air stays cleaner.": 1
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 979,
+     "cost": 4.3100000000000004e-05,
+     "in_tok": 381,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      2,
+      3,
+      0
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -6309,6 +7381,24 @@
       "a rock": 0
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1168,
+     "cost": 3.69e-05,
+     "in_tok": 319,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      1,
+      3,
+      0
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -6412,6 +7502,24 @@
       "evaporation": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1218,
+     "cost": 4.1200000000000005e-05,
+     "in_tok": 362,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      0,
+      3,
+      1
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -6515,6 +7623,24 @@
       "maximum load the bridge can support": 1
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1285,
+     "cost": 4.2800000000000004e-05,
+     "in_tok": 378,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      0,
+      3,
+      1
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -6618,6 +7744,24 @@
       "It breaks down sugar to release energy.": 1
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1195,
+     "cost": 4.15e-05,
+     "in_tok": 365,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      1,
+      0,
+      2
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -6721,6 +7865,24 @@
       "a new experiment done with larger plants": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1284,
+     "cost": 4.5e-05,
+     "in_tok": 400,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      1,
+      0,
+      2
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -6824,6 +7986,24 @@
       "result in a nebula.": 0
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 945,
+     "cost": 4.0600000000000004e-05,
+     "in_tok": 356,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      0,
+      2,
+      1
+     ],
+     "raw_text": "{\"answer\": \"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -6927,6 +8107,24 @@
       "oxygen": 0
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1188,
+     "cost": 3.8700000000000006e-05,
+     "in_tok": 337,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      3,
+      0,
+      2
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -7030,6 +8228,24 @@
       "Earlobe Type and Biology": 0
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1248,
+     "cost": 4.440000000000001e-05,
+     "in_tok": 394,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      0,
+      3,
+      1
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -7133,6 +8349,24 @@
       "alter their behavior based on past experience.": 1
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1185,
+     "cost": 4.53e-05,
+     "in_tok": 403,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      2,
+      1,
+      3
+     ],
+     "raw_text": "{\"answer\": \"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -7236,6 +8470,24 @@
       "Heat moves from the ice cube to her hand.": 0
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1357,
+     "cost": 4.440000000000001e-05,
+     "in_tok": 394,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      2,
+      1,
+      0
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -7339,6 +8591,24 @@
       "an increase in the number of predators": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1228,
+     "cost": 4.5900000000000004e-05,
+     "in_tok": 409,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      0,
+      2,
+      3
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -7442,6 +8712,24 @@
       "carbon dioxide and nitrogen": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1282,
+     "cost": 4.0600000000000004e-05,
+     "in_tok": 356,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      3,
+      1,
+      2
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -7545,6 +8833,24 @@
       "to contain the parts of the cell": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1198,
+     "cost": 3.9800000000000005e-05,
+     "in_tok": 348,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      2,
+      3,
+      1
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -7648,6 +8954,24 @@
       "photosynthesis in plants": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1205,
+     "cost": 4.02e-05,
+     "in_tok": 352,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      1,
+      2,
+      0
+     ],
+     "raw_text": "{\"answer\": \"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -7751,6 +9075,24 @@
       "longitude": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1189,
+     "cost": 4.11e-05,
+     "in_tok": 361,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      2,
+      0,
+      3
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -7854,6 +9196,24 @@
       "cut up some leaves": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 2122,
+     "cost": 4.15e-05,
+     "in_tok": 365,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      1,
+      2,
+      0
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -7957,6 +9317,24 @@
       "the type of hair their parents have": 1
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1213,
+     "cost": 4.21e-05,
+     "in_tok": 371,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      0,
+      1,
+      3
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -8060,6 +9438,24 @@
       "The Moon revolves around Earth.": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1161,
+     "cost": 4.4300000000000006e-05,
+     "in_tok": 393,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      2,
+      0,
+      1
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -8163,6 +9559,24 @@
       "A car's gas mileage is increased and the engine has less power.": 1
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1293,
+     "cost": 4.8100000000000004e-05,
+     "in_tok": 431,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      1,
+      2,
+      0
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -8266,6 +9680,24 @@
       "replanting trees in deforested areas": 1
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1236,
+     "cost": 4.16e-05,
+     "in_tok": 366,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -8369,6 +9801,24 @@
       "19": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1306,
+     "cost": 3.97e-05,
+     "in_tok": 347,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      2,
+      0,
+      3
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -8472,6 +9922,24 @@
       "a change in the type of rock that forms in that area": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1356,
+     "cost": 4.3400000000000005e-05,
+     "in_tok": 384,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      3,
+      2,
+      1
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -8575,6 +10043,24 @@
       "Will adding more water change the type of dirt?": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 967,
+     "cost": 4.52e-05,
+     "in_tok": 402,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      0,
+      1,
+      2
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -8678,6 +10164,24 @@
       "runoff of water.": 0
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1085,
+     "cost": 3.9800000000000005e-05,
+     "in_tok": 348,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      0,
+      3,
+      2
+     ],
+     "raw_text": "{\"answer\": \"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -8781,6 +10285,24 @@
       "sedimentary rock": 1
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1152,
+     "cost": 3.91e-05,
+     "in_tok": 341,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      2,
+      1,
+      0
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -8884,6 +10406,24 @@
       "to know which kind of sugar to use": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1277,
+     "cost": 4.5600000000000004e-05,
+     "in_tok": 406,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      2,
+      0,
+      1
+     ],
+     "raw_text": "{\"answer\": \"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -8987,6 +10527,24 @@
       "degrees": 1
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1279,
+     "cost": 3.86e-05,
+     "in_tok": 336,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      2,
+      3,
+      1
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -9090,6 +10648,24 @@
       "a proton.": 0
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1227,
+     "cost": 3.89e-05,
+     "in_tok": 339,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      2,
+      3,
+      1
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -9193,6 +10769,24 @@
       "the ability of the snake to survive to reproduce": 1
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1274,
+     "cost": 4.6700000000000003e-05,
+     "in_tok": 417,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      3,
+      0,
+      2
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -9296,6 +10890,24 @@
       "cutting the apple into more pieces": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1205,
+     "cost": 4.91e-05,
+     "in_tok": 441,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      1,
+      2,
+      0
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -9399,6 +11011,24 @@
       "stop flowing.": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1260,
+     "cost": 4.11e-05,
+     "in_tok": 361,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      3,
+      2,
+      0
+     ],
+     "raw_text": "{\"answer\": \"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -9502,6 +11132,24 @@
       "The fur gives up protons to the rod.": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1305,
+     "cost": 4.33e-05,
+     "in_tok": 383,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      2,
+      1,
+      3
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -9605,6 +11253,24 @@
       "The total mass decreases.": 0.04
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1267,
+     "cost": 4.66e-05,
+     "in_tok": 416,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      0,
+      2,
+      3
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -9708,6 +11374,24 @@
       "high humidity": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1267,
+     "cost": 3.9e-05,
+     "in_tok": 340,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      0,
+      2,
+      3
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -9811,6 +11495,24 @@
       "the smallest particle that has all the characteristics of an element.": 1
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1307,
+     "cost": 4.2800000000000004e-05,
+     "in_tok": 378,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      0,
+      2,
+      3
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -9914,6 +11616,24 @@
       "Earth has completed one rotation around the Moon.": 0
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1223,
+     "cost": 4.6200000000000005e-05,
+     "in_tok": 412,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      2,
+      1,
+      0
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -10017,6 +11737,24 @@
       "They are always metals.": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1293,
+     "cost": 4.1e-05,
+     "in_tok": 360,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -10120,6 +11858,24 @@
       "radar": 0.08
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1081,
+     "cost": 3.84e-05,
+     "in_tok": 334,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      2,
+      3,
+      0
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -10223,6 +11979,24 @@
       "three dimensional representation of a two dimensional surface.": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1221,
+     "cost": 4.4200000000000004e-05,
+     "in_tok": 392,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      2,
+      3,
+      0
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -10326,6 +12100,24 @@
       "2.3": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1322,
+     "cost": 3.8e-05,
+     "in_tok": 330,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      2,
+      1,
+      0
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -10429,6 +12221,24 @@
       "radiation.": 0
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1261,
+     "cost": 4.04e-05,
+     "in_tok": 354,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      0,
+      2,
+      3
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -10532,6 +12342,24 @@
       "a cold rain falling to the ground": 0
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1213,
+     "cost": 4.690000000000001e-05,
+     "in_tok": 419,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      3,
+      1,
+      0
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   }
@@ -10564,6 +12392,27 @@
    "hit": 97,
    "ms": 25875,
    "cost": 0.0017687040000000007
+  },
+  "anthropic:claude-haiku-5-5": {
+   "n": 100,
+   "ok": 100,
+   "hit": 94,
+   "ms": 121777,
+   "cost": 0.004230700000000001
   }
- }
+ },
+ "merged_runs": [
+  {
+   "date": "2026-10-09",
+   "arms": [
+    "anthropic:claude-haiku-5-5"
+   ]
+  },
+  {
+   "date": "2026-10-10",
+   "arms": [
+    "anthropic:claude-haiku-5-5"
+   ]
+  }
+ ]
 }
