@@ -24,7 +24,7 @@ source: 고객 문의 1차 분류 샘플. 문의 30건을 작성자가 분류 �
 domain:
 - support-ticket-triage
 - sample
-visibility: sample
+visibility: full
 items_sha256: 052c470fb7980737040c1d96ea840ecdf3d46683019debcc3296c3d17955ae12
 license: CC-BY-4.0
 review:
@@ -46,7 +46,7 @@ keywords:
 owner: ernestolee13
 n: 30
 choices_note: null
-published_at: '2026-10-04'
+published_at: '2026-10-10'
 type: multiclass
 classes:
 - C0-결제
@@ -60,7 +60,7 @@ label_source_mix:
   judged: 0
   outcome: 0
 experiment:
-  date: '2026-10-01'
+  date: '2026-10-10'
   template: generic
   runner: benchlet
   arms:
@@ -242,6 +242,31 @@ experiment:
           hit: 1
           p: null
           pred: 1
+    anthropic:claude-haiku-5-5:
+      model: claude-haiku-5-5
+      provider: anthropic
+      family: Anthropic
+      mode: generative
+      prob_source: none
+      base_url: api.anthropic.com
+      in_per_m: 0.1
+      smoke:
+        arm: anthropic:claude-haiku-5-5
+        mode: generative
+        usable: true
+        reasons:
+        - 로그확률이 안 와서 생성 팔로 강등 (prob_source=none, 정확도만)
+        has_logprobs: false
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: 0
+        n_calls: 6
+        smoke_acc: null
+        cost: 0.00022080000000000003
+        per_item: []
+      cache_warm: null
   protocol:
     decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
     logprob_call:
@@ -304,4 +329,15 @@ result_summary:
     n: 29
     prob_source: typed
     model: typesafe/jev-1.13
+    source_badge: author-run
+  anthropic:claude-haiku-5-5:
+    acc: 0.9666666666666667
+    ci95:
+    - 0.8332924860304112
+    - 0.9940915620051425
+    auroc: null
+    brier: null
+    n: 30
+    prob_source: none
+    model: claude-haiku-5-5
     source_badge: author-run
