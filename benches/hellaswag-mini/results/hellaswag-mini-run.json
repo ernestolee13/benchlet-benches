@@ -3,7 +3,7 @@
  "bench": "hellaswag-mini@1",
  "items_sha256": "90e0b32427bc482084e6e5115b78c405e9a9898b967366493c112db5a1c38ebd",
  "template": "generic",
- "date": "2026-10-03",
+ "date": "2026-10-10",
  "arms": {
   "glm": {
    "model": "z-ai/glm-4.7-flash",
@@ -241,6 +241,34 @@
      }
     ]
    }
+  },
+  "anthropic:claude-haiku-5-5": {
+   "model": "claude-haiku-5-5",
+   "provider": "anthropic",
+   "family": "Anthropic",
+   "mode": "generative",
+   "prob_source": "none",
+   "base_url": "api.anthropic.com",
+   "in_per_m": 0.1,
+   "smoke": {
+    "arm": "anthropic:claude-haiku-5-5",
+    "mode": "generative",
+    "usable": true,
+    "reasons": [
+     "로그확률이 안 와서 생성 팔로 강등 (prob_source=none, 정확도만)"
+    ],
+    "has_logprobs": false,
+    "reasoning_tokens_zero": null,
+    "provider_match": null,
+    "mass_min": null,
+    "spread": null,
+    "distinct_p": 0,
+    "n_calls": 6,
+    "smoke_acc": null,
+    "cost": 0.000223,
+    "per_item": []
+   },
+   "cache_warm": null
   }
  },
  "items": [
@@ -344,6 +372,24 @@
       "then start talking about baseball.": 0.16
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1290,
+     "cost": 4.36e-05,
+     "in_tok": 386,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      2,
+      1,
+      3
+     ],
+     "raw_text": "{\"answer\": \"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -447,6 +493,24 @@
       "To ensure that your daiquiri has cooling temperatures of 0 to 7 degrees, place your chilled martini glass in the freezer and chill it for 10 minutes. [substeps] If you have a freezer-resistant glass, put it in the freezer for an hour after serving the daiquiri.": 0.02
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 799,
+     "cost": 6.840000000000001e-05,
+     "in_tok": 634,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      0,
+      3,
+      2
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -550,6 +614,24 @@
       "[step] Can you control the temperature of your water in a sudden four-hour period? If you see signs of mixed signals, this is a sign of a bad bathing suit. What's more, this can indicate irritation, nervousness or mental illness.": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1232,
+     "cost": 6.83e-05,
+     "in_tok": 633,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      0,
+      1,
+      2
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -653,6 +735,24 @@
       "stops playing and drops the violin.": 0.03
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1257,
+     "cost": 4.61e-05,
+     "in_tok": 411,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      3,
+      1,
+      0
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -756,6 +856,24 @@
       "[title] Put additional 2 studs on each track that you plan to connect between the shutters. [step] Hardware kits come with pre-drilled holes for all 10 studs, complete with screws.": 0
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1330,
+     "cost": 6.530000000000002e-05,
+     "in_tok": 603,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      1,
+      3,
+      0
+     ],
+     "raw_text": "{\"answer\": \"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -859,6 +977,24 @@
       "cut onto the sides are playing a game of bongos.": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1241,
+     "cost": 4.75e-05,
+     "in_tok": 425,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      1,
+      0,
+      3
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -962,6 +1098,24 @@
       "continue to move around one another performing various high kicks and punches to one another and ends with them jumping down and bowing.": 0.02
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1257,
+     "cost": 5.0600000000000003e-05,
+     "in_tok": 456,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      1,
+      3,
+      2
+     ],
+     "raw_text": "{\"answer\": \"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1065,6 +1219,24 @@
       "If you don't have a license to practice in a city, check state or regional regulations. [title] Apply for a home massage company membership or business membership.": 0.1
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1200,
+     "cost": 6.57e-05,
+     "in_tok": 607,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      0,
+      1,
+      3
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1168,6 +1340,24 @@
       "[substeps] Net is used to indicate a container weight. Some companies, such as amazon, sell these under different names.": 0
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1274,
+     "cost": 6.59e-05,
+     "in_tok": 609,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1271,6 +1461,24 @@
       "Additionally, gravitate towards the places you want to train, and make plans accordingly. [substeps] Find one that suits your needs and budget.": 0.02
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1059,
+     "cost": 6.85e-05,
+     "in_tok": 635,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      2,
+      1,
+      3
+     ],
+     "raw_text": "{\"answer\": \"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1374,6 +1582,24 @@
       "[substeps] Silicone is flammable and usually contains mercury, which can be harmful to skin. Wear plastic foil tops to protect your skin from moisture.": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1135,
+     "cost": 7.1e-05,
+     "in_tok": 660,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1477,6 +1703,24 @@
       "[title] Give on the plastic bag for each individual but keep on the bag so everyone can just hang their stuff under the seats and in their own bags. [title] Make sure that all the important things are stored in your carry ons.": 0
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1223,
+     "cost": 6.709999999999999e-05,
+     "in_tok": 621,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      3,
+      1,
+      2
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1580,6 +1824,24 @@
       "does curling.": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1009,
+     "cost": 4.24e-05,
+     "in_tok": 374,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      0,
+      2,
+      1
+     ],
+     "raw_text": "{\"answer\": \"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1683,6 +1945,24 @@
       "Everyone is different, so make friends with those who are your real selves and others who aren't. Have many \" friends \" outside of your walls.": 0.09
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1237,
+     "cost": 6.64e-05,
+     "in_tok": 614,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      3,
+      2,
+      0
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1786,6 +2066,24 @@
       "[substeps] You can search the main database by state or province. You can also type \" sex offender and crime status \" and \" fbi 18.": 0.07
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1247,
+     "cost": 6.59e-05,
+     "in_tok": 609,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      2,
+      1,
+      0
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1889,6 +2187,24 @@
       "Then, take the hem of the jeans and work it along the ley line. [substeps] Do not make sharp marks right behind the button holes.": 0
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1237,
+     "cost": 7.04e-05,
+     "in_tok": 654,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      3,
+      1,
+      2
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1992,6 +2308,24 @@
       "You can use any brand or scent of castile soap you like, including : [substeps] Pure (mild) unscented floral peppermint citrus [title] Add the carrier oil. [step] With the funnel still in the mouth of the bottle, pour in the carrier oil.": 0.99
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1270,
+     "cost": 7.78e-05,
+     "in_tok": 728,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      1,
+      0,
+      2
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2095,6 +2429,24 @@
       "demonstrates how to properly throw the ball with his hands while still speaking to the camera.": 0.99
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1130,
+     "cost": 5.3e-05,
+     "in_tok": 480,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      3,
+      0,
+      2
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2198,6 +2550,24 @@
       "Boys should drink 27 ounces of water everyday, and girls should drink 7 ounces of water three times daily. [substeps] In between meals, try giving your child an apple or a lemon.": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1259,
+     "cost": 6.7e-05,
+     "in_tok": 620,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      2,
+      0,
+      3
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2301,6 +2671,24 @@
       "installs and interacts with a sleeping pet before moving away.": 0.04
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1257,
+     "cost": 4.86e-05,
+     "in_tok": 436,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      0,
+      3,
+      2
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2404,6 +2792,24 @@
       "[title] Inspect the village you plan to visit. [step] Cruz harapon is located across the area you expect to be flying into later in the day, and it has unsalted palm trees and a great view.": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 985,
+     "cost": 7.15e-05,
+     "in_tok": 665,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      3,
+      0,
+      2
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2507,6 +2913,24 @@
       "is replayed in slow motion.": 0.13
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 946,
+     "cost": 5.11e-05,
+     "in_tok": 461,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      3,
+      2,
+      1
+     ],
+     "raw_text": "{\"answer\": \"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2610,6 +3034,24 @@
       "Doing this consistently will make the accent sound more authentic. Don't trill your/r/for too long, as this will make the accent sound fake.": 1
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1234,
+     "cost": 6.13e-05,
+     "in_tok": 563,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      2,
+      3,
+      0
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2713,6 +3155,24 @@
       "They are, essentially, notes that you make in your nose before applying perfumes. Other notes are: top notes linger in your nostrils.": 0
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 988,
+     "cost": 6.659999999999999e-05,
+     "in_tok": 616,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      2,
+      1,
+      0
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2816,6 +3276,24 @@
       "[substeps] You really don't have to invest in special equipment--almost any type of rod and reel will work for squid fishing. [title] Try a squid jig for bait.": 0.98
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1314,
+     "cost": 6.52e-05,
+     "in_tok": 602,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      3,
+      0,
+      1
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2919,6 +3397,24 @@
       "mows the lawn being pulled by the jetski.": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1137,
+     "cost": 4.76e-05,
+     "in_tok": 426,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      2,
+      0,
+      1
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -3017,6 +3513,24 @@
       "begins to lift the barbell through the air and puts it on his head.": 0.01
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1315,
+     "cost": 4.940000000000001e-05,
+     "in_tok": 444,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      0,
+      1,
+      3
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -3115,6 +3629,24 @@
       "[title] Know that a seizure may develop as the result of a head injury or lack of oxygen. [step] At the time a person suffers a stroke, for example, brain tissue surrounding the site of the brain bleed becomes abnormally excited.": 0.87
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1270,
+     "cost": 7.45e-05,
+     "in_tok": 695,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      0,
+      3,
+      2
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -3218,6 +3750,24 @@
       "is another little puppy running around the dog and a little kitten too.": 0.73
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1269,
+     "cost": 4.8200000000000006e-05,
+     "in_tok": 432,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      2,
+      0,
+      3
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -3321,6 +3871,24 @@
       "So select a shoe with a few inches of extra tread to help draw the toe toward your foot. [substeps] Other styles of mules include lace or liners.": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1129,
+     "cost": 7.22e-05,
+     "in_tok": 672,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      3,
+      1,
+      0
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -3419,6 +3987,24 @@
       "You will also need to encourage older siblings or children to help you with these duties. [substeps] For example, if you have young children, consider asking your children to help with chores the younger they get.": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1231,
+     "cost": 7.410000000000001e-05,
+     "in_tok": 691,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      0,
+      2,
+      3
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -3517,6 +4103,24 @@
       "They are often referred to as \" shake-n-go \" wigs because you can simply shake them out as you pick them up and then put them on. If you are experiencing hair loss due to chemotherapy treatment, most hair grows back within six months of your last treatment.": 0.92
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1225,
+     "cost": 7.3e-05,
+     "in_tok": 680,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -3620,6 +4224,24 @@
       "[substeps] Never hire an attorney who does not work for the state or federal government. Only hire lawyers who have experience representing local or state judges and arbitrators.": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1258,
+     "cost": 7.18e-05,
+     "in_tok": 668,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      2,
+      3,
+      1
+     ],
+     "raw_text": "{\"answer\": \"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -3723,6 +4345,24 @@
       "You also should be able to catch basic information that might bother or confuse you later. [substeps] Your court's date of issue comes next.": 0.01
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1263,
+     "cost": 6.97e-05,
+     "in_tok": 647,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      2,
+      3,
+      0
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -3821,6 +4461,24 @@
       "Cut your heels in a nail-length for a more hourglass look. Give heels varying heights such as the height of your hips for a more exotic look.": 0
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1282,
+     "cost": 6.62e-05,
+     "in_tok": 612,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      3,
+      1,
+      2
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -3924,6 +4582,24 @@
       "lifts it up to his chest and rests it against his shoulder.": 0.23
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1289,
+     "cost": 4.78e-05,
+     "in_tok": 428,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      0,
+      3,
+      1
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -4027,6 +4703,24 @@
       "does a trick and lands with one foot on the board.": 0.85
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1045,
+     "cost": 4.6700000000000003e-05,
+     "in_tok": 417,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      1,
+      3,
+      2
+     ],
+     "raw_text": "{\"answer\": \"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -4125,6 +4819,24 @@
       "dive backward into the pool causing it to crest and swim to the edge of the pool.": 0
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1247,
+     "cost": 4.9300000000000006e-05,
+     "in_tok": 443,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      1,
+      0,
+      3
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -4223,6 +4935,24 @@
       "is standing and standing on the rock with right back on pedaling the bikes.": 0.94
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1202,
+     "cost": 5.05e-05,
+     "in_tok": 455,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      0,
+      1,
+      3
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -4326,6 +5056,24 @@
       "are shown entering the arena and playing rock paper scissors.": 0
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1244,
+     "cost": 4.97e-05,
+     "in_tok": 447,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      2,
+      1,
+      0
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -4429,6 +5177,24 @@
       "[substeps] African american women and their kids younger than 18 are at higher risk for developing csd. Breast cancer can be a possible cause of csd.": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1262,
+     "cost": 7.03e-05,
+     "in_tok": 653,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      3,
+      1,
+      2
+     ],
+     "raw_text": "{\"answer\": \"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -4532,6 +5298,24 @@
       "[title] Decide how many, and which place on the board you will hit. [title] You can play with doors or just go to the end and play with them as you normally would.": 0
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1317,
+     "cost": 6.64e-05,
+     "in_tok": 614,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      0,
+      3,
+      2
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -4635,6 +5419,24 @@
       "[substeps] Think about investing in stocks, bonds, mutual funds, or anything else that can help you and your family stay afloat. Before planning, write down the number of stocks you are asking to net.": 0
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1217,
+     "cost": 6.75e-05,
+     "in_tok": 625,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      1,
+      0,
+      2
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -4738,6 +5540,24 @@
       "is smiling while skiing down a hill, suddenly he stops and walks towards a house.": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 836,
+     "cost": 5.21e-05,
+     "in_tok": 471,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      2,
+      3,
+      1
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -4841,6 +5661,24 @@
       "are now falling off the roof and they're in a big pile like logs.": 0
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1280,
+     "cost": 5.16e-05,
+     "in_tok": 466,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      2,
+      3,
+      0
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -4944,6 +5782,24 @@
       "Older teens may be able to use the car, attend activities without an adult, or hold a part-time job. [substeps] A controlling parent may face increased conflict with a teen who seeks independence.": 1
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1037,
+     "cost": 6.790000000000001e-05,
+     "in_tok": 629,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      0,
+      1,
+      2
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -5047,6 +5903,24 @@
       "[substeps] This is especially important if you have blackheads or other serious issues. Normal hand sanitizer will not provide an effective solution.": 0
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1074,
+     "cost": 6.960000000000001e-05,
+     "in_tok": 646,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      2,
+      1,
+      3
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -5150,6 +6024,24 @@
       ", people are again singing, drinking and dancing outdoors.": 0.96
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1283,
+     "cost": 4.8200000000000006e-05,
+     "in_tok": 432,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      3,
+      1,
+      0
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -5253,6 +6145,24 @@
       "They will consider you to be a reliable source of information. [substeps] Try to engage with your child's interests.": 1
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1224,
+     "cost": 6.87e-05,
+     "in_tok": 637,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      1,
+      3,
+      0
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -5356,6 +6266,24 @@
       "Common over-the-counter medications are gabapentin, claritin, amitriptyline, zoloft, and fluoxetine. [substeps] If you begin to experience any of these symptoms, you should see your doctor or pharmacist immediately.": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1222,
+     "cost": 7.44e-05,
+     "in_tok": 694,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      0,
+      1,
+      3
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -5459,6 +6387,24 @@
       "are in his bags, he secures it with his straps and begins jumping up and down.": 0.14
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1083,
+     "cost": 4.72e-05,
+     "in_tok": 422,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      3,
+      2,
+      1
+     ],
+     "raw_text": "{\"answer\": \"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -5562,6 +6508,24 @@
       "If you don't have any plastic, resealable bags, cover the broken powder with a sheet of plastic wrap. Make sure that it is wrapped firmly over the edges, or the powder will escape.": 0.78
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1591,
+     "cost": 6.2e-05,
+     "in_tok": 570,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      3,
+      2,
+      1
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -5665,6 +6629,24 @@
       "[step] If you are working in a apartment building with mortar breached, set the area up as soon as possible. Working at least 24 hours a day, according to your schedule and local laws.": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1185,
+     "cost": 6.480000000000002e-05,
+     "in_tok": 598,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      0,
+      2,
+      1
+     ],
+     "raw_text": "{\"answer\": \"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -5768,6 +6750,24 @@
       "Oftentimes, you'll find that you're good at parenting even when you aren't looking. [substeps] Various educational institutions and other institutions offer classes that educate you on parenting, including parenting and parenting skills.": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1241,
+     "cost": 6.929999999999999e-05,
+     "in_tok": 643,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      0,
+      2,
+      1
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -5871,6 +6871,24 @@
       "men talk, then the man puts a fountain pen on the cup and begins talking.": 0
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1130,
+     "cost": 5.16e-05,
+     "in_tok": 466,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      3,
+      0,
+      2
+     ],
+     "raw_text": "{\"answer\": \"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -5974,6 +6992,24 @@
       "In other words, your stomach should double the number of positive, calming endorphins that are in your body. This should get your mind off the tension of anxiety, which is common in human behavioral patterns.": 0
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1109,
+     "cost": 7.290000000000001e-05,
+     "in_tok": 679,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      0,
+      2,
+      1
+     ],
+     "raw_text": "{\"answer\": \"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -6077,6 +7113,24 @@
       "products her face again and shows us a photo.": 0.07
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1032,
+     "cost": 4.5900000000000004e-05,
+     "in_tok": 409,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      3,
+      0,
+      1
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -6180,6 +7234,24 @@
       "and clips of a man running marathons are shown with overlaid graphics showing angles.": 1
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1238,
+     "cost": 5.41e-05,
+     "in_tok": 491,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      3,
+      1,
+      0
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -6283,6 +7355,24 @@
       "[title] Find a piece of lumber to use as a accent piece. [step] Use old, stiff lumber to accent your mantle piece or sign.": 0
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1199,
+     "cost": 6.85e-05,
+     "in_tok": 635,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      3,
+      2,
+      1
+     ],
+     "raw_text": "{\"answer\": \"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -6386,6 +7476,24 @@
       "[title] Stir in about 3 cups of conditioner, enough for your hair in your head. [title] Pull the pan over medium heat and bring to a boil until you're ready to use the conditioner or you're ready to have your hair put in a ponytail or another ponytail.": 0
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1310,
+     "cost": 7.09e-05,
+     "in_tok": 659,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      0,
+      3,
+      2
+     ],
+     "raw_text": "{\"answer\": \"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -6489,6 +7597,24 @@
       "is standing and talking inside a gym as large screens are shown and a woman in a black tank top is giving a tutorial about his exercises on weight lifts, and by the end of the tutorial there is a large group of people learning how to lift weight from overweight people, with a male jogging in a clear green guard surrounded by his trainer on a fenced in vault area.": 0.34
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 862,
+     "cost": 6.340000000000001e-05,
+     "in_tok": 584,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      1,
+      2,
+      0
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -6592,6 +7718,24 @@
       "drops the barbell onto the ground.": 0.82
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1192,
+     "cost": 4.89e-05,
+     "in_tok": 439,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      3,
+      1,
+      2
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -6695,6 +7839,24 @@
       "wraps the garment on top of the blouse, then irons it.": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1109,
+     "cost": 4.71e-05,
+     "in_tok": 421,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      3,
+      2,
+      1
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -6798,6 +7960,24 @@
       "Tease the top section of your hair next and pin the bottom section into place. Smooth out any flyaways and a bit of the top section of your hair.": 0.23
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1228,
+     "cost": 5.9300000000000005e-05,
+     "in_tok": 543,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      3,
+      0,
+      1
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -6901,6 +8081,24 @@
       "see a tool on a table.": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1096,
+     "cost": 4.27e-05,
+     "in_tok": 377,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      0,
+      1,
+      2
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -7004,6 +8202,24 @@
       "[title] Mark the areas you want to distress with pen or chalk. [step] While you're wearing the jeggings, take a piece of chalk or a pen.": 1
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1284,
+     "cost": 6.45e-05,
+     "in_tok": 595,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      3,
+      0,
+      2
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -7107,6 +8323,24 @@
       "[title] Decide what kind of twists to braid. [step] Once you have chosen your style, you can decide how long your braids should be.": 0.01
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1226,
+     "cost": 6.32e-05,
+     "in_tok": 582,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      3,
+      0,
+      2
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -7210,6 +8444,24 @@
       "Keeping hydrated will also help prevent new stretch marks from forming. [substeps] Specific instructions vary, but consider drinking up to ten glasses of water daily to keep your skin hydrated and minimize the appearance of stretch marks.": 0.91
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1534,
+     "cost": 7.87e-05,
+     "in_tok": 737,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      2,
+      1,
+      3
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -7313,6 +8565,24 @@
       "Challenge yourself by taking hard courses and getting good grades to impress both college and medical school admissions officers. [substeps] Enroll in ap science courses if you live in the us or canada or gcse or a level courses in the uk.": 1
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1186,
+     "cost": 7.54e-05,
+     "in_tok": 704,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      0,
+      1,
+      3
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -7416,6 +8686,24 @@
       "is standing using a white blower to blow snow.": 0.01
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1069,
+     "cost": 4.8100000000000004e-05,
+     "in_tok": 431,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      1,
+      0,
+      2
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -7519,6 +8807,24 @@
       "It is important to find sellers that accept more than $100 , 000 to give you a refund. [substeps] There are also wide variety of brands and prices that will allow you to check around and see which ones would be ideal for your cat.": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1239,
+     "cost": 7.05e-05,
+     "in_tok": 655,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      3,
+      2,
+      0
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -7622,6 +8928,24 @@
       "If you have a handheld cigar lighter, pull the cellophane back to reveal its bottom, revealing the cigars inside. You should see a microfilm film easily discharged into the zippo.": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1320,
+     "cost": 6.55e-05,
+     "in_tok": 605,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      1,
+      0,
+      3
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -7725,6 +9049,24 @@
       "is giving directions as he uses the knife and the cheese, and shows how you can spread the milk, and how it can be baked before adding instead the baking powder.": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1389,
+     "cost": 5.05e-05,
+     "in_tok": 455,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      0,
+      3,
+      2
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -7828,6 +9170,24 @@
       "For example, do you feel that wearing them every day will make them more comfortable? [title] Take your shoes from your closet. [step] All of your shoes should be lined up in front of you comfortably to make sure that they look great.": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1194,
+     "cost": 7.03e-05,
+     "in_tok": 653,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      3,
+      1,
+      2
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -7931,6 +9291,24 @@
       "gets mowed quicker by the dog.": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1187,
+     "cost": 5.0700000000000006e-05,
+     "in_tok": 457,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      1,
+      3,
+      0
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -8034,6 +9412,24 @@
       "[step] If you are going to effectively communicate with medical staff and serve as an intelligent representative and advocate for the mother, it is your job to understand when and why medication or medical intervention may be necessary. [title] Read about childbirth in the chosen setting.": 1
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1227,
+     "cost": 7.72e-05,
+     "in_tok": 722,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      3,
+      1,
+      0
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -8137,6 +9533,24 @@
       "Coat the turkey legs, as well as under the skin, with your favorite seasonings. Place the turkey legs in the smoker and cook for about 4 hours.": 1
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1338,
+     "cost": 7.05e-05,
+     "in_tok": 655,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      1,
+      3,
+      2
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -8240,6 +9654,24 @@
       "turns around in floor on the street to present their instruments.": 0
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1224,
+     "cost": 4.58e-05,
+     "in_tok": 408,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      3,
+      2,
+      1
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -8343,6 +9775,24 @@
       "While mutual funds tend to balance risk by distributing investments across a variety of securities, the possibility always exists that you will lose money. [substeps] Ask yourself how much you're willing to lose.": 1
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 820,
+     "cost": 6.57e-05,
+     "in_tok": 607,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      2,
+      1,
+      0
+     ],
+     "raw_text": "{\"answer\": \"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -8446,6 +9896,24 @@
       "lobs the ball back and forth onto the court then puts his hand down to record between his legs to record more practice kicks.": 0
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1217,
+     "cost": 5.65e-05,
+     "in_tok": 515,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      0,
+      3,
+      2
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -8549,6 +10017,24 @@
       "'s a woman standing inside the water watching him.": 0.02
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1249,
+     "cost": 5.130000000000001e-05,
+     "in_tok": 463,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      0,
+      1,
+      2
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -8652,6 +10138,24 @@
       "Avoid excessive scrubbing and use gentle pressure when you are rinsing your hair so you can get out as much dye as possible. [substeps] Do not rub too hard or use a lot of force or you may damage the soft strands.": 0.08
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1114,
+     "cost": 7.240000000000001e-05,
+     "in_tok": 674,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      1,
+      3,
+      0
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -8755,6 +10259,24 @@
       "sit and speak to the camera before showing more youtube videos.": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 826,
+     "cost": 4.9e-05,
+     "in_tok": 440,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      3,
+      2,
+      1
+     ],
+     "raw_text": "{\"answer\": \"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -8858,6 +10380,24 @@
       "This means you need to keep up with the younger generations' belief systems, role model, and other role models in order to be encouraging and encouraging. You can do this by : [substeps] Inviting your friends to live in your home.": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1195,
+     "cost": 7.03e-05,
+     "in_tok": 653,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      0,
+      2,
+      3
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -8961,6 +10501,24 @@
       "is using a dodgeball machine.": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1268,
+     "cost": 4.41e-05,
+     "in_tok": 391,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      2,
+      0,
+      1
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -9064,6 +10622,24 @@
       ", the man lifts a weight of 101 kg successfully.": 0.8
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1223,
+     "cost": 5.01e-05,
+     "in_tok": 451,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      1,
+      3,
+      0
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -9167,6 +10743,24 @@
       "[title] Invite your fiancé to a group activities. [step] There are a multitude of activities that you could do, including : [substeps] See stars and look at local attractions, including museums, coffee shops, nature preserves, and beaches.": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1049,
+     "cost": 7.620000000000001e-05,
+     "in_tok": 712,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      0,
+      1,
+      2
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -9270,6 +10864,24 @@
       "cuts a lemon and places it on a plate.": 0.1
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1135,
+     "cost": 4.72e-05,
+     "in_tok": 422,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      2,
+      0,
+      1
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -9373,6 +10985,24 @@
       "[substeps] Treat yourself to a spa day at home with whole foods and healthy foods like fruits and veggies and whole grains. Buy a bag of chips, crackers, or other healthy items.": 0
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1220,
+     "cost": 6.49e-05,
+     "in_tok": 599,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      3,
+      1,
+      2
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -9476,6 +11106,24 @@
       "are ready, the mother adds the baked cookies to the oven and after puts the cookies in a frying pan and stirs the cookies.": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1075,
+     "cost": 5.1800000000000005e-05,
+     "in_tok": 468,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      0,
+      2,
+      1
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -9579,6 +11227,24 @@
       "Consider the audience that your domain could \" touch \"; how broad is it? [title] Look at your competitors. [step] Taking a look at what your competitors are doing can give you an idea for how valuable a domain is.": 0.88
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1213,
+     "cost": 7.26e-05,
+     "in_tok": 676,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      0,
+      2,
+      1
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -9682,6 +11348,24 @@
       "It can be far from healthy to train a cat that is getting older and more rambunctious. [substeps] Older cats in their twenties or older can seem more handful-minded, but older cats in their twenties can be more independent and adventurous.": 0
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1265,
+     "cost": 6.65e-05,
+     "in_tok": 615,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      1,
+      3,
+      0
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -9785,6 +11469,24 @@
       "[substeps] Frequent shower and cleaning can also slow down the aging process. Rubbing your jewelry in baby shampoo can easily dull and discolor the gold's shine.": 0
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1239,
+     "cost": 6.87e-05,
+     "in_tok": 637,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      0,
+      3,
+      1
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -9888,6 +11590,24 @@
       "are fasted into the mug.": 0
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 3086,
+     "cost": 4.65e-05,
+     "in_tok": 415,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      3,
+      0,
+      2
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -9991,6 +11711,24 @@
       "reaches behind his head and moves his back while smiling.": 0.12
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1193,
+     "cost": 5.22e-05,
+     "in_tok": 472,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      1,
+      0,
+      3
+     ],
+     "raw_text": "{\"answer\": \"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -10094,6 +11832,24 @@
       "stand up and grab another and put it on the back.": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1261,
+     "cost": 4.77e-05,
+     "in_tok": 427,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      2,
+      0,
+      3
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -10197,6 +11953,24 @@
       "is all dirty when he is done.": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1215,
+     "cost": 4.6800000000000006e-05,
+     "in_tok": 418,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      0,
+      1,
+      2
+     ],
+     "raw_text": "{\"answer\": \"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -10300,6 +12074,24 @@
       "[step] Live crawfish can be kept at 36ºf to 46ºf for a few days. Drain them as needed, so you aren't leaving them submerged in water.": 0.99
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1375,
+     "cost": 6.6e-05,
+     "in_tok": 610,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      0,
+      1,
+      3
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -10403,6 +12195,24 @@
       "on the track becomes a golden retriever.": 0
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1274,
+     "cost": 5.380000000000001e-05,
+     "in_tok": 488,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      3,
+      2,
+      0
+     ],
+     "raw_text": "{\"answer\": \"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -10506,6 +12316,24 @@
       ", the man performs his routine on the parallel bars.": 1
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1177,
+     "cost": 4.7e-05,
+     "in_tok": 420,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      1,
+      0,
+      2
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   }
@@ -10538,6 +12366,27 @@
    "hit": 95,
    "ms": 24822,
    "cost": 0.0027020280000000004
+  },
+  "anthropic:claude-haiku-5-5": {
+   "n": 100,
+   "ok": 100,
+   "hit": 82,
+   "ms": 121279,
+   "cost": 0.006029400000000001
   }
- }
+ },
+ "merged_runs": [
+  {
+   "date": "2026-10-09",
+   "arms": [
+    "anthropic:claude-haiku-5-5"
+   ]
+  },
+  {
+   "date": "2026-10-10",
+   "arms": [
+    "anthropic:claude-haiku-5-5"
+   ]
+  }
+ ]
 }
