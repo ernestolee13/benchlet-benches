@@ -3,7 +3,7 @@
  "bench": "browser-click-target@1",
  "items_sha256": "a9b9140538c80336311482929dc48d0ec26088b16ae49d8d3e6f604ef3205d5d",
  "template": "generic",
- "date": "2026-10-01",
+ "date": "2026-10-10",
  "arms": {
   "glm": {
    "model": "z-ai/glm-4.7-flash",
@@ -235,6 +235,34 @@
      }
     ]
    }
+  },
+  "anthropic:claude-haiku-5-5": {
+   "model": "claude-haiku-5-5",
+   "provider": "anthropic",
+   "family": "Anthropic",
+   "mode": "generative",
+   "prob_source": "none",
+   "base_url": "api.anthropic.com",
+   "in_per_m": 0.1,
+   "smoke": {
+    "arm": "anthropic:claude-haiku-5-5",
+    "mode": "generative",
+    "usable": true,
+    "reasons": [
+     "로그확률이 안 와서 생성 팔로 강등 (prob_source=none, 정확도만)"
+    ],
+    "has_logprobs": false,
+    "reasoning_tokens_zero": null,
+    "provider_match": null,
+    "mass_min": null,
+    "spread": null,
+    "distinct_p": 0,
+    "n_calls": 6,
+    "smoke_acc": null,
+    "cost": 0.00023730000000000002,
+    "per_item": []
+   },
+   "cache_warm": null
   }
  },
  "items": [
@@ -338,6 +366,24 @@
       "2번 요소": 1
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1138,
+     "cost": 6.18e-05,
+     "in_tok": 568,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      2,
+      1,
+      0
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -441,6 +487,24 @@
       "3번 요소": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1333,
+     "cost": 6.14e-05,
+     "in_tok": 564,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      3,
+      1,
+      0
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -544,6 +608,24 @@
       "2번 요소": 1
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1339,
+     "cost": 5.9900000000000006e-05,
+     "in_tok": 549,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      3,
+      1,
+      2
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -647,6 +729,24 @@
       "1번 요소": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 915,
+     "cost": 6.220000000000001e-05,
+     "in_tok": 572,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      0,
+      1,
+      3
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -750,6 +850,24 @@
       "4번 요소": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1283,
+     "cost": 6.3e-05,
+     "in_tok": 580,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      0,
+      3,
+      1
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -853,6 +971,24 @@
       "1번 요소": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1243,
+     "cost": 6.430000000000002e-05,
+     "in_tok": 593,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      3,
+      2,
+      1
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -956,6 +1092,24 @@
       "2번 요소": 1
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1321,
+     "cost": 6.18e-05,
+     "in_tok": 568,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      0,
+      2,
+      3
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1059,6 +1213,24 @@
       "3번 요소": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1275,
+     "cost": 6.21e-05,
+     "in_tok": 571,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      0,
+      1,
+      3
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1162,6 +1334,24 @@
       "3번 요소": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1134,
+     "cost": 6.15e-05,
+     "in_tok": 565,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      0,
+      2,
+      3
+     ],
+     "raw_text": "{\"answer\": \"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1265,6 +1455,24 @@
       "1번 요소": 0.9
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1730,
+     "cost": 6.290000000000001e-05,
+     "in_tok": 579,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      0,
+      1,
+      3
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1368,6 +1576,24 @@
       "2번 요소": 1
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1529,
+     "cost": 6.14e-05,
+     "in_tok": 564,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1471,6 +1697,24 @@
       "3번 요소": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1215,
+     "cost": 6.36e-05,
+     "in_tok": 586,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      0,
+      2,
+      1
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1574,6 +1818,24 @@
       "1번 요소": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1264,
+     "cost": 6.27e-05,
+     "in_tok": 577,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      0,
+      3,
+      2
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1677,6 +1939,24 @@
       "2번 요소": 1
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1290,
+     "cost": 6.25e-05,
+     "in_tok": 575,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      2,
+      3,
+      1
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1780,6 +2060,24 @@
       "4번 요소": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 915,
+     "cost": 6.13e-05,
+     "in_tok": 563,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      3,
+      2,
+      0
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1883,6 +2181,24 @@
       "1번 요소": 1
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1252,
+     "cost": 6.18e-05,
+     "in_tok": 568,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      3,
+      1,
+      0
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1986,6 +2302,24 @@
       "4번 요소": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1218,
+     "cost": 6.26e-05,
+     "in_tok": 576,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      2,
+      1,
+      3
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2089,6 +2423,24 @@
       "1번 요소": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1267,
+     "cost": 6.290000000000001e-05,
+     "in_tok": 579,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      2,
+      0,
+      3
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2192,6 +2544,24 @@
       "2번 요소": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1202,
+     "cost": 6.16e-05,
+     "in_tok": 566,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      1,
+      0,
+      2
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2295,6 +2665,24 @@
       "4번 요소": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1114,
+     "cost": 6.220000000000001e-05,
+     "in_tok": 572,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      2,
+      1,
+      0
+     ],
+     "raw_text": "{\"answer\": \"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2398,6 +2786,24 @@
       "4번 요소": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 827,
+     "cost": 6.330000000000001e-05,
+     "in_tok": 583,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      2,
+      3,
+      0
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2501,6 +2907,24 @@
       "3번 요소": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1296,
+     "cost": 6.12e-05,
+     "in_tok": 562,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      2,
+      1,
+      0
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2604,6 +3028,24 @@
       "3번 요소": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1208,
+     "cost": 6.32e-05,
+     "in_tok": 582,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      1,
+      0,
+      3
+     ],
+     "raw_text": "{\"answer\": \"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2707,6 +3149,24 @@
       "4번 요소": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1108,
+     "cost": 6.14e-05,
+     "in_tok": 564,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      3,
+      2,
+      1
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   }
@@ -2739,6 +3199,27 @@
    "hit": 23,
    "ms": 6022,
    "cost": 0.000550578
+  },
+  "anthropic:claude-haiku-5-5": {
+   "n": 24,
+   "ok": 24,
+   "hit": 24,
+   "ms": 29416,
+   "cost": 0.0014926000000000004
   }
- }
+ },
+ "merged_runs": [
+  {
+   "date": "2026-10-09",
+   "arms": [
+    "anthropic:claude-haiku-5-5"
+   ]
+  },
+  {
+   "date": "2026-10-10",
+   "arms": [
+    "anthropic:claude-haiku-5-5"
+   ]
+  }
+ ]
 }

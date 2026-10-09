@@ -23,7 +23,7 @@ source: 브라우저 에이전트 샘플. 목표와 접근성 트리 요소 4개
 domain:
 - browser-click-target
 - sample
-visibility: sample
+visibility: full
 items_sha256: a9b9140538c80336311482929dc48d0ec26088b16ae49d8d3e6f604ef3205d5d
 license: CC-BY-4.0
 review:
@@ -44,7 +44,7 @@ keywords:
 owner: ernestolee13
 n: 24
 choices_note: null
-published_at: '2026-10-04'
+published_at: '2026-10-10'
 type: multiclass
 classes:
 - K-button
@@ -58,7 +58,7 @@ label_source_mix:
   judged: 0
   outcome: 0
 experiment:
-  date: '2026-10-01'
+  date: '2026-10-10'
   template: generic
   runner: benchlet
   arms:
@@ -240,6 +240,31 @@ experiment:
           hit: 1
           p: null
           pred: 1
+    anthropic:claude-haiku-5-5:
+      model: claude-haiku-5-5
+      provider: anthropic
+      family: Anthropic
+      mode: generative
+      prob_source: none
+      base_url: api.anthropic.com
+      in_per_m: 0.1
+      smoke:
+        arm: anthropic:claude-haiku-5-5
+        mode: generative
+        usable: true
+        reasons:
+        - 로그확률이 안 와서 생성 팔로 강등 (prob_source=none, 정확도만)
+        has_logprobs: false
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: 0
+        n_calls: 6
+        smoke_acc: null
+        cost: 0.00023730000000000002
+        per_item: []
+      cache_warm: null
   protocol:
     decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
     logprob_call:
@@ -302,4 +327,15 @@ result_summary:
     n: 24
     prob_source: typed
     model: typesafe/jev-1.13
+    source_badge: author-run
+  anthropic:claude-haiku-5-5:
+    acc: 1.0
+    ci95:
+    - 0.8620194241710247
+    - 1.0000000000000002
+    auroc: null
+    brier: null
+    n: 24
+    prob_source: none
+    model: claude-haiku-5-5
     source_badge: author-run
