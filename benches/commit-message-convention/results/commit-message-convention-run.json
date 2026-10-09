@@ -3,7 +3,7 @@
  "bench": "commit-message-convention@1",
  "items_sha256": "88a1b29f6f0d77592ac2f74dafb122e250ca29ca3b7596f9aba44f38da09f247",
  "template": "generic",
- "date": "2026-10-01",
+ "date": "2026-10-10",
  "arms": {
   "glm": {
    "model": "z-ai/glm-4.7-flash",
@@ -242,6 +242,34 @@
      }
     ]
    }
+  },
+  "anthropic:claude-haiku-5-5": {
+   "model": "claude-haiku-5-5",
+   "provider": "anthropic",
+   "family": "Anthropic",
+   "mode": "generative",
+   "prob_source": "none",
+   "base_url": "api.anthropic.com",
+   "in_per_m": 0.1,
+   "smoke": {
+    "arm": "anthropic:claude-haiku-5-5",
+    "mode": "generative",
+    "usable": true,
+    "reasons": [
+     "로그확률이 안 와서 생성 팔로 강등 (prob_source=none, 정확도만)"
+    ],
+    "has_logprobs": false,
+    "reasoning_tokens_zero": null,
+    "provider_match": null,
+    "mass_min": null,
+    "spread": null,
+    "distinct_p": 0,
+    "n_calls": 11,
+    "smoke_acc": null,
+    "cost": 0.0003232,
+    "per_item": []
+   },
+   "cache_warm": null
   }
  },
  "items": [
@@ -313,6 +341,20 @@
       "noul": 0.58
      },
      "p_violation": 0.58
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2687,
+     "cost": 0.00010580000000000001,
+     "in_tok": 958,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -384,6 +426,20 @@
       "noul": 0.1
      },
      "p_violation": 0.1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2650,
+     "cost": 0.00010520000000000001,
+     "in_tok": 952,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -455,6 +511,20 @@
       "noul": 0.67
      },
      "p_violation": 0.67
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2643,
+     "cost": 0.000105,
+     "in_tok": 950,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -526,6 +596,20 @@
       "noul": 0.09
      },
      "p_violation": 0.09
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2420,
+     "cost": 0.000106,
+     "in_tok": 960,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -597,6 +681,20 @@
       "noul": 0.96
      },
      "p_violation": 0.96
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2871,
+     "cost": 0.00010520000000000001,
+     "in_tok": 952,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -668,6 +766,20 @@
       "noul": 0.92
      },
      "p_violation": 0.92
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2536,
+     "cost": 0.00010480000000000001,
+     "in_tok": 948,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -739,6 +851,20 @@
       "noul": 0.06
      },
      "p_violation": 0.06
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2612,
+     "cost": 0.00010480000000000001,
+     "in_tok": 948,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -810,6 +936,20 @@
       "noul": 0.13
      },
      "p_violation": 0.13
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.5,
+     "ms": 2109,
+     "cost": 0.000106,
+     "in_tok": 960,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -881,6 +1021,20 @@
       "noul": 0.1
      },
      "p_violation": 0.1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2363,
+     "cost": 0.00010520000000000001,
+     "in_tok": 952,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -952,6 +1106,20 @@
       "noul": 0.1
      },
      "p_violation": 0.1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2566,
+     "cost": 0.0001056,
+     "in_tok": 956,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1023,6 +1191,20 @@
       "noul": 0.31
      },
      "p_violation": 0.31
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.5,
+     "ms": 2424,
+     "cost": 0.00010760000000000001,
+     "in_tok": 976,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1094,6 +1276,20 @@
       "noul": 0.08
      },
      "p_violation": 0.08
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2317,
+     "cost": 0.000105,
+     "in_tok": 950,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1165,6 +1361,20 @@
       "noul": 0.07
      },
      "p_violation": 0.07
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2036,
+     "cost": 0.00010520000000000001,
+     "in_tok": 952,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1236,6 +1446,20 @@
       "noul": 0.35
      },
      "p_violation": 0.35
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2371,
+     "cost": 0.00010580000000000001,
+     "in_tok": 958,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1307,6 +1531,20 @@
       "noul": 0.23
      },
      "p_violation": 0.23
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2454,
+     "cost": 0.000107,
+     "in_tok": 970,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1378,6 +1616,20 @@
       "noul": 0.05
      },
      "p_violation": 0.05
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2402,
+     "cost": 0.0001056,
+     "in_tok": 956,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1449,6 +1701,20 @@
       "noul": 0.83
      },
      "p_violation": 0.83
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2619,
+     "cost": 0.0001042,
+     "in_tok": 942,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1520,6 +1786,20 @@
       "noul": 0.8
      },
      "p_violation": 0.8
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2905,
+     "cost": 0.0001056,
+     "in_tok": 956,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1591,6 +1871,20 @@
       "noul": 0.1
      },
      "p_violation": 0.1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2034,
+     "cost": 0.00010520000000000001,
+     "in_tok": 952,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1662,6 +1956,20 @@
       "noul": 0.19
      },
      "p_violation": 0.19
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2985,
+     "cost": 0.0001042,
+     "in_tok": 942,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1733,6 +2041,20 @@
       "noul": 0.51
      },
      "p_violation": 0.51
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2630,
+     "cost": 0.0001054,
+     "in_tok": 954,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1804,6 +2126,20 @@
       "noul": 0.14
      },
      "p_violation": 0.14
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2175,
+     "cost": 0.00010520000000000001,
+     "in_tok": 952,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1875,6 +2211,20 @@
       "noul": 0.08
      },
      "p_violation": 0.08
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2530,
+     "cost": 0.00010580000000000001,
+     "in_tok": 958,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1946,6 +2296,20 @@
       "noul": 0.08
      },
      "p_violation": 0.08
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2536,
+     "cost": 0.00010580000000000001,
+     "in_tok": 958,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2017,6 +2381,20 @@
       "noul": 0.87
      },
      "p_violation": 0.87
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2246,
+     "cost": 0.0001062,
+     "in_tok": 962,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2088,6 +2466,20 @@
       "noul": 0.41
      },
      "p_violation": 0.41
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2074,
+     "cost": 0.0001056,
+     "in_tok": 956,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2159,6 +2551,20 @@
       "noul": 0.1
      },
      "p_violation": 0.1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2319,
+     "cost": 0.0001054,
+     "in_tok": 954,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2230,6 +2636,20 @@
       "noul": 0.05
      },
      "p_violation": 0.05
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2462,
+     "cost": 0.00010520000000000001,
+     "in_tok": 952,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2301,6 +2721,20 @@
       "noul": 0.06
      },
      "p_violation": 0.06
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2726,
+     "cost": 0.000106,
+     "in_tok": 960,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2372,6 +2806,20 @@
       "noul": 0.06
      },
      "p_violation": 0.06
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2575,
+     "cost": 0.000105,
+     "in_tok": 950,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2443,6 +2891,20 @@
       "noul": 0.1
      },
      "p_violation": 0.1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2310,
+     "cost": 0.0001062,
+     "in_tok": 962,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2514,6 +2976,20 @@
       "noul": 0.25
      },
      "p_violation": 0.25
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2459,
+     "cost": 0.00010680000000000001,
+     "in_tok": 968,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
     }
    }
   }
@@ -2546,6 +3022,27 @@
    "hit": 22,
    "ms": 8579,
    "cost": 0.000573762
+  },
+  "anthropic:claude-haiku-5-5": {
+   "n": 32,
+   "ok": 32,
+   "hit": 32,
+   "ms": 79046,
+   "cost": 0.0033776000000000006
   }
- }
+ },
+ "merged_runs": [
+  {
+   "date": "2026-10-09",
+   "arms": [
+    "anthropic:claude-haiku-5-5"
+   ]
+  },
+  {
+   "date": "2026-10-10",
+   "arms": [
+    "anthropic:claude-haiku-5-5"
+   ]
+  }
+ ]
 }
