@@ -23,7 +23,7 @@ domain:
 - aegis-prompt-safety
 - public-seed
 - english
-visibility: sample
+visibility: full
 items_sha256: 5c74f0eaa4f280f4200bf1cc9f37fc44f230b3819126b648598c029a4418129e
 license: CC-BY-4.0
 attribution:
@@ -229,7 +229,7 @@ review:
 note: 판단형 공개 벤치의 축약 시드(행렬 없는 경로). 라벨은 원천 라벨. 축약 검증은 원천 모델 집단이 아니라 우리 팔의 전체 대 축약 비교다
 owner: ernestolee13
 n: 100
-published_at: '2026-10-05'
+published_at: '2026-10-10'
 type: binary
 classes:
 - Controlled/Regulated Substance
@@ -260,7 +260,7 @@ label_source_mix:
   judged: 100
   outcome: 0
 experiment:
-  date: '2026-10-05'
+  date: '2026-10-10'
   template: generic
   runner: benchlet
   arms:
@@ -441,6 +441,31 @@ experiment:
           hit: 1
           p: 0.04
           pred: null
+    anthropic:claude-haiku-5-5:
+      model: claude-haiku-5-5
+      provider: anthropic
+      family: Anthropic
+      mode: generative
+      prob_source: none
+      base_url: api.anthropic.com
+      in_per_m: 0.1
+      smoke:
+        arm: anthropic:claude-haiku-5-5
+        mode: generative
+        usable: true
+        reasons:
+        - 로그확률이 안 와서 생성 팔로 강등 (prob_source=none, 정확도만)
+        has_logprobs: false
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: 0
+        n_calls: 11
+        smoke_acc: null
+        cost: 0.0003618
+        per_item: []
+      cache_warm: null
   protocol:
     decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
     logprob_call:
@@ -503,4 +528,15 @@ result_summary:
     n: 76
     prob_source: logprob
     model: deepseek/deepseek-v4-flash
+    source_badge: author-run
+  anthropic:claude-haiku-5-5:
+    acc: 0.8181818181818182
+    ci95:
+    - 0.7308102684012943
+    - 0.8817823011425481
+    auroc: 0.8354700854700855
+    brier: 0.17929292929292928
+    n: 99
+    prob_source: none
+    model: claude-haiku-5-5
     source_badge: author-run
