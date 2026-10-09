@@ -534,7 +534,7 @@ domain:
 - truthfulqa-mc1
 - public-seed
 - english
-visibility: sample
+visibility: full
 items_sha256: 6d0056850df7936a53f5baf24bfa9944b888f5ade42a274dcd6f27d6a993038c
 license: Apache-2.0
 attribution:
@@ -584,7 +584,7 @@ keywords:
 - 사실성
 owner: ernestolee13
 n: 100
-published_at: '2026-10-04'
+published_at: '2026-10-10'
 type: mixed
 classes:
 - 10-way
@@ -603,7 +603,7 @@ label_source_mix:
   judged: 0
   outcome: 0
 experiment:
-  date: '2026-10-03'
+  date: '2026-10-10'
   template: generic
   runner: benchlet
   arms:
@@ -791,6 +791,31 @@ experiment:
           hit: 1
           p: null
           pred: 0
+    anthropic:claude-haiku-5-5:
+      model: claude-haiku-5-5
+      provider: anthropic
+      family: Anthropic
+      mode: generative
+      prob_source: none
+      base_url: api.anthropic.com
+      in_per_m: 0.1
+      smoke:
+        arm: anthropic:claude-haiku-5-5
+        mode: generative
+        usable: true
+        reasons:
+        - 로그확률이 안 와서 생성 팔로 강등 (prob_source=none, 정확도만)
+        has_logprobs: false
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: 0
+        n_calls: 6
+        smoke_acc: null
+        cost: 0.00016470000000000002
+        per_item: []
+      cache_warm: null
   protocol:
     decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
     logprob_call:
@@ -853,4 +878,15 @@ result_summary:
     n: 100
     prob_source: typed
     model: typesafe/jev-1.13
+    source_badge: author-run
+  anthropic:claude-haiku-5-5:
+    acc: 0.91
+    ci95:
+    - 0.8377362530335634
+    - 0.9519280048361152
+    auroc: 1.0
+    brier: 0.03571428571428571
+    n: 100
+    prob_source: none
+    model: claude-haiku-5-5
     source_badge: author-run
