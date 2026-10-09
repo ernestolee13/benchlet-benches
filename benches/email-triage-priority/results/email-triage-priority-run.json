@@ -3,7 +3,7 @@
  "bench": "email-triage-priority@1",
  "items_sha256": "484315629d69ac44cdcab34617885cfa8744f6b3ec268760cc783471f58a9e11",
  "template": "generic",
- "date": "2026-10-04",
+ "date": "2026-10-10",
  "arms": {
   "glm": {
    "model": "z-ai/glm-4.7-flash",
@@ -239,6 +239,34 @@
      }
     ]
    }
+  },
+  "anthropic:claude-haiku-5-5": {
+   "model": "claude-haiku-5-5",
+   "provider": "anthropic",
+   "family": "Anthropic",
+   "mode": "generative",
+   "prob_source": "none",
+   "base_url": "api.anthropic.com",
+   "in_per_m": 0.1,
+   "smoke": {
+    "arm": "anthropic:claude-haiku-5-5",
+    "mode": "generative",
+    "usable": true,
+    "reasons": [
+     "로그확률이 안 와서 생성 팔로 강등 (prob_source=none, 정확도만)"
+    ],
+    "has_logprobs": false,
+    "reasoning_tokens_zero": null,
+    "provider_match": null,
+    "mass_min": null,
+    "spread": null,
+    "distinct_p": 0,
+    "n_calls": 6,
+    "smoke_acc": null,
+    "cost": 0.00023030000000000001,
+    "per_item": []
+   },
+   "cache_warm": null
   }
  },
  "items": [
@@ -342,6 +370,24 @@
       "보관": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 989,
+     "cost": 6.09e-05,
+     "in_tok": 559,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      3,
+      0,
+      2
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -445,6 +491,24 @@
       "오늘": 0.67
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1365,
+     "cost": 6.240000000000001e-05,
+     "in_tok": 574,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      0,
+      2,
+      1
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -548,6 +612,24 @@
       "오늘": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1065,
+     "cost": 5.92e-05,
+     "in_tok": 542,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      2,
+      3,
+      0
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -651,6 +733,24 @@
       "오늘": 0.49
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1052,
+     "cost": 6.06e-05,
+     "in_tok": 556,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      2,
+      3,
+      1
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -754,6 +854,24 @@
       "보관": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1347,
+     "cost": 6.06e-05,
+     "in_tok": 556,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -857,6 +975,24 @@
       "이번 주": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1214,
+     "cost": 6.929999999999999e-05,
+     "in_tok": 643,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      1,
+      3,
+      2
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -960,6 +1096,24 @@
       "오늘": 0.96
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 887,
+     "cost": 6.21e-05,
+     "in_tok": 571,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      1,
+      0,
+      2
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1063,6 +1217,24 @@
       "보관": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 984,
+     "cost": 6.18e-05,
+     "in_tok": 568,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      1,
+      0,
+      3
+     ],
+     "raw_text": "{\"answer\": \"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1166,6 +1338,24 @@
       "보관": 0
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1255,
+     "cost": 6.0400000000000004e-05,
+     "in_tok": 554,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      0,
+      2,
+      3
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1269,6 +1459,24 @@
       "보관": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1213,
+     "cost": 6.03e-05,
+     "in_tok": 553,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      3,
+      2,
+      1
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1372,6 +1580,24 @@
       "오늘": 0
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1261,
+     "cost": 6.7e-05,
+     "in_tok": 620,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      1,
+      2,
+      0
+     ],
+     "raw_text": "{\"answer\": \"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1475,6 +1701,24 @@
       "오늘": 0.71
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1234,
+     "cost": 6.240000000000001e-05,
+     "in_tok": 574,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      0,
+      1,
+      2
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1578,6 +1822,24 @@
       "지금": 0.89
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1100,
+     "cost": 6.26e-05,
+     "in_tok": 576,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      2,
+      1,
+      0
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1681,6 +1943,24 @@
       "이번 주": 0
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 843,
+     "cost": 6.14e-05,
+     "in_tok": 564,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      0,
+      3,
+      2
+     ],
+     "raw_text": "{\"answer\": \"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1784,6 +2064,24 @@
       "보관": 1
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1311,
+     "cost": 6.1e-05,
+     "in_tok": 560,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      0,
+      2,
+      3
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1887,6 +2185,24 @@
       "보관": 0
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 1114,
+     "cost": 6.0100000000000004e-05,
+     "in_tok": 551,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      0,
+      1,
+      2
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -1990,6 +2306,24 @@
       "오늘": 0
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 915,
+     "cost": 6.06e-05,
+     "in_tok": 556,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      0,
+      3,
+      2
+     ],
+     "raw_text": "{\"answer\": \"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2093,6 +2427,24 @@
       "이번 주": 1
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1002,
+     "cost": 6.18e-05,
+     "in_tok": 568,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      1,
+      0,
+      3
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2196,6 +2548,24 @@
       "지금": 0
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1579,
+     "cost": 6.759999999999999e-05,
+     "in_tok": 626,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "raw_text": "{\"answer\": \"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2299,6 +2669,24 @@
       "오늘": 0.55
      },
      "pred_index": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 1,
+     "probs": null,
+     "ms": 807,
+     "cost": 6.0700000000000005e-05,
+     "in_tok": 557,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      0,
+      2,
+      3,
+      1
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2402,6 +2790,24 @@
       "보관": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1324,
+     "cost": 6.13e-05,
+     "in_tok": 563,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      1,
+      0,
+      3
+     ],
+     "raw_text": "{\"answer\":\"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2505,6 +2911,24 @@
       "보관": 1
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 904,
+     "cost": 6.42e-05,
+     "in_tok": 592,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      3,
+      1,
+      0
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2608,6 +3032,24 @@
       "오늘": 0
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1431,
+     "cost": 6.14e-05,
+     "in_tok": 564,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      2,
+      1,
+      0
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2711,6 +3153,24 @@
       "오늘": 0.06
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1035,
+     "cost": 6.080000000000001e-05,
+     "in_tok": 558,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      3,
+      1,
+      2,
+      0
+     ],
+     "raw_text": "{\"answer\": \"C\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2814,6 +3274,24 @@
       "오늘": 0.02
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1289,
+     "cost": 6.06e-05,
+     "in_tok": 556,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      1,
+      3,
+      0
+     ],
+     "raw_text": "{\"answer\":\"A\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -2917,6 +3395,24 @@
       "보관": 1
      },
      "pred_index": 3
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 3,
+     "probs": null,
+     "ms": 1627,
+     "cost": 6.47e-05,
+     "in_tok": 597,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      0,
+      2,
+      3
+     ],
+     "raw_text": "{\"answer\":\"D\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -3020,6 +3516,24 @@
       "이번 주": 0
      },
      "pred_index": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 0,
+     "probs": null,
+     "ms": 1172,
+     "cost": 6.240000000000001e-05,
+     "in_tok": 574,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      2,
+      0,
+      3,
+      1
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   },
@@ -3123,6 +3637,24 @@
       "보관": 0.01
      },
      "pred_index": 2
+    },
+    "anthropic:claude-haiku-5-5": {
+     "pred_index": 2,
+     "probs": null,
+     "ms": 1248,
+     "cost": 6.05e-05,
+     "in_tok": 555,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "order": [
+      1,
+      2,
+      0,
+      3
+     ],
+     "raw_text": "{\"answer\":\"B\"}",
+     "answer_format": "json-schema-enum"
     }
    }
   }
@@ -3155,6 +3687,27 @@
    "hit": 26,
    "ms": 6990,
    "cost": 0.0006340740000000001
+  },
+  "anthropic:claude-haiku-5-5": {
+   "n": 28,
+   "ok": 28,
+   "hit": 27,
+   "ms": 32567,
+   "cost": 0.0017387
   }
- }
+ },
+ "merged_runs": [
+  {
+   "date": "2026-10-09",
+   "arms": [
+    "anthropic:claude-haiku-5-5"
+   ]
+  },
+  {
+   "date": "2026-10-10",
+   "arms": [
+    "anthropic:claude-haiku-5-5"
+   ]
+  }
+ ]
 }
