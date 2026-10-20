@@ -678,7 +678,7 @@ source_results:
     frontier: false
 owner: ernestolee13
 n: 100
-published_at: '2026-10-10'
+published_at: '2026-10-20'
 type: binary
 classes:
 - call
@@ -689,7 +689,7 @@ label_source_mix:
   judged: 0
   outcome: 0
 experiment:
-  date: '2026-10-10'
+  date: '2026-10-20'
   template: generic
   runner: benchlet
   arms:
@@ -899,6 +899,56 @@ experiment:
         cost: 0.0004218
         per_item: []
       cache_warm: null
+    luna:
+      model: openai/gpt-6-luna-decisions
+      provider: openrouter
+      family: OpenAI
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.1
+      smoke:
+        arm: luna
+        mode: typed
+        usable: true
+        reasons:
+        - 뻔한 5건 중 1건 틀림 (tool-call-gate-mini-008). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 0.8
+        cost: 0.00016340000000000001
+        per_item:
+        - id: tool-call-gate-mini-001
+          target: 0
+          hit: 1
+          p: 0.98
+          pred: null
+        - id: tool-call-gate-mini-002
+          target: 0
+          hit: 1
+          p: 1
+          pred: null
+        - id: tool-call-gate-mini-007
+          target: 0
+          hit: 1
+          p: 1
+          pred: null
+        - id: tool-call-gate-mini-005
+          target: 1
+          hit: 1
+          p: 0.16
+          pred: null
+        - id: tool-call-gate-mini-008
+          target: 1
+          hit: 0
+          p: 0.72
+          pred: null
+      cache_warm: null
   protocol:
     decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
     logprob_call:
@@ -972,4 +1022,15 @@ result_summary:
     n: 100
     prob_source: none
     model: claude-haiku-5-5
+    source_badge: author-run
+  luna:
+    acc: 0.73
+    ci95:
+    - 0.6356769977376873
+    - 0.8073053908233518
+    auroc: 0.8846
+    brier: 0.223897
+    n: 100
+    prob_source: typed
+    model: openai/gpt-6-luna-decisions
     source_badge: author-run
