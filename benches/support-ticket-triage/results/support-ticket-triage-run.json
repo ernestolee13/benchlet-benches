@@ -3,7 +3,7 @@
  "bench": "support-ticket-triage@1",
  "items_sha256": "052c470fb7980737040c1d96ea840ecdf3d46683019debcc3296c3d17955ae12",
  "template": "generic",
- "date": "2026-10-10",
+ "date": "2026-10-20",
  "arms": {
   "glm": {
    "model": "z-ai/glm-4.7-flash",
@@ -263,6 +263,68 @@
     "per_item": []
    },
    "cache_warm": null
+  },
+  "luna": {
+   "model": "openai/gpt-6-luna-decisions",
+   "provider": "openrouter",
+   "family": "OpenAI",
+   "mode": "typed",
+   "prob_source": "typed",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.1,
+   "smoke": {
+    "arm": "luna",
+    "mode": "typed",
+    "usable": true,
+    "reasons": [],
+    "has_logprobs": null,
+    "reasoning_tokens_zero": null,
+    "provider_match": null,
+    "mass_min": null,
+    "spread": null,
+    "distinct_p": null,
+    "n_calls": 5,
+    "smoke_acc": 1.0,
+    "cost": 0.0001398,
+    "per_item": [
+     {
+      "id": "support-ticket-triage-000",
+      "target": 0,
+      "hit": 1,
+      "p": null,
+      "pred": 0
+     },
+     {
+      "id": "support-ticket-triage-001",
+      "target": 4,
+      "hit": 1,
+      "p": null,
+      "pred": 4
+     },
+     {
+      "id": "support-ticket-triage-002",
+      "target": 4,
+      "hit": 1,
+      "p": null,
+      "pred": 4
+     },
+     {
+      "id": "support-ticket-triage-003",
+      "target": 0,
+      "hit": 1,
+      "p": null,
+      "pred": 0
+     },
+     {
+      "id": "support-ticket-triage-004",
+      "target": 1,
+      "hit": 1,
+      "p": null,
+      "pred": 1
+     }
+    ]
+   },
+   "cache_warm": null
   }
  },
  "items": [
@@ -393,6 +455,34 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 515,
+     "in_tok": 282,
+     "cost": 2.82e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "결제",
+      "probabilities": {
+       "결제": 1,
+       "버그": 0,
+       "기능 요청": 0,
+       "계정": 0,
+       "기타": 0
+      },
+      "confidence": 1
+     },
+     "choice": "결제",
+     "probabilities": {
+      "결제": 1,
+      "버그": 0,
+      "기능 요청": 0,
+      "계정": 0,
+      "기타": 0
+     },
+     "pred_index": 0
     }
    }
   },
@@ -523,6 +613,34 @@
      ],
      "raw_text": "{\"answer\":\"E\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 536,
+     "in_tok": 276,
+     "cost": 2.76e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "기타",
+      "probabilities": {
+       "결제": 0,
+       "버그": 0,
+       "기능 요청": 0,
+       "계정": 0,
+       "기타": 1
+      },
+      "confidence": 1
+     },
+     "choice": "기타",
+     "probabilities": {
+      "결제": 0,
+      "버그": 0,
+      "기능 요청": 0,
+      "계정": 0,
+      "기타": 1
+     },
+     "pred_index": 4
     }
    }
   },
@@ -653,6 +771,34 @@
      ],
      "raw_text": "{\"answer\":\"D\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 534,
+     "in_tok": 276,
+     "cost": 2.76e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "기타",
+      "probabilities": {
+       "결제": 0.01,
+       "버그": 0,
+       "기능 요청": 0.01,
+       "계정": 0.01,
+       "기타": 0.97
+      },
+      "confidence": 0.96
+     },
+     "choice": "기타",
+     "probabilities": {
+      "결제": 0.01,
+      "버그": 0,
+      "기능 요청": 0.01,
+      "계정": 0.01,
+      "기타": 0.97
+     },
+     "pred_index": 4
     }
    }
   },
@@ -783,6 +929,34 @@
      ],
      "raw_text": "{\"answer\":\"E\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 508,
+     "in_tok": 281,
+     "cost": 2.81e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "결제",
+      "probabilities": {
+       "결제": 0.99,
+       "버그": 0,
+       "기능 요청": 0,
+       "계정": 0,
+       "기타": 0.01
+      },
+      "confidence": 0.99
+     },
+     "choice": "결제",
+     "probabilities": {
+      "결제": 0.99,
+      "버그": 0,
+      "기능 요청": 0,
+      "계정": 0,
+      "기타": 0.01
+     },
+     "pred_index": 0
     }
    }
   },
@@ -913,6 +1087,34 @@
      ],
      "raw_text": "{\"answer\":\"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 502,
+     "in_tok": 283,
+     "cost": 2.83e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "버그",
+      "probabilities": {
+       "결제": 0.01,
+       "버그": 0.96,
+       "기능 요청": 0,
+       "계정": 0.01,
+       "기타": 0.02
+      },
+      "confidence": 0.95
+     },
+     "choice": "버그",
+     "probabilities": {
+      "결제": 0.01,
+      "버그": 0.96,
+      "기능 요청": 0,
+      "계정": 0.01,
+      "기타": 0.02
+     },
+     "pred_index": 1
     }
    }
   },
@@ -1043,6 +1245,34 @@
      ],
      "raw_text": "{\"answer\":\"D\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 507,
+     "in_tok": 280,
+     "cost": 2.8e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "버그",
+      "probabilities": {
+       "결제": 0.05,
+       "버그": 0.73,
+       "기능 요청": 0.02,
+       "계정": 0.02,
+       "기타": 0.18
+      },
+      "confidence": 0.66
+     },
+     "choice": "버그",
+     "probabilities": {
+      "결제": 0.05,
+      "버그": 0.73,
+      "기능 요청": 0.02,
+      "계정": 0.02,
+      "기타": 0.18
+     },
+     "pred_index": 1
     }
    }
   },
@@ -1173,6 +1403,34 @@
      ],
      "raw_text": "{\"answer\": \"E\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 538,
+     "in_tok": 280,
+     "cost": 2.8e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "기능 요청",
+      "probabilities": {
+       "결제": 0.01,
+       "버그": 0,
+       "기능 요청": 0.96,
+       "계정": 0,
+       "기타": 0.03
+      },
+      "confidence": 0.95
+     },
+     "choice": "기능 요청",
+     "probabilities": {
+      "결제": 0.01,
+      "버그": 0,
+      "기능 요청": 0.96,
+      "계정": 0,
+      "기타": 0.03
+     },
+     "pred_index": 2
     }
    }
   },
@@ -1303,6 +1561,34 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 507,
+     "in_tok": 274,
+     "cost": 2.74e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "기타",
+      "probabilities": {
+       "결제": 0.02,
+       "버그": 0,
+       "기능 요청": 0.01,
+       "계정": 0.01,
+       "기타": 0.96
+      },
+      "confidence": 0.95
+     },
+     "choice": "기타",
+     "probabilities": {
+      "결제": 0.02,
+      "버그": 0,
+      "기능 요청": 0.01,
+      "계정": 0.01,
+      "기타": 0.96
+     },
+     "pred_index": 4
     }
    }
   },
@@ -1433,6 +1719,34 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 566,
+     "in_tok": 282,
+     "cost": 2.82e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "계정",
+      "probabilities": {
+       "결제": 0.02,
+       "버그": 0.01,
+       "기능 요청": 0.01,
+       "계정": 0.91,
+       "기타": 0.05
+      },
+      "confidence": 0.89
+     },
+     "choice": "계정",
+     "probabilities": {
+      "결제": 0.02,
+      "버그": 0.01,
+      "기능 요청": 0.01,
+      "계정": 0.91,
+      "기타": 0.05
+     },
+     "pred_index": 3
     }
    }
   },
@@ -1563,6 +1877,34 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 530,
+     "in_tok": 276,
+     "cost": 2.76e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "버그",
+      "probabilities": {
+       "결제": 0.01,
+       "버그": 0.96,
+       "기능 요청": 0.01,
+       "계정": 0,
+       "기타": 0.02
+      },
+      "confidence": 0.95
+     },
+     "choice": "버그",
+     "probabilities": {
+      "결제": 0.01,
+      "버그": 0.96,
+      "기능 요청": 0.01,
+      "계정": 0,
+      "기타": 0.02
+     },
+     "pred_index": 1
     }
    }
   },
@@ -1693,6 +2035,34 @@
      ],
      "raw_text": "{\"answer\":\"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 556,
+     "in_tok": 273,
+     "cost": 2.73e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "기타",
+      "probabilities": {
+       "결제": 0,
+       "버그": 0,
+       "기능 요청": 0,
+       "계정": 0.01,
+       "기타": 0.99
+      },
+      "confidence": 0.99
+     },
+     "choice": "기타",
+     "probabilities": {
+      "결제": 0,
+      "버그": 0,
+      "기능 요청": 0,
+      "계정": 0.01,
+      "기타": 0.99
+     },
+     "pred_index": 4
     }
    }
   },
@@ -1823,6 +2193,34 @@
      ],
      "raw_text": "{\"answer\": \"E\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 555,
+     "in_tok": 280,
+     "cost": 2.8e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "기능 요청",
+      "probabilities": {
+       "결제": 0,
+       "버그": 0,
+       "기능 요청": 0.98,
+       "계정": 0,
+       "기타": 0.02
+      },
+      "confidence": 0.98
+     },
+     "choice": "기능 요청",
+     "probabilities": {
+      "결제": 0,
+      "버그": 0,
+      "기능 요청": 0.98,
+      "계정": 0,
+      "기타": 0.02
+     },
+     "pred_index": 2
     }
    }
   },
@@ -1953,6 +2351,34 @@
      ],
      "raw_text": "{\"answer\":\"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 509,
+     "in_tok": 280,
+     "cost": 2.8e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "버그",
+      "probabilities": {
+       "결제": 0.02,
+       "버그": 0.74,
+       "기능 요청": 0.02,
+       "계정": 0.02,
+       "기타": 0.2
+      },
+      "confidence": 0.68
+     },
+     "choice": "버그",
+     "probabilities": {
+      "결제": 0.02,
+      "버그": 0.74,
+      "기능 요청": 0.02,
+      "계정": 0.02,
+      "기타": 0.2
+     },
+     "pred_index": 1
     }
    }
   },
@@ -2083,6 +2509,34 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 522,
+     "in_tok": 283,
+     "cost": 2.83e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "기타",
+      "probabilities": {
+       "결제": 0,
+       "버그": 0,
+       "기능 요청": 0,
+       "계정": 0,
+       "기타": 1
+      },
+      "confidence": 1
+     },
+     "choice": "기타",
+     "probabilities": {
+      "결제": 0,
+      "버그": 0,
+      "기능 요청": 0,
+      "계정": 0,
+      "기타": 1
+     },
+     "pred_index": 4
     }
    }
   },
@@ -2213,6 +2667,34 @@
      ],
      "raw_text": "{\"answer\": \"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 519,
+     "in_tok": 281,
+     "cost": 2.81e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "버그",
+      "probabilities": {
+       "결제": 0.02,
+       "버그": 0.85,
+       "기능 요청": 0.02,
+       "계정": 0.01,
+       "기타": 0.1
+      },
+      "confidence": 0.81
+     },
+     "choice": "버그",
+     "probabilities": {
+      "결제": 0.02,
+      "버그": 0.85,
+      "기능 요청": 0.02,
+      "계정": 0.01,
+      "기타": 0.1
+     },
+     "pred_index": 1
     }
    }
   },
@@ -2343,6 +2825,34 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 543,
+     "in_tok": 283,
+     "cost": 2.83e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "결제",
+      "probabilities": {
+       "결제": 1,
+       "버그": 0,
+       "기능 요청": 0,
+       "계정": 0,
+       "기타": 0
+      },
+      "confidence": 1
+     },
+     "choice": "결제",
+     "probabilities": {
+      "결제": 1,
+      "버그": 0,
+      "기능 요청": 0,
+      "계정": 0,
+      "기타": 0
+     },
+     "pred_index": 0
     }
    }
   },
@@ -2473,6 +2983,34 @@
      ],
      "raw_text": "{\"answer\":\"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 561,
+     "in_tok": 279,
+     "cost": 2.79e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "기능 요청",
+      "probabilities": {
+       "결제": 0.01,
+       "버그": 0,
+       "기능 요청": 0.77,
+       "계정": 0.01,
+       "기타": 0.21
+      },
+      "confidence": 0.71
+     },
+     "choice": "기능 요청",
+     "probabilities": {
+      "결제": 0.01,
+      "버그": 0,
+      "기능 요청": 0.77,
+      "계정": 0.01,
+      "기타": 0.21
+     },
+     "pred_index": 2
     }
    }
   },
@@ -2603,6 +3141,34 @@
      ],
      "raw_text": "{\"answer\":\"D\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 530,
+     "in_tok": 275,
+     "cost": 2.75e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "계정",
+      "probabilities": {
+       "결제": 0,
+       "버그": 0,
+       "기능 요청": 0,
+       "계정": 0.98,
+       "기타": 0.02
+      },
+      "confidence": 0.98
+     },
+     "choice": "계정",
+     "probabilities": {
+      "결제": 0,
+      "버그": 0,
+      "기능 요청": 0,
+      "계정": 0.98,
+      "기타": 0.02
+     },
+     "pred_index": 3
     }
    }
   },
@@ -2733,6 +3299,34 @@
      ],
      "raw_text": "{\"answer\":\"E\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 610,
+     "in_tok": 277,
+     "cost": 2.77e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "계정",
+      "probabilities": {
+       "결제": 0,
+       "버그": 0,
+       "기능 요청": 0,
+       "계정": 1,
+       "기타": 0
+      },
+      "confidence": 1
+     },
+     "choice": "계정",
+     "probabilities": {
+      "결제": 0,
+      "버그": 0,
+      "기능 요청": 0,
+      "계정": 1,
+      "기타": 0
+     },
+     "pred_index": 3
     }
    }
   },
@@ -2863,6 +3457,34 @@
      ],
      "raw_text": "{\"answer\": \"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 529,
+     "in_tok": 281,
+     "cost": 2.81e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "기능 요청",
+      "probabilities": {
+       "결제": 0,
+       "버그": 0,
+       "기능 요청": 1,
+       "계정": 0,
+       "기타": 0
+      },
+      "confidence": 1
+     },
+     "choice": "기능 요청",
+     "probabilities": {
+      "결제": 0,
+      "버그": 0,
+      "기능 요청": 1,
+      "계정": 0,
+      "기타": 0
+     },
+     "pred_index": 2
     }
    }
   },
@@ -2993,6 +3615,34 @@
      ],
      "raw_text": "{\"answer\":\"E\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 595,
+     "in_tok": 281,
+     "cost": 2.81e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "기능 요청",
+      "probabilities": {
+       "결제": 0.01,
+       "버그": 0.01,
+       "기능 요청": 0.82,
+       "계정": 0.01,
+       "기타": 0.15
+      },
+      "confidence": 0.77
+     },
+     "choice": "기능 요청",
+     "probabilities": {
+      "결제": 0.01,
+      "버그": 0.01,
+      "기능 요청": 0.82,
+      "계정": 0.01,
+      "기타": 0.15
+     },
+     "pred_index": 2
     }
    }
   },
@@ -3106,6 +3756,34 @@
      ],
      "raw_text": "{\"answer\": \"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 813,
+     "in_tok": 276,
+     "cost": 2.76e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "계정",
+      "probabilities": {
+       "결제": 0,
+       "버그": 0,
+       "기능 요청": 0,
+       "계정": 1,
+       "기타": 0
+      },
+      "confidence": 1
+     },
+     "choice": "계정",
+     "probabilities": {
+      "결제": 0,
+      "버그": 0,
+      "기능 요청": 0,
+      "계정": 1,
+      "기타": 0
+     },
+     "pred_index": 3
     }
    }
   },
@@ -3236,6 +3914,34 @@
      ],
      "raw_text": "{\"answer\":\"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 646,
+     "in_tok": 284,
+     "cost": 2.84e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "계정",
+      "probabilities": {
+       "결제": 0.01,
+       "버그": 0,
+       "기능 요청": 0.01,
+       "계정": 0.91,
+       "기타": 0.07
+      },
+      "confidence": 0.89
+     },
+     "choice": "계정",
+     "probabilities": {
+      "결제": 0.01,
+      "버그": 0,
+      "기능 요청": 0.01,
+      "계정": 0.91,
+      "기타": 0.07
+     },
+     "pred_index": 3
     }
    }
   },
@@ -3366,6 +4072,34 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 645,
+     "in_tok": 285,
+     "cost": 2.85e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "버그",
+      "probabilities": {
+       "결제": 0,
+       "버그": 1,
+       "기능 요청": 0,
+       "계정": 0,
+       "기타": 0
+      },
+      "confidence": 1
+     },
+     "choice": "버그",
+     "probabilities": {
+      "결제": 0,
+      "버그": 1,
+      "기능 요청": 0,
+      "계정": 0,
+      "기타": 0
+     },
+     "pred_index": 1
     }
    }
   },
@@ -3496,6 +4230,34 @@
      ],
      "raw_text": "{\"answer\":\"D\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 552,
+     "in_tok": 280,
+     "cost": 2.8e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "결제",
+      "probabilities": {
+       "결제": 1,
+       "버그": 0,
+       "기능 요청": 0,
+       "계정": 0,
+       "기타": 0
+      },
+      "confidence": 1
+     },
+     "choice": "결제",
+     "probabilities": {
+      "결제": 1,
+      "버그": 0,
+      "기능 요청": 0,
+      "계정": 0,
+      "기타": 0
+     },
+     "pred_index": 0
     }
    }
   },
@@ -3626,6 +4388,34 @@
      ],
      "raw_text": "{\"answer\":\"D\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 611,
+     "in_tok": 281,
+     "cost": 2.81e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "계정",
+      "probabilities": {
+       "결제": 0,
+       "버그": 0,
+       "기능 요청": 0.32,
+       "계정": 0.58,
+       "기타": 0.1
+      },
+      "confidence": 0.47
+     },
+     "choice": "계정",
+     "probabilities": {
+      "결제": 0,
+      "버그": 0,
+      "기능 요청": 0.32,
+      "계정": 0.58,
+      "기타": 0.1
+     },
+     "pred_index": 3
     }
    }
   },
@@ -3756,6 +4546,34 @@
      ],
      "raw_text": "{\"answer\":\"D\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 631,
+     "in_tok": 276,
+     "cost": 2.76e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "기타",
+      "probabilities": {
+       "결제": 0.01,
+       "버그": 0,
+       "기능 요청": 0.01,
+       "계정": 0.01,
+       "기타": 0.97
+      },
+      "confidence": 0.96
+     },
+     "choice": "기타",
+     "probabilities": {
+      "결제": 0.01,
+      "버그": 0,
+      "기능 요청": 0.01,
+      "계정": 0.01,
+      "기타": 0.97
+     },
+     "pred_index": 4
     }
    }
   },
@@ -3886,6 +4704,34 @@
      ],
      "raw_text": "{\"answer\": \"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 525,
+     "in_tok": 277,
+     "cost": 2.77e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "결제",
+      "probabilities": {
+       "결제": 0.91,
+       "버그": 0.01,
+       "기능 요청": 0.01,
+       "계정": 0,
+       "기타": 0.07
+      },
+      "confidence": 0.89
+     },
+     "choice": "결제",
+     "probabilities": {
+      "결제": 0.91,
+      "버그": 0.01,
+      "기능 요청": 0.01,
+      "계정": 0,
+      "기타": 0.07
+     },
+     "pred_index": 0
     }
    }
   },
@@ -4016,6 +4862,34 @@
      ],
      "raw_text": "{\"answer\":\"D\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 531,
+     "in_tok": 281,
+     "cost": 2.81e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "계정",
+      "probabilities": {
+       "결제": 0,
+       "버그": 0,
+       "기능 요청": 0,
+       "계정": 1,
+       "기타": 0
+      },
+      "confidence": 1
+     },
+     "choice": "계정",
+     "probabilities": {
+      "결제": 0,
+      "버그": 0,
+      "기능 요청": 0,
+      "계정": 1,
+      "기타": 0
+     },
+     "pred_index": 3
     }
    }
   },
@@ -4146,6 +5020,34 @@
      ],
      "raw_text": "{\"answer\":\"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 527,
+     "in_tok": 284,
+     "cost": 2.84e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "결제",
+      "probabilities": {
+       "결제": 0.99,
+       "버그": 0,
+       "기능 요청": 0,
+       "계정": 0,
+       "기타": 0.01
+      },
+      "confidence": 0.99
+     },
+     "choice": "결제",
+     "probabilities": {
+      "결제": 0.99,
+      "버그": 0,
+      "기능 요청": 0,
+      "계정": 0,
+      "기타": 0.01
+     },
+     "pred_index": 0
     }
    }
   }
@@ -4185,6 +5087,13 @@
    "hit": 29,
    "ms": 34372,
    "cost": 0.0017889
+  },
+  "luna": {
+   "n": 30,
+   "ok": 30,
+   "hit": 29,
+   "ms": 16753,
+   "cost": 0.0008386999999999998
   }
  },
  "merged_runs": [
@@ -4198,6 +5107,12 @@
    "date": "2026-10-10",
    "arms": [
     "anthropic:claude-haiku-5-5"
+   ]
+  },
+  {
+   "date": "2026-10-20",
+   "arms": [
+    "luna"
    ]
   }
  ]
