@@ -214,7 +214,7 @@ keywords:
 - router
 owner: ernestolee13
 n: 100
-published_at: '2026-10-09'
+published_at: '2026-10-20'
 type: multiclass
 classes:
 - accept_reservations
@@ -268,7 +268,7 @@ label_source_mix:
   judged: 0
   outcome: 0
 experiment:
-  date: '2026-10-09'
+  date: '2026-10-20'
   template: generic
   runner: benchlet
   arms:
@@ -684,6 +684,55 @@ experiment:
       cache_warm:
         cost: 0.0013625
         err: null
+    luna:
+      model: openai/gpt-6-luna-decisions
+      provider: openrouter
+      family: OpenAI
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.1
+      smoke:
+        arm: luna
+        mode: typed
+        usable: true
+        reasons: []
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 1.0
+        cost: 0.0002874
+        per_item:
+        - id: clinc50-router-mini-0000
+          target: 39
+          hit: 1
+          p: null
+          pred: 39
+        - id: clinc50-router-mini-0001
+          target: 46
+          hit: 1
+          p: null
+          pred: 46
+        - id: clinc50-router-mini-0002
+          target: 37
+          hit: 1
+          p: null
+          pred: 37
+        - id: clinc50-router-mini-0003
+          target: 7
+          hit: 1
+          p: null
+          pred: 7
+        - id: clinc50-router-mini-0004
+          target: 43
+          hit: 1
+          p: null
+          pred: 43
+      cache_warm: null
   protocol:
     decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
     logprob_call:
@@ -801,4 +850,15 @@ result_summary:
     n: 100
     prob_source: none
     model: claude-fable-5-1
+    source_badge: author-run
+  luna:
+    acc: 0.97
+    ci95:
+    - 0.915479219195973
+    - 0.9897456617765852
+    auroc: null
+    brier: null
+    n: 100
+    prob_source: typed
+    model: openai/gpt-6-luna-decisions
     source_badge: author-run
