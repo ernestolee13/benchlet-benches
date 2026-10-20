@@ -199,7 +199,7 @@ review:
 note: 판단형 공개 벤치의 축약 시드(행렬 없는 경로). 라벨은 원천 라벨. 축약 검증은 원천 모델 집단이 아니라 우리 팔의 전체 대 축약 비교다
 owner: ernestolee13
 n: 100
-published_at: '2026-10-10'
+published_at: '2026-10-20'
 type: binary
 classes:
 - hallucinated
@@ -210,7 +210,7 @@ label_source_mix:
   judged: 0
   outcome: 0
 experiment:
-  date: '2026-10-10'
+  date: '2026-10-20'
   template: generic
   runner: benchlet
   arms:
@@ -417,6 +417,57 @@ experiment:
         cost: 0.00040130000000000005
         per_item: []
       cache_warm: null
+    luna:
+      model: openai/gpt-6-luna-decisions
+      provider: openrouter
+      family: OpenAI
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.1
+      smoke:
+        arm: luna
+        mode: typed
+        usable: true
+        reasons:
+        - 뻔한 5건 중 4건 틀림 (halueval-qa-mini-0001, halueval-qa-mini-0006, halueval-qa-mini-0000,
+          halueval-qa-mini-0002). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 0.2
+        cost: 0.0001671
+        per_item:
+        - id: halueval-qa-mini-0001
+          target: 0
+          hit: 0
+          p: 0.01
+          pred: null
+        - id: halueval-qa-mini-0003
+          target: 0
+          hit: 1
+          p: 0.57
+          pred: null
+        - id: halueval-qa-mini-0006
+          target: 0
+          hit: 0
+          p: 0.04
+          pred: null
+        - id: halueval-qa-mini-0000
+          target: 1
+          hit: 0
+          p: 1
+          pred: null
+        - id: halueval-qa-mini-0002
+          target: 1
+          hit: 0
+          p: 1
+          pred: null
+      cache_warm: null
   protocol:
     decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
     logprob_call:
@@ -490,4 +541,15 @@ result_summary:
     n: 100
     prob_source: none
     model: claude-haiku-5-5
+    source_badge: author-run
+  luna:
+    acc: 0.17
+    ci95:
+    - 0.10893476059773155
+    - 0.25548181233642975
+    auroc: 0.0566
+    brier: 0.7683860000000001
+    n: 100
+    prob_source: typed
+    model: openai/gpt-6-luna-decisions
     source_badge: author-run
