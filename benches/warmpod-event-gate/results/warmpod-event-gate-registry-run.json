@@ -3,8 +3,64 @@
  "bench": "warmpod-event-gate@1",
  "items_sha256": "cb0d95c757e7e5d7cf22fe384324668fccc0178ee5ef3dc6ed857671e2e6c968",
  "template": "generic",
- "date": "2026-09-30",
+ "date": "2026-10-04",
  "arms": {
+  "glm": {
+   "model": "z-ai/glm-4.7-flash",
+   "provider": "cloudflare",
+   "family": "GLM",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.0605,
+   "smoke": {
+    "arm": "glm",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9856,
+    "spread": 1.4007312754138468e-08,
+    "distinct_p": 6,
+    "n_calls": 13,
+    "smoke_acc": 1.0,
+    "cost": 0.00043511599999999993,
+    "per_item": [
+     {
+      "id": "wp-gate-006",
+      "target": 0,
+      "hit": 1,
+      "p": 0.6155
+     },
+     {
+      "id": "wp-gate-000",
+      "target": 0,
+      "hit": 1,
+      "p": 0.8059
+     },
+     {
+      "id": "wp-gate-002",
+      "target": 0,
+      "hit": 1,
+      "p": 0.6768
+     },
+     {
+      "id": "wp-gate-056",
+      "target": 1,
+      "hit": 1,
+      "p": 0.3412
+     },
+     {
+      "id": "wp-gate-001",
+      "target": 1,
+      "hit": 1,
+      "p": 0.2257
+     }
+    ]
+   }
+  },
   "qwen": {
    "model": "qwen/qwen3.8-27b",
    "provider": "parasail",
@@ -21,9 +77,9 @@
     "has_logprobs": true,
     "reasoning_tokens_zero": true,
     "provider_match": true,
-    "mass_min": 0.9982,
+    "mass_min": 0.9974,
     "spread": 0.0,
-    "distinct_p": 7,
+    "distinct_p": 8,
     "n_calls": 13,
     "smoke_acc": 1.0,
     "cost": 0.0002982045,
@@ -32,31 +88,31 @@
       "id": "wp-gate-006",
       "target": 0,
       "hit": 1,
-      "p": 0.9758
+      "p": 0.9924
      },
      {
       "id": "wp-gate-000",
       "target": 0,
       "hit": 1,
-      "p": 0.8807
+      "p": 0.854
      },
      {
       "id": "wp-gate-002",
       "target": 0,
       "hit": 1,
-      "p": 0.9283
+      "p": 0.9523
      },
      {
       "id": "wp-gate-056",
       "target": 1,
       "hit": 1,
-      "p": 0.0031
+      "p": 0.0055
      },
      {
       "id": "wp-gate-001",
       "target": 1,
       "hit": 1,
-      "p": 0.0317
+      "p": 0.029
      }
     ]
    }
@@ -77,9 +133,9 @@
     "has_logprobs": true,
     "reasoning_tokens_zero": true,
     "provider_match": true,
-    "mass_min": 0.9989,
-    "spread": 1.8821940138691318e-06,
-    "distinct_p": 7,
+    "mass_min": 0.9986,
+    "spread": 1.9696191538853824e-06,
+    "distinct_p": 9,
     "n_calls": 13,
     "smoke_acc": 1.0,
     "cost": 0.0008997800000000001,
@@ -94,25 +150,25 @@
       "id": "wp-gate-000",
       "target": 0,
       "hit": 1,
-      "p": 0.9983
+      "p": 0.9985
      },
      {
       "id": "wp-gate-002",
       "target": 0,
       "hit": 1,
-      "p": 0.5612
+      "p": 0.6155
      },
      {
       "id": "wp-gate-056",
       "target": 1,
       "hit": 1,
-      "p": 0.0
+      "p": 0.0001
      },
      {
       "id": "wp-gate-001",
       "target": 1,
       "hit": 1,
-      "p": 0.3122
+      "p": 0.2812
      }
     ]
    }
@@ -158,21 +214,21 @@
       "id": "wp-gate-002",
       "target": 0,
       "hit": 1,
-      "p": 0.76,
+      "p": 0.75,
       "pred": null
      },
      {
       "id": "wp-gate-056",
       "target": 1,
       "hit": 1,
-      "p": 0.05,
+      "p": 0.06,
       "pred": null
      },
      {
       "id": "wp-gate-001",
       "target": 1,
       "hit": 1,
-      "p": 0.23,
+      "p": 0.31,
       "pred": null
      }
     ]
@@ -189,15 +245,31 @@
    "cluster": "wpg-1c3b1052",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.7743165296342795,
+     "ms": 4536,
+     "cost": 6.7276e-05,
+     "in_tok": 1112,
+     "err": null,
+     "mass": [
+      0.9959,
+      0.9964
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.8911401940245589,
-     "ms": 879,
+     "p_violation": 0.8540405971833157,
+     "ms": 1006,
      "cost": 4.5254e-05,
      "in_tok": 748,
      "err": null,
      "mass": [
       0.9989,
-      0.9987
+      0.9988
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -206,14 +278,14 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.9985484092794763,
-     "ms": 3538,
+     "p_violation": 0.9987306626541144,
+     "ms": 3103,
      "cost": 0.00013888000000000003,
      "in_tok": 992,
      "err": null,
      "mass": [
       1.0,
-      0.9999
+      1.0
      ],
      "provider": "DigitalOcean",
      "reasoning_tokens": [
@@ -222,7 +294,7 @@
      ]
     },
     "jev": {
-     "ms": 253,
+     "ms": 308,
      "in_tok": 715,
      "cost": 3.0030000000000002e-05,
      "model": "typesafe/jev-1.13-20260917",
@@ -244,15 +316,31 @@
    "cluster": "wpg-a1490ec4",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.22568347117359433,
+     "ms": 849,
+     "cost": 6.570299999999999e-05,
+     "in_tok": 1086,
+     "err": null,
+     "mass": [
+      0.9926,
+      0.9941
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.025898102255733628,
-     "ms": 1033,
+     "p_violation": 0.02899705836689918,
+     "ms": 811,
      "cost": 4.5011999999999995e-05,
      "in_tok": 744,
      "err": null,
      "mass": [
-      0.9979,
-      0.9988
+      0.9974,
+      0.9981
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -261,14 +349,14 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.2812188456997227,
-     "ms": 2437,
+     "p_violation": 0.007487340029325896,
+     "ms": 3017,
      "cost": 0.00013608,
      "in_tok": 972,
      "err": null,
      "mass": [
-      1.0,
-      0.9999
+      0.9999,
+      1.0
      ],
      "provider": "DigitalOcean",
      "reasoning_tokens": [
@@ -277,16 +365,16 @@
      ]
     },
     "jev": {
-     "ms": 236,
+     "ms": 415,
      "in_tok": 712,
      "cost": 2.9904e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.32
+      "noul": 0.26
      },
-     "p_violation": 0.32
+     "p_violation": 0.26
     }
    }
   },
@@ -299,15 +387,31 @@
    "cluster": "wpg-16298c86",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.6767589543438477,
+     "ms": 758,
+     "cost": 6.8607e-05,
+     "in_tok": 1134,
+     "err": null,
+     "mass": [
+      0.9956,
+      0.9929
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.9282975643094051,
-     "ms": 858,
+     "p_violation": 0.9522544697322124,
+     "ms": 878,
      "cost": 4.6222e-05,
      "in_tok": 764,
      "err": null,
      "mass": [
-      0.9989,
-      0.9993
+      0.9995,
+      0.9989
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -316,14 +420,14 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.6898754922683821,
-     "ms": 2024,
+     "p_violation": 0.42257973736361876,
+     "ms": 2243,
      "cost": 0.00014196,
      "in_tok": 1014,
      "err": null,
      "mass": [
       1.0,
-      0.9994
+      0.9989
      ],
      "provider": "DigitalOcean",
      "reasoning_tokens": [
@@ -332,7 +436,7 @@
      ]
     },
     "jev": {
-     "ms": 232,
+     "ms": 260,
      "in_tok": 722,
      "cost": 3.0324e-05,
      "model": "typesafe/jev-1.13-20260917",
@@ -354,15 +458,31 @@
    "cluster": "wpg-24892d77",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.4387703343990727,
+     "ms": 748,
+     "cost": 6.739699999999999e-05,
+     "in_tok": 1114,
+     "err": null,
+     "mass": [
+      0.9959,
+      0.995
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.714327361145378,
-     "ms": 773,
+     "p_violation": 0.6585457411197249,
+     "ms": 731,
      "cost": 4.5617e-05,
      "in_tok": 754,
      "err": null,
      "mass": [
-      0.9969,
-      0.9984
+      0.9975,
+      0.9979
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -371,14 +491,14 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.7310585845283628,
-     "ms": 2163,
+     "p_violation": 0.5923179160438263,
+     "ms": 2538,
      "cost": 0.00013972,
      "in_tok": 998,
      "err": null,
      "mass": [
-      1.0,
-      0.9991
+      0.9998,
+      0.9989
      ],
      "provider": "DigitalOcean",
      "reasoning_tokens": [
@@ -387,16 +507,16 @@
      ]
     },
     "jev": {
-     "ms": 251,
+     "ms": 397,
      "in_tok": 715,
      "cost": 3.0030000000000002e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.81
+      "noul": 0.78
      },
-     "p_violation": 0.81
+     "p_violation": 0.78
     }
    }
   },
@@ -409,15 +529,31 @@
    "cluster": "wpg-c8a1f498",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.11920292280438073,
+     "ms": 851,
+     "cost": 6.945399999999999e-05,
+     "in_tok": 1148,
+     "err": null,
+     "mass": [
+      0.9961,
+      0.9871
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.14185970100744752,
-     "ms": 1260,
+     "p_violation": 0.16451645982429852,
+     "ms": 1327,
      "cost": 4.7431999999999996e-05,
      "in_tok": 784,
      "err": null,
      "mass": [
-      0.9974,
-      0.9972
+      0.9977,
+      0.9984
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -426,8 +562,8 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.00043055709545157224,
-     "ms": 3190,
+     "p_violation": 0.0003829535241036331,
+     "ms": 2896,
      "cost": 0.00014420000000000004,
      "in_tok": 1030,
      "err": null,
@@ -442,16 +578,16 @@
      ]
     },
     "jev": {
-     "ms": 251,
+     "ms": 272,
      "in_tok": 728,
      "cost": 3.0576e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.29
+      "noul": 0.33
      },
-     "p_violation": 0.29
+     "p_violation": 0.33
     }
    }
   },
@@ -464,15 +600,31 @@
    "cluster": "wpg-4a9a39b4",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.24837179384560515,
+     "ms": 751,
+     "cost": 6.6429e-05,
+     "in_tok": 1098,
+     "err": null,
+     "mass": [
+      0.9962,
+      0.9973
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.03373347802016764,
-     "ms": 981,
+     "p_violation": 0.04876535240953642,
+     "ms": 1144,
      "cost": 4.5617e-05,
      "in_tok": 754,
      "err": null,
      "mass": [
-      0.9986,
-      0.9983
+      0.9982,
+      0.9975
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -481,14 +633,14 @@
      ]
     },
     "deepseek": {
-     "p_violation": 4.81456145208803e-05,
-     "ms": 2362,
+     "p_violation": 0.0016237643579337195,
+     "ms": 2153,
      "cost": 0.00013804,
      "in_tok": 986,
      "err": null,
      "mass": [
       0.9999,
-      1.0
+      0.9998
      ],
      "provider": "DigitalOcean",
      "reasoning_tokens": [
@@ -497,16 +649,16 @@
      ]
     },
     "jev": {
-     "ms": 226,
+     "ms": 367,
      "in_tok": 715,
      "cost": 3.0030000000000002e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.19
+      "noul": 0.2
      },
-     "p_violation": 0.19
+     "p_violation": 0.2
     }
    }
   },
@@ -519,14 +671,30 @@
    "cluster": "gs-fine",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.6767589554880118,
+     "ms": 731,
+     "cost": 6.6308e-05,
+     "in_tok": 1096,
+     "err": null,
+     "mass": [
+      0.9905,
+      0.9948
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.9758315356875318,
-     "ms": 864,
+     "p_violation": 0.9847591298676341,
+     "ms": 822,
      "cost": 4.6101e-05,
      "in_tok": 762,
      "err": null,
      "mass": [
-      0.9994,
+      0.9995,
       0.9997
      ],
      "provider": "Parasail",
@@ -536,8 +704,8 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.9999977219940759,
-     "ms": 2385,
+     "p_violation": 0.9999996420747517,
+     "ms": 2697,
      "cost": 0.00013692,
      "in_tok": 978,
      "err": null,
@@ -552,16 +720,16 @@
      ]
     },
     "jev": {
-     "ms": 228,
+     "ms": 234,
      "in_tok": 713,
      "cost": 2.9946e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.95
+      "noul": 0.96
      },
-     "p_violation": 0.95
+     "p_violation": 0.96
     }
    }
   },
@@ -574,15 +742,31 @@
    "cluster": "wpg-66f92eaa",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.9166856043854246,
+     "ms": 749,
+     "cost": 7.0059e-05,
+     "in_tok": 1158,
+     "err": null,
+     "mass": [
+      0.9917,
+      0.9979
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.8719640255535435,
-     "ms": 863,
+     "p_violation": 0.8901002850073427,
+     "ms": 1077,
      "cost": 4.791599999999999e-05,
      "in_tok": 792,
      "err": null,
      "mass": [
-      0.9993,
-      0.9992
+      0.9989,
+      0.9989
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -591,13 +775,13 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.6303673345611975,
-     "ms": 2112,
+     "p_violation": 0.6158072611480185,
+     "ms": 2242,
      "cost": 0.0001456,
      "in_tok": 1040,
      "err": null,
      "mass": [
-      0.9999,
+      1.0,
       1.0
      ],
      "provider": "DigitalOcean",
@@ -607,7 +791,7 @@
      ]
     },
     "jev": {
-     "ms": 268,
+     "ms": 230,
      "in_tok": 740,
      "cost": 3.108e-05,
      "model": "typesafe/jev-1.13-20260917",
@@ -629,15 +813,31 @@
    "cluster": "wpg-ff47ee8f",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.5432579483778825,
+     "ms": 828,
+     "cost": 6.6308e-05,
+     "in_tok": 1096,
+     "err": null,
+     "mass": [
+      0.9933,
+      0.9936
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.02244432644661656,
-     "ms": 833,
+     "p_violation": 0.01946236764423126,
+     "ms": 989,
      "cost": 4.4891e-05,
      "in_tok": 742,
      "err": null,
      "mass": [
-      0.9994,
-      0.9997
+      0.9992,
+      0.9992
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -646,14 +846,14 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.005661147273243027,
-     "ms": 2584,
+     "p_violation": 0.002825340834931799,
+     "ms": 3718,
      "cost": 0.0001372,
      "in_tok": 980,
      "err": null,
      "mass": [
       1.0,
-      0.9998
+      0.9999
      ],
      "provider": "DigitalOcean",
      "reasoning_tokens": [
@@ -662,16 +862,16 @@
      ]
     },
     "jev": {
-     "ms": 224,
+     "ms": 222,
      "in_tok": 708,
      "cost": 2.9736e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.14
+      "noul": 0.16
      },
-     "p_violation": 0.14
+     "p_violation": 0.16
     }
    }
   },
@@ -684,15 +884,31 @@
    "cluster": "wpg-d2b2ef99",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.8850743014065878,
+     "ms": 753,
+     "cost": 6.763900000000001e-05,
+     "in_tok": 1118,
+     "err": null,
+     "mass": [
+      0.9973,
+      0.9976
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.8548765829058234,
-     "ms": 963,
+     "p_violation": 0.8834268821699749,
+     "ms": 1173,
      "cost": 4.6101e-05,
      "in_tok": 762,
      "err": null,
      "mass": [
-      0.999,
-      0.9991
+      0.9988,
+      0.999
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -701,8 +917,8 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.9985484101040312,
-     "ms": 3497,
+     "p_violation": 0.9750507509806741,
+     "ms": 3062,
      "cost": 0.00014028000000000003,
      "in_tok": 1002,
      "err": null,
@@ -717,16 +933,16 @@
      ]
     },
     "jev": {
-     "ms": 282,
+     "ms": 221,
      "in_tok": 721,
      "cost": 3.0282e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.82
+      "noul": 0.84
      },
-     "p_violation": 0.82
+     "p_violation": 0.84
     }
    }
   },
@@ -739,14 +955,30 @@
    "cluster": "wpg-fe27b11b",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.9241418189341295,
+     "ms": 755,
+     "cost": 6.8002e-05,
+     "in_tok": 1124,
+     "err": null,
+     "mass": [
+      0.9968,
+      0.9971
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.9620034804423516,
-     "ms": 1022,
+     "p_violation": 0.9519570073717158,
+     "ms": 722,
      "cost": 4.6584999999999995e-05,
      "in_tok": 770,
      "err": null,
      "mass": [
-      0.9993,
+      0.9991,
       0.999
      ],
      "provider": "Parasail",
@@ -756,14 +988,14 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.9970015637632665,
-     "ms": 2050,
+     "p_violation": 0.9997531067599064,
+     "ms": 2086,
      "cost": 0.00014196,
      "in_tok": 1014,
      "err": null,
      "mass": [
       1.0,
-      0.9999
+      1.0
      ],
      "provider": "DigitalOcean",
      "reasoning_tokens": [
@@ -772,7 +1004,7 @@
      ]
     },
     "jev": {
-     "ms": 302,
+     "ms": 224,
      "in_tok": 724,
      "cost": 3.0408000000000004e-05,
      "model": "typesafe/jev-1.13-20260917",
@@ -794,15 +1026,31 @@
    "cluster": "cj-leak",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.9024694552424593,
+     "ms": 1052,
+     "cost": 6.7034e-05,
+     "in_tok": 1108,
+     "err": null,
+     "mass": [
+      0.9936,
+      0.9982
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.7103230521690838,
-     "ms": 1114,
+     "p_violation": 0.7103230532705638,
+     "ms": 1282,
      "cost": 4.6222e-05,
      "in_tok": 764,
      "err": null,
      "mass": [
-      0.9983,
-      0.9983
+      0.9984,
+      0.9985
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -811,8 +1059,8 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.9489788405268552,
-     "ms": 3101,
+     "p_violation": 0.9513618980387758,
+     "ms": 2758,
      "cost": 0.00013888000000000003,
      "in_tok": 992,
      "err": null,
@@ -834,9 +1082,9 @@
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.77
+      "noul": 0.78
      },
-     "p_violation": 0.77
+     "p_violation": 0.78
     }
    }
   },
@@ -849,15 +1097,31 @@
    "cluster": "wpg-80d6f7fa",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.07425757308598553,
+     "ms": 712,
+     "cost": 6.739699999999999e-05,
+     "in_tok": 1114,
+     "err": null,
+     "mass": [
+      0.9971,
+      0.9966
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.003396144752560528,
-     "ms": 838,
+     "p_violation": 0.0021510546603881525,
+     "ms": 826,
      "cost": 4.5617e-05,
      "in_tok": 754,
      "err": null,
      "mass": [
-      0.9991,
-      0.9991
+      0.9988,
+      0.9992
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -866,14 +1130,14 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.000757094668302288,
-     "ms": 2619,
+     "p_violation": 8.366856397152477e-06,
+     "ms": 3595,
      "cost": 0.00013916000000000002,
      "in_tok": 994,
      "err": null,
      "mass": [
       1.0,
-      0.9999
+      1.0
      ],
      "provider": "DigitalOcean",
      "reasoning_tokens": [
@@ -882,16 +1146,16 @@
      ]
     },
     "jev": {
-     "ms": 269,
+     "ms": 251,
      "in_tok": 714,
      "cost": 2.9988e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.11
+      "noul": 0.12
      },
-     "p_violation": 0.11
+     "p_violation": 0.12
     }
    }
   },
@@ -904,15 +1168,31 @@
    "cluster": "wpg-9b379d9e",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.5612296656009272,
+     "ms": 743,
+     "cost": 6.739699999999999e-05,
+     "in_tok": 1114,
+     "err": null,
+     "mass": [
+      0.9882,
+      0.9938
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.6954266852463229,
-     "ms": 716,
+     "p_violation": 0.7655657570656285,
+     "ms": 1071,
      "cost": 4.6584999999999995e-05,
      "in_tok": 770,
      "err": null,
      "mass": [
-      0.999,
-      0.998
+      0.9981,
+      0.9983
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -921,14 +1201,14 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.9320275871712558,
-     "ms": 3318,
+     "p_violation": 0.835485962983656,
+     "ms": 2032,
      "cost": 0.00014028000000000003,
      "in_tok": 1002,
      "err": null,
      "mass": [
       0.9999,
-      0.9999
+      0.9998
      ],
      "provider": "DigitalOcean",
      "reasoning_tokens": [
@@ -937,16 +1217,16 @@
      ]
     },
     "jev": {
-     "ms": 305,
+     "ms": 229,
      "in_tok": 722,
      "cost": 3.0324e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.72
+      "noul": 0.69
      },
-     "p_violation": 0.72
+     "p_violation": 0.69
     }
    }
   },
@@ -959,15 +1239,31 @@
    "cluster": "wpg-c59ff16e",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.043422562544855055,
+     "ms": 4215,
+     "cost": 6.7276e-05,
+     "in_tok": 1112,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9973
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.002054725639321767,
-     "ms": 832,
+     "p_violation": 0.001813728654389801,
+     "ms": 947,
      "cost": 4.6343e-05,
      "in_tok": 766,
      "err": null,
      "mass": [
-      0.9995,
-      0.9995
+      0.9993,
+      0.9996
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -976,14 +1272,14 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.0001049392448548205,
-     "ms": 2405,
+     "p_violation": 9.924997698793016e-05,
+     "ms": 3202,
      "cost": 0.00014000000000000001,
      "in_tok": 1000,
      "err": null,
      "mass": [
-      0.9999,
-      1.0
+      1.0,
+      0.9999
      ],
      "provider": "DigitalOcean",
      "reasoning_tokens": [
@@ -992,16 +1288,16 @@
      ]
     },
     "jev": {
-     "ms": 251,
+     "ms": 274,
      "in_tok": 724,
      "cost": 3.0408000000000004e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.06
+      "noul": 0.05
      },
-     "p_violation": 0.06
+     "p_violation": 0.05
     }
    }
   },
@@ -1014,15 +1310,31 @@
    "cluster": "wpg-e4176b37",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.43877033439907276,
+     "ms": 776,
+     "cost": 6.8002e-05,
+     "in_tok": 1124,
+     "err": null,
+     "mass": [
+      0.9936,
+      0.9969
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.20480073320930275,
-     "ms": 916,
+     "p_violation": 0.22344912249707188,
+     "ms": 1170,
      "cost": 4.6222e-05,
      "in_tok": 764,
      "err": null,
      "mass": [
-      0.9979,
-      0.9989
+      0.9967,
+      0.9981
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -1031,14 +1343,14 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.06859456463698947,
-     "ms": 2761,
+     "p_violation": 0.09534945972363301,
+     "ms": 3071,
      "cost": 0.00014056,
      "in_tok": 1004,
      "err": null,
      "mass": [
       0.9999,
-      0.9999
+      0.9997
      ],
      "provider": "DigitalOcean",
      "reasoning_tokens": [
@@ -1047,16 +1359,16 @@
      ]
     },
     "jev": {
-     "ms": 229,
+     "ms": 236,
      "in_tok": 723,
      "cost": 3.0366000000000004e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.74
+      "noul": 0.75
      },
-     "p_violation": 0.74
+     "p_violation": 0.75
     }
    }
   },
@@ -1069,15 +1381,31 @@
    "cluster": "wpg-7a5730f7",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.3775406687981454,
+     "ms": 1721,
+     "cost": 6.6792e-05,
+     "in_tok": 1104,
+     "err": null,
+     "mass": [
+      0.9917,
+      0.9934
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.08418977769650281,
-     "ms": 896,
+     "p_violation": 0.09506746567917172,
+     "ms": 1074,
      "cost": 4.5011999999999995e-05,
      "in_tok": 744,
      "err": null,
      "mass": [
       0.998,
-      0.9987
+      0.9988
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -1086,13 +1414,13 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.43632466000609427,
-     "ms": 2720,
+     "p_violation": 0.3991908102319439,
+     "ms": 2819,
      "cost": 0.00013804,
      "in_tok": 986,
      "err": null,
      "mass": [
-      0.9998,
+      1.0,
       0.9999
      ],
      "provider": "DigitalOcean",
@@ -1102,16 +1430,16 @@
      ]
     },
     "jev": {
-     "ms": 229,
+     "ms": 273,
      "in_tok": 710,
      "cost": 2.9820000000000002e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.32
+      "noul": 0.19
      },
-     "p_violation": 0.32
+     "p_violation": 0.19
     }
    }
   },
@@ -1124,15 +1452,31 @@
    "cluster": "wpg-b5a32c1f",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.1058688766993356,
+     "ms": 795,
+     "cost": 6.4735e-05,
+     "in_tok": 1070,
+     "err": null,
+     "mass": [
+      0.9977,
+      0.9942
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.0014247091132234546,
-     "ms": 1028,
+     "p_violation": 0.0012280641864713796,
+     "ms": 783,
      "cost": 4.3923e-05,
      "in_tok": 726,
      "err": null,
      "mass": [
       0.9993,
-      0.9997
+      0.9995
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -1141,8 +1485,8 @@
      ]
     },
     "deepseek": {
-     "p_violation": 4.478492413087627e-06,
-     "ms": 3293,
+     "p_violation": 2.6028840977381187e-05,
+     "ms": 3395,
      "cost": 0.00013384,
      "in_tok": 956,
      "err": null,
@@ -1157,16 +1501,16 @@
      ]
     },
     "jev": {
-     "ms": 375,
+     "ms": 273,
      "in_tok": 698,
      "cost": 2.9316000000000005e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.07
+      "noul": 0.06
      },
-     "p_violation": 0.07
+     "p_violation": 0.06
     }
    }
   },
@@ -1179,15 +1523,31 @@
    "cluster": "wpg-accafd79",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.032706039862214605,
+     "ms": 884,
+     "cost": 6.6187e-05,
+     "in_tok": 1094,
+     "err": null,
+     "mass": [
+      0.9976,
+      0.9981
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.0043733755351085465,
-     "ms": 917,
+     "p_violation": 0.004304736198196384,
+     "ms": 733,
      "cost": 4.477e-05,
      "in_tok": 740,
      "err": null,
      "mass": [
-      0.9996,
-      0.9991
+      0.9993,
+      0.9992
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -1196,8 +1556,8 @@
      ]
     },
     "deepseek": {
-     "p_violation": 1.2120309215729526e-06,
-     "ms": 2690,
+     "p_violation": 2.803879525795827e-06,
+     "ms": 4158,
      "cost": 0.00013692,
      "in_tok": 978,
      "err": null,
@@ -1212,16 +1572,16 @@
      ]
     },
     "jev": {
-     "ms": 278,
+     "ms": 244,
      "in_tok": 711,
      "cost": 2.9862000000000003e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.17
+      "noul": 0.15
      },
-     "p_violation": 0.17
+     "p_violation": 0.15
     }
    }
   },
@@ -1234,15 +1594,31 @@
    "cluster": "wpg-109252cd",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.9763507799667664,
+     "ms": 721,
+     "cost": 6.7034e-05,
+     "in_tok": 1108,
+     "err": null,
+     "mass": [
+      0.9952,
+      0.9984
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.9639218666328926,
-     "ms": 716,
+     "p_violation": 0.9565453715738663,
+     "ms": 788,
      "cost": 4.5738e-05,
      "in_tok": 756,
      "err": null,
      "mass": [
-      0.9989,
-      0.9984
+      0.999,
+      0.9993
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -1251,8 +1627,8 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.9999998574257587,
-     "ms": 3098,
+     "p_violation": 0.9999996915587934,
+     "ms": 2501,
      "cost": 0.00013944,
      "in_tok": 996,
      "err": null,
@@ -1267,7 +1643,7 @@
      ]
     },
     "jev": {
-     "ms": 493,
+     "ms": 330,
      "in_tok": 717,
      "cost": 3.0114e-05,
      "model": "typesafe/jev-1.13-20260917",
@@ -1289,15 +1665,31 @@
    "cluster": "cj-leak",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.15081423205272684,
+     "ms": 876,
+     "cost": 6.763900000000001e-05,
+     "in_tok": 1118,
+     "err": null,
+     "mass": [
+      0.9923,
+      0.9931
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.013247637765213337,
-     "ms": 861,
+     "p_violation": 0.03003696835164762,
+     "ms": 879,
      "cost": 4.6101e-05,
      "in_tok": 762,
      "err": null,
      "mass": [
-      0.9985,
-      0.9993
+      0.9981,
+      0.9991
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -1306,14 +1698,14 @@
      ]
     },
     "deepseek": {
-     "p_violation": 6.279914497700541e-05,
-     "ms": 2449,
+     "p_violation": 0.009047552731561551,
+     "ms": 3036,
      "cost": 0.00014056,
      "in_tok": 1004,
      "err": null,
      "mass": [
       0.9999,
-      0.9999
+      0.999
      ],
      "provider": "DigitalOcean",
      "reasoning_tokens": [
@@ -1322,7 +1714,7 @@
      ]
     },
     "jev": {
-     "ms": 245,
+     "ms": 431,
      "in_tok": 717,
      "cost": 3.0114e-05,
      "model": "typesafe/jev-1.13-20260917",
@@ -1344,15 +1736,31 @@
    "cluster": "wpg-ae98e7bc",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.9565774420750057,
+     "ms": 12890,
+     "cost": 6.7155e-05,
+     "in_tok": 1110,
+     "err": null,
+     "mass": [
+      0.9949,
+      0.9978
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.9854349812817741,
-     "ms": 800,
+     "p_violation": 0.9822206992676946,
+     "ms": 1037,
      "cost": 4.5617e-05,
      "in_tok": 754,
      "err": null,
      "mass": [
       0.9993,
-      0.9994
+      0.9996
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -1361,8 +1769,8 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.9999542470427966,
-     "ms": 2628,
+     "p_violation": 0.999782858233504,
+     "ms": 2229,
      "cost": 0.00013888000000000003,
      "in_tok": 992,
      "err": null,
@@ -1377,7 +1785,7 @@
      ]
     },
     "jev": {
-     "ms": 220,
+     "ms": 237,
      "in_tok": 717,
      "cost": 3.0114e-05,
      "model": "typesafe/jev-1.13-20260917",
@@ -1399,15 +1807,31 @@
    "cluster": "wpg-1891f300",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.9530778068323529,
+     "ms": 793,
+     "cost": 6.655e-05,
+     "in_tok": 1100,
+     "err": null,
+     "mass": [
+      0.9963,
+      0.9979
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.9754367028976584,
-     "ms": 858,
+     "p_violation": 0.9783713793989616,
+     "ms": 830,
      "cost": 4.6101e-05,
      "in_tok": 762,
      "err": null,
      "mass": [
-      0.9995,
-      0.9996
+      0.9996,
+      0.9993
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -1416,8 +1840,8 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.9999612345504707,
-     "ms": 2387,
+     "p_violation": 0.9999929799751177,
+     "ms": 2335,
      "cost": 0.00013776,
      "in_tok": 984,
      "err": null,
@@ -1432,16 +1856,16 @@
      ]
     },
     "jev": {
-     "ms": 267,
+     "ms": 222,
      "in_tok": 716,
      "cost": 3.0072e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.91
+      "noul": 0.9
      },
-     "p_violation": 0.91
+     "p_violation": 0.9
     }
    }
   },
@@ -1454,15 +1878,31 @@
    "cluster": "wpg-073555fe",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.11920291263495986,
+     "ms": 1219,
+     "cost": 6.667099999999999e-05,
+     "in_tok": 1102,
+     "err": null,
+     "mass": [
+      0.997,
+      0.9973
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.003383142874410582,
-     "ms": 869,
+     "p_violation": 0.006015820463818232,
+     "ms": 1113,
      "cost": 4.5254e-05,
      "in_tok": 748,
      "err": null,
      "mass": [
-      0.9993,
-      0.999
+      0.9981,
+      0.9992
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -1471,14 +1911,14 @@
      ]
     },
     "deepseek": {
-     "p_violation": 2.11620251426842e-05,
-     "ms": 2518,
+     "p_violation": 7.448033104914874e-05,
+     "ms": 2900,
      "cost": 0.0001386,
      "in_tok": 990,
      "err": null,
      "mass": [
       1.0,
-      1.0
+      0.9999
      ],
      "provider": "DigitalOcean",
      "reasoning_tokens": [
@@ -1487,7 +1927,7 @@
      ]
     },
     "jev": {
-     "ms": 249,
+     "ms": 240,
      "in_tok": 715,
      "cost": 3.0030000000000002e-05,
      "model": "typesafe/jev-1.13-20260917",
@@ -1509,15 +1949,31 @@
    "cluster": "wpg-b39af5fc",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.9876604691522531,
+     "ms": 876,
+     "cost": 6.7276e-05,
+     "in_tok": 1112,
+     "err": null,
+     "mass": [
+      0.9975,
+      0.9986
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.9818706674951354,
-     "ms": 722,
+     "p_violation": 0.9896064337496882,
+     "ms": 908,
      "cost": 4.6827e-05,
      "in_tok": 774,
      "err": null,
      "mass": [
       0.9995,
-      0.9989
+      0.9993
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -1526,8 +1982,8 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.999994761685035,
-     "ms": 2401,
+     "p_violation": 0.9999985859768037,
+     "ms": 2303,
      "cost": 0.00013916000000000002,
      "in_tok": 994,
      "err": null,
@@ -1542,16 +1998,16 @@
      ]
     },
     "jev": {
-     "ms": 227,
+     "ms": 230,
      "in_tok": 721,
      "cost": 3.0282e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.95
+      "noul": 0.94
      },
-     "p_violation": 0.95
+     "p_violation": 0.94
     }
    }
   },
@@ -1564,15 +2020,31 @@
    "cluster": "hyundai-cartel",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.3844707048255054,
+     "ms": 682,
+     "cost": 6.739699999999999e-05,
+     "in_tok": 1114,
+     "err": null,
+     "mass": [
+      0.9966,
+      0.9937
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.20808537640161112,
-     "ms": 804,
+     "p_violation": 0.1758878112666844,
+     "ms": 917,
      "cost": 4.6101e-05,
      "in_tok": 762,
      "err": null,
      "mass": [
-      0.9988,
-      0.999
+      0.9974,
+      0.9992
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -1581,14 +2053,14 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.4823685997227669,
-     "ms": 2509,
+     "p_violation": 0.48281083837395883,
+     "ms": 2852,
      "cost": 0.00013972,
      "in_tok": 998,
      "err": null,
      "mass": [
-      0.9999,
-      0.9997
+      1.0,
+      0.9992
      ],
      "provider": "DigitalOcean",
      "reasoning_tokens": [
@@ -1597,16 +2069,16 @@
      ]
     },
     "jev": {
-     "ms": 252,
+     "ms": 236,
      "in_tok": 724,
      "cost": 3.0408000000000004e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.11
+      "noul": 0.09
      },
-     "p_violation": 0.11
+     "p_violation": 0.09
     }
    }
   },
@@ -1619,15 +2091,31 @@
    "cluster": "wpg-0657ce35",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.676758961347504,
+     "ms": 688,
+     "cost": 6.570299999999999e-05,
+     "in_tok": 1086,
+     "err": null,
+     "mass": [
+      0.9929,
+      0.9964
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.9366099120947893,
-     "ms": 1121,
+     "p_violation": 0.9607331849254374,
+     "ms": 874,
      "cost": 4.5375e-05,
      "in_tok": 750,
      "err": null,
      "mass": [
-      0.999,
-      0.9995
+      0.9992,
+      0.9991
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -1636,8 +2124,8 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.9864762475690929,
-     "ms": 3303,
+     "p_violation": 0.9747007218996806,
+     "ms": 3187,
      "cost": 0.00013664000000000002,
      "in_tok": 976,
      "err": null,
@@ -1652,7 +2140,7 @@
      ]
     },
     "jev": {
-     "ms": 244,
+     "ms": 214,
      "in_tok": 711,
      "cost": 2.9862000000000003e-05,
      "model": "typesafe/jev-1.13-20260917",
@@ -1674,15 +2162,31 @@
    "cluster": "emart-union",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.09753055493058282,
+     "ms": 724,
+     "cost": 6.534e-05,
+     "in_tok": 1080,
+     "err": null,
+     "mass": [
+      0.995,
+      0.9958
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.012201245969611965,
-     "ms": 1160,
+     "p_violation": 0.007179193809798391,
+     "ms": 809,
      "cost": 4.4407e-05,
      "in_tok": 734,
      "err": null,
      "mass": [
       0.9993,
-      0.9993
+      0.9994
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -1691,8 +2195,8 @@
      ]
     },
     "deepseek": {
-     "p_violation": 3.651514181799849e-05,
-     "ms": 4097,
+     "p_violation": 9.905671662182173e-05,
+     "ms": 2807,
      "cost": 0.00013580000000000002,
      "in_tok": 970,
      "err": null,
@@ -1707,7 +2211,7 @@
      ]
     },
     "jev": {
-     "ms": 267,
+     "ms": 274,
      "in_tok": 702,
      "cost": 2.9484000000000004e-05,
      "model": "typesafe/jev-1.13-20260917",
@@ -1729,15 +2233,31 @@
    "cluster": "wpg-739a4bb8",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.947414796626959,
+     "ms": 815,
+     "cost": 6.775999999999999e-05,
+     "in_tok": 1120,
+     "err": null,
+     "mass": [
+      0.9962,
+      0.9982
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.9931216626728068,
-     "ms": 872,
+     "p_violation": 0.9946902371583343,
+     "ms": 869,
      "cost": 4.6948e-05,
      "in_tok": 776,
      "err": null,
      "mass": [
       0.9997,
-      0.9996
+      0.9995
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -1746,8 +2266,8 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.9999809268290717,
-     "ms": 2618,
+     "p_violation": 0.999988577209536,
+     "ms": 2336,
      "cost": 0.00013972,
      "in_tok": 998,
      "err": null,
@@ -1762,16 +2282,16 @@
      ]
     },
     "jev": {
-     "ms": 288,
+     "ms": 211,
      "in_tok": 723,
      "cost": 3.0366000000000004e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.95
+      "noul": 0.96
      },
-     "p_violation": 0.95
+     "p_violation": 0.96
     }
    }
   },
@@ -1784,15 +2304,31 @@
    "cluster": "wpg-b5b31de9",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.22568347592185878,
+     "ms": 771,
+     "cost": 6.6913e-05,
+     "in_tok": 1106,
+     "err": null,
+     "mass": [
+      0.9922,
+      0.9946
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.05784090803298917,
-     "ms": 1239,
+     "p_violation": 0.05666783557944481,
+     "ms": 864,
      "cost": 4.549599999999999e-05,
      "in_tok": 752,
      "err": null,
      "mass": [
-      0.9987,
-      0.9992
+      0.9984,
+      0.9994
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -1801,8 +2337,8 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.00027697578806490375,
-     "ms": 2815,
+     "p_violation": 0.00031699200101216295,
+     "ms": 2318,
      "cost": 0.00013832000000000002,
      "in_tok": 988,
      "err": null,
@@ -1817,16 +2353,16 @@
      ]
     },
     "jev": {
-     "ms": 233,
+     "ms": 271,
      "in_tok": 714,
      "cost": 2.9988e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.47
+      "noul": 0.51
      },
-     "p_violation": 0.47
+     "p_violation": 0.51
     }
    }
   },
@@ -1839,15 +2375,31 @@
    "cluster": "wpg-6e2892a9",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.7310585757002587,
+     "ms": 754,
+     "cost": 6.7155e-05,
+     "in_tok": 1110,
+     "err": null,
+     "mass": [
+      0.996,
+      0.9948
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.8750138942801942,
-     "ms": 928,
+     "p_violation": 0.8676060627734579,
+     "ms": 1021,
      "cost": 4.5617e-05,
      "in_tok": 754,
      "err": null,
      "mass": [
-      0.9981,
-      0.9987
+      0.9978,
+      0.9992
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -1856,14 +2408,14 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.3793224108641543,
-     "ms": 3134,
+     "p_violation": 0.3696326717379357,
+     "ms": 2412,
      "cost": 0.00013776,
      "in_tok": 984,
      "err": null,
      "mass": [
       1.0,
-      1.0
+      0.9999
      ],
      "provider": "DigitalOcean",
      "reasoning_tokens": [
@@ -1872,7 +2424,7 @@
      ]
     },
     "jev": {
-     "ms": 309,
+     "ms": 215,
      "in_tok": 714,
      "cost": 2.9988e-05,
      "model": "typesafe/jev-1.13-20260917",
@@ -1894,15 +2446,31 @@
    "cluster": "emart-union",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.15081423139479794,
+     "ms": 763,
+     "cost": 6.909099999999999e-05,
+     "in_tok": 1142,
+     "err": null,
+     "mass": [
+      0.9959,
+      0.9945
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.02284066662793022,
-     "ms": 1365,
+     "p_violation": 0.01245205195366436,
+     "ms": 818,
      "cost": 4.6222e-05,
      "in_tok": 764,
      "err": null,
      "mass": [
       0.9992,
-      0.9994
+      0.9992
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -1911,8 +2479,8 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.00037753414365553626,
-     "ms": 2155,
+     "p_violation": 0.0005969051379094502,
+     "ms": 2360,
      "cost": 0.00014252,
      "in_tok": 1018,
      "err": null,
@@ -1927,16 +2495,16 @@
      ]
     },
     "jev": {
-     "ms": 305,
+     "ms": 243,
      "in_tok": 724,
      "cost": 3.0408000000000004e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.09
+      "noul": 0.08
      },
-     "p_violation": 0.09
+     "p_violation": 0.08
     }
    }
   },
@@ -1949,15 +2517,31 @@
    "cluster": "wpg-1d12b32b",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.9707935932344159,
+     "ms": 726,
+     "cost": 6.8244e-05,
+     "in_tok": 1128,
+     "err": null,
+     "mass": [
+      0.9962,
+      0.998
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.9920048190160716,
-     "ms": 1009,
+     "p_violation": 0.9938440160986867,
+     "ms": 951,
      "cost": 4.6584999999999995e-05,
      "in_tok": 770,
      "err": null,
      "mass": [
-      0.9993,
-      0.9991
+      0.9997,
+      0.9994
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -1966,8 +2550,8 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.9999975514799603,
-     "ms": 5037,
+     "p_violation": 0.9999985377732565,
+     "ms": 4684,
      "cost": 0.00014028000000000003,
      "in_tok": 1002,
      "err": null,
@@ -1982,16 +2566,16 @@
      ]
     },
     "jev": {
-     "ms": 227,
+     "ms": 294,
      "in_tok": 723,
      "cost": 3.0366000000000004e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.95
+      "noul": 0.94
      },
-     "p_violation": 0.95
+     "p_violation": 0.94
     }
    }
   },
@@ -2004,15 +2588,31 @@
    "cluster": "wpg-59c874d3",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.7200169059202044,
+     "ms": 963,
+     "cost": 6.7034e-05,
+     "in_tok": 1108,
+     "err": null,
+     "mass": [
+      0.9973,
+      0.9985
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.9801002465831018,
-     "ms": 1359,
+     "p_violation": 0.9822206990174176,
+     "ms": 770,
      "cost": 4.5858999999999996e-05,
      "in_tok": 758,
      "err": null,
      "mass": [
-      0.9993,
-      0.9991
+      0.9991,
+      0.9987
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -2021,14 +2621,14 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.9845932926793812,
-     "ms": 3012,
+     "p_violation": 0.9217350988260198,
+     "ms": 2374,
      "cost": 0.00013972,
      "in_tok": 998,
      "err": null,
      "mass": [
       1.0,
-      0.9996
+      0.9999
      ],
      "provider": "DigitalOcean",
      "reasoning_tokens": [
@@ -2037,7 +2637,7 @@
      ]
     },
     "jev": {
-     "ms": 225,
+     "ms": 222,
      "in_tok": 721,
      "cost": 3.0282e-05,
      "model": "typesafe/jev-1.13-20260917",
@@ -2059,15 +2659,31 @@
    "cluster": "wpg-75327c62",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.11492570005853484,
+     "ms": 791,
+     "cost": 6.775999999999999e-05,
+     "in_tok": 1120,
+     "err": null,
+     "mass": [
+      0.9972,
+      0.9971
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.0027856599916928557,
-     "ms": 820,
+     "p_violation": 0.002677699310249437,
+     "ms": 826,
      "cost": 4.5738e-05,
      "in_tok": 756,
      "err": null,
      "mass": [
-      0.999,
-      0.9996
+      0.9995,
+      0.9997
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -2076,13 +2692,13 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.000603504297000957,
-     "ms": 3538,
+     "p_violation": 0.0003916426460835032,
+     "ms": 2364,
      "cost": 0.00014028000000000003,
      "in_tok": 1002,
      "err": null,
      "mass": [
-      0.9997,
+      0.9999,
       0.9999
      ],
      "provider": "DigitalOcean",
@@ -2092,16 +2708,16 @@
      ]
     },
     "jev": {
-     "ms": 315,
+     "ms": 333,
      "in_tok": 720,
      "cost": 3.0240000000000005e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.12
+      "noul": 0.13
      },
-     "p_violation": 0.12
+     "p_violation": 0.13
     }
    }
   },
@@ -2114,15 +2730,31 @@
    "cluster": "wpg-479da65e",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.268941418440249,
+     "ms": 764,
+     "cost": 6.655e-05,
+     "in_tok": 1100,
+     "err": null,
+     "mass": [
+      0.9963,
+      0.9952
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.8708581460635473,
-     "ms": 841,
+     "p_violation": 0.8353046329044223,
+     "ms": 736,
      "cost": 4.549599999999999e-05,
      "in_tok": 752,
      "err": null,
      "mass": [
-      0.9987,
-      0.9972
+      0.9984,
+      0.9983
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -2131,8 +2763,8 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.8369792908142475,
-     "ms": 3736,
+     "p_violation": 0.8409752011568188,
+     "ms": 2770,
      "cost": 0.0001386,
      "in_tok": 990,
      "err": null,
@@ -2147,16 +2779,16 @@
      ]
     },
     "jev": {
-     "ms": 229,
+     "ms": 276,
      "in_tok": 713,
      "cost": 2.9946e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.84
+      "noul": 0.82
      },
-     "p_violation": 0.84
+     "p_violation": 0.82
     }
    }
   },
@@ -2169,14 +2801,30 @@
    "cluster": "wpg-719b7f3d",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.976350780666924,
+     "ms": 781,
+     "cost": 6.655e-05,
+     "in_tok": 1100,
+     "err": null,
+     "mass": [
+      0.9964,
+      0.9986
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.9937559369793201,
-     "ms": 873,
+     "p_violation": 0.9888704560584074,
+     "ms": 912,
      "cost": 4.5980000000000004e-05,
      "in_tok": 760,
      "err": null,
      "mass": [
-      0.9997,
+      0.9992,
       0.9995
      ],
      "provider": "Parasail",
@@ -2186,14 +2834,14 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.99999138502133,
-     "ms": 4807,
+     "p_violation": 0.9999892567880524,
+     "ms": 2306,
      "cost": 0.0001386,
      "in_tok": 990,
      "err": null,
      "mass": [
       1.0,
-      0.9999
+      1.0
      ],
      "provider": "DigitalOcean",
      "reasoning_tokens": [
@@ -2202,7 +2850,7 @@
      ]
     },
     "jev": {
-     "ms": 255,
+     "ms": 229,
      "in_tok": 718,
      "cost": 3.0156e-05,
      "model": "typesafe/jev-1.13-20260917",
@@ -2224,15 +2872,31 @@
    "cluster": "wpg-7d5acf0e",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.8276001964316569,
+     "ms": 890,
+     "cost": 6.655e-05,
+     "in_tok": 1100,
+     "err": null,
+     "mass": [
+      0.9966,
+      0.9976
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.030744746171927774,
-     "ms": 831,
+     "p_violation": 0.056667834313671325,
+     "ms": 960,
      "cost": 4.549599999999999e-05,
      "in_tok": 752,
      "err": null,
      "mass": [
-      0.9987,
-      0.9994
+      0.9986,
+      0.9986
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -2241,14 +2905,14 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.4406325103566209,
-     "ms": 3252,
+     "p_violation": 0.49094317723764647,
+     "ms": 2463,
      "cost": 0.00013832000000000002,
      "in_tok": 988,
      "err": null,
      "mass": [
       0.9999,
-      0.9999
+      0.9998
      ],
      "provider": "DigitalOcean",
      "reasoning_tokens": [
@@ -2257,16 +2921,16 @@
      ]
     },
     "jev": {
-     "ms": 246,
+     "ms": 224,
      "in_tok": 713,
      "cost": 2.9946e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.19
+      "noul": 0.17
      },
-     "p_violation": 0.19
+     "p_violation": 0.17
     }
    }
   },
@@ -2279,15 +2943,31 @@
    "cluster": "wpg-5a6b5a9c",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.30960146726916443,
+     "ms": 769,
+     "cost": 6.763900000000001e-05,
+     "in_tok": 1118,
+     "err": null,
+     "mass": [
+      0.9975,
+      0.9961
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.012889148460521502,
-     "ms": 784,
+     "p_violation": 0.014070037402398261,
+     "ms": 836,
      "cost": 4.6705999999999996e-05,
      "in_tok": 772,
      "err": null,
      "mass": [
-      0.9987,
-      0.9995
+      0.9993,
+      0.9994
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -2296,8 +2976,8 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.018675592068112392,
-     "ms": 2922,
+     "p_violation": 0.014665578511347106,
+     "ms": 3272,
      "cost": 0.00014056,
      "in_tok": 1004,
      "err": null,
@@ -2312,7 +2992,7 @@
      ]
     },
     "jev": {
-     "ms": 288,
+     "ms": 226,
      "in_tok": 725,
      "cost": 3.0449999999999998e-05,
      "model": "typesafe/jev-1.13-20260917",
@@ -2334,15 +3014,31 @@
    "cluster": "samsung-union",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.15081422904800826,
+     "ms": 803,
+     "cost": 6.667099999999999e-05,
+     "in_tok": 1102,
+     "err": null,
+     "mass": [
+      0.9947,
+      0.9942
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.0783123434754545,
-     "ms": 1279,
+     "p_violation": 0.10640008780784073,
+     "ms": 720,
      "cost": 4.549599999999999e-05,
      "in_tok": 752,
      "err": null,
      "mass": [
-      0.9979,
-      0.9979
+      0.9978,
+      0.9985
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -2351,8 +3047,8 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.25334642628650156,
-     "ms": 2509,
+     "p_violation": 0.1790741033621066,
+     "ms": 2261,
      "cost": 0.00013776,
      "in_tok": 984,
      "err": null,
@@ -2367,16 +3063,16 @@
      ]
     },
     "jev": {
-     "ms": 273,
+     "ms": 285,
      "in_tok": 715,
      "cost": 3.0030000000000002e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.2
+      "noul": 0.18
      },
-     "p_violation": 0.2
+     "p_violation": 0.18
     }
    }
   },
@@ -2389,15 +3085,31 @@
    "cluster": "wpg-129461bf",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.268941415510503,
+     "ms": 4390,
+     "cost": 6.739699999999999e-05,
+     "in_tok": 1114,
+     "err": null,
+     "mass": [
+      0.9928,
+      0.9973
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.021397229313222216,
-     "ms": 944,
+     "p_violation": 0.024156916604743946,
+     "ms": 981,
      "cost": 4.5738e-05,
      "in_tok": 756,
      "err": null,
      "mass": [
-      0.9989,
-      0.9989
+      0.9987,
+      0.9987
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -2406,120 +3118,10 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.09324783103271557,
-     "ms": 3039,
+     "p_violation": 0.001501182600891075,
+     "ms": 2345,
      "cost": 0.00013972,
      "in_tok": 998,
-     "err": null,
-     "mass": [
-      0.9999,
-      0.9998
-     ],
-     "provider": "DigitalOcean",
-     "reasoning_tokens": [
-      0,
-      0
-     ]
-    },
-    "jev": {
-     "ms": 265,
-     "in_tok": 714,
-     "cost": 2.9988e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.15
-     },
-     "p_violation": 0.15
-    }
-   }
-  },
-  {
-   "id": "wp-gate-041",
-   "target": 1,
-   "label": 0,
-   "class": "N-column",
-   "label_source": "judged",
-   "cluster": "wpg-a7fe374d",
-   "n_options": 2,
-   "arms": {
-    "qwen": {
-     "p_violation": 0.00370612630392681,
-     "ms": 753,
-     "cost": 4.6343e-05,
-     "in_tok": 766,
-     "err": null,
-     "mass": [
-      0.999,
-      0.9995
-     ],
-     "provider": "Parasail",
-     "reasoning_tokens": [
-      0,
-      0
-     ]
-    },
-    "deepseek": {
-     "p_violation": 2.9298593617671125e-05,
-     "ms": 2929,
-     "cost": 0.00014000000000000001,
-     "in_tok": 1000,
-     "err": null,
-     "mass": [
-      0.9998,
-      1.0
-     ],
-     "provider": "DigitalOcean",
-     "reasoning_tokens": [
-      0,
-      0
-     ]
-    },
-    "jev": {
-     "ms": 321,
-     "in_tok": 722,
-     "cost": 3.0324e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.16
-     },
-     "p_violation": 0.16
-    }
-   }
-  },
-  {
-   "id": "wp-gate-042",
-   "target": 1,
-   "label": 0,
-   "class": "N-promo",
-   "label_source": "judged",
-   "cluster": "wpg-8925f41a",
-   "n_options": 2,
-   "arms": {
-    "qwen": {
-     "p_violation": 0.025332607342391147,
-     "ms": 950,
-     "cost": 4.6705999999999996e-05,
-     "in_tok": 772,
-     "err": null,
-     "mass": [
-      0.9991,
-      0.9995
-     ],
-     "provider": "Parasail",
-     "reasoning_tokens": [
-      0,
-      0
-     ]
-    },
-    "deepseek": {
-     "p_violation": 4.890912219595171e-05,
-     "ms": 3389,
-     "cost": 0.00014000000000000001,
-     "in_tok": 1000,
      "err": null,
      "mass": [
       1.0,
@@ -2532,7 +3134,149 @@
      ]
     },
     "jev": {
-     "ms": 266,
+     "ms": 240,
+     "in_tok": 714,
+     "cost": 2.9988e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.14
+     },
+     "p_violation": 0.14
+    }
+   }
+  },
+  {
+   "id": "wp-gate-041",
+   "target": 1,
+   "label": 0,
+   "class": "N-column",
+   "label_source": "judged",
+   "cluster": "wpg-a7fe374d",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.12914185360869526,
+     "ms": 802,
+     "cost": 6.763900000000001e-05,
+     "in_tok": 1118,
+     "err": null,
+     "mass": [
+      0.9973,
+      0.9955
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0024127714009556764,
+     "ms": 928,
+     "cost": 4.6343e-05,
+     "in_tok": 766,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 4.3162501983951224e-05,
+     "ms": 2350,
+     "cost": 0.00014000000000000001,
+     "in_tok": 1000,
+     "err": null,
+     "mass": [
+      0.9991,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 245,
+     "in_tok": 722,
+     "cost": 3.0324e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.17
+     },
+     "p_violation": 0.17
+    }
+   }
+  },
+  {
+   "id": "wp-gate-042",
+   "target": 1,
+   "label": 0,
+   "class": "N-promo",
+   "label_source": "judged",
+   "cluster": "wpg-8925f41a",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.44570037335617874,
+     "ms": 747,
+     "cost": 6.7881e-05,
+     "in_tok": 1122,
+     "err": null,
+     "mass": [
+      0.9971,
+      0.9971
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.01278172414508747,
+     "ms": 897,
+     "cost": 4.6705999999999996e-05,
+     "in_tok": 772,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.00030553493039423485,
+     "ms": 1943,
+     "cost": 0.00014000000000000001,
+     "in_tok": 1000,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 228,
      "in_tok": 719,
      "cost": 3.0198e-05,
      "model": "typesafe/jev-1.13-20260917",
@@ -2554,15 +3298,31 @@
    "cluster": "wpg-c29b8ab6",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.9525741243821386,
+     "ms": 742,
+     "cost": 6.5945e-05,
+     "in_tok": 1090,
+     "err": null,
+     "mass": [
+      0.9919,
+      0.9983
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.9961980494360678,
-     "ms": 965,
+     "p_violation": 0.9860579541845669,
+     "ms": 832,
      "cost": 4.5858999999999996e-05,
      "in_tok": 758,
      "err": null,
      "mass": [
-      0.9994,
-      0.9996
+      0.9993,
+      0.9994
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -2571,8 +3331,8 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.9999651509481702,
-     "ms": 3369,
+     "p_violation": 0.9999804927680376,
+     "ms": 3922,
      "cost": 0.00013664000000000002,
      "in_tok": 976,
      "err": null,
@@ -2587,16 +3347,16 @@
      ]
     },
     "jev": {
-     "ms": 244,
+     "ms": 233,
      "in_tok": 710,
      "cost": 2.9820000000000002e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.94
+      "noul": 0.92
      },
-     "p_violation": 0.94
+     "p_violation": 0.92
     }
    }
   },
@@ -2609,15 +3369,31 @@
    "cluster": "wpg-eb6b9102",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.3844707136147437,
+     "ms": 817,
+     "cost": 6.6429e-05,
+     "in_tok": 1098,
+     "err": null,
+     "mass": [
+      0.995,
+      0.9912
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.007179193731630011,
-     "ms": 746,
+     "p_violation": 0.008469312202110921,
+     "ms": 970,
      "cost": 4.4649e-05,
      "in_tok": 738,
      "err": null,
      "mass": [
-      0.9993,
-      0.9995
+      0.9994,
+      0.9993
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -2626,8 +3402,8 @@
      ]
     },
     "deepseek": {
-     "p_violation": 4.917747180351882e-05,
-     "ms": 2583,
+     "p_violation": 1.587927194631987e-05,
+     "ms": 2658,
      "cost": 0.00013748000000000002,
      "in_tok": 982,
      "err": null,
@@ -2642,16 +3418,16 @@
      ]
     },
     "jev": {
-     "ms": 260,
+     "ms": 239,
      "in_tok": 711,
      "cost": 2.9862000000000003e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.07
+      "noul": 0.06
      },
-     "p_violation": 0.07
+     "p_violation": 0.06
     }
    }
   },
@@ -2664,25 +3440,41 @@
    "cluster": "wpg-5eae0059",
    "n_options": 2,
    "arms": {
-    "qwen": {
-     "p_violation": null,
-     "ms": 662,
-     "cost": 2.28085e-05,
-     "in_tok": 377,
-     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"qwen/qwen3.8-27b is temporarily rate-limited upstream. Please retry shortly, or add ",
+    "glm": {
+     "p_violation": 0.6224593277000263,
+     "ms": 741,
+     "cost": 6.739699999999999e-05,
+     "in_tok": 1114,
+     "err": null,
      "mass": [
-      0.9988,
-      null
+      0.9887,
+      0.9925
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7031349202528647,
+     "ms": 910,
+     "cost": 4.5617e-05,
+     "in_tok": 754,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9992
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
       0,
-      null
+      0
      ]
     },
     "deepseek": {
-     "p_violation": 0.7919146141416147,
-     "ms": 2977,
+     "p_violation": 0.8600358162726436,
+     "ms": 2147,
      "cost": 0.00013888000000000003,
      "in_tok": 992,
      "err": null,
@@ -2697,16 +3489,16 @@
      ]
     },
     "jev": {
-     "ms": 246,
+     "ms": 213,
      "in_tok": 715,
      "cost": 3.0030000000000002e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.83
+      "noul": 0.82
      },
-     "p_violation": 0.83
+     "p_violation": 0.82
     }
    }
   },
@@ -2719,14 +3511,30 @@
    "cluster": "samsung-union",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.182425528251267,
+     "ms": 806,
+     "cost": 6.739699999999999e-05,
+     "in_tok": 1114,
+     "err": null,
+     "mass": [
+      0.9943,
+      0.9958
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.11556273047737524,
-     "ms": 990,
+     "p_violation": 0.08867971186185042,
+     "ms": 926,
      "cost": 4.6101e-05,
      "in_tok": 762,
      "err": null,
      "mass": [
-      0.9971,
+      0.9959,
       0.9981
      ],
      "provider": "Parasail",
@@ -2736,8 +3544,8 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.09550150688811064,
-     "ms": 2751,
+     "p_violation": 0.41320401702037046,
+     "ms": 1838,
      "cost": 0.00013916000000000002,
      "in_tok": 994,
      "err": null,
@@ -2752,7 +3560,7 @@
      ]
     },
     "jev": {
-     "ms": 239,
+     "ms": 240,
      "in_tok": 717,
      "cost": 3.0114e-05,
      "model": "typesafe/jev-1.13-20260917",
@@ -2774,15 +3582,31 @@
    "cluster": "wpg-4374b600",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.37754066879814546,
+     "ms": 1027,
+     "cost": 6.5824e-05,
+     "in_tok": 1088,
+     "err": null,
+     "mass": [
+      0.9972,
+      0.9931
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.10586887206547642,
-     "ms": 915,
+     "p_violation": 0.10330209508510091,
+     "ms": 972,
      "cost": 4.5375e-05,
      "in_tok": 750,
      "err": null,
      "mass": [
-      0.9991,
-      0.9988
+      0.9986,
+      0.9986
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -2791,14 +3615,14 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.005039332544078849,
-     "ms": 3051,
+     "p_violation": 0.019899754888816283,
+     "ms": 2926,
      "cost": 0.00013692,
      "in_tok": 978,
      "err": null,
      "mass": [
       1.0,
-      0.9999
+      0.9989
      ],
      "provider": "DigitalOcean",
      "reasoning_tokens": [
@@ -2807,16 +3631,16 @@
      ]
     },
     "jev": {
-     "ms": 225,
+     "ms": 241,
      "in_tok": 709,
      "cost": 2.9778000000000002e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.17
+      "noul": 0.18
      },
-     "p_violation": 0.17
+     "p_violation": 0.18
     }
    }
   },
@@ -2829,15 +3653,31 @@
    "cluster": "wpg-26e7e1e4",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.9820137909097413,
+     "ms": 737,
+     "cost": 6.8002e-05,
+     "in_tok": 1124,
+     "err": null,
+     "mass": [
+      0.9966,
+      0.9986
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.9845932948428624,
-     "ms": 859,
+     "p_violation": 0.9795397541947375,
+     "ms": 785,
      "cost": 4.6343e-05,
      "in_tok": 766,
      "err": null,
      "mass": [
-      0.9996,
-      0.9993
+      0.9993,
+      0.9988
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -2846,8 +3686,8 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.9999997052084592,
-     "ms": 2195,
+     "p_violation": 0.9999996981704069,
+     "ms": 3090,
      "cost": 0.00014168000000000004,
      "in_tok": 1012,
      "err": null,
@@ -2862,7 +3702,7 @@
      ]
     },
     "jev": {
-     "ms": 257,
+     "ms": 233,
      "in_tok": 727,
      "cost": 3.0534e-05,
      "model": "typesafe/jev-1.13-20260917",
@@ -2884,15 +3724,31 @@
    "cluster": "wpg-0b46dca0",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.9707935892768886,
+     "ms": 828,
+     "cost": 6.667099999999999e-05,
+     "in_tok": 1102,
+     "err": null,
+     "mass": [
+      0.9946,
+      0.9983
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.9532479718887625,
-     "ms": 744,
+     "p_violation": 0.9353692428936058,
+     "ms": 963,
      "cost": 4.5375e-05,
      "in_tok": 750,
      "err": null,
      "mass": [
-      0.9985,
-      0.9995
+      0.9993,
+      0.9987
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -2901,14 +3757,14 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.9980588231470631,
-     "ms": 3642,
+     "p_violation": 0.9961536257971376,
+     "ms": 2155,
      "cost": 0.00013804,
      "in_tok": 986,
      "err": null,
      "mass": [
       1.0,
-      1.0
+      0.9999
      ],
      "provider": "DigitalOcean",
      "reasoning_tokens": [
@@ -2917,16 +3773,16 @@
      ]
     },
     "jev": {
-     "ms": 262,
+     "ms": 235,
      "in_tok": 712,
      "cost": 2.9904e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.92
+      "noul": 0.91
      },
-     "p_violation": 0.92
+     "p_violation": 0.91
     }
    }
   },
@@ -2939,15 +3795,31 @@
    "cluster": "wpg-68abd283",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.9349050683020741,
+     "ms": 711,
+     "cost": 6.6429e-05,
+     "in_tok": 1098,
+     "err": null,
+     "mass": [
+      0.9964,
+      0.9977
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.995548868864546,
-     "ms": 4482,
+     "p_violation": 0.9961980483271494,
+     "ms": 993,
      "cost": 4.5617e-05,
      "in_tok": 754,
      "err": null,
      "mass": [
-      0.9997,
-      0.9993
+      0.9995,
+      0.9995
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -2956,8 +3828,8 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.9999996263691086,
-     "ms": 3982,
+     "p_violation": 0.9999999268882708,
+     "ms": 3219,
      "cost": 0.00013804,
      "in_tok": 986,
      "err": null,
@@ -2972,7 +3844,7 @@
      ]
     },
     "jev": {
-     "ms": 252,
+     "ms": 233,
      "in_tok": 712,
      "cost": 2.9904e-05,
      "model": "typesafe/jev-1.13-20260917",
@@ -2994,15 +3866,31 @@
    "cluster": "wpg-0b7c7389",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.9241418205010695,
+     "ms": 788,
+     "cost": 6.8244e-05,
+     "in_tok": 1128,
+     "err": null,
+     "mass": [
+      0.9965,
+      0.9976
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.9097885785561435,
-     "ms": 778,
+     "p_violation": 0.9008340428677832,
+     "ms": 1184,
      "cost": 4.6948e-05,
      "in_tok": 776,
      "err": null,
      "mass": [
-      0.9992,
-      0.9983
+      0.9986,
+      0.9991
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -3011,8 +3899,8 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.9942912507760124,
-     "ms": 3008,
+     "p_violation": 0.9613203205876711,
+     "ms": 2039,
      "cost": 0.00014056,
      "in_tok": 1004,
      "err": null,
@@ -3027,16 +3915,16 @@
      ]
     },
     "jev": {
-     "ms": 274,
+     "ms": 216,
      "in_tok": 724,
      "cost": 3.0408000000000004e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.89
+      "noul": 0.87
      },
-     "p_violation": 0.89
+     "p_violation": 0.87
     }
    }
   },
@@ -3049,15 +3937,31 @@
    "cluster": "wpg-73eecb12",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.8491857827662355,
+     "ms": 745,
+     "cost": 6.775999999999999e-05,
+     "in_tok": 1120,
+     "err": null,
+     "mass": [
+      0.9959,
+      0.9966
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.007802166276056535,
-     "ms": 887,
+     "p_violation": 0.012339045952267442,
+     "ms": 961,
      "cost": 4.6464e-05,
      "in_tok": 768,
      "err": null,
      "mass": [
-      0.9992,
-      0.9997
+      0.9995,
+      0.9993
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -3066,14 +3970,14 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.13482554596127969,
-     "ms": 3639,
+     "p_violation": 0.0036228146977244557,
+     "ms": 2476,
      "cost": 0.00014112,
      "in_tok": 1008,
      "err": null,
      "mass": [
       1.0,
-      0.9999
+      1.0
      ],
      "provider": "DigitalOcean",
      "reasoning_tokens": [
@@ -3082,7 +3986,7 @@
      ]
     },
     "jev": {
-     "ms": 256,
+     "ms": 302,
      "in_tok": 720,
      "cost": 3.0240000000000005e-05,
      "model": "typesafe/jev-1.13-20260917",
@@ -3104,15 +4008,31 @@
    "cluster": "wpg-57b694e4",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.9798504151662056,
+     "ms": 800,
+     "cost": 6.6187e-05,
+     "in_tok": 1094,
+     "err": null,
+     "mass": [
+      0.9967,
+      0.9988
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.986666485671736,
-     "ms": 850,
+     "p_violation": 0.9940785782289646,
+     "ms": 1072,
      "cost": 4.5133e-05,
      "in_tok": 746,
      "err": null,
      "mass": [
       0.9994,
-      0.9994
+      0.9992
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -3121,8 +4041,8 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.9999998001047345,
-     "ms": 3691,
+     "p_violation": 0.9999998226293929,
+     "ms": 4062,
      "cost": 0.00013692,
      "in_tok": 978,
      "err": null,
@@ -3137,16 +4057,16 @@
      ]
     },
     "jev": {
-     "ms": 247,
+     "ms": 237,
      "in_tok": 712,
      "cost": 2.9904e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.96
+      "noul": 0.97
      },
-     "p_violation": 0.96
+     "p_violation": 0.97
     }
    }
   },
@@ -3159,15 +4079,31 @@
    "cluster": "wpg-4e4da98b",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.3232410480138164,
+     "ms": 828,
+     "cost": 6.763900000000001e-05,
+     "in_tok": 1118,
+     "err": null,
+     "mass": [
+      0.9957,
+      0.997
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.027059362866516713,
-     "ms": 1346,
+     "p_violation": 0.025332603647401135,
+     "ms": 1243,
      "cost": 4.6584999999999995e-05,
      "in_tok": 770,
      "err": null,
      "mass": [
-      0.9986,
-      0.998
+      0.9978,
+      0.9982
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -3176,8 +4112,8 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.0019267344977552912,
-     "ms": 2847,
+     "p_violation": 0.0043097925238785055,
+     "ms": 2901,
      "cost": 0.00014000000000000001,
      "in_tok": 1000,
      "err": null,
@@ -3192,16 +4128,16 @@
      ]
     },
     "jev": {
-     "ms": 282,
+     "ms": 213,
      "in_tok": 722,
      "cost": 3.0324e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.52
+      "noul": 0.32
      },
-     "p_violation": 0.52
+     "p_violation": 0.32
     }
    }
   },
@@ -3214,15 +4150,31 @@
    "cluster": "wpg-42d68a84",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.731058581559751,
+     "ms": 759,
+     "cost": 6.739699999999999e-05,
+     "in_tok": 1114,
+     "err": null,
+     "mass": [
+      0.9973,
+      0.9944
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.45366670002296516,
-     "ms": 842,
+     "p_violation": 0.4243225744348331,
+     "ms": 933,
      "cost": 4.5980000000000004e-05,
      "in_tok": 760,
      "err": null,
      "mass": [
-      0.9975,
-      0.9977
+      0.9986,
+      0.9974
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -3231,13 +4183,13 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.6417472087525198,
-     "ms": 3063,
+     "p_violation": 0.4626735257453262,
+     "ms": 1934,
      "cost": 0.00013916000000000002,
      "in_tok": 994,
      "err": null,
      "mass": [
-      1.0,
+      0.9999,
       0.9998
      ],
      "provider": "DigitalOcean",
@@ -3247,16 +4199,16 @@
      ]
     },
     "jev": {
-     "ms": 246,
+     "ms": 226,
      "in_tok": 714,
      "cost": 2.9988e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.41
+      "noul": 0.44
      },
-     "p_violation": 0.41
+     "p_violation": 0.44
     }
    }
   },
@@ -3269,25 +4221,41 @@
    "cluster": "wpg-79f24ea7",
    "n_options": 2,
    "arms": {
-    "qwen": {
-     "p_violation": null,
-     "ms": 579,
-     "cost": 2.3232e-05,
-     "in_tok": 384,
-     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"qwen/qwen3.8-27b is temporarily rate-limited upstream. Please retry shortly, or add ",
+    "glm": {
+     "p_violation": 0.40244242528165014,
+     "ms": 967,
+     "cost": 6.775999999999999e-05,
+     "in_tok": 1120,
+     "err": null,
      "mass": [
-      null,
-      0.9996
+      0.9982,
+      0.9974
      ],
-     "provider": null,
+     "provider": "Cloudflare",
      "reasoning_tokens": [
-      null,
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.005476659192759241,
+     "ms": 768,
+     "cost": 4.6464e-05,
+     "in_tok": 768,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
       0
      ]
     },
     "deepseek": {
-     "p_violation": 1.7245330886509095e-05,
-     "ms": 2879,
+     "p_violation": 5.5729096924919e-05,
+     "ms": 2931,
      "cost": 0.00014056,
      "in_tok": 1004,
      "err": null,
@@ -3302,16 +4270,16 @@
      ]
     },
     "jev": {
-     "ms": 271,
+     "ms": 276,
      "in_tok": 718,
      "cost": 3.0156e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.06
+      "noul": 0.05
      },
-     "p_violation": 0.06
+     "p_violation": 0.05
     }
    }
   },
@@ -3324,15 +4292,31 @@
    "cluster": "samsung-union",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.4387703343990727,
+     "ms": 772,
+     "cost": 6.5582e-05,
+     "in_tok": 1084,
+     "err": null,
+     "mass": [
+      0.9969,
+      0.9966
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.1682440471104415,
-     "ms": 811,
+     "p_violation": 0.14924417591795452,
+     "ms": 818,
      "cost": 4.4286e-05,
      "in_tok": 732,
      "err": null,
      "mass": [
-      0.9977,
-      0.9987
+      0.998,
+      0.9981
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -3341,13 +4325,13 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.00023087948934471256,
-     "ms": 2913,
+     "p_violation": 0.00031879479083533435,
+     "ms": 3715,
      "cost": 0.00013580000000000002,
      "in_tok": 970,
      "err": null,
      "mass": [
-      0.9999,
+      1.0,
       1.0
      ],
      "provider": "DigitalOcean",
@@ -3357,16 +4341,16 @@
      ]
     },
     "jev": {
-     "ms": 241,
+     "ms": 258,
      "in_tok": 705,
      "cost": 2.9610000000000003e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.17
+      "noul": 0.15
      },
-     "p_violation": 0.17
+     "p_violation": 0.15
     }
    }
   },
@@ -3379,15 +4363,31 @@
    "cluster": "wpg-7ba79071",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.9707935945069643,
+     "ms": 754,
+     "cost": 6.534e-05,
+     "in_tok": 1080,
+     "err": null,
+     "mass": [
+      0.9966,
+      0.9984
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.9876609527951401,
-     "ms": 766,
+     "p_violation": 0.9905789457716627,
+     "ms": 1269,
      "cost": 4.5375e-05,
      "in_tok": 750,
      "err": null,
      "mass": [
-      0.9994,
-      0.9991
+      0.9991,
+      0.9994
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -3396,8 +4396,8 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.9990210319508471,
-     "ms": 3051,
+     "p_violation": 0.999723024182327,
+     "ms": 1917,
      "cost": 0.00013608,
      "in_tok": 972,
      "err": null,
@@ -3412,7 +4412,7 @@
      ]
     },
     "jev": {
-     "ms": 236,
+     "ms": 266,
      "in_tok": 708,
      "cost": 2.9736e-05,
      "model": "typesafe/jev-1.13-20260917",
@@ -3434,14 +4434,30 @@
    "cluster": "wpg-3f2673cb",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.22568346743597434,
+     "ms": 1077,
+     "cost": 6.8728e-05,
+     "in_tok": 1136,
+     "err": null,
+     "mass": [
+      0.9959,
+      0.9944
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.07547523005619934,
-     "ms": 1034,
+     "p_violation": 0.06037711234049462,
+     "ms": 745,
      "cost": 4.7674e-05,
      "in_tok": 788,
      "err": null,
      "mass": [
-      0.9978,
+      0.9979,
       0.9984
      ],
      "provider": "Parasail",
@@ -3451,8 +4467,8 @@
      ]
     },
     "deepseek": {
-     "p_violation": 6.67622710574342e-05,
-     "ms": 2351,
+     "p_violation": 0.00045947025617795766,
+     "ms": 2318,
      "cost": 0.00014252,
      "in_tok": 1018,
      "err": null,
@@ -3467,16 +4483,16 @@
      ]
     },
     "jev": {
-     "ms": 387,
+     "ms": 228,
      "in_tok": 727,
      "cost": 3.0534e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.36
+      "noul": 0.39
      },
-     "p_violation": 0.36
+     "p_violation": 0.39
     }
    }
   },
@@ -3489,15 +4505,31 @@
    "cluster": "wpg-d00be346",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.8276001963746344,
+     "ms": 712,
+     "cost": 6.6429e-05,
+     "in_tok": 1098,
+     "err": null,
+     "mass": [
+      0.9966,
+      0.9986
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.9374430025122849,
-     "ms": 806,
+     "p_violation": 0.8972965842303536,
+     "ms": 766,
      "cost": 4.549599999999999e-05,
      "in_tok": 752,
      "err": null,
      "mass": [
-      0.999,
-      0.9994
+      0.9992,
+      0.9993
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -3506,8 +4538,8 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.9811212770737587,
-     "ms": 3235,
+     "p_violation": 0.9965383201582606,
+     "ms": 1943,
      "cost": 0.00013776,
      "in_tok": 984,
      "err": null,
@@ -3522,16 +4554,16 @@
      ]
     },
     "jev": {
-     "ms": 293,
+     "ms": 241,
      "in_tok": 712,
      "cost": 2.9904e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.88
+      "noul": 0.89
      },
-     "p_violation": 0.88
+     "p_violation": 0.89
     }
    }
   },
@@ -3544,15 +4576,31 @@
    "cluster": "wpg-15de680d",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.28792908739905493,
+     "ms": 5187,
+     "cost": 6.6429e-05,
+     "in_tok": 1098,
+     "err": null,
+     "mass": [
+      0.9977,
+      0.9959
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.027406844851883813,
-     "ms": 999,
+     "p_violation": 0.013528043326092193,
+     "ms": 843,
      "cost": 4.549599999999999e-05,
      "in_tok": 752,
      "err": null,
      "mass": [
-      0.9992,
-      0.9994
+      0.9995,
+      0.9993
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -3561,14 +4609,14 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.000981045532076159,
-     "ms": 1883,
+     "p_violation": 0.33960312288414646,
+     "ms": 2393,
      "cost": 0.00013832000000000002,
      "in_tok": 988,
      "err": null,
      "mass": [
       1.0,
-      0.9998
+      0.9997
      ],
      "provider": "DigitalOcean",
      "reasoning_tokens": [
@@ -3577,7 +4625,7 @@
      ]
     },
     "jev": {
-     "ms": 256,
+     "ms": 235,
      "in_tok": 712,
      "cost": 2.9904e-05,
      "model": "typesafe/jev-1.13-20260917",
@@ -3599,15 +4647,31 @@
    "cluster": "wpg-722c61c7",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.8491857821083064,
+     "ms": 739,
+     "cost": 6.6792e-05,
+     "in_tok": 1104,
+     "err": null,
+     "mass": [
+      0.9949,
+      0.9982
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.9706882729012177,
-     "ms": 973,
+     "p_violation": 0.9826066485745777,
+     "ms": 756,
      "cost": 4.5738e-05,
      "in_tok": 756,
      "err": null,
      "mass": [
-      0.9994,
-      0.999
+      0.9986,
+      0.9996
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -3616,8 +4680,8 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.9997834408646027,
-     "ms": 1871,
+     "p_violation": 0.9998659237527836,
+     "ms": 2996,
      "cost": 0.00013944,
      "in_tok": 996,
      "err": null,
@@ -3632,16 +4696,16 @@
      ]
     },
     "jev": {
-     "ms": 270,
+     "ms": 223,
      "in_tok": 714,
      "cost": 2.9988e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.85
+      "noul": 0.87
      },
-     "p_violation": 0.85
+     "p_violation": 0.87
     }
    }
   },
@@ -3654,15 +4718,31 @@
    "cluster": "wpg-661ce185",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.720016900364066,
+     "ms": 14993,
+     "cost": 6.8365e-05,
+     "in_tok": 1130,
+     "err": null,
+     "mass": [
+      0.9921,
+      0.9969
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.030152127697912076,
-     "ms": 766,
+     "p_violation": 0.016382003918835257,
+     "ms": 1058,
      "cost": 4.6827e-05,
      "in_tok": 774,
      "err": null,
      "mass": [
-      0.9991,
-      0.9996
+      0.9992,
+      0.9995
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -3671,14 +4751,14 @@
      ]
     },
     "deepseek": {
-     "p_violation": 2.297043548254688e-05,
-     "ms": 1540,
+     "p_violation": 0.005497416534386508,
+     "ms": 2248,
      "cost": 0.00014196,
      "in_tok": 1014,
      "err": null,
      "mass": [
       1.0,
-      1.0
+      0.9996
      ],
      "provider": "DigitalOcean",
      "reasoning_tokens": [
@@ -3687,7 +4767,7 @@
      ]
     },
     "jev": {
-     "ms": 218,
+     "ms": 244,
      "in_tok": 727,
      "cost": 3.0534e-05,
      "model": "typesafe/jev-1.13-20260917",
@@ -3709,15 +4789,31 @@
    "cluster": "wpg-543bf248",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.8807970764133559,
+     "ms": 812,
+     "cost": 6.667099999999999e-05,
+     "in_tok": 1102,
+     "err": null,
+     "mass": [
+      0.9927,
+      0.9981
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.9712632652457434,
-     "ms": 952,
+     "p_violation": 0.9750507496140702,
+     "ms": 854,
      "cost": 4.549599999999999e-05,
      "in_tok": 752,
      "err": null,
      "mass": [
-      0.9992,
-      0.9992
+      0.9994,
+      0.9989
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -3726,8 +4822,8 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.9999827510271035,
-     "ms": 1915,
+     "p_violation": 0.9999843688236318,
+     "ms": 2502,
      "cost": 0.0001372,
      "in_tok": 980,
      "err": null,
@@ -3742,7 +4838,7 @@
      ]
     },
     "jev": {
-     "ms": 326,
+     "ms": 238,
      "in_tok": 709,
      "cost": 2.9778000000000002e-05,
      "model": "typesafe/jev-1.13-20260917",
@@ -3764,14 +4860,30 @@
    "cluster": "wpg-cf64c16c",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.961630948001571,
+     "ms": 992,
+     "cost": 6.7276e-05,
+     "in_tok": 1112,
+     "err": null,
+     "mass": [
+      0.9963,
+      0.9981
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.9916919680245793,
-     "ms": 870,
+     "p_violation": 0.9926133520142881,
+     "ms": 767,
      "cost": 4.6343e-05,
      "in_tok": 766,
      "err": null,
      "mass": [
-      0.9995,
+      0.9996,
       0.9996
      ],
      "provider": "Parasail",
@@ -3781,8 +4893,8 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.9999983035958866,
-     "ms": 2590,
+     "p_violation": 0.9999993938995919,
+     "ms": 2208,
      "cost": 0.00013972,
      "in_tok": 998,
      "err": null,
@@ -3797,7 +4909,7 @@
      ]
     },
     "jev": {
-     "ms": 276,
+     "ms": 228,
      "in_tok": 722,
      "cost": 3.0324e-05,
      "model": "typesafe/jev-1.13-20260917",
@@ -3819,14 +4931,30 @@
    "cluster": "wpg-fc1a7487",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.3232410480138164,
+     "ms": 1315,
+     "cost": 6.775999999999999e-05,
+     "in_tok": 1120,
+     "err": null,
+     "mass": [
+      0.9894,
+      0.9898
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.025898101705489444,
-     "ms": 839,
+     "p_violation": 0.02992876365831927,
+     "ms": 801,
      "cost": 4.5858999999999996e-05,
      "in_tok": 758,
      "err": null,
      "mass": [
-      0.9992,
+      0.9993,
       0.9988
      ],
      "provider": "Parasail",
@@ -3836,14 +4964,14 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.16375708345423443,
-     "ms": 2097,
+     "p_violation": 0.1168435411082691,
+     "ms": 2661,
      "cost": 0.00014000000000000001,
      "in_tok": 1000,
      "err": null,
      "mass": [
       0.9999,
-      0.9999
+      0.9998
      ],
      "provider": "DigitalOcean",
      "reasoning_tokens": [
@@ -3852,7 +4980,7 @@
      ]
     },
     "jev": {
-     "ms": 279,
+     "ms": 274,
      "in_tok": 721,
      "cost": 3.0282e-05,
      "model": "typesafe/jev-1.13-20260917",
@@ -3874,15 +5002,31 @@
    "cluster": "wpg-d0ecfc00",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.924141818411816,
+     "ms": 782,
+     "cost": 6.9938e-05,
+     "in_tok": 1156,
+     "err": null,
+     "mass": [
+      0.9964,
+      0.9981
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.9902500037252657,
-     "ms": 777,
+     "p_violation": 0.9860579543825726,
+     "ms": 775,
      "cost": 4.8884e-05,
      "in_tok": 808,
      "err": null,
      "mass": [
       0.9995,
-      0.9993
+      0.9995
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -3891,8 +5035,8 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.9999957977502827,
-     "ms": 2332,
+     "p_violation": 0.9999992421159714,
+     "ms": 7110,
      "cost": 0.00014532000000000002,
      "in_tok": 1038,
      "err": null,
@@ -3907,7 +5051,7 @@
      ]
     },
     "jev": {
-     "ms": 592,
+     "ms": 233,
      "in_tok": 743,
      "cost": 3.1206e-05,
      "model": "typesafe/jev-1.13-20260917",
@@ -3929,15 +5073,31 @@
    "cluster": "wpg-537b057e",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.9024694435000633,
+     "ms": 806,
+     "cost": 6.775999999999999e-05,
+     "in_tok": 1120,
+     "err": null,
+     "mass": [
+      0.9949,
+      0.9977
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.9926348354207637,
-     "ms": 1066,
+     "p_violation": 0.994886109227795,
+     "ms": 1141,
      "cost": 4.6343e-05,
      "in_tok": 766,
      "err": null,
      "mass": [
-      0.9993,
-      0.9996
+      0.9996,
+      0.9992
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -3946,8 +5106,8 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.9999982966715464,
-     "ms": 1487,
+     "p_violation": 0.9999996091282876,
+     "ms": 3539,
      "cost": 0.00014028000000000003,
      "in_tok": 1002,
      "err": null,
@@ -3962,16 +5122,16 @@
      ]
     },
     "jev": {
-     "ms": 217,
+     "ms": 391,
      "in_tok": 721,
      "cost": 3.0282e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.93
+      "noul": 0.94
      },
-     "p_violation": 0.93
+     "p_violation": 0.94
     }
    }
   },
@@ -3984,15 +5144,31 @@
    "cluster": "gs-fine",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.09753054893484085,
+     "ms": 777,
+     "cost": 6.7276e-05,
+     "in_tok": 1112,
+     "err": null,
+     "mass": [
+      0.9954,
+      0.9952
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.016982157061743004,
-     "ms": 1186,
+     "p_violation": 0.018444735445376587,
+     "ms": 806,
      "cost": 4.6584999999999995e-05,
      "in_tok": 770,
      "err": null,
      "mass": [
-      0.9985,
-      0.9993
+      0.999,
+      0.9992
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -4001,14 +5177,14 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.009577861231515408,
-     "ms": 2551,
+     "p_violation": 0.09382282543597155,
+     "ms": 2904,
      "cost": 0.00013916000000000002,
      "in_tok": 994,
      "err": null,
      "mass": [
       1.0,
-      0.9997
+      0.9986
      ],
      "provider": "DigitalOcean",
      "reasoning_tokens": [
@@ -4017,7 +5193,7 @@
      ]
     },
     "jev": {
-     "ms": 230,
+     "ms": 267,
      "in_tok": 722,
      "cost": 3.0324e-05,
      "model": "typesafe/jev-1.13-20260917",
@@ -4039,15 +5215,31 @@
    "cluster": "wpg-4001717a",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.1940721785371184,
+     "ms": 751,
+     "cost": 6.7276e-05,
+     "in_tok": 1112,
+     "err": null,
+     "mass": [
+      0.9961,
+      0.9878
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.12432875192247807,
-     "ms": 1352,
+     "p_violation": 0.13049570057064366,
+     "ms": 722,
      "cost": 4.6343e-05,
      "in_tok": 766,
      "err": null,
      "mass": [
-      0.9969,
-      0.9988
+      0.9986,
+      0.998
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -4056,14 +5248,14 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.1624457230238891,
-     "ms": 2553,
+     "p_violation": 0.06163652426464029,
+     "ms": 3071,
      "cost": 0.00014000000000000001,
      "in_tok": 1000,
      "err": null,
      "mass": [
       1.0,
-      0.9999
+      0.9997
      ],
      "provider": "DigitalOcean",
      "reasoning_tokens": [
@@ -4072,16 +5264,16 @@
      ]
     },
     "jev": {
-     "ms": 274,
+     "ms": 283,
      "in_tok": 718,
      "cost": 3.0156e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.18
+      "noul": 0.19
      },
-     "p_violation": 0.18
+     "p_violation": 0.19
     }
    }
   },
@@ -4094,31 +5286,47 @@
    "cluster": "wpg-bf753436",
    "n_options": 2,
    "arms": {
-    "qwen": {
-     "p_violation": null,
-     "ms": 677,
-     "cost": 2.25665e-05,
-     "in_tok": 373,
-     "err": "HTTP 429 {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"qwen/qwen3.8-27b is temporarily rate-limited upstream. Please retry shortly, or add ",
+    "glm": {
+     "p_violation": 0.6224593312018545,
+     "ms": 1259,
+     "cost": 6.6792e-05,
+     "in_tok": 1104,
+     "err": null,
      "mass": [
-      0.9986,
-      null
+      0.9955,
+      0.9962
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9560604743310637,
+     "ms": 985,
+     "cost": 4.5133e-05,
+     "in_tok": 746,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9986
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
       0,
-      null
+      0
      ]
     },
     "deepseek": {
-     "p_violation": 0.9932702167390548,
-     "ms": 2370,
+     "p_violation": 0.9896217608363554,
+     "ms": 3474,
      "cost": 0.00013804,
      "in_tok": 986,
      "err": null,
      "mass": [
       1.0,
-      0.9999
+      0.9996
      ],
      "provider": "DigitalOcean",
      "reasoning_tokens": [
@@ -4127,16 +5335,16 @@
      ]
     },
     "jev": {
-     "ms": 243,
+     "ms": 313,
      "in_tok": 713,
      "cost": 2.9946e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.93
+      "noul": 0.92
      },
-     "p_violation": 0.93
+     "p_violation": 0.92
     }
    }
   },
@@ -4149,15 +5357,31 @@
    "cluster": "wpg-a32fd833",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.8807970740665665,
+     "ms": 724,
+     "cost": 6.8002e-05,
+     "in_tok": 1124,
+     "err": null,
+     "mass": [
+      0.9948,
+      0.9981
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.9891713111639695,
-     "ms": 1048,
+     "p_violation": 0.9909554461842136,
+     "ms": 1255,
      "cost": 4.7311e-05,
      "in_tok": 782,
      "err": null,
      "mass": [
-      0.9995,
-      0.9995
+      0.9996,
+      0.9992
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -4166,8 +5390,8 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.9999998032276561,
-     "ms": 2791,
+     "p_violation": 0.9999999698821561,
+     "ms": 2670,
      "cost": 0.00014084000000000001,
      "in_tok": 1006,
      "err": null,
@@ -4182,16 +5406,16 @@
      ]
     },
     "jev": {
-     "ms": 296,
+     "ms": 279,
      "in_tok": 724,
      "cost": 3.0408000000000004e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.83
+      "noul": 0.85
      },
-     "p_violation": 0.83
+     "p_violation": 0.85
     }
    }
   },
@@ -4204,14 +5428,30 @@
    "cluster": "wpg-f91e371e",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.8491857846597262,
+     "ms": 744,
+     "cost": 6.7881e-05,
+     "in_tok": 1122,
+     "err": null,
+     "mass": [
+      0.997,
+      0.9976
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.978371382347212,
-     "ms": 748,
+     "p_violation": 0.9826066482135758,
+     "ms": 805,
      "cost": 4.6343e-05,
      "in_tok": 766,
      "err": null,
      "mass": [
-      0.9989,
+      0.9994,
       0.9995
      ],
      "provider": "Parasail",
@@ -4221,14 +5461,14 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.9941249160863609,
-     "ms": 3319,
+     "p_violation": 0.9907305048164536,
+     "ms": 3038,
      "cost": 0.00014000000000000001,
      "in_tok": 1000,
      "err": null,
      "mass": [
       1.0,
-      0.9999
+      1.0
      ],
      "provider": "DigitalOcean",
      "reasoning_tokens": [
@@ -4237,7 +5477,7 @@
      ]
     },
     "jev": {
-     "ms": 252,
+     "ms": 230,
      "in_tok": 721,
      "cost": 3.0282e-05,
      "model": "typesafe/jev-1.13-20260917",
@@ -4259,15 +5499,31 @@
    "cluster": "wpg-5e8af4c0",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.9672939561771694,
+     "ms": 759,
+     "cost": 6.667099999999999e-05,
+     "in_tok": 1102,
+     "err": null,
+     "mass": [
+      0.9923,
+      0.9987
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.9512346500891573,
-     "ms": 796,
+     "p_violation": 0.951957002383548,
+     "ms": 928,
      "cost": 4.6343e-05,
      "in_tok": 766,
      "err": null,
      "mass": [
-      0.9991,
-      0.9994
+      0.9992,
+      0.9993
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -4276,8 +5532,8 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.9999968560379084,
-     "ms": 3353,
+     "p_violation": 0.9999988987568453,
+     "ms": 2480,
      "cost": 0.00013804,
      "in_tok": 986,
      "err": null,
@@ -4292,16 +5548,16 @@
      ]
     },
     "jev": {
-     "ms": 227,
+     "ms": 291,
      "in_tok": 718,
      "cost": 3.0156e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.93
+      "noul": 0.95
      },
-     "p_violation": 0.93
+     "p_violation": 0.95
     }
    }
   },
@@ -4314,15 +5570,31 @@
    "cluster": "wpg-1d6e2631",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.2256834744066942,
+     "ms": 1041,
+     "cost": 6.7034e-05,
+     "in_tok": 1108,
+     "err": null,
+     "mass": [
+      0.9948,
+      0.9921
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.07200873560727453,
-     "ms": 1092,
+     "p_violation": 0.10419143672099758,
+     "ms": 783,
      "cost": 4.5254e-05,
      "in_tok": 748,
      "err": null,
      "mass": [
-      0.9986,
-      0.9989
+      0.9987,
+      0.9984
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -4331,14 +5603,14 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.02569525484217341,
-     "ms": 2203,
+     "p_violation": 0.06859456332211308,
+     "ms": 2564,
      "cost": 0.00013832000000000002,
      "in_tok": 988,
      "err": null,
      "mass": [
       1.0,
-      1.0
+      0.9998
      ],
      "provider": "DigitalOcean",
      "reasoning_tokens": [
@@ -4347,16 +5619,16 @@
      ]
     },
     "jev": {
-     "ms": 321,
+     "ms": 232,
      "in_tok": 711,
      "cost": 2.9862000000000003e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.54
+      "noul": 0.56
      },
-     "p_violation": 0.54
+     "p_violation": 0.56
     }
    }
   },
@@ -4369,15 +5641,31 @@
    "cluster": "wpg-1713d55a",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.7516282045898686,
+     "ms": 772,
+     "cost": 6.7276e-05,
+     "in_tok": 1112,
+     "err": null,
+     "mass": [
+      0.9968,
+      0.9968
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.8739938110157695,
-     "ms": 784,
+     "p_violation": 0.8587940515689005,
+     "ms": 964,
      "cost": 4.5858999999999996e-05,
      "in_tok": 758,
      "err": null,
      "mass": [
-      0.9992,
-      0.9992
+      0.9988,
+      0.9993
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -4386,8 +5674,8 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.9931011953100491,
-     "ms": 2319,
+     "p_violation": 0.9946185060196451,
+     "ms": 2490,
      "cost": 0.00014028000000000003,
      "in_tok": 1002,
      "err": null,
@@ -4402,16 +5690,16 @@
      ]
     },
     "jev": {
-     "ms": 235,
+     "ms": 330,
      "in_tok": 716,
      "cost": 3.0072e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.87
+      "noul": 0.88
      },
-     "p_violation": 0.87
+     "p_violation": 0.88
     }
    }
   },
@@ -4424,15 +5712,31 @@
    "cluster": "wpg-ee808324",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.8708581416186366,
+     "ms": 1247,
+     "cost": 6.570299999999999e-05,
+     "in_tok": 1086,
+     "err": null,
+     "mass": [
+      0.9979,
+      0.9971
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.9899955527633542,
-     "ms": 845,
+     "p_violation": 0.9874747140132181,
+     "ms": 818,
      "cost": 4.4044e-05,
      "in_tok": 728,
      "err": null,
      "mass": [
-      0.9992,
-      0.999
+      0.9991,
+      0.9985
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -4441,8 +5745,8 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.9999348955341824,
-     "ms": 2395,
+     "p_violation": 0.9999262276942962,
+     "ms": 2403,
      "cost": 0.00013608,
      "in_tok": 972,
      "err": null,
@@ -4457,16 +5761,16 @@
      ]
     },
     "jev": {
-     "ms": 226,
+     "ms": 222,
      "in_tok": 702,
      "cost": 2.9484000000000004e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.9
+      "noul": 0.91
      },
-     "p_violation": 0.9
+     "p_violation": 0.91
     }
    }
   },
@@ -4479,15 +5783,31 @@
    "cluster": "samsung-union",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.1291418547199229,
+     "ms": 5203,
+     "cost": 6.655e-05,
+     "in_tok": 1100,
+     "err": null,
+     "mass": [
+      0.996,
+      0.9972
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.028567171996072147,
-     "ms": 722,
+     "p_violation": 0.032078393812744466,
+     "ms": 880,
      "cost": 4.477e-05,
      "in_tok": 740,
      "err": null,
      "mass": [
-      0.9984,
-      0.9986
+      0.9978,
+      0.9989
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -4496,14 +5816,14 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.12034317947198499,
-     "ms": 2133,
+     "p_violation": 0.25549347137506084,
+     "ms": 2207,
      "cost": 0.00013804,
      "in_tok": 986,
      "err": null,
      "mass": [
       1.0,
-      0.9996
+      0.9994
      ],
      "provider": "DigitalOcean",
      "reasoning_tokens": [
@@ -4512,7 +5832,7 @@
      ]
     },
     "jev": {
-     "ms": 241,
+     "ms": 209,
      "in_tok": 710,
      "cost": 2.9820000000000002e-05,
      "model": "typesafe/jev-1.13-20260917",
@@ -4534,15 +5854,31 @@
    "cluster": "hyundai-cartel",
    "n_options": 2,
    "arms": {
+    "glm": {
+     "p_violation": 0.8491857708276574,
+     "ms": 767,
+     "cost": 6.7276e-05,
+     "in_tok": 1112,
+     "err": null,
+     "mass": [
+      0.9957,
+      0.9975
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
     "qwen": {
-     "p_violation": 0.6107577724286893,
-     "ms": 769,
+     "p_violation": 0.7042556340489281,
+     "ms": 966,
      "cost": 4.6222e-05,
      "in_tok": 764,
      "err": null,
      "mass": [
-      0.9984,
-      0.9992
+      0.9988,
+      0.9994
      ],
      "provider": "Parasail",
      "reasoning_tokens": [
@@ -4551,14 +5887,14 @@
      ]
     },
     "deepseek": {
-     "p_violation": 0.9067521706310258,
+     "p_violation": 0.9755364709703963,
      "ms": 2666,
      "cost": 0.00013944,
      "in_tok": 996,
      "err": null,
      "mass": [
       1.0,
-      1.0
+      0.9999
      ],
      "provider": "DigitalOcean",
      "reasoning_tokens": [
@@ -4567,40 +5903,47 @@
      ]
     },
     "jev": {
-     "ms": 234,
+     "ms": 222,
      "in_tok": 718,
      "cost": 3.0156e-05,
      "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.57
+      "noul": 0.64
      },
-     "p_violation": 0.57
+     "p_violation": 0.64
     }
    }
   }
  ],
  "agg": {
+  "glm": {
+   "n": 80,
+   "ok": 80,
+   "hit": 70,
+   "ms": 112486,
+   "cost": 0.005373488999999998
+  },
   "qwen": {
    "n": 80,
-   "ok": 77,
-   "hit": 74,
-   "ms": 76667,
-   "cost": 0.0036053159999999995
+   "ok": 80,
+   "hit": 77,
+   "ms": 73827,
+   "cost": 0.0036739229999999995
   },
   "deepseek": {
    "n": 80,
    "ok": 80,
    "hit": 75,
-   "ms": 225126,
+   "ms": 221308,
    "cost": 0.011135040000000004
   },
   "jev": {
    "n": 80,
    "ok": 80,
    "hit": 76,
-   "ms": 21359,
+   "ms": 20590,
    "cost": 0.00240954
   }
  }

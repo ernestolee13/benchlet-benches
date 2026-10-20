@@ -24,7 +24,7 @@ generator:
   seed: 20260930
 source: 웜팟 수집 후보 기사의 제목과 기업, 분류기 프롬프트의 skip 규칙(extract.ts) 조항 대조. 원천 라벨은 승인 행, 큐 진입
   전에 걸러진 초안, 에이전트 skip 판정이고 항목마다 에이전트가 규칙으로 다시 판정했다(원자료 비공개, 본문과 매체 없음)
-visibility: sample
+visibility: full
 items_sha256: cb0d95c757e7e5d7cf22fe384324668fccc0178ee5ef3dc6ed857671e2e6c968
 review:
   checks_run: 5
@@ -46,7 +46,7 @@ keywords:
 owner: ernestolee13
 n: 80
 choices_note: null
-published_at: '2026-10-04'
+published_at: '2026-10-20'
 type: binary
 classes:
 - E-conduct
@@ -62,4 +62,344 @@ label_source_mix:
   constructed: 0
   judged: 80
   outcome: 0
-results: pending
+experiment:
+  date: '2026-10-20'
+  template: generic
+  runner: benchlet
+  arms:
+    glm:
+      model: z-ai/glm-4.7-flash
+      provider: cloudflare
+      family: GLM
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke:
+        arm: glm
+        mode: logprob
+        usable: true
+        reasons: []
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9856
+        spread: 1.4007312754138468e-08
+        distinct_p: 6
+        n_calls: 13
+        smoke_acc: 1.0
+        cost: 0.00043511599999999993
+        per_item:
+        - id: wp-gate-006
+          target: 0
+          hit: 1
+          p: 0.6155
+        - id: wp-gate-000
+          target: 0
+          hit: 1
+          p: 0.8059
+        - id: wp-gate-002
+          target: 0
+          hit: 1
+          p: 0.6768
+        - id: wp-gate-056
+          target: 1
+          hit: 1
+          p: 0.3412
+        - id: wp-gate-001
+          target: 1
+          hit: 1
+          p: 0.2257
+    qwen:
+      model: qwen/qwen3.8-27b
+      provider: parasail
+      family: Qwen
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke:
+        arm: qwen
+        mode: logprob
+        usable: true
+        reasons: []
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9974
+        spread: 0.0
+        distinct_p: 8
+        n_calls: 13
+        smoke_acc: 1.0
+        cost: 0.0002982045
+        per_item:
+        - id: wp-gate-006
+          target: 0
+          hit: 1
+          p: 0.9924
+        - id: wp-gate-000
+          target: 0
+          hit: 1
+          p: 0.854
+        - id: wp-gate-002
+          target: 0
+          hit: 1
+          p: 0.9523
+        - id: wp-gate-056
+          target: 1
+          hit: 1
+          p: 0.0055
+        - id: wp-gate-001
+          target: 1
+          hit: 1
+          p: 0.029
+    deepseek:
+      model: deepseek/deepseek-v4-flash
+      provider: digitalocean
+      family: DeepSeek
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.14
+      smoke:
+        arm: deepseek
+        mode: logprob
+        usable: true
+        reasons: []
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9986
+        spread: 1.9696191538853824e-06
+        distinct_p: 9
+        n_calls: 13
+        smoke_acc: 1.0
+        cost: 0.0008997800000000001
+        per_item:
+        - id: wp-gate-006
+          target: 0
+          hit: 1
+          p: 1.0
+        - id: wp-gate-000
+          target: 0
+          hit: 1
+          p: 0.9985
+        - id: wp-gate-002
+          target: 0
+          hit: 1
+          p: 0.6155
+        - id: wp-gate-056
+          target: 1
+          hit: 1
+          p: 0.0001
+        - id: wp-gate-001
+          target: 1
+          hit: 1
+          p: 0.2812
+    jev:
+      model: typesafe/jev-1.13
+      provider: openrouter
+      family: Jev
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.042
+      smoke:
+        arm: jev
+        mode: typed
+        usable: true
+        reasons: []
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 1.0
+        cost: 0.00015036
+        per_item:
+        - id: wp-gate-006
+          target: 0
+          hit: 1
+          p: 0.95
+          pred: null
+        - id: wp-gate-000
+          target: 0
+          hit: 1
+          p: 0.92
+          pred: null
+        - id: wp-gate-002
+          target: 0
+          hit: 1
+          p: 0.75
+          pred: null
+        - id: wp-gate-056
+          target: 1
+          hit: 1
+          p: 0.06
+          pred: null
+        - id: wp-gate-001
+          target: 1
+          hit: 1
+          p: 0.31
+          pred: null
+    luna:
+      model: openai/gpt-6-luna-decisions
+      provider: openrouter
+      family: OpenAI
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.1
+      smoke:
+        arm: luna
+        mode: typed
+        usable: true
+        reasons: []
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 1.0
+        cost: 0.000268
+        per_item:
+        - id: wp-gate-006
+          target: 0
+          hit: 1
+          p: 1
+          pred: null
+        - id: wp-gate-000
+          target: 0
+          hit: 1
+          p: 1
+          pred: null
+        - id: wp-gate-002
+          target: 0
+          hit: 1
+          p: 1
+          pred: null
+        - id: wp-gate-056
+          target: 1
+          hit: 1
+          p: 0
+          pred: null
+        - id: wp-gate-001
+          target: 1
+          hit: 1
+          p: 0.02
+          pred: null
+      cache_warm: null
+    anthropic:claude-haiku-5-5:
+      model: claude-haiku-5-5
+      provider: anthropic
+      family: Anthropic
+      mode: generative
+      prob_source: none
+      base_url: api.anthropic.com
+      in_per_m: 0.1
+      smoke:
+        arm: anthropic:claude-haiku-5-5
+        mode: generative
+        usable: true
+        reasons:
+        - 로그확률이 안 와서 생성 팔로 강등 (prob_source=none, 정확도만)
+        has_logprobs: false
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: 0
+        n_calls: 11
+        smoke_acc: null
+        cost: 0.0008048000000000002
+        per_item: []
+      cache_warm: null
+  protocol:
+    decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
+    logprob_call:
+      max_tokens: 1
+      temperature: 0
+      logprobs: true
+      top_logprobs: 8
+      reasoning:
+        enabled: false
+    provider_pin: provider.only=[pin], allow_fallbacks=false, require_parameters=true
+    binary: '극성 반전 2회 호출 평균: p = ½[P(A|choices[0]=A) + P(B|choices[0]=B)]'
+    multiclass: 항목별 결정론적 셔플 뒤 원 인덱스로 복원(generic) 또는 파일에 든 셔플 그대로(legacy-seed)
+    typed: Jev noul(이진)/choice(다지), 질문을 instructions 로 그대로 전달
+    label_mass: 상위 8토큰 중 라벨 토큰 질량 < 0.5 이면 오류로 두고 세지 않음
+    renormalize: 라벨 토큰 확률을 라벨 집합 안에서 재정규화
+  items_sha256: cb0d95c757e7e5d7cf22fe384324668fccc0178ee5ef3dc6ed857671e2e6c968
+results:
+- results/warmpod-event-gate-run.json
+result_summary:
+  glm:
+    acc: 0.875
+    ci95:
+    - 0.7849700281693438
+    - 0.9306651696322249
+    auroc: 0.9303125
+    brier: 0.11172370955392763
+    n: 80
+    prob_source: logprob
+    model: z-ai/glm-4.7-flash
+    source_badge: author-run
+  qwen:
+    acc: 0.9625
+    ci95:
+    - 0.8954510802560569
+    - 0.9871656636992112
+    auroc: 0.98875
+    brier: 0.03556910590898593
+    n: 80
+    prob_source: logprob
+    model: qwen/qwen3.8-27b
+    source_badge: author-run
+  deepseek:
+    acc: 0.9375
+    ci95:
+    - 0.8618967084664823
+    - 0.9730110223020144
+    auroc: 0.961875
+    brier: 0.06451050720731691
+    n: 80
+    prob_source: logprob
+    model: deepseek/deepseek-v4-flash
+    source_badge: author-run
+  jev:
+    acc: 0.95
+    ci95:
+    - 0.878375474489178
+    - 0.9803867628727043
+    auroc: 0.98
+    brier: 0.046808749999999996
+    n: 80
+    prob_source: typed
+    model: typesafe/jev-1.13
+    source_badge: author-run
+  luna:
+    acc: 0.95
+    ci95:
+    - 0.878375474489178
+    - 0.9803867628727043
+    auroc: 0.98375
+    brier: 0.04789625000000001
+    n: 80
+    prob_source: typed
+    model: openai/gpt-6-luna-decisions
+    source_badge: author-run
+  anthropic:claude-haiku-5-5:
+    acc: 0.9125
+    ci95:
+    - 0.8302301722291654
+    - 0.9569685453525602
+    auroc: 0.935
+    brier: 0.06875
+    n: 80
+    prob_source: none
+    model: claude-haiku-5-5
+    source_badge: author-run

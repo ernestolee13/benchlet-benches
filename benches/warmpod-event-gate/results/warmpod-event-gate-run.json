@@ -1,0 +1,8143 @@
+{
+ "task": "warmpod-event-gate",
+ "bench": "warmpod-event-gate@1",
+ "items_sha256": "cb0d95c757e7e5d7cf22fe384324668fccc0178ee5ef3dc6ed857671e2e6c968",
+ "template": "generic",
+ "date": "2026-10-20",
+ "arms": {
+  "glm": {
+   "model": "z-ai/glm-4.7-flash",
+   "provider": "cloudflare",
+   "family": "GLM",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.0605,
+   "smoke": {
+    "arm": "glm",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9856,
+    "spread": 1.4007312754138468e-08,
+    "distinct_p": 6,
+    "n_calls": 13,
+    "smoke_acc": 1.0,
+    "cost": 0.00043511599999999993,
+    "per_item": [
+     {
+      "id": "wp-gate-006",
+      "target": 0,
+      "hit": 1,
+      "p": 0.6155
+     },
+     {
+      "id": "wp-gate-000",
+      "target": 0,
+      "hit": 1,
+      "p": 0.8059
+     },
+     {
+      "id": "wp-gate-002",
+      "target": 0,
+      "hit": 1,
+      "p": 0.6768
+     },
+     {
+      "id": "wp-gate-056",
+      "target": 1,
+      "hit": 1,
+      "p": 0.3412
+     },
+     {
+      "id": "wp-gate-001",
+      "target": 1,
+      "hit": 1,
+      "p": 0.2257
+     }
+    ]
+   }
+  },
+  "qwen": {
+   "model": "qwen/qwen3.8-27b",
+   "provider": "parasail",
+   "family": "Qwen",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.0605,
+   "smoke": {
+    "arm": "qwen",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9974,
+    "spread": 0.0,
+    "distinct_p": 8,
+    "n_calls": 13,
+    "smoke_acc": 1.0,
+    "cost": 0.0002982045,
+    "per_item": [
+     {
+      "id": "wp-gate-006",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9924
+     },
+     {
+      "id": "wp-gate-000",
+      "target": 0,
+      "hit": 1,
+      "p": 0.854
+     },
+     {
+      "id": "wp-gate-002",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9523
+     },
+     {
+      "id": "wp-gate-056",
+      "target": 1,
+      "hit": 1,
+      "p": 0.0055
+     },
+     {
+      "id": "wp-gate-001",
+      "target": 1,
+      "hit": 1,
+      "p": 0.029
+     }
+    ]
+   }
+  },
+  "deepseek": {
+   "model": "deepseek/deepseek-v4-flash",
+   "provider": "digitalocean",
+   "family": "DeepSeek",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.14,
+   "smoke": {
+    "arm": "deepseek",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9986,
+    "spread": 1.9696191538853824e-06,
+    "distinct_p": 9,
+    "n_calls": 13,
+    "smoke_acc": 1.0,
+    "cost": 0.0008997800000000001,
+    "per_item": [
+     {
+      "id": "wp-gate-006",
+      "target": 0,
+      "hit": 1,
+      "p": 1.0
+     },
+     {
+      "id": "wp-gate-000",
+      "target": 0,
+      "hit": 1,
+      "p": 0.9985
+     },
+     {
+      "id": "wp-gate-002",
+      "target": 0,
+      "hit": 1,
+      "p": 0.6155
+     },
+     {
+      "id": "wp-gate-056",
+      "target": 1,
+      "hit": 1,
+      "p": 0.0001
+     },
+     {
+      "id": "wp-gate-001",
+      "target": 1,
+      "hit": 1,
+      "p": 0.2812
+     }
+    ]
+   }
+  },
+  "jev": {
+   "model": "typesafe/jev-1.13",
+   "provider": "openrouter",
+   "family": "Jev",
+   "mode": "typed",
+   "prob_source": "typed",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.042,
+   "smoke": {
+    "arm": "jev",
+    "mode": "typed",
+    "usable": true,
+    "reasons": [],
+    "has_logprobs": null,
+    "reasoning_tokens_zero": null,
+    "provider_match": null,
+    "mass_min": null,
+    "spread": null,
+    "distinct_p": null,
+    "n_calls": 5,
+    "smoke_acc": 1.0,
+    "cost": 0.00015036,
+    "per_item": [
+     {
+      "id": "wp-gate-006",
+      "target": 0,
+      "hit": 1,
+      "p": 0.95,
+      "pred": null
+     },
+     {
+      "id": "wp-gate-000",
+      "target": 0,
+      "hit": 1,
+      "p": 0.92,
+      "pred": null
+     },
+     {
+      "id": "wp-gate-002",
+      "target": 0,
+      "hit": 1,
+      "p": 0.75,
+      "pred": null
+     },
+     {
+      "id": "wp-gate-056",
+      "target": 1,
+      "hit": 1,
+      "p": 0.06,
+      "pred": null
+     },
+     {
+      "id": "wp-gate-001",
+      "target": 1,
+      "hit": 1,
+      "p": 0.31,
+      "pred": null
+     }
+    ]
+   }
+  },
+  "luna": {
+   "model": "openai/gpt-6-luna-decisions",
+   "provider": "openrouter",
+   "family": "OpenAI",
+   "mode": "typed",
+   "prob_source": "typed",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.1,
+   "smoke": {
+    "arm": "luna",
+    "mode": "typed",
+    "usable": true,
+    "reasons": [],
+    "has_logprobs": null,
+    "reasoning_tokens_zero": null,
+    "provider_match": null,
+    "mass_min": null,
+    "spread": null,
+    "distinct_p": null,
+    "n_calls": 5,
+    "smoke_acc": 1.0,
+    "cost": 0.000268,
+    "per_item": [
+     {
+      "id": "wp-gate-006",
+      "target": 0,
+      "hit": 1,
+      "p": 1,
+      "pred": null
+     },
+     {
+      "id": "wp-gate-000",
+      "target": 0,
+      "hit": 1,
+      "p": 1,
+      "pred": null
+     },
+     {
+      "id": "wp-gate-002",
+      "target": 0,
+      "hit": 1,
+      "p": 1,
+      "pred": null
+     },
+     {
+      "id": "wp-gate-056",
+      "target": 1,
+      "hit": 1,
+      "p": 0,
+      "pred": null
+     },
+     {
+      "id": "wp-gate-001",
+      "target": 1,
+      "hit": 1,
+      "p": 0.02,
+      "pred": null
+     }
+    ]
+   },
+   "cache_warm": null
+  },
+  "anthropic:claude-haiku-5-5": {
+   "model": "claude-haiku-5-5",
+   "provider": "anthropic",
+   "family": "Anthropic",
+   "mode": "generative",
+   "prob_source": "none",
+   "base_url": "api.anthropic.com",
+   "in_per_m": 0.1,
+   "smoke": {
+    "arm": "anthropic:claude-haiku-5-5",
+    "mode": "generative",
+    "usable": true,
+    "reasons": [
+     "로그확률이 안 와서 생성 팔로 강등 (prob_source=none, 정확도만)"
+    ],
+    "has_logprobs": false,
+    "reasoning_tokens_zero": null,
+    "provider_match": null,
+    "mass_min": null,
+    "spread": null,
+    "distinct_p": 0,
+    "n_calls": 11,
+    "smoke_acc": null,
+    "cost": 0.0008048000000000002,
+    "per_item": []
+   },
+   "cache_warm": null
+  }
+ },
+ "items": [
+  {
+   "id": "wp-gate-000",
+   "target": 0,
+   "label": 1,
+   "class": "E-incident",
+   "label_source": "judged",
+   "cluster": "wpg-1c3b1052",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.7743165296342795,
+     "ms": 4536,
+     "cost": 6.7276e-05,
+     "in_tok": 1112,
+     "err": null,
+     "mass": [
+      0.9959,
+      0.9964
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.8540405971833157,
+     "ms": 1006,
+     "cost": 4.5254e-05,
+     "in_tok": 748,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.9988
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9987306626541144,
+     "ms": 3103,
+     "cost": 0.00013888000000000003,
+     "in_tok": 992,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 308,
+     "in_tok": 715,
+     "cost": 3.0030000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.92
+     },
+     "p_violation": 0.92
+    },
+    "luna": {
+     "ms": 552,
+     "in_tok": 535,
+     "cost": 5.35e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2938,
+     "cost": 0.00019380000000000002,
+     "in_tok": 1838,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-001",
+   "target": 1,
+   "label": 0,
+   "class": "N-otherco",
+   "label_source": "judged",
+   "cluster": "wpg-a1490ec4",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.22568347117359433,
+     "ms": 849,
+     "cost": 6.570299999999999e-05,
+     "in_tok": 1086,
+     "err": null,
+     "mass": [
+      0.9926,
+      0.9941
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.02899705836689918,
+     "ms": 811,
+     "cost": 4.5011999999999995e-05,
+     "in_tok": 744,
+     "err": null,
+     "mass": [
+      0.9974,
+      0.9981
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.007487340029325896,
+     "ms": 3017,
+     "cost": 0.00013608,
+     "in_tok": 972,
+     "err": null,
+     "mass": [
+      0.9999,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 415,
+     "in_tok": 712,
+     "cost": 2.9904e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.26
+     },
+     "p_violation": 0.26
+    },
+    "luna": {
+     "ms": 553,
+     "in_tok": 530,
+     "cost": 5.3e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.02
+     },
+     "p_violation": 0.02
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2741,
+     "cost": 0.00019160000000000002,
+     "in_tok": 1816,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-002",
+   "target": 0,
+   "label": 1,
+   "class": "E-conduct",
+   "label_source": "judged",
+   "cluster": "wpg-16298c86",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6767589543438477,
+     "ms": 758,
+     "cost": 6.8607e-05,
+     "in_tok": 1134,
+     "err": null,
+     "mass": [
+      0.9956,
+      0.9929
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9522544697322124,
+     "ms": 878,
+     "cost": 4.6222e-05,
+     "in_tok": 764,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.42257973736361876,
+     "ms": 2243,
+     "cost": 0.00014196,
+     "in_tok": 1014,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9989
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 260,
+     "in_tok": 722,
+     "cost": 3.0324e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.75
+     },
+     "p_violation": 0.75
+    },
+    "luna": {
+     "ms": 548,
+     "in_tok": 541,
+     "cost": 5.41e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2236,
+     "cost": 0.0001956,
+     "in_tok": 1856,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-003",
+   "target": 0,
+   "label": 1,
+   "class": "E-conduct",
+   "label_source": "judged",
+   "cluster": "wpg-24892d77",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4387703343990727,
+     "ms": 748,
+     "cost": 6.739699999999999e-05,
+     "in_tok": 1114,
+     "err": null,
+     "mass": [
+      0.9959,
+      0.995
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.6585457411197249,
+     "ms": 731,
+     "cost": 4.5617e-05,
+     "in_tok": 754,
+     "err": null,
+     "mass": [
+      0.9975,
+      0.9979
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.5923179160438263,
+     "ms": 2538,
+     "cost": 0.00013972,
+     "in_tok": 998,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9989
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 397,
+     "in_tok": 715,
+     "cost": 3.0030000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.78
+     },
+     "p_violation": 0.78
+    },
+    "luna": {
+     "ms": 540,
+     "in_tok": 539,
+     "cost": 5.39e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2862,
+     "cost": 0.00019360000000000002,
+     "in_tok": 1836,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-004",
+   "target": 1,
+   "label": 0,
+   "class": "N-column",
+   "label_source": "judged",
+   "cluster": "wpg-c8a1f498",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.11920292280438073,
+     "ms": 851,
+     "cost": 6.945399999999999e-05,
+     "in_tok": 1148,
+     "err": null,
+     "mass": [
+      0.9961,
+      0.9871
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.16451645982429852,
+     "ms": 1327,
+     "cost": 4.7431999999999996e-05,
+     "in_tok": 784,
+     "err": null,
+     "mass": [
+      0.9977,
+      0.9984
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.0003829535241036331,
+     "ms": 2896,
+     "cost": 0.00014420000000000004,
+     "in_tok": 1030,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 272,
+     "in_tok": 728,
+     "cost": 3.0576e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.33
+     },
+     "p_violation": 0.33
+    },
+    "luna": {
+     "ms": 514,
+     "in_tok": 547,
+     "cost": 5.47e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.01
+     },
+     "p_violation": 0.01
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2619,
+     "cost": 0.0001988,
+     "in_tok": 1888,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-005",
+   "target": 1,
+   "label": 0,
+   "class": "N-policy",
+   "label_source": "judged",
+   "cluster": "wpg-4a9a39b4",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.24837179384560515,
+     "ms": 751,
+     "cost": 6.6429e-05,
+     "in_tok": 1098,
+     "err": null,
+     "mass": [
+      0.9962,
+      0.9973
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.04876535240953642,
+     "ms": 1144,
+     "cost": 4.5617e-05,
+     "in_tok": 754,
+     "err": null,
+     "mass": [
+      0.9982,
+      0.9975
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.0016237643579337195,
+     "ms": 2153,
+     "cost": 0.00013804,
+     "in_tok": 986,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 367,
+     "in_tok": 715,
+     "cost": 3.0030000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.2
+     },
+     "p_violation": 0.2
+    },
+    "luna": {
+     "ms": 576,
+     "in_tok": 535,
+     "cost": 5.35e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0
+     },
+     "p_violation": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2461,
+     "cost": 0.0001922,
+     "in_tok": 1822,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-006",
+   "target": 0,
+   "label": 1,
+   "class": "E-sanction",
+   "label_source": "judged",
+   "cluster": "gs-fine",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6767589554880118,
+     "ms": 731,
+     "cost": 6.6308e-05,
+     "in_tok": 1096,
+     "err": null,
+     "mass": [
+      0.9905,
+      0.9948
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9847591298676341,
+     "ms": 822,
+     "cost": 4.6101e-05,
+     "in_tok": 762,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9997
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999996420747517,
+     "ms": 2697,
+     "cost": 0.00013692,
+     "in_tok": 978,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 234,
+     "in_tok": 713,
+     "cost": 2.9946e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.96
+     },
+     "p_violation": 0.96
+    },
+    "luna": {
+     "ms": 586,
+     "in_tok": 533,
+     "cost": 5.33e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2639,
+     "cost": 0.00019160000000000002,
+     "in_tok": 1816,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-007",
+   "target": 0,
+   "label": 1,
+   "class": "E-incident",
+   "label_source": "judged",
+   "cluster": "wpg-66f92eaa",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9166856043854246,
+     "ms": 749,
+     "cost": 7.0059e-05,
+     "in_tok": 1158,
+     "err": null,
+     "mass": [
+      0.9917,
+      0.9979
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.8901002850073427,
+     "ms": 1077,
+     "cost": 4.791599999999999e-05,
+     "in_tok": 792,
+     "err": null,
+     "mass": [
+      0.9989,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.6158072611480185,
+     "ms": 2242,
+     "cost": 0.0001456,
+     "in_tok": 1040,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 230,
+     "in_tok": 740,
+     "cost": 3.108e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.89
+     },
+     "p_violation": 0.89
+    },
+    "luna": {
+     "ms": 549,
+     "in_tok": 556,
+     "cost": 5.56e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2344,
+     "cost": 0.00019860000000000003,
+     "in_tok": 1886,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-008",
+   "target": 1,
+   "label": 0,
+   "class": "N-promo",
+   "label_source": "judged",
+   "cluster": "wpg-ff47ee8f",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5432579483778825,
+     "ms": 828,
+     "cost": 6.6308e-05,
+     "in_tok": 1096,
+     "err": null,
+     "mass": [
+      0.9933,
+      0.9936
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.01946236764423126,
+     "ms": 989,
+     "cost": 4.4891e-05,
+     "in_tok": 742,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.002825340834931799,
+     "ms": 3718,
+     "cost": 0.0001372,
+     "in_tok": 980,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 222,
+     "in_tok": 708,
+     "cost": 2.9736e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.16
+     },
+     "p_violation": 0.16
+    },
+    "luna": {
+     "ms": 563,
+     "in_tok": 528,
+     "cost": 5.28e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0
+     },
+     "p_violation": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2277,
+     "cost": 0.000193,
+     "in_tok": 1830,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\": \"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-009",
+   "target": 0,
+   "label": 1,
+   "class": "E-conduct",
+   "label_source": "judged",
+   "cluster": "wpg-d2b2ef99",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8850743014065878,
+     "ms": 753,
+     "cost": 6.763900000000001e-05,
+     "in_tok": 1118,
+     "err": null,
+     "mass": [
+      0.9973,
+      0.9976
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.8834268821699749,
+     "ms": 1173,
+     "cost": 4.6101e-05,
+     "in_tok": 762,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.999
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9750507509806741,
+     "ms": 3062,
+     "cost": 0.00014028000000000003,
+     "in_tok": 1002,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 221,
+     "in_tok": 721,
+     "cost": 3.0282e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.84
+     },
+     "p_violation": 0.84
+    },
+    "luna": {
+     "ms": 557,
+     "in_tok": 541,
+     "cost": 5.41e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2450,
+     "cost": 0.00019460000000000001,
+     "in_tok": 1846,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-010",
+   "target": 0,
+   "label": 1,
+   "class": "E-incident",
+   "label_source": "judged",
+   "cluster": "wpg-fe27b11b",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9241418189341295,
+     "ms": 755,
+     "cost": 6.8002e-05,
+     "in_tok": 1124,
+     "err": null,
+     "mass": [
+      0.9968,
+      0.9971
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9519570073717158,
+     "ms": 722,
+     "cost": 4.6584999999999995e-05,
+     "in_tok": 770,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.999
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9997531067599064,
+     "ms": 2086,
+     "cost": 0.00014196,
+     "in_tok": 1014,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 224,
+     "in_tok": 724,
+     "cost": 3.0408000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.89
+     },
+     "p_violation": 0.89
+    },
+    "luna": {
+     "ms": 632,
+     "in_tok": 545,
+     "cost": 5.45e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2363,
+     "cost": 0.0001956,
+     "in_tok": 1856,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-011",
+   "target": 0,
+   "label": 1,
+   "class": "E-incident",
+   "label_source": "judged",
+   "cluster": "cj-leak",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9024694552424593,
+     "ms": 1052,
+     "cost": 6.7034e-05,
+     "in_tok": 1108,
+     "err": null,
+     "mass": [
+      0.9936,
+      0.9982
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7103230532705638,
+     "ms": 1282,
+     "cost": 4.6222e-05,
+     "in_tok": 764,
+     "err": null,
+     "mass": [
+      0.9984,
+      0.9985
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9513618980387758,
+     "ms": 2758,
+     "cost": 0.00013888000000000003,
+     "in_tok": 992,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 230,
+     "in_tok": 720,
+     "cost": 3.0240000000000005e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.78
+     },
+     "p_violation": 0.78
+    },
+    "luna": {
+     "ms": 593,
+     "in_tok": 535,
+     "cost": 5.35e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.79
+     },
+     "p_violation": 0.79
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2670,
+     "cost": 0.0001932,
+     "in_tok": 1832,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-012",
+   "target": 1,
+   "label": 0,
+   "class": "N-column",
+   "label_source": "judged",
+   "cluster": "wpg-80d6f7fa",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.07425757308598553,
+     "ms": 712,
+     "cost": 6.739699999999999e-05,
+     "in_tok": 1114,
+     "err": null,
+     "mass": [
+      0.9971,
+      0.9966
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0021510546603881525,
+     "ms": 826,
+     "cost": 4.5617e-05,
+     "in_tok": 754,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 8.366856397152477e-06,
+     "ms": 3595,
+     "cost": 0.00013916000000000002,
+     "in_tok": 994,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 251,
+     "in_tok": 714,
+     "cost": 2.9988e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.12
+     },
+     "p_violation": 0.12
+    },
+    "luna": {
+     "ms": 534,
+     "in_tok": 535,
+     "cost": 5.35e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0
+     },
+     "p_violation": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2248,
+     "cost": 0.0001942,
+     "in_tok": 1842,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-013",
+   "target": 0,
+   "label": 1,
+   "class": "E-conduct",
+   "label_source": "judged",
+   "cluster": "wpg-9b379d9e",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296656009272,
+     "ms": 743,
+     "cost": 6.739699999999999e-05,
+     "in_tok": 1114,
+     "err": null,
+     "mass": [
+      0.9882,
+      0.9938
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7655657570656285,
+     "ms": 1071,
+     "cost": 4.6584999999999995e-05,
+     "in_tok": 770,
+     "err": null,
+     "mass": [
+      0.9981,
+      0.9983
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.835485962983656,
+     "ms": 2032,
+     "cost": 0.00014028000000000003,
+     "in_tok": 1002,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 229,
+     "in_tok": 722,
+     "cost": 3.0324e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.69
+     },
+     "p_violation": 0.69
+    },
+    "luna": {
+     "ms": 517,
+     "in_tok": 545,
+     "cost": 5.45e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2530,
+     "cost": 0.00019380000000000002,
+     "in_tok": 1838,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-014",
+   "target": 1,
+   "label": 0,
+   "class": "N-policy",
+   "label_source": "judged",
+   "cluster": "wpg-c59ff16e",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.043422562544855055,
+     "ms": 4215,
+     "cost": 6.7276e-05,
+     "in_tok": 1112,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9973
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.001813728654389801,
+     "ms": 947,
+     "cost": 4.6343e-05,
+     "in_tok": 766,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9996
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 9.924997698793016e-05,
+     "ms": 3202,
+     "cost": 0.00014000000000000001,
+     "in_tok": 1000,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 274,
+     "in_tok": 724,
+     "cost": 3.0408000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "p_violation": 0.05
+    },
+    "luna": {
+     "ms": 530,
+     "in_tok": 544,
+     "cost": 5.44e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0
+     },
+     "p_violation": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2215,
+     "cost": 0.00019360000000000002,
+     "in_tok": 1836,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-015",
+   "target": 0,
+   "label": 1,
+   "class": "E-conduct",
+   "label_source": "judged",
+   "cluster": "wpg-e4176b37",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.43877033439907276,
+     "ms": 776,
+     "cost": 6.8002e-05,
+     "in_tok": 1124,
+     "err": null,
+     "mass": [
+      0.9936,
+      0.9969
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.22344912249707188,
+     "ms": 1170,
+     "cost": 4.6222e-05,
+     "in_tok": 764,
+     "err": null,
+     "mass": [
+      0.9967,
+      0.9981
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.09534945972363301,
+     "ms": 3071,
+     "cost": 0.00014056,
+     "in_tok": 1004,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 236,
+     "in_tok": 723,
+     "cost": 3.0366000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.75
+     },
+     "p_violation": 0.75
+    },
+    "luna": {
+     "ms": 547,
+     "in_tok": 542,
+     "cost": 5.42e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.85
+     },
+     "p_violation": 0.85
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 3588,
+     "cost": 0.000195,
+     "in_tok": 1850,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-016",
+   "target": 1,
+   "label": 0,
+   "class": "N-otherco",
+   "label_source": "judged",
+   "cluster": "wpg-7a5730f7",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3775406687981454,
+     "ms": 1721,
+     "cost": 6.6792e-05,
+     "in_tok": 1104,
+     "err": null,
+     "mass": [
+      0.9917,
+      0.9934
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.09506746567917172,
+     "ms": 1074,
+     "cost": 4.5011999999999995e-05,
+     "in_tok": 744,
+     "err": null,
+     "mass": [
+      0.998,
+      0.9988
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.3991908102319439,
+     "ms": 2819,
+     "cost": 0.00013804,
+     "in_tok": 986,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 273,
+     "in_tok": 710,
+     "cost": 2.9820000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.19
+     },
+     "p_violation": 0.19
+    },
+    "luna": {
+     "ms": 520,
+     "in_tok": 529,
+     "cost": 5.29e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.02
+     },
+     "p_violation": 0.02
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2421,
+     "cost": 0.00019280000000000002,
+     "in_tok": 1828,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-017",
+   "target": 1,
+   "label": 0,
+   "class": "N-policy",
+   "label_source": "judged",
+   "cluster": "wpg-b5a32c1f",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.1058688766993356,
+     "ms": 795,
+     "cost": 6.4735e-05,
+     "in_tok": 1070,
+     "err": null,
+     "mass": [
+      0.9977,
+      0.9942
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0012280641864713796,
+     "ms": 783,
+     "cost": 4.3923e-05,
+     "in_tok": 726,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 2.6028840977381187e-05,
+     "ms": 3395,
+     "cost": 0.00013384,
+     "in_tok": 956,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 273,
+     "in_tok": 698,
+     "cost": 2.9316000000000005e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "p_violation": 0.06
+    },
+    "luna": {
+     "ms": 585,
+     "in_tok": 519,
+     "cost": 5.19e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.03
+     },
+     "p_violation": 0.03
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2423,
+     "cost": 0.0001888,
+     "in_tok": 1788,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-018",
+   "target": 1,
+   "label": 0,
+   "class": "N-column",
+   "label_source": "judged",
+   "cluster": "wpg-accafd79",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.032706039862214605,
+     "ms": 884,
+     "cost": 6.6187e-05,
+     "in_tok": 1094,
+     "err": null,
+     "mass": [
+      0.9976,
+      0.9981
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.004304736198196384,
+     "ms": 733,
+     "cost": 4.477e-05,
+     "in_tok": 740,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 2.803879525795827e-06,
+     "ms": 4158,
+     "cost": 0.00013692,
+     "in_tok": 978,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 244,
+     "in_tok": 711,
+     "cost": 2.9862000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.15
+     },
+     "p_violation": 0.15
+    },
+    "luna": {
+     "ms": 622,
+     "in_tok": 530,
+     "cost": 5.3e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0
+     },
+     "p_violation": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2578,
+     "cost": 0.0001918,
+     "in_tok": 1818,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-019",
+   "target": 0,
+   "label": 1,
+   "class": "E-incident",
+   "label_source": "judged",
+   "cluster": "wpg-109252cd",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9763507799667664,
+     "ms": 721,
+     "cost": 6.7034e-05,
+     "in_tok": 1108,
+     "err": null,
+     "mass": [
+      0.9952,
+      0.9984
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9565453715738663,
+     "ms": 788,
+     "cost": 4.5738e-05,
+     "in_tok": 756,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999996915587934,
+     "ms": 2501,
+     "cost": 0.00013944,
+     "in_tok": 996,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 330,
+     "in_tok": 717,
+     "cost": 3.0114e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.95
+     },
+     "p_violation": 0.95
+    },
+    "luna": {
+     "ms": 544,
+     "in_tok": 538,
+     "cost": 5.38e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2523,
+     "cost": 0.00019360000000000002,
+     "in_tok": 1836,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-020",
+   "target": 1,
+   "label": 0,
+   "class": "N-otherco",
+   "label_source": "judged",
+   "cluster": "cj-leak",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.15081423205272684,
+     "ms": 876,
+     "cost": 6.763900000000001e-05,
+     "in_tok": 1118,
+     "err": null,
+     "mass": [
+      0.9923,
+      0.9931
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.03003696835164762,
+     "ms": 879,
+     "cost": 4.6101e-05,
+     "in_tok": 762,
+     "err": null,
+     "mass": [
+      0.9981,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.009047552731561551,
+     "ms": 3036,
+     "cost": 0.00014056,
+     "in_tok": 1004,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 431,
+     "in_tok": 717,
+     "cost": 3.0114e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "p_violation": 0.06
+    },
+    "luna": {
+     "ms": 561,
+     "in_tok": 539,
+     "cost": 5.39e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0
+     },
+     "p_violation": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 3417,
+     "cost": 0.00019520000000000003,
+     "in_tok": 1852,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-021",
+   "target": 0,
+   "label": 1,
+   "class": "E-conduct",
+   "label_source": "judged",
+   "cluster": "wpg-ae98e7bc",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9565774420750057,
+     "ms": 12890,
+     "cost": 6.7155e-05,
+     "in_tok": 1110,
+     "err": null,
+     "mass": [
+      0.9949,
+      0.9978
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9822206992676946,
+     "ms": 1037,
+     "cost": 4.5617e-05,
+     "in_tok": 754,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9996
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.999782858233504,
+     "ms": 2229,
+     "cost": 0.00013888000000000003,
+     "in_tok": 992,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 237,
+     "in_tok": 717,
+     "cost": 3.0114e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.93
+     },
+     "p_violation": 0.93
+    },
+    "luna": {
+     "ms": 560,
+     "in_tok": 536,
+     "cost": 5.36e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 4762,
+     "cost": 0.000193,
+     "in_tok": 1830,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-022",
+   "target": 0,
+   "label": 1,
+   "class": "E-sanction",
+   "label_source": "judged",
+   "cluster": "wpg-1891f300",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9530778068323529,
+     "ms": 793,
+     "cost": 6.655e-05,
+     "in_tok": 1100,
+     "err": null,
+     "mass": [
+      0.9963,
+      0.9979
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9783713793989616,
+     "ms": 830,
+     "cost": 4.6101e-05,
+     "in_tok": 762,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999929799751177,
+     "ms": 2335,
+     "cost": 0.00013776,
+     "in_tok": 984,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 222,
+     "in_tok": 716,
+     "cost": 3.0072e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.9
+     },
+     "p_violation": 0.9
+    },
+    "luna": {
+     "ms": 556,
+     "in_tok": 534,
+     "cost": 5.34e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2504,
+     "cost": 0.000192,
+     "in_tok": 1820,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-023",
+   "target": 1,
+   "label": 0,
+   "class": "N-column",
+   "label_source": "judged",
+   "cluster": "wpg-073555fe",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.11920291263495986,
+     "ms": 1219,
+     "cost": 6.667099999999999e-05,
+     "in_tok": 1102,
+     "err": null,
+     "mass": [
+      0.997,
+      0.9973
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.006015820463818232,
+     "ms": 1113,
+     "cost": 4.5254e-05,
+     "in_tok": 748,
+     "err": null,
+     "mass": [
+      0.9981,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 7.448033104914874e-05,
+     "ms": 2900,
+     "cost": 0.0001386,
+     "in_tok": 990,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 240,
+     "in_tok": 715,
+     "cost": 3.0030000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.25
+     },
+     "p_violation": 0.25
+    },
+    "luna": {
+     "ms": 558,
+     "in_tok": 539,
+     "cost": 5.39e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0
+     },
+     "p_violation": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2315,
+     "cost": 0.0001934,
+     "in_tok": 1834,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-024",
+   "target": 0,
+   "label": 1,
+   "class": "E-incident",
+   "label_source": "judged",
+   "cluster": "wpg-b39af5fc",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9876604691522531,
+     "ms": 876,
+     "cost": 6.7276e-05,
+     "in_tok": 1112,
+     "err": null,
+     "mass": [
+      0.9975,
+      0.9986
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9896064337496882,
+     "ms": 908,
+     "cost": 4.6827e-05,
+     "in_tok": 774,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999985859768037,
+     "ms": 2303,
+     "cost": 0.00013916000000000002,
+     "in_tok": 994,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 230,
+     "in_tok": 721,
+     "cost": 3.0282e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.94
+     },
+     "p_violation": 0.94
+    },
+    "luna": {
+     "ms": 528,
+     "in_tok": 539,
+     "cost": 5.39e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2193,
+     "cost": 0.00019380000000000002,
+     "in_tok": 1838,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\": \"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-025",
+   "target": 1,
+   "label": 0,
+   "class": "N-otherco",
+   "label_source": "judged",
+   "cluster": "hyundai-cartel",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3844707048255054,
+     "ms": 682,
+     "cost": 6.739699999999999e-05,
+     "in_tok": 1114,
+     "err": null,
+     "mass": [
+      0.9966,
+      0.9937
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.1758878112666844,
+     "ms": 917,
+     "cost": 4.6101e-05,
+     "in_tok": 762,
+     "err": null,
+     "mass": [
+      0.9974,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.48281083837395883,
+     "ms": 2852,
+     "cost": 0.00013972,
+     "in_tok": 998,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9992
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 236,
+     "in_tok": 724,
+     "cost": 3.0408000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.09
+     },
+     "p_violation": 0.09
+    },
+    "luna": {
+     "ms": 577,
+     "in_tok": 540,
+     "cost": 5.4e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.01
+     },
+     "p_violation": 0.01
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2332,
+     "cost": 0.0001934,
+     "in_tok": 1834,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-026",
+   "target": 0,
+   "label": 1,
+   "class": "E-incident",
+   "label_source": "judged",
+   "cluster": "wpg-0657ce35",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.676758961347504,
+     "ms": 688,
+     "cost": 6.570299999999999e-05,
+     "in_tok": 1086,
+     "err": null,
+     "mass": [
+      0.9929,
+      0.9964
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9607331849254374,
+     "ms": 874,
+     "cost": 4.5375e-05,
+     "in_tok": 750,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9747007218996806,
+     "ms": 3187,
+     "cost": 0.00013664000000000002,
+     "in_tok": 976,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 214,
+     "in_tok": 711,
+     "cost": 2.9862000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.89
+     },
+     "p_violation": 0.89
+    },
+    "luna": {
+     "ms": 544,
+     "in_tok": 533,
+     "cost": 5.33e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2493,
+     "cost": 0.0001918,
+     "in_tok": 1818,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-027",
+   "target": 1,
+   "label": 0,
+   "class": "N-union",
+   "label_source": "judged",
+   "cluster": "emart-union",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.09753055493058282,
+     "ms": 724,
+     "cost": 6.534e-05,
+     "in_tok": 1080,
+     "err": null,
+     "mass": [
+      0.995,
+      0.9958
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.007179193809798391,
+     "ms": 809,
+     "cost": 4.4407e-05,
+     "in_tok": 734,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 9.905671662182173e-05,
+     "ms": 2807,
+     "cost": 0.00013580000000000002,
+     "in_tok": 970,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 274,
+     "in_tok": 702,
+     "cost": 2.9484000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "p_violation": 0.06
+    },
+    "luna": {
+     "ms": 613,
+     "in_tok": 524,
+     "cost": 5.24e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0
+     },
+     "p_violation": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2448,
+     "cost": 0.00019060000000000003,
+     "in_tok": 1806,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-028",
+   "target": 0,
+   "label": 1,
+   "class": "E-sanction",
+   "label_source": "judged",
+   "cluster": "wpg-739a4bb8",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.947414796626959,
+     "ms": 815,
+     "cost": 6.775999999999999e-05,
+     "in_tok": 1120,
+     "err": null,
+     "mass": [
+      0.9962,
+      0.9982
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9946902371583343,
+     "ms": 869,
+     "cost": 4.6948e-05,
+     "in_tok": 776,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.999988577209536,
+     "ms": 2336,
+     "cost": 0.00013972,
+     "in_tok": 998,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 211,
+     "in_tok": 723,
+     "cost": 3.0366000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.96
+     },
+     "p_violation": 0.96
+    },
+    "luna": {
+     "ms": 560,
+     "in_tok": 543,
+     "cost": 5.43e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2141,
+     "cost": 0.0001944,
+     "in_tok": 1844,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-029",
+   "target": 1,
+   "label": 0,
+   "class": "N-policy",
+   "label_source": "judged",
+   "cluster": "wpg-b5b31de9",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.22568347592185878,
+     "ms": 771,
+     "cost": 6.6913e-05,
+     "in_tok": 1106,
+     "err": null,
+     "mass": [
+      0.9922,
+      0.9946
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.05666783557944481,
+     "ms": 864,
+     "cost": 4.549599999999999e-05,
+     "in_tok": 752,
+     "err": null,
+     "mass": [
+      0.9984,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.00031699200101216295,
+     "ms": 2318,
+     "cost": 0.00013832000000000002,
+     "in_tok": 988,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 271,
+     "in_tok": 714,
+     "cost": 2.9988e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.51
+     },
+     "p_violation": 0.51
+    },
+    "luna": {
+     "ms": 474,
+     "in_tok": 534,
+     "cost": 5.34e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.03
+     },
+     "p_violation": 0.03
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2673,
+     "cost": 0.00019280000000000002,
+     "in_tok": 1828,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-030",
+   "target": 0,
+   "label": 1,
+   "class": "E-conduct",
+   "label_source": "judged",
+   "cluster": "wpg-6e2892a9",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.7310585757002587,
+     "ms": 754,
+     "cost": 6.7155e-05,
+     "in_tok": 1110,
+     "err": null,
+     "mass": [
+      0.996,
+      0.9948
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.8676060627734579,
+     "ms": 1021,
+     "cost": 4.5617e-05,
+     "in_tok": 754,
+     "err": null,
+     "mass": [
+      0.9978,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.3696326717379357,
+     "ms": 2412,
+     "cost": 0.00013776,
+     "in_tok": 984,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 215,
+     "in_tok": 714,
+     "cost": 2.9988e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.82
+     },
+     "p_violation": 0.82
+    },
+    "luna": {
+     "ms": 494,
+     "in_tok": 536,
+     "cost": 5.36e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2649,
+     "cost": 0.00019260000000000002,
+     "in_tok": 1826,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-031",
+   "target": 1,
+   "label": 0,
+   "class": "N-union",
+   "label_source": "judged",
+   "cluster": "emart-union",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.15081423139479794,
+     "ms": 763,
+     "cost": 6.909099999999999e-05,
+     "in_tok": 1142,
+     "err": null,
+     "mass": [
+      0.9959,
+      0.9945
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.01245205195366436,
+     "ms": 818,
+     "cost": 4.6222e-05,
+     "in_tok": 764,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.0005969051379094502,
+     "ms": 2360,
+     "cost": 0.00014252,
+     "in_tok": 1018,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 243,
+     "in_tok": 724,
+     "cost": 3.0408000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.08
+     },
+     "p_violation": 0.08
+    },
+    "luna": {
+     "ms": 566,
+     "in_tok": 542,
+     "cost": 5.42e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.01
+     },
+     "p_violation": 0.01
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2609,
+     "cost": 0.0001968,
+     "in_tok": 1868,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-032",
+   "target": 0,
+   "label": 1,
+   "class": "E-sanction",
+   "label_source": "judged",
+   "cluster": "wpg-1d12b32b",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9707935932344159,
+     "ms": 726,
+     "cost": 6.8244e-05,
+     "in_tok": 1128,
+     "err": null,
+     "mass": [
+      0.9962,
+      0.998
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9938440160986867,
+     "ms": 951,
+     "cost": 4.6584999999999995e-05,
+     "in_tok": 770,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999985377732565,
+     "ms": 4684,
+     "cost": 0.00014028000000000003,
+     "in_tok": 1002,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 294,
+     "in_tok": 723,
+     "cost": 3.0366000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.94
+     },
+     "p_violation": 0.94
+    },
+    "luna": {
+     "ms": 553,
+     "in_tok": 543,
+     "cost": 5.43e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 3097,
+     "cost": 0.0001942,
+     "in_tok": 1842,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-033",
+   "target": 0,
+   "label": 1,
+   "class": "E-sanction",
+   "label_source": "judged",
+   "cluster": "wpg-59c874d3",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.7200169059202044,
+     "ms": 963,
+     "cost": 6.7034e-05,
+     "in_tok": 1108,
+     "err": null,
+     "mass": [
+      0.9973,
+      0.9985
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9822206990174176,
+     "ms": 770,
+     "cost": 4.5858999999999996e-05,
+     "in_tok": 758,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9217350988260198,
+     "ms": 2374,
+     "cost": 0.00013972,
+     "in_tok": 998,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 222,
+     "in_tok": 721,
+     "cost": 3.0282e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.94
+     },
+     "p_violation": 0.94
+    },
+    "luna": {
+     "ms": 525,
+     "in_tok": 543,
+     "cost": 5.43e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2362,
+     "cost": 0.000194,
+     "in_tok": 1840,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-034",
+   "target": 1,
+   "label": 0,
+   "class": "N-column",
+   "label_source": "judged",
+   "cluster": "wpg-75327c62",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.11492570005853484,
+     "ms": 791,
+     "cost": 6.775999999999999e-05,
+     "in_tok": 1120,
+     "err": null,
+     "mass": [
+      0.9972,
+      0.9971
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.002677699310249437,
+     "ms": 826,
+     "cost": 4.5738e-05,
+     "in_tok": 756,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9997
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.0003916426460835032,
+     "ms": 2364,
+     "cost": 0.00014028000000000003,
+     "in_tok": 1002,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 333,
+     "in_tok": 720,
+     "cost": 3.0240000000000005e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.13
+     },
+     "p_violation": 0.13
+    },
+    "luna": {
+     "ms": 526,
+     "in_tok": 540,
+     "cost": 5.4e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0
+     },
+     "p_violation": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2229,
+     "cost": 0.0001944,
+     "in_tok": 1844,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-035",
+   "target": 0,
+   "label": 1,
+   "class": "E-conduct",
+   "label_source": "judged",
+   "cluster": "wpg-479da65e",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.268941418440249,
+     "ms": 764,
+     "cost": 6.655e-05,
+     "in_tok": 1100,
+     "err": null,
+     "mass": [
+      0.9963,
+      0.9952
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.8353046329044223,
+     "ms": 736,
+     "cost": 4.549599999999999e-05,
+     "in_tok": 752,
+     "err": null,
+     "mass": [
+      0.9984,
+      0.9983
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.8409752011568188,
+     "ms": 2770,
+     "cost": 0.0001386,
+     "in_tok": 990,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 276,
+     "in_tok": 713,
+     "cost": 2.9946e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.82
+     },
+     "p_violation": 0.82
+    },
+    "luna": {
+     "ms": 506,
+     "in_tok": 536,
+     "cost": 5.36e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.99
+     },
+     "p_violation": 0.99
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2751,
+     "cost": 0.0001932,
+     "in_tok": 1832,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-036",
+   "target": 0,
+   "label": 1,
+   "class": "E-incident",
+   "label_source": "judged",
+   "cluster": "wpg-719b7f3d",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.976350780666924,
+     "ms": 781,
+     "cost": 6.655e-05,
+     "in_tok": 1100,
+     "err": null,
+     "mass": [
+      0.9964,
+      0.9986
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9888704560584074,
+     "ms": 912,
+     "cost": 4.5980000000000004e-05,
+     "in_tok": 760,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999892567880524,
+     "ms": 2306,
+     "cost": 0.0001386,
+     "in_tok": 990,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 229,
+     "in_tok": 718,
+     "cost": 3.0156e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.97
+     },
+     "p_violation": 0.97
+    },
+    "luna": {
+     "ms": 627,
+     "in_tok": 536,
+     "cost": 5.36e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2390,
+     "cost": 0.0001922,
+     "in_tok": 1822,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-037",
+   "target": 1,
+   "label": 0,
+   "class": "N-promo",
+   "label_source": "judged",
+   "cluster": "wpg-7d5acf0e",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8276001964316569,
+     "ms": 890,
+     "cost": 6.655e-05,
+     "in_tok": 1100,
+     "err": null,
+     "mass": [
+      0.9966,
+      0.9976
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.056667834313671325,
+     "ms": 960,
+     "cost": 4.549599999999999e-05,
+     "in_tok": 752,
+     "err": null,
+     "mass": [
+      0.9986,
+      0.9986
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.49094317723764647,
+     "ms": 2463,
+     "cost": 0.00013832000000000002,
+     "in_tok": 988,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 224,
+     "in_tok": 713,
+     "cost": 2.9946e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.17
+     },
+     "p_violation": 0.17
+    },
+    "luna": {
+     "ms": 503,
+     "in_tok": 534,
+     "cost": 5.34e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.74
+     },
+     "p_violation": 0.74
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2837,
+     "cost": 0.000193,
+     "in_tok": 1830,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\": \"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-038",
+   "target": 1,
+   "label": 0,
+   "class": "N-promo",
+   "label_source": "judged",
+   "cluster": "wpg-5a6b5a9c",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.30960146726916443,
+     "ms": 769,
+     "cost": 6.763900000000001e-05,
+     "in_tok": 1118,
+     "err": null,
+     "mass": [
+      0.9975,
+      0.9961
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.014070037402398261,
+     "ms": 836,
+     "cost": 4.6705999999999996e-05,
+     "in_tok": 772,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.014665578511347106,
+     "ms": 3272,
+     "cost": 0.00014056,
+     "in_tok": 1004,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 226,
+     "in_tok": 725,
+     "cost": 3.0449999999999998e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.08
+     },
+     "p_violation": 0.08
+    },
+    "luna": {
+     "ms": 558,
+     "in_tok": 543,
+     "cost": 5.43e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0
+     },
+     "p_violation": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 3193,
+     "cost": 0.000194,
+     "in_tok": 1840,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-039",
+   "target": 1,
+   "label": 0,
+   "class": "N-union",
+   "label_source": "judged",
+   "cluster": "samsung-union",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.15081422904800826,
+     "ms": 803,
+     "cost": 6.667099999999999e-05,
+     "in_tok": 1102,
+     "err": null,
+     "mass": [
+      0.9947,
+      0.9942
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.10640008780784073,
+     "ms": 720,
+     "cost": 4.549599999999999e-05,
+     "in_tok": 752,
+     "err": null,
+     "mass": [
+      0.9978,
+      0.9985
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.1790741033621066,
+     "ms": 2261,
+     "cost": 0.00013776,
+     "in_tok": 984,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 285,
+     "in_tok": 715,
+     "cost": 3.0030000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.18
+     },
+     "p_violation": 0.18
+    },
+    "luna": {
+     "ms": 534,
+     "in_tok": 533,
+     "cost": 5.33e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0
+     },
+     "p_violation": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2625,
+     "cost": 0.00019260000000000002,
+     "in_tok": 1826,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-040",
+   "target": 1,
+   "label": 0,
+   "class": "N-policy",
+   "label_source": "judged",
+   "cluster": "wpg-129461bf",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.268941415510503,
+     "ms": 4390,
+     "cost": 6.739699999999999e-05,
+     "in_tok": 1114,
+     "err": null,
+     "mass": [
+      0.9928,
+      0.9973
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.024156916604743946,
+     "ms": 981,
+     "cost": 4.5738e-05,
+     "in_tok": 756,
+     "err": null,
+     "mass": [
+      0.9987,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.001501182600891075,
+     "ms": 2345,
+     "cost": 0.00013972,
+     "in_tok": 998,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 240,
+     "in_tok": 714,
+     "cost": 2.9988e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.14
+     },
+     "p_violation": 0.14
+    },
+    "luna": {
+     "ms": 570,
+     "in_tok": 534,
+     "cost": 5.34e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.07
+     },
+     "p_violation": 0.07
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2359,
+     "cost": 0.0001942,
+     "in_tok": 1842,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-041",
+   "target": 1,
+   "label": 0,
+   "class": "N-column",
+   "label_source": "judged",
+   "cluster": "wpg-a7fe374d",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.12914185360869526,
+     "ms": 802,
+     "cost": 6.763900000000001e-05,
+     "in_tok": 1118,
+     "err": null,
+     "mass": [
+      0.9973,
+      0.9955
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.0024127714009556764,
+     "ms": 928,
+     "cost": 4.6343e-05,
+     "in_tok": 766,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 4.3162501983951224e-05,
+     "ms": 2350,
+     "cost": 0.00014000000000000001,
+     "in_tok": 1000,
+     "err": null,
+     "mass": [
+      0.9991,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 245,
+     "in_tok": 722,
+     "cost": 3.0324e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.17
+     },
+     "p_violation": 0.17
+    },
+    "luna": {
+     "ms": 567,
+     "in_tok": 542,
+     "cost": 5.42e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0
+     },
+     "p_violation": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2512,
+     "cost": 0.000194,
+     "in_tok": 1840,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-042",
+   "target": 1,
+   "label": 0,
+   "class": "N-promo",
+   "label_source": "judged",
+   "cluster": "wpg-8925f41a",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.44570037335617874,
+     "ms": 747,
+     "cost": 6.7881e-05,
+     "in_tok": 1122,
+     "err": null,
+     "mass": [
+      0.9971,
+      0.9971
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.01278172414508747,
+     "ms": 897,
+     "cost": 4.6705999999999996e-05,
+     "in_tok": 772,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.00030553493039423485,
+     "ms": 1943,
+     "cost": 0.00014000000000000001,
+     "in_tok": 1000,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 228,
+     "in_tok": 719,
+     "cost": 3.0198e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.09
+     },
+     "p_violation": 0.09
+    },
+    "luna": {
+     "ms": 587,
+     "in_tok": 542,
+     "cost": 5.42e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0
+     },
+     "p_violation": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.5,
+     "ms": 2925,
+     "cost": 0.00019520000000000003,
+     "in_tok": 1852,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-043",
+   "target": 0,
+   "label": 1,
+   "class": "E-sanction",
+   "label_source": "judged",
+   "cluster": "wpg-c29b8ab6",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9525741243821386,
+     "ms": 742,
+     "cost": 6.5945e-05,
+     "in_tok": 1090,
+     "err": null,
+     "mass": [
+      0.9919,
+      0.9983
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9860579541845669,
+     "ms": 832,
+     "cost": 4.5858999999999996e-05,
+     "in_tok": 758,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999804927680376,
+     "ms": 3922,
+     "cost": 0.00013664000000000002,
+     "in_tok": 976,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 233,
+     "in_tok": 710,
+     "cost": 2.9820000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.92
+     },
+     "p_violation": 0.92
+    },
+    "luna": {
+     "ms": 531,
+     "in_tok": 532,
+     "cost": 5.32e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 3040,
+     "cost": 0.0001908,
+     "in_tok": 1808,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-044",
+   "target": 1,
+   "label": 0,
+   "class": "N-promo",
+   "label_source": "judged",
+   "cluster": "wpg-eb6b9102",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3844707136147437,
+     "ms": 817,
+     "cost": 6.6429e-05,
+     "in_tok": 1098,
+     "err": null,
+     "mass": [
+      0.995,
+      0.9912
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.008469312202110921,
+     "ms": 970,
+     "cost": 4.4649e-05,
+     "in_tok": 738,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 1.587927194631987e-05,
+     "ms": 2658,
+     "cost": 0.00013748000000000002,
+     "in_tok": 982,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 239,
+     "in_tok": 711,
+     "cost": 2.9862000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "p_violation": 0.06
+    },
+    "luna": {
+     "ms": 553,
+     "in_tok": 532,
+     "cost": 5.32e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0
+     },
+     "p_violation": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2361,
+     "cost": 0.000192,
+     "in_tok": 1820,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-045",
+   "target": 0,
+   "label": 1,
+   "class": "E-conduct",
+   "label_source": "judged",
+   "cluster": "wpg-5eae0059",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6224593277000263,
+     "ms": 741,
+     "cost": 6.739699999999999e-05,
+     "in_tok": 1114,
+     "err": null,
+     "mass": [
+      0.9887,
+      0.9925
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7031349202528647,
+     "ms": 910,
+     "cost": 4.5617e-05,
+     "in_tok": 754,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.8600358162726436,
+     "ms": 2147,
+     "cost": 0.00013888000000000003,
+     "in_tok": 992,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 213,
+     "in_tok": 715,
+     "cost": 3.0030000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.82
+     },
+     "p_violation": 0.82
+    },
+    "luna": {
+     "ms": 547,
+     "in_tok": 537,
+     "cost": 5.37e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.99
+     },
+     "p_violation": 0.99
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2400,
+     "cost": 0.000194,
+     "in_tok": 1840,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-046",
+   "target": 1,
+   "label": 0,
+   "class": "N-union",
+   "label_source": "judged",
+   "cluster": "samsung-union",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.182425528251267,
+     "ms": 806,
+     "cost": 6.739699999999999e-05,
+     "in_tok": 1114,
+     "err": null,
+     "mass": [
+      0.9943,
+      0.9958
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.08867971186185042,
+     "ms": 926,
+     "cost": 4.6101e-05,
+     "in_tok": 762,
+     "err": null,
+     "mass": [
+      0.9959,
+      0.9981
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.41320401702037046,
+     "ms": 1838,
+     "cost": 0.00013916000000000002,
+     "in_tok": 994,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 240,
+     "in_tok": 717,
+     "cost": 3.0114e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.15
+     },
+     "p_violation": 0.15
+    },
+    "luna": {
+     "ms": 551,
+     "in_tok": 537,
+     "cost": 5.37e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.01
+     },
+     "p_violation": 0.01
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2611,
+     "cost": 0.000194,
+     "in_tok": 1840,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-047",
+   "target": 1,
+   "label": 0,
+   "class": "N-union",
+   "label_source": "judged",
+   "cluster": "wpg-4374b600",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.37754066879814546,
+     "ms": 1027,
+     "cost": 6.5824e-05,
+     "in_tok": 1088,
+     "err": null,
+     "mass": [
+      0.9972,
+      0.9931
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.10330209508510091,
+     "ms": 972,
+     "cost": 4.5375e-05,
+     "in_tok": 750,
+     "err": null,
+     "mass": [
+      0.9986,
+      0.9986
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.019899754888816283,
+     "ms": 2926,
+     "cost": 0.00013692,
+     "in_tok": 978,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9989
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 241,
+     "in_tok": 709,
+     "cost": 2.9778000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.18
+     },
+     "p_violation": 0.18
+    },
+    "luna": {
+     "ms": 552,
+     "in_tok": 532,
+     "cost": 5.32e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.24
+     },
+     "p_violation": 0.24
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2292,
+     "cost": 0.0001912,
+     "in_tok": 1812,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-048",
+   "target": 0,
+   "label": 1,
+   "class": "E-incident",
+   "label_source": "judged",
+   "cluster": "wpg-26e7e1e4",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9820137909097413,
+     "ms": 737,
+     "cost": 6.8002e-05,
+     "in_tok": 1124,
+     "err": null,
+     "mass": [
+      0.9966,
+      0.9986
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9795397541947375,
+     "ms": 785,
+     "cost": 4.6343e-05,
+     "in_tok": 766,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9988
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999996981704069,
+     "ms": 3090,
+     "cost": 0.00014168000000000004,
+     "in_tok": 1012,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 233,
+     "in_tok": 727,
+     "cost": 3.0534e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.96
+     },
+     "p_violation": 0.96
+    },
+    "luna": {
+     "ms": 585,
+     "in_tok": 546,
+     "cost": 5.46e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2377,
+     "cost": 0.000195,
+     "in_tok": 1850,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-049",
+   "target": 0,
+   "label": 1,
+   "class": "E-conduct",
+   "label_source": "judged",
+   "cluster": "wpg-0b46dca0",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9707935892768886,
+     "ms": 828,
+     "cost": 6.667099999999999e-05,
+     "in_tok": 1102,
+     "err": null,
+     "mass": [
+      0.9946,
+      0.9983
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9353692428936058,
+     "ms": 963,
+     "cost": 4.5375e-05,
+     "in_tok": 750,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9961536257971376,
+     "ms": 2155,
+     "cost": 0.00013804,
+     "in_tok": 986,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 235,
+     "in_tok": 712,
+     "cost": 2.9904e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.91
+     },
+     "p_violation": 0.91
+    },
+    "luna": {
+     "ms": 549,
+     "in_tok": 534,
+     "cost": 5.34e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2091,
+     "cost": 0.00019360000000000002,
+     "in_tok": 1836,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-050",
+   "target": 0,
+   "label": 1,
+   "class": "E-sanction",
+   "label_source": "judged",
+   "cluster": "wpg-68abd283",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9349050683020741,
+     "ms": 711,
+     "cost": 6.6429e-05,
+     "in_tok": 1098,
+     "err": null,
+     "mass": [
+      0.9964,
+      0.9977
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9961980483271494,
+     "ms": 993,
+     "cost": 4.5617e-05,
+     "in_tok": 754,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999999268882708,
+     "ms": 3219,
+     "cost": 0.00013804,
+     "in_tok": 986,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 233,
+     "in_tok": 712,
+     "cost": 2.9904e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.93
+     },
+     "p_violation": 0.93
+    },
+    "luna": {
+     "ms": 645,
+     "in_tok": 536,
+     "cost": 5.36e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 1947,
+     "cost": 0.00019260000000000002,
+     "in_tok": 1826,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-051",
+   "target": 0,
+   "label": 1,
+   "class": "E-incident",
+   "label_source": "judged",
+   "cluster": "wpg-0b7c7389",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9241418205010695,
+     "ms": 788,
+     "cost": 6.8244e-05,
+     "in_tok": 1128,
+     "err": null,
+     "mass": [
+      0.9965,
+      0.9976
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9008340428677832,
+     "ms": 1184,
+     "cost": 4.6948e-05,
+     "in_tok": 776,
+     "err": null,
+     "mass": [
+      0.9986,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9613203205876711,
+     "ms": 2039,
+     "cost": 0.00014056,
+     "in_tok": 1004,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 216,
+     "in_tok": 724,
+     "cost": 3.0408000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.87
+     },
+     "p_violation": 0.87
+    },
+    "luna": {
+     "ms": 605,
+     "in_tok": 542,
+     "cost": 5.42e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2323,
+     "cost": 0.00019580000000000002,
+     "in_tok": 1858,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-052",
+   "target": 1,
+   "label": 0,
+   "class": "N-promo",
+   "label_source": "judged",
+   "cluster": "wpg-73eecb12",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8491857827662355,
+     "ms": 745,
+     "cost": 6.775999999999999e-05,
+     "in_tok": 1120,
+     "err": null,
+     "mass": [
+      0.9959,
+      0.9966
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.012339045952267442,
+     "ms": 961,
+     "cost": 4.6464e-05,
+     "in_tok": 768,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.0036228146977244557,
+     "ms": 2476,
+     "cost": 0.00014112,
+     "in_tok": 1008,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 302,
+     "in_tok": 720,
+     "cost": 3.0240000000000005e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.11
+     },
+     "p_violation": 0.11
+    },
+    "luna": {
+     "ms": 551,
+     "in_tok": 543,
+     "cost": 5.43e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0
+     },
+     "p_violation": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2192,
+     "cost": 0.00019520000000000003,
+     "in_tok": 1852,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-053",
+   "target": 0,
+   "label": 1,
+   "class": "E-incident",
+   "label_source": "judged",
+   "cluster": "wpg-57b694e4",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9798504151662056,
+     "ms": 800,
+     "cost": 6.6187e-05,
+     "in_tok": 1094,
+     "err": null,
+     "mass": [
+      0.9967,
+      0.9988
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9940785782289646,
+     "ms": 1072,
+     "cost": 4.5133e-05,
+     "in_tok": 746,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999998226293929,
+     "ms": 4062,
+     "cost": 0.00013692,
+     "in_tok": 978,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 237,
+     "in_tok": 712,
+     "cost": 2.9904e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.97
+     },
+     "p_violation": 0.97
+    },
+    "luna": {
+     "ms": 668,
+     "in_tok": 530,
+     "cost": 5.3e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2380,
+     "cost": 0.00019160000000000002,
+     "in_tok": 1816,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-054",
+   "target": 1,
+   "label": 0,
+   "class": "N-otherco",
+   "label_source": "judged",
+   "cluster": "wpg-4e4da98b",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3232410480138164,
+     "ms": 828,
+     "cost": 6.763900000000001e-05,
+     "in_tok": 1118,
+     "err": null,
+     "mass": [
+      0.9957,
+      0.997
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.025332603647401135,
+     "ms": 1243,
+     "cost": 4.6584999999999995e-05,
+     "in_tok": 770,
+     "err": null,
+     "mass": [
+      0.9978,
+      0.9982
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.0043097925238785055,
+     "ms": 2901,
+     "cost": 0.00014000000000000001,
+     "in_tok": 1000,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 213,
+     "in_tok": 722,
+     "cost": 3.0324e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.32
+     },
+     "p_violation": 0.32
+    },
+    "luna": {
+     "ms": 539,
+     "in_tok": 543,
+     "cost": 5.43e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.97
+     },
+     "p_violation": 0.97
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2276,
+     "cost": 0.00019360000000000002,
+     "in_tok": 1836,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-055",
+   "target": 1,
+   "label": 0,
+   "class": "N-policy",
+   "label_source": "judged",
+   "cluster": "wpg-42d68a84",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.731058581559751,
+     "ms": 759,
+     "cost": 6.739699999999999e-05,
+     "in_tok": 1114,
+     "err": null,
+     "mass": [
+      0.9973,
+      0.9944
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.4243225744348331,
+     "ms": 933,
+     "cost": 4.5980000000000004e-05,
+     "in_tok": 760,
+     "err": null,
+     "mass": [
+      0.9986,
+      0.9974
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4626735257453262,
+     "ms": 1934,
+     "cost": 0.00013916000000000002,
+     "in_tok": 994,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 226,
+     "in_tok": 714,
+     "cost": 2.9988e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.44
+     },
+     "p_violation": 0.44
+    },
+    "luna": {
+     "ms": 525,
+     "in_tok": 538,
+     "cost": 5.38e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.44
+     },
+     "p_violation": 0.44
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.5,
+     "ms": 2658,
+     "cost": 0.0001934,
+     "in_tok": 1834,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-056",
+   "target": 1,
+   "label": 0,
+   "class": "N-promo",
+   "label_source": "judged",
+   "cluster": "wpg-79f24ea7",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.40244242528165014,
+     "ms": 967,
+     "cost": 6.775999999999999e-05,
+     "in_tok": 1120,
+     "err": null,
+     "mass": [
+      0.9982,
+      0.9974
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.005476659192759241,
+     "ms": 768,
+     "cost": 4.6464e-05,
+     "in_tok": 768,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 5.5729096924919e-05,
+     "ms": 2931,
+     "cost": 0.00014056,
+     "in_tok": 1004,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 276,
+     "in_tok": 718,
+     "cost": 3.0156e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "p_violation": 0.05
+    },
+    "luna": {
+     "ms": 527,
+     "in_tok": 541,
+     "cost": 5.41e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0
+     },
+     "p_violation": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2382,
+     "cost": 0.0001944,
+     "in_tok": 1844,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-057",
+   "target": 1,
+   "label": 0,
+   "class": "N-union",
+   "label_source": "judged",
+   "cluster": "samsung-union",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4387703343990727,
+     "ms": 772,
+     "cost": 6.5582e-05,
+     "in_tok": 1084,
+     "err": null,
+     "mass": [
+      0.9969,
+      0.9966
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.14924417591795452,
+     "ms": 818,
+     "cost": 4.4286e-05,
+     "in_tok": 732,
+     "err": null,
+     "mass": [
+      0.998,
+      0.9981
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.00031879479083533435,
+     "ms": 3715,
+     "cost": 0.00013580000000000002,
+     "in_tok": 970,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 258,
+     "in_tok": 705,
+     "cost": 2.9610000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.15
+     },
+     "p_violation": 0.15
+    },
+    "luna": {
+     "ms": 539,
+     "in_tok": 526,
+     "cost": 5.26e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.38
+     },
+     "p_violation": 0.38
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2665,
+     "cost": 0.000191,
+     "in_tok": 1810,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\": \"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-058",
+   "target": 0,
+   "label": 1,
+   "class": "E-incident",
+   "label_source": "judged",
+   "cluster": "wpg-7ba79071",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9707935945069643,
+     "ms": 754,
+     "cost": 6.534e-05,
+     "in_tok": 1080,
+     "err": null,
+     "mass": [
+      0.9966,
+      0.9984
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9905789457716627,
+     "ms": 1269,
+     "cost": 4.5375e-05,
+     "in_tok": 750,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.999723024182327,
+     "ms": 1917,
+     "cost": 0.00013608,
+     "in_tok": 972,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 266,
+     "in_tok": 708,
+     "cost": 2.9736e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.95
+     },
+     "p_violation": 0.95
+    },
+    "luna": {
+     "ms": 561,
+     "in_tok": 530,
+     "cost": 5.3e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2567,
+     "cost": 0.000191,
+     "in_tok": 1810,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-059",
+   "target": 1,
+   "label": 0,
+   "class": "N-column",
+   "label_source": "judged",
+   "cluster": "wpg-3f2673cb",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.22568346743597434,
+     "ms": 1077,
+     "cost": 6.8728e-05,
+     "in_tok": 1136,
+     "err": null,
+     "mass": [
+      0.9959,
+      0.9944
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.06037711234049462,
+     "ms": 745,
+     "cost": 4.7674e-05,
+     "in_tok": 788,
+     "err": null,
+     "mass": [
+      0.9979,
+      0.9984
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.00045947025617795766,
+     "ms": 2318,
+     "cost": 0.00014252,
+     "in_tok": 1018,
+     "err": null,
+     "mass": [
+      0.9999,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 228,
+     "in_tok": 727,
+     "cost": 3.0534e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.39
+     },
+     "p_violation": 0.39
+    },
+    "luna": {
+     "ms": 626,
+     "in_tok": 549,
+     "cost": 5.49e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.21
+     },
+     "p_violation": 0.21
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2364,
+     "cost": 0.00019620000000000003,
+     "in_tok": 1862,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\": \"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-060",
+   "target": 0,
+   "label": 1,
+   "class": "E-incident",
+   "label_source": "judged",
+   "cluster": "wpg-d00be346",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8276001963746344,
+     "ms": 712,
+     "cost": 6.6429e-05,
+     "in_tok": 1098,
+     "err": null,
+     "mass": [
+      0.9966,
+      0.9986
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.8972965842303536,
+     "ms": 766,
+     "cost": 4.549599999999999e-05,
+     "in_tok": 752,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9965383201582606,
+     "ms": 1943,
+     "cost": 0.00013776,
+     "in_tok": 984,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 241,
+     "in_tok": 712,
+     "cost": 2.9904e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.89
+     },
+     "p_violation": 0.89
+    },
+    "luna": {
+     "ms": 566,
+     "in_tok": 534,
+     "cost": 5.34e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2521,
+     "cost": 0.0001922,
+     "in_tok": 1822,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-061",
+   "target": 1,
+   "label": 0,
+   "class": "N-promo",
+   "label_source": "judged",
+   "cluster": "wpg-15de680d",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.28792908739905493,
+     "ms": 5187,
+     "cost": 6.6429e-05,
+     "in_tok": 1098,
+     "err": null,
+     "mass": [
+      0.9977,
+      0.9959
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.013528043326092193,
+     "ms": 843,
+     "cost": 4.549599999999999e-05,
+     "in_tok": 752,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.33960312288414646,
+     "ms": 2393,
+     "cost": 0.00013832000000000002,
+     "in_tok": 988,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 235,
+     "in_tok": 712,
+     "cost": 2.9904e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "p_violation": 0.06
+    },
+    "luna": {
+     "ms": 549,
+     "in_tok": 531,
+     "cost": 5.31e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0
+     },
+     "p_violation": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2141,
+     "cost": 0.00019280000000000002,
+     "in_tok": 1828,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-062",
+   "target": 0,
+   "label": 1,
+   "class": "E-sanction",
+   "label_source": "judged",
+   "cluster": "wpg-722c61c7",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8491857821083064,
+     "ms": 739,
+     "cost": 6.6792e-05,
+     "in_tok": 1104,
+     "err": null,
+     "mass": [
+      0.9949,
+      0.9982
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9826066485745777,
+     "ms": 756,
+     "cost": 4.5738e-05,
+     "in_tok": 756,
+     "err": null,
+     "mass": [
+      0.9986,
+      0.9996
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9998659237527836,
+     "ms": 2996,
+     "cost": 0.00013944,
+     "in_tok": 996,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 223,
+     "in_tok": 714,
+     "cost": 2.9988e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.87
+     },
+     "p_violation": 0.87
+    },
+    "luna": {
+     "ms": 540,
+     "in_tok": 535,
+     "cost": 5.35e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2664,
+     "cost": 0.00019360000000000002,
+     "in_tok": 1836,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-063",
+   "target": 1,
+   "label": 0,
+   "class": "N-column",
+   "label_source": "judged",
+   "cluster": "wpg-661ce185",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.720016900364066,
+     "ms": 14993,
+     "cost": 6.8365e-05,
+     "in_tok": 1130,
+     "err": null,
+     "mass": [
+      0.9921,
+      0.9969
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.016382003918835257,
+     "ms": 1058,
+     "cost": 4.6827e-05,
+     "in_tok": 774,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.005497416534386508,
+     "ms": 2248,
+     "cost": 0.00014196,
+     "in_tok": 1014,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9996
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 244,
+     "in_tok": 727,
+     "cost": 3.0534e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.16
+     },
+     "p_violation": 0.16
+    },
+    "luna": {
+     "ms": 509,
+     "in_tok": 546,
+     "cost": 5.46e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.01
+     },
+     "p_violation": 0.01
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 3062,
+     "cost": 0.00019620000000000003,
+     "in_tok": 1862,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-064",
+   "target": 0,
+   "label": 1,
+   "class": "E-incident",
+   "label_source": "judged",
+   "cluster": "wpg-543bf248",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8807970764133559,
+     "ms": 812,
+     "cost": 6.667099999999999e-05,
+     "in_tok": 1102,
+     "err": null,
+     "mass": [
+      0.9927,
+      0.9981
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9750507496140702,
+     "ms": 854,
+     "cost": 4.549599999999999e-05,
+     "in_tok": 752,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999843688236318,
+     "ms": 2502,
+     "cost": 0.0001372,
+     "in_tok": 980,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 238,
+     "in_tok": 709,
+     "cost": 2.9778000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.93
+     },
+     "p_violation": 0.93
+    },
+    "luna": {
+     "ms": 554,
+     "in_tok": 530,
+     "cost": 5.3e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2816,
+     "cost": 0.000192,
+     "in_tok": 1820,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-065",
+   "target": 0,
+   "label": 1,
+   "class": "E-sanction",
+   "label_source": "judged",
+   "cluster": "wpg-cf64c16c",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.961630948001571,
+     "ms": 992,
+     "cost": 6.7276e-05,
+     "in_tok": 1112,
+     "err": null,
+     "mass": [
+      0.9963,
+      0.9981
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9926133520142881,
+     "ms": 767,
+     "cost": 4.6343e-05,
+     "in_tok": 766,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9996
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999993938995919,
+     "ms": 2208,
+     "cost": 0.00013972,
+     "in_tok": 998,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 228,
+     "in_tok": 722,
+     "cost": 3.0324e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.96
+     },
+     "p_violation": 0.96
+    },
+    "luna": {
+     "ms": 567,
+     "in_tok": 541,
+     "cost": 5.41e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2707,
+     "cost": 0.0001932,
+     "in_tok": 1832,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-066",
+   "target": 1,
+   "label": 0,
+   "class": "N-policy",
+   "label_source": "judged",
+   "cluster": "wpg-fc1a7487",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3232410480138164,
+     "ms": 1315,
+     "cost": 6.775999999999999e-05,
+     "in_tok": 1120,
+     "err": null,
+     "mass": [
+      0.9894,
+      0.9898
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.02992876365831927,
+     "ms": 801,
+     "cost": 4.5858999999999996e-05,
+     "in_tok": 758,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9988
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.1168435411082691,
+     "ms": 2661,
+     "cost": 0.00014000000000000001,
+     "in_tok": 1000,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 274,
+     "in_tok": 721,
+     "cost": 3.0282e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.16
+     },
+     "p_violation": 0.16
+    },
+    "luna": {
+     "ms": 562,
+     "in_tok": 541,
+     "cost": 5.41e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.01
+     },
+     "p_violation": 0.01
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2436,
+     "cost": 0.0001942,
+     "in_tok": 1842,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-067",
+   "target": 0,
+   "label": 1,
+   "class": "E-sanction",
+   "label_source": "judged",
+   "cluster": "wpg-d0ecfc00",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.924141818411816,
+     "ms": 782,
+     "cost": 6.9938e-05,
+     "in_tok": 1156,
+     "err": null,
+     "mass": [
+      0.9964,
+      0.9981
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9860579543825726,
+     "ms": 775,
+     "cost": 4.8884e-05,
+     "in_tok": 808,
+     "err": null,
+     "mass": [
+      0.9995,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999992421159714,
+     "ms": 7110,
+     "cost": 0.00014532000000000002,
+     "in_tok": 1038,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 233,
+     "in_tok": 743,
+     "cost": 3.1206e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.96
+     },
+     "p_violation": 0.96
+    },
+    "luna": {
+     "ms": 580,
+     "in_tok": 561,
+     "cost": 5.61e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 3233,
+     "cost": 0.00019820000000000002,
+     "in_tok": 1882,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-068",
+   "target": 0,
+   "label": 1,
+   "class": "E-sanction",
+   "label_source": "judged",
+   "cluster": "wpg-537b057e",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9024694435000633,
+     "ms": 806,
+     "cost": 6.775999999999999e-05,
+     "in_tok": 1120,
+     "err": null,
+     "mass": [
+      0.9949,
+      0.9977
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.994886109227795,
+     "ms": 1141,
+     "cost": 4.6343e-05,
+     "in_tok": 766,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999996091282876,
+     "ms": 3539,
+     "cost": 0.00014028000000000003,
+     "in_tok": 1002,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 391,
+     "in_tok": 721,
+     "cost": 3.0282e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.94
+     },
+     "p_violation": 0.94
+    },
+    "luna": {
+     "ms": 601,
+     "in_tok": 541,
+     "cost": 5.41e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2092,
+     "cost": 0.00019360000000000002,
+     "in_tok": 1836,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-069",
+   "target": 1,
+   "label": 0,
+   "class": "N-otherco",
+   "label_source": "judged",
+   "cluster": "gs-fine",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.09753054893484085,
+     "ms": 777,
+     "cost": 6.7276e-05,
+     "in_tok": 1112,
+     "err": null,
+     "mass": [
+      0.9954,
+      0.9952
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.018444735445376587,
+     "ms": 806,
+     "cost": 4.6584999999999995e-05,
+     "in_tok": 770,
+     "err": null,
+     "mass": [
+      0.999,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.09382282543597155,
+     "ms": 2904,
+     "cost": 0.00013916000000000002,
+     "in_tok": 994,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9986
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 267,
+     "in_tok": 722,
+     "cost": 3.0324e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "p_violation": 0.06
+    },
+    "luna": {
+     "ms": 544,
+     "in_tok": 538,
+     "cost": 5.38e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0
+     },
+     "p_violation": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2347,
+     "cost": 0.00019380000000000002,
+     "in_tok": 1838,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-070",
+   "target": 1,
+   "label": 0,
+   "class": "N-union",
+   "label_source": "judged",
+   "cluster": "wpg-4001717a",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.1940721785371184,
+     "ms": 751,
+     "cost": 6.7276e-05,
+     "in_tok": 1112,
+     "err": null,
+     "mass": [
+      0.9961,
+      0.9878
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.13049570057064366,
+     "ms": 722,
+     "cost": 4.6343e-05,
+     "in_tok": 766,
+     "err": null,
+     "mass": [
+      0.9986,
+      0.998
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.06163652426464029,
+     "ms": 3071,
+     "cost": 0.00014000000000000001,
+     "in_tok": 1000,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 283,
+     "in_tok": 718,
+     "cost": 3.0156e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.19
+     },
+     "p_violation": 0.19
+    },
+    "luna": {
+     "ms": 602,
+     "in_tok": 540,
+     "cost": 5.4e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.02
+     },
+     "p_violation": 0.02
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2081,
+     "cost": 0.000194,
+     "in_tok": 1840,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-071",
+   "target": 0,
+   "label": 1,
+   "class": "E-conduct",
+   "label_source": "judged",
+   "cluster": "wpg-bf753436",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6224593312018545,
+     "ms": 1259,
+     "cost": 6.6792e-05,
+     "in_tok": 1104,
+     "err": null,
+     "mass": [
+      0.9955,
+      0.9962
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9560604743310637,
+     "ms": 985,
+     "cost": 4.5133e-05,
+     "in_tok": 746,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9986
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9896217608363554,
+     "ms": 3474,
+     "cost": 0.00013804,
+     "in_tok": 986,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9996
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 313,
+     "in_tok": 713,
+     "cost": 2.9946e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.92
+     },
+     "p_violation": 0.92
+    },
+    "luna": {
+     "ms": 539,
+     "in_tok": 533,
+     "cost": 5.33e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2785,
+     "cost": 0.000193,
+     "in_tok": 1830,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-072",
+   "target": 0,
+   "label": 1,
+   "class": "E-sanction",
+   "label_source": "judged",
+   "cluster": "wpg-a32fd833",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8807970740665665,
+     "ms": 724,
+     "cost": 6.8002e-05,
+     "in_tok": 1124,
+     "err": null,
+     "mass": [
+      0.9948,
+      0.9981
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9909554461842136,
+     "ms": 1255,
+     "cost": 4.7311e-05,
+     "in_tok": 782,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999999698821561,
+     "ms": 2670,
+     "cost": 0.00014084000000000001,
+     "in_tok": 1006,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 279,
+     "in_tok": 724,
+     "cost": 3.0408000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.85
+     },
+     "p_violation": 0.85
+    },
+    "luna": {
+     "ms": 903,
+     "in_tok": 544,
+     "cost": 5.44e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2327,
+     "cost": 0.0001944,
+     "in_tok": 1844,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-073",
+   "target": 0,
+   "label": 1,
+   "class": "E-sanction",
+   "label_source": "judged",
+   "cluster": "wpg-f91e371e",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8491857846597262,
+     "ms": 744,
+     "cost": 6.7881e-05,
+     "in_tok": 1122,
+     "err": null,
+     "mass": [
+      0.997,
+      0.9976
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9826066482135758,
+     "ms": 805,
+     "cost": 4.6343e-05,
+     "in_tok": 766,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9907305048164536,
+     "ms": 3038,
+     "cost": 0.00014000000000000001,
+     "in_tok": 1000,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 230,
+     "in_tok": 721,
+     "cost": 3.0282e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.87
+     },
+     "p_violation": 0.87
+    },
+    "luna": {
+     "ms": 543,
+     "in_tok": 538,
+     "cost": 5.38e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2547,
+     "cost": 0.0001934,
+     "in_tok": 1834,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-074",
+   "target": 1,
+   "label": 0,
+   "class": "N-otherco",
+   "label_source": "judged",
+   "cluster": "wpg-5e8af4c0",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.9672939561771694,
+     "ms": 759,
+     "cost": 6.667099999999999e-05,
+     "in_tok": 1102,
+     "err": null,
+     "mass": [
+      0.9923,
+      0.9987
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.951957002383548,
+     "ms": 928,
+     "cost": 4.6343e-05,
+     "in_tok": 766,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999988987568453,
+     "ms": 2480,
+     "cost": 0.00013804,
+     "in_tok": 986,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 291,
+     "in_tok": 718,
+     "cost": 3.0156e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.95
+     },
+     "p_violation": 0.95
+    },
+    "luna": {
+     "ms": 558,
+     "in_tok": 537,
+     "cost": 5.37e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2653,
+     "cost": 0.000193,
+     "in_tok": 1830,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-075",
+   "target": 1,
+   "label": 0,
+   "class": "N-policy",
+   "label_source": "judged",
+   "cluster": "wpg-1d6e2631",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.2256834744066942,
+     "ms": 1041,
+     "cost": 6.7034e-05,
+     "in_tok": 1108,
+     "err": null,
+     "mass": [
+      0.9948,
+      0.9921
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.10419143672099758,
+     "ms": 783,
+     "cost": 4.5254e-05,
+     "in_tok": 748,
+     "err": null,
+     "mass": [
+      0.9987,
+      0.9984
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.06859456332211308,
+     "ms": 2564,
+     "cost": 0.00013832000000000002,
+     "in_tok": 988,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 232,
+     "in_tok": 711,
+     "cost": 2.9862000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.56
+     },
+     "p_violation": 0.56
+    },
+    "luna": {
+     "ms": 527,
+     "in_tok": 534,
+     "cost": 5.34e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.01
+     },
+     "p_violation": 0.01
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2467,
+     "cost": 0.00019280000000000002,
+     "in_tok": 1828,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-076",
+   "target": 0,
+   "label": 1,
+   "class": "E-conduct",
+   "label_source": "judged",
+   "cluster": "wpg-1713d55a",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.7516282045898686,
+     "ms": 772,
+     "cost": 6.7276e-05,
+     "in_tok": 1112,
+     "err": null,
+     "mass": [
+      0.9968,
+      0.9968
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.8587940515689005,
+     "ms": 964,
+     "cost": 4.5858999999999996e-05,
+     "in_tok": 758,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9946185060196451,
+     "ms": 2490,
+     "cost": 0.00014028000000000003,
+     "in_tok": 1002,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 330,
+     "in_tok": 716,
+     "cost": 3.0072e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.88
+     },
+     "p_violation": 0.88
+    },
+    "luna": {
+     "ms": 560,
+     "in_tok": 540,
+     "cost": 5.4e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2334,
+     "cost": 0.000194,
+     "in_tok": 1840,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-077",
+   "target": 0,
+   "label": 1,
+   "class": "E-conduct",
+   "label_source": "judged",
+   "cluster": "wpg-ee808324",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8708581416186366,
+     "ms": 1247,
+     "cost": 6.570299999999999e-05,
+     "in_tok": 1086,
+     "err": null,
+     "mass": [
+      0.9979,
+      0.9971
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9874747140132181,
+     "ms": 818,
+     "cost": 4.4044e-05,
+     "in_tok": 728,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9985
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9999262276942962,
+     "ms": 2403,
+     "cost": 0.00013608,
+     "in_tok": 972,
+     "err": null,
+     "mass": [
+      1.0,
+      1.0
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 222,
+     "in_tok": 702,
+     "cost": 2.9484000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.91
+     },
+     "p_violation": 0.91
+    },
+    "luna": {
+     "ms": 574,
+     "in_tok": 523,
+     "cost": 5.23e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2173,
+     "cost": 0.000191,
+     "in_tok": 1810,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-078",
+   "target": 1,
+   "label": 0,
+   "class": "N-union",
+   "label_source": "judged",
+   "cluster": "samsung-union",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.1291418547199229,
+     "ms": 5203,
+     "cost": 6.655e-05,
+     "in_tok": 1100,
+     "err": null,
+     "mass": [
+      0.996,
+      0.9972
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.032078393812744466,
+     "ms": 880,
+     "cost": 4.477e-05,
+     "in_tok": 740,
+     "err": null,
+     "mass": [
+      0.9978,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.25549347137506084,
+     "ms": 2207,
+     "cost": 0.00013804,
+     "in_tok": 986,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9994
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 209,
+     "in_tok": 710,
+     "cost": 2.9820000000000002e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.09
+     },
+     "p_violation": 0.09
+    },
+    "luna": {
+     "ms": 574,
+     "in_tok": 529,
+     "cost": 5.29e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0
+     },
+     "p_violation": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2823,
+     "cost": 0.00019280000000000002,
+     "in_tok": 1828,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "wp-gate-079",
+   "target": 1,
+   "label": 0,
+   "class": "N-otherco",
+   "label_source": "judged",
+   "cluster": "hyundai-cartel",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.8491857708276574,
+     "ms": 767,
+     "cost": 6.7276e-05,
+     "in_tok": 1112,
+     "err": null,
+     "mass": [
+      0.9957,
+      0.9975
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7042556340489281,
+     "ms": 966,
+     "cost": 4.6222e-05,
+     "in_tok": 764,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9994
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.9755364709703963,
+     "ms": 2666,
+     "cost": 0.00013944,
+     "in_tok": 996,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9999
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 222,
+     "in_tok": 718,
+     "cost": 3.0156e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.64
+     },
+     "p_violation": 0.64
+    },
+    "luna": {
+     "ms": 548,
+     "in_tok": 538,
+     "cost": 5.38e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.91
+     },
+     "p_violation": 0.91
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2018,
+     "cost": 0.0001932,
+     "in_tok": 1832,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  }
+ ],
+ "agg": {
+  "glm": {
+   "n": 80,
+   "ok": 80,
+   "hit": 70,
+   "ms": 112486,
+   "cost": 0.005373488999999998
+  },
+  "qwen": {
+   "n": 80,
+   "ok": 80,
+   "hit": 77,
+   "ms": 73827,
+   "cost": 0.0036739229999999995
+  },
+  "deepseek": {
+   "n": 80,
+   "ok": 80,
+   "hit": 75,
+   "ms": 221308,
+   "cost": 0.011135040000000004
+  },
+  "jev": {
+   "n": 80,
+   "ok": 80,
+   "hit": 76,
+   "ms": 20590,
+   "cost": 0.00240954
+  },
+  "luna": {
+   "n": 80,
+   "ok": 80,
+   "hit": 76,
+   "ms": 44963,
+   "cost": 0.0042994
+  },
+  "anthropic:claude-haiku-5-5": {
+   "n": 80,
+   "ok": 80,
+   "hit": 73,
+   "ms": 204095,
+   "cost": 0.0154834
+  }
+ },
+ "merged_runs": [
+  {
+   "date": "2026-10-20",
+   "arms": [
+    "anthropic:claude-haiku-5-5",
+    "luna"
+   ]
+  }
+ ]
+}
