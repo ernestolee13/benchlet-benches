@@ -14,7 +14,7 @@ source: vault 질의 라우트 표 5종. 질의는 라우트 정의 조건만 �
 domain:
 - route-selection
 - kb-query
-visibility: sample
+visibility: full
 items_sha256: 7f6051983b173c8cca50ac8fe5268e4ccef31ddfe7b6ee64165915484403e7a0
 license: CC-BY-4.0
 review:
@@ -58,7 +58,7 @@ question: '이 질의는 어느 라우트로 보내야 하는가
 
   여러 조건이 겹쳐 보이면 **질의가 요구하는 산출물**로 정한다 — 목록·개요·이력·추세를 원하면 D, 특정 문서의 내용을 원하면 A, 무엇이
   그것을 가리키는지 원하면 C.'
-published_at: '2026-10-04'
+published_at: '2026-10-20'
 type: multiclass
 classes:
 - A
@@ -72,46 +72,84 @@ label_source_mix:
   judged: 0
   outcome: 0
 experiment:
-  date: '2026-09-30'
+  date: '2026-10-20'
   template: legacy-seed
-  runner: src/run.py (구식 러너, 팔 메타는 프리셋에서 채움)
+  runner: benchlet
   arms:
-    glm:
-      model: z-ai/glm-4.7-flash
-      provider: cloudflare
-      family: GLM
-      mode: logprob
-      prob_source: logprob
-      base_url: openrouter.ai
-      in_per_m: 0.0605
-      smoke: null
-    qwen:
-      model: qwen/qwen3.8-27b
-      provider: parasail
-      family: Qwen
-      mode: logprob
-      prob_source: logprob
-      base_url: openrouter.ai
-      in_per_m: 0.0605
-      smoke: null
-    deepseek:
-      model: deepseek/deepseek-v4-flash
-      provider: digitalocean
-      family: DeepSeek
-      mode: logprob
-      prob_source: logprob
-      base_url: openrouter.ai
-      in_per_m: 0.14
-      smoke: null
-    jev:
-      model: typesafe/jev-1.13
+    luna:
+      model: openai/gpt-6-luna-decisions
       provider: openrouter
-      family: Jev
+      family: OpenAI
       mode: typed
       prob_source: typed
       base_url: openrouter.ai
-      in_per_m: 0.042
-      smoke: null
+      in_per_m: 0.1
+      smoke:
+        arm: luna
+        mode: typed
+        usable: true
+        reasons: []
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 1.0
+        cost: 0.0001892
+        per_item:
+        - id: route-000
+          target: 0
+          hit: 1
+          p: null
+          pred: 0
+        - id: route-001
+          target: 2
+          hit: 1
+          p: null
+          pred: 2
+        - id: route-002
+          target: 2
+          hit: 1
+          p: null
+          pred: 2
+        - id: route-003
+          target: 0
+          hit: 1
+          p: null
+          pred: 0
+        - id: route-004
+          target: 0
+          hit: 1
+          p: null
+          pred: 0
+      cache_warm: null
+    anthropic:claude-haiku-5-5:
+      model: claude-haiku-5-5
+      provider: anthropic
+      family: Anthropic
+      mode: generative
+      prob_source: none
+      base_url: api.anthropic.com
+      in_per_m: 0.1
+      smoke:
+        arm: anthropic:claude-haiku-5-5
+        mode: generative
+        usable: true
+        reasons:
+        - 로그확률이 안 와서 생성 팔로 강등 (prob_source=none, 정확도만)
+        has_logprobs: false
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: 0
+        n_calls: 6
+        smoke_acc: null
+        cost: 0.0002714
+        per_item: []
+      cache_warm: null
   protocol:
     decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
     logprob_call:
@@ -127,9 +165,9 @@ experiment:
     typed: Jev noul(이진)/choice(다지), 질문을 instructions 로 그대로 전달
     label_mass: 상위 8토큰 중 라벨 토큰 질량 < 0.5 이면 오류로 두고 세지 않음
     renormalize: 라벨 토큰 확률을 라벨 집합 안에서 재정규화
-  items_sha256: null
+  items_sha256: 7f6051983b173c8cca50ac8fe5268e4ccef31ddfe7b6ee64165915484403e7a0
 results:
-- results/route-run.json
+- results/route-selection-run.json
 result_summary:
   glm:
     acc: 0.8205128205128205
@@ -174,4 +212,26 @@ result_summary:
     n: 40
     prob_source: typed
     model: typesafe/jev-1.13
+    source_badge: author-run
+  luna:
+    acc: 1.0
+    ci95:
+    - 0.9123754607496077
+    - 1.0
+    auroc: null
+    brier: null
+    n: 40
+    prob_source: typed
+    model: openai/gpt-6-luna-decisions
+    source_badge: author-run
+  anthropic:claude-haiku-5-5:
+    acc: 1.0
+    ci95:
+    - 0.9123754607496077
+    - 1.0
+    auroc: null
+    brier: null
+    n: 40
+    prob_source: none
+    model: claude-haiku-5-5
     source_badge: author-run
