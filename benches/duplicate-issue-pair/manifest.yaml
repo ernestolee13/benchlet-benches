@@ -41,7 +41,7 @@ keywords:
 owner: ernestolee13
 n: 24
 choices_note: null
-published_at: '2026-10-10'
+published_at: '2026-10-20'
 type: binary
 classes:
 - D-same
@@ -52,7 +52,7 @@ label_source_mix:
   judged: 0
   outcome: 0
 experiment:
-  date: '2026-10-10'
+  date: '2026-10-20'
   template: generic
   runner: benchlet
   arms:
@@ -261,6 +261,55 @@ experiment:
         cost: 0.0003248
         per_item: []
       cache_warm: null
+    luna:
+      model: openai/gpt-6-luna-decisions
+      provider: openrouter
+      family: OpenAI
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.1
+      smoke:
+        arm: luna
+        mode: typed
+        usable: true
+        reasons: []
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 1.0
+        cost: 0.0001345
+        per_item:
+        - id: duplicate-issue-pair-003
+          target: 0
+          hit: 1
+          p: 0.65
+          pred: null
+        - id: duplicate-issue-pair-005
+          target: 0
+          hit: 1
+          p: 0.89
+          pred: null
+        - id: duplicate-issue-pair-006
+          target: 0
+          hit: 1
+          p: 0.97
+          pred: null
+        - id: duplicate-issue-pair-000
+          target: 1
+          hit: 1
+          p: 0
+          pred: null
+        - id: duplicate-issue-pair-001
+          target: 1
+          hit: 1
+          p: 0
+          pred: null
+      cache_warm: null
   protocol:
     decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
     logprob_call:
@@ -334,4 +383,15 @@ result_summary:
     n: 24
     prob_source: none
     model: claude-haiku-5-5
+    source_badge: author-run
+  luna:
+    acc: 1.0
+    ci95:
+    - 0.8620194241710247
+    - 1.0000000000000002
+    auroc: 1.0
+    brier: 0.0066749999999999995
+    n: 24
+    prob_source: typed
+    model: openai/gpt-6-luna-decisions
     source_badge: author-run
