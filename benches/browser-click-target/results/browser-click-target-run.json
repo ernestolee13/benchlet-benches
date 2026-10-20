@@ -3,7 +3,7 @@
  "bench": "browser-click-target@1",
  "items_sha256": "a9b9140538c80336311482929dc48d0ec26088b16ae49d8d3e6f604ef3205d5d",
  "template": "generic",
- "date": "2026-10-10",
+ "date": "2026-10-20",
  "arms": {
   "glm": {
    "model": "z-ai/glm-4.7-flash",
@@ -263,6 +263,68 @@
     "per_item": []
    },
    "cache_warm": null
+  },
+  "luna": {
+   "model": "openai/gpt-6-luna-decisions",
+   "provider": "openrouter",
+   "family": "OpenAI",
+   "mode": "typed",
+   "prob_source": "typed",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.1,
+   "smoke": {
+    "arm": "luna",
+    "mode": "typed",
+    "usable": true,
+    "reasons": [],
+    "has_logprobs": null,
+    "reasoning_tokens_zero": null,
+    "provider_match": null,
+    "mass_min": null,
+    "spread": null,
+    "distinct_p": null,
+    "n_calls": 5,
+    "smoke_acc": 1.0,
+    "cost": 0.0001568,
+    "per_item": [
+     {
+      "id": "browser-click-target-000",
+      "target": 1,
+      "hit": 1,
+      "p": null,
+      "pred": 1
+     },
+     {
+      "id": "browser-click-target-001",
+      "target": 1,
+      "hit": 1,
+      "p": null,
+      "pred": 1
+     },
+     {
+      "id": "browser-click-target-002",
+      "target": 1,
+      "hit": 1,
+      "p": null,
+      "pred": 1
+     },
+     {
+      "id": "browser-click-target-003",
+      "target": 1,
+      "hit": 1,
+      "p": null,
+      "pred": 1
+     },
+     {
+      "id": "browser-click-target-004",
+      "target": 1,
+      "hit": 1,
+      "p": null,
+      "pred": 1
+     }
+    ]
+   },
+   "cache_warm": null
   }
  },
  "items": [
@@ -384,6 +446,32 @@
      ],
      "raw_text": "{\"answer\":\"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 517,
+     "in_tok": 313,
+     "cost": 3.13e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "2번 요소",
+      "probabilities": {
+       "1번 요소": 0,
+       "2번 요소": 1,
+       "3번 요소": 0,
+       "4번 요소": 0
+      },
+      "confidence": 1
+     },
+     "choice": "2번 요소",
+     "probabilities": {
+      "1번 요소": 0,
+      "2번 요소": 1,
+      "3번 요소": 0,
+      "4번 요소": 0
+     },
+     "pred_index": 1
     }
    }
   },
@@ -505,6 +593,32 @@
      ],
      "raw_text": "{\"answer\":\"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 516,
+     "in_tok": 311,
+     "cost": 3.11e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "2번 요소",
+      "probabilities": {
+       "1번 요소": 0,
+       "2번 요소": 0.99,
+       "3번 요소": 0.01,
+       "4번 요소": 0
+      },
+      "confidence": 0.99
+     },
+     "choice": "2번 요소",
+     "probabilities": {
+      "1번 요소": 0,
+      "2번 요소": 0.99,
+      "3번 요소": 0.01,
+      "4번 요소": 0
+     },
+     "pred_index": 1
     }
    }
   },
@@ -626,6 +740,32 @@
      ],
      "raw_text": "{\"answer\":\"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 531,
+     "in_tok": 305,
+     "cost": 3.05e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "2번 요소",
+      "probabilities": {
+       "1번 요소": 0.09,
+       "2번 요소": 0.81,
+       "3번 요소": 0.08,
+       "4번 요소": 0.02
+      },
+      "confidence": 0.75
+     },
+     "choice": "2번 요소",
+     "probabilities": {
+      "1번 요소": 0.09,
+      "2번 요소": 0.81,
+      "3번 요소": 0.08,
+      "4번 요소": 0.02
+     },
+     "pred_index": 1
     }
    }
   },
@@ -747,6 +887,32 @@
      ],
      "raw_text": "{\"answer\":\"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 525,
+     "in_tok": 316,
+     "cost": 3.16e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "2번 요소",
+      "probabilities": {
+       "1번 요소": 0.01,
+       "2번 요소": 0.93,
+       "3번 요소": 0.04,
+       "4번 요소": 0.02
+      },
+      "confidence": 0.91
+     },
+     "choice": "2번 요소",
+     "probabilities": {
+      "1번 요소": 0.01,
+      "2번 요소": 0.93,
+      "3번 요소": 0.04,
+      "4번 요소": 0.02
+     },
+     "pred_index": 1
     }
    }
   },
@@ -868,6 +1034,32 @@
      ],
      "raw_text": "{\"answer\":\"D\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 503,
+     "in_tok": 323,
+     "cost": 3.23e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "2번 요소",
+      "probabilities": {
+       "1번 요소": 0.05,
+       "2번 요소": 0.78,
+       "3번 요소": 0.12,
+       "4번 요소": 0.05
+      },
+      "confidence": 0.71
+     },
+     "choice": "2번 요소",
+     "probabilities": {
+      "1번 요소": 0.05,
+      "2번 요소": 0.78,
+      "3번 요소": 0.12,
+      "4번 요소": 0.05
+     },
+     "pred_index": 1
     }
    }
   },
@@ -989,6 +1181,32 @@
      ],
      "raw_text": "{\"answer\":\"D\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 541,
+     "in_tok": 324,
+     "cost": 3.24e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "2번 요소",
+      "probabilities": {
+       "1번 요소": 0.01,
+       "2번 요소": 0.97,
+       "3번 요소": 0.01,
+       "4번 요소": 0.01
+      },
+      "confidence": 0.96
+     },
+     "choice": "2번 요소",
+     "probabilities": {
+      "1번 요소": 0.01,
+      "2번 요소": 0.97,
+      "3번 요소": 0.01,
+      "4번 요소": 0.01
+     },
+     "pred_index": 1
     }
    }
   },
@@ -1110,6 +1328,32 @@
      ],
      "raw_text": "{\"answer\":\"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 573,
+     "in_tok": 316,
+     "cost": 3.16e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "2번 요소",
+      "probabilities": {
+       "1번 요소": 0,
+       "2번 요소": 0.98,
+       "3번 요소": 0.02,
+       "4번 요소": 0
+      },
+      "confidence": 0.97
+     },
+     "choice": "2번 요소",
+     "probabilities": {
+      "1번 요소": 0,
+      "2번 요소": 0.98,
+      "3번 요소": 0.02,
+      "4번 요소": 0
+     },
+     "pred_index": 1
     }
    }
   },
@@ -1231,6 +1475,32 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 599,
+     "in_tok": 316,
+     "cost": 3.16e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "1번 요소",
+      "probabilities": {
+       "1번 요소": 0.94,
+       "2번 요소": 0.02,
+       "3번 요소": 0.02,
+       "4번 요소": 0.02
+      },
+      "confidence": 0.92
+     },
+     "choice": "1번 요소",
+     "probabilities": {
+      "1번 요소": 0.94,
+      "2번 요소": 0.02,
+      "3번 요소": 0.02,
+      "4번 요소": 0.02
+     },
+     "pred_index": 0
     }
    }
   },
@@ -1352,6 +1622,32 @@
      ],
      "raw_text": "{\"answer\": \"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 602,
+     "in_tok": 311,
+     "cost": 3.11e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "2번 요소",
+      "probabilities": {
+       "1번 요소": 0.04,
+       "2번 요소": 0.93,
+       "3번 요소": 0.02,
+       "4번 요소": 0.01
+      },
+      "confidence": 0.91
+     },
+     "choice": "2번 요소",
+     "probabilities": {
+      "1번 요소": 0.04,
+      "2번 요소": 0.93,
+      "3번 요소": 0.02,
+      "4번 요소": 0.01
+     },
+     "pred_index": 1
     }
    }
   },
@@ -1473,6 +1769,32 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 490,
+     "in_tok": 323,
+     "cost": 3.23e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "1번 요소",
+      "probabilities": {
+       "1번 요소": 0.84,
+       "2번 요소": 0.07,
+       "3번 요소": 0.04,
+       "4번 요소": 0.05
+      },
+      "confidence": 0.79
+     },
+     "choice": "1번 요소",
+     "probabilities": {
+      "1번 요소": 0.84,
+      "2번 요소": 0.07,
+      "3번 요소": 0.04,
+      "4번 요소": 0.05
+     },
+     "pred_index": 0
     }
    }
   },
@@ -1594,6 +1916,32 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 531,
+     "in_tok": 312,
+     "cost": 3.12e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "2번 요소",
+      "probabilities": {
+       "1번 요소": 0,
+       "2번 요소": 0.99,
+       "3번 요소": 0.01,
+       "4번 요소": 0
+      },
+      "confidence": 0.99
+     },
+     "choice": "2번 요소",
+     "probabilities": {
+      "1번 요소": 0,
+      "2번 요소": 0.99,
+      "3번 요소": 0.01,
+      "4번 요소": 0
+     },
+     "pred_index": 1
     }
    }
   },
@@ -1715,6 +2063,32 @@
      ],
      "raw_text": "{\"answer\":\"D\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 533,
+     "in_tok": 318,
+     "cost": 3.18e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "2번 요소",
+      "probabilities": {
+       "1번 요소": 0.03,
+       "2번 요소": 0.96,
+       "3번 요소": 0.01,
+       "4번 요소": 0
+      },
+      "confidence": 0.95
+     },
+     "choice": "2번 요소",
+     "probabilities": {
+      "1번 요소": 0.03,
+      "2번 요소": 0.96,
+      "3번 요소": 0.01,
+      "4번 요소": 0
+     },
+     "pred_index": 1
     }
    }
   },
@@ -1836,6 +2210,32 @@
      ],
      "raw_text": "{\"answer\":\"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 527,
+     "in_tok": 313,
+     "cost": 3.13e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "2번 요소",
+      "probabilities": {
+       "1번 요소": 0.02,
+       "2번 요소": 0.97,
+       "3번 요소": 0.01,
+       "4번 요소": 0
+      },
+      "confidence": 0.96
+     },
+     "choice": "2번 요소",
+     "probabilities": {
+      "1번 요소": 0.02,
+      "2번 요소": 0.97,
+      "3번 요소": 0.01,
+      "4번 요소": 0
+     },
+     "pred_index": 1
     }
    }
   },
@@ -1957,6 +2357,32 @@
      ],
      "raw_text": "{\"answer\":\"D\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 517,
+     "in_tok": 315,
+     "cost": 3.15e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "2번 요소",
+      "probabilities": {
+       "1번 요소": 0,
+       "2번 요소": 1,
+       "3번 요소": 0,
+       "4번 요소": 0
+      },
+      "confidence": 1
+     },
+     "choice": "2번 요소",
+     "probabilities": {
+      "1번 요소": 0,
+      "2번 요소": 1,
+      "3번 요소": 0,
+      "4번 요소": 0
+     },
+     "pred_index": 1
     }
    }
   },
@@ -2078,6 +2504,32 @@
      ],
      "raw_text": "{\"answer\":\"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 555,
+     "in_tok": 308,
+     "cost": 3.08e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "2번 요소",
+      "probabilities": {
+       "1번 요소": 0.01,
+       "2번 요소": 0.9,
+       "3번 요소": 0.08,
+       "4번 요소": 0.01
+      },
+      "confidence": 0.87
+     },
+     "choice": "2번 요소",
+     "probabilities": {
+      "1번 요소": 0.01,
+      "2번 요소": 0.9,
+      "3번 요소": 0.08,
+      "4번 요소": 0.01
+     },
+     "pred_index": 1
     }
    }
   },
@@ -2199,6 +2651,32 @@
      ],
      "raw_text": "{\"answer\":\"D\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 555,
+     "in_tok": 313,
+     "cost": 3.13e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "1번 요소",
+      "probabilities": {
+       "1번 요소": 0.98,
+       "2번 요소": 0.01,
+       "3번 요소": 0.01,
+       "4번 요소": 0
+      },
+      "confidence": 0.97
+     },
+     "choice": "1번 요소",
+     "probabilities": {
+      "1번 요소": 0.98,
+      "2번 요소": 0.01,
+      "3번 요소": 0.01,
+      "4번 요소": 0
+     },
+     "pred_index": 0
     }
    }
   },
@@ -2320,6 +2798,32 @@
      ],
      "raw_text": "{\"answer\":\"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 580,
+     "in_tok": 316,
+     "cost": 3.16e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "1번 요소",
+      "probabilities": {
+       "1번 요소": 0.95,
+       "2번 요소": 0.03,
+       "3번 요소": 0.01,
+       "4번 요소": 0.01
+      },
+      "confidence": 0.93
+     },
+     "choice": "1번 요소",
+     "probabilities": {
+      "1번 요소": 0.95,
+      "2번 요소": 0.03,
+      "3번 요소": 0.01,
+      "4번 요소": 0.01
+     },
+     "pred_index": 0
     }
    }
   },
@@ -2441,6 +2945,32 @@
      ],
      "raw_text": "{\"answer\":\"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 555,
+     "in_tok": 321,
+     "cost": 3.21e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "2번 요소",
+      "probabilities": {
+       "1번 요소": 0.01,
+       "2번 요소": 0.97,
+       "3번 요소": 0.01,
+       "4번 요소": 0.01
+      },
+      "confidence": 0.96
+     },
+     "choice": "2번 요소",
+     "probabilities": {
+      "1번 요소": 0.01,
+      "2번 요소": 0.97,
+      "3번 요소": 0.01,
+      "4번 요소": 0.01
+     },
+     "pred_index": 1
     }
    }
   },
@@ -2562,6 +3092,32 @@
      ],
      "raw_text": "{\"answer\":\"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 524,
+     "in_tok": 310,
+     "cost": 3.1e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "1번 요소",
+      "probabilities": {
+       "1번 요소": 0.91,
+       "2번 요소": 0.06,
+       "3번 요소": 0.01,
+       "4번 요소": 0.02
+      },
+      "confidence": 0.88
+     },
+     "choice": "1번 요소",
+     "probabilities": {
+      "1번 요소": 0.91,
+      "2번 요소": 0.06,
+      "3번 요소": 0.01,
+      "4번 요소": 0.02
+     },
+     "pred_index": 0
     }
    }
   },
@@ -2683,6 +3239,32 @@
      ],
      "raw_text": "{\"answer\": \"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 561,
+     "in_tok": 317,
+     "cost": 3.17e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "2번 요소",
+      "probabilities": {
+       "1번 요소": 0,
+       "2번 요소": 0.99,
+       "3번 요소": 0.01,
+       "4번 요소": 0
+      },
+      "confidence": 0.99
+     },
+     "choice": "2번 요소",
+     "probabilities": {
+      "1번 요소": 0,
+      "2번 요소": 0.99,
+      "3번 요소": 0.01,
+      "4번 요소": 0
+     },
+     "pred_index": 1
     }
    }
   },
@@ -2804,6 +3386,32 @@
      ],
      "raw_text": "{\"answer\":\"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 555,
+     "in_tok": 320,
+     "cost": 3.2e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "2번 요소",
+      "probabilities": {
+       "1번 요소": 0,
+       "2번 요소": 1,
+       "3번 요소": 0,
+       "4번 요소": 0
+      },
+      "confidence": 1
+     },
+     "choice": "2번 요소",
+     "probabilities": {
+      "1번 요소": 0,
+      "2번 요소": 1,
+      "3번 요소": 0,
+      "4번 요소": 0
+     },
+     "pred_index": 1
     }
    }
   },
@@ -2925,6 +3533,32 @@
      ],
      "raw_text": "{\"answer\":\"D\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 497,
+     "in_tok": 311,
+     "cost": 3.11e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "1번 요소",
+      "probabilities": {
+       "1번 요소": 0.98,
+       "2번 요소": 0.02,
+       "3번 요소": 0,
+       "4번 요소": 0
+      },
+      "confidence": 0.97
+     },
+     "choice": "1번 요소",
+     "probabilities": {
+      "1번 요소": 0.98,
+      "2번 요소": 0.02,
+      "3번 요소": 0,
+      "4번 요소": 0
+     },
+     "pred_index": 0
     }
    }
   },
@@ -3046,6 +3680,32 @@
      ],
      "raw_text": "{\"answer\": \"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 524,
+     "in_tok": 322,
+     "cost": 3.22e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "2번 요소",
+      "probabilities": {
+       "1번 요소": 0,
+       "2번 요소": 0.99,
+       "3번 요소": 0.01,
+       "4번 요소": 0
+      },
+      "confidence": 0.99
+     },
+     "choice": "2번 요소",
+     "probabilities": {
+      "1번 요소": 0,
+      "2번 요소": 0.99,
+      "3번 요소": 0.01,
+      "4번 요소": 0
+     },
+     "pred_index": 1
     }
    }
   },
@@ -3167,6 +3827,32 @@
      ],
      "raw_text": "{\"answer\":\"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 583,
+     "in_tok": 312,
+     "cost": 3.12e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "1번 요소",
+      "probabilities": {
+       "1번 요소": 0.98,
+       "2번 요소": 0.01,
+       "3번 요소": 0.01,
+       "4번 요소": 0
+      },
+      "confidence": 0.97
+     },
+     "choice": "1번 요소",
+     "probabilities": {
+      "1번 요소": 0.98,
+      "2번 요소": 0.01,
+      "3번 요소": 0.01,
+      "4번 요소": 0
+     },
+     "pred_index": 0
     }
    }
   }
@@ -3206,6 +3892,13 @@
    "hit": 24,
    "ms": 29416,
    "cost": 0.0014926000000000004
+  },
+  "luna": {
+   "n": 24,
+   "ok": 24,
+   "hit": 24,
+   "ms": 12994,
+   "cost": 0.0007566000000000001
   }
  },
  "merged_runs": [
@@ -3219,6 +3912,12 @@
    "date": "2026-10-10",
    "arms": [
     "anthropic:claude-haiku-5-5"
+   ]
+  },
+  {
+   "date": "2026-10-20",
+   "arms": [
+    "luna"
    ]
   }
  ]
