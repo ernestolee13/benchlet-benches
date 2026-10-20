@@ -3,7 +3,7 @@
  "bench": "tool-pick-mini@2",
  "items_sha256": "535c44895a325e139c89a5b85d3b2c9cdbfda4a042554a1bb798c25ea60a0462",
  "template": "generic",
- "date": "2026-10-10",
+ "date": "2026-10-20",
  "arms": {
   "glm": {
    "model": "z-ai/glm-4.7-flash",
@@ -263,6 +263,68 @@
     "per_item": []
    },
    "cache_warm": null
+  },
+  "luna": {
+   "model": "openai/gpt-6-luna-decisions",
+   "provider": "openrouter",
+   "family": "OpenAI",
+   "mode": "typed",
+   "prob_source": "typed",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.1,
+   "smoke": {
+    "arm": "luna",
+    "mode": "typed",
+    "usable": true,
+    "reasons": [],
+    "has_logprobs": null,
+    "reasoning_tokens_zero": null,
+    "provider_match": null,
+    "mass_min": null,
+    "spread": null,
+    "distinct_p": null,
+    "n_calls": 5,
+    "smoke_acc": 1.0,
+    "cost": 0.0001523,
+    "per_item": [
+     {
+      "id": "tool-pick-mini-000",
+      "target": 1,
+      "hit": 1,
+      "p": null,
+      "pred": 1
+     },
+     {
+      "id": "tool-pick-mini-001",
+      "target": 2,
+      "hit": 1,
+      "p": null,
+      "pred": 2
+     },
+     {
+      "id": "tool-pick-mini-002",
+      "target": 2,
+      "hit": 1,
+      "p": null,
+      "pred": 2
+     },
+     {
+      "id": "tool-pick-mini-003",
+      "target": 0,
+      "hit": 1,
+      "p": null,
+      "pred": 0
+     },
+     {
+      "id": "tool-pick-mini-004",
+      "target": 0,
+      "hit": 1,
+      "p": null,
+      "pred": 0
+     }
+    ]
+   },
+   "cache_warm": null
   }
  },
  "items": [
@@ -366,6 +428,28 @@
      ],
      "raw_text": "{\"answer\": \"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 528,
+     "in_tok": 262,
+     "cost": 2.62e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Events_3_FindEvents",
+      "probabilities": {
+       "Events_3_BuyEventTickets": 0,
+       "Events_3_FindEvents": 1
+      },
+      "confidence": 1
+     },
+     "choice": "Events_3_FindEvents",
+     "probabilities": {
+      "Events_3_BuyEventTickets": 0,
+      "Events_3_FindEvents": 1
+     },
+     "pred_index": 1
     }
    }
   },
@@ -478,6 +562,30 @@
      ],
      "raw_text": "{\"answer\":\"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 533,
+     "in_tok": 235,
+     "cost": 2.35e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "CalcProduct",
+      "probabilities": {
+       "getCurrentTime": 0,
+       "sum": 0,
+       "CalcProduct": 1
+      },
+      "confidence": 1
+     },
+     "choice": "CalcProduct",
+     "probabilities": {
+      "getCurrentTime": 0,
+      "sum": 0,
+      "CalcProduct": 1
+     },
+     "pred_index": 2
     }
    }
   },
@@ -608,6 +716,34 @@
      ],
      "raw_text": "{\"answer\":\"E\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 566,
+     "in_tok": 484,
+     "cost": 4.84e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Movies_1_FindMovies",
+      "probabilities": {
+       "Restaurants_2_FindRestaurants": 0,
+       "Restaurants_2_ReserveRestaurant": 0,
+       "Movies_1_FindMovies": 1,
+       "Movies_1_GetTimesForMovie": 0,
+       "Movies_1_BuyMovieTickets": 0
+      },
+      "confidence": 1
+     },
+     "choice": "Movies_1_FindMovies",
+     "probabilities": {
+      "Restaurants_2_FindRestaurants": 0,
+      "Restaurants_2_ReserveRestaurant": 0,
+      "Movies_1_FindMovies": 1,
+      "Movies_1_GetTimesForMovie": 0,
+      "Movies_1_BuyMovieTickets": 0
+     },
+     "pred_index": 2
     }
    }
   },
@@ -711,6 +847,28 @@
      ],
      "raw_text": "{\"answer\":\"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 519,
+     "in_tok": 262,
+     "cost": 2.62e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Hotels_4_SearchHotel",
+      "probabilities": {
+       "Hotels_4_SearchHotel": 1,
+       "Hotels_4_ReserveHotel": 0
+      },
+      "confidence": 1
+     },
+     "choice": "Hotels_4_SearchHotel",
+     "probabilities": {
+      "Hotels_4_SearchHotel": 1,
+      "Hotels_4_ReserveHotel": 0
+     },
+     "pred_index": 0
     }
    }
   },
@@ -823,6 +981,30 @@
      ],
      "raw_text": "{\"answer\": \"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 555,
+     "in_tok": 280,
+     "cost": 2.8e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "social_media_analytics.most_followed",
+      "probabilities": {
+       "social_media_analytics.most_followed": 1,
+       "concert_info.get": 0,
+       "calculate_probability": 0
+      },
+      "confidence": 1
+     },
+     "choice": "social_media_analytics.most_followed",
+     "probabilities": {
+      "social_media_analytics.most_followed": 1,
+      "concert_info.get": 0,
+      "calculate_probability": 0
+     },
+     "pred_index": 0
     }
    }
   },
@@ -935,6 +1117,30 @@
      ],
      "raw_text": "{\"answer\": \"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 481,
+     "in_tok": 350,
+     "cost": 3.5e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "EventSettingsApi.restore_mobile_app_alert_config",
+      "probabilities": {
+       "find_mobile_app_alert_config_versions": 0,
+       "find_mobile_app_alert_config": 0,
+       "EventSettingsApi.restore_mobile_app_alert_config": 1
+      },
+      "confidence": 1
+     },
+     "choice": "EventSettingsApi.restore_mobile_app_alert_config",
+     "probabilities": {
+      "find_mobile_app_alert_config_versions": 0,
+      "find_mobile_app_alert_config": 0,
+      "EventSettingsApi.restore_mobile_app_alert_config": 1
+     },
+     "pred_index": 2
     }
    }
   },
@@ -1065,6 +1271,34 @@
      ],
      "raw_text": "{\"answer\":\"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 530,
+     "in_tok": 446,
+     "cost": 4.46e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Movies_1_FindMovies",
+      "probabilities": {
+       "Movies_1_GetTimesForMovie": 0,
+       "Movies_1_BuyMovieTickets": 0,
+       "Music_3_LookupMusic": 0,
+       "Music_3_PlayMedia": 0,
+       "Movies_1_FindMovies": 1
+      },
+      "confidence": 1
+     },
+     "choice": "Movies_1_FindMovies",
+     "probabilities": {
+      "Movies_1_GetTimesForMovie": 0,
+      "Movies_1_BuyMovieTickets": 0,
+      "Music_3_LookupMusic": 0,
+      "Music_3_PlayMedia": 0,
+      "Movies_1_FindMovies": 1
+     },
+     "pred_index": 4
     }
    }
   },
@@ -1168,6 +1402,28 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 545,
+     "in_tok": 278,
+     "cost": 2.78e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "solarFarm.potential",
+      "probabilities": {
+       "windFarm.potential": 0,
+       "solarFarm.potential": 1
+      },
+      "confidence": 1
+     },
+     "choice": "solarFarm.potential",
+     "probabilities": {
+      "windFarm.potential": 0,
+      "solarFarm.potential": 1
+     },
+     "pred_index": 1
     }
    }
   },
@@ -1325,6 +1581,40 @@
      ],
      "raw_text": "{\"answer\":\"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 583,
+     "in_tok": 696,
+     "cost": 6.96e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Events_3_FindEvents",
+      "probabilities": {
+       "Buses_3_BuyBusTicket": 0,
+       "Events_3_FindEvents": 0.99,
+       "Buses_3_FindBus": 0,
+       "Flights_4_SearchRoundtripFlights": 0,
+       "Hotels_4_SearchHotel": 0.01,
+       "Hotels_4_ReserveHotel": 0,
+       "Flights_4_SearchOnewayFlight": 0,
+       "Events_3_BuyEventTickets": 0
+      },
+      "confidence": 0.99
+     },
+     "choice": "Events_3_FindEvents",
+     "probabilities": {
+      "Buses_3_BuyBusTicket": 0,
+      "Events_3_FindEvents": 0.99,
+      "Buses_3_FindBus": 0,
+      "Flights_4_SearchRoundtripFlights": 0,
+      "Hotels_4_SearchHotel": 0.01,
+      "Hotels_4_ReserveHotel": 0,
+      "Flights_4_SearchOnewayFlight": 0,
+      "Events_3_BuyEventTickets": 0
+     },
+     "pred_index": 1
     }
    }
   },
@@ -1455,6 +1745,34 @@
      ],
      "raw_text": "{\"answer\":\"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 538,
+     "in_tok": 446,
+     "cost": 4.46e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "analysis_api.AnalysisApi.retrieve_analysis",
+      "probabilities": {
+       "VulnerabilityApi.get_vulnerabilities_by_component": 0,
+       "analysis_api.AnalysisApi.retrieve_analysis": 1,
+       "violationanalysis_api.retrieve_analysis": 0,
+       "finding_api.FindingApi.analyze_project": 0,
+       "VulnerabilityApi.get_vulnerabilities_by_project": 0
+      },
+      "confidence": 1
+     },
+     "choice": "analysis_api.AnalysisApi.retrieve_analysis",
+     "probabilities": {
+      "VulnerabilityApi.get_vulnerabilities_by_component": 0,
+      "analysis_api.AnalysisApi.retrieve_analysis": 1,
+      "violationanalysis_api.retrieve_analysis": 0,
+      "finding_api.FindingApi.analyze_project": 0,
+      "VulnerabilityApi.get_vulnerabilities_by_project": 0
+     },
+     "pred_index": 1
     }
    }
   },
@@ -1567,6 +1885,30 @@
      ],
      "raw_text": "{\"answer\":\"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 538,
+     "in_tok": 350,
+     "cost": 3.5e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Movies_3_FindMovies",
+      "probabilities": {
+       "Movies_3_FindMovies": 1,
+       "Restaurants_2_ReserveRestaurant": 0,
+       "Restaurants_2_FindRestaurants": 0
+      },
+      "confidence": 1
+     },
+     "choice": "Movies_3_FindMovies",
+     "probabilities": {
+      "Movies_3_FindMovies": 1,
+      "Restaurants_2_ReserveRestaurant": 0,
+      "Restaurants_2_FindRestaurants": 0
+     },
+     "pred_index": 0
     }
    }
   },
@@ -1697,6 +2039,34 @@
      ],
      "raw_text": "{\"answer\":\"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 564,
+     "in_tok": 454,
+     "cost": 4.54e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "HNA_WQA.search",
+      "probabilities": {
+       "OpenWeatherMap.get_current_weather": 0,
+       "HNA_NEWS.search": 0,
+       "cookbook.search_recipe": 0,
+       "ControlAppliance.execute": 0,
+       "HNA_WQA.search": 1
+      },
+      "confidence": 1
+     },
+     "choice": "HNA_WQA.search",
+     "probabilities": {
+      "OpenWeatherMap.get_current_weather": 0,
+      "HNA_NEWS.search": 0,
+      "cookbook.search_recipe": 0,
+      "ControlAppliance.execute": 0,
+      "HNA_WQA.search": 1
+     },
+     "pred_index": 4
     }
    }
   },
@@ -1809,6 +2179,30 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 533,
+     "in_tok": 345,
+     "cost": 3.45e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "RideSharing_2_GetRide",
+      "probabilities": {
+       "RideSharing_2_GetRide": 1,
+       "Music_3_LookupMusic": 0,
+       "Music_3_PlayMedia": 0
+      },
+      "confidence": 1
+     },
+     "choice": "RideSharing_2_GetRide",
+     "probabilities": {
+      "RideSharing_2_GetRide": 1,
+      "Music_3_LookupMusic": 0,
+      "Music_3_PlayMedia": 0
+     },
+     "pred_index": 0
     }
    }
   },
@@ -1939,6 +2333,34 @@
      ],
      "raw_text": "{\"answer\":\"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 529,
+     "in_tok": 426,
+     "cost": 4.26e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Media_3_FindMovies",
+      "probabilities": {
+       "Media_3_PlayMovie": 0.01,
+       "Media_3_FindMovies": 0.99,
+       "Music_3_LookupMusic": 0,
+       "Music_3_PlayMedia": 0,
+       "Travel_1_FindAttractions": 0
+      },
+      "confidence": 0.99
+     },
+     "choice": "Media_3_FindMovies",
+     "probabilities": {
+      "Media_3_PlayMovie": 0.01,
+      "Media_3_FindMovies": 0.99,
+      "Music_3_LookupMusic": 0,
+      "Music_3_PlayMedia": 0,
+      "Travel_1_FindAttractions": 0
+     },
+     "pred_index": 1
     }
    }
   },
@@ -2051,6 +2473,30 @@
      ],
      "raw_text": "{\"answer\": \"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 527,
+     "in_tok": 306,
+     "cost": 3.06e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "website_configuration_api.get_websites",
+      "probabilities": {
+       "ApplicationSettingsApi.get_service_configs": 0,
+       "website_configuration_api.get_websites": 1,
+       "ApplicationSettingsApi.get_application_configs": 0
+      },
+      "confidence": 1
+     },
+     "choice": "website_configuration_api.get_websites",
+     "probabilities": {
+      "ApplicationSettingsApi.get_service_configs": 0,
+      "website_configuration_api.get_websites": 1,
+      "ApplicationSettingsApi.get_application_configs": 0
+     },
+     "pred_index": 1
     }
    }
   },
@@ -2163,6 +2609,30 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 565,
+     "in_tok": 315,
+     "cost": 3.15e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Services_4_FindProvider",
+      "probabilities": {
+       "Movies_3_FindMovies": 0,
+       "Services_4_BookAppointment": 0,
+       "Services_4_FindProvider": 1
+      },
+      "confidence": 1
+     },
+     "choice": "Services_4_FindProvider",
+     "probabilities": {
+      "Movies_3_FindMovies": 0,
+      "Services_4_BookAppointment": 0,
+      "Services_4_FindProvider": 1
+     },
+     "pred_index": 2
     }
    }
   },
@@ -2293,6 +2763,34 @@
      ],
      "raw_text": "{\"answer\":\"D\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 530,
+     "in_tok": 399,
+     "cost": 3.99e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Media_3_FindMovies",
+      "probabilities": {
+       "Music_3_LookupMusic": 0,
+       "Travel_1_FindAttractions": 0,
+       "Media_3_FindMovies": 1,
+       "Media_3_PlayMovie": 0,
+       "Music_3_PlayMedia": 0
+      },
+      "confidence": 1
+     },
+     "choice": "Media_3_FindMovies",
+     "probabilities": {
+      "Music_3_LookupMusic": 0,
+      "Travel_1_FindAttractions": 0,
+      "Media_3_FindMovies": 1,
+      "Media_3_PlayMovie": 0,
+      "Music_3_PlayMedia": 0
+     },
+     "pred_index": 2
     }
    }
   },
@@ -2405,6 +2903,30 @@
      ],
      "raw_text": "{\"answer\": \"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 565,
+     "in_tok": 343,
+     "cost": 3.43e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "find_infra_alert_config_versions",
+      "probabilities": {
+       "create_website_alert_config": 0,
+       "find_infra_alert_config_versions": 0.99,
+       "create_infra_alert_config": 0.01
+      },
+      "confidence": 0.99
+     },
+     "choice": "find_infra_alert_config_versions",
+     "probabilities": {
+      "create_website_alert_config": 0,
+      "find_infra_alert_config_versions": 0.99,
+      "create_infra_alert_config": 0.01
+     },
+     "pred_index": 1
     }
    }
   },
@@ -2526,6 +3048,32 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 563,
+     "in_tok": 421,
+     "cost": 4.21e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "RentalCars_3_GetCarsAvailable",
+      "probabilities": {
+       "RentalCars_3_ReserveCar": 0,
+       "Events_3_BuyEventTickets": 0,
+       "Events_3_FindEvents": 0,
+       "RentalCars_3_GetCarsAvailable": 1
+      },
+      "confidence": 1
+     },
+     "choice": "RentalCars_3_GetCarsAvailable",
+     "probabilities": {
+      "RentalCars_3_ReserveCar": 0,
+      "Events_3_BuyEventTickets": 0,
+      "Events_3_FindEvents": 0,
+      "RentalCars_3_GetCarsAvailable": 1
+     },
+     "pred_index": 3
     }
    }
   },
@@ -2629,6 +3177,28 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 552,
+     "in_tok": 263,
+     "cost": 2.63e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "youtube.check_videos",
+      "probabilities": {
+       "youtube.get_video_rating": 0,
+       "youtube.check_videos": 1
+      },
+      "confidence": 1
+     },
+     "choice": "youtube.check_videos",
+     "probabilities": {
+      "youtube.get_video_rating": 0,
+      "youtube.check_videos": 1
+     },
+     "pred_index": 1
     }
    }
   },
@@ -2759,6 +3329,34 @@
      ],
      "raw_text": "{\"answer\":\"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 553,
+     "in_tok": 396,
+     "cost": 3.96e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "version_api.VersionApi.get_version",
+      "probabilities": {
+       "badge_api.BadgeApi.get_project_vulnerabilities_badge": 0,
+       "project_api.update_project": 0,
+       "project_api.ProjectApi.get_project_by_name_and_version": 0,
+       "version_api.VersionApi.get_version": 1,
+       "repository_api.update_repository": 0
+      },
+      "confidence": 1
+     },
+     "choice": "version_api.VersionApi.get_version",
+     "probabilities": {
+      "badge_api.BadgeApi.get_project_vulnerabilities_badge": 0,
+      "project_api.update_project": 0,
+      "project_api.ProjectApi.get_project_by_name_and_version": 0,
+      "version_api.VersionApi.get_version": 1,
+      "repository_api.update_repository": 0
+     },
+     "pred_index": 3
     }
    }
   },
@@ -2862,6 +3460,28 @@
      ],
      "raw_text": "{\"answer\":\"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 513,
+     "in_tok": 342,
+     "cost": 3.42e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Homes_2_FindHomeByArea",
+      "probabilities": {
+       "Homes_2_FindHomeByArea": 1,
+       "Homes_2_ScheduleVisit": 0
+      },
+      "confidence": 1
+     },
+     "choice": "Homes_2_FindHomeByArea",
+     "probabilities": {
+      "Homes_2_FindHomeByArea": 1,
+      "Homes_2_ScheduleVisit": 0
+     },
+     "pred_index": 0
     }
    }
   },
@@ -2965,6 +3585,28 @@
      ],
      "raw_text": "{\"answer\":\"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 530,
+     "in_tok": 309,
+     "cost": 3.09e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "get_service_providers",
+      "probabilities": {
+       "get_service_providers": 1,
+       "view_service_provider_profile": 0
+      },
+      "confidence": 1
+     },
+     "choice": "get_service_providers",
+     "probabilities": {
+      "get_service_providers": 1,
+      "view_service_provider_profile": 0
+     },
+     "pred_index": 0
     }
    }
   },
@@ -3077,6 +3719,30 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 534,
+     "in_tok": 316,
+     "cost": 3.16e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Music_3_LookupMusic",
+      "probabilities": {
+       "Weather_1_GetWeather": 0,
+       "Music_3_PlayMedia": 0,
+       "Music_3_LookupMusic": 1
+      },
+      "confidence": 1
+     },
+     "choice": "Music_3_LookupMusic",
+     "probabilities": {
+      "Weather_1_GetWeather": 0,
+      "Music_3_PlayMedia": 0,
+      "Music_3_LookupMusic": 1
+     },
+     "pred_index": 2
     }
    }
   },
@@ -3207,6 +3873,34 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 555,
+     "in_tok": 416,
+     "cost": 4.16e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "add_mtnards_server",
+      "probabilities": {
+       "default_function": 0,
+       "list_servers": 0,
+       "dartfx_help": 0,
+       "add_mtnards_server": 1,
+       "add_postgres_server": 0
+      },
+      "confidence": 1
+     },
+     "choice": "add_mtnards_server",
+     "probabilities": {
+      "default_function": 0,
+      "list_servers": 0,
+      "dartfx_help": 0,
+      "add_mtnards_server": 1,
+      "add_postgres_server": 0
+     },
+     "pred_index": 3
     }
    }
   },
@@ -3328,6 +4022,32 @@
      ],
      "raw_text": "{\"answer\":\"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 556,
+     "in_tok": 319,
+     "cost": 3.19e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "inventory_management",
+      "probabilities": {
+       "get_product_details": 0.03,
+       "inventory_management": 0.96,
+       "product_search": 0.01,
+       "order_status_check": 0
+      },
+      "confidence": 0.95
+     },
+     "choice": "inventory_management",
+     "probabilities": {
+      "get_product_details": 0.03,
+      "inventory_management": 0.96,
+      "product_search": 0.01,
+      "order_status_check": 0
+     },
+     "pred_index": 1
     }
    }
   },
@@ -3458,6 +4178,34 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 558,
+     "in_tok": 445,
+     "cost": 4.45e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Movies_1_FindMovies",
+      "probabilities": {
+       "Music_3_PlayMedia": 0.01,
+       "Music_3_LookupMusic": 0,
+       "Movies_1_BuyMovieTickets": 0.01,
+       "Movies_1_GetTimesForMovie": 0.02,
+       "Movies_1_FindMovies": 0.96
+      },
+      "confidence": 0.95
+     },
+     "choice": "Movies_1_FindMovies",
+     "probabilities": {
+      "Music_3_PlayMedia": 0.01,
+      "Music_3_LookupMusic": 0,
+      "Movies_1_BuyMovieTickets": 0.01,
+      "Movies_1_GetTimesForMovie": 0.02,
+      "Movies_1_FindMovies": 0.96
+     },
+     "pred_index": 4
     }
    }
   },
@@ -3579,6 +4327,32 @@
      ],
      "raw_text": "{\"answer\":\"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 598,
+     "in_tok": 394,
+     "cost": 3.94e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Events_3_FindEvents",
+      "probabilities": {
+       "Events_3_BuyEventTickets": 0,
+       "Hotels_4_SearchHotel": 0,
+       "Hotels_4_ReserveHotel": 0,
+       "Events_3_FindEvents": 1
+      },
+      "confidence": 1
+     },
+     "choice": "Events_3_FindEvents",
+     "probabilities": {
+      "Events_3_BuyEventTickets": 0,
+      "Hotels_4_SearchHotel": 0,
+      "Hotels_4_ReserveHotel": 0,
+      "Events_3_FindEvents": 1
+     },
+     "pred_index": 3
     }
    }
   },
@@ -3682,6 +4456,28 @@
      ],
      "raw_text": "{\"answer\":\"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 592,
+     "in_tok": 254,
+     "cost": 2.54e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Hotels_4_SearchHotel",
+      "probabilities": {
+       "Hotels_4_SearchHotel": 1,
+       "Hotels_4_ReserveHotel": 0
+      },
+      "confidence": 1
+     },
+     "choice": "Hotels_4_SearchHotel",
+     "probabilities": {
+      "Hotels_4_SearchHotel": 1,
+      "Hotels_4_ReserveHotel": 0
+     },
+     "pred_index": 0
     }
    }
   },
@@ -3812,6 +4608,34 @@
      ],
      "raw_text": "{\"answer\":\"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 554,
+     "in_tok": 507,
+     "cost": 5.07e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Weather_1_GetWeather",
+      "probabilities": {
+       "RentalCars_3_ReserveCar": 0,
+       "RentalCars_3_GetCarsAvailable": 0,
+       "Flights_4_SearchRoundtripFlights": 0,
+       "Weather_1_GetWeather": 1,
+       "Flights_4_SearchOnewayFlight": 0
+      },
+      "confidence": 1
+     },
+     "choice": "Weather_1_GetWeather",
+     "probabilities": {
+      "RentalCars_3_ReserveCar": 0,
+      "RentalCars_3_GetCarsAvailable": 0,
+      "Flights_4_SearchRoundtripFlights": 0,
+      "Weather_1_GetWeather": 1,
+      "Flights_4_SearchOnewayFlight": 0
+     },
+     "pred_index": 3
     }
    }
   },
@@ -3924,6 +4748,30 @@
      ],
      "raw_text": "{\"answer\": \"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 539,
+     "in_tok": 346,
+     "cost": 3.46e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Restaurants_2_FindRestaurants",
+      "probabilities": {
+       "RideSharing_2_GetRide": 0,
+       "Restaurants_2_ReserveRestaurant": 0,
+       "Restaurants_2_FindRestaurants": 1
+      },
+      "confidence": 1
+     },
+     "choice": "Restaurants_2_FindRestaurants",
+     "probabilities": {
+      "RideSharing_2_GetRide": 0,
+      "Restaurants_2_ReserveRestaurant": 0,
+      "Restaurants_2_FindRestaurants": 1
+     },
+     "pred_index": 2
     }
    }
   },
@@ -4027,6 +4875,28 @@
      ],
      "raw_text": "{\"answer\":\"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 590,
+     "in_tok": 240,
+     "cost": 2.4e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "EuclideanDistance.calculate",
+      "probabilities": {
+       "EuclideanDistance.calculate": 1,
+       "angleToXAxis.calculate": 0
+      },
+      "confidence": 1
+     },
+     "choice": "EuclideanDistance.calculate",
+     "probabilities": {
+      "EuclideanDistance.calculate": 1,
+      "angleToXAxis.calculate": 0
+     },
+     "pred_index": 0
     }
    }
   },
@@ -4166,6 +5036,36 @@
      ],
      "raw_text": "{\"answer\":\"F\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 590,
+     "in_tok": 469,
+     "cost": 4.69e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Music_3_PlayMedia",
+      "probabilities": {
+       "Music_3_PlayMedia": 0.87,
+       "Alarm_1_GetAlarms": 0,
+       "Music_3_LookupMusic": 0.12,
+       "Media_3_FindMovies": 0,
+       "Media_3_PlayMovie": 0.01,
+       "Alarm_1_AddAlarm": 0
+      },
+      "confidence": 0.84
+     },
+     "choice": "Music_3_PlayMedia",
+     "probabilities": {
+      "Music_3_PlayMedia": 0.87,
+      "Alarm_1_GetAlarms": 0,
+      "Music_3_LookupMusic": 0.12,
+      "Media_3_FindMovies": 0,
+      "Media_3_PlayMovie": 0.01,
+      "Alarm_1_AddAlarm": 0
+     },
+     "pred_index": 0
     }
    }
   },
@@ -4269,6 +5169,28 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 546,
+     "in_tok": 337,
+     "cost": 3.37e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Homes_2_FindHomeByArea",
+      "probabilities": {
+       "Homes_2_ScheduleVisit": 0,
+       "Homes_2_FindHomeByArea": 1
+      },
+      "confidence": 1
+     },
+     "choice": "Homes_2_FindHomeByArea",
+     "probabilities": {
+      "Homes_2_ScheduleVisit": 0,
+      "Homes_2_FindHomeByArea": 1
+     },
+     "pred_index": 1
     }
    }
   },
@@ -4390,6 +5312,32 @@
      ],
      "raw_text": "{\"answer\":\"D\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 587,
+     "in_tok": 312,
+     "cost": 3.12e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "find_restaurants",
+      "probabilities": {
+       "find_instrument": 0,
+       "get_stock_info": 0,
+       "sports.match_schedule": 0,
+       "find_restaurants": 1
+      },
+      "confidence": 1
+     },
+     "choice": "find_restaurants",
+     "probabilities": {
+      "find_instrument": 0,
+      "get_stock_info": 0,
+      "sports.match_schedule": 0,
+      "find_restaurants": 1
+     },
+     "pred_index": 3
     }
    }
   },
@@ -4493,6 +5441,28 @@
      ],
      "raw_text": "{\"answer\": \"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 544,
+     "in_tok": 316,
+     "cost": 3.16e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Trains_1_FindTrains",
+      "probabilities": {
+       "Trains_1_GetTrainTickets": 0,
+       "Trains_1_FindTrains": 1
+      },
+      "confidence": 1
+     },
+     "choice": "Trains_1_FindTrains",
+     "probabilities": {
+      "Trains_1_GetTrainTickets": 0,
+      "Trains_1_FindTrains": 1
+     },
+     "pred_index": 1
     }
    }
   },
@@ -4605,6 +5575,30 @@
      ],
      "raw_text": "{\"answer\":\"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 540,
+     "in_tok": 341,
+     "cost": 3.41e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Movies_3_FindMovies",
+      "probabilities": {
+       "Movies_3_FindMovies": 1,
+       "Restaurants_2_ReserveRestaurant": 0,
+       "Restaurants_2_FindRestaurants": 0
+      },
+      "confidence": 1
+     },
+     "choice": "Movies_3_FindMovies",
+     "probabilities": {
+      "Movies_3_FindMovies": 1,
+      "Restaurants_2_ReserveRestaurant": 0,
+      "Restaurants_2_FindRestaurants": 0
+     },
+     "pred_index": 0
     }
    }
   },
@@ -4705,6 +5699,28 @@
      ],
      "raw_text": "{\"answer\":\"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 577,
+     "in_tok": 273,
+     "cost": 2.73e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "uber.ride",
+      "probabilities": {
+       "uber.ride": 0.99,
+       "uber.ride2": 0.01
+      },
+      "confidence": 0.98
+     },
+     "choice": "uber.ride",
+     "probabilities": {
+      "uber.ride": 0.99,
+      "uber.ride2": 0.01
+     },
+     "pred_index": 0
     }
    }
   },
@@ -4817,6 +5833,30 @@
      ],
      "raw_text": "{\"answer\":\"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 573,
+     "in_tok": 356,
+     "cost": 3.56e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Movies_1_BuyMovieTickets",
+      "probabilities": {
+       "Movies_1_BuyMovieTickets": 0.93,
+       "Movies_1_GetTimesForMovie": 0.06,
+       "Movies_1_FindMovies": 0.01
+      },
+      "confidence": 0.89
+     },
+     "choice": "Movies_1_BuyMovieTickets",
+     "probabilities": {
+      "Movies_1_BuyMovieTickets": 0.93,
+      "Movies_1_GetTimesForMovie": 0.06,
+      "Movies_1_FindMovies": 0.01
+     },
+     "pred_index": 0
     }
    }
   },
@@ -4929,6 +5969,30 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 537,
+     "in_tok": 276,
+     "cost": 2.76e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "basketball.player_stats.get",
+      "probabilities": {
+       "basketball.game_stats.get": 0,
+       "basketball.team_stats.get": 0,
+       "basketball.player_stats.get": 1
+      },
+      "confidence": 1
+     },
+     "choice": "basketball.player_stats.get",
+     "probabilities": {
+      "basketball.game_stats.get": 0,
+      "basketball.team_stats.get": 0,
+      "basketball.player_stats.get": 1
+     },
+     "pred_index": 2
     }
    }
   },
@@ -5041,6 +6105,30 @@
      ],
      "raw_text": "{\"answer\":\"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 539,
+     "in_tok": 367,
+     "cost": 3.67e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "RideSharing_2_GetRide",
+      "probabilities": {
+       "Music_3_PlayMedia": 0,
+       "Music_3_LookupMusic": 0,
+       "RideSharing_2_GetRide": 1
+      },
+      "confidence": 1
+     },
+     "choice": "RideSharing_2_GetRide",
+     "probabilities": {
+      "Music_3_PlayMedia": 0,
+      "Music_3_LookupMusic": 0,
+      "RideSharing_2_GetRide": 1
+     },
+     "pred_index": 2
     }
    }
   },
@@ -5153,6 +6241,30 @@
      ],
      "raw_text": "{\"answer\":\"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 529,
+     "in_tok": 276,
+     "cost": 2.76e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "prediction.evolution",
+      "probabilities": {
+       "prediction.evolution": 1,
+       "calculate_probability": 0,
+       "modify_painting": 0
+      },
+      "confidence": 1
+     },
+     "choice": "prediction.evolution",
+     "probabilities": {
+      "prediction.evolution": 1,
+      "calculate_probability": 0,
+      "modify_painting": 0
+     },
+     "pred_index": 0
     }
    }
   },
@@ -5265,6 +6377,30 @@
      ],
      "raw_text": "{\"answer\": \"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 554,
+     "in_tok": 416,
+     "cost": 4.16e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "events_api.EventsApi.kubernetes_info_events",
+      "probabilities": {
+       "agent_monitoring_events": 0,
+       "events_api.EventsApi.get_events": 0,
+       "events_api.EventsApi.kubernetes_info_events": 1
+      },
+      "confidence": 1
+     },
+     "choice": "events_api.EventsApi.kubernetes_info_events",
+     "probabilities": {
+      "agent_monitoring_events": 0,
+      "events_api.EventsApi.get_events": 0,
+      "events_api.EventsApi.kubernetes_info_events": 1
+     },
+     "pred_index": 2
     }
    }
   },
@@ -5377,6 +6513,30 @@
      ],
      "raw_text": "{\"answer\":\"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 554,
+     "in_tok": 257,
+     "cost": 2.57e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "traffic_estimate",
+      "probabilities": {
+       "traffic_estimate": 1,
+       "weather_forecast": 0,
+       "calculate_distance": 0
+      },
+      "confidence": 1
+     },
+     "choice": "traffic_estimate",
+     "probabilities": {
+      "traffic_estimate": 1,
+      "weather_forecast": 0,
+      "calculate_distance": 0
+     },
+     "pred_index": 0
     }
    }
   },
@@ -5552,6 +6712,44 @@
      ],
      "raw_text": "{\"answer\":\"G\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 567,
+     "in_tok": 599,
+     "cost": 5.99e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "dartfx_help",
+      "probabilities": {
+       "dartfx_help": 1,
+       "add_postgres_server": 0,
+       "list_files": 0,
+       "list_servers": 0,
+       "close_project": 0,
+       "connect_to_server": 0,
+       "add_mtnards_server": 0,
+       "open_project": 0,
+       "default_function": 0,
+       "rename_server": 0
+      },
+      "confidence": 1
+     },
+     "choice": "dartfx_help",
+     "probabilities": {
+      "dartfx_help": 1,
+      "add_postgres_server": 0,
+      "list_files": 0,
+      "list_servers": 0,
+      "close_project": 0,
+      "connect_to_server": 0,
+      "add_mtnards_server": 0,
+      "open_project": 0,
+      "default_function": 0,
+      "rename_server": 0
+     },
+     "pred_index": 0
     }
    }
   },
@@ -5655,6 +6853,28 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 525,
+     "in_tok": 268,
+     "cost": 2.68e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Events_3_FindEvents",
+      "probabilities": {
+       "Events_3_BuyEventTickets": 0,
+       "Events_3_FindEvents": 1
+      },
+      "confidence": 1
+     },
+     "choice": "Events_3_FindEvents",
+     "probabilities": {
+      "Events_3_BuyEventTickets": 0,
+      "Events_3_FindEvents": 1
+     },
+     "pred_index": 1
     }
    }
   },
@@ -5776,6 +6996,32 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 558,
+     "in_tok": 308,
+     "cost": 3.08e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "whole_foods.check_price",
+      "probabilities": {
+       "geometry.area_circle": 0,
+       "calculate_shortest_distance": 0,
+       "find_recipes": 0,
+       "whole_foods.check_price": 1
+      },
+      "confidence": 1
+     },
+     "choice": "whole_foods.check_price",
+     "probabilities": {
+      "geometry.area_circle": 0,
+      "calculate_shortest_distance": 0,
+      "find_recipes": 0,
+      "whole_foods.check_price": 1
+     },
+     "pred_index": 3
     }
    }
   },
@@ -5906,6 +7152,34 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 607,
+     "in_tok": 401,
+     "cost": 4.01e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "version_api.VersionApi.get_version",
+      "probabilities": {
+       "analysis_api.AnalysisApi.retrieve_analysis": 0,
+       "acl_api.add_mapping": 0,
+       "version_api.VersionApi.get_version": 1,
+       "acl_api.AclApi.retrieve_projects": 0,
+       "acl_api.delete_mapping": 0
+      },
+      "confidence": 1
+     },
+     "choice": "version_api.VersionApi.get_version",
+     "probabilities": {
+      "analysis_api.AnalysisApi.retrieve_analysis": 0,
+      "acl_api.add_mapping": 0,
+      "version_api.VersionApi.get_version": 1,
+      "acl_api.AclApi.retrieve_projects": 0,
+      "acl_api.delete_mapping": 0
+     },
+     "pred_index": 2
     }
    }
   },
@@ -6018,6 +7292,30 @@
      ],
      "raw_text": "{\"answer\": \"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 586,
+     "in_tok": 340,
+     "cost": 3.4e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Restaurants_2_FindRestaurants",
+      "probabilities": {
+       "Restaurants_2_ReserveRestaurant": 0,
+       "Restaurants_2_FindRestaurants": 1,
+       "RideSharing_2_GetRide": 0
+      },
+      "confidence": 1
+     },
+     "choice": "Restaurants_2_FindRestaurants",
+     "probabilities": {
+      "Restaurants_2_ReserveRestaurant": 0,
+      "Restaurants_2_FindRestaurants": 1,
+      "RideSharing_2_GetRide": 0
+     },
+     "pred_index": 1
     }
    }
   },
@@ -6139,6 +7437,32 @@
      ],
      "raw_text": "{\"answer\":\"D\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 551,
+     "in_tok": 406,
+     "cost": 4.06e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Events_3_FindEvents",
+      "probabilities": {
+       "Events_3_FindEvents": 1,
+       "Events_3_BuyEventTickets": 0,
+       "Payment_1_MakePayment": 0,
+       "Payment_1_RequestPayment": 0
+      },
+      "confidence": 1
+     },
+     "choice": "Events_3_FindEvents",
+     "probabilities": {
+      "Events_3_FindEvents": 1,
+      "Events_3_BuyEventTickets": 0,
+      "Payment_1_MakePayment": 0,
+      "Payment_1_RequestPayment": 0
+     },
+     "pred_index": 0
     }
    }
   },
@@ -6260,6 +7584,32 @@
      ],
      "raw_text": "{\"answer\":\"D\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 574,
+     "in_tok": 353,
+     "cost": 3.53e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Music_3_PlayMedia",
+      "probabilities": {
+       "Media_3_PlayMovie": 0,
+       "Music_3_LookupMusic": 0,
+       "Music_3_PlayMedia": 1,
+       "Media_3_FindMovies": 0
+      },
+      "confidence": 1
+     },
+     "choice": "Music_3_PlayMedia",
+     "probabilities": {
+      "Media_3_PlayMovie": 0,
+      "Music_3_LookupMusic": 0,
+      "Music_3_PlayMedia": 1,
+      "Media_3_FindMovies": 0
+     },
+     "pred_index": 2
     }
    }
   },
@@ -6381,6 +7731,32 @@
      ],
      "raw_text": "{\"answer\":\"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 579,
+     "in_tok": 410,
+     "cost": 4.1e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Homes_2_FindHomeByArea",
+      "probabilities": {
+       "Alarm_1_GetAlarms": 0,
+       "Alarm_1_AddAlarm": 0,
+       "Homes_2_ScheduleVisit": 0,
+       "Homes_2_FindHomeByArea": 1
+      },
+      "confidence": 1
+     },
+     "choice": "Homes_2_FindHomeByArea",
+     "probabilities": {
+      "Alarm_1_GetAlarms": 0,
+      "Alarm_1_AddAlarm": 0,
+      "Homes_2_ScheduleVisit": 0,
+      "Homes_2_FindHomeByArea": 1
+     },
+     "pred_index": 3
     }
    }
   },
@@ -6493,6 +7869,30 @@
      ],
      "raw_text": "{\"answer\": \"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 536,
+     "in_tok": 409,
+     "cost": 4.09e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "get_sensor_readings_history",
+      "probabilities": {
+       "get_sensor_readings_history": 0.9,
+       "get_sensor_readings_history_by_interval": 0.08,
+       "get_sensor_readings_latest": 0.02
+      },
+      "confidence": 0.85
+     },
+     "choice": "get_sensor_readings_history",
+     "probabilities": {
+      "get_sensor_readings_history": 0.9,
+      "get_sensor_readings_history_by_interval": 0.08,
+      "get_sensor_readings_latest": 0.02
+     },
+     "pred_index": 0
     }
    }
   },
@@ -6605,6 +8005,30 @@
      ],
      "raw_text": "{\"answer\":\"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 539,
+     "in_tok": 278,
+     "cost": 2.78e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "geometry.area_triangle",
+      "probabilities": {
+       "science_history.get_invention": 0,
+       "geometry.area_triangle": 1,
+       "map_service.get_directions": 0
+      },
+      "confidence": 1
+     },
+     "choice": "geometry.area_triangle",
+     "probabilities": {
+      "science_history.get_invention": 0,
+      "geometry.area_triangle": 1,
+      "map_service.get_directions": 0
+     },
+     "pred_index": 1
     }
    }
   },
@@ -6717,6 +8141,30 @@
      ],
      "raw_text": "{\"answer\":\"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 562,
+     "in_tok": 337,
+     "cost": 3.37e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Hotels_2_SearchHouse",
+      "probabilities": {
+       "Travel_1_FindAttractions": 0,
+       "Hotels_2_SearchHouse": 1,
+       "Hotels_2_BookHouse": 0
+      },
+      "confidence": 1
+     },
+     "choice": "Hotels_2_SearchHouse",
+     "probabilities": {
+      "Travel_1_FindAttractions": 0,
+      "Hotels_2_SearchHouse": 1,
+      "Hotels_2_BookHouse": 0
+     },
+     "pred_index": 1
     }
    }
   },
@@ -6838,6 +8286,32 @@
      ],
      "raw_text": "{\"answer\":\"D\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 559,
+     "in_tok": 360,
+     "cost": 3.6e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Services_1_FindProvider",
+      "probabilities": {
+       "Services_1_FindProvider": 1,
+       "Services_4_FindProvider": 0,
+       "Services_1_BookAppointment": 0,
+       "Services_4_BookAppointment": 0
+      },
+      "confidence": 1
+     },
+     "choice": "Services_1_FindProvider",
+     "probabilities": {
+      "Services_1_FindProvider": 1,
+      "Services_4_FindProvider": 0,
+      "Services_1_BookAppointment": 0,
+      "Services_4_BookAppointment": 0
+     },
+     "pred_index": 0
     }
    }
   },
@@ -6986,6 +8460,38 @@
      ],
      "raw_text": "{\"answer\":\"F\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 568,
+     "in_tok": 503,
+     "cost": 5.03e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "adriel_tech_stack",
+      "probabilities": {
+       "detail_adriel_project": 0,
+       "adriel_detail_experience_and_education": 0,
+       "help": 0,
+       "adriel_tech_stack": 1,
+       "adriel_list_projects": 0,
+       "adriel_contact": 0,
+       "adriel_experiences_and_education": 0
+      },
+      "confidence": 1
+     },
+     "choice": "adriel_tech_stack",
+     "probabilities": {
+      "detail_adriel_project": 0,
+      "adriel_detail_experience_and_education": 0,
+      "help": 0,
+      "adriel_tech_stack": 1,
+      "adriel_list_projects": 0,
+      "adriel_contact": 0,
+      "adriel_experiences_and_education": 0
+     },
+     "pred_index": 3
     }
    }
   },
@@ -7098,6 +8604,30 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 529,
+     "in_tok": 317,
+     "cost": 3.17e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "get_website_geo_mapping_rules",
+      "probabilities": {
+       "get_website_geo_mapping_rules": 1,
+       "get_mobile_app_geo_mapping_rules": 0,
+       "set_website_geo_mapping_rules": 0
+      },
+      "confidence": 1
+     },
+     "choice": "get_website_geo_mapping_rules",
+     "probabilities": {
+      "get_website_geo_mapping_rules": 1,
+      "get_mobile_app_geo_mapping_rules": 0,
+      "set_website_geo_mapping_rules": 0
+     },
+     "pred_index": 0
     }
    }
   },
@@ -7255,6 +8785,40 @@
      ],
      "raw_text": "{\"answer\":\"G\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 568,
+     "in_tok": 714,
+     "cost": 7.14e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Events_3_FindEvents",
+      "probabilities": {
+       "Hotels_4_SearchHotel": 0.01,
+       "Hotels_4_ReserveHotel": 0.01,
+       "Flights_4_SearchRoundtripFlights": 0,
+       "Buses_3_BuyBusTicket": 0,
+       "Buses_3_FindBus": 0,
+       "Events_3_BuyEventTickets": 0,
+       "Flights_4_SearchOnewayFlight": 0,
+       "Events_3_FindEvents": 0.98
+      },
+      "confidence": 0.98
+     },
+     "choice": "Events_3_FindEvents",
+     "probabilities": {
+      "Hotels_4_SearchHotel": 0.01,
+      "Hotels_4_ReserveHotel": 0.01,
+      "Flights_4_SearchRoundtripFlights": 0,
+      "Buses_3_BuyBusTicket": 0,
+      "Buses_3_FindBus": 0,
+      "Events_3_BuyEventTickets": 0,
+      "Flights_4_SearchOnewayFlight": 0,
+      "Events_3_FindEvents": 0.98
+     },
+     "pred_index": 7
     }
    }
   },
@@ -7367,6 +8931,30 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 569,
+     "in_tok": 315,
+     "cost": 3.15e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Events_3_FindEvents",
+      "probabilities": {
+       "Movies_3_FindMovies": 0.14,
+       "Events_3_FindEvents": 0.85,
+       "Events_3_BuyEventTickets": 0.01
+      },
+      "confidence": 0.77
+     },
+     "choice": "Events_3_FindEvents",
+     "probabilities": {
+      "Movies_3_FindMovies": 0.14,
+      "Events_3_FindEvents": 0.85,
+      "Events_3_BuyEventTickets": 0.01
+     },
+     "pred_index": 1
     }
    }
   },
@@ -7470,6 +9058,28 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 560,
+     "in_tok": 318,
+     "cost": 3.18e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Homes_2_ScheduleVisit",
+      "probabilities": {
+       "Homes_2_FindHomeByArea": 0,
+       "Homes_2_ScheduleVisit": 1
+      },
+      "confidence": 1
+     },
+     "choice": "Homes_2_ScheduleVisit",
+     "probabilities": {
+      "Homes_2_FindHomeByArea": 0,
+      "Homes_2_ScheduleVisit": 1
+     },
+     "pred_index": 1
     }
    }
   },
@@ -7582,6 +9192,30 @@
      ],
      "raw_text": "{\"answer\":\"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 551,
+     "in_tok": 305,
+     "cost": 3.05e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Services_1_FindProvider",
+      "probabilities": {
+       "Weather_1_GetWeather": 0,
+       "Services_1_FindProvider": 1,
+       "Services_1_BookAppointment": 0
+      },
+      "confidence": 1
+     },
+     "choice": "Services_1_FindProvider",
+     "probabilities": {
+      "Weather_1_GetWeather": 0,
+      "Services_1_FindProvider": 1,
+      "Services_1_BookAppointment": 0
+     },
+     "pred_index": 1
     }
    }
   },
@@ -7703,6 +9337,32 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 552,
+     "in_tok": 321,
+     "cost": 3.21e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "soccer.get_last_match",
+      "probabilities": {
+       "building.get_dimensions": 0,
+       "random_forest.train": 0,
+       "plot_sine_wave": 0,
+       "soccer.get_last_match": 1
+      },
+      "confidence": 1
+     },
+     "choice": "soccer.get_last_match",
+     "probabilities": {
+      "building.get_dimensions": 0,
+      "random_forest.train": 0,
+      "plot_sine_wave": 0,
+      "soccer.get_last_match": 1
+     },
+     "pred_index": 3
     }
    }
   },
@@ -7806,6 +9466,28 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 563,
+     "in_tok": 277,
+     "cost": 2.77e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Hotels_4_SearchHotel",
+      "probabilities": {
+       "Hotels_4_ReserveHotel": 0,
+       "Hotels_4_SearchHotel": 1
+      },
+      "confidence": 1
+     },
+     "choice": "Hotels_4_SearchHotel",
+     "probabilities": {
+      "Hotels_4_ReserveHotel": 0,
+      "Hotels_4_SearchHotel": 1
+     },
+     "pred_index": 1
     }
    }
   },
@@ -7936,6 +9618,34 @@
      ],
      "raw_text": "{\"answer\":\"E\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 565,
+     "in_tok": 528,
+     "cost": 5.28e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Flights_4_SearchRoundtripFlights",
+      "probabilities": {
+       "Hotels_2_BookHouse": 0,
+       "Travel_1_FindAttractions": 0,
+       "Hotels_2_SearchHouse": 0,
+       "Flights_4_SearchOnewayFlight": 0,
+       "Flights_4_SearchRoundtripFlights": 1
+      },
+      "confidence": 1
+     },
+     "choice": "Flights_4_SearchRoundtripFlights",
+     "probabilities": {
+      "Hotels_2_BookHouse": 0,
+      "Travel_1_FindAttractions": 0,
+      "Hotels_2_SearchHouse": 0,
+      "Flights_4_SearchOnewayFlight": 0,
+      "Flights_4_SearchRoundtripFlights": 1
+     },
+     "pred_index": 4
     }
    }
   },
@@ -8039,6 +9749,28 @@
      ],
      "raw_text": "{\"answer\": \"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 565,
+     "in_tok": 279,
+     "cost": 2.79e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Hotels_2_SearchHouse",
+      "probabilities": {
+       "Hotels_2_BookHouse": 0,
+       "Hotels_2_SearchHouse": 1
+      },
+      "confidence": 1
+     },
+     "choice": "Hotels_2_SearchHouse",
+     "probabilities": {
+      "Hotels_2_BookHouse": 0,
+      "Hotels_2_SearchHouse": 1
+     },
+     "pred_index": 1
     }
    }
   },
@@ -8169,6 +9901,34 @@
      ],
      "raw_text": "{\"answer\":\"D\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 577,
+     "in_tok": 434,
+     "cost": 4.34e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "version_api.VersionApi.get_version",
+      "probabilities": {
+       "badge_api.BadgeApi.get_project_policy_violations_badge1": 0,
+       "project_api.ProjectApi.get_project_by_name_and_version": 0,
+       "project_api.update_project": 0,
+       "badge_api.BadgeApi.get_project_vulnerabilities_badge": 0,
+       "version_api.VersionApi.get_version": 1
+      },
+      "confidence": 1
+     },
+     "choice": "version_api.VersionApi.get_version",
+     "probabilities": {
+      "badge_api.BadgeApi.get_project_policy_violations_badge1": 0,
+      "project_api.ProjectApi.get_project_by_name_and_version": 0,
+      "project_api.update_project": 0,
+      "badge_api.BadgeApi.get_project_vulnerabilities_badge": 0,
+      "version_api.VersionApi.get_version": 1
+     },
+     "pred_index": 4
     }
    }
   },
@@ -8281,6 +10041,30 @@
      ],
      "raw_text": "{\"answer\": \"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 586,
+     "in_tok": 275,
+     "cost": 2.75e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "poker_probability.full_house",
+      "probabilities": {
+       "poker_probability.full_house": 1,
+       "hospital.locate": 0,
+       "find_recipe": 0
+      },
+      "confidence": 1
+     },
+     "choice": "poker_probability.full_house",
+     "probabilities": {
+      "poker_probability.full_house": 1,
+      "hospital.locate": 0,
+      "find_recipe": 0
+     },
+     "pred_index": 0
     }
    }
   },
@@ -8393,6 +10177,30 @@
      ],
      "raw_text": "{\"answer\":\"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 590,
+     "in_tok": 310,
+     "cost": 3.1e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Music_3_LookupMusic",
+      "probabilities": {
+       "Weather_1_GetWeather": 0,
+       "Music_3_LookupMusic": 1,
+       "Music_3_PlayMedia": 0
+      },
+      "confidence": 1
+     },
+     "choice": "Music_3_LookupMusic",
+     "probabilities": {
+      "Weather_1_GetWeather": 0,
+      "Music_3_LookupMusic": 1,
+      "Music_3_PlayMedia": 0
+     },
+     "pred_index": 1
     }
    }
   },
@@ -8505,6 +10313,30 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 546,
+     "in_tok": 286,
+     "cost": 2.86e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "currency_conversion.get_rate",
+      "probabilities": {
+       "currency_conversion.get_latest_rate": 0,
+       "currency_conversion.convert": 0,
+       "currency_conversion.get_rate": 1
+      },
+      "confidence": 1
+     },
+     "choice": "currency_conversion.get_rate",
+     "probabilities": {
+      "currency_conversion.get_latest_rate": 0,
+      "currency_conversion.convert": 0,
+      "currency_conversion.get_rate": 1
+     },
+     "pred_index": 2
     }
    }
   },
@@ -8635,6 +10467,34 @@
      ],
      "raw_text": "{\"answer\":\"D\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 533,
+     "in_tok": 521,
+     "cost": 5.21e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Weather_1_GetWeather",
+      "probabilities": {
+       "RentalCars_3_GetCarsAvailable": 0,
+       "Weather_1_GetWeather": 1,
+       "Homes_2_ScheduleVisit": 0,
+       "Homes_2_FindHomeByArea": 0,
+       "RentalCars_3_ReserveCar": 0
+      },
+      "confidence": 1
+     },
+     "choice": "Weather_1_GetWeather",
+     "probabilities": {
+      "RentalCars_3_GetCarsAvailable": 0,
+      "Weather_1_GetWeather": 1,
+      "Homes_2_ScheduleVisit": 0,
+      "Homes_2_FindHomeByArea": 0,
+      "RentalCars_3_ReserveCar": 0
+     },
+     "pred_index": 1
     }
    }
   },
@@ -8747,6 +10607,30 @@
      ],
      "raw_text": "{\"answer\":\"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 553,
+     "in_tok": 318,
+     "cost": 3.18e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Movies_3_FindMovies",
+      "probabilities": {
+       "Music_3_PlayMedia": 0,
+       "Music_3_LookupMusic": 0,
+       "Movies_3_FindMovies": 1
+      },
+      "confidence": 1
+     },
+     "choice": "Movies_3_FindMovies",
+     "probabilities": {
+      "Music_3_PlayMedia": 0,
+      "Music_3_LookupMusic": 0,
+      "Movies_3_FindMovies": 1
+     },
+     "pred_index": 2
     }
    }
   },
@@ -8850,6 +10734,28 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 554,
+     "in_tok": 215,
+     "cost": 2.15e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "todo_add",
+      "probabilities": {
+       "todo_delete": 0,
+       "todo_add": 1
+      },
+      "confidence": 1
+     },
+     "choice": "todo_add",
+     "probabilities": {
+      "todo_delete": 0,
+      "todo_add": 1
+     },
+     "pred_index": 1
     }
    }
   },
@@ -8980,6 +10886,34 @@
      ],
      "raw_text": "{\"answer\":\"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 573,
+     "in_tok": 497,
+     "cost": 4.97e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Travel_1_FindAttractions",
+      "probabilities": {
+       "Hotels_2_SearchHouse": 0,
+       "Flights_4_SearchRoundtripFlights": 0,
+       "Flights_4_SearchOnewayFlight": 0,
+       "Travel_1_FindAttractions": 1,
+       "Hotels_2_BookHouse": 0
+      },
+      "confidence": 1
+     },
+     "choice": "Travel_1_FindAttractions",
+     "probabilities": {
+      "Hotels_2_SearchHouse": 0,
+      "Flights_4_SearchRoundtripFlights": 0,
+      "Flights_4_SearchOnewayFlight": 0,
+      "Travel_1_FindAttractions": 1,
+      "Hotels_2_BookHouse": 0
+     },
+     "pred_index": 3
     }
    }
   },
@@ -9092,6 +11026,30 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 535,
+     "in_tok": 269,
+     "cost": 2.69e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "biological.calc_energy",
+      "probabilities": {
+       "biological.calc_energy": 1,
+       "physical.calc_work": 0,
+       "biological.calc_biomass": 0
+      },
+      "confidence": 1
+     },
+     "choice": "biological.calc_energy",
+     "probabilities": {
+      "biological.calc_energy": 1,
+      "physical.calc_work": 0,
+      "biological.calc_biomass": 0
+     },
+     "pred_index": 0
     }
    }
   },
@@ -9222,6 +11180,34 @@
      ],
      "raw_text": "{\"answer\":\"D\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 536,
+     "in_tok": 499,
+     "cost": 4.99e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Movies_1_FindMovies",
+      "probabilities": {
+       "Restaurants_2_ReserveRestaurant": 0,
+       "Movies_1_FindMovies": 1,
+       "Movies_1_BuyMovieTickets": 0,
+       "Movies_1_GetTimesForMovie": 0,
+       "Restaurants_2_FindRestaurants": 0
+      },
+      "confidence": 1
+     },
+     "choice": "Movies_1_FindMovies",
+     "probabilities": {
+      "Restaurants_2_ReserveRestaurant": 0,
+      "Movies_1_FindMovies": 1,
+      "Movies_1_BuyMovieTickets": 0,
+      "Movies_1_GetTimesForMovie": 0,
+      "Restaurants_2_FindRestaurants": 0
+     },
+     "pred_index": 1
     }
    }
   },
@@ -9325,6 +11311,28 @@
      ],
      "raw_text": "{\"answer\":\"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 530,
+     "in_tok": 256,
+     "cost": 2.56e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Alarm_1_AddAlarm",
+      "probabilities": {
+       "Alarm_1_AddAlarm": 1,
+       "Alarm_1_GetAlarms": 0
+      },
+      "confidence": 1
+     },
+     "choice": "Alarm_1_AddAlarm",
+     "probabilities": {
+      "Alarm_1_AddAlarm": 1,
+      "Alarm_1_GetAlarms": 0
+     },
+     "pred_index": 0
     }
    }
   },
@@ -9446,6 +11454,32 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 534,
+     "in_tok": 396,
+     "cost": 3.96e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Events_3_FindEvents",
+      "probabilities": {
+       "Hotels_4_SearchHotel": 0,
+       "Hotels_4_ReserveHotel": 0,
+       "Events_3_FindEvents": 1,
+       "Events_3_BuyEventTickets": 0
+      },
+      "confidence": 1
+     },
+     "choice": "Events_3_FindEvents",
+     "probabilities": {
+      "Hotels_4_SearchHotel": 0,
+      "Hotels_4_ReserveHotel": 0,
+      "Events_3_FindEvents": 1,
+      "Events_3_BuyEventTickets": 0
+     },
+     "pred_index": 2
     }
    }
   },
@@ -9576,6 +11610,34 @@
      ],
      "raw_text": "{\"answer\":\"E\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 532,
+     "in_tok": 505,
+     "cost": 5.05e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Travel_1_FindAttractions",
+      "probabilities": {
+       "Hotels_2_BookHouse": 0,
+       "Hotels_2_SearchHouse": 0,
+       "Flights_4_SearchOnewayFlight": 0,
+       "Travel_1_FindAttractions": 1,
+       "Flights_4_SearchRoundtripFlights": 0
+      },
+      "confidence": 1
+     },
+     "choice": "Travel_1_FindAttractions",
+     "probabilities": {
+      "Hotels_2_BookHouse": 0,
+      "Hotels_2_SearchHouse": 0,
+      "Flights_4_SearchOnewayFlight": 0,
+      "Travel_1_FindAttractions": 1,
+      "Flights_4_SearchRoundtripFlights": 0
+     },
+     "pred_index": 3
     }
    }
   },
@@ -9688,6 +11750,30 @@
      ],
      "raw_text": "{\"answer\":\"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 532,
+     "in_tok": 355,
+     "cost": 3.55e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Movies_3_FindMovies",
+      "probabilities": {
+       "Movies_3_FindMovies": 1,
+       "Restaurants_2_ReserveRestaurant": 0,
+       "Restaurants_2_FindRestaurants": 0
+      },
+      "confidence": 1
+     },
+     "choice": "Movies_3_FindMovies",
+     "probabilities": {
+      "Movies_3_FindMovies": 1,
+      "Restaurants_2_ReserveRestaurant": 0,
+      "Restaurants_2_FindRestaurants": 0
+     },
+     "pred_index": 0
     }
    }
   },
@@ -9809,6 +11895,32 @@
      ],
      "raw_text": "{\"answer\":\"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 740,
+     "in_tok": 427,
+     "cost": 4.27e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Homes_2_FindHomeByArea",
+      "probabilities": {
+       "Homes_2_ScheduleVisit": 0,
+       "Messaging_1_ShareLocation": 0,
+       "Homes_2_FindHomeByArea": 1,
+       "RideSharing_2_GetRide": 0
+      },
+      "confidence": 1
+     },
+     "choice": "Homes_2_FindHomeByArea",
+     "probabilities": {
+      "Homes_2_ScheduleVisit": 0,
+      "Messaging_1_ShareLocation": 0,
+      "Homes_2_FindHomeByArea": 1,
+      "RideSharing_2_GetRide": 0
+     },
+     "pred_index": 2
     }
    }
   },
@@ -9921,6 +12033,30 @@
      ],
      "raw_text": "{\"answer\":\"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 542,
+     "in_tok": 269,
+     "cost": 2.69e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "games.update.find",
+      "probabilities": {
+       "games.reviews.find": 0,
+       "games.update.find": 1,
+       "games.price.find": 0
+      },
+      "confidence": 1
+     },
+     "choice": "games.update.find",
+     "probabilities": {
+      "games.reviews.find": 0,
+      "games.update.find": 1,
+      "games.price.find": 0
+     },
+     "pred_index": 1
     }
    }
   },
@@ -10042,6 +12178,32 @@
      ],
      "raw_text": "{\"answer\":\"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 530,
+     "in_tok": 368,
+     "cost": 3.68e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Music_3_LookupMusic",
+      "probabilities": {
+       "Music_3_LookupMusic": 0.99,
+       "Media_3_PlayMovie": 0,
+       "Media_3_FindMovies": 0,
+       "Music_3_PlayMedia": 0.01
+      },
+      "confidence": 0.99
+     },
+     "choice": "Music_3_LookupMusic",
+     "probabilities": {
+      "Music_3_LookupMusic": 0.99,
+      "Media_3_PlayMovie": 0,
+      "Media_3_FindMovies": 0,
+      "Music_3_PlayMedia": 0.01
+     },
+     "pred_index": 0
     }
    }
   },
@@ -10145,6 +12307,28 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 549,
+     "in_tok": 259,
+     "cost": 2.59e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "get_service_providers",
+      "probabilities": {
+       "view_service_provider_profile": 0,
+       "get_service_providers": 1
+      },
+      "confidence": 1
+     },
+     "choice": "get_service_providers",
+     "probabilities": {
+      "view_service_provider_profile": 0,
+      "get_service_providers": 1
+     },
+     "pred_index": 1
     }
    }
   },
@@ -10248,6 +12432,28 @@
      ],
      "raw_text": "{\"answer\":\"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 548,
+     "in_tok": 291,
+     "cost": 2.91e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Restaurants_2_FindRestaurants",
+      "probabilities": {
+       "Restaurants_2_FindRestaurants": 1,
+       "Restaurants_2_ReserveRestaurant": 0
+      },
+      "confidence": 1
+     },
+     "choice": "Restaurants_2_FindRestaurants",
+     "probabilities": {
+      "Restaurants_2_FindRestaurants": 1,
+      "Restaurants_2_ReserveRestaurant": 0
+     },
+     "pred_index": 0
     }
    }
   },
@@ -10360,6 +12566,30 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 519,
+     "in_tok": 306,
+     "cost": 3.06e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Services_1_FindProvider",
+      "probabilities": {
+       "Services_1_FindProvider": 1,
+       "Weather_1_GetWeather": 0,
+       "Services_1_BookAppointment": 0
+      },
+      "confidence": 1
+     },
+     "choice": "Services_1_FindProvider",
+     "probabilities": {
+      "Services_1_FindProvider": 1,
+      "Weather_1_GetWeather": 0,
+      "Services_1_BookAppointment": 0
+     },
+     "pred_index": 0
     }
    }
   },
@@ -10481,6 +12711,32 @@
      ],
      "raw_text": "{\"answer\":\"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 533,
+     "in_tok": 442,
+     "cost": 4.42e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Services_1_FindProvider",
+      "probabilities": {
+       "Restaurants_2_ReserveRestaurant": 0,
+       "Restaurants_2_FindRestaurants": 0,
+       "Services_1_FindProvider": 1,
+       "Services_1_BookAppointment": 0
+      },
+      "confidence": 1
+     },
+     "choice": "Services_1_FindProvider",
+     "probabilities": {
+      "Restaurants_2_ReserveRestaurant": 0,
+      "Restaurants_2_FindRestaurants": 0,
+      "Services_1_FindProvider": 1,
+      "Services_1_BookAppointment": 0
+     },
+     "pred_index": 2
     }
    }
   },
@@ -10602,6 +12858,32 @@
      ],
      "raw_text": "{\"answer\":\"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 526,
+     "in_tok": 340,
+     "cost": 3.4e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "religious_history.get_papal_biography",
+      "probabilities": {
+       "publication_year.find": 0,
+       "board_game_info": 0,
+       "religious_history.get_papal_biography": 1,
+       "portfolio_future_value": 0
+      },
+      "confidence": 1
+     },
+     "choice": "religious_history.get_papal_biography",
+     "probabilities": {
+      "publication_year.find": 0,
+      "board_game_info": 0,
+      "religious_history.get_papal_biography": 1,
+      "portfolio_future_value": 0
+     },
+     "pred_index": 2
     }
    }
   },
@@ -10723,6 +13005,32 @@
      ],
      "raw_text": "{\"answer\":\"D\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 536,
+     "in_tok": 325,
+     "cost": 3.25e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "get_museum_hours",
+      "probabilities": {
+       "get_museum_hours": 1,
+       "monopoly_odds_calculator": 0,
+       "lawsuit.check_case": 0,
+       "discoverer.get": 0
+      },
+      "confidence": 1
+     },
+     "choice": "get_museum_hours",
+     "probabilities": {
+      "get_museum_hours": 1,
+      "monopoly_odds_calculator": 0,
+      "lawsuit.check_case": 0,
+      "discoverer.get": 0
+     },
+     "pred_index": 0
     }
    }
   },
@@ -10862,6 +13170,36 @@
      ],
      "raw_text": "{\"answer\":\"F\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 550,
+     "in_tok": 737,
+     "cost": 7.37e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "duck_duck_go",
+      "probabilities": {
+       "sub": 0.15,
+       "duck_duck_go": 0.66,
+       "multiply": 0.04,
+       "fahrenheit_to_celsius": 0.02,
+       "celsius_to_fahrenheit": 0.02,
+       "add": 0.11
+      },
+      "confidence": 0.59
+     },
+     "choice": "duck_duck_go",
+     "probabilities": {
+      "sub": 0.15,
+      "duck_duck_go": 0.66,
+      "multiply": 0.04,
+      "fahrenheit_to_celsius": 0.02,
+      "celsius_to_fahrenheit": 0.02,
+      "add": 0.11
+     },
+     "pred_index": 1
     }
    }
   },
@@ -10974,6 +13312,30 @@
      ],
      "raw_text": "{\"answer\":\"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 605,
+     "in_tok": 314,
+     "cost": 3.14e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "EventSettingsApi.get_event_specification_infos_by_ids",
+      "probabilities": {
+       "EventSettingsApi.get_custom_event_specification": 0.39,
+       "EventSettingsApi.get_built_in_event_specifications": 0.06,
+       "EventSettingsApi.get_event_specification_infos_by_ids": 0.55
+      },
+      "confidence": 0.33
+     },
+     "choice": "EventSettingsApi.get_event_specification_infos_by_ids",
+     "probabilities": {
+      "EventSettingsApi.get_custom_event_specification": 0.39,
+      "EventSettingsApi.get_built_in_event_specifications": 0.06,
+      "EventSettingsApi.get_event_specification_infos_by_ids": 0.55
+     },
+     "pred_index": 2
     }
    }
   },
@@ -11095,6 +13457,32 @@
      ],
      "raw_text": "{\"answer\":\"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 569,
+     "in_tok": 462,
+     "cost": 4.62e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "get_sensor_readings_latest",
+      "probabilities": {
+       "get_sensor_alerts": 0,
+       "get_sensor_readings_latest": 1,
+       "get_sensor_readings_history_by_interval": 0,
+       "get_sensor_readings_history": 0
+      },
+      "confidence": 1
+     },
+     "choice": "get_sensor_readings_latest",
+     "probabilities": {
+      "get_sensor_alerts": 0,
+      "get_sensor_readings_latest": 1,
+      "get_sensor_readings_history_by_interval": 0,
+      "get_sensor_readings_history": 0
+     },
+     "pred_index": 1
     }
    }
   },
@@ -11207,6 +13595,30 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 570,
+     "in_tok": 311,
+     "cost": 3.11e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Movies_3_FindMovies",
+      "probabilities": {
+       "Movies_3_FindMovies": 1,
+       "Music_3_PlayMedia": 0,
+       "Music_3_LookupMusic": 0
+      },
+      "confidence": 1
+     },
+     "choice": "Movies_3_FindMovies",
+     "probabilities": {
+      "Movies_3_FindMovies": 1,
+      "Music_3_PlayMedia": 0,
+      "Music_3_LookupMusic": 0
+     },
+     "pred_index": 0
     }
    }
   },
@@ -11337,6 +13749,34 @@
      ],
      "raw_text": "{\"answer\":\"D\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 561,
+     "in_tok": 437,
+     "cost": 4.37e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Movies_1_FindMovies",
+      "probabilities": {
+       "Music_3_LookupMusic": 0,
+       "Music_3_PlayMedia": 0,
+       "Movies_1_BuyMovieTickets": 0.01,
+       "Movies_1_GetTimesForMovie": 0.01,
+       "Movies_1_FindMovies": 0.98
+      },
+      "confidence": 0.98
+     },
+     "choice": "Movies_1_FindMovies",
+     "probabilities": {
+      "Music_3_LookupMusic": 0,
+      "Music_3_PlayMedia": 0,
+      "Movies_1_BuyMovieTickets": 0.01,
+      "Movies_1_GetTimesForMovie": 0.01,
+      "Movies_1_FindMovies": 0.98
+     },
+     "pred_index": 4
     }
    }
   },
@@ -11440,6 +13880,28 @@
      ],
      "raw_text": "{\"answer\": \"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 528,
+     "in_tok": 264,
+     "cost": 2.64e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Hotels_4_SearchHotel",
+      "probabilities": {
+       "Hotels_4_ReserveHotel": 0,
+       "Hotels_4_SearchHotel": 1
+      },
+      "confidence": 1
+     },
+     "choice": "Hotels_4_SearchHotel",
+     "probabilities": {
+      "Hotels_4_ReserveHotel": 0,
+      "Hotels_4_SearchHotel": 1
+     },
+     "pred_index": 1
     }
    }
   },
@@ -11561,6 +14023,32 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 555,
+     "in_tok": 492,
+     "cost": 4.92e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Flights_4_SearchOnewayFlight",
+      "probabilities": {
+       "Flights_4_SearchRoundtripFlights": 0,
+       "Flights_4_SearchOnewayFlight": 1,
+       "Trains_1_FindTrains": 0,
+       "Trains_1_GetTrainTickets": 0
+      },
+      "confidence": 1
+     },
+     "choice": "Flights_4_SearchOnewayFlight",
+     "probabilities": {
+      "Flights_4_SearchRoundtripFlights": 0,
+      "Flights_4_SearchOnewayFlight": 1,
+      "Trains_1_FindTrains": 0,
+      "Trains_1_GetTrainTickets": 0
+     },
+     "pred_index": 1
     }
    }
   },
@@ -11664,6 +14152,28 @@
      ],
      "raw_text": "{\"answer\":\"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 561,
+     "in_tok": 252,
+     "cost": 2.52e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "weather.get_weather_data",
+      "probabilities": {
+       "weather.get_weather_data": 1,
+       "stock_price.get": 0
+      },
+      "confidence": 1
+     },
+     "choice": "weather.get_weather_data",
+     "probabilities": {
+      "weather.get_weather_data": 1,
+      "stock_price.get": 0
+     },
+     "pred_index": 0
     }
    }
   },
@@ -11776,6 +14286,30 @@
      ],
      "raw_text": "{\"answer\":\"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 586,
+     "in_tok": 290,
+     "cost": 2.9e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "calculate_magnetic_field",
+      "probabilities": {
+       "concert_booking.book_ticket": 0,
+       "calculate_magnetic_field": 1,
+       "lawsuit_details.find": 0
+      },
+      "confidence": 1
+     },
+     "choice": "calculate_magnetic_field",
+     "probabilities": {
+      "concert_booking.book_ticket": 0,
+      "calculate_magnetic_field": 1,
+      "lawsuit_details.find": 0
+     },
+     "pred_index": 1
     }
    }
   },
@@ -11906,6 +14440,34 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 585,
+     "in_tok": 523,
+     "cost": 5.23e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "Flights_4_SearchRoundtripFlights",
+      "probabilities": {
+       "Travel_1_FindAttractions": 0,
+       "Flights_4_SearchOnewayFlight": 0,
+       "Hotels_2_BookHouse": 0,
+       "Flights_4_SearchRoundtripFlights": 1,
+       "Hotels_2_SearchHouse": 0
+      },
+      "confidence": 1
+     },
+     "choice": "Flights_4_SearchRoundtripFlights",
+     "probabilities": {
+      "Travel_1_FindAttractions": 0,
+      "Flights_4_SearchOnewayFlight": 0,
+      "Hotels_2_BookHouse": 0,
+      "Flights_4_SearchRoundtripFlights": 1,
+      "Hotels_2_SearchHouse": 0
+     },
+     "pred_index": 3
     }
    }
   },
@@ -12027,6 +14589,32 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 575,
+     "in_tok": 340,
+     "cost": 3.4e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "order_status_check",
+      "probabilities": {
+       "order_status_check": 1,
+       "get_product_details": 0,
+       "inventory_management": 0,
+       "product_search": 0
+      },
+      "confidence": 1
+     },
+     "choice": "order_status_check",
+     "probabilities": {
+      "order_status_check": 1,
+      "get_product_details": 0,
+      "inventory_management": 0,
+      "product_search": 0
+     },
+     "pred_index": 0
     }
    }
   }
@@ -12066,6 +14654,13 @@
    "hit": 99,
    "ms": 117578,
    "cost": 0.0068918
+  },
+  "luna": {
+   "n": 100,
+   "ok": 100,
+   "hit": 97,
+   "ms": 55498,
+   "cost": 0.0036572
   }
  },
  "merged_runs": [
@@ -12085,6 +14680,12 @@
    "date": "2026-10-10",
    "arms": [
     "anthropic:claude-haiku-5-5"
+   ]
+  },
+  {
+   "date": "2026-10-20",
+   "arms": [
+    "luna"
    ]
   }
  ]

@@ -809,7 +809,7 @@ source_results:
     frontier: true
 owner: ernestolee13
 n: 100
-published_at: '2026-10-10'
+published_at: '2026-10-20'
 type: multiclass
 classes:
 - 10-way
@@ -826,7 +826,7 @@ label_source_mix:
   judged: 0
   outcome: 0
 experiment:
-  date: '2026-10-10'
+  date: '2026-10-20'
   template: generic
   runner: benchlet
   arms:
@@ -1033,6 +1033,55 @@ experiment:
         cost: 0.00022590000000000002
         per_item: []
       cache_warm: null
+    luna:
+      model: openai/gpt-6-luna-decisions
+      provider: openrouter
+      family: OpenAI
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.1
+      smoke:
+        arm: luna
+        mode: typed
+        usable: true
+        reasons: []
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 1.0
+        cost: 0.0001523
+        per_item:
+        - id: tool-pick-mini-000
+          target: 1
+          hit: 1
+          p: null
+          pred: 1
+        - id: tool-pick-mini-001
+          target: 2
+          hit: 1
+          p: null
+          pred: 2
+        - id: tool-pick-mini-002
+          target: 2
+          hit: 1
+          p: null
+          pred: 2
+        - id: tool-pick-mini-003
+          target: 0
+          hit: 1
+          p: null
+          pred: 0
+        - id: tool-pick-mini-004
+          target: 0
+          hit: 1
+          p: null
+          pred: 0
+      cache_warm: null
   protocol:
     decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
     logprob_call:
@@ -1106,4 +1155,15 @@ result_summary:
     n: 100
     prob_source: none
     model: claude-haiku-5-5
+    source_badge: author-run
+  luna:
+    acc: 0.97
+    ci95:
+    - 0.915479219195973
+    - 0.9897456617765852
+    auroc: null
+    brier: null
+    n: 100
+    prob_source: typed
+    model: openai/gpt-6-luna-decisions
     source_badge: author-run
