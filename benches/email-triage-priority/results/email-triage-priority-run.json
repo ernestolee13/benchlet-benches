@@ -3,7 +3,7 @@
  "bench": "email-triage-priority@1",
  "items_sha256": "484315629d69ac44cdcab34617885cfa8744f6b3ec268760cc783471f58a9e11",
  "template": "generic",
- "date": "2026-10-10",
+ "date": "2026-10-20",
  "arms": {
   "glm": {
    "model": "z-ai/glm-4.7-flash",
@@ -267,6 +267,70 @@
     "per_item": []
    },
    "cache_warm": null
+  },
+  "luna": {
+   "model": "openai/gpt-6-luna-decisions",
+   "provider": "openrouter",
+   "family": "OpenAI",
+   "mode": "typed",
+   "prob_source": "typed",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.1,
+   "smoke": {
+    "arm": "luna",
+    "mode": "typed",
+    "usable": true,
+    "reasons": [
+     "뻔한 5건 중 1건 틀림 (email-triage-priority-003). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점"
+    ],
+    "has_logprobs": null,
+    "reasoning_tokens_zero": null,
+    "provider_match": null,
+    "mass_min": null,
+    "spread": null,
+    "distinct_p": null,
+    "n_calls": 5,
+    "smoke_acc": 0.8,
+    "cost": 0.0001438,
+    "per_item": [
+     {
+      "id": "email-triage-priority-000",
+      "target": 0,
+      "hit": 1,
+      "p": null,
+      "pred": 0
+     },
+     {
+      "id": "email-triage-priority-001",
+      "target": 1,
+      "hit": 1,
+      "p": null,
+      "pred": 1
+     },
+     {
+      "id": "email-triage-priority-002",
+      "target": 0,
+      "hit": 1,
+      "p": null,
+      "pred": 0
+     },
+     {
+      "id": "email-triage-priority-003",
+      "target": 0,
+      "hit": 0,
+      "p": null,
+      "pred": 2
+     },
+     {
+      "id": "email-triage-priority-004",
+      "target": 1,
+      "hit": 1,
+      "p": null,
+      "pred": 1
+     }
+    ]
+   },
+   "cache_warm": null
   }
  },
  "items": [
@@ -388,6 +452,32 @@
      ],
      "raw_text": "{\"answer\":\"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 511,
+     "in_tok": 285,
+     "cost": 2.85e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "지금",
+      "probabilities": {
+       "지금": 0.98,
+       "오늘": 0.01,
+       "이번 주": 0.01,
+       "보관": 0
+      },
+      "confidence": 0.97
+     },
+     "choice": "지금",
+     "probabilities": {
+      "지금": 0.98,
+      "오늘": 0.01,
+      "이번 주": 0.01,
+      "보관": 0
+     },
+     "pred_index": 0
     }
    }
   },
@@ -509,6 +599,32 @@
      ],
      "raw_text": "{\"answer\":\"D\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 508,
+     "in_tok": 293,
+     "cost": 2.93e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "오늘",
+      "probabilities": {
+       "지금": 0.37,
+       "오늘": 0.59,
+       "이번 주": 0.03,
+       "보관": 0.01
+      },
+      "confidence": 0.45
+     },
+     "choice": "오늘",
+     "probabilities": {
+      "지금": 0.37,
+      "오늘": 0.59,
+      "이번 주": 0.03,
+      "보관": 0.01
+     },
+     "pred_index": 1
     }
    }
   },
@@ -630,6 +746,32 @@
      ],
      "raw_text": "{\"answer\":\"D\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 485,
+     "in_tok": 282,
+     "cost": 2.82e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "지금",
+      "probabilities": {
+       "지금": 0.99,
+       "오늘": 0.01,
+       "이번 주": 0,
+       "보관": 0
+      },
+      "confidence": 0.99
+     },
+     "choice": "지금",
+     "probabilities": {
+      "지금": 0.99,
+      "오늘": 0.01,
+      "이번 주": 0,
+      "보관": 0
+     },
+     "pred_index": 0
     }
    }
   },
@@ -751,6 +893,32 @@
      ],
      "raw_text": "{\"answer\":\"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 530,
+     "in_tok": 289,
+     "cost": 2.89e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "이번 주",
+      "probabilities": {
+       "지금": 0.29,
+       "오늘": 0.14,
+       "이번 주": 0.56,
+       "보관": 0.01
+      },
+      "confidence": 0.41
+     },
+     "choice": "이번 주",
+     "probabilities": {
+      "지금": 0.29,
+      "오늘": 0.14,
+      "이번 주": 0.56,
+      "보관": 0.01
+     },
+     "pred_index": 2
     }
    }
   },
@@ -872,6 +1040,32 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 478,
+     "in_tok": 289,
+     "cost": 2.89e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "오늘",
+      "probabilities": {
+       "지금": 0.31,
+       "오늘": 0.43,
+       "이번 주": 0.25,
+       "보관": 0.01
+      },
+      "confidence": 0.24
+     },
+     "choice": "오늘",
+     "probabilities": {
+      "지금": 0.31,
+      "오늘": 0.43,
+      "이번 주": 0.25,
+      "보관": 0.01
+     },
+     "pred_index": 1
     }
    }
   },
@@ -993,6 +1187,32 @@
      ],
      "raw_text": "{\"answer\":\"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 499,
+     "in_tok": 331,
+     "cost": 3.31e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "지금",
+      "probabilities": {
+       "지금": 1,
+       "오늘": 0,
+       "이번 주": 0,
+       "보관": 0
+      },
+      "confidence": 1
+     },
+     "choice": "지금",
+     "probabilities": {
+      "지금": 1,
+      "오늘": 0,
+      "이번 주": 0,
+      "보관": 0
+     },
+     "pred_index": 0
     }
    }
   },
@@ -1114,6 +1334,32 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 566,
+     "in_tok": 292,
+     "cost": 2.92e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "오늘",
+      "probabilities": {
+       "지금": 0.29,
+       "오늘": 0.61,
+       "이번 주": 0.09,
+       "보관": 0.01
+      },
+      "confidence": 0.48
+     },
+     "choice": "오늘",
+     "probabilities": {
+      "지금": 0.29,
+      "오늘": 0.61,
+      "이번 주": 0.09,
+      "보관": 0.01
+     },
+     "pred_index": 1
     }
    }
   },
@@ -1235,6 +1481,32 @@
      ],
      "raw_text": "{\"answer\": \"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 533,
+     "in_tok": 293,
+     "cost": 2.93e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "지금",
+      "probabilities": {
+       "지금": 0.79,
+       "오늘": 0.19,
+       "이번 주": 0.02,
+       "보관": 0
+      },
+      "confidence": 0.72
+     },
+     "choice": "지금",
+     "probabilities": {
+      "지금": 0.79,
+      "오늘": 0.19,
+      "이번 주": 0.02,
+      "보관": 0
+     },
+     "pred_index": 0
     }
    }
   },
@@ -1356,6 +1628,32 @@
      ],
      "raw_text": "{\"answer\":\"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 534,
+     "in_tok": 282,
+     "cost": 2.82e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "이번 주",
+      "probabilities": {
+       "지금": 0.07,
+       "오늘": 0.02,
+       "이번 주": 0.91,
+       "보관": 0
+      },
+      "confidence": 0.88
+     },
+     "choice": "이번 주",
+     "probabilities": {
+      "지금": 0.07,
+      "오늘": 0.02,
+      "이번 주": 0.91,
+      "보관": 0
+     },
+     "pred_index": 2
     }
    }
   },
@@ -1477,6 +1775,32 @@
      ],
      "raw_text": "{\"answer\":\"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 533,
+     "in_tok": 286,
+     "cost": 2.86e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "지금",
+      "probabilities": {
+       "지금": 0.99,
+       "오늘": 0.01,
+       "이번 주": 0,
+       "보관": 0
+      },
+      "confidence": 0.99
+     },
+     "choice": "지금",
+     "probabilities": {
+      "지금": 0.99,
+      "오늘": 0.01,
+      "이번 주": 0,
+      "보관": 0
+     },
+     "pred_index": 0
     }
    }
   },
@@ -1598,6 +1922,32 @@
      ],
      "raw_text": "{\"answer\": \"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 511,
+     "in_tok": 318,
+     "cost": 3.18e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "보관",
+      "probabilities": {
+       "지금": 0,
+       "오늘": 0,
+       "이번 주": 0,
+       "보관": 1
+      },
+      "confidence": 1
+     },
+     "choice": "보관",
+     "probabilities": {
+      "지금": 0,
+      "오늘": 0,
+      "이번 주": 0,
+      "보관": 1
+     },
+     "pred_index": 3
     }
    }
   },
@@ -1719,6 +2069,32 @@
      ],
      "raw_text": "{\"answer\":\"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 545,
+     "in_tok": 293,
+     "cost": 2.93e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "오늘",
+      "probabilities": {
+       "지금": 0.02,
+       "오늘": 0.98,
+       "이번 주": 0,
+       "보관": 0
+      },
+      "confidence": 0.97
+     },
+     "choice": "오늘",
+     "probabilities": {
+      "지금": 0.02,
+      "오늘": 0.98,
+      "이번 주": 0,
+      "보관": 0
+     },
+     "pred_index": 1
     }
    }
   },
@@ -1840,6 +2216,32 @@
      ],
      "raw_text": "{\"answer\":\"D\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 486,
+     "in_tok": 293,
+     "cost": 2.93e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "지금",
+      "probabilities": {
+       "지금": 0.88,
+       "오늘": 0.07,
+       "이번 주": 0.04,
+       "보관": 0.01
+      },
+      "confidence": 0.84
+     },
+     "choice": "지금",
+     "probabilities": {
+      "지금": 0.88,
+      "오늘": 0.07,
+      "이번 주": 0.04,
+      "보관": 0.01
+     },
+     "pred_index": 0
     }
    }
   },
@@ -1961,6 +2363,32 @@
      ],
      "raw_text": "{\"answer\": \"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 486,
+     "in_tok": 293,
+     "cost": 2.93e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "보관",
+      "probabilities": {
+       "지금": 0,
+       "오늘": 0,
+       "이번 주": 0,
+       "보관": 1
+      },
+      "confidence": 1
+     },
+     "choice": "보관",
+     "probabilities": {
+      "지금": 0,
+      "오늘": 0,
+      "이번 주": 0,
+      "보관": 1
+     },
+     "pred_index": 3
     }
    }
   },
@@ -2082,6 +2510,32 @@
      ],
      "raw_text": "{\"answer\":\"D\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 490,
+     "in_tok": 287,
+     "cost": 2.87e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "보관",
+      "probabilities": {
+       "지금": 0,
+       "오늘": 0,
+       "이번 주": 0,
+       "보관": 1
+      },
+      "confidence": 1
+     },
+     "choice": "보관",
+     "probabilities": {
+      "지금": 0,
+      "오늘": 0,
+      "이번 주": 0,
+      "보관": 1
+     },
+     "pred_index": 3
     }
    }
   },
@@ -2203,6 +2657,32 @@
      ],
      "raw_text": "{\"answer\":\"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 542,
+     "in_tok": 287,
+     "cost": 2.87e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "오늘",
+      "probabilities": {
+       "지금": 0.19,
+       "오늘": 0.78,
+       "이번 주": 0.02,
+       "보관": 0.01
+      },
+      "confidence": 0.71
+     },
+     "choice": "오늘",
+     "probabilities": {
+      "지금": 0.19,
+      "오늘": 0.78,
+      "이번 주": 0.02,
+      "보관": 0.01
+     },
+     "pred_index": 1
     }
    }
   },
@@ -2324,6 +2804,32 @@
      ],
      "raw_text": "{\"answer\": \"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 502,
+     "in_tok": 281,
+     "cost": 2.81e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "보관",
+      "probabilities": {
+       "지금": 0.02,
+       "오늘": 0.02,
+       "이번 주": 0.05,
+       "보관": 0.91
+      },
+      "confidence": 0.88
+     },
+     "choice": "보관",
+     "probabilities": {
+      "지금": 0.02,
+      "오늘": 0.02,
+      "이번 주": 0.05,
+      "보관": 0.91
+     },
+     "pred_index": 3
     }
    }
   },
@@ -2445,6 +2951,32 @@
      ],
      "raw_text": "{\"answer\":\"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 472,
+     "in_tok": 287,
+     "cost": 2.87e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "이번 주",
+      "probabilities": {
+       "지금": 0,
+       "오늘": 0,
+       "이번 주": 1,
+       "보관": 0
+      },
+      "confidence": 1
+     },
+     "choice": "이번 주",
+     "probabilities": {
+      "지금": 0,
+      "오늘": 0,
+      "이번 주": 1,
+      "보관": 0
+     },
+     "pred_index": 2
     }
    }
   },
@@ -2566,6 +3098,32 @@
      ],
      "raw_text": "{\"answer\": \"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 548,
+     "in_tok": 324,
+     "cost": 3.24e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "이번 주",
+      "probabilities": {
+       "지금": 0.09,
+       "오늘": 0.16,
+       "이번 주": 0.71,
+       "보관": 0.04
+      },
+      "confidence": 0.61
+     },
+     "choice": "이번 주",
+     "probabilities": {
+      "지금": 0.09,
+      "오늘": 0.16,
+      "이번 주": 0.71,
+      "보관": 0.04
+     },
+     "pred_index": 2
     }
    }
   },
@@ -2687,6 +3245,32 @@
      ],
      "raw_text": "{\"answer\":\"D\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 509,
+     "in_tok": 286,
+     "cost": 2.86e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "오늘",
+      "probabilities": {
+       "지금": 0.31,
+       "오늘": 0.57,
+       "이번 주": 0.09,
+       "보관": 0.03
+      },
+      "confidence": 0.43
+     },
+     "choice": "오늘",
+     "probabilities": {
+      "지금": 0.31,
+      "오늘": 0.57,
+      "이번 주": 0.09,
+      "보관": 0.03
+     },
+     "pred_index": 1
     }
    }
   },
@@ -2808,6 +3392,32 @@
      ],
      "raw_text": "{\"answer\":\"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 473,
+     "in_tok": 289,
+     "cost": 2.89e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "지금",
+      "probabilities": {
+       "지금": 0.92,
+       "오늘": 0.08,
+       "이번 주": 0,
+       "보관": 0
+      },
+      "confidence": 0.89
+     },
+     "choice": "지금",
+     "probabilities": {
+      "지금": 0.92,
+      "오늘": 0.08,
+      "이번 주": 0,
+      "보관": 0
+     },
+     "pred_index": 0
     }
    }
   },
@@ -2929,6 +3539,32 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 497,
+     "in_tok": 308,
+     "cost": 3.08e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "보관",
+      "probabilities": {
+       "지금": 0,
+       "오늘": 0,
+       "이번 주": 0,
+       "보관": 1
+      },
+      "confidence": 1
+     },
+     "choice": "보관",
+     "probabilities": {
+      "지금": 0,
+      "오늘": 0,
+      "이번 주": 0,
+      "보관": 1
+     },
+     "pred_index": 3
     }
    }
   },
@@ -3050,6 +3686,32 @@
      ],
      "raw_text": "{\"answer\":\"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 521,
+     "in_tok": 289,
+     "cost": 2.89e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "보관",
+      "probabilities": {
+       "지금": 0,
+       "오늘": 0,
+       "이번 주": 0,
+       "보관": 1
+      },
+      "confidence": 1
+     },
+     "choice": "보관",
+     "probabilities": {
+      "지금": 0,
+      "오늘": 0,
+      "이번 주": 0,
+      "보관": 1
+     },
+     "pred_index": 3
     }
    }
   },
@@ -3171,6 +3833,32 @@
      ],
      "raw_text": "{\"answer\": \"C\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 493,
+     "in_tok": 285,
+     "cost": 2.85e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "이번 주",
+      "probabilities": {
+       "지금": 0.1,
+       "오늘": 0.07,
+       "이번 주": 0.81,
+       "보관": 0.02
+      },
+      "confidence": 0.75
+     },
+     "choice": "이번 주",
+     "probabilities": {
+      "지금": 0.1,
+      "오늘": 0.07,
+      "이번 주": 0.81,
+      "보관": 0.02
+     },
+     "pred_index": 2
     }
    }
   },
@@ -3292,6 +3980,32 @@
      ],
      "raw_text": "{\"answer\":\"A\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 519,
+     "in_tok": 289,
+     "cost": 2.89e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "이번 주",
+      "probabilities": {
+       "지금": 0.03,
+       "오늘": 0.05,
+       "이번 주": 0.91,
+       "보관": 0.01
+      },
+      "confidence": 0.88
+     },
+     "choice": "이번 주",
+     "probabilities": {
+      "지금": 0.03,
+      "오늘": 0.05,
+      "이번 주": 0.91,
+      "보관": 0.01
+     },
+     "pred_index": 2
     }
    }
   },
@@ -3413,6 +4127,32 @@
      ],
      "raw_text": "{\"answer\":\"D\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 543,
+     "in_tok": 318,
+     "cost": 3.18e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "보관",
+      "probabilities": {
+       "지금": 0,
+       "오늘": 0,
+       "이번 주": 0,
+       "보관": 1
+      },
+      "confidence": 1
+     },
+     "choice": "보관",
+     "probabilities": {
+      "지금": 0,
+      "오늘": 0,
+      "이번 주": 0,
+      "보관": 1
+     },
+     "pred_index": 3
     }
    }
   },
@@ -3534,6 +4274,32 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 511,
+     "in_tok": 300,
+     "cost": 3e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "지금",
+      "probabilities": {
+       "지금": 0.95,
+       "오늘": 0.04,
+       "이번 주": 0.01,
+       "보관": 0
+      },
+      "confidence": 0.93
+     },
+     "choice": "지금",
+     "probabilities": {
+      "지금": 0.95,
+      "오늘": 0.04,
+      "이번 주": 0.01,
+      "보관": 0
+     },
+     "pred_index": 0
     }
    }
   },
@@ -3655,6 +4421,32 @@
      ],
      "raw_text": "{\"answer\":\"B\"}",
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 467,
+     "in_tok": 284,
+     "cost": 2.84e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "choice",
+      "choice": "이번 주",
+      "probabilities": {
+       "지금": 0.07,
+       "오늘": 0.11,
+       "이번 주": 0.8,
+       "보관": 0.02
+      },
+      "confidence": 0.73
+     },
+     "choice": "이번 주",
+     "probabilities": {
+      "지금": 0.07,
+      "오늘": 0.11,
+      "이번 주": 0.8,
+      "보관": 0.02
+     },
+     "pred_index": 2
     }
    }
   }
@@ -3694,6 +4486,13 @@
    "hit": 27,
    "ms": 32567,
    "cost": 0.0017387
+  },
+  "luna": {
+   "n": 28,
+   "ok": 28,
+   "hit": 26,
+   "ms": 14292,
+   "cost": 0.0008233000000000001
   }
  },
  "merged_runs": [
@@ -3707,6 +4506,12 @@
    "date": "2026-10-10",
    "arms": [
     "anthropic:claude-haiku-5-5"
+   ]
+  },
+  {
+   "date": "2026-10-20",
+   "arms": [
+    "luna"
    ]
   }
  ]
