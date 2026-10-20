@@ -14,7 +14,7 @@ source: 장면 지침 3규칙. 준수본 20 은 작성자 문장(작성자 편�
 domain:
 - guideline-compliance
 - scene-guideline
-visibility: sample
+visibility: full
 items_sha256: b68b689ffe0d991ef8114bbc9756864916dd368a7badf0ea949fb00ad8ffca78
 license: CC-BY-4.0
 review:
@@ -55,7 +55,7 @@ question: '이 장면이 가이드라인을 위반하는가
   것이다.
 
   (3) 서술은 정중한 존댓말로 끝난다. 대화 안의 말투는 자유다. 다만 형평성·재량·여건 같은 제도 용어를 사람 대화에 넣지 않는다.'
-published_at: '2026-10-08'
+published_at: '2026-10-20'
 type: binary
 classes:
 - OK
@@ -70,46 +70,85 @@ label_source_mix:
   judged: 0
   outcome: 0
 experiment:
-  date: '2026-09-30'
+  date: '2026-10-20'
   template: legacy-seed
-  runner: src/run.py (구식 러너, 팔 메타는 프리셋에서 채움)
+  runner: benchlet
   arms:
-    glm:
-      model: z-ai/glm-4.7-flash
-      provider: cloudflare
-      family: GLM
-      mode: logprob
-      prob_source: logprob
-      base_url: openrouter.ai
-      in_per_m: 0.0605
-      smoke: null
-    qwen:
-      model: qwen/qwen3.8-27b
-      provider: parasail
-      family: Qwen
-      mode: logprob
-      prob_source: logprob
-      base_url: openrouter.ai
-      in_per_m: 0.0605
-      smoke: null
-    deepseek:
-      model: deepseek/deepseek-v4-flash
-      provider: digitalocean
-      family: DeepSeek
-      mode: logprob
-      prob_source: logprob
-      base_url: openrouter.ai
-      in_per_m: 0.14
-      smoke: null
-    jev:
-      model: typesafe/jev-1.13
+    luna:
+      model: openai/gpt-6-luna-decisions
       provider: openrouter
-      family: Jev
+      family: OpenAI
       mode: typed
       prob_source: typed
       base_url: openrouter.ai
-      in_per_m: 0.042
-      smoke: null
+      in_per_m: 0.1
+      smoke:
+        arm: luna
+        mode: typed
+        usable: true
+        reasons:
+        - 뻔한 5건 중 2건 틀림 (guide-006, guide-019). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 0.6
+        cost: 0.0001941
+        per_item:
+        - id: guide-006
+          target: 0
+          hit: 0
+          p: 0.36
+          pred: null
+        - id: guide-019
+          target: 0
+          hit: 0
+          p: 0.04
+          pred: null
+        - id: guide-000
+          target: 0
+          hit: 1
+          p: 0.95
+          pred: null
+        - id: guide-001
+          target: 1
+          hit: 1
+          p: 0.28
+          pred: null
+        - id: guide-002
+          target: 1
+          hit: 1
+          p: 0.33
+          pred: null
+      cache_warm: null
+    anthropic:claude-haiku-5-5:
+      model: claude-haiku-5-5
+      provider: anthropic
+      family: Anthropic
+      mode: generative
+      prob_source: none
+      base_url: api.anthropic.com
+      in_per_m: 0.1
+      smoke:
+        arm: anthropic:claude-haiku-5-5
+        mode: generative
+        usable: true
+        reasons:
+        - 로그확률이 안 와서 생성 팔로 강등 (prob_source=none, 정확도만)
+        has_logprobs: false
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: 0
+        n_calls: 11
+        smoke_acc: null
+        cost: 0.0004862
+        per_item: []
+      cache_warm: null
   protocol:
     decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
     logprob_call:
@@ -125,9 +164,9 @@ experiment:
     typed: Jev noul(이진)/choice(다지), 질문을 instructions 로 그대로 전달
     label_mass: 상위 8토큰 중 라벨 토큰 질량 < 0.5 이면 오류로 두고 세지 않음
     renormalize: 라벨 토큰 확률을 라벨 집합 안에서 재정규화
-  items_sha256: null
+  items_sha256: b68b689ffe0d991ef8114bbc9756864916dd368a7badf0ea949fb00ad8ffca78
 results:
-- results/guide-run.json
+- results/guideline-compliance-run.json
 result_summary:
   glm:
     acc: 0.5
@@ -172,4 +211,26 @@ result_summary:
     n: 40
     prob_source: typed
     model: typesafe/jev-1.13
+    source_badge: author-run
+  luna:
+    acc: 0.675
+    ci95:
+    - 0.52017458088898
+    - 0.7991568303733828
+    auroc: 0.76
+    brier: 0.2150125000000001
+    n: 40
+    prob_source: typed
+    model: openai/gpt-6-luna-decisions
+    source_badge: author-run
+  anthropic:claude-haiku-5-5:
+    acc: 0.625
+    ci95:
+    - 0.4703216005453191
+    - 0.7577722646420829
+    auroc: 0.63
+    brier: 0.36875
+    n: 40
+    prob_source: none
+    model: claude-haiku-5-5
     source_badge: author-run
