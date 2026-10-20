@@ -14,7 +14,7 @@ source: 뉴스 승인 요약 원자료(비공개)에서 추출. 음성 30 원본
 domain:
 - editorial-norm
 - ko-news-summary
-visibility: sample
+visibility: full
 items_sha256: 76d35d43a42e3ae2679621f90f12d615cd8d2fd5874bece852ae3ef379aada6d
 license: CC-BY-4.0
 review:
@@ -46,7 +46,7 @@ question: '이 요약 문장이 편집 규범을 위반하는가
   요약은 사실만 담은 한 문장이어야 한다. 다음은 규범 위반이다. (1) 판단·비난이 담긴 어휘를 쓴다 (2) 강조나 논평을 시사하는 부사를 쓴다
   (예: 매우, 무려, 심지어, 결국) (3) 두 문장 이상이다 (4) 추정·의혹 표현으로 끝난다 (5) 느낌표나 물음표로 끝난다 (6) 사실 서술에
   기자나 편집자의 평가를 덧붙인다.'
-published_at: '2026-10-04'
+published_at: '2026-10-20'
 type: binary
 classes:
 - CLEAN
@@ -62,46 +62,85 @@ label_source_mix:
   judged: 0
   outcome: 0
 experiment:
-  date: '2026-09-30'
+  date: '2026-10-20'
   template: legacy-seed
-  runner: src/run.py (구식 러너, 팔 메타는 프리셋에서 채움)
+  runner: benchlet
   arms:
-    glm:
-      model: z-ai/glm-4.7-flash
-      provider: cloudflare
-      family: GLM
-      mode: logprob
-      prob_source: logprob
-      base_url: openrouter.ai
-      in_per_m: 0.0605
-      smoke: null
-    qwen:
-      model: qwen/qwen3.8-27b
-      provider: parasail
-      family: Qwen
-      mode: logprob
-      prob_source: logprob
-      base_url: openrouter.ai
-      in_per_m: 0.0605
-      smoke: null
-    deepseek:
-      model: deepseek/deepseek-v4-flash
-      provider: digitalocean
-      family: DeepSeek
-      mode: logprob
-      prob_source: logprob
-      base_url: openrouter.ai
-      in_per_m: 0.14
-      smoke: null
-    jev:
-      model: typesafe/jev-1.13
+    luna:
+      model: openai/gpt-6-luna-decisions
       provider: openrouter
-      family: Jev
+      family: OpenAI
       mode: typed
       prob_source: typed
       base_url: openrouter.ai
-      in_per_m: 0.042
-      smoke: null
+      in_per_m: 0.1
+      smoke:
+        arm: luna
+        mode: typed
+        usable: true
+        reasons:
+        - 뻔한 5건 중 1건 틀림 (norm-033). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 0.8
+        cost: 0.00018590000000000002
+        per_item:
+        - id: norm-001
+          target: 0
+          hit: 1
+          p: 1
+          pred: null
+        - id: norm-005
+          target: 0
+          hit: 1
+          p: 1
+          pred: null
+        - id: norm-033
+          target: 0
+          hit: 0
+          p: 0
+          pred: null
+        - id: norm-000
+          target: 1
+          hit: 1
+          p: 0
+          pred: null
+        - id: norm-003
+          target: 1
+          hit: 1
+          p: 0
+          pred: null
+      cache_warm: null
+    anthropic:claude-haiku-5-5:
+      model: claude-haiku-5-5
+      provider: anthropic
+      family: Anthropic
+      mode: generative
+      prob_source: none
+      base_url: api.anthropic.com
+      in_per_m: 0.1
+      smoke:
+        arm: anthropic:claude-haiku-5-5
+        mode: generative
+        usable: true
+        reasons:
+        - 로그확률이 안 와서 생성 팔로 강등 (prob_source=none, 정확도만)
+        has_logprobs: false
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: 0
+        n_calls: 11
+        smoke_acc: null
+        cost: 0.00040590000000000005
+        per_item: []
+      cache_warm: null
   protocol:
     decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
     logprob_call:
@@ -117,9 +156,9 @@ experiment:
     typed: Jev noul(이진)/choice(다지), 질문을 instructions 로 그대로 전달
     label_mass: 상위 8토큰 중 라벨 토큰 질량 < 0.5 이면 오류로 두고 세지 않음
     renormalize: 라벨 토큰 확률을 라벨 집합 안에서 재정규화
-  items_sha256: null
+  items_sha256: 76d35d43a42e3ae2679621f90f12d615cd8d2fd5874bece852ae3ef379aada6d
 results:
-- results/norm-run.json
+- results/editorial-norm-run.json
 result_summary:
   glm:
     acc: 0.6
@@ -164,4 +203,26 @@ result_summary:
     n: 60
     prob_source: typed
     model: typesafe/jev-1.13
+    source_badge: author-run
+  luna:
+    acc: 0.8833333333333333
+    ci95:
+    - 0.7782097940014185
+    - 0.9423235259654994
+    auroc: 0.9716666666666667
+    brier: 0.08865333333333333
+    n: 60
+    prob_source: typed
+    model: openai/gpt-6-luna-decisions
+    source_badge: author-run
+  anthropic:claude-haiku-5-5:
+    acc: 0.6166666666666667
+    ci95:
+    - 0.4901736454040314
+    - 0.7291191041511176
+    auroc: 0.7
+    brier: 0.32083333333333336
+    n: 60
+    prob_source: none
+    model: claude-haiku-5-5
     source_badge: author-run
