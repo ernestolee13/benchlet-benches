@@ -3,7 +3,7 @@
  "bench": "answer-grounded-check@1",
  "items_sha256": "c00b3547811b7b0ae97808e8c7754b7aa50343f6de3dbe3fbe30c816537fe05c",
  "template": "generic",
- "date": "2026-10-10",
+ "date": "2026-10-20",
  "arms": {
   "glm": {
    "model": "z-ai/glm-4.7-flash",
@@ -263,6 +263,68 @@
     "per_item": []
    },
    "cache_warm": null
+  },
+  "luna": {
+   "model": "openai/gpt-6-luna-decisions",
+   "provider": "openrouter",
+   "family": "OpenAI",
+   "mode": "typed",
+   "prob_source": "typed",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.1,
+   "smoke": {
+    "arm": "luna",
+    "mode": "typed",
+    "usable": true,
+    "reasons": [],
+    "has_logprobs": null,
+    "reasoning_tokens_zero": null,
+    "provider_match": null,
+    "mass_min": null,
+    "spread": null,
+    "distinct_p": null,
+    "n_calls": 5,
+    "smoke_acc": 1.0,
+    "cost": 0.0001519,
+    "per_item": [
+     {
+      "id": "answer-grounded-check-001",
+      "target": 0,
+      "hit": 1,
+      "p": 1,
+      "pred": null
+     },
+     {
+      "id": "answer-grounded-check-003",
+      "target": 0,
+      "hit": 1,
+      "p": 1,
+      "pred": null
+     },
+     {
+      "id": "answer-grounded-check-004",
+      "target": 0,
+      "hit": 1,
+      "p": 1,
+      "pred": null
+     },
+     {
+      "id": "answer-grounded-check-000",
+      "target": 1,
+      "hit": 1,
+      "p": 0,
+      "pred": null
+     },
+     {
+      "id": "answer-grounded-check-002",
+      "target": 1,
+      "hit": 1,
+      "p": 0,
+      "pred": null
+     }
+    ]
+   },
+   "cache_warm": null
   }
  },
  "items": [
@@ -348,6 +410,18 @@
       "{\"answer\":\"A\"}"
      ],
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 558,
+     "in_tok": 299,
+     "cost": 2.99e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0
+     },
+     "p_violation": 0
     }
    }
   },
@@ -433,6 +507,18 @@
       "{\"answer\":\"B\"}"
      ],
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 553,
+     "in_tok": 314,
+     "cost": 3.14e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
     }
    }
   },
@@ -518,6 +604,18 @@
       "{\"answer\":\"A\"}"
      ],
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 569,
+     "in_tok": 304,
+     "cost": 3.04e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0
+     },
+     "p_violation": 0
     }
    }
   },
@@ -603,6 +701,18 @@
       "{\"answer\":\"B\"}"
      ],
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 510,
+     "in_tok": 299,
+     "cost": 2.99e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
     }
    }
   },
@@ -688,6 +798,18 @@
       "{\"answer\":\"B\"}"
      ],
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 508,
+     "in_tok": 303,
+     "cost": 3.03e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
     }
    }
   },
@@ -773,6 +895,18 @@
       "{\"answer\":\"B\"}"
      ],
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 549,
+     "in_tok": 314,
+     "cost": 3.14e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.98
+     },
+     "p_violation": 0.98
     }
    }
   },
@@ -858,6 +992,18 @@
       "{\"answer\":\"A\"}"
      ],
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 565,
+     "in_tok": 310,
+     "cost": 3.1e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0
+     },
+     "p_violation": 0
     }
    }
   },
@@ -943,6 +1089,18 @@
       "{\"answer\":\"A\"}"
      ],
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 524,
+     "in_tok": 295,
+     "cost": 2.95e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0
+     },
+     "p_violation": 0
     }
    }
   },
@@ -1028,6 +1186,18 @@
       "{\"answer\":\"B\"}"
      ],
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 524,
+     "in_tok": 296,
+     "cost": 2.96e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.98
+     },
+     "p_violation": 0.98
     }
    }
   },
@@ -1113,6 +1283,18 @@
       "{\"answer\":\"A\"}"
      ],
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 482,
+     "in_tok": 300,
+     "cost": 3e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0
+     },
+     "p_violation": 0
     }
    }
   },
@@ -1198,6 +1380,18 @@
       "{\"answer\":\"B\"}"
      ],
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 515,
+     "in_tok": 311,
+     "cost": 3.11e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.98
+     },
+     "p_violation": 0.98
     }
    }
   },
@@ -1283,6 +1477,18 @@
       "{\"answer\":\"A\"}"
      ],
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 502,
+     "in_tok": 314,
+     "cost": 3.14e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0
+     },
+     "p_violation": 0
     }
    }
   },
@@ -1368,6 +1574,18 @@
       "{\"answer\":\"A\"}"
      ],
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 508,
+     "in_tok": 309,
+     "cost": 3.09e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0
+     },
+     "p_violation": 0
     }
    }
   },
@@ -1453,6 +1671,18 @@
       "{\"answer\":\"B\"}"
      ],
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 528,
+     "in_tok": 316,
+     "cost": 3.16e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.99
+     },
+     "p_violation": 0.99
     }
    }
   },
@@ -1538,6 +1768,18 @@
       "{\"answer\":\"A\"}"
      ],
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 499,
+     "in_tok": 302,
+     "cost": 3.02e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0
+     },
+     "p_violation": 0
     }
    }
   },
@@ -1623,6 +1865,18 @@
       "{\"answer\":\"B\"}"
      ],
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 531,
+     "in_tok": 308,
+     "cost": 3.08e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.93
+     },
+     "p_violation": 0.93
     }
    }
   },
@@ -1708,6 +1962,18 @@
       "{\"answer\":\"A\"}"
      ],
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 548,
+     "in_tok": 301,
+     "cost": 3.01e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.99
+     },
+     "p_violation": 0.99
     }
    }
   },
@@ -1793,6 +2059,18 @@
       "{\"answer\":\"A\"}"
      ],
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 522,
+     "in_tok": 317,
+     "cost": 3.17e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.39
+     },
+     "p_violation": 0.39
     }
    }
   },
@@ -1878,6 +2156,18 @@
       "{\"answer\":\"B\"}"
      ],
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 546,
+     "in_tok": 296,
+     "cost": 2.96e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
     }
    }
   },
@@ -1963,6 +2253,18 @@
       "{\"answer\":\"B\"}"
      ],
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 526,
+     "in_tok": 297,
+     "cost": 2.97e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.97
+     },
+     "p_violation": 0.97
     }
    }
   },
@@ -2048,6 +2350,18 @@
       "{\"answer\":\"A\"}"
      ],
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 557,
+     "in_tok": 298,
+     "cost": 2.98e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0
+     },
+     "p_violation": 0
     }
    }
   },
@@ -2133,6 +2447,18 @@
       "{\"answer\":\"A\"}"
      ],
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 526,
+     "in_tok": 307,
+     "cost": 3.07e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0
+     },
+     "p_violation": 0
     }
    }
   },
@@ -2218,6 +2544,18 @@
       "{\"answer\":\"A\"}"
      ],
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 522,
+     "in_tok": 316,
+     "cost": 3.16e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0
+     },
+     "p_violation": 0
     }
    }
   },
@@ -2303,6 +2641,18 @@
       "{\"answer\": \"B\"}"
      ],
      "answer_format": "json-schema-enum"
+    },
+    "luna": {
+     "ms": 533,
+     "in_tok": 305,
+     "cost": 3.05e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 1
+     },
+     "p_violation": 1
     }
    }
   }
@@ -2342,6 +2692,13 @@
    "hit": 22,
    "ms": 56039,
    "cost": 0.002738
+  },
+  "luna": {
+   "n": 24,
+   "ok": 24,
+   "hit": 24,
+   "ms": 12705,
+   "cost": 0.0007331
   }
  },
  "merged_runs": [
@@ -2355,6 +2712,12 @@
    "date": "2026-10-10",
    "arms": [
     "anthropic:claude-haiku-5-5"
+   ]
+  },
+  {
+   "date": "2026-10-20",
+   "arms": [
+    "luna"
    ]
   }
  ]
