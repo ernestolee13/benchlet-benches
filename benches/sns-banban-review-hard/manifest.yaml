@@ -21,7 +21,7 @@ generator:
   script: src/build_sns_banban_review.py
   seed: 20260930
 source: 반반 Track2 초안 블록1과 블록2와 banban 검수 hard 규칙 3종 (원자료 비공개, 블록3 미사용)
-visibility: sample
+visibility: full
 items_sha256: 940eefb113cad4ef2939903a06cb6ab8452aefc90cec8487aca35d3cfa01c976
 review:
   checks_run: 5
@@ -44,7 +44,7 @@ keywords:
 owner: ernestolee13
 n: 48
 choices_note: null
-published_at: '2026-10-04'
+published_at: '2026-10-20'
 type: binary
 classes:
 - OK-plain
@@ -57,4 +57,350 @@ label_source_mix:
   constructed: 28
   judged: 20
   outcome: 0
-results: pending
+experiment:
+  date: '2026-10-20'
+  template: generic
+  runner: benchlet
+  arms:
+    glm:
+      model: z-ai/glm-4.7-flash
+      provider: cloudflare
+      family: GLM
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke:
+        arm: glm
+        mode: logprob
+        usable: true
+        reasons:
+        - '확률값 종류 4/10: 반올림된 로그확률 의심 (AUROC 를 믿지 마라)'
+        - 뻔한 5건 중 3건 틀림 (sns-bbr-001, sns-bbr-000, sns-bbr-006). 다른 팔도 틀리면 질문 결함,
+          이 팔만 틀리면 팔 약점
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9267
+        spread: 1.0951684836779663e-08
+        distinct_p: 4
+        n_calls: 13
+        smoke_acc: 0.4
+        cost: 0.0006866749999999999
+        per_item:
+        - id: sns-bbr-001
+          target: 0
+          hit: 0
+          p: 0.3708
+        - id: sns-bbr-003
+          target: 0
+          hit: 1
+          p: 0.6292
+        - id: sns-bbr-004
+          target: 0
+          hit: 1
+          p: 0.5433
+        - id: sns-bbr-000
+          target: 1
+          hit: 0
+          p: 0.6292
+        - id: sns-bbr-006
+          target: 1
+          hit: 0
+          p: 0.5316
+    qwen:
+      model: qwen/qwen3.8-27b
+      provider: parasail
+      family: Qwen
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke:
+        arm: qwen
+        mode: logprob
+        usable: true
+        reasons:
+        - 뻔한 5건 중 2건 틀림 (sns-bbr-001, sns-bbr-004). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9945
+        spread: 0.0
+        distinct_p: 10
+        n_calls: 13
+        smoke_acc: 0.6
+        cost: 0.000493317
+        per_item:
+        - id: sns-bbr-001
+          target: 0
+          hit: 0
+          p: 0.2426
+        - id: sns-bbr-003
+          target: 0
+          hit: 1
+          p: 0.7877
+        - id: sns-bbr-004
+          target: 0
+          hit: 0
+          p: 0.1845
+        - id: sns-bbr-000
+          target: 1
+          hit: 1
+          p: 0.2202
+        - id: sns-bbr-006
+          target: 1
+          hit: 1
+          p: 0.1372
+    deepseek:
+      model: deepseek/deepseek-v4-flash
+      provider: digitalocean
+      family: DeepSeek
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.14
+      smoke:
+        arm: deepseek
+        mode: logprob
+        usable: true
+        reasons:
+        - 뻔한 5건 중 2건 틀림 (sns-bbr-001, sns-bbr-004). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9977
+        spread: 0.004507346356923676
+        distinct_p: 8
+        n_calls: 13
+        smoke_acc: 0.6
+        cost: 0.0014039200000000001
+        per_item:
+        - id: sns-bbr-001
+          target: 0
+          hit: 0
+          p: 0.2244
+        - id: sns-bbr-003
+          target: 0
+          hit: 1
+          p: 0.5
+        - id: sns-bbr-004
+          target: 0
+          hit: 0
+          p: 0.2502
+        - id: sns-bbr-000
+          target: 1
+          hit: 1
+          p: 0.4971
+        - id: sns-bbr-006
+          target: 1
+          hit: 1
+          p: 0.4263
+    jev:
+      model: typesafe/jev-1.13
+      provider: openrouter
+      family: Jev
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.042
+      smoke:
+        arm: jev
+        mode: typed
+        usable: true
+        reasons: []
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 1.0
+        cost: 0.000215712
+        per_item:
+        - id: sns-bbr-001
+          target: 0
+          hit: 1
+          p: 0.83
+          pred: null
+        - id: sns-bbr-003
+          target: 0
+          hit: 1
+          p: 0.86
+          pred: null
+        - id: sns-bbr-004
+          target: 0
+          hit: 1
+          p: 0.81
+          pred: null
+        - id: sns-bbr-000
+          target: 1
+          hit: 1
+          p: 0.37
+          pred: null
+        - id: sns-bbr-006
+          target: 1
+          hit: 1
+          p: 0.31
+          pred: null
+    luna:
+      model: openai/gpt-6-luna-decisions
+      provider: openrouter
+      family: OpenAI
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.1
+      smoke:
+        arm: luna
+        mode: typed
+        usable: true
+        reasons:
+        - 뻔한 5건 중 2건 틀림 (sns-bbr-001, sns-bbr-004). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 0.6
+        cost: 0.00040229999999999997
+        per_item:
+        - id: sns-bbr-001
+          target: 0
+          hit: 0
+          p: 0.01
+          pred: null
+        - id: sns-bbr-003
+          target: 0
+          hit: 1
+          p: 0.62
+          pred: null
+        - id: sns-bbr-004
+          target: 0
+          hit: 0
+          p: 0.01
+          pred: null
+        - id: sns-bbr-000
+          target: 1
+          hit: 1
+          p: 0.01
+          pred: null
+        - id: sns-bbr-006
+          target: 1
+          hit: 1
+          p: 0
+          pred: null
+      cache_warm: null
+    anthropic:claude-haiku-5-5:
+      model: claude-haiku-5-5
+      provider: anthropic
+      family: Anthropic
+      mode: generative
+      prob_source: none
+      base_url: api.anthropic.com
+      in_per_m: 0.1
+      smoke:
+        arm: anthropic:claude-haiku-5-5
+        mode: generative
+        usable: true
+        reasons:
+        - 로그확률이 안 와서 생성 팔로 강등 (prob_source=none, 정확도만)
+        has_logprobs: false
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: 0
+        n_calls: 11
+        smoke_acc: null
+        cost: 0.0012945
+        per_item: []
+      cache_warm: null
+  protocol:
+    decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
+    logprob_call:
+      max_tokens: 1
+      temperature: 0
+      logprobs: true
+      top_logprobs: 8
+      reasoning:
+        enabled: false
+    provider_pin: provider.only=[pin], allow_fallbacks=false, require_parameters=true
+    binary: '극성 반전 2회 호출 평균: p = ½[P(A|choices[0]=A) + P(B|choices[0]=B)]'
+    multiclass: 항목별 결정론적 셔플 뒤 원 인덱스로 복원(generic) 또는 파일에 든 셔플 그대로(legacy-seed)
+    typed: Jev noul(이진)/choice(다지), 질문을 instructions 로 그대로 전달
+    label_mass: 상위 8토큰 중 라벨 토큰 질량 < 0.5 이면 오류로 두고 세지 않음
+    renormalize: 라벨 토큰 확률을 라벨 집합 안에서 재정규화
+  items_sha256: 940eefb113cad4ef2939903a06cb6ab8452aefc90cec8487aca35d3cfa01c976
+results:
+- results/sns-banban-review-hard-run.json
+result_summary:
+  glm:
+    acc: 0.5208333333333334
+    ci95:
+    - 0.38328995635984375
+    - 0.6552890998421254
+    auroc: 0.5894097222222222
+    brier: 0.25029365112131796
+    n: 48
+    prob_source: logprob
+    model: z-ai/glm-4.7-flash
+    source_badge: author-run
+  qwen:
+    acc: 0.6666666666666666
+    ci95:
+    - 0.5253984633247204
+    - 0.7832339862910321
+    auroc: 0.8038194444444444
+    brier: 0.22011412218398752
+    n: 48
+    prob_source: logprob
+    model: qwen/qwen3.8-27b
+    source_badge: author-run
+  deepseek:
+    acc: 0.5208333333333334
+    ci95:
+    - 0.38328995635984375
+    - 0.6552890998421254
+    auroc: 0.4826388888888889
+    brier: 0.2744854187058403
+    n: 48
+    prob_source: logprob
+    model: deepseek/deepseek-v4-flash
+    source_badge: author-run
+  jev:
+    acc: 0.8541666666666666
+    ci95:
+    - 0.7283255295714138
+    - 0.9275184258620602
+    auroc: 0.9756944444444444
+    brier: 0.10831250000000003
+    n: 48
+    prob_source: typed
+    model: typesafe/jev-1.13
+    source_badge: author-run
+  luna:
+    acc: 0.5833333333333334
+    ci95:
+    - 0.4428108221536465
+    - 0.7115054026542298
+    auroc: 0.7925347222222222
+    brier: 0.3289041666666667
+    n: 48
+    prob_source: typed
+    model: openai/gpt-6-luna-decisions
+    source_badge: author-run
+  anthropic:claude-haiku-5-5:
+    acc: 0.6458333333333334
+    ci95:
+    - 0.5043879645406409
+    - 0.7656654288731426
+    auroc: 0.6822916666666666
+    brier: 0.2916666666666667
+    n: 48
+    prob_source: none
+    model: claude-haiku-5-5
+    source_badge: author-run

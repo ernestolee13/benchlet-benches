@@ -1,0 +1,5048 @@
+{
+ "task": "sns-banban-review-hard",
+ "bench": "sns-banban-review-hard@1",
+ "items_sha256": "940eefb113cad4ef2939903a06cb6ab8452aefc90cec8487aca35d3cfa01c976",
+ "template": "generic",
+ "date": "2026-10-20",
+ "arms": {
+  "glm": {
+   "model": "z-ai/glm-4.7-flash",
+   "provider": "cloudflare",
+   "family": "GLM",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.0605,
+   "smoke": {
+    "arm": "glm",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [
+     "확률값 종류 4/10: 반올림된 로그확률 의심 (AUROC 를 믿지 마라)",
+     "뻔한 5건 중 3건 틀림 (sns-bbr-001, sns-bbr-000, sns-bbr-006). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점"
+    ],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9267,
+    "spread": 1.0951684836779663e-08,
+    "distinct_p": 4,
+    "n_calls": 13,
+    "smoke_acc": 0.4,
+    "cost": 0.0006866749999999999,
+    "per_item": [
+     {
+      "id": "sns-bbr-001",
+      "target": 0,
+      "hit": 0,
+      "p": 0.3708
+     },
+     {
+      "id": "sns-bbr-003",
+      "target": 0,
+      "hit": 1,
+      "p": 0.6292
+     },
+     {
+      "id": "sns-bbr-004",
+      "target": 0,
+      "hit": 1,
+      "p": 0.5433
+     },
+     {
+      "id": "sns-bbr-000",
+      "target": 1,
+      "hit": 0,
+      "p": 0.6292
+     },
+     {
+      "id": "sns-bbr-006",
+      "target": 1,
+      "hit": 0,
+      "p": 0.5316
+     }
+    ]
+   }
+  },
+  "qwen": {
+   "model": "qwen/qwen3.8-27b",
+   "provider": "parasail",
+   "family": "Qwen",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.0605,
+   "smoke": {
+    "arm": "qwen",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [
+     "뻔한 5건 중 2건 틀림 (sns-bbr-001, sns-bbr-004). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점"
+    ],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9945,
+    "spread": 0.0,
+    "distinct_p": 10,
+    "n_calls": 13,
+    "smoke_acc": 0.6,
+    "cost": 0.000493317,
+    "per_item": [
+     {
+      "id": "sns-bbr-001",
+      "target": 0,
+      "hit": 0,
+      "p": 0.2426
+     },
+     {
+      "id": "sns-bbr-003",
+      "target": 0,
+      "hit": 1,
+      "p": 0.7877
+     },
+     {
+      "id": "sns-bbr-004",
+      "target": 0,
+      "hit": 0,
+      "p": 0.1845
+     },
+     {
+      "id": "sns-bbr-000",
+      "target": 1,
+      "hit": 1,
+      "p": 0.2202
+     },
+     {
+      "id": "sns-bbr-006",
+      "target": 1,
+      "hit": 1,
+      "p": 0.1372
+     }
+    ]
+   }
+  },
+  "deepseek": {
+   "model": "deepseek/deepseek-v4-flash",
+   "provider": "digitalocean",
+   "family": "DeepSeek",
+   "mode": "logprob",
+   "prob_source": "logprob",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.14,
+   "smoke": {
+    "arm": "deepseek",
+    "mode": "logprob",
+    "usable": true,
+    "reasons": [
+     "뻔한 5건 중 2건 틀림 (sns-bbr-001, sns-bbr-004). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점"
+    ],
+    "has_logprobs": true,
+    "reasoning_tokens_zero": true,
+    "provider_match": true,
+    "mass_min": 0.9977,
+    "spread": 0.004507346356923676,
+    "distinct_p": 8,
+    "n_calls": 13,
+    "smoke_acc": 0.6,
+    "cost": 0.0014039200000000001,
+    "per_item": [
+     {
+      "id": "sns-bbr-001",
+      "target": 0,
+      "hit": 0,
+      "p": 0.2244
+     },
+     {
+      "id": "sns-bbr-003",
+      "target": 0,
+      "hit": 1,
+      "p": 0.5
+     },
+     {
+      "id": "sns-bbr-004",
+      "target": 0,
+      "hit": 0,
+      "p": 0.2502
+     },
+     {
+      "id": "sns-bbr-000",
+      "target": 1,
+      "hit": 1,
+      "p": 0.4971
+     },
+     {
+      "id": "sns-bbr-006",
+      "target": 1,
+      "hit": 1,
+      "p": 0.4263
+     }
+    ]
+   }
+  },
+  "jev": {
+   "model": "typesafe/jev-1.13",
+   "provider": "openrouter",
+   "family": "Jev",
+   "mode": "typed",
+   "prob_source": "typed",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.042,
+   "smoke": {
+    "arm": "jev",
+    "mode": "typed",
+    "usable": true,
+    "reasons": [],
+    "has_logprobs": null,
+    "reasoning_tokens_zero": null,
+    "provider_match": null,
+    "mass_min": null,
+    "spread": null,
+    "distinct_p": null,
+    "n_calls": 5,
+    "smoke_acc": 1.0,
+    "cost": 0.000215712,
+    "per_item": [
+     {
+      "id": "sns-bbr-001",
+      "target": 0,
+      "hit": 1,
+      "p": 0.83,
+      "pred": null
+     },
+     {
+      "id": "sns-bbr-003",
+      "target": 0,
+      "hit": 1,
+      "p": 0.86,
+      "pred": null
+     },
+     {
+      "id": "sns-bbr-004",
+      "target": 0,
+      "hit": 1,
+      "p": 0.81,
+      "pred": null
+     },
+     {
+      "id": "sns-bbr-000",
+      "target": 1,
+      "hit": 1,
+      "p": 0.37,
+      "pred": null
+     },
+     {
+      "id": "sns-bbr-006",
+      "target": 1,
+      "hit": 1,
+      "p": 0.31,
+      "pred": null
+     }
+    ]
+   }
+  },
+  "luna": {
+   "model": "openai/gpt-6-luna-decisions",
+   "provider": "openrouter",
+   "family": "OpenAI",
+   "mode": "typed",
+   "prob_source": "typed",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.1,
+   "smoke": {
+    "arm": "luna",
+    "mode": "typed",
+    "usable": true,
+    "reasons": [
+     "뻔한 5건 중 2건 틀림 (sns-bbr-001, sns-bbr-004). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점"
+    ],
+    "has_logprobs": null,
+    "reasoning_tokens_zero": null,
+    "provider_match": null,
+    "mass_min": null,
+    "spread": null,
+    "distinct_p": null,
+    "n_calls": 5,
+    "smoke_acc": 0.6,
+    "cost": 0.00040229999999999997,
+    "per_item": [
+     {
+      "id": "sns-bbr-001",
+      "target": 0,
+      "hit": 0,
+      "p": 0.01,
+      "pred": null
+     },
+     {
+      "id": "sns-bbr-003",
+      "target": 0,
+      "hit": 1,
+      "p": 0.62,
+      "pred": null
+     },
+     {
+      "id": "sns-bbr-004",
+      "target": 0,
+      "hit": 0,
+      "p": 0.01,
+      "pred": null
+     },
+     {
+      "id": "sns-bbr-000",
+      "target": 1,
+      "hit": 1,
+      "p": 0.01,
+      "pred": null
+     },
+     {
+      "id": "sns-bbr-006",
+      "target": 1,
+      "hit": 1,
+      "p": 0,
+      "pred": null
+     }
+    ]
+   },
+   "cache_warm": null
+  },
+  "anthropic:claude-haiku-5-5": {
+   "model": "claude-haiku-5-5",
+   "provider": "anthropic",
+   "family": "Anthropic",
+   "mode": "generative",
+   "prob_source": "none",
+   "base_url": "api.anthropic.com",
+   "in_per_m": 0.1,
+   "smoke": {
+    "arm": "anthropic:claude-haiku-5-5",
+    "mode": "generative",
+    "usable": true,
+    "reasons": [
+     "로그확률이 안 와서 생성 팔로 강등 (prob_source=none, 정확도만)"
+    ],
+    "has_logprobs": false,
+    "reasoning_tokens_zero": null,
+    "provider_match": null,
+    "mass_min": null,
+    "spread": null,
+    "distinct_p": 0,
+    "n_calls": 11,
+    "smoke_acc": null,
+    "cost": 0.0012945,
+    "per_item": []
+   },
+   "cache_warm": null
+  }
+ },
+ "items": [
+  {
+   "id": "sns-bbr-000",
+   "target": 1,
+   "label": 0,
+   "class": "OK-trap",
+   "label_source": "constructed",
+   "cluster": "bb-291",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 913,
+     "cost": 0.00010708500000000001,
+     "in_tok": 1770,
+     "err": null,
+     "mass": [
+      0.9769,
+      0.9899
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.23545473845351084,
+     "ms": 850,
+     "cost": 7.7803e-05,
+     "in_tok": 1286,
+     "err": null,
+     "mass": [
+      0.996,
+      0.9988
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4971165920439186,
+     "ms": 3650,
+     "cost": 0.00022008000000000002,
+     "in_tok": 1572,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9991
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 243,
+     "in_tok": 1029,
+     "cost": 4.3218e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.34
+     },
+     "p_violation": 0.34
+    },
+    "luna": {
+     "ms": 628,
+     "in_tok": 809,
+     "cost": 8.09e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.01
+     },
+     "p_violation": 0.01
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2375,
+     "cost": 0.0002838,
+     "in_tok": 2738,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-001",
+   "target": 0,
+   "label": 1,
+   "class": "V-name",
+   "label_source": "constructed",
+   "cluster": "bb-259",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4251307587316497,
+     "ms": 2659,
+     "cost": 0.000102608,
+     "in_tok": 1696,
+     "err": null,
+     "mass": [
+      0.9512,
+      0.982
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.2219973049365661,
+     "ms": 1067,
+     "cost": 7.3568e-05,
+     "in_tok": 1216,
+     "err": null,
+     "mass": [
+      0.996,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.44589201086653824,
+     "ms": 3238,
+     "cost": 0.00020776000000000003,
+     "in_tok": 1484,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 249,
+     "in_tok": 996,
+     "cost": 4.1832e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.81
+     },
+     "p_violation": 0.81
+    },
+    "luna": {
+     "ms": 602,
+     "in_tok": 774,
+     "cost": 7.74e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.01
+     },
+     "p_violation": 0.01
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 3104,
+     "cost": 0.0002748,
+     "in_tok": 2648,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-002",
+   "target": 1,
+   "label": 0,
+   "class": "OK-trap",
+   "label_source": "judged",
+   "cluster": "bb-247",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5432579521155023,
+     "ms": 10566,
+     "cost": 0.000106359,
+     "in_tok": 1758,
+     "err": null,
+     "mass": [
+      0.9729,
+      0.9958
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.14744938895423573,
+     "ms": 1158,
+     "cost": 7.6835e-05,
+     "in_tok": 1270,
+     "err": null,
+     "mass": [
+      0.9975,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.19305907808813066,
+     "ms": 4120,
+     "cost": 0.00022064,
+     "in_tok": 1576,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9988
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 240,
+     "in_tok": 1020,
+     "cost": 4.284e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.26
+     },
+     "p_violation": 0.26
+    },
+    "luna": {
+     "ms": 600,
+     "in_tok": 796,
+     "cost": 7.96e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.01
+     },
+     "p_violation": 0.01
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 3002,
+     "cost": 0.000283,
+     "in_tok": 2730,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-003",
+   "target": 0,
+   "label": 1,
+   "class": "V-claim",
+   "label_source": "constructed",
+   "cluster": "bb-260",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.596541619629749,
+     "ms": 979,
+     "cost": 0.000108174,
+     "in_tok": 1788,
+     "err": null,
+     "mass": [
+      0.935,
+      0.991
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.8109753661030463,
+     "ms": 1099,
+     "cost": 7.8166e-05,
+     "in_tok": 1292,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.5071747574727151,
+     "ms": 3874,
+     "cost": 0.00022428000000000001,
+     "in_tok": 1602,
+     "err": null,
+     "mass": [
+      0.9981,
+      0.9988
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 261,
+     "in_tok": 1046,
+     "cost": 4.3932000000000006e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.89
+     },
+     "p_violation": 0.89
+    },
+    "luna": {
+     "ms": 656,
+     "in_tok": 825,
+     "cost": 8.25e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.62
+     },
+     "p_violation": 0.62
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2261,
+     "cost": 0.00028940000000000004,
+     "in_tok": 2794,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-004",
+   "target": 0,
+   "label": 1,
+   "class": "V-fit",
+   "label_source": "constructed",
+   "cluster": "bb-185",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5432579502969839,
+     "ms": 868,
+     "cost": 0.000109021,
+     "in_tok": 1802,
+     "err": null,
+     "mass": [
+      0.9873,
+      0.9931
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.19893651223911307,
+     "ms": 1278,
+     "cost": 7.7077e-05,
+     "in_tok": 1274,
+     "err": null,
+     "mass": [
+      0.9984,
+      0.9988
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.16051236614211437,
+     "ms": 3219,
+     "cost": 0.00022512000000000004,
+     "in_tok": 1608,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9987
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 247,
+     "in_tok": 1040,
+     "cost": 4.368e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.73
+     },
+     "p_violation": 0.73
+    },
+    "luna": {
+     "ms": 592,
+     "in_tok": 816,
+     "cost": 8.16e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.01
+     },
+     "p_violation": 0.01
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 4439,
+     "cost": 0.00028419999999999997,
+     "in_tok": 2742,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-005",
+   "target": 1,
+   "label": 0,
+   "class": "OK-trap",
+   "label_source": "judged",
+   "cluster": "bb-223",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6767589519861836,
+     "ms": 3152,
+     "cost": 0.000109263,
+     "in_tok": 1806,
+     "err": null,
+     "mass": [
+      0.9883,
+      0.9932
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.22669943078424648,
+     "ms": 1009,
+     "cost": 7.744e-05,
+     "in_tok": 1280,
+     "err": null,
+     "mass": [
+      0.9976,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4936169576281245,
+     "ms": 3232,
+     "cost": 0.00022036000000000004,
+     "in_tok": 1574,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9994
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 221,
+     "in_tok": 1042,
+     "cost": 4.3764e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.38
+     },
+     "p_violation": 0.38
+    },
+    "luna": {
+     "ms": 587,
+     "in_tok": 816,
+     "cost": 8.16e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.03
+     },
+     "p_violation": 0.03
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 4440,
+     "cost": 0.000283,
+     "in_tok": 2730,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-006",
+   "target": 1,
+   "label": 0,
+   "class": "OK-plain",
+   "label_source": "judged",
+   "cluster": "bb-271",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5748692508398519,
+     "ms": 9113,
+     "cost": 0.000105875,
+     "in_tok": 1750,
+     "err": null,
+     "mass": [
+      0.9711,
+      0.9862
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.14912681866424493,
+     "ms": 1652,
+     "cost": 7.6351e-05,
+     "in_tok": 1262,
+     "err": null,
+     "mass": [
+      0.9983,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4917574871826412,
+     "ms": 3592,
+     "cost": 0.00021504000000000003,
+     "in_tok": 1536,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 243,
+     "in_tok": 1025,
+     "cost": 4.305000000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.33
+     },
+     "p_violation": 0.33
+    },
+    "luna": {
+     "ms": 592,
+     "in_tok": 799,
+     "cost": 7.99e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0
+     },
+     "p_violation": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2611,
+     "cost": 0.0002802,
+     "in_tok": 2702,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-007",
+   "target": 1,
+   "label": 0,
+   "class": "OK-trap",
+   "label_source": "constructed",
+   "cluster": "bb-293",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6155292834555102,
+     "ms": 911,
+     "cost": 0.000106722,
+     "in_tok": 1764,
+     "err": null,
+     "mass": [
+      0.9931,
+      0.9923
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.26146126829008265,
+     "ms": 1020,
+     "cost": 7.6714e-05,
+     "in_tok": 1268,
+     "err": null,
+     "mass": [
+      0.997,
+      0.9988
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.501204728185603,
+     "ms": 3213,
+     "cost": 0.00021924,
+     "in_tok": 1566,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9996
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 240,
+     "in_tok": 1036,
+     "cost": 4.3512000000000006e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.36
+     },
+     "p_violation": 0.36
+    },
+    "luna": {
+     "ms": 571,
+     "in_tok": 809,
+     "cost": 8.09e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "p_violation": 0.06
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2133,
+     "cost": 0.000282,
+     "in_tok": 2720,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-008",
+   "target": 1,
+   "label": 0,
+   "class": "OK-plain",
+   "label_source": "judged",
+   "cluster": "bb-204",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.7743165303415704,
+     "ms": 5803,
+     "cost": 0.000106722,
+     "in_tok": 1764,
+     "err": null,
+     "mass": [
+      0.9807,
+      0.9875
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.15818364769452137,
+     "ms": 957,
+     "cost": 7.5625e-05,
+     "in_tok": 1250,
+     "err": null,
+     "mass": [
+      0.997,
+      0.9995
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.48592864103488187,
+     "ms": 2641,
+     "cost": 0.00021392000000000004,
+     "in_tok": 1528,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9985
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 239,
+     "in_tok": 1017,
+     "cost": 4.2714e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.68
+     },
+     "p_violation": 0.68
+    },
+    "luna": {
+     "ms": 548,
+     "in_tok": 801,
+     "cost": 8.01e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.22
+     },
+     "p_violation": 0.22
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2534,
+     "cost": 0.00028240000000000003,
+     "in_tok": 2724,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-009",
+   "target": 1,
+   "label": 0,
+   "class": "OK-plain",
+   "label_source": "judged",
+   "cluster": "bb-243",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.49999998828101555,
+     "ms": 904,
+     "cost": 0.000110231,
+     "in_tok": 1822,
+     "err": null,
+     "mass": [
+      0.9913,
+      0.9934
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.14346381359338425,
+     "ms": 1222,
+     "cost": 7.8408e-05,
+     "in_tok": 1296,
+     "err": null,
+     "mass": [
+      0.9965,
+      0.9988
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4530758561185807,
+     "ms": 2316,
+     "cost": 0.00022316000000000003,
+     "in_tok": 1594,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9992
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 280,
+     "in_tok": 1043,
+     "cost": 4.380600000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.24
+     },
+     "p_violation": 0.24
+    },
+    "luna": {
+     "ms": 551,
+     "in_tok": 820,
+     "cost": 8.2e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.01
+     },
+     "p_violation": 0.01
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2834,
+     "cost": 0.0002872,
+     "in_tok": 2772,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-010",
+   "target": 0,
+   "label": 1,
+   "class": "V-claim",
+   "label_source": "constructed",
+   "cluster": "bb-228",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.7120709131232585,
+     "ms": 4135,
+     "cost": 0.000117128,
+     "in_tok": 1936,
+     "err": null,
+     "mass": [
+      0.9931,
+      0.9929
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7429867856785627,
+     "ms": 1086,
+     "cost": 8.2401e-05,
+     "in_tok": 1362,
+     "err": null,
+     "mass": [
+      0.9992,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.5063830432632846,
+     "ms": 2485,
+     "cost": 0.00023380000000000002,
+     "in_tok": 1670,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9994
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 238,
+     "in_tok": 1096,
+     "cost": 4.6032e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.88
+     },
+     "p_violation": 0.88
+    },
+    "luna": {
+     "ms": 562,
+     "in_tok": 849,
+     "cost": 8.49e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.66
+     },
+     "p_violation": 0.66
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2438,
+     "cost": 0.0003018,
+     "in_tok": 2918,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-011",
+   "target": 1,
+   "label": 0,
+   "class": "OK-plain",
+   "label_source": "judged",
+   "cluster": "bb-225",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5542996237140752,
+     "ms": 930,
+     "cost": 0.00010224500000000001,
+     "in_tok": 1690,
+     "err": null,
+     "mass": [
+      0.9921,
+      0.9973
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.31113157531951247,
+     "ms": 956,
+     "cost": 7.502e-05,
+     "in_tok": 1240,
+     "err": null,
+     "mass": [
+      0.9951,
+      0.999
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.48630725323517154,
+     "ms": 2461,
+     "cost": 0.00020860000000000003,
+     "in_tok": 1490,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 287,
+     "in_tok": 986,
+     "cost": 4.1411999999999996e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.4
+     },
+     "p_violation": 0.4
+    },
+    "luna": {
+     "ms": 560,
+     "in_tok": 778,
+     "cost": 7.78e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0
+     },
+     "p_violation": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.5,
+     "ms": 2411,
+     "cost": 0.0002722,
+     "in_tok": 2622,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-012",
+   "target": 1,
+   "label": 0,
+   "class": "OK-trap",
+   "label_source": "judged",
+   "cluster": "bb-264",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4457003727840966,
+     "ms": 12607,
+     "cost": 0.000110715,
+     "in_tok": 1830,
+     "err": null,
+     "mass": [
+      0.9891,
+      0.9887
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.10330209608194652,
+     "ms": 971,
+     "cost": 7.792400000000001e-05,
+     "in_tok": 1288,
+     "err": null,
+     "mass": [
+      0.9973,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.49304196406852735,
+     "ms": 3188,
+     "cost": 0.00022176000000000002,
+     "in_tok": 1584,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9991
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 264,
+     "in_tok": 1043,
+     "cost": 4.380600000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.34
+     },
+     "p_violation": 0.34
+    },
+    "luna": {
+     "ms": 501,
+     "in_tok": 814,
+     "cost": 8.14e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.01
+     },
+     "p_violation": 0.01
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.5,
+     "ms": 3603,
+     "cost": 0.000294,
+     "in_tok": 2840,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-013",
+   "target": 1,
+   "label": 0,
+   "class": "OK-trap",
+   "label_source": "constructed",
+   "cluster": "bb-274",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.7516282034348298,
+     "ms": 854,
+     "cost": 0.000109142,
+     "in_tok": 1804,
+     "err": null,
+     "mass": [
+      0.989,
+      0.9965
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.1510136967112498,
+     "ms": 923,
+     "cost": 7.8408e-05,
+     "in_tok": 1296,
+     "err": null,
+     "mass": [
+      0.9969,
+      0.998
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.45356157920892415,
+     "ms": 4379,
+     "cost": 0.00022064,
+     "in_tok": 1576,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9963
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 301,
+     "in_tok": 1039,
+     "cost": 4.3638000000000005e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.39
+     },
+     "p_violation": 0.39
+    },
+    "luna": {
+     "ms": 531,
+     "in_tok": 821,
+     "cost": 8.21e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.01
+     },
+     "p_violation": 0.01
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.5,
+     "ms": 4252,
+     "cost": 0.0002856,
+     "in_tok": 2756,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-014",
+   "target": 0,
+   "label": 1,
+   "class": "V-fit",
+   "label_source": "constructed",
+   "cluster": "bb-146",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6767589490564374,
+     "ms": 1142,
+     "cost": 0.00010043,
+     "in_tok": 1660,
+     "err": null,
+     "mass": [
+      0.9844,
+      0.9935
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.09125133533523223,
+     "ms": 900,
+     "cost": 7.114799999999999e-05,
+     "in_tok": 1176,
+     "err": null,
+     "mass": [
+      0.9958,
+      0.9986
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.3658056746814194,
+     "ms": 4597,
+     "cost": 0.00020608000000000003,
+     "in_tok": 1472,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9982
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 242,
+     "in_tok": 993,
+     "cost": 4.1706000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.68
+     },
+     "p_violation": 0.68
+    },
+    "luna": {
+     "ms": 529,
+     "in_tok": 762,
+     "cost": 7.62e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1
+     },
+     "p_violation": 0.1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 3831,
+     "cost": 0.00026680000000000003,
+     "in_tok": 2568,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-015",
+   "target": 0,
+   "label": 1,
+   "class": "V-claim",
+   "label_source": "constructed",
+   "cluster": "bb-233",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4999999977775448,
+     "ms": 820,
+     "cost": 0.000112772,
+     "in_tok": 1864,
+     "err": null,
+     "mass": [
+      0.9872,
+      0.9941
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.7051186421495874,
+     "ms": 894,
+     "cost": 7.9013e-05,
+     "in_tok": 1306,
+     "err": null,
+     "mass": [
+      0.9986,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.49879527131336604,
+     "ms": 4042,
+     "cost": 0.00022624000000000003,
+     "in_tok": 1616,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9995
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 223,
+     "in_tok": 1071,
+     "cost": 4.4982e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.91
+     },
+     "p_violation": 0.91
+    },
+    "luna": {
+     "ms": 545,
+     "in_tok": 833,
+     "cost": 8.33e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.79
+     },
+     "p_violation": 0.79
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.5,
+     "ms": 3139,
+     "cost": 0.0002948,
+     "in_tok": 2848,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-016",
+   "target": 0,
+   "label": 1,
+   "class": "V-name",
+   "label_source": "constructed",
+   "cluster": "bb-208",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5432579429223272,
+     "ms": 895,
+     "cost": 0.000104786,
+     "in_tok": 1732,
+     "err": null,
+     "mass": [
+      0.9913,
+      0.9946
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.39215954990695,
+     "ms": 1024,
+     "cost": 7.502e-05,
+     "in_tok": 1240,
+     "err": null,
+     "mass": [
+      0.9972,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.44468728496693416,
+     "ms": 4277,
+     "cost": 0.00021532000000000005,
+     "in_tok": 1538,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9996
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 284,
+     "in_tok": 998,
+     "cost": 4.1916e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.74
+     },
+     "p_violation": 0.74
+    },
+    "luna": {
+     "ms": 545,
+     "in_tok": 782,
+     "cost": 7.82e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.11
+     },
+     "p_violation": 0.11
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2684,
+     "cost": 0.0002796,
+     "in_tok": 2696,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-017",
+   "target": 0,
+   "label": 1,
+   "class": "V-fit",
+   "label_source": "constructed",
+   "cluster": "bb-182",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5542996237140752,
+     "ms": 1085,
+     "cost": 0.00010660099999999999,
+     "in_tok": 1762,
+     "err": null,
+     "mass": [
+      0.994,
+      0.9944
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.11388528991746513,
+     "ms": 833,
+     "cost": 7.489899999999999e-05,
+     "in_tok": 1238,
+     "err": null,
+     "mass": [
+      0.9982,
+      0.9984
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.25027638928228313,
+     "ms": 3776,
+     "cost": 0.00021896000000000003,
+     "in_tok": 1564,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9996
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 221,
+     "in_tok": 1008,
+     "cost": 4.2336e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.69
+     },
+     "p_violation": 0.69
+    },
+    "luna": {
+     "ms": 591,
+     "in_tok": 796,
+     "cost": 7.96e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.01
+     },
+     "p_violation": 0.01
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.5,
+     "ms": 2344,
+     "cost": 0.00028060000000000004,
+     "in_tok": 2706,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-018",
+   "target": 0,
+   "label": 1,
+   "class": "V-claim",
+   "label_source": "constructed",
+   "cluster": "bb-201",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6587872380968218,
+     "ms": 956,
+     "cost": 0.000108658,
+     "in_tok": 1796,
+     "err": null,
+     "mass": [
+      0.9779,
+      0.9885
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.9189445838620536,
+     "ms": 732,
+     "cost": 7.7561e-05,
+     "in_tok": 1282,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.47894977946219397,
+     "ms": 2090,
+     "cost": 0.00022176000000000002,
+     "in_tok": 1584,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 222,
+     "in_tok": 1045,
+     "cost": 4.389e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.93
+     },
+     "p_violation": 0.93
+    },
+    "luna": {
+     "ms": 506,
+     "in_tok": 817,
+     "cost": 8.17e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.31
+     },
+     "p_violation": 0.31
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2415,
+     "cost": 0.0002858,
+     "in_tok": 2758,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-019",
+   "target": 0,
+   "label": 1,
+   "class": "V-fit",
+   "label_source": "constructed",
+   "cluster": "bb-145",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3844707136147437,
+     "ms": 5289,
+     "cost": 9.6195e-05,
+     "in_tok": 1590,
+     "err": null,
+     "mass": [
+      0.9909,
+      0.991
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.12195047441079665,
+     "ms": 919,
+     "cost": 6.933300000000001e-05,
+     "in_tok": 1146,
+     "err": null,
+     "mass": [
+      0.9952,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.2204980906276094,
+     "ms": 4847,
+     "cost": 0.00019740000000000003,
+     "in_tok": 1410,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 233,
+     "in_tok": 952,
+     "cost": 3.9984e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.71
+     },
+     "p_violation": 0.71
+    },
+    "luna": {
+     "ms": 555,
+     "in_tok": 734,
+     "cost": 7.34e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "p_violation": 0.05
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.5,
+     "ms": 2425,
+     "cost": 0.0002596,
+     "in_tok": 2496,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-020",
+   "target": 1,
+   "label": 0,
+   "class": "OK-plain",
+   "label_source": "judged",
+   "cluster": "bb-229",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.49999999921773686,
+     "ms": 1263,
+     "cost": 0.000109989,
+     "in_tok": 1818,
+     "err": null,
+     "mass": [
+      0.9936,
+      0.9952
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.07797081131738767,
+     "ms": 861,
+     "cost": 7.8408e-05,
+     "in_tok": 1296,
+     "err": null,
+     "mass": [
+      0.9985,
+      0.9981
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4535615835750814,
+     "ms": 4632,
+     "cost": 0.00022260000000000002,
+     "in_tok": 1590,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 283,
+     "in_tok": 1046,
+     "cost": 4.3932000000000006e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.16
+     },
+     "p_violation": 0.16
+    },
+    "luna": {
+     "ms": 529,
+     "in_tok": 821,
+     "cost": 8.21e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0
+     },
+     "p_violation": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2251,
+     "cost": 0.0002908,
+     "in_tok": 2808,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-021",
+   "target": 0,
+   "label": 1,
+   "class": "V-claim",
+   "label_source": "constructed",
+   "cluster": "bb-239",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.43877033089724454,
+     "ms": 1967,
+     "cost": 0.000101882,
+     "in_tok": 1684,
+     "err": null,
+     "mass": [
+      0.9892,
+      0.9906
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.8034338999941655,
+     "ms": 958,
+     "cost": 7.368899999999999e-05,
+     "in_tok": 1218,
+     "err": null,
+     "mass": [
+      0.9978,
+      0.9973
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.34293577281186294,
+     "ms": 3901,
+     "cost": 0.00020888000000000002,
+     "in_tok": 1492,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9964
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 238,
+     "in_tok": 996,
+     "cost": 4.1832e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.83
+     },
+     "p_violation": 0.83
+    },
+    "luna": {
+     "ms": 555,
+     "in_tok": 780,
+     "cost": 7.8e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.38
+     },
+     "p_violation": 0.38
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2843,
+     "cost": 0.0002726,
+     "in_tok": 2626,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-022",
+   "target": 0,
+   "label": 1,
+   "class": "V-name",
+   "label_source": "constructed",
+   "cluster": "bb-222",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6767589519861835,
+     "ms": 804,
+     "cost": 0.00010176099999999999,
+     "in_tok": 1682,
+     "err": null,
+     "mass": [
+      0.9872,
+      0.9921
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.5994327564048675,
+     "ms": 936,
+     "cost": 7.2721e-05,
+     "in_tok": 1202,
+     "err": null,
+     "mass": [
+      0.9969,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4556716931061493,
+     "ms": 3040,
+     "cost": 0.00020580000000000002,
+     "in_tok": 1470,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9963
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 238,
+     "in_tok": 999,
+     "cost": 4.195800000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.85
+     },
+     "p_violation": 0.85
+    },
+    "luna": {
+     "ms": 555,
+     "in_tok": 776,
+     "cost": 7.76e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.45
+     },
+     "p_violation": 0.45
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2478,
+     "cost": 0.0002738,
+     "in_tok": 2638,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-023",
+   "target": 0,
+   "label": 1,
+   "class": "V-fit",
+   "label_source": "constructed",
+   "cluster": "bb-200",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 999,
+     "cost": 0.000105875,
+     "in_tok": 1750,
+     "err": null,
+     "mass": [
+      0.9898,
+      0.984
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.22254368231522922,
+     "ms": 820,
+     "cost": 7.6714e-05,
+     "in_tok": 1268,
+     "err": null,
+     "mass": [
+      0.9966,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.47199174066760924,
+     "ms": 4116,
+     "cost": 0.00022036000000000004,
+     "in_tok": 1574,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9996
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 245,
+     "in_tok": 1049,
+     "cost": 4.4058000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.39
+     },
+     "p_violation": 0.39
+    },
+    "luna": {
+     "ms": 534,
+     "in_tok": 819,
+     "cost": 8.19e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0
+     },
+     "p_violation": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 3132,
+     "cost": 0.0002814,
+     "in_tok": 2714,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-024",
+   "target": 1,
+   "label": 0,
+   "class": "OK-plain",
+   "label_source": "judged",
+   "cluster": "bb-206",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.445700379215671,
+     "ms": 1818,
+     "cost": 0.000108537,
+     "in_tok": 1794,
+     "err": null,
+     "mass": [
+      0.973,
+      0.9629
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.18897868298965315,
+     "ms": 823,
+     "cost": 7.8287e-05,
+     "in_tok": 1294,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4654173363056296,
+     "ms": 5370,
+     "cost": 0.00022120000000000004,
+     "in_tok": 1580,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9898
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 250,
+     "in_tok": 1027,
+     "cost": 4.3134e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.3
+     },
+     "p_violation": 0.3
+    },
+    "luna": {
+     "ms": 614,
+     "in_tok": 811,
+     "cost": 8.11e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.02
+     },
+     "p_violation": 0.02
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.5,
+     "ms": 2366,
+     "cost": 0.00028480000000000004,
+     "in_tok": 2748,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-025",
+   "target": 1,
+   "label": 0,
+   "class": "OK-plain",
+   "label_source": "judged",
+   "cluster": "bb-211",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6155292893150024,
+     "ms": 930,
+     "cost": 0.00010889999999999999,
+     "in_tok": 1800,
+     "err": null,
+     "mass": [
+      0.9901,
+      0.9869
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.3342623892041866,
+     "ms": 960,
+     "cost": 7.8408e-05,
+     "in_tok": 1296,
+     "err": null,
+     "mass": [
+      0.9982,
+      0.9991
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4868300269596321,
+     "ms": 5050,
+     "cost": 0.00022428000000000001,
+     "in_tok": 1602,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9981
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 250,
+     "in_tok": 1056,
+     "cost": 4.4352000000000005e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.33
+     },
+     "p_violation": 0.33
+    },
+    "luna": {
+     "ms": 520,
+     "in_tok": 823,
+     "cost": 8.23e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.38
+     },
+     "p_violation": 0.38
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.5,
+     "ms": 2360,
+     "cost": 0.00028619999999999996,
+     "in_tok": 2762,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-026",
+   "target": 1,
+   "label": 0,
+   "class": "OK-plain",
+   "label_source": "judged",
+   "cluster": "bb-230",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6155292922447486,
+     "ms": 900,
+     "cost": 0.00010611699999999999,
+     "in_tok": 1754,
+     "err": null,
+     "mass": [
+      0.9911,
+      0.9937
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.1908655511064682,
+     "ms": 989,
+     "cost": 7.489899999999999e-05,
+     "in_tok": 1238,
+     "err": null,
+     "mass": [
+      0.9983,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4525405482192807,
+     "ms": 4466,
+     "cost": 0.00021588000000000003,
+     "in_tok": 1542,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 219,
+     "in_tok": 1021,
+     "cost": 4.2882e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.27
+     },
+     "p_violation": 0.27
+    },
+    "luna": {
+     "ms": 563,
+     "in_tok": 800,
+     "cost": 8e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0
+     },
+     "p_violation": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2213,
+     "cost": 0.0002832,
+     "in_tok": 2732,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-027",
+   "target": 0,
+   "label": 1,
+   "class": "V-name",
+   "label_source": "constructed",
+   "cluster": "bb-180",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6224593312018546,
+     "ms": 857,
+     "cost": 0.000104302,
+     "in_tok": 1724,
+     "err": null,
+     "mass": [
+      0.9942,
+      0.9951
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.2610969796254242,
+     "ms": 1007,
+     "cost": 7.5504e-05,
+     "in_tok": 1248,
+     "err": null,
+     "mass": [
+      0.9948,
+      0.9977
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4936169559870022,
+     "ms": 5236,
+     "cost": 0.00021196000000000002,
+     "in_tok": 1514,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9996
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 321,
+     "in_tok": 997,
+     "cost": 4.1874000000000006e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.76
+     },
+     "p_violation": 0.76
+    },
+    "luna": {
+     "ms": 528,
+     "in_tok": 793,
+     "cost": 7.93e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1
+     },
+     "p_violation": 0.1
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2490,
+     "cost": 0.0002748,
+     "in_tok": 2648,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-028",
+   "target": 1,
+   "label": 0,
+   "class": "OK-plain",
+   "label_source": "judged",
+   "cluster": "bb-181",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5316112964472088,
+     "ms": 999,
+     "cost": 0.00010284999999999999,
+     "in_tok": 1700,
+     "err": null,
+     "mass": [
+      0.9932,
+      0.9952
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.10775575056123435,
+     "ms": 881,
+     "cost": 7.381e-05,
+     "in_tok": 1220,
+     "err": null,
+     "mass": [
+      0.9975,
+      0.9984
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4446872800508848,
+     "ms": 5435,
+     "cost": 0.00021168000000000003,
+     "in_tok": 1512,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9983
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 245,
+     "in_tok": 993,
+     "cost": 4.1706000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.55
+     },
+     "p_violation": 0.55
+    },
+    "luna": {
+     "ms": 567,
+     "in_tok": 785,
+     "cost": 7.85e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.02
+     },
+     "p_violation": 0.02
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2181,
+     "cost": 0.0002726,
+     "in_tok": 2626,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-029",
+   "target": 1,
+   "label": 0,
+   "class": "OK-trap",
+   "label_source": "judged",
+   "cluster": "bb-122",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296656009272,
+     "ms": 999,
+     "cost": 0.00010055100000000001,
+     "in_tok": 1662,
+     "err": null,
+     "mass": [
+      0.993,
+      0.9936
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.10987620617762665,
+     "ms": 855,
+     "cost": 6.909099999999999e-05,
+     "in_tok": 1142,
+     "err": null,
+     "mass": [
+      0.998,
+      0.9986
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4142807104403726,
+     "ms": 3955,
+     "cost": 0.00020132000000000003,
+     "in_tok": 1438,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 237,
+     "in_tok": 961,
+     "cost": 4.0362000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.23
+     },
+     "p_violation": 0.23
+    },
+    "luna": {
+     "ms": 527,
+     "in_tok": 739,
+     "cost": 7.39e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.01
+     },
+     "p_violation": 0.01
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2299,
+     "cost": 0.000262,
+     "in_tok": 2520,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-030",
+   "target": 1,
+   "label": 0,
+   "class": "OK-plain",
+   "label_source": "judged",
+   "cluster": "bb-227",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 1019,
+     "cost": 0.000108416,
+     "in_tok": 1792,
+     "err": null,
+     "mass": [
+      0.9821,
+      0.9882
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.20743377847272665,
+     "ms": 1000,
+     "cost": 7.7319e-05,
+     "in_tok": 1278,
+     "err": null,
+     "mass": [
+      0.9979,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4543603369264192,
+     "ms": 4269,
+     "cost": 0.00022316000000000003,
+     "in_tok": 1594,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.9982
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 265,
+     "in_tok": 1044,
+     "cost": 4.3848000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.61
+     },
+     "p_violation": 0.61
+    },
+    "luna": {
+     "ms": 570,
+     "in_tok": 818,
+     "cost": 8.18e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "p_violation": 0.05
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2507,
+     "cost": 0.000288,
+     "in_tok": 2780,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-031",
+   "target": 0,
+   "label": 1,
+   "class": "V-name",
+   "label_source": "constructed",
+   "cluster": "bb-205",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6767589484843555,
+     "ms": 852,
+     "cost": 0.00010284999999999999,
+     "in_tok": 1700,
+     "err": null,
+     "mass": [
+      0.9759,
+      0.991
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.24621621933602805,
+     "ms": 904,
+     "cost": 7.308400000000001e-05,
+     "in_tok": 1208,
+     "err": null,
+     "mass": [
+      0.9965,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4090636296571764,
+     "ms": 4376,
+     "cost": 0.00020692,
+     "in_tok": 1478,
+     "err": null,
+     "mass": [
+      0.9996,
+      0.9996
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 232,
+     "in_tok": 1018,
+     "cost": 4.2756e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.83
+     },
+     "p_violation": 0.83
+    },
+    "luna": {
+     "ms": 591,
+     "in_tok": 770,
+     "cost": 7.7e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.02
+     },
+     "p_violation": 0.02
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2279,
+     "cost": 0.0002742,
+     "in_tok": 2642,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-032",
+   "target": 1,
+   "label": 0,
+   "class": "OK-trap",
+   "label_source": "judged",
+   "cluster": "bb-237",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296656009272,
+     "ms": 949,
+     "cost": 0.000100914,
+     "in_tok": 1668,
+     "err": null,
+     "mass": [
+      0.9913,
+      0.9747
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.09880122288066034,
+     "ms": 1114,
+     "cost": 7.1874e-05,
+     "in_tok": 1188,
+     "err": null,
+     "mass": [
+      0.9982,
+      0.999
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.41307597736791546,
+     "ms": 4706,
+     "cost": 0.00020720000000000002,
+     "in_tok": 1480,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9992
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 308,
+     "in_tok": 989,
+     "cost": 4.153800000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.32
+     },
+     "p_violation": 0.32
+    },
+    "luna": {
+     "ms": 552,
+     "in_tok": 770,
+     "cost": 7.7e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.01
+     },
+     "p_violation": 0.01
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2752,
+     "cost": 0.0002682,
+     "in_tok": 2582,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-033",
+   "target": 0,
+   "label": 1,
+   "class": "V-fit",
+   "label_source": "constructed",
+   "cluster": "bb-183",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6224593347036826,
+     "ms": 915,
+     "cost": 9.9341e-05,
+     "in_tok": 1642,
+     "err": null,
+     "mass": [
+      0.991,
+      0.9955
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.18412358277930857,
+     "ms": 918,
+     "cost": 7.1753e-05,
+     "in_tok": 1186,
+     "err": null,
+     "mass": [
+      0.9988,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.41213366240322663,
+     "ms": 2147,
+     "cost": 0.00020244000000000002,
+     "in_tok": 1446,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 248,
+     "in_tok": 972,
+     "cost": 4.0824e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.49
+     },
+     "p_violation": 0.49
+    },
+    "luna": {
+     "ms": 541,
+     "in_tok": 750,
+     "cost": 7.5e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.01
+     },
+     "p_violation": 0.01
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 4033,
+     "cost": 0.0002664,
+     "in_tok": 2564,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-034",
+   "target": 1,
+   "label": 0,
+   "class": "OK-plain",
+   "label_source": "judged",
+   "cluster": "bb-209",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.4567420574816097,
+     "ms": 928,
+     "cost": 0.000108416,
+     "in_tok": 1792,
+     "err": null,
+     "mass": [
+      0.9871,
+      0.9919
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.29399677510644384,
+     "ms": 1111,
+     "cost": 7.7198e-05,
+     "in_tok": 1276,
+     "err": null,
+     "mass": [
+      0.9982,
+      0.999
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.48658019710853834,
+     "ms": 6936,
+     "cost": 0.00022512000000000004,
+     "in_tok": 1608,
+     "err": null,
+     "mass": [
+      0.9993,
+      0.9985
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 397,
+     "in_tok": 1059,
+     "cost": 4.4478000000000003e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.5
+     },
+     "p_violation": 0.5
+    },
+    "luna": {
+     "ms": 538,
+     "in_tok": 832,
+     "cost": 8.32e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.03
+     },
+     "p_violation": 0.03
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2446,
+     "cost": 0.000285,
+     "in_tok": 2750,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-035",
+   "target": 0,
+   "label": 1,
+   "class": "V-fit",
+   "label_source": "constructed",
+   "cluster": "bb-121",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.44570037335617874,
+     "ms": 860,
+     "cost": 0.00010224500000000001,
+     "in_tok": 1690,
+     "err": null,
+     "mass": [
+      0.9958,
+      0.9947
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.27104386328195396,
+     "ms": 1112,
+     "cost": 7.2963e-05,
+     "in_tok": 1206,
+     "err": null,
+     "mass": [
+      0.9965,
+      0.9986
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.21926658465883586,
+     "ms": 3927,
+     "cost": 0.00020972000000000002,
+     "in_tok": 1498,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9993
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 267,
+     "in_tok": 981,
+     "cost": 4.120200000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.68
+     },
+     "p_violation": 0.68
+    },
+    "luna": {
+     "ms": 476,
+     "in_tok": 763,
+     "cost": 7.63e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.07
+     },
+     "p_violation": 0.07
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2677,
+     "cost": 0.0002704,
+     "in_tok": 2604,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-036",
+   "target": 1,
+   "label": 0,
+   "class": "OK-trap",
+   "label_source": "judged",
+   "cluster": "bb-207",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5975575758295775,
+     "ms": 1115,
+     "cost": 0.000105391,
+     "in_tok": 1742,
+     "err": null,
+     "mass": [
+      0.9919,
+      0.9951
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.078877835981501,
+     "ms": 1182,
+     "cost": 7.284199999999999e-05,
+     "in_tok": 1204,
+     "err": null,
+     "mass": [
+      0.9985,
+      0.9989
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.45356157701119854,
+     "ms": 4402,
+     "cost": 0.00021168000000000003,
+     "in_tok": 1512,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 285,
+     "in_tok": 1006,
+     "cost": 4.2252e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.2
+     },
+     "p_violation": 0.2
+    },
+    "luna": {
+     "ms": 472,
+     "in_tok": 777,
+     "cost": 7.77e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.01
+     },
+     "p_violation": 0.01
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.5,
+     "ms": 2254,
+     "cost": 0.000282,
+     "in_tok": 2720,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-037",
+   "target": 0,
+   "label": 1,
+   "class": "V-claim",
+   "label_source": "constructed",
+   "cluster": "bb-261",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6224593347036826,
+     "ms": 1011,
+     "cost": 0.000109384,
+     "in_tok": 1808,
+     "err": null,
+     "mass": [
+      0.9739,
+      0.9923
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.34068970519585273,
+     "ms": 1207,
+     "cost": 8.0586e-05,
+     "in_tok": 1332,
+     "err": null,
+     "mass": [
+      0.9977,
+      0.9992
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.49999999979687887,
+     "ms": 3111,
+     "cost": 0.00022540000000000003,
+     "in_tok": 1610,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9988
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 254,
+     "in_tok": 1052,
+     "cost": 4.4184e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.83
+     },
+     "p_violation": 0.83
+    },
+    "luna": {
+     "ms": 506,
+     "in_tok": 837,
+     "cost": 8.37e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.32
+     },
+     "p_violation": 0.32
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2312,
+     "cost": 0.0002918,
+     "in_tok": 2818,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-038",
+   "target": 1,
+   "label": 0,
+   "class": "OK-trap",
+   "label_source": "constructed",
+   "cluster": "bb-290",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.3412127607919505,
+     "ms": 978,
+     "cost": 0.00010950499999999999,
+     "in_tok": 1810,
+     "err": null,
+     "mass": [
+      0.956,
+      0.9937
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.11388529363645458,
+     "ms": 1098,
+     "cost": 7.8771e-05,
+     "in_tok": 1302,
+     "err": null,
+     "mass": [
+      0.9987,
+      0.999
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.47687181539215534,
+     "ms": 3130,
+     "cost": 0.00022400000000000002,
+     "in_tok": 1600,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9989
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 358,
+     "in_tok": 1046,
+     "cost": 4.3932000000000006e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.21
+     },
+     "p_violation": 0.21
+    },
+    "luna": {
+     "ms": 540,
+     "in_tok": 827,
+     "cost": 8.27e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0
+     },
+     "p_violation": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 3399,
+     "cost": 0.0002876,
+     "in_tok": 2776,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-039",
+   "target": 0,
+   "label": 1,
+   "class": "V-name",
+   "label_source": "constructed",
+   "cluster": "bb-198",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5975575656603833,
+     "ms": 905,
+     "cost": 0.000106359,
+     "in_tok": 1758,
+     "err": null,
+     "mass": [
+      0.9844,
+      0.9906
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.3148615936663718,
+     "ms": 1328,
+     "cost": 7.5625e-05,
+     "in_tok": 1250,
+     "err": null,
+     "mass": [
+      0.9963,
+      0.9986
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.45391160643423506,
+     "ms": 5367,
+     "cost": 0.00021840000000000002,
+     "in_tok": 1560,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9982
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 251,
+     "in_tok": 1018,
+     "cost": 4.2756e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.81
+     },
+     "p_violation": 0.81
+    },
+    "luna": {
+     "ms": 530,
+     "in_tok": 794,
+     "cost": 7.94e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.03
+     },
+     "p_violation": 0.03
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.5,
+     "ms": 2162,
+     "cost": 0.00027840000000000005,
+     "in_tok": 2684,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-040",
+   "target": 1,
+   "label": 0,
+   "class": "OK-trap",
+   "label_source": "judged",
+   "cluster": "bb-224",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 1088,
+     "cost": 0.00010648,
+     "in_tok": 1760,
+     "err": null,
+     "mass": [
+      0.9831,
+      0.9884
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.3841927323177519,
+     "ms": 1058,
+     "cost": 7.368899999999999e-05,
+     "in_tok": 1218,
+     "err": null,
+     "mass": [
+      0.9975,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.3892346822820749,
+     "ms": 3983,
+     "cost": 0.00021588000000000003,
+     "in_tok": 1542,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9959
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 278,
+     "in_tok": 1028,
+     "cost": 4.317600000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.54
+     },
+     "p_violation": 0.54
+    },
+    "luna": {
+     "ms": 567,
+     "in_tok": 791,
+     "cost": 7.91e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.13
+     },
+     "p_violation": 0.13
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 3874,
+     "cost": 0.000279,
+     "in_tok": 2690,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-041",
+   "target": 1,
+   "label": 0,
+   "class": "OK-plain",
+   "label_source": "judged",
+   "cluster": "bb-292",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296656009272,
+     "ms": 1577,
+     "cost": 0.000106359,
+     "in_tok": 1758,
+     "err": null,
+     "mass": [
+      0.98,
+      0.9801
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.073513936758907,
+     "ms": 1164,
+     "cost": 7.695599999999999e-05,
+     "in_tok": 1272,
+     "err": null,
+     "mass": [
+      0.9975,
+      0.9988
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.28232456185596033,
+     "ms": 4853,
+     "cost": 0.00021532000000000005,
+     "in_tok": 1538,
+     "err": null,
+     "mass": [
+      0.9997,
+      0.9977
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 245,
+     "in_tok": 1020,
+     "cost": 4.284e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.28
+     },
+     "p_violation": 0.28
+    },
+    "luna": {
+     "ms": 541,
+     "in_tok": 810,
+     "cost": 8.1e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0
+     },
+     "p_violation": 0
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 3462,
+     "cost": 0.00027780000000000003,
+     "in_tok": 2678,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-042",
+   "target": 1,
+   "label": 0,
+   "class": "OK-trap",
+   "label_source": "judged",
+   "cluster": "bb-143",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296656009272,
+     "ms": 985,
+     "cost": 9.9946e-05,
+     "in_tok": 1652,
+     "err": null,
+     "mass": [
+      0.9937,
+      0.9952
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.18412358607545798,
+     "ms": 842,
+     "cost": 7.114799999999999e-05,
+     "in_tok": 1176,
+     "err": null,
+     "mass": [
+      0.9945,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.3841927363674493,
+     "ms": 3494,
+     "cost": 0.0002044,
+     "in_tok": 1460,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 276,
+     "in_tok": 981,
+     "cost": 4.120200000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.49
+     },
+     "p_violation": 0.49
+    },
+    "luna": {
+     "ms": 516,
+     "in_tok": 755,
+     "cost": 7.55e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.02
+     },
+     "p_violation": 0.02
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.0,
+     "ms": 2052,
+     "cost": 0.000267,
+     "in_tok": 2570,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"B\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-043",
+   "target": 0,
+   "label": 1,
+   "class": "V-name",
+   "label_source": "constructed",
+   "cluster": "bb-273",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6291688866497754,
+     "ms": 840,
+     "cost": 0.000102487,
+     "in_tok": 1694,
+     "err": null,
+     "mass": [
+      0.9632,
+      0.99
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.34915875002046737,
+     "ms": 791,
+     "cost": 7.3568e-05,
+     "in_tok": 1216,
+     "err": null,
+     "mass": [
+      0.9973,
+      0.999
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4778734036383679,
+     "ms": 3663,
+     "cost": 0.00021000000000000004,
+     "in_tok": 1500,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9995
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 238,
+     "in_tok": 990,
+     "cost": 4.1580000000000005e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.75
+     },
+     "p_violation": 0.75
+    },
+    "luna": {
+     "ms": 527,
+     "in_tok": 770,
+     "cost": 7.7e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "p_violation": 0.05
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2489,
+     "cost": 0.00027519999999999997,
+     "in_tok": 2652,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-044",
+   "target": 0,
+   "label": 1,
+   "class": "V-name",
+   "label_source": "constructed",
+   "cluster": "bb-241",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5612296656009272,
+     "ms": 1030,
+     "cost": 0.00010345499999999999,
+     "in_tok": 1710,
+     "err": null,
+     "mass": [
+      0.9891,
+      0.9965
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.20296016729215885,
+     "ms": 893,
+     "cost": 7.5504e-05,
+     "in_tok": 1248,
+     "err": null,
+     "mass": [
+      0.9956,
+      0.999
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.476641897178517,
+     "ms": 4221,
+     "cost": 0.00021196000000000002,
+     "in_tok": 1514,
+     "err": null,
+     "mass": [
+      1.0,
+      0.9981
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 237,
+     "in_tok": 1022,
+     "cost": 4.2924e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.78
+     },
+     "p_violation": 0.78
+    },
+    "luna": {
+     "ms": 573,
+     "in_tok": 785,
+     "cost": 7.85e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "p_violation": 0.06
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.5,
+     "ms": 2488,
+     "cost": 0.000277,
+     "in_tok": 2670,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-045",
+   "target": 0,
+   "label": 1,
+   "class": "V-fit",
+   "label_source": "constructed",
+   "cluster": "bb-184",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.5,
+     "ms": 1095,
+     "cost": 0.000101398,
+     "in_tok": 1676,
+     "err": null,
+     "mass": [
+      0.995,
+      0.9926
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.44570037335617874,
+     "ms": 1004,
+     "cost": 7.284199999999999e-05,
+     "in_tok": 1204,
+     "err": null,
+     "mass": [
+      0.9957,
+      0.9987
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.48331887542993324,
+     "ms": 4568,
+     "cost": 0.00020944,
+     "in_tok": 1496,
+     "err": null,
+     "mass": [
+      0.9999,
+      0.9997
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 217,
+     "in_tok": 999,
+     "cost": 4.195800000000001e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.79
+     },
+     "p_violation": 0.79
+    },
+    "luna": {
+     "ms": 497,
+     "in_tok": 782,
+     "cost": 7.82e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.46
+     },
+     "p_violation": 0.46
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2507,
+     "cost": 0.0002726,
+     "in_tok": 2626,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-046",
+   "target": 0,
+   "label": 1,
+   "class": "V-claim",
+   "label_source": "constructed",
+   "cluster": "bb-226",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.7516282065271703,
+     "ms": 823,
+     "cost": 0.000107569,
+     "in_tok": 1778,
+     "err": null,
+     "mass": [
+      0.9815,
+      0.9889
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.8305962522354551,
+     "ms": 1016,
+     "cost": 7.8166e-05,
+     "in_tok": 1292,
+     "err": null,
+     "mass": [
+      0.9986,
+      0.9993
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4636572556702918,
+     "ms": 3304,
+     "cost": 0.00022176000000000002,
+     "in_tok": 1584,
+     "err": null,
+     "mass": [
+      0.9994,
+      0.9962
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 252,
+     "in_tok": 1066,
+     "cost": 4.4772000000000004e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.88
+     },
+     "p_violation": 0.88
+    },
+    "luna": {
+     "ms": 539,
+     "in_tok": 822,
+     "cost": 8.22e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.35
+     },
+     "p_violation": 0.35
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 0.5,
+     "ms": 2213,
+     "cost": 0.0002858,
+     "in_tok": 2758,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"A\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  },
+  {
+   "id": "sns-bbr-047",
+   "target": 0,
+   "label": 1,
+   "class": "V-claim",
+   "label_source": "constructed",
+   "cluster": "bb-213",
+   "n_options": 2,
+   "arms": {
+    "glm": {
+     "p_violation": 0.6903985358598885,
+     "ms": 1025,
+     "cost": 0.000115676,
+     "in_tok": 1912,
+     "err": null,
+     "mass": [
+      0.9937,
+      0.9955
+     ],
+     "provider": "Cloudflare",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "qwen": {
+     "p_violation": 0.936406612474292,
+     "ms": 1120,
+     "cost": 8.0223e-05,
+     "in_tok": 1326,
+     "err": null,
+     "mass": [
+      0.9991,
+      0.999
+     ],
+     "provider": "Parasail",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "deepseek": {
+     "p_violation": 0.4999999995020721,
+     "ms": 3934,
+     "cost": 0.00023828000000000003,
+     "in_tok": 1702,
+     "err": null,
+     "mass": [
+      0.9998,
+      0.9998
+     ],
+     "provider": "DigitalOcean",
+     "reasoning_tokens": [
+      0,
+      0
+     ]
+    },
+    "jev": {
+     "ms": 239,
+     "in_tok": 1089,
+     "cost": 4.5738e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.91
+     },
+     "p_violation": 0.91
+    },
+    "luna": {
+     "ms": 577,
+     "in_tok": 860,
+     "cost": 8.6e-05,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.63
+     },
+     "p_violation": 0.63
+    },
+    "anthropic:claude-haiku-5-5": {
+     "p_violation": 1.0,
+     "ms": 2229,
+     "cost": 0.0003002,
+     "in_tok": 2902,
+     "err": null,
+     "prob_source": "none",
+     "provider": "anthropic",
+     "raw_text": [
+      "{\"answer\":\"A\"}",
+      "{\"answer\":\"B\"}"
+     ],
+     "answer_format": "json-schema-enum"
+    }
+   }
+  }
+ ],
+ "agg": {
+  "glm": {
+   "n": 48,
+   "ok": 48,
+   "hit": 25,
+   "ms": 94112,
+   "cost": 0.0050876870000000005
+  },
+  "qwen": {
+   "n": 48,
+   "ok": 48,
+   "hit": 32,
+   "ms": 48502,
+   "cost": 0.0036343560000000013
+  },
+  "deepseek": {
+   "n": 48,
+   "ok": 48,
+   "hit": 25,
+   "ms": 188829,
+   "cost": 0.010385200000000002
+  },
+  "jev": {
+   "n": 48,
+   "ok": 48,
+   "hit": 41,
+   "ms": 12351,
+   "cost": 0.0020601
+  },
+  "luna": {
+   "n": 48,
+   "ok": 48,
+   "hit": 28,
+   "ms": 26497,
+   "cost": 0.0038310999999999996
+  },
+  "anthropic:claude-haiku-5-5": {
+   "n": 48,
+   "ok": 48,
+   "hit": 31,
+   "ms": 132023,
+   "cost": 0.0134596
+  }
+ },
+ "merged_runs": [
+  {
+   "date": "2026-10-20",
+   "arms": [
+    "anthropic:claude-haiku-5-5",
+    "luna"
+   ]
+  }
+ ]
+}
