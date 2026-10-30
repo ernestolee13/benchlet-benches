@@ -1,0 +1,367 @@
+name: shorts-onscreen-directive
+version: 2
+task_signature:
+  goal: classify
+  answer: binary
+  prob_use: accuracy_only
+  label: constructed
+  unit: record
+  language: ko
+  n: 48
+question: '이 장면의 화면에 나가는 글에 영상을 만드는 사람에게 하는 제작 지시가 섞여 있는가. 제작 지시는 네 가지다. (1) 연출 지시.
+  어떤 어조나 구성으로 열거나 닫으라는 말이다. 「단언으로 연다」 「질문으로 시작한다」 「반전으로 닫는다」가 그 예다. (2) 표현 금지나 강제.
+  기호, 낱말, 말투를 쓰지 말라거나 쓰라는 말이다. 「물음표 금지」 「이모지 넣지 말 것」 「해시태그 금지」가 그 예다. (3) 장면이나 컷 지시.
+  번호가 붙은 장면이나 컷을 어떻게 찍거나 배치하라는 말이다. 「장면 2에서 확대」 「컷 3은 자료화면」이 그 예다. (4) 톤 지정. 「톤은 담담하게」처럼
+  영상의 어조를 지정하는 말이다. (5) 화면 구성이나 분량 지시. 무엇을 넣거나 빼라, 어디에 두라, 어느 길이로 하라는 말이다. 「로고는 끝에만」
+  「자막은 두 줄 안으로」 「배경 음악 없이」가 그 예다. 예외: 시청자에게 하는 금지나 권고는 제작 지시가 아니다. 「운전 중 사용 금지」 「검사
+  전 물도 금지」처럼 영상이 다루는 소재 안의 규정이나 안내가 그렇다. 「장면」 「컷」 「톤」 「연다」가 소재의 일부로 쓰인 것도 제작 지시가 아니다.
+  「마지막 장면이 화제가 됐다」 「새 매장은 11월에 문을 연다」 「피부 톤 보정」이 그렇다. 가르는 값은 낱말이 아니라 그 문장을 **누구에게**
+  하는가다. 시청자에게 하는 말이면 자막이고, 영상을 만드는 사람에게 하는 말이면 제작 지시다. 문체, 길이, 재미, 수치의 정확성은 보지 않는다.
+  칸 이름도 보지 않는다 -- 어느 칸에 있든 화면에 나가는 글이다. 입력은 한 장면의 화면에 나가는 칸 목록이다. headline 은 큰 글씨
+  제목, caption 은 작은 설명, note 는 장면 아래 한 줄, items 와 steps 는 항목 목록, quote 는 인용, ask 는
+  시청자에게 던지는 물음이다. 내레이션은 주지 않는다.'
+choices:
+- 섞여 있다
+- 없다
+generator:
+  script: src/build_shorts_onscreen_directive.py
+  seed: 20261030
+source: 쇼츠 연출안 13편의 장면 65개 중 note 가 있는 것 (화면에 나가는 칸만, 회사·브랜드·기관 이름은 역할명으로 치환). 원자료
+  비공개
+taxonomy:
+  domain:
+  - editorial
+  - product-ops
+  input_kind: record
+  source_kind: own-data
+  language: ko
+keywords:
+- 자막
+- 제작 지시
+- 지침 준수
+- 수신자
+visibility: sample
+items_sha256: 842f0b57940ce39c6e20719804f3a72c56018e8e2fb776f7ed9b68fa24a90cff
+review:
+  checks_run: 7
+  human_reviewed_fraction: 0.0
+  flagged: 7
+  decided: 0
+license: CC-BY-4.0
+owner: ernestolee13
+n: 48
+choices_note: null
+published_at: '2026-10-30'
+type: binary
+classes:
+- D-known
+- D-novel-decl
+- D-novel-req
+- V-ban
+- V-plain
+- V-scene
+label_source_mix:
+  machine: 0
+  constructed: 40
+  judged: 8
+  outcome: 0
+experiment:
+  date: '2026-10-30'
+  template: generic
+  runner: benchlet
+  arms:
+    qwen:
+      model: qwen/qwen3.8-27b
+      provider: parasail
+      family: Qwen
+      mode: logprob
+      prob_source: logprob
+      base_url: openrouter.ai
+      in_per_m: 0.0605
+      smoke:
+        arm: qwen
+        mode: logprob
+        usable: true
+        reasons: []
+        has_logprobs: true
+        reasoning_tokens_zero: true
+        provider_match: true
+        mass_min: 0.9975
+        spread: 0.0
+        distinct_p: 9
+        n_calls: 13
+        smoke_acc: 1.0
+        cost: 0.0004663945
+        per_item:
+        - id: shorts-dir-000
+          target: 0
+          hit: 1
+          p: 0.99
+        - id: shorts-dir-010
+          target: 0
+          hit: 1
+          p: 0.9792
+        - id: shorts-dir-020
+          target: 0
+          hit: 1
+          p: 0.9964
+        - id: shorts-dir-019
+          target: 1
+          hit: 1
+          p: 0.0203
+        - id: shorts-dir-001
+          target: 1
+          hit: 1
+          p: 0.0887
+      cache_warm: null
+      template_rev: '2026-10-22'
+    anthropic:claude-haiku-5-5:
+      model: claude-haiku-5-5
+      provider: anthropic
+      family: Anthropic
+      mode: generative
+      prob_source: none
+      base_url: api.anthropic.com
+      in_per_m: 0.1
+      smoke:
+        arm: anthropic:claude-haiku-5-5
+        mode: generative
+        usable: true
+        reasons:
+        - 로그확률이 안 와서 생성 팔로 강등 (prob_source=none, 정확도만)
+        has_logprobs: false
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: 0
+        n_calls: 11
+        smoke_acc: null
+        cost: 0.0012002
+        per_item: []
+      cache_warm: null
+      template_rev: '2026-10-22'
+    jev:
+      model: typesafe/jev-1.13
+      provider: openrouter
+      family: Jev
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.042
+      smoke:
+        arm: jev
+        mode: typed
+        usable: true
+        reasons: []
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 1.0
+        cost: 0.00020937
+        per_item:
+        - id: shorts-dir-000
+          target: 0
+          hit: 1
+          p: 0.86
+          pred: null
+        - id: shorts-dir-010
+          target: 0
+          hit: 1
+          p: 0.84
+          pred: null
+        - id: shorts-dir-020
+          target: 0
+          hit: 1
+          p: 0.9
+          pred: null
+        - id: shorts-dir-019
+          target: 1
+          hit: 1
+          p: 0.05
+          pred: null
+        - id: shorts-dir-001
+          target: 1
+          hit: 1
+          p: 0.06
+          pred: null
+      cache_warm: null
+      template_rev: '2026-10-22'
+    jev14:
+      model: typesafe/jev-1.14
+      provider: openrouter
+      family: Jev
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.042
+      smoke:
+        arm: jev14
+        mode: typed
+        usable: true
+        reasons: []
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 1.0
+        cost: 0.00020937
+        per_item:
+        - id: shorts-dir-000
+          target: 0
+          hit: 1
+          p: 0.97
+          pred: null
+        - id: shorts-dir-010
+          target: 0
+          hit: 1
+          p: 0.9
+          pred: null
+        - id: shorts-dir-020
+          target: 0
+          hit: 1
+          p: 0.97
+          pred: null
+        - id: shorts-dir-019
+          target: 1
+          hit: 1
+          p: 0.05
+          pred: null
+        - id: shorts-dir-001
+          target: 1
+          hit: 1
+          p: 0.07
+          pred: null
+      cache_warm: null
+      template_rev: '2026-10-22'
+    luna:
+      model: openai/gpt-6-luna-decisions
+      provider: openrouter
+      family: OpenAI
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.1
+      smoke:
+        arm: luna
+        mode: typed
+        usable: true
+        reasons: []
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 1.0
+        cost: 0.00039280000000000006
+        per_item:
+        - id: shorts-dir-000
+          target: 0
+          hit: 1
+          p: 0.69
+          pred: null
+        - id: shorts-dir-010
+          target: 0
+          hit: 1
+          p: 0.87
+          pred: null
+        - id: shorts-dir-020
+          target: 0
+          hit: 1
+          p: 1
+          pred: null
+        - id: shorts-dir-019
+          target: 1
+          hit: 1
+          p: 0
+          pred: null
+        - id: shorts-dir-001
+          target: 1
+          hit: 1
+          p: 0
+          pred: null
+      cache_warm: null
+      template_rev: '2026-10-22'
+  protocol:
+    decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
+    logprob_call:
+      max_tokens: 1
+      temperature: 0
+      logprobs: true
+      top_logprobs: 8
+      reasoning:
+        enabled: false
+    provider_pin: provider.only=[pin], allow_fallbacks=false, require_parameters=true
+    binary: '극성 반전 2회 호출 평균: p = ½[P(A|choices[0]=A) + P(B|choices[0]=B)]'
+    multiclass: 항목별 결정론적 셔플 뒤 원 인덱스로 복원(generic) 또는 파일에 든 셔플 그대로(legacy-seed)
+    typed: Jev noul(이진)/choice(다지), 질문을 instructions 로 그대로 전달
+    label_mass: 상위 8토큰 중 라벨 토큰 질량 < 0.5 이면 오류로 두고 세지 않음
+    renormalize: 라벨 토큰 확률을 라벨 집합 안에서 재정규화
+  items_sha256: 842f0b57940ce39c6e20719804f3a72c56018e8e2fb776f7ed9b68fa24a90cff
+results:
+- results/shorts-onscreen-directive-run.json
+result_summary:
+  qwen:
+    acc: 0.9375
+    ci95:
+    - 0.8316430233725778
+    - 0.9785171568687728
+    auroc: 0.9930555555555556
+    brier: 0.03333945918283233
+    n: 48
+    prob_source: logprob
+    model: qwen/qwen3.8-27b
+    source_badge: author-run
+  anthropic:claude-haiku-5-5:
+    acc: 0.9583333333333334
+    ci95:
+    - 0.8602408885222853
+    - 0.9884983479210343
+    auroc: 0.9583333333333334
+    brier: 0.052083333333333336
+    n: 48
+    prob_source: none
+    model: claude-haiku-5-5
+    source_badge: author-run
+  jev:
+    acc: 0.9375
+    ci95:
+    - 0.8316430233725778
+    - 0.9785171568687728
+    auroc: 0.9956597222222222
+    brier: 0.04506458333333333
+    n: 48
+    prob_source: typed
+    model: typesafe/jev-1.13
+    source_badge: author-run
+  jev14:
+    acc: 0.9791666666666666
+    ci95:
+    - 0.8910053086246883
+    - 0.9963129840206003
+    auroc: 0.9947916666666666
+    brier: 0.03052291666666666
+    n: 48
+    prob_source: typed
+    model: typesafe/jev-1.14
+    source_badge: author-run
+  luna:
+    acc: 0.8958333333333334
+    ci95:
+    - 0.7783231187385907
+    - 0.9546789490988217
+    auroc: 0.9930555555555556
+    brier: 0.0638166666666667
+    n: 48
+    prob_source: typed
+    model: openai/gpt-6-luna-decisions
+    source_badge: author-run
