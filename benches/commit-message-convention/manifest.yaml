@@ -43,7 +43,7 @@ keywords:
 owner: ernestolee13
 n: 32
 choices_note: null
-published_at: '2026-10-20'
+published_at: '2026-11-01'
 type: binary
 classes:
 - OK
@@ -57,7 +57,7 @@ label_source_mix:
   judged: 0
   outcome: 0
 experiment:
-  date: '2026-10-20'
+  date: '2026-10-22'
   template: generic
   runner: benchlet
   arms:
@@ -220,33 +220,34 @@ experiment:
         distinct_p: null
         n_calls: 5
         smoke_acc: 0.8
-        cost: 8.979600000000002e-05
+        cost: 9.441599999999999e-05
         per_item:
         - id: commit-message-convention-000
           target: 0
           hit: 1
-          p: 0.73
+          p: 0.81
           pred: null
         - id: commit-message-convention-004
           target: 0
           hit: 1
-          p: 0.95
+          p: 0.97
           pred: null
         - id: commit-message-convention-007
           target: 0
           hit: 0
-          p: 0.12
+          p: 0.15
           pred: null
         - id: commit-message-convention-001
           target: 1
           hit: 1
-          p: 0.11
+          p: 0.12
           pred: null
         - id: commit-message-convention-003
           target: 1
           hit: 1
-          p: 0.1
+          p: 0.11
           pred: null
+      cache_warm: null
     anthropic:claude-haiku-5-5:
       model: claude-haiku-5-5
       provider: anthropic
@@ -295,17 +296,17 @@ experiment:
         distinct_p: null
         n_calls: 5
         smoke_acc: 0.6
-        cost: 0.000146
+        cost: 0.00015549999999999999
         per_item:
         - id: commit-message-convention-000
           target: 0
           hit: 0
-          p: 0.15
+          p: 0.07
           pred: null
         - id: commit-message-convention-004
           target: 0
           hit: 1
-          p: 0.99
+          p: 0.98
           pred: null
         - id: commit-message-convention-007
           target: 0
@@ -315,12 +316,63 @@ experiment:
         - id: commit-message-convention-001
           target: 1
           hit: 1
-          p: 0.34
+          p: 0.4
           pred: null
         - id: commit-message-convention-003
           target: 1
           hit: 0
+          p: 1
+          pred: null
+      cache_warm: null
+    jev14:
+      model: typesafe/jev-1.14
+      provider: openrouter
+      family: Jev
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.042
+      smoke:
+        arm: jev14
+        mode: typed
+        usable: true
+        reasons:
+        - 뻔한 5건 중 1건 틀림 (commit-message-convention-007). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면
+          팔 약점
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 0.8
+        cost: 9.441599999999999e-05
+        per_item:
+        - id: commit-message-convention-000
+          target: 0
+          hit: 1
+          p: 0.87
+          pred: null
+        - id: commit-message-convention-004
+          target: 0
+          hit: 1
           p: 0.96
+          pred: null
+        - id: commit-message-convention-007
+          target: 0
+          hit: 0
+          p: 0.14
+          pred: null
+        - id: commit-message-convention-001
+          target: 1
+          hit: 1
+          p: 0.11
+          pred: null
+        - id: commit-message-convention-003
+          target: 1
+          hit: 1
+          p: 0.12
           pred: null
       cache_warm: null
   protocol:
@@ -375,17 +427,6 @@ result_summary:
     prob_source: logprob
     model: deepseek/deepseek-v4-flash
     source_badge: author-run
-  jev:
-    acc: 0.6875
-    ci95:
-    - 0.5143300030196761
-    - 0.8204764788338126
-    auroc: 0.841796875
-    brier: 0.21255937499999994
-    n: 32
-    prob_source: typed
-    model: typesafe/jev-1.13
-    source_badge: author-run
   anthropic:claude-haiku-5-5:
     acc: 1.0
     ci95:
@@ -397,13 +438,35 @@ result_summary:
     prob_source: none
     model: claude-haiku-5-5
     source_badge: author-run
+  jev:
+    acc: 0.71875
+    ci95:
+    - 0.5462516306188822
+    - 0.8443559315435213
+    auroc: 0.830078125
+    brier: 0.20433749999999998
+    n: 32
+    prob_source: typed
+    model: typesafe/jev-1.13
+    source_badge: author-run
+  jev14:
+    acc: 0.75
+    ci95:
+    - 0.5789310822975338
+    - 0.8674775601737845
+    auroc: 0.89453125
+    brier: 0.19553125000000002
+    n: 32
+    prob_source: typed
+    model: typesafe/jev-1.14
+    source_badge: author-run
   luna:
     acc: 0.625
     ci95:
     - 0.4525410058952512
     - 0.7706633153404079
-    auroc: 0.658203125
-    brier: 0.305225
+    auroc: 0.62890625
+    brier: 0.32047187499999996
     n: 32
     prob_source: typed
     model: openai/gpt-6-luna-decisions
