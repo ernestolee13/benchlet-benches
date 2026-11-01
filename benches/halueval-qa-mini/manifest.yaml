@@ -199,7 +199,7 @@ review:
 note: 판단형 공개 벤치의 축약 시드(행렬 없는 경로). 라벨은 원천 라벨. 축약 검증은 원천 모델 집단이 아니라 우리 팔의 전체 대 축약 비교다
 owner: ernestolee13
 n: 100
-published_at: '2026-10-20'
+published_at: '2026-11-01'
 type: binary
 classes:
 - hallucinated
@@ -210,7 +210,7 @@ label_source_mix:
   judged: 0
   outcome: 0
 experiment:
-  date: '2026-10-20'
+  date: '2026-10-22'
   template: generic
   runner: benchlet
   arms:
@@ -365,33 +365,34 @@ experiment:
         distinct_p: null
         n_calls: 5
         smoke_acc: 1.0
-        cost: 9.8574e-05
+        cost: 0.000104034
         per_item:
         - id: halueval-qa-mini-0001
           target: 0
           hit: 1
-          p: 0.87
+          p: 0.97
           pred: null
         - id: halueval-qa-mini-0003
           target: 0
           hit: 1
-          p: 0.65
+          p: 0.66
           pred: null
         - id: halueval-qa-mini-0006
           target: 0
           hit: 1
-          p: 0.78
+          p: 0.89
           pred: null
         - id: halueval-qa-mini-0000
           target: 1
           hit: 1
-          p: 0.16
+          p: 0.06
           pred: null
         - id: halueval-qa-mini-0002
           target: 1
           hit: 1
-          p: 0.2
+          p: 0.1
           pred: null
+      cache_warm: null
     anthropic:claude-haiku-5-5:
       model: claude-haiku-5-5
       provider: anthropic
@@ -429,9 +430,7 @@ experiment:
         arm: luna
         mode: typed
         usable: true
-        reasons:
-        - 뻔한 5건 중 4건 틀림 (halueval-qa-mini-0001, halueval-qa-mini-0006, halueval-qa-mini-0000,
-          halueval-qa-mini-0002). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        reasons: []
         has_logprobs: null
         reasoning_tokens_zero: null
         provider_match: null
@@ -439,33 +438,82 @@ experiment:
         spread: null
         distinct_p: null
         n_calls: 5
-        smoke_acc: 0.2
-        cost: 0.0001671
+        smoke_acc: 1.0
+        cost: 0.0001781
         per_item:
         - id: halueval-qa-mini-0001
           target: 0
-          hit: 0
-          p: 0.01
+          hit: 1
+          p: 1
           pred: null
         - id: halueval-qa-mini-0003
           target: 0
           hit: 1
-          p: 0.57
+          p: 0.96
           pred: null
         - id: halueval-qa-mini-0006
           target: 0
-          hit: 0
-          p: 0.04
+          hit: 1
+          p: 0.99
           pred: null
         - id: halueval-qa-mini-0000
           target: 1
-          hit: 0
-          p: 1
+          hit: 1
+          p: 0
           pred: null
         - id: halueval-qa-mini-0002
           target: 1
-          hit: 0
-          p: 1
+          hit: 1
+          p: 0
+          pred: null
+      cache_warm: null
+    jev14:
+      model: typesafe/jev-1.14
+      provider: openrouter
+      family: Jev
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.042
+      smoke:
+        arm: jev14
+        mode: typed
+        usable: true
+        reasons: []
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 1.0
+        cost: 0.000104034
+        per_item:
+        - id: halueval-qa-mini-0001
+          target: 0
+          hit: 1
+          p: 0.98
+          pred: null
+        - id: halueval-qa-mini-0003
+          target: 0
+          hit: 1
+          p: 0.8
+          pred: null
+        - id: halueval-qa-mini-0006
+          target: 0
+          hit: 1
+          p: 0.96
+          pred: null
+        - id: halueval-qa-mini-0000
+          target: 1
+          hit: 1
+          p: 0.06
+          pred: null
+        - id: halueval-qa-mini-0002
+          target: 1
+          hit: 1
+          p: 0.12
           pred: null
       cache_warm: null
   protocol:
@@ -509,17 +557,6 @@ result_summary:
     prob_source: logprob
     model: qwen/qwen3.8-27b
     source_badge: author-run
-  jev:
-    acc: 0.86
-    ci95:
-    - 0.7786263961619276
-    - 0.9147373424553509
-    auroc: 0.9132
-    brier: 0.10217999999999999
-    n: 100
-    prob_source: typed
-    model: typesafe/jev-1.13
-    source_badge: author-run
   deepseek:
     acc: 0.9047619047619048
     ci95:
@@ -542,13 +579,35 @@ result_summary:
     prob_source: none
     model: claude-haiku-5-5
     source_badge: author-run
-  luna:
-    acc: 0.17
+  jev:
+    acc: 0.89
     ci95:
-    - 0.10893476059773155
-    - 0.25548181233642975
-    auroc: 0.0566
-    brier: 0.7683860000000001
+    - 0.8136853697209697
+    - 0.9374586804477488
+    auroc: 0.937
+    brier: 0.08653100000000002
+    n: 100
+    prob_source: typed
+    model: typesafe/jev-1.13
+    source_badge: author-run
+  jev14:
+    acc: 0.9
+    ci95:
+    - 0.8256326956323347
+    - 0.9447714583868638
+    auroc: 0.9414
+    brier: 0.08052200000000001
+    n: 100
+    prob_source: typed
+    model: typesafe/jev-1.14
+    source_badge: author-run
+  luna:
+    acc: 0.92
+    ci95:
+    - 0.8500173312059693
+    - 0.9589070305141891
+    auroc: 0.9638
+    brier: 0.06499599999999997
     n: 100
     prob_source: typed
     model: openai/gpt-6-luna-decisions
