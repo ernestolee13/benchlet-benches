@@ -279,7 +279,7 @@ source_results:
     frontier: false
 owner: ernestolee13
 n: 100
-published_at: '2026-10-20'
+published_at: '2026-11-01'
 type: binary
 classes:
 - livebench
@@ -291,7 +291,7 @@ label_source_mix:
   judged: 0
   outcome: 0
 experiment:
-  date: '2026-10-20'
+  date: '2026-10-22'
   template: generic
   runner: benchlet
   arms:
@@ -440,9 +440,7 @@ experiment:
         arm: jev
         mode: typed
         usable: true
-        reasons:
-        - 뻔한 5건 중 3건 틀림 (judge-pair-mini-006, judge-pair-mini-019, judge-pair-mini-062).
-          다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        reasons: []
         has_logprobs: null
         reasoning_tokens_zero: null
         provider_match: null
@@ -450,13 +448,13 @@ experiment:
         spread: null
         distinct_p: null
         n_calls: 5
-        smoke_acc: 0.4
-        cost: 0.000314916
+        smoke_acc: 1.0
+        cost: 0.00031995600000000004
         per_item:
         - id: judge-pair-mini-013
           target: 0
           hit: 1
-          p: 0.68
+          p: 0.76
           pred: null
         - id: judge-pair-mini-064
           target: 0
@@ -465,19 +463,20 @@ experiment:
           pred: null
         - id: judge-pair-mini-006
           target: 0
-          hit: 0
-          p: 0.48
+          hit: 1
+          p: 0.5
           pred: null
         - id: judge-pair-mini-019
           target: 1
-          hit: 0
-          p: 0.83
+          hit: 1
+          p: 0.38
           pred: null
         - id: judge-pair-mini-062
           target: 1
-          hit: 0
-          p: 0.87
+          hit: 1
+          p: 0.12
           pred: null
+      cache_warm: null
     anthropic:claude-haiku-5-5:
       model: claude-haiku-5-5
       provider: anthropic
@@ -516,8 +515,8 @@ experiment:
         mode: typed
         usable: true
         reasons:
-        - 뻔한 5건 중 3건 틀림 (judge-pair-mini-013, judge-pair-mini-019, judge-pair-mini-062).
-          다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        - 뻔한 5건 중 2건 틀림 (judge-pair-mini-013, judge-pair-mini-019). 다른 팔도 틀리면 질문 결함,
+          이 팔만 틀리면 팔 약점
         has_logprobs: null
         reasoning_tokens_zero: null
         provider_match: null
@@ -525,33 +524,82 @@ experiment:
         spread: null
         distinct_p: null
         n_calls: 5
-        smoke_acc: 0.4
-        cost: 0.0006433
+        smoke_acc: 0.6
+        cost: 0.0006538000000000001
         per_item:
         - id: judge-pair-mini-013
           target: 0
           hit: 0
-          p: 0.1
+          p: 0.06
           pred: null
         - id: judge-pair-mini-064
           target: 0
           hit: 1
-          p: 0.7
+          p: 0.81
           pred: null
         - id: judge-pair-mini-006
           target: 0
           hit: 1
-          p: 0.69
+          p: 0.83
           pred: null
         - id: judge-pair-mini-019
           target: 1
           hit: 0
-          p: 0.79
+          p: 0.54
           pred: null
         - id: judge-pair-mini-062
           target: 1
-          hit: 0
-          p: 0.93
+          hit: 1
+          p: 0.45
+          pred: null
+      cache_warm: null
+    jev14:
+      model: typesafe/jev-1.14
+      provider: openrouter
+      family: Jev
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.042
+      smoke:
+        arm: jev14
+        mode: typed
+        usable: true
+        reasons: []
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 1.0
+        cost: 0.00031995600000000004
+        per_item:
+        - id: judge-pair-mini-013
+          target: 0
+          hit: 1
+          p: 0.78
+          pred: null
+        - id: judge-pair-mini-064
+          target: 0
+          hit: 1
+          p: 0.81
+          pred: null
+        - id: judge-pair-mini-006
+          target: 0
+          hit: 1
+          p: 0.59
+          pred: null
+        - id: judge-pair-mini-019
+          target: 1
+          hit: 1
+          p: 0.29
+          pred: null
+        - id: judge-pair-mini-062
+          target: 1
+          hit: 1
+          p: 0.12
           pred: null
       cache_warm: null
   protocol:
@@ -595,17 +643,6 @@ result_summary:
     prob_source: logprob
     model: qwen/qwen3.8-27b
     source_badge: author-run
-  jev:
-    acc: 0.47
-    ci95:
-    - 0.3751065198210374
-    - 0.5671131686275227
-    auroc: 0.48012846246487356
-    brier: 0.30103599999999997
-    n: 100
-    prob_source: typed
-    model: typesafe/jev-1.13
-    source_badge: author-run
   deepseek:
     acc: 0.5050505050505051
     ci95:
@@ -628,13 +665,35 @@ result_summary:
     prob_source: none
     model: claude-haiku-5-5
     source_badge: author-run
-  luna:
-    acc: 0.44
+  jev:
+    acc: 0.77
     ci95:
-    - 0.34671865400968327
-    - 0.537720722887437
-    auroc: 0.4399839421918908
-    brier: 0.354394
+    - 0.6784543514317231
+    - 0.8415684525312359
+    auroc: 0.8663187474909675
+    brier: 0.16330500000000003
+    n: 100
+    prob_source: typed
+    model: typesafe/jev-1.13
+    source_badge: author-run
+  jev14:
+    acc: 0.81
+    ci95:
+    - 0.7222097592919214
+    - 0.8748534600729575
+    auroc: 0.8753512645523887
+    brier: 0.15970000000000012
+    n: 100
+    prob_source: typed
+    model: typesafe/jev-1.14
+    source_badge: author-run
+  luna:
+    acc: 0.57
+    ci95:
+    - 0.4721521169586435
+    - 0.6626686099947162
+    auroc: 0.592934564431955
+    brier: 0.27404600000000007
     n: 100
     prob_source: typed
     model: openai/gpt-6-luna-decisions

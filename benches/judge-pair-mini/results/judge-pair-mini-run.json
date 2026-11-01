@@ -3,7 +3,7 @@
  "bench": "judge-pair-mini@1",
  "items_sha256": "bfa667f3f3fd42cdf7bd7b6d637c8a92d664985ec911ddfe5be2dfd219663d3d",
  "template": "generic",
- "date": "2026-10-20",
+ "date": "2026-10-22",
  "arms": {
   "glm": {
    "model": "z-ai/glm-4.7-flash",
@@ -190,9 +190,7 @@
     "arm": "jev",
     "mode": "typed",
     "usable": true,
-    "reasons": [
-     "뻔한 5건 중 3건 틀림 (judge-pair-mini-006, judge-pair-mini-019, judge-pair-mini-062). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점"
-    ],
+    "reasons": [],
     "has_logprobs": null,
     "reasoning_tokens_zero": null,
     "provider_match": null,
@@ -200,14 +198,14 @@
     "spread": null,
     "distinct_p": null,
     "n_calls": 5,
-    "smoke_acc": 0.4,
-    "cost": 0.000314916,
+    "smoke_acc": 1.0,
+    "cost": 0.00031995600000000004,
     "per_item": [
      {
       "id": "judge-pair-mini-013",
       "target": 0,
       "hit": 1,
-      "p": 0.68,
+      "p": 0.76,
       "pred": null
      },
      {
@@ -220,26 +218,27 @@
      {
       "id": "judge-pair-mini-006",
       "target": 0,
-      "hit": 0,
-      "p": 0.48,
+      "hit": 1,
+      "p": 0.5,
       "pred": null
      },
      {
       "id": "judge-pair-mini-019",
       "target": 1,
-      "hit": 0,
-      "p": 0.83,
+      "hit": 1,
+      "p": 0.38,
       "pred": null
      },
      {
       "id": "judge-pair-mini-062",
       "target": 1,
-      "hit": 0,
-      "p": 0.87,
+      "hit": 1,
+      "p": 0.12,
       "pred": null
      }
     ]
-   }
+   },
+   "cache_warm": null
   },
   "anthropic:claude-haiku-5-5": {
    "model": "claude-haiku-5-5",
@@ -282,7 +281,7 @@
     "mode": "typed",
     "usable": true,
     "reasons": [
-     "뻔한 5건 중 3건 틀림 (judge-pair-mini-013, judge-pair-mini-019, judge-pair-mini-062). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점"
+     "뻔한 5건 중 2건 틀림 (judge-pair-mini-013, judge-pair-mini-019). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점"
     ],
     "has_logprobs": null,
     "reasoning_tokens_zero": null,
@@ -291,42 +290,104 @@
     "spread": null,
     "distinct_p": null,
     "n_calls": 5,
-    "smoke_acc": 0.4,
-    "cost": 0.0006433,
+    "smoke_acc": 0.6,
+    "cost": 0.0006538000000000001,
     "per_item": [
      {
       "id": "judge-pair-mini-013",
       "target": 0,
       "hit": 0,
-      "p": 0.1,
+      "p": 0.06,
       "pred": null
      },
      {
       "id": "judge-pair-mini-064",
       "target": 0,
       "hit": 1,
-      "p": 0.7,
+      "p": 0.81,
       "pred": null
      },
      {
       "id": "judge-pair-mini-006",
       "target": 0,
       "hit": 1,
-      "p": 0.69,
+      "p": 0.83,
       "pred": null
      },
      {
       "id": "judge-pair-mini-019",
       "target": 1,
       "hit": 0,
-      "p": 0.79,
+      "p": 0.54,
       "pred": null
      },
      {
       "id": "judge-pair-mini-062",
       "target": 1,
-      "hit": 0,
-      "p": 0.93,
+      "hit": 1,
+      "p": 0.45,
+      "pred": null
+     }
+    ]
+   },
+   "cache_warm": null
+  },
+  "jev14": {
+   "model": "typesafe/jev-1.14",
+   "provider": "openrouter",
+   "family": "Jev",
+   "mode": "typed",
+   "prob_source": "typed",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.042,
+   "smoke": {
+    "arm": "jev14",
+    "mode": "typed",
+    "usable": true,
+    "reasons": [],
+    "has_logprobs": null,
+    "reasoning_tokens_zero": null,
+    "provider_match": null,
+    "mass_min": null,
+    "spread": null,
+    "distinct_p": null,
+    "n_calls": 5,
+    "smoke_acc": 1.0,
+    "cost": 0.00031995600000000004,
+    "per_item": [
+     {
+      "id": "judge-pair-mini-013",
+      "target": 0,
+      "hit": 1,
+      "p": 0.78,
+      "pred": null
+     },
+     {
+      "id": "judge-pair-mini-064",
+      "target": 0,
+      "hit": 1,
+      "p": 0.81,
+      "pred": null
+     },
+     {
+      "id": "judge-pair-mini-006",
+      "target": 0,
+      "hit": 1,
+      "p": 0.59,
+      "pred": null
+     },
+     {
+      "id": "judge-pair-mini-019",
+      "target": 1,
+      "hit": 1,
+      "p": 0.29,
+      "pred": null
+     },
+     {
+      "id": "judge-pair-mini-062",
+      "target": 1,
+      "hit": 1,
+      "p": 0.12,
       "pred": null
      }
     ]
@@ -376,18 +437,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 218,
-     "in_tok": 1935,
-     "cost": 8.127000000000001e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.58
-     },
-     "p_violation": 0.58
-    },
     "deepseek": {
      "p_violation": 0.3770179674175573,
      "ms": 4898,
@@ -418,17 +467,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 484,
+     "in_tok": 1959,
+     "out_tok": 20,
+     "cost": 8.2278e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.46
+     },
+     "p_violation": 0.46
+    },
+    "jev14": {
+     "ms": 550,
+     "in_tok": 1959,
+     "out_tok": 20,
+     "cost": 8.2278e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.47
+     },
+     "p_violation": 0.47
+    },
     "luna": {
-     "ms": 544,
-     "in_tok": 1734,
-     "cost": 0.0001734,
+     "ms": 487,
+     "in_tok": 1755,
+     "out_tok": 0,
+     "cost": 0.0001755,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0
+      "noul": 0.2
      },
-     "p_violation": 0
+     "p_violation": 0.2
     }
    }
   },
@@ -473,18 +549,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 246,
-     "in_tok": 2173,
-     "cost": 9.1266e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.74
-     },
-     "p_violation": 0.74
-    },
     "deepseek": {
      "p_violation": 0.5264404009840826,
      "ms": 7899,
@@ -515,17 +579,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 481,
+     "in_tok": 2197,
+     "out_tok": 20,
+     "cost": 9.2274e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.77
+     },
+     "p_violation": 0.77
+    },
+    "jev14": {
+     "ms": 527,
+     "in_tok": 2197,
+     "out_tok": 20,
+     "cost": 9.2274e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.71
+     },
+     "p_violation": 0.71
+    },
     "luna": {
-     "ms": 553,
-     "in_tok": 1925,
-     "cost": 0.0001925,
+     "ms": 604,
+     "in_tok": 1946,
+     "out_tok": 0,
+     "cost": 0.0001946,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.24
+      "noul": 0.64
      },
-     "p_violation": 0.24
+     "p_violation": 0.64
     }
    }
   },
@@ -570,18 +661,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 230,
-     "in_tok": 1938,
-     "cost": 8.1396e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.86
-     },
-     "p_violation": 0.86
-    },
     "deepseek": {
      "p_violation": 0.45646197394102583,
      "ms": 12475,
@@ -612,17 +691,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 452,
+     "in_tok": 1962,
+     "out_tok": 20,
+     "cost": 8.2404e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.89
+     },
+     "p_violation": 0.89
+    },
+    "jev14": {
+     "ms": 523,
+     "in_tok": 1962,
+     "out_tok": 20,
+     "cost": 8.2404e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.89
+     },
+     "p_violation": 0.89
+    },
     "luna": {
-     "ms": 546,
-     "in_tok": 1720,
-     "cost": 0.000172,
+     "ms": 646,
+     "in_tok": 1741,
+     "out_tok": 0,
+     "cost": 0.0001741,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.87
+      "noul": 0.92
      },
-     "p_violation": 0.87
+     "p_violation": 0.92
     }
    }
   },
@@ -667,18 +773,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 233,
-     "in_tok": 2623,
-     "cost": 0.000110166,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.75
-     },
-     "p_violation": 0.75
-    },
     "deepseek": {
      "p_violation": 0.46541733740654645,
      "ms": 4161,
@@ -709,17 +803,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 476,
+     "in_tok": 2647,
+     "out_tok": 20,
+     "cost": 0.000111174,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.81
+     },
+     "p_violation": 0.81
+    },
+    "jev14": {
+     "ms": 507,
+     "in_tok": 2647,
+     "out_tok": 20,
+     "cost": 0.000111174,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.65
+     },
+     "p_violation": 0.65
+    },
     "luna": {
-     "ms": 599,
-     "in_tok": 2438,
-     "cost": 0.0002438,
+     "ms": 561,
+     "in_tok": 2459,
+     "out_tok": 0,
+     "cost": 0.0002459,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.58
+      "noul": 0.91
      },
-     "p_violation": 0.58
+     "p_violation": 0.91
     }
    }
   },
@@ -764,18 +885,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 283,
-     "in_tok": 1907,
-     "cost": 8.009400000000001e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.61
-     },
-     "p_violation": 0.61
-    },
     "deepseek": {
      "p_violation": 0.511379885804567,
      "ms": 2561,
@@ -806,17 +915,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 452,
+     "in_tok": 1931,
+     "out_tok": 20,
+     "cost": 8.1102e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.45
+     },
+     "p_violation": 0.45
+    },
+    "jev14": {
+     "ms": 557,
+     "in_tok": 1931,
+     "out_tok": 20,
+     "cost": 8.1102e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.38
+     },
+     "p_violation": 0.38
+    },
     "luna": {
-     "ms": 542,
-     "in_tok": 1726,
-     "cost": 0.0001726,
+     "ms": 510,
+     "in_tok": 1747,
+     "out_tok": 0,
+     "cost": 0.0001747,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.69
+      "noul": 0.42
      },
-     "p_violation": 0.69
+     "p_violation": 0.42
     }
    }
   },
@@ -861,18 +997,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 223,
-     "in_tok": 1653,
-     "cost": 6.942600000000001e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.5
-     },
-     "p_violation": 0.5
-    },
     "deepseek": {
      "p_violation": 0.5022536751523178,
      "ms": 2630,
@@ -903,17 +1027,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 467,
+     "in_tok": 1677,
+     "out_tok": 20,
+     "cost": 7.0434e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.3
+     },
+     "p_violation": 0.3
+    },
+    "jev14": {
+     "ms": 552,
+     "in_tok": 1677,
+     "out_tok": 20,
+     "cost": 7.0434e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.36
+     },
+     "p_violation": 0.36
+    },
     "luna": {
-     "ms": 520,
-     "in_tok": 1462,
-     "cost": 0.0001462,
+     "ms": 491,
+     "in_tok": 1483,
+     "out_tok": 0,
+     "cost": 0.0001483,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.13
+      "noul": 0.16
      },
-     "p_violation": 0.13
+     "p_violation": 0.16
     }
    }
   },
@@ -958,18 +1109,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 280,
-     "in_tok": 725,
-     "cost": 3.0449999999999998e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.47
-     },
-     "p_violation": 0.47
-    },
     "deepseek": {
      "p_violation": 0.5023336735888948,
      "ms": 3362,
@@ -1000,17 +1139,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 527,
+     "in_tok": 749,
+     "out_tok": 20,
+     "cost": 3.1458e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.5
+     },
+     "p_violation": 0.5
+    },
+    "jev14": {
+     "ms": 511,
+     "in_tok": 749,
+     "out_tok": 20,
+     "cost": 3.1458e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.6
+     },
+     "p_violation": 0.6
+    },
     "luna": {
-     "ms": 533,
-     "in_tok": 584,
-     "cost": 5.84e-05,
+     "ms": 603,
+     "in_tok": 605,
+     "out_tok": 0,
+     "cost": 6.05e-05,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.69
+      "noul": 0.83
      },
-     "p_violation": 0.69
+     "p_violation": 0.83
     }
    }
   },
@@ -1055,18 +1221,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 237,
-     "in_tok": 1722,
-     "cost": 7.232400000000001e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.81
-     },
-     "p_violation": 0.81
-    },
     "deepseek": {
      "p_violation": 0.5636753313445553,
      "ms": 4459,
@@ -1097,17 +1251,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
-    "luna": {
-     "ms": 497,
-     "in_tok": 1552,
-     "cost": 0.0001552,
-     "model": "openai/gpt-6-luna-decisions-20261006",
+    "jev": {
+     "ms": 502,
+     "in_tok": 1746,
+     "out_tok": 20,
+     "cost": 7.3332e-05,
+     "model": "typesafe/jev-1.13-20260917",
      "err": null,
      "raw": {
       "type": "noul",
       "noul": 0.81
      },
      "p_violation": 0.81
+    },
+    "jev14": {
+     "ms": 525,
+     "in_tok": 1746,
+     "out_tok": 20,
+     "cost": 7.3332e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.78
+     },
+     "p_violation": 0.78
+    },
+    "luna": {
+     "ms": 529,
+     "in_tok": 1573,
+     "out_tok": 0,
+     "cost": 0.0001573,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.19
+     },
+     "p_violation": 0.19
     }
    }
   },
@@ -1152,18 +1333,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 220,
-     "in_tok": 1222,
-     "cost": 5.1324000000000005e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.67
-     },
-     "p_violation": 0.67
-    },
     "deepseek": {
      "p_violation": 0.49433699471596027,
      "ms": 2621,
@@ -1194,17 +1363,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 547,
+     "in_tok": 1246,
+     "out_tok": 20,
+     "cost": 5.2332e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.35
+     },
+     "p_violation": 0.35
+    },
+    "jev14": {
+     "ms": 491,
+     "in_tok": 1246,
+     "out_tok": 20,
+     "cost": 5.2332e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.24
+     },
+     "p_violation": 0.24
+    },
     "luna": {
-     "ms": 543,
-     "in_tok": 1073,
-     "cost": 0.0001073,
+     "ms": 515,
+     "in_tok": 1094,
+     "out_tok": 0,
+     "cost": 0.0001094,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.38
+      "noul": 0.37
      },
-     "p_violation": 0.38
+     "p_violation": 0.37
     }
    }
   },
@@ -1249,18 +1445,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 449,
-     "in_tok": 2337,
-     "cost": 9.815400000000001e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.63
-     },
-     "p_violation": 0.63
-    },
     "deepseek": {
      "p_violation": 0.44374496326131013,
      "ms": 2404,
@@ -1291,17 +1475,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 489,
+     "in_tok": 2361,
+     "out_tok": 20,
+     "cost": 9.9162e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.41
+     },
+     "p_violation": 0.41
+    },
+    "jev14": {
+     "ms": 511,
+     "in_tok": 2361,
+     "out_tok": 20,
+     "cost": 9.9162e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.37
+     },
+     "p_violation": 0.37
+    },
     "luna": {
-     "ms": 484,
-     "in_tok": 2048,
-     "cost": 0.0002048,
+     "ms": 545,
+     "in_tok": 2069,
+     "out_tok": 0,
+     "cost": 0.0002069,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.55
+      "noul": 0.3
      },
-     "p_violation": 0.55
+     "p_violation": 0.3
     }
    }
   },
@@ -1346,18 +1557,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 346,
-     "in_tok": 1818,
-     "cost": 7.6356e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.67
-     },
-     "p_violation": 0.67
-    },
     "deepseek": {
      "p_violation": 0.5274332640529652,
      "ms": 5385,
@@ -1388,17 +1587,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 448,
+     "in_tok": 1842,
+     "out_tok": 20,
+     "cost": 7.7364e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.72
+     },
+     "p_violation": 0.72
+    },
+    "jev14": {
+     "ms": 500,
+     "in_tok": 1842,
+     "out_tok": 20,
+     "cost": 7.7364e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.79
+     },
+     "p_violation": 0.79
+    },
     "luna": {
-     "ms": 568,
-     "in_tok": 1606,
-     "cost": 0.0001606,
+     "ms": 653,
+     "in_tok": 1627,
+     "out_tok": 0,
+     "cost": 0.0001627,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.31
+      "noul": 0.14
      },
-     "p_violation": 0.31
+     "p_violation": 0.14
     }
    }
   },
@@ -1443,18 +1669,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 379,
-     "in_tok": 2375,
-     "cost": 9.975e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.36
-     },
-     "p_violation": 0.36
-    },
     "deepseek": {
      "p_violation": 0.49999999863768096,
      "ms": 2466,
@@ -1485,17 +1699,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 445,
+     "in_tok": 2399,
+     "out_tok": 20,
+     "cost": 0.000100758,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.43
+     },
+     "p_violation": 0.43
+    },
+    "jev14": {
+     "ms": 497,
+     "in_tok": 2399,
+     "out_tok": 20,
+     "cost": 0.000100758,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.38
+     },
+     "p_violation": 0.38
+    },
     "luna": {
-     "ms": 584,
-     "in_tok": 2097,
-     "cost": 0.0002097,
+     "ms": 612,
+     "in_tok": 2118,
+     "out_tok": 0,
+     "cost": 0.0002118,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.22
+      "noul": 0.43
      },
-     "p_violation": 0.22
+     "p_violation": 0.43
     }
    }
   },
@@ -1540,18 +1781,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 229,
-     "in_tok": 2031,
-     "cost": 8.5302e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.76
-     },
-     "p_violation": 0.76
-    },
     "deepseek": {
      "p_violation": 0.4972569285629442,
      "ms": 2844,
@@ -1582,17 +1811,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 536,
+     "in_tok": 2055,
+     "out_tok": 20,
+     "cost": 8.631e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.7
+     },
+     "p_violation": 0.7
+    },
+    "jev14": {
+     "ms": 521,
+     "in_tok": 2055,
+     "out_tok": 20,
+     "cost": 8.631e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.69
+     },
+     "p_violation": 0.69
+    },
     "luna": {
-     "ms": 533,
-     "in_tok": 1824,
-     "cost": 0.0001824,
+     "ms": 511,
+     "in_tok": 1845,
+     "out_tok": 0,
+     "cost": 0.0001845,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.58
+      "noul": 0.3
      },
-     "p_violation": 0.58
+     "p_violation": 0.3
     }
    }
   },
@@ -1637,18 +1893,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 220,
-     "in_tok": 1374,
-     "cost": 5.7708000000000004e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.66
-     },
-     "p_violation": 0.66
-    },
     "deepseek": {
      "p_violation": 0.5018197906430688,
      "ms": 2879,
@@ -1679,17 +1923,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 509,
+     "in_tok": 1398,
+     "out_tok": 20,
+     "cost": 5.8716e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.76
+     },
+     "p_violation": 0.76
+    },
+    "jev14": {
+     "ms": 549,
+     "in_tok": 1398,
+     "out_tok": 20,
+     "cost": 5.8716e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.76
+     },
+     "p_violation": 0.76
+    },
     "luna": {
-     "ms": 539,
-     "in_tok": 1190,
-     "cost": 0.000119,
+     "ms": 668,
+     "in_tok": 1211,
+     "out_tok": 0,
+     "cost": 0.0001211,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.1
+      "noul": 0.06
      },
-     "p_violation": 0.1
+     "p_violation": 0.06
     }
    }
   },
@@ -1734,18 +2005,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 242,
-     "in_tok": 1860,
-     "cost": 7.812e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.69
-     },
-     "p_violation": 0.69
-    },
     "deepseek": {
      "p_violation": 0.4991867383235631,
      "ms": 2432,
@@ -1776,17 +2035,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 508,
+     "in_tok": 1884,
+     "out_tok": 20,
+     "cost": 7.9128e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.49
+     },
+     "p_violation": 0.49
+    },
+    "jev14": {
+     "ms": 558,
+     "in_tok": 1884,
+     "out_tok": 20,
+     "cost": 7.9128e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.48
+     },
+     "p_violation": 0.48
+    },
     "luna": {
-     "ms": 512,
-     "in_tok": 1704,
-     "cost": 0.0001704,
+     "ms": 489,
+     "in_tok": 1725,
+     "out_tok": 0,
+     "cost": 0.0001725,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.64
+      "noul": 0.25
      },
-     "p_violation": 0.64
+     "p_violation": 0.25
     }
    }
   },
@@ -1831,18 +2117,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 238,
-     "in_tok": 2441,
-     "cost": 0.000102522,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.61
-     },
-     "p_violation": 0.61
-    },
     "deepseek": {
      "p_violation": 0.4991185236643648,
      "ms": 5683,
@@ -1873,17 +2147,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 469,
+     "in_tok": 2465,
+     "out_tok": 20,
+     "cost": 0.00010353,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.31
+     },
+     "p_violation": 0.31
+    },
+    "jev14": {
+     "ms": 616,
+     "in_tok": 2465,
+     "out_tok": 20,
+     "cost": 0.00010353,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.29
+     },
+     "p_violation": 0.29
+    },
     "luna": {
-     "ms": 531,
-     "in_tok": 2056,
-     "cost": 0.0002056,
+     "ms": 507,
+     "in_tok": 2077,
+     "out_tok": 0,
+     "cost": 0.0002077,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.2
+      "noul": 0.37
      },
-     "p_violation": 0.2
+     "p_violation": 0.37
     }
    }
   },
@@ -1928,18 +2229,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 230,
-     "in_tok": 2773,
-     "cost": 0.000116466,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.83
-     },
-     "p_violation": 0.83
-    },
     "deepseek": {
      "p_violation": 0.4846829807063935,
      "ms": 4863,
@@ -1970,17 +2259,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 435,
+     "in_tok": 2797,
+     "out_tok": 20,
+     "cost": 0.000117474,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.86
+     },
+     "p_violation": 0.86
+    },
+    "jev14": {
+     "ms": 555,
+     "in_tok": 2797,
+     "out_tok": 20,
+     "cost": 0.000117474,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.87
+     },
+     "p_violation": 0.87
+    },
     "luna": {
-     "ms": 532,
-     "in_tok": 2366,
-     "cost": 0.0002366,
+     "ms": 587,
+     "in_tok": 2387,
+     "out_tok": 0,
+     "cost": 0.0002387,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.09
+      "noul": 0.71
      },
-     "p_violation": 0.09
+     "p_violation": 0.71
     }
    }
   },
@@ -2025,18 +2341,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 217,
-     "in_tok": 1922,
-     "cost": 8.072400000000001e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.64
-     },
-     "p_violation": 0.64
-    },
     "deepseek": {
      "p_violation": 0.49584185327119995,
      "ms": 5212,
@@ -2067,17 +2371,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 423,
+     "in_tok": 1946,
+     "out_tok": 20,
+     "cost": 8.1732e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.59
+     },
+     "p_violation": 0.59
+    },
+    "jev14": {
+     "ms": 492,
+     "in_tok": 1946,
+     "out_tok": 20,
+     "cost": 8.1732e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.51
+     },
+     "p_violation": 0.51
+    },
     "luna": {
-     "ms": 512,
-     "in_tok": 1687,
-     "cost": 0.0001687,
+     "ms": 542,
+     "in_tok": 1708,
+     "out_tok": 0,
+     "cost": 0.0001708,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.1
+      "noul": 0.13
      },
-     "p_violation": 0.1
+     "p_violation": 0.13
     }
    }
   },
@@ -2122,18 +2453,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 217,
-     "in_tok": 1250,
-     "cost": 5.25e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.76
-     },
-     "p_violation": 0.76
-    },
     "deepseek": {
      "p_violation": 0.6650574089280018,
      "ms": 7651,
@@ -2164,17 +2483,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 540,
+     "in_tok": 1274,
+     "out_tok": 20,
+     "cost": 5.3508e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.8
+     },
+     "p_violation": 0.8
+    },
+    "jev14": {
+     "ms": 502,
+     "in_tok": 1274,
+     "out_tok": 20,
+     "cost": 5.3508e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.75
+     },
+     "p_violation": 0.75
+    },
     "luna": {
-     "ms": 558,
-     "in_tok": 1055,
-     "cost": 0.0001055,
+     "ms": 542,
+     "in_tok": 1076,
+     "out_tok": 0,
+     "cost": 0.0001076,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.61
+      "noul": 0.46
      },
-     "p_violation": 0.61
+     "p_violation": 0.46
     }
    }
   },
@@ -2219,18 +2565,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 263,
-     "in_tok": 1646,
-     "cost": 6.9132e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.84
-     },
-     "p_violation": 0.84
-    },
     "deepseek": {
      "p_violation": null,
      "ms": 38021,
@@ -2261,17 +2595,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 530,
+     "in_tok": 1670,
+     "out_tok": 20,
+     "cost": 7.014e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.44
+     },
+     "p_violation": 0.44
+    },
+    "jev14": {
+     "ms": 511,
+     "in_tok": 1670,
+     "out_tok": 20,
+     "cost": 7.014e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.27
+     },
+     "p_violation": 0.27
+    },
     "luna": {
-     "ms": 551,
-     "in_tok": 1445,
-     "cost": 0.0001445,
+     "ms": 614,
+     "in_tok": 1466,
+     "out_tok": 0,
+     "cost": 0.0001466,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.79
+      "noul": 0.54
      },
-     "p_violation": 0.79
+     "p_violation": 0.54
     }
    }
   },
@@ -2316,18 +2677,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 326,
-     "in_tok": 2143,
-     "cost": 9.0006e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.81
-     },
-     "p_violation": 0.81
-    },
     "deepseek": {
      "p_violation": 0.7313365557170641,
      "ms": 4106,
@@ -2358,17 +2707,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 504,
+     "in_tok": 2167,
+     "out_tok": 20,
+     "cost": 9.1014e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.85
+     },
+     "p_violation": 0.85
+    },
+    "jev14": {
+     "ms": 553,
+     "in_tok": 2167,
+     "out_tok": 20,
+     "cost": 9.1014e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.73
+     },
+     "p_violation": 0.73
+    },
     "luna": {
-     "ms": 548,
-     "in_tok": 1872,
-     "cost": 0.0001872,
+     "ms": 499,
+     "in_tok": 1893,
+     "out_tok": 0,
+     "cost": 0.0001893,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.97
+      "noul": 1
      },
-     "p_violation": 0.97
+     "p_violation": 1
     }
    }
   },
@@ -2413,18 +2789,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 254,
-     "in_tok": 1058,
-     "cost": 4.4436e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.51
-     },
-     "p_violation": 0.51
-    },
     "deepseek": {
      "p_violation": 0.5360945078143218,
      "ms": 4781,
@@ -2455,17 +2819,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 505,
+     "in_tok": 1082,
+     "out_tok": 20,
+     "cost": 4.5444e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.52
+     },
+     "p_violation": 0.52
+    },
+    "jev14": {
+     "ms": 553,
+     "in_tok": 1082,
+     "out_tok": 20,
+     "cost": 4.5444e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.59
+     },
+     "p_violation": 0.59
+    },
     "luna": {
-     "ms": 536,
-     "in_tok": 862,
-     "cost": 8.62e-05,
+     "ms": 552,
+     "in_tok": 883,
+     "out_tok": 0,
+     "cost": 8.83e-05,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.03
+      "noul": 0.07
      },
-     "p_violation": 0.03
+     "p_violation": 0.07
     }
    }
   },
@@ -2510,18 +2901,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 231,
-     "in_tok": 2814,
-     "cost": 0.00011818800000000001,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.63
-     },
-     "p_violation": 0.63
-    },
     "deepseek": {
      "p_violation": 0.48807326587068023,
      "ms": 2770,
@@ -2552,17 +2931,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 452,
+     "in_tok": 2838,
+     "out_tok": 20,
+     "cost": 0.000119196,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.59
+     },
+     "p_violation": 0.59
+    },
+    "jev14": {
+     "ms": 509,
+     "in_tok": 2838,
+     "out_tok": 20,
+     "cost": 0.000119196,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.56
+     },
+     "p_violation": 0.56
+    },
     "luna": {
-     "ms": 500,
-     "in_tok": 2555,
-     "cost": 0.0002555,
+     "ms": 514,
+     "in_tok": 2576,
+     "out_tok": 0,
+     "cost": 0.0002576,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.94
+      "noul": 0.99
      },
-     "p_violation": 0.94
+     "p_violation": 0.99
     }
    }
   },
@@ -2607,18 +3013,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 231,
-     "in_tok": 2230,
-     "cost": 9.366000000000002e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.68
-     },
-     "p_violation": 0.68
-    },
     "deepseek": {
      "p_violation": 0.4857838479225667,
      "ms": 6229,
@@ -2649,17 +3043,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 420,
+     "in_tok": 2254,
+     "out_tok": 20,
+     "cost": 9.4668e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.57
+     },
+     "p_violation": 0.57
+    },
+    "jev14": {
+     "ms": 474,
+     "in_tok": 2254,
+     "out_tok": 20,
+     "cost": 9.4668e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.54
+     },
+     "p_violation": 0.54
+    },
     "luna": {
-     "ms": 511,
-     "in_tok": 2010,
-     "cost": 0.000201,
+     "ms": 539,
+     "in_tok": 2031,
+     "out_tok": 0,
+     "cost": 0.0002031,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.66
+      "noul": 0.49
      },
-     "p_violation": 0.66
+     "p_violation": 0.49
     }
    }
   },
@@ -2704,18 +3125,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 242,
-     "in_tok": 1539,
-     "cost": 6.4638e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.66
-     },
-     "p_violation": 0.66
-    },
     "deepseek": {
      "p_violation": 0.5024955832585813,
      "ms": 22642,
@@ -2746,17 +3155,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 529,
+     "in_tok": 1563,
+     "out_tok": 20,
+     "cost": 6.5646e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.26
+     },
+     "p_violation": 0.26
+    },
+    "jev14": {
+     "ms": 523,
+     "in_tok": 1563,
+     "out_tok": 20,
+     "cost": 6.5646e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.17
+     },
+     "p_violation": 0.17
+    },
     "luna": {
-     "ms": 554,
-     "in_tok": 1369,
-     "cost": 0.0001369,
+     "ms": 511,
+     "in_tok": 1390,
+     "out_tok": 0,
+     "cost": 0.000139,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.86
+      "noul": 0.2
      },
-     "p_violation": 0.86
+     "p_violation": 0.2
     }
    }
   },
@@ -2801,18 +3237,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 255,
-     "in_tok": 1542,
-     "cost": 6.4764e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.7
-     },
-     "p_violation": 0.7
-    },
     "deepseek": {
      "p_violation": 0.4883683706536539,
      "ms": 32041,
@@ -2843,17 +3267,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 522,
+     "in_tok": 1566,
+     "out_tok": 20,
+     "cost": 6.5772e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.26
+     },
+     "p_violation": 0.26
+    },
+    "jev14": {
+     "ms": 601,
+     "in_tok": 1566,
+     "out_tok": 20,
+     "cost": 6.5772e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.27
+     },
+     "p_violation": 0.27
+    },
     "luna": {
-     "ms": 742,
-     "in_tok": 1355,
-     "cost": 0.0001355,
+     "ms": 711,
+     "in_tok": 1376,
+     "out_tok": 0,
+     "cost": 0.0001376,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.41
+      "noul": 0.1
      },
-     "p_violation": 0.41
+     "p_violation": 0.1
     }
    }
   },
@@ -2898,18 +3349,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 239,
-     "in_tok": 1698,
-     "cost": 7.1316e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.81
-     },
-     "p_violation": 0.81
-    },
     "deepseek": {
      "p_violation": 0.5113798766762149,
      "ms": 7575,
@@ -2940,17 +3379,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
-    "luna": {
-     "ms": 527,
-     "in_tok": 1433,
-     "cost": 0.0001433,
-     "model": "openai/gpt-6-luna-decisions-20261006",
+    "jev": {
+     "ms": 530,
+     "in_tok": 1722,
+     "out_tok": 20,
+     "cost": 7.2324e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.91
+     },
+     "p_violation": 0.91
+    },
+    "jev14": {
+     "ms": 508,
+     "in_tok": 1722,
+     "out_tok": 20,
+     "cost": 7.2324e-05,
+     "model": "typesafe/jev-1.14-20261014",
      "err": null,
      "raw": {
       "type": "noul",
       "noul": 0.85
      },
      "p_violation": 0.85
+    },
+    "luna": {
+     "ms": 598,
+     "in_tok": 1454,
+     "out_tok": 0,
+     "cost": 0.0001454,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.99
+     },
+     "p_violation": 0.99
     }
    }
   },
@@ -2995,18 +3461,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 249,
-     "in_tok": 1016,
-     "cost": 4.2672e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.41
-     },
-     "p_violation": 0.41
-    },
     "deepseek": {
      "p_violation": 0.49175748782183115,
      "ms": 3875,
@@ -3037,17 +3491,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 492,
+     "in_tok": 1040,
+     "out_tok": 20,
+     "cost": 4.368e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.42
+     },
+     "p_violation": 0.42
+    },
+    "jev14": {
+     "ms": 527,
+     "in_tok": 1040,
+     "out_tok": 20,
+     "cost": 4.368e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.31
+     },
+     "p_violation": 0.31
+    },
     "luna": {
-     "ms": 524,
-     "in_tok": 836,
-     "cost": 8.36e-05,
+     "ms": 560,
+     "in_tok": 857,
+     "out_tok": 0,
+     "cost": 8.57e-05,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.05
+      "noul": 0.11
      },
-     "p_violation": 0.05
+     "p_violation": 0.11
     }
    }
   },
@@ -3092,18 +3573,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 256,
-     "in_tok": 1982,
-     "cost": 8.324399999999999e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.65
-     },
-     "p_violation": 0.65
-    },
     "deepseek": {
      "p_violation": 0.507174760843985,
      "ms": 4640,
@@ -3134,17 +3603,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 433,
+     "in_tok": 2006,
+     "out_tok": 20,
+     "cost": 8.4252e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.63
+     },
+     "p_violation": 0.63
+    },
+    "jev14": {
+     "ms": 542,
+     "in_tok": 2006,
+     "out_tok": 20,
+     "cost": 8.4252e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.64
+     },
+     "p_violation": 0.64
+    },
     "luna": {
-     "ms": 521,
-     "in_tok": 1787,
-     "cost": 0.0001787,
+     "ms": 533,
+     "in_tok": 1808,
+     "out_tok": 0,
+     "cost": 0.0001808,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.36
+      "noul": 0.2
      },
-     "p_violation": 0.36
+     "p_violation": 0.2
     }
    }
   },
@@ -3189,18 +3685,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 232,
-     "in_tok": 2299,
-     "cost": 9.655799999999999e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.9
-     },
-     "p_violation": 0.9
-    },
     "deepseek": {
      "p_violation": 0.4992502890614294,
      "ms": 12893,
@@ -3231,17 +3715,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 433,
+     "in_tok": 2323,
+     "out_tok": 20,
+     "cost": 9.7566e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.09
+     },
+     "p_violation": 0.09
+    },
+    "jev14": {
+     "ms": 623,
+     "in_tok": 2323,
+     "out_tok": 20,
+     "cost": 9.7566e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.11
+     },
+     "p_violation": 0.11
+    },
     "luna": {
-     "ms": 618,
-     "in_tok": 2039,
-     "cost": 0.0002039,
+     "ms": 487,
+     "in_tok": 2060,
+     "out_tok": 0,
+     "cost": 0.000206,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.99
+      "noul": 0.02
      },
-     "p_violation": 0.99
+     "p_violation": 0.02
     }
    }
   },
@@ -3286,18 +3797,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 293,
-     "in_tok": 817,
-     "cost": 3.4314000000000004e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.65
-     },
-     "p_violation": 0.65
-    },
     "deepseek": {
      "p_violation": 0.5386816280513782,
      "ms": 9453,
@@ -3328,17 +3827,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 553,
+     "in_tok": 841,
+     "out_tok": 20,
+     "cost": 3.5322e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.51
+     },
+     "p_violation": 0.51
+    },
+    "jev14": {
+     "ms": 498,
+     "in_tok": 841,
+     "out_tok": 20,
+     "cost": 3.5322e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.39
+     },
+     "p_violation": 0.39
+    },
     "luna": {
-     "ms": 575,
-     "in_tok": 675,
-     "cost": 6.75e-05,
+     "ms": 548,
+     "in_tok": 696,
+     "out_tok": 0,
+     "cost": 6.96e-05,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.41
+      "noul": 0.61
      },
-     "p_violation": 0.41
+     "p_violation": 0.61
     }
    }
   },
@@ -3383,18 +3909,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 395,
-     "in_tok": 1951,
-     "cost": 8.194200000000001e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.65
-     },
-     "p_violation": 0.65
-    },
     "deepseek": {
      "p_violation": 0.5228625751538587,
      "ms": 9893,
@@ -3425,17 +3939,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 505,
+     "in_tok": 1975,
+     "out_tok": 20,
+     "cost": 8.295e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.68
+     },
+     "p_violation": 0.68
+    },
+    "jev14": {
+     "ms": 523,
+     "in_tok": 1975,
+     "out_tok": 20,
+     "cost": 8.295e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.65
+     },
+     "p_violation": 0.65
+    },
     "luna": {
-     "ms": 550,
-     "in_tok": 1734,
-     "cost": 0.0001734,
+     "ms": 536,
+     "in_tok": 1755,
+     "out_tok": 0,
+     "cost": 0.0001755,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.47
+      "noul": 0.1
      },
-     "p_violation": 0.47
+     "p_violation": 0.1
     }
    }
   },
@@ -3480,18 +4021,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 247,
-     "in_tok": 2257,
-     "cost": 9.4794e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.5
-     },
-     "p_violation": 0.5
-    },
     "deepseek": {
      "p_violation": 0.5003500298772857,
      "ms": 3963,
@@ -3522,17 +4051,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
-    "luna": {
-     "ms": 551,
-     "in_tok": 2017,
-     "cost": 0.0002017,
-     "model": "openai/gpt-6-luna-decisions-20261006",
+    "jev": {
+     "ms": 484,
+     "in_tok": 2281,
+     "out_tok": 20,
+     "cost": 9.5802e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.43
+     },
+     "p_violation": 0.43
+    },
+    "jev14": {
+     "ms": 558,
+     "in_tok": 2281,
+     "out_tok": 20,
+     "cost": 9.5802e-05,
+     "model": "typesafe/jev-1.14-20261014",
      "err": null,
      "raw": {
       "type": "noul",
       "noul": 0.44
      },
      "p_violation": 0.44
+    },
+    "luna": {
+     "ms": 494,
+     "in_tok": 2038,
+     "out_tok": 0,
+     "cost": 0.0002038,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.08
+     },
+     "p_violation": 0.08
     }
    }
   },
@@ -3577,18 +4133,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 207,
-     "in_tok": 1294,
-     "cost": 5.4348e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.43
-     },
-     "p_violation": 0.43
-    },
     "deepseek": {
      "p_violation": 0.5000000025180925,
      "ms": 2742,
@@ -3619,17 +4163,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 458,
+     "in_tok": 1318,
+     "out_tok": 20,
+     "cost": 5.5356e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.29
+     },
+     "p_violation": 0.29
+    },
+    "jev14": {
+     "ms": 551,
+     "in_tok": 1318,
+     "out_tok": 20,
+     "cost": 5.5356e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.2
+     },
+     "p_violation": 0.2
+    },
     "luna": {
-     "ms": 601,
-     "in_tok": 1066,
-     "cost": 0.0001066,
+     "ms": 509,
+     "in_tok": 1087,
+     "out_tok": 0,
+     "cost": 0.0001087,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.06
+      "noul": 0.17
      },
-     "p_violation": 0.06
+     "p_violation": 0.17
     }
    }
   },
@@ -3674,18 +4245,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 245,
-     "in_tok": 1522,
-     "cost": 6.3924e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.84
-     },
-     "p_violation": 0.84
-    },
     "deepseek": {
      "p_violation": 0.49992385323767474,
      "ms": 4497,
@@ -3716,17 +4275,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 606,
+     "in_tok": 1546,
+     "out_tok": 20,
+     "cost": 6.4932e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.11
+     },
+     "p_violation": 0.11
+    },
+    "jev14": {
+     "ms": 420,
+     "in_tok": 1546,
+     "out_tok": 20,
+     "cost": 6.4932e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.15
+     },
+     "p_violation": 0.15
+    },
     "luna": {
-     "ms": 569,
-     "in_tok": 1342,
-     "cost": 0.0001342,
+     "ms": 992,
+     "in_tok": 1363,
+     "out_tok": 0,
+     "cost": 0.0001363,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.64
+      "noul": 0.08
      },
-     "p_violation": 0.64
+     "p_violation": 0.08
     }
    }
   },
@@ -3771,18 +4357,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 221,
-     "in_tok": 1311,
-     "cost": 5.506200000000001e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.65
-     },
-     "p_violation": 0.65
-    },
     "deepseek": {
      "p_violation": 0.4704122037459538,
      "ms": 4350,
@@ -3813,17 +4387,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 784,
+     "in_tok": 1335,
+     "out_tok": 20,
+     "cost": 5.607e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.36
+     },
+     "p_violation": 0.36
+    },
+    "jev14": {
+     "ms": 520,
+     "in_tok": 1335,
+     "out_tok": 20,
+     "cost": 5.607e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.31
+     },
+     "p_violation": 0.31
+    },
     "luna": {
-     "ms": 565,
-     "in_tok": 1142,
-     "cost": 0.0001142,
+     "ms": 620,
+     "in_tok": 1163,
+     "out_tok": 0,
+     "cost": 0.0001163,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.35
+      "noul": 0.12
      },
-     "p_violation": 0.35
+     "p_violation": 0.12
     }
    }
   },
@@ -3868,18 +4469,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 237,
-     "in_tok": 1959,
-     "cost": 8.2278e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.61
-     },
-     "p_violation": 0.61
-    },
     "deepseek": {
      "p_violation": 0.4742454164835755,
      "ms": 2582,
@@ -3910,17 +4499,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 539,
+     "in_tok": 1983,
+     "out_tok": 20,
+     "cost": 8.3286e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.64
+     },
+     "p_violation": 0.64
+    },
+    "jev14": {
+     "ms": 524,
+     "in_tok": 1983,
+     "out_tok": 20,
+     "cost": 8.3286e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.62
+     },
+     "p_violation": 0.62
+    },
     "luna": {
-     "ms": 552,
-     "in_tok": 1740,
-     "cost": 0.000174,
+     "ms": 512,
+     "in_tok": 1761,
+     "out_tok": 0,
+     "cost": 0.0001761,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.07
+      "noul": 0.29
      },
-     "p_violation": 0.07
+     "p_violation": 0.29
     }
    }
   },
@@ -3965,18 +4581,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 224,
-     "in_tok": 1100,
-     "cost": 4.6200000000000005e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.65
-     },
-     "p_violation": 0.65
-    },
     "deepseek": {
      "p_violation": 0.49848357005575933,
      "ms": 2649,
@@ -4007,17 +4611,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 515,
+     "in_tok": 1124,
+     "out_tok": 20,
+     "cost": 4.7208e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.47
+     },
+     "p_violation": 0.47
+    },
+    "jev14": {
+     "ms": 509,
+     "in_tok": 1124,
+     "out_tok": 20,
+     "cost": 4.7208e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.36
+     },
+     "p_violation": 0.36
+    },
     "luna": {
-     "ms": 548,
-     "in_tok": 950,
-     "cost": 9.5e-05,
+     "ms": 678,
+     "in_tok": 971,
+     "out_tok": 0,
+     "cost": 9.71e-05,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.37
+      "noul": 0.24
      },
-     "p_violation": 0.37
+     "p_violation": 0.24
     }
    }
   },
@@ -4062,18 +4693,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 249,
-     "in_tok": 1746,
-     "cost": 7.333200000000001e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.74
-     },
-     "p_violation": 0.74
-    },
     "deepseek": {
      "p_violation": 0.6457545422848008,
      "ms": 2485,
@@ -4104,10 +4723,37 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 516,
+     "in_tok": 1770,
+     "out_tok": 20,
+     "cost": 7.434e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.83
+     },
+     "p_violation": 0.83
+    },
+    "jev14": {
+     "ms": 539,
+     "in_tok": 1770,
+     "out_tok": 20,
+     "cost": 7.434e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.76
+     },
+     "p_violation": 0.76
+    },
     "luna": {
-     "ms": 590,
-     "in_tok": 1572,
-     "cost": 0.0001572,
+     "ms": 518,
+     "in_tok": 1593,
+     "out_tok": 0,
+     "cost": 0.0001593,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
@@ -4159,18 +4805,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 269,
-     "in_tok": 2244,
-     "cost": 9.4248e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.7
-     },
-     "p_violation": 0.7
-    },
     "deepseek": {
      "p_violation": 0.43883055318507186,
      "ms": 2528,
@@ -4201,17 +4835,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 492,
+     "in_tok": 2268,
+     "out_tok": 20,
+     "cost": 9.5256e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.32
+     },
+     "p_violation": 0.32
+    },
+    "jev14": {
+     "ms": 538,
+     "in_tok": 2268,
+     "out_tok": 20,
+     "cost": 9.5256e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.28
+     },
+     "p_violation": 0.28
+    },
     "luna": {
      "ms": 570,
-     "in_tok": 2047,
-     "cost": 0.0002047,
+     "in_tok": 2068,
+     "out_tok": 0,
+     "cost": 0.0002068,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.53
+      "noul": 0.52
      },
-     "p_violation": 0.53
+     "p_violation": 0.52
     }
    }
   },
@@ -4256,18 +4917,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 238,
-     "in_tok": 1327,
-     "cost": 5.5734000000000005e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.45
-     },
-     "p_violation": 0.45
-    },
     "deepseek": {
      "p_violation": 0.499759752836847,
      "ms": 10503,
@@ -4298,17 +4947,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 510,
+     "in_tok": 1351,
+     "out_tok": 20,
+     "cost": 5.6742e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.41
+     },
+     "p_violation": 0.41
+    },
+    "jev14": {
+     "ms": 510,
+     "in_tok": 1351,
+     "out_tok": 20,
+     "cost": 5.6742e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.42
+     },
+     "p_violation": 0.42
+    },
     "luna": {
-     "ms": 665,
-     "in_tok": 1117,
-     "cost": 0.0001117,
+     "ms": 519,
+     "in_tok": 1138,
+     "out_tok": 0,
+     "cost": 0.0001138,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.01
+      "noul": 0.06
      },
-     "p_violation": 0.01
+     "p_violation": 0.06
     }
    }
   },
@@ -4353,18 +5029,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 234,
-     "in_tok": 1331,
-     "cost": 5.5902e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.56
-     },
-     "p_violation": 0.56
-    },
     "deepseek": {
      "p_violation": 0.47098870814984145,
      "ms": 6670,
@@ -4395,17 +5059,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 448,
+     "in_tok": 1355,
+     "out_tok": 20,
+     "cost": 5.691e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.46
+     },
+     "p_violation": 0.46
+    },
+    "jev14": {
+     "ms": 496,
+     "in_tok": 1355,
+     "out_tok": 20,
+     "cost": 5.691e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.54
+     },
+     "p_violation": 0.54
+    },
     "luna": {
-     "ms": 583,
-     "in_tok": 1169,
-     "cost": 0.0001169,
+     "ms": 547,
+     "in_tok": 1190,
+     "out_tok": 0,
+     "cost": 0.000119,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.08
+      "noul": 0.06
      },
-     "p_violation": 0.08
+     "p_violation": 0.06
     }
    }
   },
@@ -4450,18 +5141,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 217,
-     "in_tok": 2083,
-     "cost": 8.748600000000001e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.64
-     },
-     "p_violation": 0.64
-    },
     "deepseek": {
      "p_violation": 0.4624257489513773,
      "ms": 21520,
@@ -4492,17 +5171,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 526,
+     "in_tok": 2107,
+     "out_tok": 20,
+     "cost": 8.8494e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.58
+     },
+     "p_violation": 0.58
+    },
+    "jev14": {
+     "ms": 554,
+     "in_tok": 2107,
+     "out_tok": 20,
+     "cost": 8.8494e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.59
+     },
+     "p_violation": 0.59
+    },
     "luna": {
-     "ms": 552,
-     "in_tok": 1818,
-     "cost": 0.0001818,
+     "ms": 495,
+     "in_tok": 1839,
+     "out_tok": 0,
+     "cost": 0.0001839,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.72
+      "noul": 0.65
      },
-     "p_violation": 0.72
+     "p_violation": 0.65
     }
    }
   },
@@ -4547,18 +5253,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 363,
-     "in_tok": 1120,
-     "cost": 4.704e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.59
-     },
-     "p_violation": 0.59
-    },
     "deepseek": {
      "p_violation": 0.2568408371140927,
      "ms": 2278,
@@ -4589,17 +5283,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 518,
+     "in_tok": 1144,
+     "out_tok": 20,
+     "cost": 4.8048e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.63
+     },
+     "p_violation": 0.63
+    },
+    "jev14": {
+     "ms": 529,
+     "in_tok": 1144,
+     "out_tok": 20,
+     "cost": 4.8048e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.64
+     },
+     "p_violation": 0.64
+    },
     "luna": {
-     "ms": 588,
-     "in_tok": 974,
-     "cost": 9.74e-05,
+     "ms": 520,
+     "in_tok": 995,
+     "out_tok": 0,
+     "cost": 9.95e-05,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.73
+      "noul": 0.74
      },
-     "p_violation": 0.73
+     "p_violation": 0.74
     }
    }
   },
@@ -4644,18 +5365,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 236,
-     "in_tok": 2400,
-     "cost": 0.0001008,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.48
-     },
-     "p_violation": 0.48
-    },
     "deepseek": {
      "p_violation": 0.4999460636781736,
      "ms": 2989,
@@ -4686,17 +5395,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 473,
+     "in_tok": 2424,
+     "out_tok": 20,
+     "cost": 0.000101808,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.29
+     },
+     "p_violation": 0.29
+    },
+    "jev14": {
+     "ms": 526,
+     "in_tok": 2424,
+     "out_tok": 20,
+     "cost": 0.000101808,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.28
+     },
+     "p_violation": 0.28
+    },
     "luna": {
-     "ms": 577,
-     "in_tok": 2061,
-     "cost": 0.0002061,
+     "ms": 511,
+     "in_tok": 2082,
+     "out_tok": 0,
+     "cost": 0.0002082,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.25
+      "noul": 0.17
      },
-     "p_violation": 0.25
+     "p_violation": 0.17
     }
    }
   },
@@ -4741,18 +5477,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 240,
-     "in_tok": 2028,
-     "cost": 8.5176e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.57
-     },
-     "p_violation": 0.57
-    },
     "deepseek": {
      "p_violation": 0.5094536159673321,
      "ms": 9944,
@@ -4783,17 +5507,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 447,
+     "in_tok": 2052,
+     "out_tok": 20,
+     "cost": 8.6184e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.39
+     },
+     "p_violation": 0.39
+    },
+    "jev14": {
+     "ms": 461,
+     "in_tok": 2052,
+     "out_tok": 20,
+     "cost": 8.6184e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.41
+     },
+     "p_violation": 0.41
+    },
     "luna": {
-     "ms": 613,
-     "in_tok": 1849,
-     "cost": 0.0001849,
+     "ms": 620,
+     "in_tok": 1870,
+     "out_tok": 0,
+     "cost": 0.000187,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.42
+      "noul": 0.12
      },
-     "p_violation": 0.42
+     "p_violation": 0.12
     }
    }
   },
@@ -4838,18 +5589,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 327,
-     "in_tok": 2206,
-     "cost": 9.2652e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.72
-     },
-     "p_violation": 0.72
-    },
     "deepseek": {
      "p_violation": 0.4997045109974282,
      "ms": 4473,
@@ -4880,17 +5619,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 529,
+     "in_tok": 2230,
+     "out_tok": 20,
+     "cost": 9.366e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.16
+     },
+     "p_violation": 0.16
+    },
+    "jev14": {
+     "ms": 519,
+     "in_tok": 2230,
+     "out_tok": 20,
+     "cost": 9.366e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.25
+     },
+     "p_violation": 0.25
+    },
     "luna": {
-     "ms": 561,
-     "in_tok": 1970,
-     "cost": 0.000197,
+     "ms": 541,
+     "in_tok": 1991,
+     "out_tok": 0,
+     "cost": 0.0001991,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.19
+      "noul": 0.21
      },
-     "p_violation": 0.19
+     "p_violation": 0.21
     }
    }
   },
@@ -4935,18 +5701,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 243,
-     "in_tok": 2158,
-     "cost": 9.063600000000002e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.67
-     },
-     "p_violation": 0.67
-    },
     "deepseek": {
      "p_violation": 0.5001087142298042,
      "ms": 2891,
@@ -4977,17 +5731,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 524,
+     "in_tok": 2182,
+     "out_tok": 20,
+     "cost": 9.1644e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.43
+     },
+     "p_violation": 0.43
+    },
+    "jev14": {
+     "ms": 526,
+     "in_tok": 2182,
+     "out_tok": 20,
+     "cost": 9.1644e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.47
+     },
+     "p_violation": 0.47
+    },
     "luna": {
-     "ms": 550,
-     "in_tok": 1952,
-     "cost": 0.0001952,
+     "ms": 516,
+     "in_tok": 1973,
+     "out_tok": 0,
+     "cost": 0.0001973,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.49
+      "noul": 0.64
      },
-     "p_violation": 0.49
+     "p_violation": 0.64
     }
    }
   },
@@ -5032,18 +5813,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 261,
-     "in_tok": 1232,
-     "cost": 5.1744000000000005e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.63
-     },
-     "p_violation": 0.63
-    },
     "deepseek": {
      "p_violation": 0.48528016902000704,
      "ms": 2753,
@@ -5074,17 +5843,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 522,
+     "in_tok": 1256,
+     "out_tok": 20,
+     "cost": 5.2752e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.64
+     },
+     "p_violation": 0.64
+    },
+    "jev14": {
+     "ms": 525,
+     "in_tok": 1256,
+     "out_tok": 20,
+     "cost": 5.2752e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.72
+     },
+     "p_violation": 0.72
+    },
     "luna": {
-     "ms": 551,
-     "in_tok": 1065,
-     "cost": 0.0001065,
+     "ms": 670,
+     "in_tok": 1086,
+     "out_tok": 0,
+     "cost": 0.0001086,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.51
+      "noul": 0.36
      },
-     "p_violation": 0.51
+     "p_violation": 0.36
     }
    }
   },
@@ -5129,18 +5925,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 238,
-     "in_tok": 2092,
-     "cost": 8.786400000000001e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.64
-     },
-     "p_violation": 0.64
-    },
     "deepseek": {
      "p_violation": 0.49692996390604194,
      "ms": 5246,
@@ -5171,17 +5955,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 528,
+     "in_tok": 2116,
+     "out_tok": 20,
+     "cost": 8.8872e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.53
+     },
+     "p_violation": 0.53
+    },
+    "jev14": {
+     "ms": 520,
+     "in_tok": 2116,
+     "out_tok": 20,
+     "cost": 8.8872e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.52
+     },
+     "p_violation": 0.52
+    },
     "luna": {
-     "ms": 513,
-     "in_tok": 1812,
-     "cost": 0.0001812,
+     "ms": 558,
+     "in_tok": 1833,
+     "out_tok": 0,
+     "cost": 0.0001833,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.09
+      "noul": 0.08
      },
-     "p_violation": 0.09
+     "p_violation": 0.08
     }
    }
   },
@@ -5226,18 +6037,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 253,
-     "in_tok": 1491,
-     "cost": 6.2622e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.89
-     },
-     "p_violation": 0.89
-    },
     "deepseek": {
      "p_violation": 0.4997935217214436,
      "ms": 5525,
@@ -5268,17 +6067,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 506,
+     "in_tok": 1515,
+     "out_tok": 20,
+     "cost": 6.363e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1
+     },
+     "p_violation": 0.1
+    },
+    "jev14": {
+     "ms": 555,
+     "in_tok": 1515,
+     "out_tok": 20,
+     "cost": 6.363e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1
+     },
+     "p_violation": 0.1
+    },
     "luna": {
-     "ms": 530,
-     "in_tok": 1331,
-     "cost": 0.0001331,
+     "ms": 495,
+     "in_tok": 1352,
+     "out_tok": 0,
+     "cost": 0.0001352,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.96
+      "noul": 0.37
      },
-     "p_violation": 0.96
+     "p_violation": 0.37
     }
    }
   },
@@ -5323,18 +6149,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 221,
-     "in_tok": 1337,
-     "cost": 5.6154000000000005e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.55
-     },
-     "p_violation": 0.55
-    },
     "deepseek": {
      "p_violation": 0.48569871978568036,
      "ms": 5810,
@@ -5365,17 +6179,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 423,
+     "in_tok": 1361,
+     "out_tok": 20,
+     "cost": 5.7162e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.38
+     },
+     "p_violation": 0.38
+    },
+    "jev14": {
+     "ms": 565,
+     "in_tok": 1361,
+     "out_tok": 20,
+     "cost": 5.7162e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.35
+     },
+     "p_violation": 0.35
+    },
     "luna": {
-     "ms": 566,
-     "in_tok": 1150,
-     "cost": 0.000115,
+     "ms": 476,
+     "in_tok": 1171,
+     "out_tok": 0,
+     "cost": 0.0001171,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.59
+      "noul": 0.2
      },
-     "p_violation": 0.59
+     "p_violation": 0.2
     }
    }
   },
@@ -5420,18 +6261,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 283,
-     "in_tok": 1100,
-     "cost": 4.6200000000000005e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.69
-     },
-     "p_violation": 0.69
-    },
     "deepseek": {
      "p_violation": 0.5016466959912308,
      "ms": 4146,
@@ -5462,17 +6291,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 532,
+     "in_tok": 1124,
+     "out_tok": 20,
+     "cost": 4.7208e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.21
+     },
+     "p_violation": 0.21
+    },
+    "jev14": {
+     "ms": 499,
+     "in_tok": 1124,
+     "out_tok": 20,
+     "cost": 4.7208e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.11
+     },
+     "p_violation": 0.11
+    },
     "luna": {
-     "ms": 527,
-     "in_tok": 955,
-     "cost": 9.55e-05,
+     "ms": 538,
+     "in_tok": 976,
+     "out_tok": 0,
+     "cost": 9.76e-05,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.52
+      "noul": 0.13
      },
-     "p_violation": 0.52
+     "p_violation": 0.13
     }
    }
   },
@@ -5517,18 +6373,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 218,
-     "in_tok": 1802,
-     "cost": 7.5684e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.52
-     },
-     "p_violation": 0.52
-    },
     "deepseek": {
      "p_violation": 0.47355959266014525,
      "ms": 4783,
@@ -5559,17 +6403,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 499,
+     "in_tok": 1826,
+     "out_tok": 20,
+     "cost": 7.6692e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.4
+     },
+     "p_violation": 0.4
+    },
+    "jev14": {
+     "ms": 565,
+     "in_tok": 1826,
+     "out_tok": 20,
+     "cost": 7.6692e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.51
+     },
+     "p_violation": 0.51
+    },
     "luna": {
-     "ms": 522,
-     "in_tok": 1558,
-     "cost": 0.0001558,
+     "ms": 510,
+     "in_tok": 1579,
+     "out_tok": 0,
+     "cost": 0.0001579,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.02
+      "noul": 0.18
      },
-     "p_violation": 0.02
+     "p_violation": 0.18
     }
    }
   },
@@ -5614,18 +6485,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 253,
-     "in_tok": 1493,
-     "cost": 6.2706e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.6
-     },
-     "p_violation": 0.6
-    },
     "deepseek": {
      "p_violation": 0.5069580335507348,
      "ms": 4771,
@@ -5656,17 +6515,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 522,
+     "in_tok": 1517,
+     "out_tok": 20,
+     "cost": 6.3714e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.39
+     },
+     "p_violation": 0.39
+    },
+    "jev14": {
+     "ms": 552,
+     "in_tok": 1517,
+     "out_tok": 20,
+     "cost": 6.3714e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.45
+     },
+     "p_violation": 0.45
+    },
     "luna": {
-     "ms": 557,
-     "in_tok": 1324,
-     "cost": 0.0001324,
+     "ms": 500,
+     "in_tok": 1345,
+     "out_tok": 0,
+     "cost": 0.0001345,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.32
+      "noul": 0.37
      },
-     "p_violation": 0.32
+     "p_violation": 0.37
     }
    }
   },
@@ -5711,18 +6597,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 268,
-     "in_tok": 951,
-     "cost": 3.9942000000000005e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.62
-     },
-     "p_violation": 0.62
-    },
     "deepseek": {
      "p_violation": 0.5139055256744745,
      "ms": 2306,
@@ -5753,17 +6627,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 516,
+     "in_tok": 975,
+     "out_tok": 20,
+     "cost": 4.095e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.6
+     },
+     "p_violation": 0.6
+    },
+    "jev14": {
+     "ms": 521,
+     "in_tok": 975,
+     "out_tok": 20,
+     "cost": 4.095e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.61
+     },
+     "p_violation": 0.61
+    },
     "luna": {
-     "ms": 555,
-     "in_tok": 803,
-     "cost": 8.03e-05,
+     "ms": 523,
+     "in_tok": 824,
+     "out_tok": 0,
+     "cost": 8.24e-05,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.51
+      "noul": 0.07
      },
-     "p_violation": 0.51
+     "p_violation": 0.07
     }
    }
   },
@@ -5808,18 +6709,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 266,
-     "in_tok": 1482,
-     "cost": 6.224400000000001e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.51
-     },
-     "p_violation": 0.51
-    },
     "deepseek": {
      "p_violation": 0.4940047867621103,
      "ms": 4606,
@@ -5850,17 +6739,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 489,
+     "in_tok": 1506,
+     "out_tok": 20,
+     "cost": 6.3252e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.45
+     },
+     "p_violation": 0.45
+    },
+    "jev14": {
+     "ms": 525,
+     "in_tok": 1506,
+     "out_tok": 20,
+     "cost": 6.3252e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.48
+     },
+     "p_violation": 0.48
+    },
     "luna": {
-     "ms": 575,
-     "in_tok": 1320,
-     "cost": 0.000132,
+     "ms": 592,
+     "in_tok": 1341,
+     "out_tok": 0,
+     "cost": 0.0001341,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.02
+      "noul": 0.09
      },
-     "p_violation": 0.02
+     "p_violation": 0.09
     }
    }
   },
@@ -5905,18 +6821,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 222,
-     "in_tok": 1938,
-     "cost": 8.1396e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.62
-     },
-     "p_violation": 0.62
-    },
     "deepseek": {
      "p_violation": 0.4896326264180597,
      "ms": 4654,
@@ -5947,17 +6851,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 417,
+     "in_tok": 1962,
+     "out_tok": 20,
+     "cost": 8.2404e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.6
+     },
+     "p_violation": 0.6
+    },
+    "jev14": {
+     "ms": 501,
+     "in_tok": 1962,
+     "out_tok": 20,
+     "cost": 8.2404e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.55
+     },
+     "p_violation": 0.55
+    },
     "luna": {
-     "ms": 544,
-     "in_tok": 1741,
-     "cost": 0.0001741,
+     "ms": 506,
+     "in_tok": 1762,
+     "out_tok": 0,
+     "cost": 0.0001762,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.92
+      "noul": 0.18
      },
-     "p_violation": 0.92
+     "p_violation": 0.18
     }
    }
   },
@@ -6002,18 +6933,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 301,
-     "in_tok": 1134,
-     "cost": 4.7628000000000005e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.65
-     },
-     "p_violation": 0.65
-    },
     "deepseek": {
      "p_violation": 0.4887265941956649,
      "ms": 3153,
@@ -6044,17 +6963,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 532,
+     "in_tok": 1158,
+     "out_tok": 20,
+     "cost": 4.8636e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.39
+     },
+     "p_violation": 0.39
+    },
+    "jev14": {
+     "ms": 516,
+     "in_tok": 1158,
+     "out_tok": 20,
+     "cost": 4.8636e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.37
+     },
+     "p_violation": 0.37
+    },
     "luna": {
-     "ms": 507,
-     "in_tok": 988,
-     "cost": 9.88e-05,
+     "ms": 509,
+     "in_tok": 1009,
+     "out_tok": 0,
+     "cost": 0.0001009,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.57
+      "noul": 0.64
      },
-     "p_violation": 0.57
+     "p_violation": 0.64
     }
    }
   },
@@ -6099,18 +7045,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 215,
-     "in_tok": 2010,
-     "cost": 8.442000000000001e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.81
-     },
-     "p_violation": 0.81
-    },
     "deepseek": {
      "p_violation": 0.4822999233723764,
      "ms": 5267,
@@ -6141,17 +7075,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 670,
+     "in_tok": 2034,
+     "out_tok": 20,
+     "cost": 8.5428e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.2
+     },
+     "p_violation": 0.2
+    },
+    "jev14": {
+     "ms": 439,
+     "in_tok": 2034,
+     "out_tok": 20,
+     "cost": 8.5428e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.18
+     },
+     "p_violation": 0.18
+    },
     "luna": {
-     "ms": 570,
-     "in_tok": 1629,
-     "cost": 0.0001629,
+     "ms": 535,
+     "in_tok": 1650,
+     "out_tok": 0,
+     "cost": 0.000165,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.57
+      "noul": 0.09
      },
-     "p_violation": 0.57
+     "p_violation": 0.09
     }
    }
   },
@@ -6196,18 +7157,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 229,
-     "in_tok": 1454,
-     "cost": 6.1068e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.56
-     },
-     "p_violation": 0.56
-    },
     "deepseek": {
      "p_violation": 0.4968688527679663,
      "ms": 4724,
@@ -6238,17 +7187,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 535,
+     "in_tok": 1478,
+     "out_tok": 20,
+     "cost": 6.2076e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.44
+     },
+     "p_violation": 0.44
+    },
+    "jev14": {
+     "ms": 513,
+     "in_tok": 1478,
+     "out_tok": 20,
+     "cost": 6.2076e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.45
+     },
+     "p_violation": 0.45
+    },
     "luna": {
-     "ms": 567,
-     "in_tok": 1284,
-     "cost": 0.0001284,
+     "ms": 604,
+     "in_tok": 1305,
+     "out_tok": 0,
+     "cost": 0.0001305,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.33
+      "noul": 0.13
      },
-     "p_violation": 0.33
+     "p_violation": 0.13
     }
    }
   },
@@ -6293,18 +7269,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 341,
-     "in_tok": 1288,
-     "cost": 5.4096000000000005e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.67
-     },
-     "p_violation": 0.67
-    },
     "deepseek": {
      "p_violation": 0.49185774205277705,
      "ms": 3225,
@@ -6335,17 +7299,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 526,
+     "in_tok": 1312,
+     "out_tok": 20,
+     "cost": 5.5104e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.42
+     },
+     "p_violation": 0.42
+    },
+    "jev14": {
+     "ms": 542,
+     "in_tok": 1312,
+     "out_tok": 20,
+     "cost": 5.5104e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.45
+     },
+     "p_violation": 0.45
+    },
     "luna": {
-     "ms": 566,
-     "in_tok": 1131,
-     "cost": 0.0001131,
+     "ms": 502,
+     "in_tok": 1152,
+     "out_tok": 0,
+     "cost": 0.0001152,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.81
+      "noul": 0.41
      },
-     "p_violation": 0.81
+     "p_violation": 0.41
     }
    }
   },
@@ -6390,18 +7381,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 217,
-     "in_tok": 1749,
-     "cost": 7.3458e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.87
-     },
-     "p_violation": 0.87
-    },
     "deepseek": {
      "p_violation": 0.4998531515535467,
      "ms": 4142,
@@ -6432,17 +7411,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 567,
+     "in_tok": 1773,
+     "out_tok": 20,
+     "cost": 7.4466e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.11
+     },
+     "p_violation": 0.11
+    },
+    "jev14": {
+     "ms": 485,
+     "in_tok": 1773,
+     "out_tok": 20,
+     "cost": 7.4466e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1
+     },
+     "p_violation": 0.1
+    },
     "luna": {
-     "ms": 847,
-     "in_tok": 1407,
-     "cost": 0.0001407,
+     "ms": 590,
+     "in_tok": 1428,
+     "out_tok": 0,
+     "cost": 0.0001428,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.93
+      "noul": 0.45
      },
-     "p_violation": 0.93
+     "p_violation": 0.45
     }
    }
   },
@@ -6487,18 +7493,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 270,
-     "in_tok": 1553,
-     "cost": 6.5226e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.63
-     },
-     "p_violation": 0.63
-    },
     "deepseek": {
      "p_violation": 0.49981283973251034,
      "ms": 6277,
@@ -6529,17 +7523,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 476,
+     "in_tok": 1577,
+     "out_tok": 20,
+     "cost": 6.6234e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.6
+     },
+     "p_violation": 0.6
+    },
+    "jev14": {
+     "ms": 503,
+     "in_tok": 1577,
+     "out_tok": 20,
+     "cost": 6.6234e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.55
+     },
+     "p_violation": 0.55
+    },
     "luna": {
-     "ms": 578,
-     "in_tok": 1372,
-     "cost": 0.0001372,
+     "ms": 612,
+     "in_tok": 1393,
+     "out_tok": 0,
+     "cost": 0.0001393,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.4
+      "noul": 0.06
      },
-     "p_violation": 0.4
+     "p_violation": 0.06
     }
    }
   },
@@ -6584,18 +7605,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 238,
-     "in_tok": 2004,
-     "cost": 8.416800000000001e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.87
-     },
-     "p_violation": 0.87
-    },
     "deepseek": {
      "p_violation": 0.6303673270406279,
      "ms": 4477,
@@ -6626,17 +7635,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 523,
+     "in_tok": 2028,
+     "out_tok": 20,
+     "cost": 8.5176e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.87
+     },
+     "p_violation": 0.87
+    },
+    "jev14": {
+     "ms": 524,
+     "in_tok": 2028,
+     "out_tok": 20,
+     "cost": 8.5176e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.8
+     },
+     "p_violation": 0.8
+    },
     "luna": {
-     "ms": 559,
-     "in_tok": 1807,
-     "cost": 0.0001807,
+     "ms": 602,
+     "in_tok": 1828,
+     "out_tok": 0,
+     "cost": 0.0001828,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.7
+      "noul": 0.81
      },
-     "p_violation": 0.7
+     "p_violation": 0.81
     }
    }
   },
@@ -6681,18 +7717,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 241,
-     "in_tok": 2359,
-     "cost": 9.9078e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.64
-     },
-     "p_violation": 0.64
-    },
     "deepseek": {
      "p_violation": 0.4963146110549139,
      "ms": 37717,
@@ -6723,17 +7747,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 423,
+     "in_tok": 2383,
+     "out_tok": 20,
+     "cost": 0.000100086,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.62
+     },
+     "p_violation": 0.62
+    },
+    "jev14": {
+     "ms": 527,
+     "in_tok": 2383,
+     "out_tok": 20,
+     "cost": 0.000100086,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.61
+     },
+     "p_violation": 0.61
+    },
     "luna": {
-     "ms": 645,
-     "in_tok": 2156,
-     "cost": 0.0002156,
+     "ms": 521,
+     "in_tok": 2177,
+     "out_tok": 0,
+     "cost": 0.0002177,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.77
+      "noul": 0.5
      },
-     "p_violation": 0.77
+     "p_violation": 0.5
     }
    }
   },
@@ -6778,18 +7829,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 268,
-     "in_tok": 1055,
-     "cost": 4.431e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.42
-     },
-     "p_violation": 0.42
-    },
     "deepseek": {
      "p_violation": 0.4965415980712318,
      "ms": 8081,
@@ -6820,17 +7859,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 556,
+     "in_tok": 1079,
+     "out_tok": 20,
+     "cost": 4.5318e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.39
+     },
+     "p_violation": 0.39
+    },
+    "jev14": {
+     "ms": 518,
+     "in_tok": 1079,
+     "out_tok": 20,
+     "cost": 4.5318e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.41
+     },
+     "p_violation": 0.41
+    },
     "luna": {
-     "ms": 569,
-     "in_tok": 894,
-     "cost": 8.94e-05,
+     "ms": 544,
+     "in_tok": 915,
+     "out_tok": 0,
+     "cost": 9.15e-05,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.34
+      "noul": 0.36
      },
-     "p_violation": 0.34
+     "p_violation": 0.36
     }
    }
   },
@@ -6875,18 +7941,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 232,
-     "in_tok": 2552,
-     "cost": 0.00010718400000000001,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.75
-     },
-     "p_violation": 0.75
-    },
     "deepseek": {
      "p_violation": 0.5660703974976551,
      "ms": 7551,
@@ -6917,17 +7971,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 474,
+     "in_tok": 2576,
+     "out_tok": 20,
+     "cost": 0.000108192,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.8
+     },
+     "p_violation": 0.8
+    },
+    "jev14": {
+     "ms": 533,
+     "in_tok": 2576,
+     "out_tok": 20,
+     "cost": 0.000108192,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.78
+     },
+     "p_violation": 0.78
+    },
     "luna": {
-     "ms": 577,
-     "in_tok": 2379,
-     "cost": 0.0002379,
+     "ms": 609,
+     "in_tok": 2400,
+     "out_tok": 0,
+     "cost": 0.00024,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.48
+      "noul": 0.91
      },
-     "p_violation": 0.48
+     "p_violation": 0.91
     }
    }
   },
@@ -6972,18 +8053,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 347,
-     "in_tok": 2367,
-     "cost": 9.941400000000001e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.64
-     },
-     "p_violation": 0.64
-    },
     "deepseek": {
      "p_violation": 0.4994250062325261,
      "ms": 24551,
@@ -7014,17 +8083,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 453,
+     "in_tok": 2391,
+     "out_tok": 20,
+     "cost": 0.000100422,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.36
+     },
+     "p_violation": 0.36
+    },
+    "jev14": {
+     "ms": 537,
+     "in_tok": 2391,
+     "out_tok": 20,
+     "cost": 0.000100422,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.4
+     },
+     "p_violation": 0.4
+    },
     "luna": {
-     "ms": 495,
-     "in_tok": 2032,
-     "cost": 0.0002032,
+     "ms": 579,
+     "in_tok": 2053,
+     "out_tok": 0,
+     "cost": 0.0002053,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.14
+      "noul": 0.28
      },
-     "p_violation": 0.14
+     "p_violation": 0.28
     }
    }
   },
@@ -7069,18 +8165,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 287,
-     "in_tok": 2400,
-     "cost": 0.0001008,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.67
-     },
-     "p_violation": 0.67
-    },
     "deepseek": {
      "p_violation": 0.49761694304083043,
      "ms": 3175,
@@ -7111,17 +8195,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 453,
+     "in_tok": 2424,
+     "out_tok": 20,
+     "cost": 0.000101808,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.43
+     },
+     "p_violation": 0.43
+    },
+    "jev14": {
+     "ms": 509,
+     "in_tok": 2424,
+     "out_tok": 20,
+     "cost": 0.000101808,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.44
+     },
+     "p_violation": 0.44
+    },
     "luna": {
-     "ms": 507,
-     "in_tok": 2139,
-     "cost": 0.0002139,
+     "ms": 570,
+     "in_tok": 2160,
+     "out_tok": 0,
+     "cost": 0.000216,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.85
+      "noul": 0.67
      },
-     "p_violation": 0.85
+     "p_violation": 0.67
     }
    }
   },
@@ -7166,18 +8277,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 257,
-     "in_tok": 792,
-     "cost": 3.3264e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.46
-     },
-     "p_violation": 0.46
-    },
     "deepseek": {
      "p_violation": 0.5050379474031238,
      "ms": 5517,
@@ -7208,17 +8307,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 523,
+     "in_tok": 816,
+     "out_tok": 20,
+     "cost": 3.4272e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.54
+     },
+     "p_violation": 0.54
+    },
+    "jev14": {
+     "ms": 581,
+     "in_tok": 816,
+     "out_tok": 20,
+     "cost": 3.4272e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.38
+     },
+     "p_violation": 0.38
+    },
     "luna": {
-     "ms": 562,
-     "in_tok": 601,
-     "cost": 6.01e-05,
+     "ms": 470,
+     "in_tok": 622,
+     "out_tok": 0,
+     "cost": 6.22e-05,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.57
+      "noul": 0.2
      },
-     "p_violation": 0.57
+     "p_violation": 0.2
     }
    }
   },
@@ -7263,18 +8389,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 215,
-     "in_tok": 1299,
-     "cost": 5.4558e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.59
-     },
-     "p_violation": 0.59
-    },
     "deepseek": {
      "p_violation": 0.504996746085036,
      "ms": 4329,
@@ -7305,17 +8419,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 452,
+     "in_tok": 1323,
+     "out_tok": 20,
+     "cost": 5.5566e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.37
+     },
+     "p_violation": 0.37
+    },
+    "jev14": {
+     "ms": 520,
+     "in_tok": 1323,
+     "out_tok": 20,
+     "cost": 5.5566e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.4
+     },
+     "p_violation": 0.4
+    },
     "luna": {
-     "ms": 553,
-     "in_tok": 1112,
-     "cost": 0.0001112,
+     "ms": 573,
+     "in_tok": 1133,
+     "out_tok": 0,
+     "cost": 0.0001133,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.09
+      "noul": 0.32
      },
-     "p_violation": 0.09
+     "p_violation": 0.32
     }
    }
   },
@@ -7360,18 +8501,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 230,
-     "in_tok": 1615,
-     "cost": 6.783e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.63
-     },
-     "p_violation": 0.63
-    },
     "deepseek": {
      "p_violation": 0.5076243016291361,
      "ms": 40175,
@@ -7402,17 +8531,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 490,
+     "in_tok": 1639,
+     "out_tok": 20,
+     "cost": 6.8838e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.42
+     },
+     "p_violation": 0.42
+    },
+    "jev14": {
+     "ms": 543,
+     "in_tok": 1639,
+     "out_tok": 20,
+     "cost": 6.8838e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.27
+     },
+     "p_violation": 0.27
+    },
     "luna": {
-     "ms": 561,
-     "in_tok": 1422,
-     "cost": 0.0001422,
+     "ms": 579,
+     "in_tok": 1443,
+     "out_tok": 0,
+     "cost": 0.0001443,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.25
+      "noul": 0.27
      },
-     "p_violation": 0.25
+     "p_violation": 0.27
     }
    }
   },
@@ -7457,18 +8613,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 242,
-     "in_tok": 1808,
-     "cost": 7.5936e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.61
-     },
-     "p_violation": 0.61
-    },
     "deepseek": {
      "p_violation": 0.4999999998779674,
      "ms": 4621,
@@ -7499,17 +8643,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 460,
+     "in_tok": 1832,
+     "out_tok": 20,
+     "cost": 7.6944e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.81
+     },
+     "p_violation": 0.81
+    },
+    "jev14": {
+     "ms": 526,
+     "in_tok": 1832,
+     "out_tok": 20,
+     "cost": 7.6944e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.66
+     },
+     "p_violation": 0.66
+    },
     "luna": {
-     "ms": 552,
-     "in_tok": 1657,
-     "cost": 0.0001657,
+     "ms": 564,
+     "in_tok": 1678,
+     "out_tok": 0,
+     "cost": 0.0001678,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.53
+      "noul": 0.2
      },
-     "p_violation": 0.53
+     "p_violation": 0.2
     }
    }
   },
@@ -7554,18 +8725,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 222,
-     "in_tok": 1453,
-     "cost": 6.102600000000001e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.83
-     },
-     "p_violation": 0.83
-    },
     "deepseek": {
      "p_violation": 0.4977558244892024,
      "ms": 12315,
@@ -7596,17 +8755,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 454,
+     "in_tok": 1477,
+     "out_tok": 20,
+     "cost": 6.2034e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.09
+     },
+     "p_violation": 0.09
+    },
+    "jev14": {
+     "ms": 539,
+     "in_tok": 1477,
+     "out_tok": 20,
+     "cost": 6.2034e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.18
+     },
+     "p_violation": 0.18
+    },
     "luna": {
-     "ms": 560,
-     "in_tok": 1263,
-     "cost": 0.0001263,
+     "ms": 516,
+     "in_tok": 1284,
+     "out_tok": 0,
+     "cost": 0.0001284,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.39
+      "noul": 0.19
      },
-     "p_violation": 0.39
+     "p_violation": 0.19
     }
    }
   },
@@ -7651,18 +8837,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 252,
-     "in_tok": 1416,
-     "cost": 5.9472e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.53
-     },
-     "p_violation": 0.53
-    },
     "deepseek": {
      "p_violation": 0.49983416389960694,
      "ms": 6745,
@@ -7693,17 +8867,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 441,
+     "in_tok": 1440,
+     "out_tok": 20,
+     "cost": 6.048e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.49
+     },
+     "p_violation": 0.49
+    },
+    "jev14": {
+     "ms": 493,
+     "in_tok": 1440,
+     "out_tok": 20,
+     "cost": 6.048e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.38
+     },
+     "p_violation": 0.38
+    },
     "luna": {
-     "ms": 528,
-     "in_tok": 1226,
-     "cost": 0.0001226,
+     "ms": 568,
+     "in_tok": 1247,
+     "out_tok": 0,
+     "cost": 0.0001247,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.29
+      "noul": 0.14
      },
-     "p_violation": 0.29
+     "p_violation": 0.14
     }
    }
   },
@@ -7748,18 +8949,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 229,
-     "in_tok": 2033,
-     "cost": 8.538600000000001e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.62
-     },
-     "p_violation": 0.62
-    },
     "deepseek": {
      "p_violation": 0.4960928715756093,
      "ms": 2575,
@@ -7790,17 +8979,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
-    "luna": {
-     "ms": 612,
-     "in_tok": 1797,
-     "cost": 0.0001797,
-     "model": "openai/gpt-6-luna-decisions-20261006",
+    "jev": {
+     "ms": 526,
+     "in_tok": 2057,
+     "out_tok": 20,
+     "cost": 8.6394e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.35
+     },
+     "p_violation": 0.35
+    },
+    "jev14": {
+     "ms": 519,
+     "in_tok": 2057,
+     "out_tok": 20,
+     "cost": 8.6394e-05,
+     "model": "typesafe/jev-1.14-20261014",
      "err": null,
      "raw": {
       "type": "noul",
       "noul": 0.41
      },
      "p_violation": 0.41
+    },
+    "luna": {
+     "ms": 629,
+     "in_tok": 1818,
+     "out_tok": 0,
+     "cost": 0.0001818,
+     "model": "openai/gpt-6-luna-decisions-20261006",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.1
+     },
+     "p_violation": 0.1
     }
    }
   },
@@ -7845,18 +9061,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 228,
-     "in_tok": 1114,
-     "cost": 4.6788e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.69
-     },
-     "p_violation": 0.69
-    },
     "deepseek": {
      "p_violation": 0.49282524406740164,
      "ms": 2097,
@@ -7887,17 +9091,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 488,
+     "in_tok": 1138,
+     "out_tok": 20,
+     "cost": 4.7796e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.61
+     },
+     "p_violation": 0.61
+    },
+    "jev14": {
+     "ms": 540,
+     "in_tok": 1138,
+     "out_tok": 20,
+     "cost": 4.7796e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.47
+     },
+     "p_violation": 0.47
+    },
     "luna": {
-     "ms": 566,
-     "in_tok": 967,
-     "cost": 9.67e-05,
+     "ms": 556,
+     "in_tok": 988,
+     "out_tok": 0,
+     "cost": 9.88e-05,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.71
+      "noul": 0.54
      },
-     "p_violation": 0.71
+     "p_violation": 0.54
     }
    }
   },
@@ -7942,18 +9173,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 215,
-     "in_tok": 1621,
-     "cost": 6.8082e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.68
-     },
-     "p_violation": 0.68
-    },
     "deepseek": {
      "p_violation": 0.4933230193398478,
      "ms": 4458,
@@ -7984,17 +9203,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 519,
+     "in_tok": 1645,
+     "out_tok": 20,
+     "cost": 6.909e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.45
+     },
+     "p_violation": 0.45
+    },
+    "jev14": {
+     "ms": 520,
+     "in_tok": 1645,
+     "out_tok": 20,
+     "cost": 6.909e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.28
+     },
+     "p_violation": 0.28
+    },
     "luna": {
-     "ms": 516,
-     "in_tok": 1467,
-     "cost": 0.0001467,
+     "ms": 842,
+     "in_tok": 1488,
+     "out_tok": 0,
+     "cost": 0.0001488,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.5
+      "noul": 0.09
      },
-     "p_violation": 0.5
+     "p_violation": 0.09
     }
    }
   },
@@ -8039,18 +9285,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 225,
-     "in_tok": 999,
-     "cost": 4.195800000000001e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.6
-     },
-     "p_violation": 0.6
-    },
     "deepseek": {
      "p_violation": 0.5019612923063201,
      "ms": 2256,
@@ -8081,17 +9315,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 482,
+     "in_tok": 1023,
+     "out_tok": 20,
+     "cost": 4.2966e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.44
+     },
+     "p_violation": 0.44
+    },
+    "jev14": {
+     "ms": 522,
+     "in_tok": 1023,
+     "out_tok": 20,
+     "cost": 4.2966e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.35
+     },
+     "p_violation": 0.35
+    },
     "luna": {
-     "ms": 546,
-     "in_tok": 850,
-     "cost": 8.5e-05,
+     "ms": 542,
+     "in_tok": 871,
+     "out_tok": 0,
+     "cost": 8.71e-05,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.72
+      "noul": 0.19
      },
-     "p_violation": 0.72
+     "p_violation": 0.19
     }
    }
   },
@@ -8136,18 +9397,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 261,
-     "in_tok": 2078,
-     "cost": 8.727600000000001e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.67
-     },
-     "p_violation": 0.67
-    },
     "deepseek": {
      "p_violation": 0.5056630117093804,
      "ms": 2571,
@@ -8178,17 +9427,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 496,
+     "in_tok": 2102,
+     "out_tok": 20,
+     "cost": 8.8284e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.6
+     },
+     "p_violation": 0.6
+    },
+    "jev14": {
+     "ms": 521,
+     "in_tok": 2102,
+     "out_tok": 20,
+     "cost": 8.8284e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.47
+     },
+     "p_violation": 0.47
+    },
     "luna": {
-     "ms": 547,
-     "in_tok": 1810,
-     "cost": 0.000181,
+     "ms": 507,
+     "in_tok": 1831,
+     "out_tok": 0,
+     "cost": 0.0001831,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.56
+      "noul": 0.58
      },
-     "p_violation": 0.56
+     "p_violation": 0.58
     }
    }
   },
@@ -8233,18 +9509,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 220,
-     "in_tok": 2070,
-     "cost": 8.693999999999999e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.65
-     },
-     "p_violation": 0.65
-    },
     "deepseek": {
      "p_violation": 0.5003763075335014,
      "ms": 2978,
@@ -8275,17 +9539,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 453,
+     "in_tok": 2094,
+     "out_tok": 20,
+     "cost": 8.7948e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.26
+     },
+     "p_violation": 0.26
+    },
+    "jev14": {
+     "ms": 504,
+     "in_tok": 2094,
+     "out_tok": 20,
+     "cost": 8.7948e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.12
+     },
+     "p_violation": 0.12
+    },
     "luna": {
-     "ms": 512,
-     "in_tok": 1813,
-     "cost": 0.0001813,
+     "ms": 585,
+     "in_tok": 1834,
+     "out_tok": 0,
+     "cost": 0.0001834,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.58
+      "noul": 0.27
      },
-     "p_violation": 0.58
+     "p_violation": 0.27
     }
    }
   },
@@ -8330,18 +9621,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 263,
-     "in_tok": 1891,
-     "cost": 7.942200000000001e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.64
-     },
-     "p_violation": 0.64
-    },
     "deepseek": {
      "p_violation": 0.74296818788576,
      "ms": 2529,
@@ -8372,17 +9651,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 486,
+     "in_tok": 1915,
+     "out_tok": 20,
+     "cost": 8.043e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.34
+     },
+     "p_violation": 0.34
+    },
+    "jev14": {
+     "ms": 505,
+     "in_tok": 1915,
+     "out_tok": 20,
+     "cost": 8.043e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.24
+     },
+     "p_violation": 0.24
+    },
     "luna": {
-     "ms": 625,
-     "in_tok": 1653,
-     "cost": 0.0001653,
+     "ms": 521,
+     "in_tok": 1674,
+     "out_tok": 0,
+     "cost": 0.0001674,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.57
+      "noul": 0.03
      },
-     "p_violation": 0.57
+     "p_violation": 0.03
     }
    }
   },
@@ -8427,18 +9733,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 256,
-     "in_tok": 1319,
-     "cost": 5.539800000000001e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.67
-     },
-     "p_violation": 0.67
-    },
     "deepseek": {
      "p_violation": 0.5006199960654497,
      "ms": 4886,
@@ -8469,17 +9763,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 418,
+     "in_tok": 1343,
+     "out_tok": 20,
+     "cost": 5.6406e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.32
+     },
+     "p_violation": 0.32
+    },
+    "jev14": {
+     "ms": 539,
+     "in_tok": 1343,
+     "out_tok": 20,
+     "cost": 5.6406e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.24
+     },
+     "p_violation": 0.24
+    },
     "luna": {
-     "ms": 545,
-     "in_tok": 1161,
-     "cost": 0.0001161,
+     "ms": 513,
+     "in_tok": 1182,
+     "out_tok": 0,
+     "cost": 0.0001182,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.2
+      "noul": 0.02
      },
-     "p_violation": 0.2
+     "p_violation": 0.02
     }
    }
   },
@@ -8524,18 +9845,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 225,
-     "in_tok": 1202,
-     "cost": 5.0484e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.63
-     },
-     "p_violation": 0.63
-    },
     "deepseek": {
      "p_violation": 0.5034996381752542,
      "ms": 3923,
@@ -8566,17 +9875,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 518,
+     "in_tok": 1226,
+     "out_tok": 20,
+     "cost": 5.1492e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.65
+     },
+     "p_violation": 0.65
+    },
+    "jev14": {
+     "ms": 552,
+     "in_tok": 1226,
+     "out_tok": 20,
+     "cost": 5.1492e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.63
+     },
+     "p_violation": 0.63
+    },
     "luna": {
-     "ms": 519,
-     "in_tok": 1043,
-     "cost": 0.0001043,
+     "ms": 528,
+     "in_tok": 1064,
+     "out_tok": 0,
+     "cost": 0.0001064,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.73
+      "noul": 0.51
      },
-     "p_violation": 0.73
+     "p_violation": 0.51
     }
    }
   },
@@ -8621,18 +9957,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 240,
-     "in_tok": 2593,
-     "cost": 0.000108906,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.76
-     },
-     "p_violation": 0.76
-    },
     "deepseek": {
      "p_violation": 0.8629192261748257,
      "ms": 3915,
@@ -8663,17 +9987,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 520,
+     "in_tok": 2617,
+     "out_tok": 20,
+     "cost": 0.000109914,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.81
+     },
+     "p_violation": 0.81
+    },
+    "jev14": {
+     "ms": 509,
+     "in_tok": 2617,
+     "out_tok": 20,
+     "cost": 0.000109914,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.8
+     },
+     "p_violation": 0.8
+    },
     "luna": {
-     "ms": 567,
-     "in_tok": 2241,
-     "cost": 0.0002241,
+     "ms": 523,
+     "in_tok": 2262,
+     "out_tok": 0,
+     "cost": 0.0002262,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.63
+      "noul": 0.97
      },
-     "p_violation": 0.63
+     "p_violation": 0.97
     }
    }
   },
@@ -8718,18 +10069,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 235,
-     "in_tok": 2146,
-     "cost": 9.0132e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.57
-     },
-     "p_violation": 0.57
-    },
     "deepseek": {
      "p_violation": 0.4990696589617065,
      "ms": 4473,
@@ -8760,17 +10099,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 484,
+     "in_tok": 2170,
+     "out_tok": 20,
+     "cost": 9.114e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.34
+     },
+     "p_violation": 0.34
+    },
+    "jev14": {
+     "ms": 514,
+     "in_tok": 2170,
+     "out_tok": 20,
+     "cost": 9.114e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.36
+     },
+     "p_violation": 0.36
+    },
     "luna": {
-     "ms": 488,
-     "in_tok": 1947,
-     "cost": 0.0001947,
+     "ms": 527,
+     "in_tok": 1968,
+     "out_tok": 0,
+     "cost": 0.0001968,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.21
+      "noul": 0.33
      },
-     "p_violation": 0.21
+     "p_violation": 0.33
     }
    }
   },
@@ -8815,18 +10181,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 266,
-     "in_tok": 1737,
-     "cost": 7.2954e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.77
-     },
-     "p_violation": 0.77
-    },
     "deepseek": {
      "p_violation": 0.4914624211897718,
      "ms": 2589,
@@ -8857,17 +10211,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 433,
+     "in_tok": 1761,
+     "out_tok": 20,
+     "cost": 7.3962e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.45
+     },
+     "p_violation": 0.45
+    },
+    "jev14": {
+     "ms": 398,
+     "in_tok": 1761,
+     "out_tok": 20,
+     "cost": 7.3962e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.39
+     },
+     "p_violation": 0.39
+    },
     "luna": {
-     "ms": 548,
-     "in_tok": 1562,
-     "cost": 0.0001562,
+     "ms": 502,
+     "in_tok": 1583,
+     "out_tok": 0,
+     "cost": 0.0001583,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.65
+      "noul": 0.22
      },
-     "p_violation": 0.65
+     "p_violation": 0.22
     }
    }
   },
@@ -8912,18 +10293,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 236,
-     "in_tok": 3474,
-     "cost": 0.000145908,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.67
-     },
-     "p_violation": 0.67
-    },
     "deepseek": {
      "p_violation": 0.4944466856364544,
      "ms": 2273,
@@ -8954,17 +10323,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 519,
+     "in_tok": 3498,
+     "out_tok": 20,
+     "cost": 0.000146916,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.79
+     },
+     "p_violation": 0.79
+    },
+    "jev14": {
+     "ms": 545,
+     "in_tok": 3498,
+     "out_tok": 20,
+     "cost": 0.000146916,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.7
+     },
+     "p_violation": 0.7
+    },
     "luna": {
-     "ms": 574,
-     "in_tok": 2980,
-     "cost": 0.000298,
+     "ms": 538,
+     "in_tok": 3001,
+     "out_tok": 0,
+     "cost": 0.0003001,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.15
+      "noul": 0.5
      },
-     "p_violation": 0.15
+     "p_violation": 0.5
     }
    }
   },
@@ -9009,18 +10405,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 282,
-     "in_tok": 2169,
-     "cost": 9.1098e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.71
-     },
-     "p_violation": 0.71
-    },
     "deepseek": {
      "p_violation": 0.4977463257653399,
      "ms": 4454,
@@ -9051,17 +10435,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 526,
+     "in_tok": 2193,
+     "out_tok": 20,
+     "cost": 9.2106e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.7
+     },
+     "p_violation": 0.7
+    },
+    "jev14": {
+     "ms": 534,
+     "in_tok": 2193,
+     "out_tok": 20,
+     "cost": 9.2106e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.69
+     },
+     "p_violation": 0.69
+    },
     "luna": {
-     "ms": 561,
-     "in_tok": 1932,
-     "cost": 0.0001932,
+     "ms": 525,
+     "in_tok": 1953,
+     "out_tok": 0,
+     "cost": 0.0001953,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.46
+      "noul": 0.6
      },
-     "p_violation": 0.46
+     "p_violation": 0.6
     }
    }
   },
@@ -9106,18 +10517,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 242,
-     "in_tok": 2074,
-     "cost": 8.710800000000001e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.71
-     },
-     "p_violation": 0.71
-    },
     "deepseek": {
      "p_violation": 0.4972569277648212,
      "ms": 2356,
@@ -9148,17 +10547,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 566,
+     "in_tok": 2098,
+     "out_tok": 20,
+     "cost": 8.8116e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.74
+     },
+     "p_violation": 0.74
+    },
+    "jev14": {
+     "ms": 507,
+     "in_tok": 2098,
+     "out_tok": 20,
+     "cost": 8.8116e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.75
+     },
+     "p_violation": 0.75
+    },
     "luna": {
-     "ms": 534,
-     "in_tok": 1868,
-     "cost": 0.0001868,
+     "ms": 634,
+     "in_tok": 1889,
+     "out_tok": 0,
+     "cost": 0.0001889,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.86
+      "noul": 0.32
      },
-     "p_violation": 0.86
+     "p_violation": 0.32
     }
    }
   },
@@ -9203,18 +10629,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 268,
-     "in_tok": 2313,
-     "cost": 9.714600000000001e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.51
-     },
-     "p_violation": 0.51
-    },
     "deepseek": {
      "p_violation": 0.4987155227932349,
      "ms": 2583,
@@ -9245,17 +10659,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 537,
+     "in_tok": 2337,
+     "out_tok": 20,
+     "cost": 9.8154e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.53
+     },
+     "p_violation": 0.53
+    },
+    "jev14": {
+     "ms": 548,
+     "in_tok": 2337,
+     "out_tok": 20,
+     "cost": 9.8154e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.55
+     },
+     "p_violation": 0.55
+    },
     "luna": {
-     "ms": 527,
-     "in_tok": 2100,
-     "cost": 0.00021,
+     "ms": 518,
+     "in_tok": 2121,
+     "out_tok": 0,
+     "cost": 0.0002121,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.39
+      "noul": 0.15
      },
-     "p_violation": 0.39
+     "p_violation": 0.15
     }
    }
   },
@@ -9300,18 +10741,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 249,
-     "in_tok": 1878,
-     "cost": 7.8876e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.59
-     },
-     "p_violation": 0.59
-    },
     "deepseek": {
      "p_violation": 0.4996591736143372,
      "ms": 3313,
@@ -9342,17 +10771,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 500,
+     "in_tok": 1902,
+     "out_tok": 20,
+     "cost": 7.9884e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.67
+     },
+     "p_violation": 0.67
+    },
+    "jev14": {
+     "ms": 557,
+     "in_tok": 1902,
+     "out_tok": 20,
+     "cost": 7.9884e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.68
+     },
+     "p_violation": 0.68
+    },
     "luna": {
-     "ms": 531,
-     "in_tok": 1702,
-     "cost": 0.0001702,
+     "ms": 487,
+     "in_tok": 1723,
+     "out_tok": 0,
+     "cost": 0.0001723,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.06
+      "noul": 0.24
      },
-     "p_violation": 0.06
+     "p_violation": 0.24
     }
    }
   },
@@ -9397,18 +10853,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 217,
-     "in_tok": 2110,
-     "cost": 8.862e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.74
-     },
-     "p_violation": 0.74
-    },
     "deepseek": {
      "p_violation": 0.49725692980130587,
      "ms": 3112,
@@ -9439,17 +10883,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 484,
+     "in_tok": 2134,
+     "out_tok": 20,
+     "cost": 8.9628e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.66
+     },
+     "p_violation": 0.66
+    },
+    "jev14": {
+     "ms": 487,
+     "in_tok": 2134,
+     "out_tok": 20,
+     "cost": 8.9628e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.64
+     },
+     "p_violation": 0.64
+    },
     "luna": {
-     "ms": 553,
-     "in_tok": 1888,
-     "cost": 0.0001888,
+     "ms": 529,
+     "in_tok": 1909,
+     "out_tok": 0,
+     "cost": 0.0001909,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.35
+      "noul": 0.49
      },
-     "p_violation": 0.35
+     "p_violation": 0.49
     }
    }
   },
@@ -9494,18 +10965,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 349,
-     "in_tok": 2344,
-     "cost": 9.844800000000002e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.87
-     },
-     "p_violation": 0.87
-    },
     "deepseek": {
      "p_violation": 0.4999438567813945,
      "ms": 3210,
@@ -9536,17 +10995,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 550,
+     "in_tok": 2368,
+     "out_tok": 20,
+     "cost": 9.9456e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "p_violation": 0.06
+    },
+    "jev14": {
+     "ms": 505,
+     "in_tok": 2368,
+     "out_tok": 20,
+     "cost": 9.9456e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.08
+     },
+     "p_violation": 0.08
+    },
     "luna": {
-     "ms": 561,
-     "in_tok": 1989,
-     "cost": 0.0001989,
+     "ms": 504,
+     "in_tok": 2010,
+     "out_tok": 0,
+     "cost": 0.000201,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.95
+      "noul": 0
      },
-     "p_violation": 0.95
+     "p_violation": 0
     }
    }
   },
@@ -9591,18 +11077,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 263,
-     "in_tok": 1868,
-     "cost": 7.845600000000001e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.7
-     },
-     "p_violation": 0.7
-    },
     "deepseek": {
      "p_violation": 0.599861386680133,
      "ms": 5055,
@@ -9633,17 +11107,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 497,
+     "in_tok": 1892,
+     "out_tok": 20,
+     "cost": 7.9464e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.29
+     },
+     "p_violation": 0.29
+    },
+    "jev14": {
+     "ms": 524,
+     "in_tok": 1892,
+     "out_tok": 20,
+     "cost": 7.9464e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.22
+     },
+     "p_violation": 0.22
+    },
     "luna": {
-     "ms": 532,
-     "in_tok": 1609,
-     "cost": 0.0001609,
+     "ms": 526,
+     "in_tok": 1630,
+     "out_tok": 0,
+     "cost": 0.000163,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.77
+      "noul": 0.01
      },
-     "p_violation": 0.77
+     "p_violation": 0.01
     }
    }
   },
@@ -9688,18 +11189,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 250,
-     "in_tok": 1641,
-     "cost": 6.8922e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.67
-     },
-     "p_violation": 0.67
-    },
     "deepseek": {
      "p_violation": 0.4987952699879348,
      "ms": 4860,
@@ -9730,17 +11219,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 514,
+     "in_tok": 1665,
+     "out_tok": 20,
+     "cost": 6.993e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.6
+     },
+     "p_violation": 0.6
+    },
+    "jev14": {
+     "ms": 528,
+     "in_tok": 1665,
+     "out_tok": 20,
+     "cost": 6.993e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.51
+     },
+     "p_violation": 0.51
+    },
     "luna": {
-     "ms": 563,
-     "in_tok": 1465,
-     "cost": 0.0001465,
+     "ms": 524,
+     "in_tok": 1486,
+     "out_tok": 0,
+     "cost": 0.0001486,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.29
+      "noul": 0.49
      },
-     "p_violation": 0.29
+     "p_violation": 0.49
     }
    }
   },
@@ -9785,18 +11301,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 229,
-     "in_tok": 2236,
-     "cost": 9.391200000000002e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.76
-     },
-     "p_violation": 0.76
-    },
     "deepseek": {
      "p_violation": 0.5090568204090434,
      "ms": 2296,
@@ -9827,17 +11331,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 534,
+     "in_tok": 2260,
+     "out_tok": 20,
+     "cost": 9.492e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.77
+     },
+     "p_violation": 0.77
+    },
+    "jev14": {
+     "ms": 516,
+     "in_tok": 2260,
+     "out_tok": 20,
+     "cost": 9.492e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.66
+     },
+     "p_violation": 0.66
+    },
     "luna": {
-     "ms": 579,
-     "in_tok": 1865,
-     "cost": 0.0001865,
+     "ms": 502,
+     "in_tok": 1886,
+     "out_tok": 0,
+     "cost": 0.0001886,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.92
+      "noul": 1
      },
-     "p_violation": 0.92
+     "p_violation": 1
     }
    }
   },
@@ -9882,18 +11413,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 230,
-     "in_tok": 1288,
-     "cost": 5.4096000000000005e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.75
-     },
-     "p_violation": 0.75
-    },
     "deepseek": {
      "p_violation": 0.5245498568730305,
      "ms": 2120,
@@ -9924,17 +11443,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 489,
+     "in_tok": 1312,
+     "out_tok": 20,
+     "cost": 5.5104e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.63
+     },
+     "p_violation": 0.63
+    },
+    "jev14": {
+     "ms": 521,
+     "in_tok": 1312,
+     "out_tok": 20,
+     "cost": 5.5104e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.67
+     },
+     "p_violation": 0.67
+    },
     "luna": {
-     "ms": 570,
-     "in_tok": 1090,
-     "cost": 0.000109,
+     "ms": 542,
+     "in_tok": 1111,
+     "out_tok": 0,
+     "cost": 0.0001111,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.35
+      "noul": 0.68
      },
-     "p_violation": 0.35
+     "p_violation": 0.68
     }
    }
   },
@@ -9979,18 +11525,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 239,
-     "in_tok": 1013,
-     "cost": 4.2546e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.83
-     },
-     "p_violation": 0.83
-    },
     "deepseek": {
      "p_violation": 0.49936491722658,
      "ms": 2175,
@@ -10021,17 +11555,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 458,
+     "in_tok": 1037,
+     "out_tok": 20,
+     "cost": 4.3554e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.32
+     },
+     "p_violation": 0.32
+    },
+    "jev14": {
+     "ms": 475,
+     "in_tok": 1037,
+     "out_tok": 20,
+     "cost": 4.3554e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.15
+     },
+     "p_violation": 0.15
+    },
     "luna": {
-     "ms": 552,
-     "in_tok": 865,
-     "cost": 8.65e-05,
+     "ms": 517,
+     "in_tok": 886,
+     "out_tok": 0,
+     "cost": 8.86e-05,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.98
+      "noul": 0.87
      },
-     "p_violation": 0.98
+     "p_violation": 0.87
     }
    }
   }
@@ -10061,9 +11622,9 @@
   "jev": {
    "n": 100,
    "ok": 100,
-   "hit": 47,
-   "ms": 25404,
-   "cost": 0.007448153999999999
+   "hit": 77,
+   "ms": 49926,
+   "cost": 0.007548954000000002
   },
   "anthropic:claude-haiku-5-5": {
    "n": 100,
@@ -10075,9 +11636,16 @@
   "luna": {
    "n": 100,
    "ok": 100,
-   "hit": 44,
-   "ms": 55693,
-   "cost": 0.0155827
+   "hit": 57,
+   "ms": 55502,
+   "cost": 0.0157927
+  },
+  "jev14": {
+   "n": 100,
+   "ok": 100,
+   "hit": 81,
+   "ms": 52335,
+   "cost": 0.007548954000000002
   }
  },
  "merged_runs": [
@@ -10102,6 +11670,20 @@
   {
    "date": "2026-10-20",
    "arms": [
+    "luna"
+   ]
+  },
+  {
+   "date": "2026-10-22",
+   "arms": [
+    "jev14"
+   ]
+  },
+  {
+   "date": "2026-10-22",
+   "arms": [
+    "jev",
+    "jev14",
     "luna"
    ]
   }
