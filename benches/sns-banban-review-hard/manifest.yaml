@@ -44,7 +44,7 @@ keywords:
 owner: ernestolee13
 n: 48
 choices_note: null
-published_at: '2026-10-20'
+published_at: '2026-11-01'
 type: binary
 classes:
 - OK-plain
@@ -58,7 +58,7 @@ label_source_mix:
   judged: 20
   outcome: 0
 experiment:
-  date: '2026-10-20'
+  date: '2026-10-22'
   template: generic
   runner: benchlet
   arms:
@@ -217,33 +217,34 @@ experiment:
         distinct_p: null
         n_calls: 5
         smoke_acc: 1.0
-        cost: 0.000215712
+        cost: 0.000221172
         per_item:
         - id: sns-bbr-001
           target: 0
           hit: 1
-          p: 0.83
+          p: 0.87
           pred: null
         - id: sns-bbr-003
           target: 0
           hit: 1
-          p: 0.86
+          p: 0.92
           pred: null
         - id: sns-bbr-004
           target: 0
           hit: 1
-          p: 0.81
+          p: 0.77
           pred: null
         - id: sns-bbr-000
           target: 1
           hit: 1
-          p: 0.37
+          p: 0.48
           pred: null
         - id: sns-bbr-006
           target: 1
           hit: 1
           p: 0.31
           pred: null
+      cache_warm: null
     luna:
       model: openai/gpt-6-luna-decisions
       provider: openrouter
@@ -266,27 +267,27 @@ experiment:
         distinct_p: null
         n_calls: 5
         smoke_acc: 0.6
-        cost: 0.00040229999999999997
+        cost: 0.0004138
         per_item:
         - id: sns-bbr-001
           target: 0
           hit: 0
-          p: 0.01
+          p: 0
           pred: null
         - id: sns-bbr-003
           target: 0
           hit: 1
-          p: 0.62
+          p: 0.72
           pred: null
         - id: sns-bbr-004
           target: 0
           hit: 0
-          p: 0.01
+          p: 0
           pred: null
         - id: sns-bbr-000
           target: 1
           hit: 1
-          p: 0.01
+          p: 0
           pred: null
         - id: sns-bbr-006
           target: 1
@@ -318,6 +319,55 @@ experiment:
         smoke_acc: null
         cost: 0.0012945
         per_item: []
+      cache_warm: null
+    jev14:
+      model: typesafe/jev-1.14
+      provider: openrouter
+      family: Jev
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.042
+      smoke:
+        arm: jev14
+        mode: typed
+        usable: true
+        reasons: []
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 1.0
+        cost: 0.000221172
+        per_item:
+        - id: sns-bbr-001
+          target: 0
+          hit: 1
+          p: 0.85
+          pred: null
+        - id: sns-bbr-003
+          target: 0
+          hit: 1
+          p: 0.92
+          pred: null
+        - id: sns-bbr-004
+          target: 0
+          hit: 1
+          p: 0.82
+          pred: null
+        - id: sns-bbr-000
+          target: 1
+          hit: 1
+          p: 0.36
+          pred: null
+        - id: sns-bbr-006
+          target: 1
+          hit: 1
+          p: 0.41
+          pred: null
       cache_warm: null
   protocol:
     decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
@@ -371,28 +421,6 @@ result_summary:
     prob_source: logprob
     model: deepseek/deepseek-v4-flash
     source_badge: author-run
-  jev:
-    acc: 0.8541666666666666
-    ci95:
-    - 0.7283255295714138
-    - 0.9275184258620602
-    auroc: 0.9756944444444444
-    brier: 0.10831250000000003
-    n: 48
-    prob_source: typed
-    model: typesafe/jev-1.13
-    source_badge: author-run
-  luna:
-    acc: 0.5833333333333334
-    ci95:
-    - 0.4428108221536465
-    - 0.7115054026542298
-    auroc: 0.7925347222222222
-    brier: 0.3289041666666667
-    n: 48
-    prob_source: typed
-    model: openai/gpt-6-luna-decisions
-    source_badge: author-run
   anthropic:claude-haiku-5-5:
     acc: 0.6458333333333334
     ci95:
@@ -403,4 +431,37 @@ result_summary:
     n: 48
     prob_source: none
     model: claude-haiku-5-5
+    source_badge: author-run
+  jev:
+    acc: 0.8333333333333334
+    ci95:
+    - 0.7042189996260375
+    - 0.9130458996054678
+    auroc: 0.9869791666666666
+    brier: 0.11608333333333336
+    n: 48
+    prob_source: typed
+    model: typesafe/jev-1.13
+    source_badge: author-run
+  jev14:
+    acc: 0.75
+    ci95:
+    - 0.6121535625207292
+    - 0.8507951119028997
+    auroc: 0.9565972222222222
+    brier: 0.14805416666666665
+    n: 48
+    prob_source: typed
+    model: typesafe/jev-1.14
+    source_badge: author-run
+  luna:
+    acc: 0.6041666666666666
+    ci95:
+    - 0.46310154596935116
+    - 0.7297937350404942
+    auroc: 0.7230902777777778
+    brier: 0.35765625
+    n: 48
+    prob_source: typed
+    model: openai/gpt-6-luna-decisions
     source_badge: author-run
