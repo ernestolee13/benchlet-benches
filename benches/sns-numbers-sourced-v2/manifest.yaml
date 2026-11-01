@@ -42,7 +42,7 @@ keywords:
 owner: ernestolee13
 n: 60
 choices_note: null
-published_at: '2026-10-20'
+published_at: '2026-11-01'
 type: binary
 classes:
 - N-original
@@ -57,7 +57,7 @@ label_source_mix:
   judged: 0
   outcome: 0
 experiment:
-  date: '2026-10-20'
+  date: '2026-10-22'
   template: legacy-seed
   runner: benchlet
   arms:
@@ -73,9 +73,7 @@ experiment:
         arm: luna
         mode: typed
         usable: true
-        reasons:
-        - 뻔한 5건 중 2건 틀림 (sns-numbers-001, sns-numbers-006). 다른 팔도 틀리면 질문 결함, 이 팔만
-          틀리면 팔 약점
+        reasons: []
         has_logprobs: null
         reasoning_tokens_zero: null
         provider_match: null
@@ -83,8 +81,8 @@ experiment:
         spread: null
         distinct_p: null
         n_calls: 5
-        smoke_acc: 0.6
-        cost: 0.0007031000000000001
+        smoke_acc: 1.0
+        cost: 0.0007126000000000001
         per_item:
         - id: sns-numbers-002
           target: 0
@@ -94,22 +92,22 @@ experiment:
         - id: sns-numbers-004
           target: 0
           hit: 1
-          p: 0.9
+          p: 0.98
           pred: null
         - id: sns-numbers-016
           target: 0
           hit: 1
-          p: 0.84
+          p: 0.63
           pred: null
         - id: sns-numbers-001
           target: 1
-          hit: 0
-          p: 0.83
+          hit: 1
+          p: 0.37
           pred: null
         - id: sns-numbers-006
           target: 1
-          hit: 0
-          p: 0.77
+          hit: 1
+          p: 0.01
           pred: null
       cache_warm: null
     anthropic:claude-haiku-5-5:
@@ -136,6 +134,104 @@ experiment:
         smoke_acc: null
         cost: 0.0023741
         per_item: []
+      cache_warm: null
+    jev14:
+      model: typesafe/jev-1.14
+      provider: openrouter
+      family: Jev
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.042
+      smoke:
+        arm: jev14
+        mode: typed
+        usable: true
+        reasons: []
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 1.0
+        cost: 0.000380142
+        per_item:
+        - id: sns-numbers-002
+          target: 0
+          hit: 1
+          p: 0.79
+          pred: null
+        - id: sns-numbers-004
+          target: 0
+          hit: 1
+          p: 0.87
+          pred: null
+        - id: sns-numbers-016
+          target: 0
+          hit: 1
+          p: 0.89
+          pred: null
+        - id: sns-numbers-001
+          target: 1
+          hit: 1
+          p: 0.18
+          pred: null
+        - id: sns-numbers-006
+          target: 1
+          hit: 1
+          p: 0.11
+          pred: null
+      cache_warm: null
+    jev:
+      model: typesafe/jev-1.13
+      provider: openrouter
+      family: Jev
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.042
+      smoke:
+        arm: jev
+        mode: typed
+        usable: true
+        reasons: []
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 1.0
+        cost: 0.000380142
+        per_item:
+        - id: sns-numbers-002
+          target: 0
+          hit: 1
+          p: 0.53
+          pred: null
+        - id: sns-numbers-004
+          target: 0
+          hit: 1
+          p: 0.7
+          pred: null
+        - id: sns-numbers-016
+          target: 0
+          hit: 1
+          p: 0.84
+          pred: null
+        - id: sns-numbers-001
+          target: 1
+          hit: 1
+          p: 0.2
+          pred: null
+        - id: sns-numbers-006
+          target: 1
+          hit: 1
+          p: 0.17
+          pred: null
       cache_warm: null
   protocol:
     decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
@@ -189,28 +285,6 @@ result_summary:
     prob_source: logprob
     model: deepseek/deepseek-v4-flash
     source_badge: author-run
-  jev:
-    acc: 0.9
-    ci95:
-    - 0.7985030550748896
-    - 0.9533578005427641
-    auroc: 0.9777777777777777
-    brier: 0.09251166666666663
-    n: 60
-    prob_source: typed
-    model: typesafe/jev-1.13
-    source_badge: author-run
-  luna:
-    acc: 0.8166666666666667
-    ci95:
-    - 0.7008000677353371
-    - 0.8944231096286387
-    auroc: 0.9572222222222222
-    brier: 0.14435166666666663
-    n: 60
-    prob_source: typed
-    model: openai/gpt-6-luna-decisions
-    source_badge: author-run
   anthropic:claude-haiku-5-5:
     acc: 0.8
     ci95:
@@ -221,4 +295,37 @@ result_summary:
     n: 60
     prob_source: none
     model: claude-haiku-5-5
+    source_badge: author-run
+  jev:
+    acc: 0.9166666666666666
+    ci95:
+    - 0.8193083153188752
+    - 0.963880075949514
+    auroc: 0.9766666666666667
+    brier: 0.07785833333333332
+    n: 60
+    prob_source: typed
+    model: typesafe/jev-1.13
+    source_badge: author-run
+  jev14:
+    acc: 1.0
+    ci95:
+    - 0.939826069522067
+    - 0.9999999999999998
+    auroc: 1.0
+    brier: 0.04036666666666669
+    n: 60
+    prob_source: typed
+    model: typesafe/jev-1.14
+    source_badge: author-run
+  luna:
+    acc: 0.9333333333333333
+    ci95:
+    - 0.8407442010623228
+    - 0.9737717258568019
+    auroc: 0.9711111111111111
+    brier: 0.07196500000000003
+    n: 60
+    prob_source: typed
+    model: openai/gpt-6-luna-decisions
     source_badge: author-run
