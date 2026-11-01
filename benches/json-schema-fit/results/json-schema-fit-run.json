@@ -3,7 +3,7 @@
  "bench": "json-schema-fit@1",
  "items_sha256": "8aedbb69099fe343b567a36cbbea6a019db69e6dfc48d9ebd47d8a34683a1590",
  "template": "generic",
- "date": "2026-10-20",
+ "date": "2026-10-22",
  "arms": {
   "glm": {
    "model": "z-ai/glm-4.7-flash",
@@ -196,27 +196,27 @@
     "distinct_p": null,
     "n_calls": 5,
     "smoke_acc": 1.0,
-    "cost": 9.500400000000001e-05,
+    "cost": 9.9624e-05,
     "per_item": [
      {
       "id": "json-schema-fit-005",
       "target": 0,
       "hit": 1,
-      "p": 0.85,
+      "p": 0.88,
       "pred": null
      },
      {
       "id": "json-schema-fit-006",
       "target": 0,
       "hit": 1,
-      "p": 0.96,
+      "p": 0.97,
       "pred": null
      },
      {
       "id": "json-schema-fit-007",
       "target": 0,
       "hit": 1,
-      "p": 0.95,
+      "p": 0.96,
       "pred": null
      },
      {
@@ -230,11 +230,12 @@
       "id": "json-schema-fit-001",
       "target": 1,
       "hit": 1,
-      "p": 0.02,
+      "p": 0.03,
       "pred": null
      }
     ]
-   }
+   },
+   "cache_warm": null
   },
   "anthropic:claude-haiku-5-5": {
    "model": "claude-haiku-5-5",
@@ -285,7 +286,7 @@
     "distinct_p": null,
     "n_calls": 5,
     "smoke_acc": 1.0,
-    "cost": 0.0001582,
+    "cost": 0.00016769999999999998,
     "per_item": [
      {
       "id": "json-schema-fit-005",
@@ -312,7 +313,7 @@
       "id": "json-schema-fit-000",
       "target": 1,
       "hit": 1,
-      "p": 0.24,
+      "p": 0.12,
       "pred": null
      },
      {
@@ -320,6 +321,70 @@
       "target": 1,
       "hit": 1,
       "p": 0,
+      "pred": null
+     }
+    ]
+   },
+   "cache_warm": null
+  },
+  "jev14": {
+   "model": "typesafe/jev-1.14",
+   "provider": "openrouter",
+   "family": "Jev",
+   "mode": "typed",
+   "prob_source": "typed",
+   "base_url": "openrouter.ai",
+   "in_per_m": 0.042,
+   "smoke": {
+    "arm": "jev14",
+    "mode": "typed",
+    "usable": true,
+    "reasons": [
+     "뻔한 5건 중 1건 틀림 (json-schema-fit-005). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점"
+    ],
+    "has_logprobs": null,
+    "reasoning_tokens_zero": null,
+    "provider_match": null,
+    "mass_min": null,
+    "spread": null,
+    "distinct_p": null,
+    "n_calls": 5,
+    "smoke_acc": 0.8,
+    "cost": 9.9624e-05,
+    "per_item": [
+     {
+      "id": "json-schema-fit-005",
+      "target": 0,
+      "hit": 0,
+      "p": 0.23,
+      "pred": null
+     },
+     {
+      "id": "json-schema-fit-006",
+      "target": 0,
+      "hit": 1,
+      "p": 0.97,
+      "pred": null
+     },
+     {
+      "id": "json-schema-fit-007",
+      "target": 0,
+      "hit": 1,
+      "p": 0.97,
+      "pred": null
+     },
+     {
+      "id": "json-schema-fit-000",
+      "target": 1,
+      "hit": 1,
+      "p": 0.07,
+      "pred": null
+     },
+     {
+      "id": "json-schema-fit-001",
+      "target": 1,
+      "hit": 1,
+      "p": 0.04,
       "pred": null
      }
     ]
@@ -385,18 +450,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 228,
-     "in_tok": 447,
-     "cost": 1.8774000000000004e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.09
-     },
-     "p_violation": 0.09
-    },
     "anthropic:claude-haiku-5-5": {
      "p_violation": 0.0,
      "ms": 2340,
@@ -411,17 +464,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 449,
+     "in_tok": 469,
+     "out_tok": 20,
+     "cost": 1.9698e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.11
+     },
+     "p_violation": 0.11
+    },
+    "jev14": {
+     "ms": 412,
+     "in_tok": 469,
+     "out_tok": 20,
+     "cost": 1.9698e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.08
+     },
+     "p_violation": 0.08
+    },
     "luna": {
-     "ms": 492,
-     "in_tok": 310,
-     "cost": 3.1e-05,
+     "ms": 501,
+     "in_tok": 329,
+     "out_tok": 0,
+     "cost": 3.29e-05,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.24
+      "noul": 0.12
      },
-     "p_violation": 0.24
+     "p_violation": 0.12
     }
    }
   },
@@ -482,18 +562,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 226,
-     "in_tok": 463,
-     "cost": 1.9446e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.03
-     },
-     "p_violation": 0.03
-    },
     "anthropic:claude-haiku-5-5": {
      "p_violation": 0.0,
      "ms": 2428,
@@ -508,10 +576,37 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 417,
+     "in_tok": 485,
+     "out_tok": 20,
+     "cost": 2.037e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.03
+     },
+     "p_violation": 0.03
+    },
+    "jev14": {
+     "ms": 408,
+     "in_tok": 485,
+     "out_tok": 20,
+     "cost": 2.037e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.03
+     },
+     "p_violation": 0.03
+    },
     "luna": {
-     "ms": 916,
-     "in_tok": 325,
-     "cost": 3.25e-05,
+     "ms": 532,
+     "in_tok": 344,
+     "out_tok": 0,
+     "cost": 3.44e-05,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
@@ -579,18 +674,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 285,
-     "in_tok": 463,
-     "cost": 1.9446e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.06
-     },
-     "p_violation": 0.06
-    },
     "anthropic:claude-haiku-5-5": {
      "p_violation": 0.0,
      "ms": 2413,
@@ -605,17 +688,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 443,
+     "in_tok": 485,
+     "out_tok": 20,
+     "cost": 2.037e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.07
+     },
+     "p_violation": 0.07
+    },
+    "jev14": {
+     "ms": 412,
+     "in_tok": 485,
+     "out_tok": 20,
+     "cost": 2.037e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.07
+     },
+     "p_violation": 0.07
+    },
     "luna": {
-     "ms": 528,
-     "in_tok": 323,
-     "cost": 3.23e-05,
+     "ms": 610,
+     "in_tok": 342,
+     "out_tok": 0,
+     "cost": 3.42e-05,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.02
+      "noul": 0
      },
-     "p_violation": 0.02
+     "p_violation": 0
     }
    }
   },
@@ -676,18 +786,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 230,
-     "in_tok": 465,
-     "cost": 1.953e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.05
-     },
-     "p_violation": 0.05
-    },
     "anthropic:claude-haiku-5-5": {
      "p_violation": 0.0,
      "ms": 2111,
@@ -702,10 +800,37 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 423,
+     "in_tok": 487,
+     "out_tok": 20,
+     "cost": 2.0454e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "p_violation": 0.05
+    },
+    "jev14": {
+     "ms": 454,
+     "in_tok": 487,
+     "out_tok": 20,
+     "cost": 2.0454e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "p_violation": 0.05
+    },
     "luna": {
-     "ms": 520,
-     "in_tok": 330,
-     "cost": 3.3e-05,
+     "ms": 502,
+     "in_tok": 349,
+     "out_tok": 0,
+     "cost": 3.49e-05,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
@@ -773,18 +898,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 219,
-     "in_tok": 456,
-     "cost": 1.9152000000000002e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.03
-     },
-     "p_violation": 0.03
-    },
     "anthropic:claude-haiku-5-5": {
      "p_violation": 0.0,
      "ms": 2431,
@@ -799,10 +912,37 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 408,
+     "in_tok": 478,
+     "out_tok": 20,
+     "cost": 2.0076e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.03
+     },
+     "p_violation": 0.03
+    },
+    "jev14": {
+     "ms": 450,
+     "in_tok": 478,
+     "out_tok": 20,
+     "cost": 2.0076e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.03
+     },
+     "p_violation": 0.03
+    },
     "luna": {
-     "ms": 551,
-     "in_tok": 322,
-     "cost": 3.22e-05,
+     "ms": 608,
+     "in_tok": 341,
+     "out_tok": 0,
+     "cost": 3.41e-05,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
@@ -870,18 +1010,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 236,
-     "in_tok": 447,
-     "cost": 1.8774000000000004e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.88
-     },
-     "p_violation": 0.88
-    },
     "anthropic:claude-haiku-5-5": {
      "p_violation": 1.0,
      "ms": 2396,
@@ -896,10 +1024,37 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 398,
+     "in_tok": 469,
+     "out_tok": 20,
+     "cost": 1.9698e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.87
+     },
+     "p_violation": 0.87
+    },
+    "jev14": {
+     "ms": 412,
+     "in_tok": 469,
+     "out_tok": 20,
+     "cost": 1.9698e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.15
+     },
+     "p_violation": 0.15
+    },
     "luna": {
-     "ms": 513,
-     "in_tok": 309,
-     "cost": 3.09e-05,
+     "ms": 510,
+     "in_tok": 328,
+     "out_tok": 0,
+     "cost": 3.28e-05,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
@@ -967,18 +1122,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 230,
-     "in_tok": 449,
-     "cost": 1.8858e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.96
-     },
-     "p_violation": 0.96
-    },
     "anthropic:claude-haiku-5-5": {
      "p_violation": 1.0,
      "ms": 2527,
@@ -993,10 +1136,37 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 1051,
+     "in_tok": 471,
+     "out_tok": 20,
+     "cost": 1.9782e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.97
+     },
+     "p_violation": 0.97
+    },
+    "jev14": {
+     "ms": 520,
+     "in_tok": 471,
+     "out_tok": 20,
+     "cost": 1.9782e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.97
+     },
+     "p_violation": 0.97
+    },
     "luna": {
-     "ms": 592,
-     "in_tok": 316,
-     "cost": 3.16e-05,
+     "ms": 533,
+     "in_tok": 335,
+     "out_tok": 0,
+     "cost": 3.35e-05,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
@@ -1064,18 +1234,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 232,
-     "in_tok": 456,
-     "cost": 1.9152000000000002e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.94
-     },
-     "p_violation": 0.94
-    },
     "anthropic:claude-haiku-5-5": {
      "p_violation": 1.0,
      "ms": 2185,
@@ -1090,10 +1248,37 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 515,
+     "in_tok": 478,
+     "out_tok": 20,
+     "cost": 2.0076e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.94
+     },
+     "p_violation": 0.94
+    },
+    "jev14": {
+     "ms": 525,
+     "in_tok": 478,
+     "out_tok": 20,
+     "cost": 2.0076e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.97
+     },
+     "p_violation": 0.97
+    },
     "luna": {
-     "ms": 529,
-     "in_tok": 322,
-     "cost": 3.22e-05,
+     "ms": 555,
+     "in_tok": 341,
+     "out_tok": 0,
+     "cost": 3.41e-05,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
@@ -1161,18 +1346,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 230,
-     "in_tok": 462,
-     "cost": 1.9404000000000003e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.75
-     },
-     "p_violation": 0.75
-    },
     "anthropic:claude-haiku-5-5": {
      "p_violation": 1.0,
      "ms": 2391,
@@ -1187,17 +1360,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 515,
+     "in_tok": 484,
+     "out_tok": 20,
+     "cost": 2.0328e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.66
+     },
+     "p_violation": 0.66
+    },
+    "jev14": {
+     "ms": 540,
+     "in_tok": 484,
+     "out_tok": 20,
+     "cost": 2.0328e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.91
+     },
+     "p_violation": 0.91
+    },
     "luna": {
-     "ms": 560,
-     "in_tok": 325,
-     "cost": 3.25e-05,
+     "ms": 516,
+     "in_tok": 344,
+     "out_tok": 0,
+     "cost": 3.44e-05,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 1
+      "noul": 0.96
      },
-     "p_violation": 1
+     "p_violation": 0.96
     }
    }
   },
@@ -1258,18 +1458,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 264,
-     "in_tok": 463,
-     "cost": 1.9446e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.95
-     },
-     "p_violation": 0.95
-    },
     "anthropic:claude-haiku-5-5": {
      "p_violation": 1.0,
      "ms": 2177,
@@ -1284,10 +1472,37 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 490,
+     "in_tok": 485,
+     "out_tok": 20,
+     "cost": 2.037e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.96
+     },
+     "p_violation": 0.96
+    },
+    "jev14": {
+     "ms": 537,
+     "in_tok": 485,
+     "out_tok": 20,
+     "cost": 2.037e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.96
+     },
+     "p_violation": 0.96
+    },
     "luna": {
-     "ms": 819,
-     "in_tok": 325,
-     "cost": 3.25e-05,
+     "ms": 511,
+     "in_tok": 344,
+     "out_tok": 0,
+     "cost": 3.44e-05,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
@@ -1355,18 +1570,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 252,
-     "in_tok": 462,
-     "cost": 1.9404000000000003e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.04
-     },
-     "p_violation": 0.04
-    },
     "anthropic:claude-haiku-5-5": {
      "p_violation": 0.0,
      "ms": 2203,
@@ -1381,10 +1584,37 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 418,
+     "in_tok": 484,
+     "out_tok": 20,
+     "cost": 2.0328e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "p_violation": 0.05
+    },
+    "jev14": {
+     "ms": 536,
+     "in_tok": 484,
+     "out_tok": 20,
+     "cost": 2.0328e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.04
+     },
+     "p_violation": 0.04
+    },
     "luna": {
-     "ms": 528,
-     "in_tok": 328,
-     "cost": 3.28e-05,
+     "ms": 527,
+     "in_tok": 347,
+     "out_tok": 0,
+     "cost": 3.47e-05,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
@@ -1452,18 +1682,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 246,
-     "in_tok": 450,
-     "cost": 1.8900000000000002e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.97
-     },
-     "p_violation": 0.97
-    },
     "anthropic:claude-haiku-5-5": {
      "p_violation": 1.0,
      "ms": 2068,
@@ -1478,17 +1696,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 430,
+     "in_tok": 472,
+     "out_tok": 20,
+     "cost": 1.9824e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.97
+     },
+     "p_violation": 0.97
+    },
+    "jev14": {
+     "ms": 500,
+     "in_tok": 472,
+     "out_tok": 20,
+     "cost": 1.9824e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.97
+     },
+     "p_violation": 0.97
+    },
     "luna": {
-     "ms": 531,
-     "in_tok": 311,
-     "cost": 3.11e-05,
+     "ms": 529,
+     "in_tok": 330,
+     "out_tok": 0,
+     "cost": 3.3e-05,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.76
+      "noul": 0.82
      },
-     "p_violation": 0.76
+     "p_violation": 0.82
     }
    }
   },
@@ -1549,18 +1794,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 227,
-     "in_tok": 468,
-     "cost": 1.9656e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.05
-     },
-     "p_violation": 0.05
-    },
     "anthropic:claude-haiku-5-5": {
      "p_violation": 0.0,
      "ms": 1893,
@@ -1575,10 +1808,37 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 525,
+     "in_tok": 490,
+     "out_tok": 20,
+     "cost": 2.058e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "p_violation": 0.05
+    },
+    "jev14": {
+     "ms": 534,
+     "in_tok": 490,
+     "out_tok": 20,
+     "cost": 2.058e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.05
+     },
+     "p_violation": 0.05
+    },
     "luna": {
-     "ms": 553,
-     "in_tok": 331,
-     "cost": 3.31e-05,
+     "ms": 507,
+     "in_tok": 350,
+     "out_tok": 0,
+     "cost": 3.5e-05,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
@@ -1646,18 +1906,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 244,
-     "in_tok": 456,
-     "cost": 1.9152000000000002e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.96
-     },
-     "p_violation": 0.96
-    },
     "anthropic:claude-haiku-5-5": {
      "p_violation": 1.0,
      "ms": 2540,
@@ -1672,10 +1920,37 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 534,
+     "in_tok": 478,
+     "out_tok": 20,
+     "cost": 2.0076e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.97
+     },
+     "p_violation": 0.97
+    },
+    "jev14": {
+     "ms": 508,
+     "in_tok": 478,
+     "out_tok": 20,
+     "cost": 2.0076e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.98
+     },
+     "p_violation": 0.98
+    },
     "luna": {
-     "ms": 525,
-     "in_tok": 322,
-     "cost": 3.22e-05,
+     "ms": 528,
+     "in_tok": 341,
+     "out_tok": 0,
+     "cost": 3.41e-05,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
@@ -1743,18 +2018,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 326,
-     "in_tok": 451,
-     "cost": 1.8942000000000003e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.86
-     },
-     "p_violation": 0.86
-    },
     "anthropic:claude-haiku-5-5": {
      "p_violation": 1.0,
      "ms": 2526,
@@ -1769,10 +2032,37 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 512,
+     "in_tok": 473,
+     "out_tok": 20,
+     "cost": 1.9866e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.87
+     },
+     "p_violation": 0.87
+    },
+    "jev14": {
+     "ms": 529,
+     "in_tok": 473,
+     "out_tok": 20,
+     "cost": 1.9866e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.95
+     },
+     "p_violation": 0.95
+    },
     "luna": {
-     "ms": 633,
-     "in_tok": 314,
-     "cost": 3.14e-05,
+     "ms": 602,
+     "in_tok": 333,
+     "out_tok": 0,
+     "cost": 3.33e-05,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
@@ -1840,18 +2130,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 294,
-     "in_tok": 453,
-     "cost": 1.9026e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.96
-     },
-     "p_violation": 0.96
-    },
     "anthropic:claude-haiku-5-5": {
      "p_violation": 1.0,
      "ms": 1914,
@@ -1866,10 +2144,37 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 496,
+     "in_tok": 475,
+     "out_tok": 20,
+     "cost": 1.995e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.97
+     },
+     "p_violation": 0.97
+    },
+    "jev14": {
+     "ms": 529,
+     "in_tok": 475,
+     "out_tok": 20,
+     "cost": 1.995e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.97
+     },
+     "p_violation": 0.97
+    },
     "luna": {
-     "ms": 565,
-     "in_tok": 318,
-     "cost": 3.18e-05,
+     "ms": 549,
+     "in_tok": 337,
+     "out_tok": 0,
+     "cost": 3.37e-05,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
@@ -1937,18 +2242,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 264,
-     "in_tok": 464,
-     "cost": 1.9488e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.96
-     },
-     "p_violation": 0.96
-    },
     "anthropic:claude-haiku-5-5": {
      "p_violation": 1.0,
      "ms": 2474,
@@ -1963,10 +2256,37 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 495,
+     "in_tok": 486,
+     "out_tok": 20,
+     "cost": 2.0412e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.97
+     },
+     "p_violation": 0.97
+    },
+    "jev14": {
+     "ms": 519,
+     "in_tok": 486,
+     "out_tok": 20,
+     "cost": 2.0412e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.98
+     },
+     "p_violation": 0.98
+    },
     "luna": {
-     "ms": 516,
-     "in_tok": 326,
-     "cost": 3.26e-05,
+     "ms": 532,
+     "in_tok": 345,
+     "out_tok": 0,
+     "cost": 3.45e-05,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
@@ -2034,18 +2354,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 235,
-     "in_tok": 458,
-     "cost": 1.9236000000000004e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.05
-     },
-     "p_violation": 0.05
-    },
     "anthropic:claude-haiku-5-5": {
      "p_violation": 0.0,
      "ms": 2468,
@@ -2060,10 +2368,37 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 515,
+     "in_tok": 480,
+     "out_tok": 20,
+     "cost": 2.016e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "p_violation": 0.06
+    },
+    "jev14": {
+     "ms": 541,
+     "in_tok": 480,
+     "out_tok": 20,
+     "cost": 2.016e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "p_violation": 0.06
+    },
     "luna": {
-     "ms": 548,
-     "in_tok": 319,
-     "cost": 3.19e-05,
+     "ms": 539,
+     "in_tok": 338,
+     "out_tok": 0,
+     "cost": 3.38e-05,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
@@ -2131,18 +2466,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 238,
-     "in_tok": 456,
-     "cost": 1.9152000000000002e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.03
-     },
-     "p_violation": 0.03
-    },
     "anthropic:claude-haiku-5-5": {
      "p_violation": 0.0,
      "ms": 2440,
@@ -2157,10 +2480,37 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 524,
+     "in_tok": 478,
+     "out_tok": 20,
+     "cost": 2.0076e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.03
+     },
+     "p_violation": 0.03
+    },
+    "jev14": {
+     "ms": 529,
+     "in_tok": 478,
+     "out_tok": 20,
+     "cost": 2.0076e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.04
+     },
+     "p_violation": 0.04
+    },
     "luna": {
-     "ms": 555,
-     "in_tok": 322,
-     "cost": 3.22e-05,
+     "ms": 516,
+     "in_tok": 341,
+     "out_tok": 0,
+     "cost": 3.41e-05,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
@@ -2228,18 +2578,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 218,
-     "in_tok": 456,
-     "cost": 1.9152000000000002e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.06
-     },
-     "p_violation": 0.06
-    },
     "anthropic:claude-haiku-5-5": {
      "p_violation": 0.0,
      "ms": 2430,
@@ -2254,10 +2592,37 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 516,
+     "in_tok": 478,
+     "out_tok": 20,
+     "cost": 2.0076e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.06
+     },
+     "p_violation": 0.06
+    },
+    "jev14": {
+     "ms": 524,
+     "in_tok": 478,
+     "out_tok": 20,
+     "cost": 2.0076e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.07
+     },
+     "p_violation": 0.07
+    },
     "luna": {
-     "ms": 554,
-     "in_tok": 319,
-     "cost": 3.19e-05,
+     "ms": 525,
+     "in_tok": 338,
+     "out_tok": 0,
+     "cost": 3.38e-05,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
@@ -2325,18 +2690,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 216,
-     "in_tok": 456,
-     "cost": 1.9152000000000002e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.96
-     },
-     "p_violation": 0.96
-    },
     "anthropic:claude-haiku-5-5": {
      "p_violation": 1.0,
      "ms": 2504,
@@ -2351,17 +2704,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 523,
+     "in_tok": 478,
+     "out_tok": 20,
+     "cost": 2.0076e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.96
+     },
+     "p_violation": 0.96
+    },
+    "jev14": {
+     "ms": 536,
+     "in_tok": 478,
+     "out_tok": 20,
+     "cost": 2.0076e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.98
+     },
+     "p_violation": 0.98
+    },
     "luna": {
-     "ms": 558,
-     "in_tok": 316,
-     "cost": 3.16e-05,
+     "ms": 570,
+     "in_tok": 335,
+     "out_tok": 0,
+     "cost": 3.35e-05,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 1
+      "noul": 0.97
      },
-     "p_violation": 1
+     "p_violation": 0.97
     }
    }
   },
@@ -2422,18 +2802,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 233,
-     "in_tok": 459,
-     "cost": 1.9278e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.38
-     },
-     "p_violation": 0.38
-    },
     "anthropic:claude-haiku-5-5": {
      "p_violation": 1.0,
      "ms": 2253,
@@ -2448,17 +2816,44 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 503,
+     "in_tok": 481,
+     "out_tok": 20,
+     "cost": 2.0202e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.33
+     },
+     "p_violation": 0.33
+    },
+    "jev14": {
+     "ms": 536,
+     "in_tok": 481,
+     "out_tok": 20,
+     "cost": 2.0202e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.53
+     },
+     "p_violation": 0.53
+    },
     "luna": {
-     "ms": 556,
-     "in_tok": 322,
-     "cost": 3.22e-05,
+     "ms": 510,
+     "in_tok": 341,
+     "out_tok": 0,
+     "cost": 3.41e-05,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
       "type": "noul",
-      "noul": 0.81
+      "noul": 0.71
      },
-     "p_violation": 0.81
+     "p_violation": 0.71
     }
    }
   },
@@ -2519,18 +2914,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 228,
-     "in_tok": 457,
-     "cost": 1.9194e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.96
-     },
-     "p_violation": 0.96
-    },
     "anthropic:claude-haiku-5-5": {
      "p_violation": 1.0,
      "ms": 2213,
@@ -2545,10 +2928,37 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 438,
+     "in_tok": 479,
+     "out_tok": 20,
+     "cost": 2.0118e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.96
+     },
+     "p_violation": 0.96
+    },
+    "jev14": {
+     "ms": 524,
+     "in_tok": 479,
+     "out_tok": 20,
+     "cost": 2.0118e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.97
+     },
+     "p_violation": 0.97
+    },
     "luna": {
-     "ms": 580,
-     "in_tok": 322,
-     "cost": 3.22e-05,
+     "ms": 579,
+     "in_tok": 341,
+     "out_tok": 0,
+     "cost": 3.41e-05,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
@@ -2616,18 +3026,6 @@
       0
      ]
     },
-    "jev": {
-     "ms": 237,
-     "in_tok": 458,
-     "cost": 1.9236000000000004e-05,
-     "model": "typesafe/jev-1.13-20260917",
-     "err": null,
-     "raw": {
-      "type": "noul",
-      "noul": 0.93
-     },
-     "p_violation": 0.93
-    },
     "anthropic:claude-haiku-5-5": {
      "p_violation": 1.0,
      "ms": 2551,
@@ -2642,10 +3040,37 @@
      ],
      "answer_format": "json-schema-enum"
     },
+    "jev": {
+     "ms": 505,
+     "in_tok": 480,
+     "out_tok": 20,
+     "cost": 2.016e-05,
+     "model": "typesafe/jev-1.13-20260917",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.93
+     },
+     "p_violation": 0.93
+    },
+    "jev14": {
+     "ms": 510,
+     "in_tok": 480,
+     "out_tok": 20,
+     "cost": 2.016e-05,
+     "model": "typesafe/jev-1.14-20261014",
+     "err": null,
+     "raw": {
+      "type": "noul",
+      "noul": 0.93
+     },
+     "p_violation": 0.93
+    },
     "luna": {
-     "ms": 534,
-     "in_tok": 324,
-     "cost": 3.24e-05,
+     "ms": 523,
+     "in_tok": 343,
+     "out_tok": 0,
+     "cost": 3.43e-05,
      "model": "openai/gpt-6-luna-decisions-20261006",
      "err": null,
      "raw": {
@@ -2683,8 +3108,8 @@
    "n": 24,
    "ok": 24,
    "hit": 23,
-   "ms": 5838,
-   "cost": 0.00046094999999999996
+   "ms": 12043,
+   "cost": 0.00048312600000000006
   },
   "anthropic:claude-haiku-5-5": {
    "n": 24,
@@ -2697,8 +3122,15 @@
    "n": 24,
    "ok": 24,
    "hit": 24,
-   "ms": 13756,
-   "cost": 0.0007701
+   "ms": 12914,
+   "cost": 0.0008157
+  },
+  "jev14": {
+   "n": 24,
+   "ok": 24,
+   "hit": 23,
+   "ms": 12025,
+   "cost": 0.00048312600000000006
   }
  },
  "merged_runs": [
@@ -2717,6 +3149,20 @@
   {
    "date": "2026-10-20",
    "arms": [
+    "luna"
+   ]
+  },
+  {
+   "date": "2026-10-22",
+   "arms": [
+    "jev14"
+   ]
+  },
+  {
+   "date": "2026-10-22",
+   "arms": [
+    "jev",
+    "jev14",
     "luna"
    ]
   }
