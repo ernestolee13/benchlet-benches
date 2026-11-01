@@ -40,7 +40,7 @@ keywords:
 owner: ernestolee13
 n: 24
 choices_note: null
-published_at: '2026-10-20'
+published_at: '2026-11-01'
 type: binary
 classes:
 - N-adjacent
@@ -53,7 +53,7 @@ label_source_mix:
   judged: 0
   outcome: 0
 experiment:
-  date: '2026-10-20'
+  date: '2026-10-22'
   template: generic
   runner: benchlet
   arms:
@@ -208,12 +208,12 @@ experiment:
         distinct_p: null
         n_calls: 5
         smoke_acc: 1.0
-        cost: 8.9586e-05
+        cost: 9.5046e-05
         per_item:
         - id: rag-passage-relevance-001
           target: 0
           hit: 1
-          p: 0.91
+          p: 0.88
           pred: null
         - id: rag-passage-relevance-003
           target: 0
@@ -223,18 +223,19 @@ experiment:
         - id: rag-passage-relevance-004
           target: 0
           hit: 1
-          p: 0.92
+          p: 0.91
           pred: null
         - id: rag-passage-relevance-000
           target: 1
           hit: 1
-          p: 0.11
+          p: 0.12
           pred: null
         - id: rag-passage-relevance-002
           target: 1
           hit: 1
-          p: 0.04
+          p: 0.05
           pred: null
+      cache_warm: null
     anthropic:claude-haiku-5-5:
       model: claude-haiku-5-5
       provider: anthropic
@@ -281,7 +282,7 @@ experiment:
         distinct_p: null
         n_calls: 5
         smoke_acc: 1.0
-        cost: 0.0001452
+        cost: 0.00015670000000000001
         per_item:
         - id: rag-passage-relevance-001
           target: 0
@@ -307,6 +308,55 @@ experiment:
           target: 1
           hit: 1
           p: 0
+          pred: null
+      cache_warm: null
+    jev14:
+      model: typesafe/jev-1.14
+      provider: openrouter
+      family: Jev
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.042
+      smoke:
+        arm: jev14
+        mode: typed
+        usable: true
+        reasons: []
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 1.0
+        cost: 9.5046e-05
+        per_item:
+        - id: rag-passage-relevance-001
+          target: 0
+          hit: 1
+          p: 0.95
+          pred: null
+        - id: rag-passage-relevance-003
+          target: 0
+          hit: 1
+          p: 0.98
+          pred: null
+        - id: rag-passage-relevance-004
+          target: 0
+          hit: 1
+          p: 0.97
+          pred: null
+        - id: rag-passage-relevance-000
+          target: 1
+          hit: 1
+          p: 0.08
+          pred: null
+        - id: rag-passage-relevance-002
+          target: 1
+          hit: 1
+          p: 0.03
           pred: null
       cache_warm: null
   protocol:
@@ -361,17 +411,6 @@ result_summary:
     prob_source: logprob
     model: deepseek/deepseek-v4-flash
     source_badge: author-run
-  jev:
-    acc: 1.0
-    ci95:
-    - 0.8620194241710247
-    - 1.0000000000000002
-    auroc: 1.0
-    brier: 0.004208333333333334
-    n: 24
-    prob_source: typed
-    model: typesafe/jev-1.13
-    source_badge: author-run
   anthropic:claude-haiku-5-5:
     acc: 1.0
     ci95:
@@ -383,13 +422,35 @@ result_summary:
     prob_source: none
     model: claude-haiku-5-5
     source_badge: author-run
+  jev:
+    acc: 1.0
+    ci95:
+    - 0.8620194241710247
+    - 1.0000000000000002
+    auroc: 1.0
+    brier: 0.004579166666666666
+    n: 24
+    prob_source: typed
+    model: typesafe/jev-1.13
+    source_badge: author-run
+  jev14:
+    acc: 1.0
+    ci95:
+    - 0.8620194241710247
+    - 1.0000000000000002
+    auroc: 1.0
+    brier: 0.001454166666666667
+    n: 24
+    prob_source: typed
+    model: typesafe/jev-1.14
+    source_badge: author-run
   luna:
     acc: 1.0
     ci95:
     - 0.8620194241710247
     - 1.0000000000000002
     auroc: 1.0
-    brier: 4.166666666666667e-06
+    brier: 0.0
     n: 24
     prob_source: typed
     model: openai/gpt-6-luna-decisions
