@@ -39,7 +39,7 @@ keywords:
 owner: ernestolee13
 n: 53
 choices_note: null
-published_at: '2026-10-20'
+published_at: '2026-11-01'
 type: binary
 classes:
 - F-prop-role
@@ -53,7 +53,7 @@ label_source_mix:
   judged: 29
   outcome: 0
 experiment:
-  date: '2026-10-20'
+  date: '2026-10-22'
   template: legacy-seed
   runner: benchlet
   arms:
@@ -69,8 +69,7 @@ experiment:
         arm: luna
         mode: typed
         usable: true
-        reasons:
-        - 뻔한 5건 중 1건 틀림 (sns-fit-003). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        reasons: []
         has_logprobs: null
         reasoning_tokens_zero: null
         provider_match: null
@@ -78,33 +77,33 @@ experiment:
         spread: null
         distinct_p: null
         n_calls: 5
-        smoke_acc: 0.8
-        cost: 0.00010920000000000001
+        smoke_acc: 1.0
+        cost: 0.0001197
         per_item:
         - id: sns-fit-002
           target: 0
           hit: 1
-          p: 0.96
+          p: 0.99
           pred: null
         - id: sns-fit-000
           target: 0
           hit: 1
-          p: 0.79
+          p: 0.55
           pred: null
         - id: sns-fit-010
           target: 0
           hit: 1
-          p: 0.98
+          p: 0.97
           pred: null
         - id: sns-fit-001
           target: 1
           hit: 1
-          p: 0.18
+          p: 0.1
           pred: null
         - id: sns-fit-003
           target: 1
-          hit: 0
-          p: 0.86
+          hit: 1
+          p: 0.4
           pred: null
       cache_warm: null
     anthropic:claude-haiku-5-5:
@@ -131,6 +130,106 @@ experiment:
         smoke_acc: null
         cost: 0.0001981
         per_item: []
+      cache_warm: null
+    jev14:
+      model: typesafe/jev-1.14
+      provider: openrouter
+      family: Jev
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.042
+      smoke:
+        arm: jev14
+        mode: typed
+        usable: true
+        reasons:
+        - 뻔한 5건 중 1건 틀림 (sns-fit-002). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 0.8
+        cost: 7.7952e-05
+        per_item:
+        - id: sns-fit-002
+          target: 0
+          hit: 0
+          p: 0.47
+          pred: null
+        - id: sns-fit-000
+          target: 0
+          hit: 1
+          p: 0.62
+          pred: null
+        - id: sns-fit-010
+          target: 0
+          hit: 1
+          p: 0.72
+          pred: null
+        - id: sns-fit-001
+          target: 1
+          hit: 1
+          p: 0.33
+          pred: null
+        - id: sns-fit-003
+          target: 1
+          hit: 1
+          p: 0.41
+          pred: null
+      cache_warm: null
+    jev:
+      model: typesafe/jev-1.13
+      provider: openrouter
+      family: Jev
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.042
+      smoke:
+        arm: jev
+        mode: typed
+        usable: true
+        reasons:
+        - 뻔한 5건 중 1건 틀림 (sns-fit-002). 다른 팔도 틀리면 질문 결함, 이 팔만 틀리면 팔 약점
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 0.8
+        cost: 7.7952e-05
+        per_item:
+        - id: sns-fit-002
+          target: 0
+          hit: 0
+          p: 0.36
+          pred: null
+        - id: sns-fit-000
+          target: 0
+          hit: 1
+          p: 0.6
+          pred: null
+        - id: sns-fit-010
+          target: 0
+          hit: 1
+          p: 0.6
+          pred: null
+        - id: sns-fit-001
+          target: 1
+          hit: 1
+          p: 0.31
+          pred: null
+        - id: sns-fit-003
+          target: 1
+          hit: 1
+          p: 0.32
+          pred: null
       cache_warm: null
   protocol:
     decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
@@ -184,28 +283,6 @@ result_summary:
     prob_source: logprob
     model: deepseek/deepseek-v4-flash
     source_badge: author-run
-  jev:
-    acc: 0.7169811320754716
-    ci95:
-    - 0.5842945799989226
-    - 0.8203386463704966
-    auroc: 0.8418803418803419
-    brier: 0.1774396226415094
-    n: 53
-    prob_source: typed
-    model: typesafe/jev-1.13
-    source_badge: author-run
-  luna:
-    acc: 0.7547169811320755
-    ci95:
-    - 0.6243318493782993
-    - 0.8506723728814541
-    auroc: 0.896011396011396
-    brier: 0.13973584905660374
-    n: 53
-    prob_source: typed
-    model: openai/gpt-6-luna-decisions
-    source_badge: author-run
   anthropic:claude-haiku-5-5:
     acc: 0.5094339622641509
     ci95:
@@ -216,4 +293,37 @@ result_summary:
     n: 53
     prob_source: none
     model: claude-haiku-5-5
+    source_badge: author-run
+  jev:
+    acc: 0.7547169811320755
+    ci95:
+    - 0.6243318493782993
+    - 0.8506723728814541
+    auroc: 0.8497150997150997
+    brier: 0.1798867924528302
+    n: 53
+    prob_source: typed
+    model: typesafe/jev-1.13
+    source_badge: author-run
+  jev14:
+    acc: 0.7735849056603774
+    ci95:
+    - 0.6447347199775757
+    - 0.8654550002273447
+    auroc: 0.8931623931623932
+    brier: 0.15580754716981127
+    n: 53
+    prob_source: typed
+    model: typesafe/jev-1.14
+    source_badge: author-run
+  luna:
+    acc: 0.7735849056603774
+    ci95:
+    - 0.6447347199775757
+    - 0.8654550002273447
+    auroc: 0.8547008547008547
+    brier: 0.16240566037735849
+    n: 53
+    prob_source: typed
+    model: openai/gpt-6-luna-decisions
     source_badge: author-run
