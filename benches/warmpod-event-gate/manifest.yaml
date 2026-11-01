@@ -46,7 +46,7 @@ keywords:
 owner: ernestolee13
 n: 80
 choices_note: null
-published_at: '2026-10-20'
+published_at: '2026-11-01'
 type: binary
 classes:
 - E-conduct
@@ -63,7 +63,7 @@ label_source_mix:
   judged: 80
   outcome: 0
 experiment:
-  date: '2026-10-20'
+  date: '2026-10-22'
   template: generic
   runner: benchlet
   arms:
@@ -217,7 +217,7 @@ experiment:
         distinct_p: null
         n_calls: 5
         smoke_acc: 1.0
-        cost: 0.00015036
+        cost: 0.00015498
         per_item:
         - id: wp-gate-006
           target: 0
@@ -232,7 +232,7 @@ experiment:
         - id: wp-gate-002
           target: 0
           hit: 1
-          p: 0.75
+          p: 0.7
           pred: null
         - id: wp-gate-056
           target: 1
@@ -242,8 +242,9 @@ experiment:
         - id: wp-gate-001
           target: 1
           hit: 1
-          p: 0.31
+          p: 0.33
           pred: null
+      cache_warm: null
     luna:
       model: openai/gpt-6-luna-decisions
       provider: openrouter
@@ -265,7 +266,7 @@ experiment:
         distinct_p: null
         n_calls: 5
         smoke_acc: 1.0
-        cost: 0.000268
+        cost: 0.0002775
         per_item:
         - id: wp-gate-006
           target: 0
@@ -290,7 +291,7 @@ experiment:
         - id: wp-gate-001
           target: 1
           hit: 1
-          p: 0.02
+          p: 0.05
           pred: null
       cache_warm: null
     anthropic:claude-haiku-5-5:
@@ -317,6 +318,55 @@ experiment:
         smoke_acc: null
         cost: 0.0008048000000000002
         per_item: []
+      cache_warm: null
+    jev14:
+      model: typesafe/jev-1.14
+      provider: openrouter
+      family: Jev
+      mode: typed
+      prob_source: typed
+      base_url: openrouter.ai
+      in_per_m: 0.042
+      smoke:
+        arm: jev14
+        mode: typed
+        usable: true
+        reasons: []
+        has_logprobs: null
+        reasoning_tokens_zero: null
+        provider_match: null
+        mass_min: null
+        spread: null
+        distinct_p: null
+        n_calls: 5
+        smoke_acc: 1.0
+        cost: 0.00015498
+        per_item:
+        - id: wp-gate-006
+          target: 0
+          hit: 1
+          p: 0.96
+          pred: null
+        - id: wp-gate-000
+          target: 0
+          hit: 1
+          p: 0.94
+          pred: null
+        - id: wp-gate-002
+          target: 0
+          hit: 1
+          p: 0.87
+          pred: null
+        - id: wp-gate-056
+          target: 1
+          hit: 1
+          p: 0.05
+          pred: null
+        - id: wp-gate-001
+          target: 1
+          hit: 1
+          p: 0.27
+          pred: null
       cache_warm: null
   protocol:
     decision_rule: 이진 0.5, 다지 argmax. 임계·온도 보정 없음
@@ -370,28 +420,6 @@ result_summary:
     prob_source: logprob
     model: deepseek/deepseek-v4-flash
     source_badge: author-run
-  jev:
-    acc: 0.95
-    ci95:
-    - 0.878375474489178
-    - 0.9803867628727043
-    auroc: 0.98
-    brier: 0.046808749999999996
-    n: 80
-    prob_source: typed
-    model: typesafe/jev-1.13
-    source_badge: author-run
-  luna:
-    acc: 0.95
-    ci95:
-    - 0.878375474489178
-    - 0.9803867628727043
-    auroc: 0.98375
-    brier: 0.04789625000000001
-    n: 80
-    prob_source: typed
-    model: openai/gpt-6-luna-decisions
-    source_badge: author-run
   anthropic:claude-haiku-5-5:
     acc: 0.9125
     ci95:
@@ -402,4 +430,37 @@ result_summary:
     n: 80
     prob_source: none
     model: claude-haiku-5-5
+    source_badge: author-run
+  jev:
+    acc: 0.9625
+    ci95:
+    - 0.8954510802560569
+    - 0.9871656636992112
+    auroc: 0.9840625
+    brier: 0.04276125
+    n: 80
+    prob_source: typed
+    model: typesafe/jev-1.13
+    source_badge: author-run
+  jev14:
+    acc: 0.975
+    ci95:
+    - 0.9133539994467789
+    - 0.9931172511018749
+    auroc: 0.994375
+    brier: 0.039531250000000004
+    n: 80
+    prob_source: typed
+    model: typesafe/jev-1.14
+    source_badge: author-run
+  luna:
+    acc: 0.9
+    ci95:
+    - 0.8148912101660255
+    - 0.9484530008223145
+    auroc: 0.954375
+    brier: 0.07720624999999999
+    n: 80
+    prob_source: typed
+    model: openai/gpt-6-luna-decisions
     source_badge: author-run
